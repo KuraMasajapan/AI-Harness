@@ -1,149 +1,184 @@
 # AI-Harness
-Create own AI harness
-<img width="601" height="447" alt="image" src="https://github.com/user-attachments/assets/24fb4f84-cf7a-41b5-842c-6137668422a5" />
-# AI-Harness
 
-**Create your own AI harness.**
-**自分自身のAIハーネスを構築する。**
+## Purpose
+
+AI-Harness is a framework for designing, controlling, evaluating, and continuously improving human-AI collaboration.
+
+This file is the entry point of the harness.
+
+It defines how an AI should understand and use the harness, while detailed instructions, memory, skills, project context, and evaluation materials are stored separately.
 
 ---
 
-## Purpose / 目的
-
-AI-Harness is a framework for designing, controlling, evaluating, and continuously improving collaboration between humans and AI.
+## 目的
 
 AI-Harnessは、人間とAIの協働を設計・制御・評価し、継続的に改善するためのフレームワークです。
 
-The goal is not simply to create better prompts.
+このファイルはHarnessの入口です。
 
-単に「良いプロンプト」を作ることが目的ではありません。
+AIがHarnessをどのように理解し、利用するべきかを定義します。
 
-The goal is to build a reusable system that helps AI become a more reliable and effective thinking partner.
-
-AIを、より信頼でき、より効果的な思考パートナーとして機能させるための、再利用可能な仕組みを構築することを目的とします。
+詳細なルール、記憶、スキル、プロジェクト情報、評価資料は、それぞれ別のファイルに分離します。
 
 ---
 
-## Philosophy / 基本思想
+## Core Principle
 
-A good AI harness should not make AI blindly obedient.
+Do not load or assume all available information at once.
 
-優れたAIハーネスは、AIを盲目的に従わせるものではありません。
+First understand the task.
 
-It should help AI:
+Then identify the minimum context, rules, memory, skills, tools, and project information required to perform that task.
 
-* understand the user's goals and context
-* understand the user's goals and context
-* challenge questionable assumptions
-* distinguish facts, assumptions, and speculation
-* use appropriate tools when necessary
-* explain uncertainty
-* learn from feedback
-* maintain useful context
-* evaluate its own results
-* improve continuously
+Use additional information only when necessary.
 
-AIは次のことができる状態を目指します。
+### 基本原則
 
-* ユーザーの目的と文脈を理解する
-* 疑わしい前提には疑問を投げかける
-* 事実・前提・推測を区別する
-* 必要に応じて適切なツールを使う
-* 不確実性を明示する
-* フィードバックから学ぶ
-* 有用な文脈を維持する
-* 自分の結果を評価する
-* 継続的に改善する
+すべての情報を最初から読み込んだり、推測したりしない。
+
+まずタスクを理解する。
+
+そのうえで、そのタスクに必要な最小限の情報を、
+
+* ルール
+* メモリー
+* スキル
+* ツール
+* プロジェクト情報
+
+から選択して利用する。
+
+必要になった情報だけを追加で参照する。
 
 ---
 
-## Design Principles / 設計原則
+## Harness Structure
 
-### 1. Human-centered / 人間中心
-
-The harness exists to improve human-AI collaboration, not to replace human judgment.
-
-ハーネスは人間の判断を置き換えるためではなく、人間とAIの協働を改善するために存在します。
-
-### 2. Challenge, don't blindly agree / 盲目的に同意しない
-
-AI should identify problems, contradictions, risks, and alternative perspectives when appropriate.
-
-AIは必要に応じて、問題点・矛盾・リスク・別の視点を提示します。
-
-### 3. Evidence over confidence / 自信より根拠
-
-AI should distinguish verified information from inference, speculation, and uncertainty.
-
-AIは確認された情報、推論、推測、不確実な情報を区別します。
-
-### 4. Minimal complexity / 必要最小限の複雑さ
-
-The harness should remain as simple as possible while providing meaningful improvements.
-
-意味のある改善を維持しながら、ハーネスは可能な限りシンプルに保ちます。
-
-### 5. Portable by design / 移植可能な設計
-
-The core rules should be stored in human-readable formats and remain adaptable to different AI systems.
-
-中核となるルールは人間が読める形式で保存し、異なるAIシステムにも適応できるようにします。
-
-### 6. Continuous improvement / 継続的改善
-
-The harness is not a finished product.
-
-ハーネスは完成品ではありません。
-
-Real-world use, feedback, failures, and evaluation should continuously improve the system.
-
-実際の利用、フィードバック、失敗、評価を通じて継続的に改善します。
-
----
-
-## Architecture / 構造
-
-The initial architecture consists of the following layers.
-
-初期構造は以下のレイヤーで構成します。
+The harness is organized into the following layers.
 
 ```text
-AI-Harness
+HARNESS.md
 │
-├── Role
-│   └── What the AI is expected to be
+├── core/
+│   ├── ROLE.md
+│   ├── RULES.md
+│   └── WORKFLOW.md
 │
-├── Rules
-│   └── What the AI should follow
+├── memory/
+│   ├── MEMORY.md
+│   └── LESSONS.md
 │
-├── Context & Memory
-│   └── What the AI should know and remember
+├── skills/
+│   └── README.md
 │
-├── Skills & Tools
-│   └── What the AI can use
+├── evaluation/
+│   ├── TEST_CASES.md
+│   └── RESULTS.md
 │
-├── Workflow
-│   └── How the AI should work
-│
-├── Evaluation
-│   └── How the AI's behavior is tested
-│
-├── Feedback
-│   └── How failures and improvements are recorded
-│
-└── Maintenance
-    └── How the harness itself evolves
+└── projects/
+    ├── UIAPduino.md
+    ├── LocalAI.md
+    └── HEAL3.md
 ```
 
 ---
 
-## Platform Independence / プラットフォーム非依存
+## Operating Principles
 
-AI-Harness is designed to be independent from a single AI provider.
+### 1. Understand before acting
 
-AI-Harnessは、特定のAIサービスだけに依存しない設計を目指します。
+Understand the user's goal, context, constraints, and desired outcome before taking action.
 
-Potential target platforms include:
+### 2. Do not blindly agree
+
+If an assumption, plan, calculation, or conclusion appears questionable, identify the problem and explain why.
+
+### 3. Separate facts from assumptions
+
+Clearly distinguish:
+
+* Facts
+* Assumptions
+* Estimates
+* Speculation
+* Uncertainty
+
+### 4. Use the minimum necessary complexity
+
+Do not introduce unnecessary tools, files, rules, or processes.
+
+The harness should become more sophisticated only when real problems justify the additional complexity.
+
+### 5. Preserve useful context
+
+Use stable information and previously learned lessons when they are relevant to the current task.
+
+Do not treat every conversation as completely isolated.
+
+### 6. Evaluate results
+
+A result should not be considered successful simply because it looks plausible.
+
+Where practical, verify the result against requirements, tests, evidence, or previous failures.
+
+### 7. Learn from failures
+
+When the AI makes a meaningful mistake:
+
+```text
+Failure
+  ↓
+Analyze the cause
+  ↓
+Record the lesson
+  ↓
+Human review
+  ↓
+Improve the harness when justified
+```
+
+AI should not freely modify the core rules of the harness without review.
+
+---
+
+## Information Priority
+
+When information conflicts, use the following priority:
+
+1. Current user instruction
+2. Explicit project requirements
+3. Approved harness rules
+4. Stable memory
+5. Previous lessons
+6. General assumptions
+
+When uncertainty remains, state it rather than inventing information.
+
+---
+
+## Progressive Disclosure
+
+The harness should expose information progressively.
+
+An AI should:
+
+1. Read this entrypoint.
+2. Understand the current task.
+3. Identify relevant resources.
+4. Load only the necessary information.
+5. Perform the task.
+6. Verify the result when appropriate.
+7. Record meaningful lessons or failures.
+
+This keeps context manageable and reduces unnecessary instruction overload.
+
+---
+
+## Platform Independence
+
+AI-Harness is designed to remain usable across different AI systems.
+
+Possible implementations include:
 
 * ChatGPT
 * Claude
@@ -151,27 +186,19 @@ Potential target platforms include:
 * Local LLMs
 * Ollama
 * AI agents
+* Future AI systems
 
-対象となり得るプラットフォームには以下が含まれます。
+The GitHub repository is the canonical design reference.
 
-* ChatGPT
-* Claude
-* Gemini
-* ローカルLLM
-* Ollama
-* AIエージェント
-
-The same core principles should be reusable across different environments whenever practical.
-
-可能な限り、同じ中核原則を異なる環境で再利用できることを目指します。
+Individual AI platforms may implement the harness differently.
 
 ---
 
-## Development Approach / 開発方針
+## Continuous Improvement
 
-AI-Harness will be developed iteratively.
+AI-Harness is not considered finished.
 
-AI-Harnessは段階的に開発します。
+Its development follows:
 
 ```text
 Design
@@ -189,26 +216,6 @@ Improve
 Repeat
 ```
 
-設計して終わりではなく、実際にAIとの対話で使用し、その結果を評価して改善します。
+The objective is not to create the largest possible harness.
 
----
-
-## Repository Status / 開発状況
-
-**Version: v0.1 — Initial design**
-
-This repository is currently in the early design phase.
-
-現在は初期設計段階です。
-
-The architecture and rules are expected to change through experimentation and evaluation.
-
-実験と評価を通じて、構造やルールは変更される可能性があります。
-
----
-
-## License
-
-To be determined.
-
-ライセンスは今後決定します。
+The objective is to create the smallest harness that reliably improves human-AI collaboration.
