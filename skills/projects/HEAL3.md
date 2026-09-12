@@ -1,5 +1,4 @@
-# HEAL3
-# HEAL3プロジェクト
+# HEAL3 / ヘルスリー
 
 ## 1. Purpose / 目的
 
