@@ -1,0 +1,198 @@
+# Evaluation Results
+# 評価結果
+
+## 1. Purpose
+## 1. 目的
+
+This file records the results of evaluating the AI-Harness against the test cases defined in `evaluation/TEST_CASES.md`.
+
+このファイルは、`evaluation/TEST_CASES.md` に定義されたテストケースに対して、AI-Harnessがどの程度適切に機能したかを記録する。
+
+The purpose is not simply to mark tests as pass or fail, but to preserve evidence and identify areas for improvement.
+
+目的は単純な合否判定ではなく、根拠を残し、改善すべき箇所を特定することである。
+
+
+## 2. Result Status
+## 2. 結果ステータス
+
+Each test should use one of the following statuses.
+
+各テストには以下のいずれかのステータスを使用する。
+
+- Pass — 要求を十分に満たした
+- Partial — 一部を満たしたが改善の余地がある
+- Fail — 重要な要求を満たさなかった
+- Not Tested — まだ評価していない
+
+A result should be based on observable behavior and evidence whenever possible.
+
+結果は、可能な限り実際の動作と確認可能な根拠に基づいて記録する。
+
+
+## 3. Test Results
+## 3. テスト結果
+
+| Test ID | Status | Evidence | Related Lesson | Retest |
+|---|---|---|---|---|
+| TEST-001 | Not Tested |  |  |  |
+| TEST-002 | Not Tested |  |  |  |
+| TEST-003 | Not Tested |  |  |  |
+| TEST-004 | Not Tested |  |  |  |
+| TEST-005 | Not Tested |  |  |  |
+| TEST-006 | Not Tested |  |  |  |
+| TEST-007 | Not Tested |  |  |  |
+| TEST-008 | Not Tested |  |  |  |
+| TEST-009 | Not Tested |  |  |  |
+| TEST-010 | Not Tested |  |  |  |
+
+Evidence should describe what actually happened rather than simply stating an opinion.
+
+Evidenceには単なる感想ではなく、実際に何が起きたかを記録する。
+
+
+## 4. Detailed Result
+## 4. 詳細結果
+
+When a test is important, failed, or partially successful, record additional details.
+
+重要なテスト、失敗したテスト、一部成功したテストについては、追加情報を記録する。
+
+### TEST-XXX
+
+- Date:
+- Status:
+- Context:
+- Expected Behavior:
+- Actual Behavior:
+- Evidence:
+- Problem:
+- Related Lesson:
+- Action:
+- Retest Date:
+
+Date:
+評価日。
+
+Status:
+結果ステータス。
+
+Context:
+評価を行った状況。
+
+Expected Behavior:
+期待される動作。
+
+Actual Behavior:
+実際に起きた動作。
+
+Evidence:
+判断の根拠。
+
+Problem:
+確認された問題。
+
+Related Lesson:
+関連する `memory/LESSONS.md` の項目。
+
+Action:
+今後行う対応。
+
+Retest Date:
+再評価予定日。
+
+
+## 5. Overall Evaluation
+## 5. 総合評価
+
+### Current Status
+
+- Overall:
+- Strong Areas:
+- Weak Areas:
+- Major Risks:
+- Improvement Priority:
+
+Overall:
+Harness全体の現在の評価。
+
+Strong Areas:
+十分に機能している領域。
+
+Weak Areas:
+改善が必要な領域。
+
+Major Risks:
+特に注意すべきリスク。
+
+Improvement Priority:
+次に改善すべき優先事項。
+
+
+## 6. Regression Tracking
+## 6. 回帰確認
+
+When a change is made to the Harness, previously successful tests should be considered for re-evaluation.
+
+Harnessを変更した場合、以前に成功していたテストについても、必要に応じて再評価する。
+
+A change that improves one behavior must not silently break another behavior.
+
+ある動作を改善した変更によって、別の動作が知らないうちに壊れていないか確認する。
+
+Record meaningful regressions in `memory/LESSONS.md`.
+
+重要な回帰や再発した問題は `memory/LESSONS.md` に記録する。
+
+
+## 7. Improvement Decision
+## 7. 改善判断
+
+Evaluation results should lead to one of the following decisions.
+
+評価結果は、必要に応じて以下のいずれかの判断につなげる。
+
+- No Change — 現状維持
+- Monitor — 継続観察
+- Update Lesson — Lessonを追加・更新
+- Update Rule — `core/RULES.md` を変更
+- Update Workflow — `core/WORKFLOW.md` を変更
+- Update Memory — `memory/MEMORY.md` を変更
+- Add Skill — Skillを追加
+- Add Test — 新しい評価項目を追加
+
+Do not change core rules merely because of one unusual result.
+
+一度だけ発生した特殊な結果だけを理由に、Core Ruleを変更しない。
+
+Prefer changes supported by repeated evidence, important risks, or clear and stable patterns.
+
+繰り返し確認された問題、重要なリスク、明確で安定したパターンに基づいて変更する。
+
+
+## 8. Evaluation Philosophy
+## 8. 評価の考え方
+
+Evaluation is not a final exam.
+
+評価は、一度きりの最終試験ではない。
+
+It is a feedback mechanism for improving the Harness.
+
+Harnessを改善するためのフィードバック機構である。
+
+The goal is not to maximize the number of passing tests.
+
+目的は、合格テストの数を最大化することではない。
+
+The goal is to make the AI more reliable, useful, transparent, and aligned with the intended way of working.
+
+目的は、AIをより信頼でき、役に立ち、透明性があり、意図した作業方法に沿って動作するものにすることである。
+
+Evaluation should therefore follow this cycle:
+
+評価は次の循環で行う。
+
+Observe → Evaluate → Learn → Improve → Re-evaluate
+
+観察 → 評価 → 学習 → 改善 → 再評価
