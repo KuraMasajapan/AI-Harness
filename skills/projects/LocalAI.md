@@ -1,8 +1,7 @@
 # LocalAI
 # ローカルAIプロジェクト
 
-## 1. Purpose
-## 1. 目的
+## 1. Purpose / 目的
 
 This file stores stable context and important decisions for the LocalAI project.
 
@@ -13,8 +12,7 @@ The project explores a local-first AI environment that can provide useful AI cap
 このプロジェクトでは、必要な情報や処理を適切にローカルに保持しながら、AIを活用できるローカルファーストな環境を検討する。
 
 
-## 2. Project Principles
-## 2. プロジェクト原則
+## 2. Project Principles / プロジェクト原則
 
 - Prefer local processing when practical.
 - Consider privacy before sending information to external services.
@@ -31,8 +29,7 @@ The project explores a local-first AI environment that can provide useful AI cap
 - 将来の拡張性を確保する。
 
 
-## 3. Current Direction
-## 3. 現在の方向性
+## 3. Current Direction / 現在の方向性
 
 The project is exploring a local AI environment that can operate as part of a broader AI-Harness.
 
@@ -54,8 +51,7 @@ These roles are exploratory and should not be treated as fixed architecture unti
 これらは検討中の役割であり、検証されるまでは確定したアーキテクチャとして扱わない。
 
 
-## 4. Architecture Principles
-## 4. アーキテクチャ原則
+## 4. Architecture Principles / アーキテクチャ原則
 
 The system should separate:
 
@@ -74,8 +70,7 @@ A local LLM should not automatically be treated as the only possible gateway or 
 ローカルLLMを必ずしも唯一のゲートウェイや判断主体として扱わない。
 
 
-## 5. Hardware Considerations
-## 5. ハードウェア上の考慮事項
+## 5. Hardware Considerations / ハードウェア上の考慮事項
 
 Hardware decisions should consider:
 
@@ -95,8 +90,7 @@ The hardware should be selected according to the actual workload rather than spe
 ハードウェアはスペックだけで判断せず、実際の処理内容に応じて選定する。
 
 
-## 6. Privacy and Security
-## 6. プライバシーとセキュリティ
+## 6. Privacy and Security / プライバシーとセキュリティ
 
 Information should be classified before external processing when practical.
 
@@ -111,8 +105,7 @@ Security decisions should be based on actual threat models rather than assumptio
 セキュリティ上の判断は、単なる思い込みではなく実際の脅威モデルに基づいて行う。
 
 
-## 7. Decision Policy
-## 7. 判断方針
+## 7. Decision Policy / 判断方針
 
 Evaluate local and cloud approaches according to:
 
@@ -136,8 +129,7 @@ Build only what provides a meaningful practical benefit.
 実用上の明確なメリットがあるものを構築する。
 
 
-## 8. Related Harness Files
-## 8. 関連Harnessファイル
+## 8. Related Harness Files / 関連Harnessファイル
 
 - `HARNESS.md`
 - `core/ROLE.md`
