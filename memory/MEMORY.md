@@ -127,3 +127,99 @@ Use a concise and structured format.
 - Confidence:
 - Last Updated:
 - Status:
+
+```
+
+## 6. Conflict Resolution / 矛盾の処理
+
+When memories conflict, do not silently keep both.
+
+メモリ同士が矛盾した場合、
+古い情報と新しい情報をそのまま併存させてはいけません。
+
+Priority should generally be:
+
+1. Current explicit instruction
+2. Newer confirmed decision
+3. Older confirmed decision
+4. Older memory
+5. Assumption
+
+優先順位は基本的に、
+
+1. 現在の明示的な指示
+2. 新しい確定済み決定
+3. 過去の確定済み決定
+4. 古いメモリ
+5. 推測
+
+とします。
+
+When uncertainty exists, ask for clarification rather than
+creating a false certainty.
+
+不確実な場合は、勝手に確定せず確認します。
+
+## 7. Memory Maintenance / メモリのメンテナンス
+
+Memory should remain small, useful, and current.
+
+メモリは小さく、役立ち、最新の状態を維持します。
+
+Periodically:
+
+- Remove obsolete information
+  / 古くなった情報を整理する
+- Merge duplicates
+  / 重複情報を統合する
+- Resolve contradictions
+  / 矛盾を解消する
+- Promote important lessons when appropriate
+  / 必要に応じて重要な教訓を反映する
+- Avoid unnecessary growth
+  / 不要な肥大化を防ぐ
+
+## 8. Memory vs Lessons / MemoryとLessonsの違い
+
+Memory stores reusable context.
+
+Memoryは「今後も使う情報」を保存します。
+
+Lessons stores discoveries about how the Harness should improve.
+
+Lessonsは「Harnessをどう改善すべきか」という発見を保存します。
+
+A lesson does not automatically become a rule or memory.
+
+教訓は自動的にルールやメモリへ昇格させません。
+
+Human review should be used when a lesson would change
+the behavior of the Harness.
+
+Harnessの動作を変更する場合は、
+人間による確認を経て反映します。
+
+## 9. Core Principle / 基本原則
+
+Remember what helps.
+
+Forget what does not.
+
+記憶するのは、将来役立つもの。
+
+役立たないものは記憶しない。
+
+```text
+会話
+ ↓
+失敗・発見
+ ↓
+LESSONS.md
+ ↓
+人間が確認
+ ↓
+必要ならRULES / ROLE / MEMORYへ反映
+
+```
+
+という学習ループになります。
