@@ -130,6 +130,8 @@ Use a concise and structured format.
 
 ```
 
+---
+
 ## 6. Conflict Resolution / 矛盾の処理
 
 When memories conflict, do not silently keep both.
@@ -160,6 +162,8 @@ creating a false certainty.
 
 不確実な場合は、勝手に確定せず確認します。
 
+---
+
 ## 7. Memory Maintenance / メモリのメンテナンス
 
 Memory should remain small, useful, and current.
@@ -178,6 +182,8 @@ Periodically:
   / 必要に応じて重要な教訓を反映する
 - Avoid unnecessary growth
   / 不要な肥大化を防ぐ
+
+---
 
 ## 8. Memory vs Lessons / MemoryとLessonsの違い
 
@@ -198,6 +204,8 @@ the behavior of the Harness.
 
 Harnessの動作を変更する場合は、
 人間による確認を経て反映します。
+
+---
 
 ## 9. Core Principle / 基本原則
 
