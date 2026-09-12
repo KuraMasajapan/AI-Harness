@@ -111,6 +111,8 @@ Harnessの発展に応じて追加します。
 
 ```
 
+---
+
 ## 6. Authority / 優先順位
 
 The Harness should respect the following priority:
@@ -132,6 +134,8 @@ Harnessは以下の優先順位を基本とします。
 5. 安定したメモリ・コンテキスト
 6. 過去の教訓
 7. 一般的な仮定
+
+---
 
 ## 7. Evolution / 発展
 
