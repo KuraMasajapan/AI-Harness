@@ -1,8 +1,7 @@
 # HEAL3
 # HEAL3プロジェクト
 
-## 1. Purpose
-## 1. 目的
+## 1. Purpose / 目的
 
 This file stores stable context and important decisions for the HEAL3 project.
 
@@ -13,8 +12,7 @@ The project focuses on understanding, analyzing, visualizing, and supporting the
 このプロジェクトでは、ユーザー視点からHEAL3の仕組みを理解・分析・可視化し、エコシステムを支援する方法を検討する。
 
 
-## 2. Project Principles
-## 2. プロジェクト原則
+## 2. Project Principles / プロジェクト原則
 
 - Prioritize accurate understanding of the game and ecosystem.
 - Distinguish confirmed information from assumptions.
@@ -31,8 +29,7 @@ The project focuses on understanding, analyzing, visualizing, and supporting the
 - 関係する法律、プラットフォーム規約、表示・開示義務を尊重する。
 
 
-## 3. Current Direction
-## 3. 現在の方向性
+## 3. Current Direction / 現在の方向性
 
 The project explores tools and ideas related to:
 
@@ -50,8 +47,7 @@ Specific implementation decisions should be recorded when they become stable.
 具体的な実装方針が確定した場合は、ここに記録する。
 
 
-## 4. Information Policy
-## 4. 情報の扱い
+## 4. Information Policy / 情報の扱い
 
 HEAL3-related information should be classified as:
 
@@ -68,8 +64,7 @@ Do not present inferred or hypothetical information as confirmed facts.
 推測や仮説を確認済みの事実として扱わない。
 
 
-## 5. Data and Technical Considerations
-## 5. データ・技術上の考慮事項
+## 5. Data and Technical Considerations / データ・技術上の考慮事項
 
 When analyzing blockchain or application data, consider:
 
@@ -88,8 +83,7 @@ A visualization should clearly distinguish raw data from interpretation.
 可視化では、生データと解釈を明確に区別する。
 
 
-## 6. Community and Promotion
-## 6. コミュニティ・プロモーション
+## 6. Community and Promotion / コミュニティ・プロモーション
 
 Community support should provide genuine value to users.
 
@@ -104,8 +98,7 @@ Potentially regulated or platform-sensitive promotional activities should be rev
 法規制やプラットフォーム上のルールに関係する可能性がある活動は、公開前に確認する。
 
 
-## 7. Decision Policy
-## 7. 判断方針
+## 7. Decision Policy / 判断方針
 
 Evaluate proposed features according to:
 
@@ -129,8 +122,7 @@ Prefer simple features that provide clear value.
 明確な価値を提供するシンプルな機能を優先する。
 
 
-## 8. Related Harness Files
-## 8. 関連Harnessファイル
+## 8. Related Harness Files / 関連Harnessファイル
 
 - `HARNESS.md`
 - `core/ROLE.md`
