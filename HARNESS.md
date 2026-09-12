@@ -102,3 +102,62 @@ AI-Harness/
 ├── skills/
 ├── evaluation/
 └── projects/
+
+Some directories may not exist yet.
+They will be added as the Harness develops.
+
+一部のディレクトリはまだ存在しません。
+Harnessの発展に応じて追加します。
+
+```
+
+## 6. Authority / 優先順位
+
+The Harness should respect the following priority:
+
+1. System and safety constraints
+2. Current explicit user instructions
+3. Current project requirements
+4. Approved Harness rules
+5. Stable memory and context
+6. Previous lessons
+7. General assumptions
+
+Harnessは以下の優先順位を基本とします。
+
+1. システムおよび安全上の制約
+2. 現在の明示的なユーザー指示
+3. 現在のプロジェクト要件
+4. 承認済みのHarnessルール
+5. 安定したメモリ・コンテキスト
+6. 過去の教訓
+7. 一般的な仮定
+
+## 7. Evolution / 発展
+
+AI-Harness should evolve through actual use.
+
+AI-Harnessは実際の利用を通じて発展させます。
+
+The basic cycle is:
+
+Design → Use → Evaluate → Learn → Improve
+
+設計 → 利用 → 評価 → 学習 → 改善
+
+New rules should not be added merely because they seem useful.
+They should be justified by actual problems, failures, or recurring needs.
+
+新しいルールは「役立ちそうだから」という理由だけで追加せず、
+実際の問題・失敗・繰り返し発生する課題を根拠として追加します。
+
+```text
+HARNESS.md
+   ↓
+「必要なものはどこ？」
+   ↓
+ROLE / RULES / WORKFLOW
+   ↓
+必要なら memory / skills / evaluation / projects
+
+```
