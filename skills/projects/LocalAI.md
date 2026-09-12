@@ -1,5 +1,4 @@
 # LocalAI
-# ローカルAIプロジェクト
 
 ## 1. Purpose / 目的
 
