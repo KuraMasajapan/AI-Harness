@@ -48,3 +48,14 @@ A lesson should explain:
 - Suggested Change:
 - Related Files:
 - Status:
+
+Example:
+## MEM-001 Example Project Decision
+
+- Type: Decision
+- Topic: Architecture
+- Content: Use Markdown files as the project source of truth.
+- Source: Human-approved project decision
+- Confidence: High
+- Last Updated: YYYY-MM-DD
+- Status: Active
