@@ -52,15 +52,15 @@ A lesson should explain:
 ```
 
 Status should be one of:
--Proposed
+- Proposed
   / 提案中
--Reviewed
+- Reviewed
   / 確認済み
--Promoted
+- Promoted
   / 反映済み
--Rejected
+- Rejected
   / 採用しない
--Obsolete
+- Obsolete
   / 古くなった
 
 ## 4. Example: / 例
@@ -100,12 +100,12 @@ Promotion
 ```
 
 Possible destinations include:
--core/ROLE.md
--core/RULES.md
--core/WORKFLOW.md
--memory/MEMORY.md
--skills/
--evaluation/
+- core/ROLE.md
+- core/RULES.md
+- core/WORKFLOW.md
+- memory/MEMORY.md
+- skills/
+- evaluation/
 
 ## 6. Do Not Overfit / 過学習を避ける
 
@@ -116,28 +116,28 @@ A single unusual event should not automatically create a new rule.
 
 Prefer changes that address:
 
--Repeated failures
+- Repeated failures
   / 繰り返し発生する失敗
--Important risks
+- Important risks
   / 重要なリスク
--Clear inefficiencies
+- Clear inefficiencies
   / 明確な非効率
--Stable patterns
+- Stable patterns
   / 継続的に確認されるパターン
   
 ## 7. Lesson Quality / 教訓の質
 
 A useful lesson should be:
 
--Specific
+- Specific
   / 具体的
--Reproducible when possible
+- Reproducible when possible
   / 可能なら再現可能
--Actionable
+- Actionable
   / 行動に結びつく
--Relevant
+- Relevant
   / Harnessに関係する
--Minimal
+- Minimal
   / 必要以上に複雑でない
 
 ## 8. Core Principle / 基本原則
