@@ -79,6 +79,7 @@ Status should be one of:
 ## 5. Prmotion Process / 反映プロセス
 
 Lessons should follow this process:
+
 レッスンは以下の流れで行います。
 
 ```
@@ -100,12 +101,15 @@ Promotion
 ```
 
 Possible destinations include:
-- core/ROLE.md
-- core/RULES.md
-- core/WORKFLOW.md
-- memory/MEMORY.md
-- skills/
-- evaluation/
+
+反映先としては以下のようなものがあります。
+
+- `core/ROLE.md`
+- `core/RULES.md`
+- `core/WORKFLOW.md`
+- `memory/MEMORY.md`
+- `skills/`
+- `evaluation/`
 
 ## 6. Do Not Overfit / 過学習を避ける
 
@@ -115,6 +119,8 @@ A single unusual event should not automatically create a new rule.
 すぐに新しいルールを作ってはいけません。
 
 Prefer changes that address:
+
+以下の点に対処する変更を優先します。
 
 - Repeated failures
   / 繰り返し発生する失敗
@@ -128,6 +134,8 @@ Prefer changes that address:
 ## 7. Lesson Quality / 教訓の質
 
 A useful lesson should be:
+
+有益な教訓は次のとおりである。
 
 - Specific
   / 具体的
@@ -153,8 +161,6 @@ Harnessは経験から学びます。
 
 しかし、人間による確認なしに
 自分自身の基本ルールを書き換えません。
-
-これで、かなり重要な4層ができました。
 
 ```text
 HARNESS.md
