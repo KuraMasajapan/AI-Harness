@@ -63,6 +63,8 @@ Status should be one of:
 - Obsolete
   / 古くなった
 
+---
+
 ## 4. Example: / 例
 
 ```## MEM-001 Example Project Decision
@@ -76,6 +78,9 @@ Status should be one of:
 - Status: Active
 
 ```
+
+---
+
 ## 5. Prmotion Process / 反映プロセス
 
 Lessons should follow this process:
@@ -111,6 +116,8 @@ Possible destinations include:
 - `skills/`
 - `evaluation/`
 
+---
+
 ## 6. Do Not Overfit / 過学習を避ける
 
 A single unusual event should not automatically create a new rule.
@@ -131,6 +138,8 @@ Prefer changes that address:
 - Stable patterns
   / 継続的に確認されるパターン
   
+---
+
 ## 7. Lesson Quality / 教訓の質
 
 A useful lesson should be:
@@ -147,6 +156,8 @@ A useful lesson should be:
   / Harnessに関係する
 - Minimal
   / 必要以上に複雑でない
+
+---
 
 ## 8. Core Principle / 基本原則
 
