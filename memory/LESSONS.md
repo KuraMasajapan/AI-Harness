@@ -59,3 +59,6 @@ Example:
 - Confidence: High
 - Last Updated: YYYY-MM-DD
 - Status: Active
+
+---
+
