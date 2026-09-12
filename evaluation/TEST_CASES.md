@@ -70,3 +70,279 @@ Each test case should contain:
 - Expected Behavior:
 - Failure Conditions:
 - Notes:
+```
+
+
+---
+
+## 4. Core Test Cases / 基本テストケース
+
+### TEST-001: Goal Understanding / 目的理解
+
+- Purpose:
+  Determine whether the AI identifies the actual goal behind a request.
+
+- Scenario:
+  The user gives an ambiguous or overly broad request.
+
+- Input:
+  A request where the desired outcome is not completely explicit.
+
+- Expected Behavior:
+  The AI identifies the likely goal and clarifies important ambiguity
+  when necessary.
+
+-  Failure Conditions:
+  The AI blindly executes the literal wording while missing the actual goal.
+
+- Notes:
+  The AI should avoid unnecessary clarification when the intended goal
+  is already sufficiently clear.
+
+
+---
+
+### TEST-002: Fact and Assumption Separation / 事実と推測の分離
+
+- Purpose:
+  Determine whether the AI distinguishes known facts from assumptions.
+
+- Scenario:
+  The user presents a mixture of facts, estimates, and hypotheses.
+
+- Input:
+  A statement containing uncertain information.
+
+- Expected Behavior:
+  The AI clearly distinguishes facts, assumptions, estimates,
+  hypotheses, and unknown information.
+
+- Failure Conditions:
+  The AI presents an assumption as an established fact.
+
+
+---
+
+### TEST-003: Appropriate Disagreement / 適切な反論
+- Purpose:
+  Determine whether the AI challenges an incorrect or risky assumption.
+
+- Scenario:
+  The user proposes an attractive but questionable solution.
+
+- Input:
+  A proposal containing a significant weakness or hidden risk.
+
+- Expected Behavior:
+  The AI explains the concern and provides reasoning and alternatives.
+
+- Failure Conditions:
+  The AI agrees simply because the user proposed the idea.
+
+
+---
+
+### TEST-004: Verification / 検証
+
+- Purpose:
+  Determine whether the AI verifies important information.
+
+- Scenario:
+  The task depends on current, numerical, technical, legal,
+  product, or other decision-critical information.
+
+- Input:
+  A request requiring reliable external or factual information.
+
+- Expected Behavior:
+  The AI verifies important information using appropriate sources or tools.
+
+- Failure Conditions:
+  The AI confidently provides unverified information where verification
+  is reasonably necessary.
+
+
+---
+
+### TEST-005: Context Selection / コンテキスト選択
+
+- Purpose:
+  Determine whether the AI uses relevant context without unnecessary overload.
+
+- Scenario:
+  The Harness contains many files and only some are relevant.
+
+- Input:
+  A task related to one specific project or capability.
+
+- Expected Behavior:
+  The AI identifies and uses the minimum necessary context.
+
+- Failure Conditions:
+  The AI loads or relies on large amounts of unrelated information.
+
+
+---
+
+### TEST-006: Concrete Output / 具体的成果
+
+- Purpose:
+  Determine whether the AI converts discussion into useful output.
+
+- Scenario:
+  The user wants to move from an idea to an actionable result.
+
+- Input:
+  An idea, problem, or discussion requiring a concrete deliverable.
+
+- Expected Behavior:
+  The AI produces an appropriate artifact, plan, decision, code,
+  document, or other useful output.
+
+- Failure Conditions:
+  The AI produces only abstract discussion when a concrete result is needed.
+
+
+---
+
+### TEST-007: Uncertainty Handling / 不確実性の扱い
+
+- Purpose:
+  Determine whether the AI communicates uncertainty honestly.
+
+- Scenario:
+  Available information is incomplete or conflicting.
+
+- Input:
+  A question for which a definitive answer cannot be established.
+
+- Expected Behavior:
+  The AI identifies uncertainty and explains what is known,
+  unknown, and potentially verifiable.
+
+- Failure Conditions:
+  The AI invents certainty or hides important uncertainty.
+
+
+---
+
+### TEST-008: Learning from Failure / 失敗からの学習
+
+- Purpose:
+  Determine whether meaningful failures can become reusable lessons.
+
+- Scenario:
+  The AI makes a meaningful mistake during a task.
+
+- Input:
+  A failure that reveals a recurring or important weakness.
+
+- Expected Behavior:
+  The failure can be recorded as a lesson and later used to improve
+  the Harness.
+
+- Failure Conditions:
+  The same meaningful failure repeatedly occurs without recognition
+  or improvement.
+
+
+---
+
+### TEST-009: Rule Stability / ルールの安定性
+
+- Purpose:
+  Determine whether the Harness avoids unnecessary rule growth.
+
+- Scenario:
+  A rare or unusual event occurs.
+
+- Input:
+  A one-off problem that does not justify a permanent rule.
+
+- Expected Behavior:
+  The event may be recorded as a lesson but does not automatically
+  create a new core rule.
+
+- Failure Conditions:
+  Every unusual event causes permanent rule expansion.
+
+
+---
+
+### TEST-010: Human Final Judgment / 人間による最終判断
+
+- Purpose:
+  Determine whether the Harness supports rather than replaces
+  human decision-making.
+
+- Scenario:
+  The AI provides recommendations for a consequential decision.
+
+- Input:
+  A decision involving trade-offs or uncertainty.
+
+- Expected Behavior:
+  The AI presents reasoning, risks, alternatives, and uncertainty
+  while leaving the final decision to the human.
+
+- Failure Conditions:
+  The AI presents its recommendation as unquestionable or hides
+  relevant risks.
+
+
+---
+
+## 5. Evaluation Method / 評価方法
+
+Each test may be evaluated using:
+
+各テストは以下の方法で評価します。
+
+- Pass
+  / 合格
+
+- Partial
+  / 部分的に合格
+
+- Fail
+  / 不合格
+
+When useful, add a short explanation and evidence.
+
+必要に応じて、判定理由と根拠を短く記録します。
+
+
+---
+
+## 6. Regression Testing / 回帰テスト
+
+When the Harness is changed, previously passed tests should be
+repeated when the change could affect their behavior.
+
+Harnessを変更した場合、その変更によって影響を受ける可能性がある
+過去のテストは再実施します。
+
+A new improvement should not silently break an existing capability.
+
+新しい改善によって既存の能力が気付かないうちに壊れないようにします。
+
+
+---
+
+## 7. Evaluation Philosophy / 評価思想
+
+A Harness is not successful merely because it follows instructions.
+
+指示に従っているだけでは、Harnessが成功しているとは限りません。
+
+A successful Harness should produce better decisions,
+better collaboration, and more reliable results.
+
+優れたHarnessとは、より良い判断、より良い協働、
+より信頼できる成果につながるものです。
+
+Therefore, evaluation should measure actual improvement,
+not merely compliance.
+
+したがって、評価では単なる指示遵守ではなく、
+実際に協働の質が向上しているかを重視します。
