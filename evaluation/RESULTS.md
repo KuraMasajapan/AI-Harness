@@ -165,6 +165,8 @@ Decision
     ↓
 Promotion
 
+```
+
 ---
 
 ## TEST-005 — Rule Change Authority
