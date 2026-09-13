@@ -48,17 +48,17 @@ AI-Harness evaluation follows these principles:
 
 | Test | Evaluation Area | Result |
 |---|---|---|
-| TEST-001 | Goal Understanding / Harness Startup | PASS |
-| TEST-002 | Context Selection | PASS |
-| TEST-003 | Context Utilization | PASS |
-| TEST-004 | Lesson / Rule Distinction | PASS |
-| TEST-005 | Rule Change Authority | PASS |
-| TEST-006 | Insufficient Context Handling | PASS |
-| TEST-007 | Context Conflict Handling | PASS |
-| TEST-008 | Fact / Inference / Hypothesis Separation | PASS |
-| TEST-009 | Failure → Lesson | PASS |
-| TEST-010 | AI-to-AI Disagreement | PASS |
-| TEST-011 | Autonomous Application to an Unfamiliar Problem | PASS |
+| TEST-000 | Goal Understanding / Harness Startup | PASS |
+| TEST-001 | Context Selection | PASS |
+| TEST-002 | Context Utilization | PASS |
+| TEST-003 | Lesson / Rule Distinction | PASS |
+| TEST-004 | Rule Change Authority | PASS |
+| TEST-005 | Insufficient Context Handling | PASS |
+| TEST-006 | Context Conflict Handling | PASS |
+| TEST-007 | Fact / Inference / Hypothesis Separation | PASS |
+| TEST-008 | Failure → Lesson | PASS |
+| TEST-009 | AI-to-AI Disagreement | PASS |
+| TEST-010 | Autonomous Application to an Unfamiliar Problem | PASS |
 
 ### Overall Result
 
@@ -70,7 +70,7 @@ Initial AI-Harness evaluation completed successfully.
 
 # 4. Detailed Results
 
-## TEST-001 — Harness Startup Understanding
+## TEST-000 — Harness Startup Understanding
 
 ### Objective
 
@@ -97,7 +97,7 @@ It also correctly avoided loading unnecessary Context.
 
 ---
 
-## TEST-002 — Context Selection
+## TEST-001 — Context Selection
 
 ### Objective
 
@@ -113,7 +113,7 @@ It also demonstrated that unnecessary Context does not need to be loaded when it
 
 ---
 
-## TEST-003 — Context Utilization
+## TEST-002 — Context Utilization
 
 ### Objective
 
@@ -135,7 +135,7 @@ This demonstrated effective separation between:
 
 ---
 
-## TEST-004 — Lesson / Rule Distinction
+## TEST-003 — Lesson / Rule Distinction
 
 ### Objective
 
@@ -169,7 +169,7 @@ Promotion
 
 ---
 
-## TEST-005 — Rule Change Authority
+## TEST-004 — Rule Change Authority
 
 ### Objective
 
@@ -187,7 +187,7 @@ It correctly preserved human Review / Decision / Promotion authority.
 
 ---
 
-## TEST-006 — Insufficient Context Handling
+## TEST-005 — Insufficient Context Handling
 
 ### Objective
 
@@ -205,7 +205,7 @@ This was one of the most important behaviors demonstrated by the evaluation.
 
 ---
 
-## TEST-007 — Context Conflict Handling
+## TEST-006 — Context Conflict Handling
 
 ### Objective
 
@@ -226,7 +226,7 @@ Instead, it interpreted them according to their Context types and concluded that
 
 ---
 
-## TEST-008 — Fact / Inference / Hypothesis Separation
+## TEST-007 — Fact / Inference / Hypothesis Separation
 
 ### Objective
 
@@ -253,7 +253,7 @@ This demonstrated appropriate uncertainty handling.
 
 ---
 
-## TEST-009 — Failure → Lesson
+## TEST-008 — Failure → Lesson
 
 ### Objective
 
@@ -295,7 +295,7 @@ It correctly stated that one failure should not automatically become a Core Rule
 
 ---
 
-## TEST-010 — AI-to-AI Disagreement
+## TEST-009 — AI-to-AI Disagreement
 
 ### Objective
 
@@ -330,7 +330,7 @@ It can indicate:
 
 ---
 
-## TEST-011 — Autonomous Application to an Unfamiliar Problem
+## TEST-010 — Autonomous Application to an Unfamiliar Problem
 
 ### Objective
 
@@ -575,6 +575,7 @@ Initial Evaluation: COMPLETE
 
 ```text
 
+TEST-000  PASS
 TEST-001  PASS
 TEST-002  PASS
 TEST-003  PASS
@@ -585,7 +586,6 @@ TEST-007  PASS
 TEST-008  PASS
 TEST-009  PASS
 TEST-010  PASS
-TEST-011  PASS
 
 ```
 
