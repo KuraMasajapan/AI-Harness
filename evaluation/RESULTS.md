@@ -245,7 +245,7 @@ Verify that the AI can distinguish:
 
 The AI correctly rejected the assumption:
 
-> Fewer components always means a better design.
+> **Fewer components always means a better design.**
 
 It recognized that the Project may value component reduction without that value automatically determining the optimal design.
 
@@ -319,7 +319,7 @@ The tested AI correctly:
 
 The important result was:
 
-> Disagreement is not necessarily failure.
+> **Disagreement is not necessarily failure.**
 
 It can indicate:
 
