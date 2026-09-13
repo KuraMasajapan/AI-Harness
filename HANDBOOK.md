@@ -50,6 +50,7 @@ AI-Harness
 
 現在の基本構造は以下の通り。
 
+<img width="162" height="545" alt="image" src="https://github.com/user-attachments/assets/7f936dbc-7114-4c14-8a8a-648c7ded6131" />
 AI-Harness/
 │
 ├── README.md
