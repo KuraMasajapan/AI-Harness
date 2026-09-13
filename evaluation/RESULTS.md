@@ -414,7 +414,7 @@ The evaluation demonstrated that limiting the AI to relevant Context can improve
 
 The Harness should therefore continue to favor:
 
-> minimum necessary Context
+> **minimum necessary Context**
 
 rather than loading all available information.
 
@@ -551,21 +551,21 @@ The Harness should evolve from real evidence.
 
 ## 9. Current Development Philosophy
 
-> The current AI-Harness design can be summarized as:
+> **The current AI-Harness design can be summarized as:**
 
-> Give the AI the right information, not all information.
+> **Give the AI the right information, not all information.**
 
-> Do not force an answer when the evidence is insufficient.
+> **Do not force an answer when the evidence is insufficient.**
 
-> Do not turn every Lesson into a Rule.
+> **Do not turn every Lesson into a Rule.**
 
-> Do not treat AI disagreement as failure.
+> **Do not treat AI disagreement as failure.**
 
-> Do not allow the AI to silently rewrite the system that governs it.
+> **Do not allow the AI to silently rewrite the system that governs it.**
 
-> Keep the human as the final authority.
+> **Keep the human as the final authority.**
 
-> Improve the Harness from actual experience.
+> **Improve the Harness from actual experience.**
 
 ---
 
