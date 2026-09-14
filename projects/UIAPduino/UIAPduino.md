@@ -3,7 +3,8 @@
 ## Current Development Target
 
 現在の最優先開発対象は、
-UIAPduino CH32V003専用の初心者・教育用途を意識した開発ボード　**製品名　`UIAP BASE（仮）`**　である。
+UIAPduino CH32V003専用の初心者・教育用途を意識した開発ボードである。
+　**製品名　`**UIAP BASE（仮）**`**　
 
 現在は最終製品仕様の確定よりも、試作機の完成を優先する。
 
