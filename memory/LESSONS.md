@@ -182,3 +182,40 @@ WORKFLOW.md   ← どう仕事をするか
     ↓
 MEMORY.md     ← 何を長期的に覚えるか
 LESSONS.md    ← 何を学び、改善候補にするか
+
+
+---
+
+## LESSON-001 Resume Brief for Human-AI Continuity / 再開時の人間とAIの連続性
+
+- Date: 2026-09-16
+- Context: Long-running collaborative projects are often resumed after many hours or days with short phrases such as "今日もよろしく", "続きをやろうか", or "再開しよう".
+- What Happened: A technically correct AI can recover the project checkpoint and immediately resume the next task. However, the human collaborator may have been away from the work for many hours and may need a short reconstruction of the previous session before acting.
+- Root Cause: Existing continuity design focused mainly on restoring AI context. It did not explicitly restore the human collaborator's working context.
+- Lesson: Memory should not only help the AI remember. At meaningful resume points, the AI should use reliable project state to help the human remember what was accomplished, what was decided, what remains unresolved, why the work stopped, and what should happen next.
+- Suggested Change: Introduce a lightweight "Resume Brief" behavior for continuing project work. When a resume-intent phrase is detected and a meaningful interruption is likely, prefer:
+  1. Previous progress / 前回の進捗
+  2. Decisions and verified results / 決まったこと・確認できた結果
+  3. Current unresolved state / 未解決の現在地
+  4. Reason for stopping when relevant / 中断理由
+  5. Recommended first action / 最初に再開する作業
+
+  For tracked projects, use the current project checkpoint/source of truth rather than relying only on conversational memory. Keep the brief short enough to restore context without becoming a full session log. After the brief, continue naturally into the work.
+
+  This is not intended for every greeting. It applies when the wording and project context indicate resumption of ongoing work.
+- Related Files: HARNESS.md, core/WORKFLOW.md, memory/MEMORY.md, projects/*
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+A useful distinction is:
+
+- Memory = index that helps locate relevant continuity
+- Project checkpoint = current source of truth
+- Technical report / Git history = historical record
+- Resume Brief = human-facing reconstruction of the current working context
+
+The goal is not to simulate emotion. The goal is continuity of collaboration: the AI remembers enough to help both sides return to the same workbench.
+
+AIが覚えているだけではなく、その記憶を人間が作業へ戻るためにも使う。
+これは「情報の継続」から「協働関係の継続」へHarnessを発展させる候補である。
