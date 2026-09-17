@@ -114,10 +114,7 @@ The depth of research should match the purpose of the component search.
 
 通常は2〜5候補程度で十分とし、未知の地域メーカーまで網羅した探索、JLCPCB実装費比較、BOM最適化、全カテゴリ横断検索などは行わない。
 
-Required context / 必須参照：
-
-- `core/RULES.md`
-- `core/WORKFLOW.md` の `Standard Component Lookup`
+通常検索では、必要に応じて `core/RULES.md` と `core/WORKFLOW.md` の一般的な `Research Task` を使う。高度な `Component Research Task` は原則として発火させない。
 
 ### B. Product-Grade Component Research / 製品開発向け高度部品調査
 
@@ -136,7 +133,7 @@ Required context / 必須参照：
 - `core/RULES.md`
 - `core/WORKFLOW.md`
   - `Research Task`
-  - `Product-Grade Component Research`
+  - `Component Research Task`
   - `Search Breadth Check`
   - `Reasoning / Verification Depth Check`
 - Relevant project file(s) only after identifying the current task scope.
@@ -159,7 +156,7 @@ Required context / 必須参照：
 
 ### Reasoning depth trigger / 思考量の提案条件
 
-Product-Grade Component Researchに該当し、タスクが技術的に複雑、複数カテゴリにまたがる、最適解を求めている、または誤選定による再設計コストが大きい場合は、より深い思考や追加検証が有効かを判断する。
+高度調査に該当し、タスクが技術的に複雑、複数カテゴリにまたがる、最適解を求めている、または誤選定による再設計コストが大きい場合は、より深い思考や追加検証が有効かを判断する。
 
 より深い思考が有効と判断できる場合は、ユーザーへ簡潔に提案する。
 原因が思考量か、検索範囲・情報源・外部データ不足か判別できない場合は断定せず、**精度に不満がある場合の再検証手段の一つとして思考レベルを上げる案を提示する。**
