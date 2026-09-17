@@ -186,3 +186,137 @@ This file contains AI-specific operating guidance and observed Lessons.
 If a lesson proves useful across multiple implementation agents, propose it for review as a shared Harness Rule or Skill. Do not silently promote it.
 
 複数の実装エージェントで有効だと確認されたLessonは、共通Harness RuleまたはSkillへの昇格を提案する。自動昇格はしない。
+
+## 13. Efficient Operating Model
+## 13. 効率的な運用モデル
+
+Prefer a three-role development loop when the repository is accessible to a stronger review agent and real-device verification requires a human.
+
+リポジトリを別のレビューAIが直接読めて、実機確認を人間が担当できる場合は、3者分業を基本とする。
+
+### Role A: Lead / Reviewer AI
+
+Responsibilities:
+- Read the actual repository state directly when possible.
+- Narrow the likely responsible file/function before asking AI Studio to act.
+- Produce the smallest safe implementation instruction.
+- Review the resulting code/diff after AI Studio reports completion.
+- Distinguish implementation claims from verified results.
+
+役割：
+- 可能ならGitHub等から実コードを直接確認する。
+- AI Studioに作業させる前に、責任箇所をファイル・関数単位まで絞る。
+- 最小安全な実装指示を作る。
+- AI Studioの作業後にコード・差分を再確認する。
+- 実装報告と検証済み結果を分離する。
+
+### Role B: Google AI Studio
+
+Responsibilities:
+- Perform the explicitly scoped code edit or PoC implementation.
+- Avoid broad architecture decisions unless delegated.
+- Avoid repeating already completed investigation.
+- Stop after the requested change/report instead of continuing autonomously.
+
+役割：
+- 明示された範囲のコード編集・PoC実装を行う。
+- 委任されていない設計判断を広げない。
+- 既に終わった調査を繰り返さない。
+- 指示された変更・報告が終わったら停止する。
+
+### Role C: Human / Real-device Verifier
+
+Responsibilities:
+- Perform device-specific actions the AIs cannot physically perform.
+- Report exact observed behavior, screenshots, timings, and errors.
+- Make UX acceptance decisions.
+
+役割：
+- AIが物理的に実行できない実機操作を担当する。
+- 実際の挙動、スクリーンショット、時間、エラーを報告する。
+- UX上の採否を判断する。
+
+Recommended loop:
+
+```text
+Observe on real device
+    ↓
+Lead AI reads repository and narrows cause
+    ↓
+AI Studio performs one scoped change
+    ↓
+Lead AI checks actual repository change
+    ↓
+Human verifies on real device
+    ↓
+Verified / Failed → next smallest loop
+```
+
+## 14. Checkpoint Brief and Token Discipline
+## 14. Checkpoint Briefとトークン節約
+
+When a task has already been investigated, do not ask AI Studio to reconstruct the entire history.
+
+すでに調査済みの課題では、AI Studioに履歴全体を再構築させない。
+
+Provide only the minimum current checkpoint:
+
+```text
+CURRENT STATE
+- Verified:
+- Failed / unresolved:
+
+CURRENT TASK
+- One objective only
+
+ALLOWED
+- Exact files/functions that may change
+
+FORBIDDEN
+- Unrelated files, UX changes, fallback, refactor, re-investigation
+
+STOP CONDITION
+- Save/report after the requested action; do not continue automatically
+```
+
+If the responsible code has already been identified by the Lead/Reviewer AI, prefer direct edit instructions over "investigate and fix" prompts.
+
+レビューAIが原因箇所を既に絞れている場合、「調査して直す」ではなく「この箇所をこの変更だけ行う」という直接編集指示を優先する。
+
+Avoid asking for expensive reporting when it adds no value. During unstable/quota-constrained sessions, a completion token such as `SAVED` may be sufficient, followed by independent repository verification.
+
+不安定またはQuota制約下では、価値の薄い長文報告を求めない。必要なら `SAVED` のような最小報告だけを求め、実際の変更確認はGitHub側で独立して行う。
+
+## 15. Trust Model: Report Is Not Verification
+## 15. 信頼モデル：報告は検証ではない
+
+Treat AI Studio outputs as claims about work performed, not as final truth.
+
+AI Studioの返答は「作業を行ったという報告」であり、最終的な事実認定ではない。
+
+Use the following acceptance ladder:
+
+```text
+Hypothesis
+→ Implemented (agent reported)
+→ Repository Confirmed (actual code/diff observed)
+→ Deployed
+→ Device Tested
+→ Verified
+```
+
+Examples:
+- `SAVED` means the agent claims the edit was saved.
+- A repository diff confirms whether the code was actually changed.
+- A desktop PASS does not prove mobile PASS.
+- A real-device failure overrides an implementation agent's success claim for that target environment.
+
+例：
+- `SAVED` は保存したというエージェント報告。
+- GitHub差分で実際のコード変更を確認する。
+- デスクトップでのPASSはモバイルのPASSを意味しない。
+- 対象実機で失敗した場合、その環境についてはAI Studioの成功報告より実機結果を優先する。
+
+Agent status indicators such as "Working" should not be used as proof of progress. Progress is established only by observable checkpoints such as a changed file, a passed diagnostic stage, or a real-device result.
+
+`Working` などの状態表示は進捗の証拠としない。変更されたファイル、通過した診断STEP、実機結果など、観測可能なCheckpointで進捗を判断する。
