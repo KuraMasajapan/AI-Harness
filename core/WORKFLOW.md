@@ -324,6 +324,63 @@ Meaningful lessons belong in `memory/LESSONS.md`.
 
 ---
 
+## Component Research Task / 電子部品調査
+
+電子部品の候補選定では、既知の有名部品や最初に思い付いた型番だけを起点にしない。
+
+特にコスト、在庫、実装性、調達性が製品成立に影響する場合は、以下の順で調査する。
+
+```text
+要求機能を分解する
+  ↓
+電気的・機械的・製造上の必須条件を整理する
+  ↓
+部品カテゴリと検索語を複数方向へ展開する
+  ↓
+メーカー起点と流通・実装サービス起点の両方から候補を広く集める
+  ↓
+ライブ在庫・価格・パッケージ・実装区分で一次選別する
+  ↓
+データシートで電圧・電流・論理レベル・タイミング・起動時挙動を検証する
+  ↓
+BOM全体、基板面積、実装費、代替性まで比較する
+  ↓
+少数候補へ絞る
+```
+
+候補生成時は、次の点に注意する。
+
+* 「74HC595の代替」のような型番中心の検索だけでなく、「16ch serial-in constant-current LED driver」のように**必要な機能そのもの**から検索する。
+* 1つのカテゴリ名に固定せず、shift register、LED driver、constant-current sink、serial-to-parallel、GPIO expanderなど、隣接カテゴリや同義語も確認する。
+* JLCPCB / LCSCなど実際に使用する調達・実装環境が重要な場合は、一般Web検索だけでなく**その部品ライブラリ・在庫を起点に逆引きする。**
+* TI、Nexperia、STなど知名度の高いメーカーだけで候補を閉じず、目的に合う場合は地域メーカーや中国系メーカーも候補生成段階では含める。
+* 候補を見つけた直後に推奨へ進まず、同じ要求を満たす別方式がないか最低一度は横方向に探索する。
+* 単価だけでなく、必要な周辺抵抗・レベル変換・追加IC・実装費を含む**実装済みBOMコスト**で比較する。
+* 在庫数は瞬間値として扱い、量産候補では継続補充、複数流通、代替部品、再設計の逃げ道も評価する。
+* 検索結果とデータシートの記載が食い違う場合はデータシートを優先し、在庫・価格は販売側のライブ情報を優先する。
+
+### Search Breadth Check / 候補探索の打ち切り確認
+
+最初の候補が十分良く見えても、重要な部品選定では次の問いに答えるまで探索を早期終了しない。
+
+1. 同じ機能をより少ない部品で実現するカテゴリはないか。
+2. 同じ機能で、より安く・在庫が多く・実装しやすい部品はないか。
+3. 現在の回路方式そのものを変えると、より単純になる案はないか。
+4. 実際の製造サービスで入手しやすいローカル／地域メーカー品を見落としていないか。
+5. 推奨候補が消えた場合の代替または再設計経路があるか。
+
+この工程の目的は候補数を増やすことではなく、**検索空間を十分に広げた後で絞り込むこと**である。
+
+### English
+
+For electronic component selection, do not begin and end with familiar or famous part numbers.
+
+When cost, stock, assembly, and sourcing affect product viability, use a requirements-first and supplier-aware search process. Expand the functional search space before narrowing candidates, search both manufacturer sources and the actual distributor/assembly ecosystem, verify electrical behavior from datasheets, compare implemented BOM cost rather than unit price alone, and evaluate sourcing continuity and fallback paths.
+
+A promising first candidate is not sufficient reason to stop searching. Before narrowing, explicitly check whether an adjacent component category, a lower-part-count architecture, a supplier-native regional part, or a simpler implementation can satisfy the same requirement better.
+
+---
+
 ## Creation Task / 制作
 
 ```text
