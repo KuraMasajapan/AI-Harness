@@ -320,3 +320,38 @@ Examples:
 Agent status indicators such as "Working" should not be used as proof of progress. Progress is established only by observable checkpoints such as a changed file, a passed diagnostic stage, or a real-device result.
 
 `Working` などの状態表示は進捗の証拠としない。変更されたファイル、通過した診断STEP、実機結果など、観測可能なCheckpointで進捗を判断する。
+
+## 16. Protected Extension Prompts
+## 16. 成功済み機能を拡張するときの保護付き指示
+
+When Google AI Studio extends a feature that is already working or already accepted, prefer a protected implementation prompt over a short open-ended request.
+
+Google AI Studioに、すでに動作している機能や採用済みの機能を拡張させる場合は、短く自由度の高い依頼よりも、既存成功部分を明示的に保護した実装指示を優先する。
+
+A protected extension prompt should normally include:
+
+- What new behavior is being added
+- Exact files or layers that may change
+- Existing files or behaviors that must remain untouched
+- Rendering / interaction / export order that must be preserved
+- Visual or UX success criteria
+- Explicit anti-goals (what the result must not become)
+- A stop condition and implementation report
+
+保護付き指示には原則として以下を含める：
+
+- 何を新しく追加するのか
+- 変更してよいファイル・レイヤー
+- 触れてはいけない既存ファイル・挙動
+- 維持すべき描画順・操作順・書き出し構造
+- 見た目・UXの成功条件
+- してはいけない表現や方向（anti-goals）
+- 停止条件と実装後の報告内容
+
+This is especially useful for visual effects and UX-sensitive work. A technically sophisticated implementation report does not prove that the visual result is good. Human visual acceptance on the target device remains authoritative for aesthetic quality.
+
+特に視覚演出やUX依存の作業では有効である。技術的に高度な実装説明や数式上の整合性は、見た目の良さを保証しない。美的品質については対象実機での人間の評価を優先する。
+
+Do not promote this behavior to a general rule for every implementation agent without separate evidence. This guidance is currently specific to observed Google AI Studio behavior.
+
+この運用を他の実装エージェントへ自動的に一般化しない。現時点では、Google AI Studioで観測された挙動に対する固有ガイドとして扱う。
