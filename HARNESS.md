@@ -86,7 +86,71 @@ when the current task does not require it.
 
 ---
 
-## 5. Current Structure / 現在の構成
+## 5. Task Routing / タスク別の読み込み経路
+
+Progressive disclosure must not cause a relevant workflow to be skipped.
+When a task matches one of the following patterns, load the indicated core context before making an important recommendation or design decision.
+
+段階的読み込みによって、必要なワークフロー自体を読み飛ばしてはいけない。
+以下に該当するタスクでは、重要な推奨や設計判断を行う前に、対応する中核コンテキストを読み込む。
+
+### Technical research, component selection, architecture comparison
+
+対象例：
+
+- 電子部品・IC・MCUの選定
+- 回路方式やアーキテクチャ比較
+- 価格・在庫・JLCPCB / LCSC実装性を含む選定
+- 「最適解」「代替候補」「見落としがないか」の検証
+- 採用後の再設計コストが大きい技術判断
+
+Required context / 必須参照：
+
+- `core/RULES.md`
+- `core/WORKFLOW.md`
+  - `Research Task`
+  - `Component Research Task`
+  - `Search Breadth Check`
+  - `Reasoning / Verification Depth Check`
+- Relevant project file(s) only after identifying the current task scope.
+
+この種のタスクでは、既知の型番や最初の候補から検索を始めて早期に固定せず、**要件から検索空間を作り、横方向に探索してから絞り込む。**
+
+### Reasoning depth trigger / 思考量の提案条件
+
+If the task is technically complex, spans multiple candidate categories, requires an optimum rather than a merely workable solution, or a wrong choice would cause meaningful redesign cost, assess whether deeper reasoning or verification would materially improve confidence.
+
+次のような場合は、より高い思考量または追加検証が有効かを判断する。
+
+- 複数カテゴリを横断する探索
+- 複数の電気的・製造的条件が絡む
+- 「動くもの」ではなく「より良い候補」を探している
+- 見落とし検証が重要
+- 採用後の変更コストが大きい
+
+より深い思考が有効と判断できる場合は、ユーザーへ簡潔に提案する。
+原因が思考量か、検索範囲・情報源・外部データ不足か判別できない場合は断定せず、**精度に不満がある場合の再検証手段の一つとして思考レベルを上げる案を提示する。**
+
+高い思考量は正確さを保証しない。思考量と証拠の質は別に評価する。
+
+### Re-evaluation trigger / 再検証の発火条件
+
+When the user indicates that the result feels incomplete, asks why a candidate was missed, requests a deeper review, or challenges the search quality, do not merely refine the current shortlist.
+
+ユーザーが、
+
+- 精度に不満を示す
+- 候補の見落としを指摘する
+- 「もう一度しっかり調べて」と求める
+- なぜ最初に候補へ出なかったかを問う
+
+場合は、現在の候補リストだけを磨き直すのではなく、必要に応じて**要件定義まで戻って候補生成をやり直す。**
+
+再検証では、思考量、検索範囲、検索カテゴリ、一次資料、ライブ在庫・価格のどこに不足があったかを分けて確認する。
+
+---
+
+## 6. Current Structure / 現在の構成
 
 ```text
 AI-Harness/
@@ -113,7 +177,7 @@ Harnessの発展に応じて追加します。
 
 ---
 
-## 6. Authority / 優先順位
+## 7. Authority / 優先順位
 
 The Harness should respect the following priority:
 
@@ -137,7 +201,7 @@ Harnessは以下の優先順位を基本とします。
 
 ---
 
-## 7. Evolution / 発展
+## 8. Evolution / 発展
 
 AI-Harness should evolve through actual use.
 
