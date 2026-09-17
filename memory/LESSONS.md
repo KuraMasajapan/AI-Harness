@@ -219,3 +219,60 @@ The goal is not to simulate emotion. The goal is continuity of collaboration: th
 
 AIが覚えているだけではなく、その記憶を人間が作業へ戻るためにも使う。
 これは「情報の継続」から「協働関係の継続」へHarnessを発展させる候補である。
+
+---
+
+## LESSON-002 Checkpoint Brief for Constrained AI Agents / 制約のあるAIエージェントへのチェックポイント要約
+
+- Date: 2026-09-17
+- Context: During a difficult Google AI Studio debugging task, repeated broad investigation of MediaPipe initialization and large bundle files consumed substantial execution time and eventually encountered quota/overload interruptions.
+- What Happened: The implementation agent repeatedly re-entered expensive investigation. Once the task was narrowed to a known checkpoint and a single question, it returned a concrete cause candidate: the model was successfully fetched into an ArrayBuffer, but STEP 6 used a separate modelAssetPath route instead of the already verified model buffer.
+- Root Cause: The agent was allowed to reconstruct too much context and combine investigation, diagnosis, modification, and verification in one working turn. Platform quota/overload may also have contributed, so the Harness should not attribute all interruptions to prompt design.
+- Lesson: A project checkpoint can serve a second purpose beyond human continuity: it can constrain an implementation agent's search space. For limited or unstable agents, explicitly provide the known current state and ask for only the next observable operation rather than repeatedly reconstructing project history.
+- Suggested Change: When useful, provide a compact "Checkpoint Brief" containing:
+  - Verified state
+  - Current failure/unresolved point
+  - One current objective
+  - Search boundary
+  - Allowed/forbidden changes
+  - Stop condition
+
+  Prefer short cycles such as: investigate one point → report → human/lead-AI review → modify one point → report → real verification. Reuse already verified evidence instead of requesting the same exploration again.
+- Related Files: agents/Google-AI-Studio/HARNESS.md, core/WORKFLOW.md, projects/*
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+Resume Brief and Checkpoint Brief share the same source-of-truth philosophy but serve different collaborators:
+
+- Resume Brief restores the human collaborator's working context.
+- Checkpoint Brief reduces reconstruction and search cost for an AI collaborator.
+
+Do not assume that changing models or prompts alone resolves platform quota or overload behavior. Record observations separately from inferred causes.
+
+---
+
+## LESSON-003 Agent Status Is Not Progress / エージェントの状態表示は進捗そのものではない
+
+- Date: 2026-09-17
+- Context: Google AI Studio repeatedly displayed a working state while long tasks later ended in interruption, quota, or error conditions. From the outside it was unclear whether useful work was progressing, waiting on a model/tool request, or stalled.
+- What Happened: A visible status such as "Working" did not provide enough evidence to know whether the requested implementation had advanced.
+- Root Cause: Interface activity indicators describe agent/session state, not necessarily completion of an observable project checkpoint.
+- Lesson: Do not treat an agent's busy/working indicator as proof of progress. Judge progress by observable artifacts or verified state transitions.
+- Suggested Change: For long or unreliable agent operations, define small observable checkpoints such as:
+  - target file read
+  - cause reported
+  - exact line changed
+  - file saved
+  - diagnostic step passed
+  - real-device result verified
+
+  If an operation repeatedly stalls, reduce it to the smallest meaningful read/write/test action before retrying broader work.
+- Related Files: agents/Google-AI-Studio/HARNESS.md, core/WORKFLOW.md, evaluation/*
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+Agent Status ≠ Progress.
+
+This lesson is intentionally generic. The observed incident occurred in Google AI Studio, but the principle may apply to other autonomous or long-running AI agents. It should remain Proposed until repeated use confirms that the distinction improves reliability.
