@@ -276,3 +276,34 @@ Do not assume that changing models or prompts alone resolves platform quota or o
 Agent Status ≠ Progress.
 
 This lesson is intentionally generic. The observed incident occurred in Google AI Studio, but the principle may apply to other autonomous or long-running AI agents. It should remain Proposed until repeated use confirms that the distinction improves reliability.
+
+---
+
+## LESSON-004 Requirements-First Component Search / 要件起点の電子部品探索
+
+- Date: 2026-09-18
+- Context: During UIAP BASE LED-output architecture research, early investigation focused on familiar solutions such as 74HC595 and well-known LED driver ICs. A highly suitable low-cost 16-channel constant-current serial LED driver (SM16206S) appeared only after the search was reframed around the functional requirements and JLCPCB/LCSC ecosystem.
+- What Happened: The initial search produced technically valid candidates, but failed to surface a potentially better-fit part early. The missed candidate combined several desired properties at once: 16 outputs in one IC, constant-current LED drive, 3.3 V compatibility, low unit price, and direct relevance to JLCPCB assembly.
+- Root Cause: Candidate generation was too anchored to known part numbers, well-known global manufacturers, and familiar component categories. The search did not initially perform enough requirements-first category expansion, supplier-library reverse search, regional-manufacturer discovery, or adjacent-category exploration.
+- Lesson: Component research should separate **candidate generation** from **candidate verification**. Candidate generation should deliberately maximize relevant search breadth from the requirements, not from the AI's familiarity. Verification should then aggressively narrow candidates using datasheets, live stock, price, assembly compatibility, total BOM cost, and fallback paths.
+- Suggested Change: For important component selection, use the following pattern:
+  1. Express the need as functions and constraints rather than known part numbers.
+  2. Search several adjacent component categories and synonyms.
+  3. Search both manufacturer sources and the actual distributor/assembly ecosystem used by the project.
+  4. Include suitable regional or less-famous manufacturers during candidate generation.
+  5. Before recommending a first good candidate, perform one explicit lateral-search pass for a lower-part-count or better-integrated alternative.
+  6. Compare implemented BOM cost, not IC unit price alone.
+  7. Treat stock as dynamic and evaluate fallback/re-design paths.
+- Related Files: core/WORKFLOW.md, projects/UIAPduino/UIAP_BASE.md
+- Status: Promoted
+
+### Design Note / 設計メモ
+
+The failure was not that the earlier candidates were wrong. The failure was that the search space was narrowed too early.
+
+A useful distinction is:
+
+- Candidate generation = search broadly from requirements.
+- Candidate verification = narrow aggressively using evidence.
+
+This prevents model familiarity from becoming an unintended filter on engineering decisions.
