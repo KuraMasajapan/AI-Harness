@@ -371,13 +371,39 @@ BOM全体、基板面積、実装費、代替性まで比較する
 
 この工程の目的は候補数を増やすことではなく、**検索空間を十分に広げた後で絞り込むこと**である。
 
+### Reasoning / Verification Depth Check / 思考量・検証深度の確認
+
+部品探索や技術比較では、結果の質が検索手順だけでなく、利用可能な思考量・検証量にも影響される場合がある。
+
+特に以下では、より深い思考・検証が有効になりやすい。
+
+* 候補カテゴリが複数にまたがる
+* 部品単体ではなくBOM全体や製造性まで比較する
+* 電圧、論理レベル、起動時挙動、タイミングなど複数条件が絡む
+* 「最適解」「代替候補」「見落としがないか」を求める
+* 採用後の再設計コストが大きい
+* 最初の検索結果に違和感や精度不足がある
+
+AIが現在の思考量では探索不足の可能性が高いと判断できる場合は、重要な決定前に、より高い思考レベルまたは追加検証を使う価値があることをユーザーへ簡潔に提案する。
+
+一方、思考量が原因か検索手順・情報源・外部データ不足が原因か判別できない場合は、断定しない。その場合は、精度に不満があるときの再検証手段として、次の選択肢を提示できる。
+
+* 思考レベルを上げて候補生成から再実行する
+* 検索範囲を広げ、別カテゴリ・別メーカー・流通側から再探索する
+* 一次資料を増やして再検証する
+* 候補を一度白紙に戻し、要件から再生成する
+
+高い思考量は正確さを保証するものではない。**思考量の増加と、信頼できる一次情報・ライブ在庫・実データによる検証は別物**として扱う。
+
 ### English
 
-For electronic component selection, do not begin and end with familiar or famous part numbers.
+For complex component searches and technical comparisons, result quality may depend not only on search procedure but also on available reasoning and verification depth.
 
-When cost, stock, assembly, and sourcing affect product viability, use a requirements-first and supplier-aware search process. Expand the functional search space before narrowing candidates, search both manufacturer sources and the actual distributor/assembly ecosystem, verify electrical behavior from datasheets, compare implemented BOM cost rather than unit price alone, and evaluate sourcing continuity and fallback paths.
+When the task spans multiple component categories, combines electrical constraints with BOM/manufacturing tradeoffs, asks for an optimum or missed alternatives, or carries high redesign cost, deeper reasoning and additional verification may materially improve the search. If the AI can identify this need, it should briefly suggest using a higher reasoning level or a deeper verification pass before an important decision.
 
-A promising first candidate is not sufficient reason to stop searching. Before narrowing, explicitly check whether an adjacent component category, a lower-part-count architecture, a supplier-native regional part, or a simpler implementation can satisfy the same requirement better.
+If it is unclear whether poor accuracy comes from reasoning depth, search breadth, source quality, or missing external data, do not claim a cause. Instead, treat higher reasoning effort as one diagnostic option alongside broader search, more primary-source verification, or restarting candidate generation from requirements.
+
+Higher reasoning effort does not guarantee factual correctness. Reasoning depth and evidence quality must be treated separately.
 
 ---
 
