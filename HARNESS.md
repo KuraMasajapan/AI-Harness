@@ -89,44 +89,77 @@ when the current task does not require it.
 ## 5. Task Routing / タスク別の読み込み経路
 
 Progressive disclosure must not cause a relevant workflow to be skipped.
-When a task matches one of the following patterns, load the indicated core context before making an important recommendation or design decision.
+The depth of research should match the purpose of the component search.
 
-段階的読み込みによって、必要なワークフロー自体を読み飛ばしてはいけない。
-以下に該当するタスクでは、重要な推奨や設計判断を行う前に、対応する中核コンテキストを読み込む。
+段階的読み込みによって必要なワークフローを読み飛ばしてはいけない。
+ただし、電子部品の検索をすべて同じ深さで扱わず、**用途に応じて調査深度を切り替える。**
 
-### Technical research, component selection, architecture comparison
+### A. Standard Component Lookup / 通常の電子部品検索
 
 対象例：
 
-- 電子部品・IC・MCUの選定
-- 回路方式やアーキテクチャ比較
-- 価格・在庫・JLCPCB / LCSC実装性を含む選定
-- 「最適解」「代替候補」「見落としがないか」の検証
-- 採用後の再設計コストが大きい技術判断
+- DIY、学習、修理、単発の試作
+- 一般的なセンサー、抵抗、トランジスタ、リレー、DC-DCなどを探す
+- Amazon、秋月電子、マルツ等から少量購入する
+- 特殊な最適化より、すぐ入手できて安心して使えることが重要
+
+この場合は、過度な候補探索を行わず、次を優先する。
+
+- 市場に広く流通している
+- 複数販売店で容易に入手できる
+- 価格帯が長期的に大きく崩れにくい
+- 使用実績が多く情報を得やすい
+- 必要十分な信頼性・堅牢性がある
+- 用途に対して十分なコストパフォーマンスがある
+
+通常は2〜5候補程度で十分とし、未知の地域メーカーまで網羅した探索、JLCPCB実装費比較、BOM最適化、全カテゴリ横断検索などは行わない。
 
 Required context / 必須参照：
 
 - `core/RULES.md`
+- `core/WORKFLOW.md` の `Standard Component Lookup`
+
+### B. Product-Grade Component Research / 製品開発向け高度部品調査
+
+対象例：
+
+- JLCPCB / LCSC等を利用したPCB・PCBA設計
+- 数十〜量産を想定した製品
+- BOMコスト、実装費、基板面積、供給性が製品成立に影響する
+- 既存市場にない価値や独自コンセプトを作る製品
+- 複数の回路方式からアーキテクチャ自体を選ぶ必要がある
+- 「最適解」「代替候補」「見落としがないか」の検証
+- 採用後の再設計コストが大きい技術判断
+
+この場合は重要な推奨や設計判断を行う前に以下を参照する。
+
+- `core/RULES.md`
 - `core/WORKFLOW.md`
   - `Research Task`
-  - `Component Research Task`
+  - `Product-Grade Component Research`
   - `Search Breadth Check`
   - `Reasoning / Verification Depth Check`
 - Relevant project file(s) only after identifying the current task scope.
 
 この種のタスクでは、既知の型番や最初の候補から検索を始めて早期に固定せず、**要件から検索空間を作り、横方向に探索してから絞り込む。**
 
+### Escalation / 通常検索から高度調査への切替
+
+通常の部品検索として開始しても、調査中に以下が判明した場合は高度調査へ切り替えることを検討する。
+
+- 一般的な部品では要求を満たせない
+- 数円〜数十円の差が製品コストに大きく効く
+- 部品点数削減が重要
+- JLCPCB等の実装可否・在庫が設計を左右する
+- 独自機能の実現方法そのものを比較している
+- 代替性や長期供給が重要
+- ユーザーがより高精度な探索を求めた
+
+切替が有効な場合は、必要に応じてユーザーへ簡潔に説明する。
+
 ### Reasoning depth trigger / 思考量の提案条件
 
-If the task is technically complex, spans multiple candidate categories, requires an optimum rather than a merely workable solution, or a wrong choice would cause meaningful redesign cost, assess whether deeper reasoning or verification would materially improve confidence.
-
-次のような場合は、より高い思考量または追加検証が有効かを判断する。
-
-- 複数カテゴリを横断する探索
-- 複数の電気的・製造的条件が絡む
-- 「動くもの」ではなく「より良い候補」を探している
-- 見落とし検証が重要
-- 採用後の変更コストが大きい
+Product-Grade Component Researchに該当し、タスクが技術的に複雑、複数カテゴリにまたがる、最適解を求めている、または誤選定による再設計コストが大きい場合は、より深い思考や追加検証が有効かを判断する。
 
 より深い思考が有効と判断できる場合は、ユーザーへ簡潔に提案する。
 原因が思考量か、検索範囲・情報源・外部データ不足か判別できない場合は断定せず、**精度に不満がある場合の再検証手段の一つとして思考レベルを上げる案を提示する。**
@@ -144,7 +177,7 @@ When the user indicates that the result feels incomplete, asks why a candidate w
 - 「もう一度しっかり調べて」と求める
 - なぜ最初に候補へ出なかったかを問う
 
-場合は、現在の候補リストだけを磨き直すのではなく、必要に応じて**要件定義まで戻って候補生成をやり直す。**
+場合は、必要に応じて通常検索から高度調査へ昇格し、現在の候補リストだけを磨き直すのではなく、**要件定義まで戻って候補生成をやり直す。**
 
 再検証では、思考量、検索範囲、検索カテゴリ、一次資料、ライブ在庫・価格のどこに不足があったかを分けて確認する。
 
