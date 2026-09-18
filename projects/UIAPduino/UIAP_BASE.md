@@ -441,7 +441,7 @@ PCB粗配置へ進む前に、以下を基本回路へ反映して確定する�
 
 ---
 
-## Prototype Basic Circuit Baseline — 2026-09-18
+## Prototype Basic Circuit Baseline V0.1 — 2026-09-18 (partially superseded)
 
 CH32V203C8T6 + SM16206S の1-MCU構成について、基本回路図へ進めるための暫定ベースラインを定める。
 
@@ -567,3 +567,269 @@ PCB freeze
 ```
 
 次工程では、UIAPduino socket、15 LEDs、CH32V203、SM16206S、terminal blocks、RESET/MODE、USB DNP、裏面debug padsの物理配置を検討する。
+
+---
+
+## Basic Circuit V0.2 Candidate — 2026-09-18
+
+Feature Freeze 0.1を基本回路へ反映した最新版候補。
+
+このセクションは、上記Prototype Basic Circuit Baseline V0.1のうち、button / RESET、Grove、Secret LED、USB resource allocationに関する内容を更新する。CH32V203C8T6 + SM16206Sという基本骨格、3.3V logic / 5V LED rail、15信号監視の方針は維持する。
+
+### 1. A / B Action Buttons
+
+A / BはBASEの日常操作用buttonとし、UIAPduino RESETとは分離する。
+
+暫定回路：
+
+- BTN_A：PA4 input
+- BTN_B：PA5 input
+- 各pinは10kΩで3.3Vへpull-up
+- 各buttonは押下時にGNDへ接続
+- debounceは原則firmwareで行う
+- V0.2ではbuttonごとのRC debounce capacitorは必須としない
+- A+B同時押し、長押し、boot時押下をfirmwareで識別可能にする
+
+A / Bはgameだけでなく、MODE、selection、inspection、future functionにも使う。
+
+### 2. Dedicated UIAPduino RESET
+
+UIAPduino V1.4にはRESET / D17信号が外部端子へ出ているため、BASE側に小型の専用RESET buttonを設ける。
+
+physical RESETはBASE MCUが停止していても動作するよう、RESET / D17をbuttonで直接GNDへ落とす。
+
+加えて、BASE MCUからもUIAPduinoをresetできるようにする候補として以下を採用する。
+
+- UIAPduino RESET / D17 → N-MOSFET drain
+- N-MOSFET source → GND
+- N-MOSFET gate → PA6
+- gate → 100kΩ pull-down → GND
+- device candidate：2N7002 class
+
+これにより以下を分離する。
+
+- A / B：ユーザー操作
+- RESET：物理的なUIAPduino hard reset
+- PA6 + MOSFET：BASE MCUからのprogrammatic reset
+
+専用RESET buttonはA / Bより小さくする、または配置を離して誤操作を防ぐ。
+
+### 3. Secret LED
+
+SM16206SのOUT15を予備のまま残さず、Secret LED用channelとして使用する候補とする。
+
+暫定回路：
+
+- LED16 anode → LED_5V
+- LED16 cathode → SM16206S OUT15
+- currentは他の状態表示LEDと同じREXT設定で制御
+- LED package / color / mounting sideはPCB layoutで確定
+
+用途：
+
+- UIAP BASE logo / icon illumination
+- GAME / MODE special effect
+- inspection state
+- hidden message / achievement
+- board artとの連携
+
+FR-4透過方式はPCB厚、solder mask色、LED brightnessに強く依存するため、V0.2では方式を固定しない。表面icon、裏面LED、cutout等をlayout時に比較する。
+
+### 4. Grove / M5Stack Unit Port — V0.2 Scope
+
+V0.2ではGroveを「万能port」にせず、M5Stack Port.A系のI2Cと一般GPIOを主軸にする。
+
+M5Stack HY2.0-4Pの一般的な物理配列：
+
+- Black：GND
+- Red：5V
+- Yellow：signal
+- White：signal
+
+M5Stack Port.AではYellow = SDA、White = SCLとして使用される。
+
+#### Signal Assignment
+
+CH32V203のPB6 / PB7をGroveへ割り当てる。
+
+- Yellow → PB7 / I2C1_SDA
+- White → PB6 / I2C1_SCL
+- PB6 / PB7は通常GPIOとしても利用可能
+- PB6 / PB7は5V tolerant (FT) pin
+
+これにより、I2C Unitだけでなく、Button / Buzzer / LED系など単純GPIOを使うUnitの多くにもfirmware対応できる。
+
+V0.2では以下を標準対応範囲とする。
+
+- I2C
+- Digital Input / Output
+- PWM等、通常GPIOで実現できる機能
+
+以下はV0.2で「完全互換」を保証しない。
+
+- Analog inputを必要とするUnit
+- Grove UART pin orderを前提とするUnit
+- 大電流Unit
+- 5V output logicを必須とする特殊Unit
+
+UARTやAnalogまで完全対応するためにMUX / level conversion / additional ADC等を標準搭載することは、現段階では行わない。
+
+#### Grove Power
+
+M5Stack Unitとの互換性を優先し、GROVE_VCCは5Vをdefaultとする。
+
+ただしSeeed Grove系には3.3V動作を前提とするmoduleも存在するため、PCB上に5V / 3.3V選択用solder jumperを設ける案を採用する。
+
+- default：5V
+- optional：3.3V
+- 初心者が通常操作するjumperにはしない
+- silkscreenでdefault 5Vを明示する
+
+3.3V railはUIAPduino上のXC6206 regulatorを経由するため、外部moduleへ大電流を供給する用途には使用しない。
+
+#### Signal Protection
+
+Grove signal 2本には100～330Ω程度のseries resistorを入れる候補とする。
+
+I2C pull-upはmodule側との重複を考慮し、4.7kΩ程度のDNP pull-up footprintを3.3V側へ用意する案を採用する。
+
+最終抵抗値は実機でI2C rise time、GPIO operation、誤接続時挙動を確認して決定する。
+
+#### Power Budget
+
+UIAP BASEのGrove portは、V0.2ではsensor / display / button / buzzer等のlow-power Unitを主対象とする。
+
+motor / vibrator / high-power actuatorなど、USB power budgetへ大きな負荷を与えるUnitは標準用途に含めない。
+
+GROVE_5V branchには、0Ω linkまたはresettable fuseを選択できるfootprintを入れ、prototypeで実電流を測定して保護値を決定する。
+
+### 5. Grove Connector Candidate
+
+PCB edgeへ横向きに挿せるHY2.0-4P、2.0mm pitch、right-angle SMDを第一候補とする。
+
+2026-09-18時点の候補：
+
+- CAX HY2.0-4P-WT / JLCPCB C722729
+  - SMD right-angle
+  - 2.0mm pitch
+  - JLCPCB SMT assembly対応
+  - low-cost candidate
+- XUNPU WAFER-HY2.0-4PWB / JLCPCB C3029460
+  - SMD right-angle
+  - 2.0mm pitch
+  - auxiliary solder supportあり
+  - stock / mechanical robustnessの比較候補
+
+final BOMでは最新stock、単価、connector retention、cable compatibilityを再確認して決定する。
+
+### 6. USB Resource Allocation
+
+PB6 / PB7はV0.2でGroveへ使用するため、CH32V203のUSBFS host/device interfaceとしては使用しない。
+
+将来のBASE側USBはPA11 / PA12のUSB Device interfaceを使用する方向とする。
+
+これによりV0.2で残せる将来機能：
+
+- USB CDC
+- USB HID
+- BASE firmware update / PC communication
+
+一方、CH32V203によるUSB Host機能はV0.2標準基板では優先しない。
+
+USB Hostが必要になる将来版では、Groveとのpin sharing、MUX、別MCU、別board revisionのいずれかで再設計する。
+
+このtrade-offは、現時点ではGrove / M5Stack ecosystemへの接続価値を優先する判断とする。
+
+### 7. Qwiic
+
+UIAPduino CH32V003 V1.4にはQwiic用CN2 (SM04B-SR) footprintがあり、標準出荷時は未実装である。
+
+BASE側にはQwiic connectorを重複搭載しない。
+
+代わりにPCB rough placementで以下を確認する。
+
+- UIAPduino CN2を後付けした場合にBASE部品と干渉しない
+- cableを抜き差しできるclearanceがある
+- case / trayを後から作ってもQwiic accessを塞がない
+
+### 8. SAO
+
+V0.2基本回路にはSAO専用active circuitを追加しない。
+
+PCB rough placementで十分な空き面積が残った場合のみ、以下のどちらかを比較する。
+
+- backside DNP 2x3 footprint
+- Grove / generic expansionからのSAO adapter
+
+初心者向け表面UIにはSAOを前面表示しない。
+
+### 9. Updated Pin Resource Plan
+
+V0.2暫定割当：
+
+| Function | CH32V203 |
+|---|---|
+| SM16206 SDI | PA0 |
+| SM16206 CLK | PA1 |
+| SM16206 LE | PA2 |
+| SM16206 OE | PA3 |
+| BTN_A | PA4 |
+| BTN_B | PA5 |
+| UIAP RESET control | PA6 |
+| Reserved / sense candidate | PA7 |
+| Monitor D6 | PA8 |
+| Monitor D16 / RX | PA9 |
+| Monitor D15 / TX | PA10 |
+| BASE USB Device D- | PA11 |
+| BASE USB Device D+ | PA12 |
+| SWDIO | PA13 |
+| SWCLK | PA14 |
+| Monitor D7 | PA15 |
+| Monitor D8 | PB3 |
+| Monitor D9 | PB4 |
+| Monitor D10 | PB5 |
+| Grove SCL / GPIO | PB6 |
+| Grove SDA / GPIO | PB7 |
+| Monitor D11 | PB8 |
+| Monitor D12 | PB9 |
+| Monitor D0 | PB10 |
+| Monitor D1 | PB11 |
+| Monitor D2 | PB12 |
+| Monitor D3 | PB13 |
+| Monitor D4 | PB14 |
+| Monitor D5 | PB15 |
+| BOOT1 | PB2 |
+| HSE | PD0 / PD1 |
+
+PB10 / PB11は現時点ではUIAPduino D0 / D1 monitorを維持する。
+
+GroveをPB6 / PB7へ割り当てることで15本monitorの5V tolerant input構成を崩さず、追加level shifter / dividerを避ける。
+
+### 10. V0.2 Circuit Assessment
+
+Feature Freeze 0.1を回路へ反映した結果、主要な追加部品は概ね以下へ収まる。
+
+- action button ×2
+- button pull-up resistor ×2
+- dedicated UIAP RESET button ×1
+- RESET control用N-MOSFET + gate pull-down
+- Secret LED ×1
+- Grove connector ×1
+- Grove power-select solder jumper
+- Grove signal series resistor ×2
+- optional I2C pull-up footprint ×2
+- optional Grove power protection footprint
+
+大きなICを追加せずに、操作性、遊び、M5Stack / Grove ecosystemへの接続性を追加できる。
+
+次工程はPCB rough placementとし、特に以下を物理的に確認する。
+
+1. A / B / RESETを押し間違えにくい位置関係
+2. Grove cableをboard edgeから自然に引き出せる向き
+3. UIAPduino Qwiic CN2のclearance
+4. Secret LEDの見え方
+5. terminal block / 5-pin socketとの干渉
+6. BASE USB DNP area
+7. mounting holes / future 3D printed trayのkeepout
+
+
