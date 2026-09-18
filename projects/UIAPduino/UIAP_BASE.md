@@ -250,3 +250,133 @@ B案に重大な破綻要因が見つかった場合はA案へ戻る。
 最優先事項はUIAP BASE試作機を完成させることである。
 
 ただし、MCU選定はPCBレイアウト・USB拡張・書き込み端子構成へ影響するため、本格的なレイアウト確定前にA案 / B案の評価を進める。
+
+
+---
+
+## Prototype Basic Circuit Baseline — 2026-09-18
+
+CH32V203C8T6 + SM16206S の1-MCU構成について、基本回路図へ進めるための暫定ベースラインを定める。
+
+これは最終仕様ではなく、試作・PCB粗配置・実測のための基準点とする。配線性や実機評価によって一般GPIO割当や定数は変更してよい。
+
+### Power
+
+V0.1ではUIAPduinoを電源の親、UIAP BASEを子とする。
+
+- 通常はUIAPduino USB-Cから給電する。
+- UIAPduino 3.3V → BASE_3V3 → CH32V203C8T6 / SM16206S logic
+- UIAPduino 5V → LED_5V → 15個の状態表示LED
+- GNDは共通とする。
+- USB給電と外部給電を同時に使用しない。
+- BASE側USBを将来実装する場合、VBUSを既存5V railへ直接接続せず二重給電を避ける。
+
+試作時の電流測定・切り離しができるよう、3.3V / 5V railには閉じたソルダージャンパを置く案を採用する。
+
+### CH32V203 Minimum Circuit
+
+- VDD / VIO / VDDA / VBAT：3.3V
+- VSS / VSSA：GND
+- 各電源ピン近傍に0.1uF
+- BASE_3V3へ4.7uF程度のbulk capacitor
+- NRST：0.1uF to GND。内部弱pull-upを利用し、裏面test padへ引き出す。
+- BOOT0：10k pull-down + 3.3Vへ一時接続できるtest pad
+- PB2 / BOOT1：10k pull-down
+- PA13 / SWDIO、PA14 / SWCLK、NRST、3.3V、GNDを裏面debug/program padへ出す。
+
+V0.1はUSB検証時の不確定要素を減らすため8MHz外付け水晶を実装する方向とする。量産最適化時に内部HSIのみで十分か再評価する。
+
+### SM16206S LED Driver
+
+SM16206Sは3.3Vで動作させる。
+
+- SDI → PA0
+- CLK → PA1
+- LE → PA2
+- OE → PA3
+- OEには外部10k pull-upを追加して起動時消灯を強化する。
+- R-EXTは10kΩ前後を初期値とし、約1.65mA/chで視認性を実測する。
+- OUT0～OUT14 → 15個のLED cathode
+- LED anode → LED_5V
+- OUT15は予備とする。
+- 0.1uF decouplingをVDD直近へ配置する。
+
+SM16206S内部にはOE約250kΩ pull-up、LE約250kΩ pull-downがあるが、起動時の不用意な点灯を避けるためOEは外部pull-upを追加する。
+
+### UIAPduino Signal Monitoring
+
+UIAPduinoの信号本線を切らず、各信号から1kΩ程度を介してBASE MCU入力へ枝分かれする。
+
+監視先は5V tolerant (FT) pinを使用する。
+
+暫定割当：
+
+| UIAPduino | CH32V203 |
+|---|---|
+| D0 | PB10 |
+| D1 | PB11 |
+| D2 | PB12 |
+| D3 / SDA | PB13 |
+| D4 / SCL | PB14 |
+| D5 | PB15 |
+| D6 | PA8 |
+| D7 / SCK | PA15 |
+| D8 / MOSI | PB3 |
+| D9 / MISO | PB4 |
+| D10 | PB5 |
+| D11 / SWIO | PB8 |
+| D12 | PB9 |
+| D15 / TX | PA10 / USART1_RX |
+| D16 / RX | PA9 / USART1_TX |
+
+D15/D16は通常GPIO監視として入力し、USB CDC-UART bridgeモード時のみUSARTへ切り替える。
+
+CH32V003は5V動作時でも3.3V出力をHIGHとして認識できる入力仕様のため、V203 TX → UIAPduino RXにはV0.1で追加level shifterを置かない。
+
+### RESET / MODE Button
+
+RESET/MODEはBASE MCUファームウェアだけに依存させない。
+
+基本回路：
+
+- push switch：3.3V → BTN_NODE
+- BTN_NODE：100k pull-down → GND
+- BTN_NODE → CH32V203 PA4 input
+- BTN_NODE → N-MOSFET gate
+- N-MOSFET source → GND
+- N-MOSFET drain → UIAPduino RESET
+
+押下するとMOSFETがハードウェアとして直接UIAPduino RESETをLowにするため、BASE MCU firmwareが停止していてもRESET可能。
+
+同時にPA4で押下時間を読み、BASE単独動作時のMODE操作や長押し判定に利用できる。
+
+### USB / Future Expansion
+
+- UIAPduino USB-Cを通常の電源・書込み入口とする。
+- PA11 / PA12はV203 USB Device用として予約する。
+- BASE USB-CはV0.1標準実装せず、DNP footprint / routingを検討する。
+- 将来BASE USBを実装する場合、USB VBUSはシステム5Vへ直結しない。
+- PB6 / PB7のもう一方のUSB FS機能は将来用として予約する。
+- D11 / SWIOはV0.1では監視のみ。BASEから能動的にSWIO書込みする機能は別途電圧・双方向駆動を検証してから設計する。
+
+### Current Assessment
+
+現時点ではCH32V203C8T6 + SM16206Sの1-MCU構成を崩す重大な電気的矛盾は確認されていない。
+
+MCU選定そのものを主要ボトルネックから外し、次工程を以下へ進める。
+
+```text
+基本回路V0.1
+  ↓
+PCB粗配置
+  ↓
+配線性を見て一般GPIOを入れ替え
+  ↓
+A4 1:1実寸確認
+  ↓
+回路・配置修正
+  ↓
+PCB freeze
+```
+
+次工程では、UIAPduino socket、15 LEDs、CH32V203、SM16206S、terminal blocks、RESET/MODE、USB DNP、裏面debug padsの物理配置を検討する。
