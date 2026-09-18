@@ -57,13 +57,22 @@ UIAPduino側にユーザープログラムがない状態でも、USBから電�
 
 ---
 
-## RESET / MODE Button
+## Buttons / RESET Policy
 
-UIAPduino CH32V003のリセット機能を利用できる物理スイッチをUIAP BASE側に搭載する方向で進める。
+初期案ではRESET / MODEを1個のスイッチへ集約する方向で検討していたが、Feature Freeze 0.1では操作系を再評価し、A / Bの2ボタン構成を有力案とする。
 
-同じスイッチをゲーム選択やモード選択などにも利用する。
+2ボタンを持たせる主な理由は以下。
 
-現時点では1個のスイッチを基本案とするが、ゲームや操作仕様によっては追加する可能性がある。
+- BASE単独ゲームの操作幅を増やす
+- 選択 / 決定 / 戻るなどの基本UIを作りやすくする
+- 短押し / 長押し / A+B同時押しなどを利用して、少ない部品で複数の操作を実現する
+- 検品モードや設定モードへの入口として利用できる
+
+A / Bは日常的に使うアクションボタンとし、通常操作のたびにUIAPduino RESETが発生する構成にはしない。
+
+UIAPduinoのハードRESETをBASE側からどのように提供するかは、A / Bとは切り分けて検討する。候補は、UIAPduino本体RESETへのアクセス確保、専用の小型RESETスイッチ / test pad、BASE MCU + transistorによるRESET制御など。
+
+RESET方式は基本回路freeze前に確定する。
 
 ---
 
@@ -254,6 +263,184 @@ B案に重大な破綻要因が見つかった場合はA案へ戻る。
 
 ---
 
+## Feature Freeze 0.1 — 2026-09-18
+
+V0.1の最小構成を保存したまま、その骨格を大きく変えずにUIAP BASEの付加価値を一段上げるための機能範囲を仮固定する。
+
+このFeature Freezeは最終仕様ではない。PCB粗配置へ進む前に「何を本体へ載せ、何を外部エコシステムへ逃がし、何を将来用として残すか」を整理するための基準である。
+
+### Core Architecture
+
+現時点では以下の基本構成を維持する。
+
+- BASE MCU：CH32V203C8T6を第一候補として継続
+- LED driver：SM16206Sを第一候補として継続
+- UIAPduino 15信号の状態監視 / LED可視化
+- BASE logic：3.3V
+- LED rail：5V
+- UIAPduino USB-Cを通常の給電・書込み入口とする
+
+ESP32-C3 / C6 / S3も比較対象として確認したが、現行BASEではGPIO数、価格、電源、RF設計、基板面積などを含めてCH32V203構成を変更する決定要因は確認されていない。
+
+無線が製品価値の中心になる将来版では、ESP32-S3等を別系統として再評価する余地を残す。
+
+### A / B Buttons
+
+操作系は1ボタン案からA / Bの2ボタン案へ拡張する。
+
+A / Bはゲーム専用ではなく、BASE全体の汎用操作入力として利用する。
+
+想定用途：
+
+- ゲーム操作
+- 選択 / 決定 / 戻る
+- 短押し / 長押し
+- A+B同時押し
+- MODE切替
+- 検品モードへの入口
+- 将来追加する機能の操作
+
+UIAPduino hard RESETはA / Bの日常操作から分離し、別方式で確保する。
+
+### Secret LED
+
+SM16206Sの16chのうち、UIAPduino 15信号表示で使用しない1chを付加価値へ利用する案を有力候補とする。
+
+通常のSTATUS LEDとして固定せず、以下のような遊びを含めて検討する。
+
+- BASE logo / iconの隠し発光
+- GAME / MODEの演出
+- 課題達成時の表示
+- inspection / special state表示
+- 基板裏面やFR-4透過を利用したSecret LED表現
+
+最終的な発光方法とシルク / 銅箔デザインはPCBレイアウト時に検討する。
+
+### Grove / M5Stack Unit Expansion
+
+UIAP BASEにGrove / M5Stack Unit系の既製モジュールを接続できる入口を持たせる案を、V0.2の有力機能とする。
+
+目的はBASE本体へ多数のセンサーを搭載することではなく、コネクタ1個の追加によって、既に市場に存在する安価なモジュール群を利用できるようにすることである。
+
+期待する利用例：
+
+- Button
+- Buzzer
+- Light sensor
+- PIR / distance sensor
+- OLED
+- environmental sensor
+- motor / actuator関連Unit
+- M5Stack UnitおよびSeeed Grove系モジュール
+
+「部品をBASEへ盛る」より「既存エコシステムへの入口を用意する」ことを優先する。
+
+Grove系は同じ4pinコネクタでもGPIO / I2C / UART / analogなど信号方式が異なるため、V0.2でどこまで対応するか、電源電圧、信号保護、pin assignmentは回路設計段階で確定する。
+
+### Qwiic Policy
+
+Qwiic / STEMMA QTは有用なI2Cエコシステムだが、UIAPduino CH32V003自体にQwiic用の拡張経路 / footprintが存在する。
+
+そのためBASE側へ同じ機能を重複実装する優先度は低い。
+
+BASE装着中でもUIAPduino側Qwiic機能を利用しやすいよう、コネクタ位置、周囲のclearance、外装との干渉を考慮する。
+
+### SAO Policy
+
+SAO (Simple Add-On) は海外Maker / Badgelife文化との相性が良く、PCB art、meme board、small OLED、LED accessoryなど遊び心のある拡張を作りやすい。
+
+一方で、現段階ではUIAP BASEの初心者向けという本質に直接必要な機能ではなく、主要機能として前面へ出すと目的が散る可能性がある。
+
+したがってFeature Freeze 0.1では以下とする。
+
+- 標準機能としての採用は保留
+- PCB面積やUIを汚さず残せる場合のみ、裏面DNP footprint等を検討
+- 汎用拡張端子からSAO adapterを後付けする方式も候補
+- SAO文化そのものをBASE開発の主目的にはしない
+
+### Future / DNP Expansion
+
+以下はV0.2標準搭載を必須とせず、低コストで逃げ道を残せる場合にDNP footprint / pad / routingとして検討する。
+
+- BASE側USB
+- generic 3.3V / 5V / GND / UART / I2C等の拡張pad
+- wireless module接続
+- advanced debug / inspection access
+- SAO adapter接続
+- future accessory identification
+
+無線機能そのものをV0.2標準品へ搭載する方針ではない。
+
+### Mechanical / Community Expansion
+
+UIAP BASEは専用ケースを必須としない。
+
+裸基板のままブレッドボード横へ置きやすく、デスク上でも完成品として見えることを重視する。
+
+また、第三者がcase / tray / stand / decoration / accessoryを設計しやすいようにする。
+
+検討項目：
+
+- mounting hole位置と穴径の標準化
+- board outlineの安定化
+- UIAPduino、terminal block、USB等の高さとkeepout公開
+- STEP等の3D model公開
+- 寸法図公開
+- 3D printerで外装やアクセサリを作りやすい構成
+
+「完成ケースをすべて用意する」のではなく、「他のMakerが続きを作りやすいmechanical interfaceを提供する」ことを目指す。
+
+### Visual Design Direction
+
+PCB単体でも大人が机に置きやすく、同時に子どもが触りたくなる遊び心を持たせる。
+
+基本イメージ：
+
+- 白いUIAPduinoを視覚的な主役にする
+- BASEは青〜青緑系を中心とした落ち着いた色調を候補とする
+- 黄 / orange等を必要箇所のaccentとして使う
+- 子ども向けのrobot / planet表現だけに寄せず、waveform、circuit symbol、grid、coordinate、typography等も利用する
+- 空きPCB面積を単なる余白ではなく、説明 / icon / hidden message / artとして活用する
+
+目標は「Educational instrument × playful object」とする。
+
+### Deferred Idea: BOTchan
+
+OLED等を顔として使う小型character gadget / BOTchan案は、UIAPduino入門体験や将来のsoftware体験として発展可能性がある。
+
+ただし現段階ではBASEの回路・PCBを完成させる優先度が高いため、BOTchanはV0.2の必須要件へ入れず別アイデアとして保留する。
+
+### Feature Selection Rule
+
+今後の追加機能は、単純に「面白いか」だけでは採用しない。
+
+優先するのは以下。
+
+- 追加BOM / PCB面積が小さい
+- 初心者の配線・理解の負担を下げる
+- 1つのconnector / footprintで多くの既製品や用途を開放できる
+- BASEの本来目的である学習・可視化・拡張へ直接つながる
+- 不要なユーザーへコストを強制しない
+- 将来のMaker / community拡張へ逃げ道を残せる
+
+特定センサーを多数オンボード搭載するより、Groveのように外部エコシステムへ接続できる入口を優先する。
+
+### Next Step after Feature Freeze 0.1
+
+PCB粗配置へ進む前に、以下を基本回路へ反映して確定する。
+
+1. A / B button回路とUIAPduino hard RESET方式
+2. Grove / M5Stack Unit portの電源・信号方式・connector footprint・向き
+3. Secret LEDの実装方法
+4. UIAPduino側Qwiicへのclearance
+5. SAOをDNPで残すか、adapter方式へ完全に逃がすか
+6. mounting hole / board outline / external connector keepout
+7. USB DNP / debug pad / generic expansion padの物理領域
+
+これらを反映した後に、PCB粗配置 → 配線性評価 → A4 1:1実寸確認へ進む。
+
+---
+
 ## Prototype Basic Circuit Baseline — 2026-09-18
 
 CH32V203C8T6 + SM16206S の1-MCU構成について、基本回路図へ進めるための暫定ベースラインを定める。
@@ -333,11 +520,9 @@ D15/D16は通常GPIO監視として入力し、USB CDC-UART bridgeモード時�
 
 CH32V003は5V動作時でも3.3V出力をHIGHとして認識できる入力仕様のため、V203 TX → UIAPduino RXにはV0.1で追加level shifterを置かない。
 
-### RESET / MODE Button
+### RESET / MODE Button — Previous V0.1 Candidate
 
-RESET/MODEはBASE MCUファームウェアだけに依存させない。
-
-基本回路：
+基本回路V0.1では、1個のpush switchをUIAPduino RESETとBASE MODE入力へ兼用する案を検討した。
 
 - push switch：3.3V → BTN_NODE
 - BTN_NODE：100k pull-down → GND
@@ -346,9 +531,11 @@ RESET/MODEはBASE MCUファームウェアだけに依存させない。
 - N-MOSFET source → GND
 - N-MOSFET drain → UIAPduino RESET
 
-押下するとMOSFETがハードウェアとして直接UIAPduino RESETをLowにするため、BASE MCU firmwareが停止していてもRESET可能。
+この案は、BASE MCU firmwareが停止していても物理操作でUIAPduino RESETをLowにできる利点がある。
 
-同時にPA4で押下時間を読み、BASE単独動作時のMODE操作や長押し判定に利用できる。
+ただし、Feature Freeze 0.1でA / Bの2アクションボタンを優先する方向へ変更したため、この1ボタン兼用案は現在の最終候補ではない。
+
+A / Bの日常操作とUIAPduino hard RESETを分離する方向で、基本回路freeze前に再設計する。
 
 ### USB / Future Expansion
 
