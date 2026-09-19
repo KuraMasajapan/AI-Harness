@@ -636,3 +636,96 @@ Reduced risk of stale-context continuation
 ```
 
 This is a stronger guarantee than "only reload on ChatGPT startup", while remaining compatible with integrations that expose different amounts of session metadata.
+
+
+---
+
+## Lesson Lifecycle Audit — 2026-09-19
+
+### Trigger
+
+The human collaborator reported that they could follow Lessons up to the point of adding them to `memory/LESSONS.md`, but could not easily tell what happened afterward or whether Lessons were actually promoted into Core.
+
+### Audit Findings
+
+The existing lifecycle concept was:
+
+```text
+Observation
+→ Lesson
+→ Review
+→ Decision
+→ Promotion
+```
+
+However, the operational evidence was incomplete.
+
+Observed state before this audit:
+
+- LESSON-001: Promoted
+- LESSON-002: Proposed
+- LESSON-003: Proposed
+- LESSON-004: Promoted
+- LESSON-005: Promoted
+
+Promotion had occurred in practice, but the system lacked:
+
+- explicit Priority
+- a compact human-readable status dashboard
+- Promotion Target
+- Promotion Evidence
+- review triggers
+- a formal promotion gate
+- a regression test verifying that Promoted status matches actual Core content
+
+Therefore the conceptual lifecycle worked partially, but human-visible traceability was insufficient.
+
+### Changes Applied
+
+1. Added Priority to Lesson metadata.
+2. Added Promotion Target.
+3. Added Promotion Evidence.
+4. Added a Lesson Dashboard.
+5. Added Review Triggers to Core Workflow.
+6. Added Promotion Gate to Core Workflow.
+7. Added TEST-015 Lesson Lifecycle Traceability.
+8. Added TEST-016 Lesson Promotion Gate.
+9. Added LESSON-007 documenting this operational gap and its fix.
+
+### Current Result
+
+**Structural Result: PASS**
+
+The lifecycle is now represented as an observable process rather than only a conceptual one.
+
+### Current Lesson Status
+
+- LESSON-001 — High — Promoted
+- LESSON-002 — Medium — Proposed
+- LESSON-003 — Medium — Proposed
+- LESSON-004 — High — Promoted
+- LESSON-005 — High — Promoted
+- LESSON-006 — Medium — Promoted
+- LESSON-007 — High — Promoted
+
+### Important Limitation
+
+This audit confirms repository structure and current promotion evidence.
+
+It does not prove that every future Lesson will be reviewed automatically.
+
+The new Review Triggers reduce this risk by requiring relevant Proposed/Reviewed Lessons to be checked during Core changes, Harness audits, repeated failures, and High/Critical Lesson creation.
+
+Real operation should continue to verify that these triggers actually cause review rather than merely existing in text.
+
+---
+
+## Output Format Selection Review — 2026-09-19
+
+A recurring inefficiency was identified: long content was sometimes generated fully in chat and then recreated as a file after the user requested a more usable format.
+
+The approved Core change now selects delivery format before large generation where practical.
+
+Structural Result: **PASS**
+
+Regression coverage: **TEST-017**
