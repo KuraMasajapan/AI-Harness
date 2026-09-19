@@ -1523,28 +1523,42 @@ UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分か�
 
 UIAPduino用2×12 socketと同じ8.5 mm classの高さを基準にし、外観上の高さを揃えやすくする。
 
-### Right-side Terminal Block
+### Right-side Terminal Block — Source-of-Truth Update
 
-右側terminal blockは、初号試作では**基板直付けのscrew terminal**を基本構造とする。
+端子台は以下を現行基準とする。
 
-物理基準family：
+- 型式：**KF141V-2.54-5P**
+- LCSC：**C475117**
+- 方式：ねじ式
+- Pitch：**2.54 mm**
+- Poles：**5P**
+- 数量：**4個（TB1〜TB4）**
+- 配置：**基板右側寄りに、縦方向へ等間隔配置**
+- 樹脂筐体：グレー / 黒系
+- LCSC classification：Extended
 
-- KEFA **KF128-5.08**
-- Pitch: **5.08 mm**
-- Vertical PCB mount
-- Screw terminal
-- Approx. body depth: **10.70 mm**
-- Approx. height above PCB: **14.10 mm**
-- PCB hole: Ø1.4 mm class
-- 2–24 poles family
+この機械仕様・数量・配置方向は確定として扱う。
 
-5P候補としてJLCPCB **C17701597 / KF128-5.08-5P-AA**を物理referenceにする。
+#### Current Pin Assignment Snapshot
 
-ただし、**最終pole count / TB grouping / pin assignmentはまだ固定しない。**
+既存案：
 
-terminal blockの個数と極数は、右側端子群の最終signal groupingとboard outlineに直接依存するため。
+- TB1：TX / RX / D3 / D4 / D2
+- TB2：D5 / D11 / D7 / D8 / D9
+- TB3：D12 / D6 / D0 / D1 / D10
+- TB4：5V / GND / RX / TX / 3V3
 
-したがって外観イメージでは KF128-5.08 family の高さ・奥行き・5.08 mm pitchを使ってよいが、何個並ぶかはまだ確定値として描かない。
+ただし、**ピンの並び順・GroupingはUX向上のため再検討対象**とする。
+
+したがって、現時点では以下を区別する。
+
+- Terminal block part / quantity / physical placement direction：**Frozen**
+- TB1〜TB4の役割分類：**Current working structure**
+- 各5pin内の最終並び順：**UX review pending**
+- 必要に応じたTB間の信号再配分：**UX review pending**
+
+今後のPCB粗配置・外観イメージでは、端子台そのものは **KF141V-2.54-5P ×4** を実寸基準で描くが、silkscreen上の最終pin labelはUX review完了までは確定表示しない。
+
 
 ### BASE-side USB DNP Footprint
 
@@ -1613,3 +1627,25 @@ CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** package�
 - 15 status LEDs → UIAPduino pin correspondenceに沿って配置
 - UIAPduino → 17.8 × 33.0 mm
 - PCB thickness → 1.6 mm
+
+
+---
+
+## Terminal Block Specification Decision — 2026-09-20
+
+端子台仕様は以下をSource of Truthとして扱う。
+
+| 項目 | 内容 | 状態 |
+|---|---|---|
+| 型式 | KF141V-2.54-5P / LCSC C475117 | 確定 |
+| Pitch | 2.54 mm | 確定 |
+| Poles | 5P | 確定 |
+| 数量 | 4個（TB1〜TB4） | 確定 |
+| 配置 | 基板右側寄り、縦方向へ等間隔 | 確定 |
+| 方式 | ねじ式 | 確定 |
+| TB1既存案 | TX / RX / D3 / D4 / D2 | UX再検討 |
+| TB2既存案 | D5 / D11 / D7 / D8 / D9 | UX再検討 |
+| TB3既存案 | D12 / D6 / D0 / D1 / D10 | UX再検討 |
+| TB4既存案 | 5V / GND / RX / TX / 3V3 | UX再検討 |
+
+端子台の物理仕様は固定し、今後は**pin assignment / orderingを初心者UXの観点から再設計する**。
