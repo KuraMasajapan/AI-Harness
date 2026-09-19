@@ -889,3 +889,63 @@ NIDEC製スイッチは品質、操作感、外観の面で魅力があり、将
 特に量産数量、調達条件、価格差が改善した場合は、C22435667からNIDEC製DPDTスイッチへ置き換える可能性を残す。
 
 PCB設計では、可能な範囲で将来の代替スイッチへ変更しやすいよう、スイッチ周辺の機械的余裕とフットプリント互換性を意識する。
+
+
+---
+
+## A / B NORMAL Mode Pin Assignment Decision — 2026-09-19
+
+DPDTスライドスイッチによるA / BボタンのNORMAL / GAME切替について、NORMAL側の役割を以下の方針で決定する。
+
+### A Button — RESET
+
+AボタンのNORMAL側は、UIAPduino CH32V003 V1.4の **D17 / RESET (NRST)** へ固定接続する。
+
+目的：
+
+- UIAPduinoの物理RESETとして利用する
+- BASE MCUが停止していてもRESET操作を成立させる
+- RESET機能をユーザーが迷わず利用できるよう、専用機能として固定する
+
+D11はSWIO兼用ピンであり、RESET用途には使用しない。
+
+### B Button — Fixed General GPIO
+
+BボタンのNORMAL側は、ユーザーが任意のGPIOへ配線する方式にはしない。
+
+UIAP BASE側であらかじめ **一般用途GPIOを1本に固定**し、USERボタンとして扱う。
+
+理由：
+
+- 初心者が「どのGPIOへ接続するか」で迷わない
+- 教材やサンプルコードを統一できる
+- 誤配線や説明の複雑化を減らす
+- UIAP BASEの「まず成功しやすい」設計思想に合う
+
+固定GPIOは、UART / I2C / SPI / SWIO / RESET / オンボード機能などとの競合をできるだけ避けた、一般的で扱いやすいデジタルGPIOから選ぶ。
+
+**現時点の第一候補は D5 (PC3)。**
+
+ただしD5をこの時点で絶対固定とはせず、PCB粗配置・配線性を確認した上で、同等に扱いやすい一般GPIOの中から最も合理的なピンを最終確定する。
+
+### GAME Mode Side
+
+GAME側では、A / BボタンをBASE MCUの入力へ切り替える。
+
+現行V0.2案：
+
+- Button A → CH32V203 PA4
+- Button B → CH32V203 PA5
+
+DPDTスライドスイッチ1個で、A / Bの2回路をNORMAL / GAME間で同時切替する。
+
+### Design Principle
+
+A / BボタンのNORMAL側では自由配線を機能として提供しない。
+
+- A = UIAPduino RESET
+- B = UIAPduino fixed USER GPIO
+
+という固定された役割にし、初心者が機能を理解しやすく、教材・サンプル・シルク表示を統一できる構成を優先する。
+
+最終的なB側GPIO番号はPCB粗配置・配線性確認時に確定する。
