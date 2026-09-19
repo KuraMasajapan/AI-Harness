@@ -15,6 +15,31 @@ Lessonsは自動的にルールになるものではなく、
 
 ---
 
+
+## Lesson Dashboard / Lesson一覧
+
+| ID | Priority | Status | Promotion Target |
+|---|---|---|---|
+| LESSON-001 | High | Promoted | core/WORKFLOW.md |
+| LESSON-002 | Medium | Proposed | agents/Google-AI-Studio/HARNESS.md / core/WORKFLOW.md |
+| LESSON-003 | Medium | Proposed | agents/Google-AI-Studio/HARNESS.md / evaluation/* |
+| LESSON-004 | High | Promoted | core/WORKFLOW.md |
+| LESSON-005 | High | Promoted | HARNESS.md / core/RULES.md / core/WORKFLOW.md / agents/ChatGPT/* |
+| LESSON-006 | Medium | Promoted | core/WORKFLOW.md |
+| LESSON-007 | High | Promoted | core/WORKFLOW.md / memory/LESSONS.md |
+
+この表は人間向けの運用状況一覧である。
+
+- Proposed = 記録済み、まだCore化判断前
+- Reviewed = 人間が確認済み、昇格判断または追加証拠待ち
+- Promoted = 実際の反映先まで確認済み
+- Rejected = 検討したが採用しない
+- Obsolete = 後の変更等により不要になった
+
+Priorityは重要度であり、自動昇格を意味しない。
+
+---
+
 ## 2. What Is a Lesson? / 教訓とは
 
 A lesson should explain:
@@ -47,6 +72,9 @@ A lesson should explain:
 - Lesson:
 - Suggested Change:
 - Related Files:
+- Priority: Critical / High / Medium / Low
+- Promotion Target:
+- Promotion Evidence:
 - Status:
 
 ```
@@ -182,7 +210,7 @@ WORKFLOW.md   ← どう仕事をするか
     ↓
 MEMORY.md     ← 何を長期的に覚えるか
 LESSONS.md    ← 何を学び、改善候補にするか
-
+```
 
 ---
 
@@ -204,7 +232,7 @@ LESSONS.md    ← 何を学び、改善候補にするか
 
   This is not intended for every greeting. It applies when the wording and project context indicate resumption of ongoing work.
 - Related Files: HARNESS.md, core/WORKFLOW.md, memory/MEMORY.md, projects/*
-- Status: Promoted
+- Priority: High\n- Promotion Target: core/WORKFLOW.md\n- Promotion Evidence: Continuity & Context Freshness Check / Resume Brief\n- Status: Promoted
 
 ### Design Note / 設計メモ
 
@@ -239,7 +267,7 @@ AIが覚えているだけではなく、その記憶を人間が作業へ戻る
 
   Prefer short cycles such as: investigate one point → report → human/lead-AI review → modify one point → report → real verification. Reuse already verified evidence instead of requesting the same exploration again.
 - Related Files: agents/Google-AI-Studio/HARNESS.md, core/WORKFLOW.md, projects/*
-- Status: Proposed
+- Priority: Medium\n- Promotion Target: agents/Google-AI-Studio/HARNESS.md / core/WORKFLOW.md\n- Promotion Evidence: Pending review; insufficient evidence for Core promotion\n- Status: Proposed
 
 ### Design Note / 設計メモ
 
@@ -269,7 +297,7 @@ Do not assume that changing models or prompts alone resolves platform quota or o
 
   If an operation repeatedly stalls, reduce it to the smallest meaningful read/write/test action before retrying broader work.
 - Related Files: agents/Google-AI-Studio/HARNESS.md, core/WORKFLOW.md, evaluation/*
-- Status: Proposed
+- Priority: Medium\n- Promotion Target: agents/Google-AI-Studio/HARNESS.md / evaluation/*\n- Promotion Evidence: Pending additional cross-agent observation\n- Status: Proposed
 
 ### Design Note / 設計メモ
 
@@ -295,7 +323,7 @@ This lesson is intentionally generic. The observed incident occurred in Google A
   6. Compare implemented BOM cost, not IC unit price alone.
   7. Treat stock as dynamic and evaluate fallback/re-design paths.
 - Related Files: core/WORKFLOW.md, projects/UIAPduino/UIAP_BASE.md
-- Status: Promoted
+- Priority: High\n- Promotion Target: core/WORKFLOW.md\n- Promotion Evidence: Component Research Task / Search Breadth Check\n- Status: Promoted
 
 ### Design Note / 設計メモ
 
@@ -327,7 +355,7 @@ This prevents model familiarity from becoming an unintended filter on engineerin
   6. Use Resume Brief only when useful to restore the human's working context; do not spam it on every message.
   7. Add regression tests for silent resume and same-chat browser recovery.
 - Related Files: HARNESS.md, core/RULES.md, core/WORKFLOW.md, agents/ChatGPT/START.md, agents/ChatGPT/BOOTSTRAP.md, evaluation/TEST_CASES.md
-- Status: Promoted
+- Priority: High\n- Promotion Target: HARNESS.md / core/RULES.md / core/WORKFLOW.md / agents/ChatGPT/*\n- Promotion Evidence: Runtime Activation & Revalidation + Preserve Task State + Context Freshness Revalidation\n- Status: Promoted
 
 ### Design Note / 設計メモ
 
@@ -351,3 +379,37 @@ Continue task state
 ```
 
 The fallback check before important work protects against missed resume detection.
+
+
+---
+
+## LESSON-006 Output Format Selection / 成果物形式を先に選ぶ
+
+- Date: 2026-09-19
+- Context: The user repeatedly found that long answers were easier to use as files. AI/Harness handoffs were best as Markdown, while information-heavy human-facing explanations would be easier to read as HTML. Producing the full answer in chat first and then rebuilding it as a file created duplicate work.
+- What Happened: Output format was often decided only after the content had already been generated.
+- Root Cause: The Workflow focused on content quality but did not explicitly choose the final delivery format before generation.
+- Lesson: Select the output medium as part of planning. Use Chat for short interaction, Markdown for durable AI/Harness/reusable text, and HTML for information-heavy human-readable explanations when no more suitable dedicated format is requested.
+- Suggested Change: Add Output Format Selection to Core Workflow and avoid generating the same long content twice.
+- Related Files: core/WORKFLOW.md
+- Priority: Medium
+- Promotion Target: core/WORKFLOW.md
+- Promotion Evidence: Output Format Selection / 出力形式の選択
+- Status: Promoted
+
+
+---
+
+## LESSON-007 Lesson Promotion Needs Traceability / Lesson昇格には追跡可能性が必要
+
+- Date: 2026-09-19
+- Context: The user could follow the process up to adding items to LESSONS.md, but could not easily tell what happened afterward, whether importance was reconsidered, or whether a Lesson had actually reached Core.
+- What Happened: Some Lessons were Promoted and others remained Proposed, but there was no compact dashboard, no explicit Priority field, and no requirement to record concrete promotion evidence.
+- Root Cause: The Harness defined a conceptual Observation → Lesson → Review → Decision → Promotion flow, but did not operationalize review triggers or human-visible traceability.
+- Lesson: A Lesson lifecycle needs observable state, review triggers, and evidence of the actual destination. Status=Promoted alone is insufficient.
+- Suggested Change: Add Priority, Promotion Target, Promotion Evidence, a Lesson dashboard, review triggers, and a promotion gate to Core Workflow.
+- Related Files: core/WORKFLOW.md, memory/LESSONS.md, evaluation/*
+- Priority: High
+- Promotion Target: core/WORKFLOW.md / memory/LESSONS.md
+- Promotion Evidence: Lesson Review & Promotion Lifecycle / Lesson Dashboard
+- Status: Promoted
