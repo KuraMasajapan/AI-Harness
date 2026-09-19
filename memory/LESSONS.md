@@ -534,16 +534,17 @@ The purpose of this Lesson is not to make every rule constantly active. The goal
 ## LESSON-010 Source-Locked Creation / 制作物では確定仕様を固定する
 
 - Date: 2026-09-20
-- Context: During UIAP BASE PCB rough-placement exploration, several image-generation attempts materially drifted from project specifications even though the relevant project Source of Truth had already been loaded.
+- Context: During UIAP BASE PCB rough-placement exploration, several image-generation attempts materially drifted from project specifications even though the relevant project Source of Truth had already been loaded. A later re-check confirmed that several omitted requirements were explicitly present in `UIAP_BASE.md`, so the incident cannot be explained primarily by missing project documentation.
 - What Happened: The generated artifacts silently changed fixed facts and invented unapproved details. Examples included replacing the intended UIAPduino CH32V003 V1.4 with an ESP32-like board, altering GPIO / LED counts and geometry, misrepresenting socket and connector structures, introducing unapproved power / USB details, and failing to create meaningfully distinct layout alternatives. After an initial bad result, a later retry edited the flawed artifact instead of resetting to the authoritative source.
 - Root Cause:
-  1. The existing Physical Grounding Check prevented some logical-to-physical inference errors, but did not explicitly compile current source information into an execution contract.
-  2. The creation workflow did not separate fixed constraints from intentionally variable dimensions.
-  3. Tool selection did not sufficiently consider that free-form image generation naturally invents plausible visual detail when the task actually requires constrained technical layout exploration.
-  4. Verification did not compare the artifact against fixed constraints before delivery.
-  5. Failure recovery did not require a reset to Source of Truth after a constraint-violation failure.
-  6. Long-lived project files may contain superseded historical states, so "source loaded" is not equivalent to "current-effective constraints resolved."
-- Lesson: For creation tasks that depend on an existing Source of Truth, correctness requires a closed constraint loop, not merely context availability. The AI should compile current-effective constraints before creation, choose a tool appropriate to the required precision, verify the artifact before delivery, and discard invalid artifacts rather than recursively editing specification drift.
+  1. **Leading hypothesis: Constraint Handoff Loss.** Important source-backed relations, prohibitions, and spatial constraints appear to have lost fidelity or priority between ChatGPT's retrieved project context and the image-generation execution context. This is not yet proven and requires controlled testing.
+  2. The existing Physical Grounding Check prevented some logical-to-physical inference errors, but did not explicitly compile current source information into an execution contract.
+  3. The creation workflow did not separate fixed constraints from intentionally variable dimensions.
+  4. Tool selection did not sufficiently consider that free-form image generation naturally invents plausible visual detail when the task actually requires constrained technical layout exploration.
+  5. Verification did not compare the artifact against fixed constraints before delivery.
+  6. Failure recovery did not require a reset to Source of Truth after a constraint-violation failure.
+  7. Long-lived project files may contain superseded historical states, so "source loaded" is not equivalent to "current-effective constraints resolved." This is a secondary risk, not a sufficient explanation for the observed loss of constraints that were explicitly documented.
+- Lesson: For creation tasks that depend on an existing Source of Truth, correctness requires a closed constraint loop, not merely context availability. The AI must distinguish four states: the constraint exists in the source, it has been retrieved, it has been handed across the creation-tool boundary, and it is actually enforced in the produced artifact. The AI should compile current-effective constraints before creation, choose a tool appropriate to the required precision, verify the artifact before delivery, and discard invalid artifacts rather than recursively editing specification drift.
 - Suggested Change:
   1. Before source-dependent creation, identify:
      - **LOCKED / Must Preserve** — current authoritative facts that must not change.
@@ -552,12 +553,17 @@ The purpose of this Lesson is not to make every rule constantly active. The goal
      - **FORBIDDEN / Must Not Introduce** — rejected, superseded, or unapproved elements.
   2. Resolve current-effective state when the source contains historical or superseded sections.
   3. Pass the compiled constraint set into the creation step.
-  4. Perform a **Tool Fit Check**:
+  4. Treat **handoff fidelity** as a separate verification target:
+     - confirm that relational constraints, prohibitions, counts, identity constraints, and spatial intent are included in the creation contract;
+     - do not assume that information available to the reasoning context automatically reaches the creation tool with equal fidelity or priority;
+     - when diagnosing failure, distinguish Source Missing, Retrieval Missing, Handoff Missing, Enforcement Failure, and Verification Failure.
+  5. Perform a **Tool Fit Check**:
      - use deterministic diagrams / SVG / CAD-like methods when geometric or structural precision matters;
      - use image generation primarily when visual exploration is the goal and the locked structure can still be preserved.
-  5. After creation, run an **Artifact Gate** against LOCKED and FORBIDDEN constraints before delivery.
-  6. If the artifact violates locked constraints, reject it and return to Source of Truth. Do not use the invalid artifact as the default base for further editing.
-  7. Keep the process lightweight for standalone creative work that has no authoritative source constraints.
+  6. After creation, run an **Artifact Gate** against LOCKED and FORBIDDEN constraints before delivery.
+  7. If the artifact violates locked constraints, reject it and return to Source of Truth. Do not use the invalid artifact as the default base for further editing.
+  8. For serious source-locked failures, run a controlled handoff experiment before declaring the root cause fixed.
+  9. Keep the process lightweight for standalone creative work that has no authoritative source constraints.
 - Related Files: core/WORKFLOW.md, evaluation/TEST_CASES.md, evaluation/incidents/2026-09-20-source-lock-generation-drift.md, projects/UIAPduino/UIAP_BASE.md, projects/UIAPduino/UIAPduino.md, experiments/latent-risk-scan/candidates/01-operationalization-gap.md
 - Priority: High
 - Promotion Target: core/WORKFLOW.md / evaluation/*
@@ -573,6 +579,9 @@ Current effective Source of Truth
         ↓
 Constraint Compile
 LOCKED / VARIABLE / UNKNOWN / FORBIDDEN
+        ↓
+Handoff Contract
+verify what must cross the tool boundary
         ↓
 Tool Fit Check
         ↓
@@ -600,4 +609,8 @@ artifact drifts
 verification fails to stop delivery
 ```
 
-This incident demonstrates that **Available ≠ Enforced** for source-dependent creation.
+This incident demonstrates a more precise chain:
+
+> **Exists in Source ≠ Retrieved ≠ Handed Off ≠ Enforced ≠ Verified**
+
+The current unresolved root-cause question is the boundary between **Retrieved** and **Handed Off**.
