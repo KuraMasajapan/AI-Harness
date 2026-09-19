@@ -504,3 +504,66 @@ App = 編集・利用
 - Discordアーカイブ連携
 - 素材インポート用共有リンク / ID
 - SNSごとの出力最適化
+
+---
+
+## Current Checkpoint — 2026-09-19
+
+This section records the current product direction after recent real-device PoCs. It is a working checkpoint, not a permanent final specification.
+
+### Current Product Direction
+- Continue developing the existing HEAL3 SNS-Creator rather than creating a separate app.
+- Keep the product focused on making official HEAL3 result images easier and more enjoyable to post, rather than turning it into a general-purpose image editor.
+- Prefer simple, immediately understandable transformations over deep editing workflows.
+- The next major product direction to explore is **layout presets** that reorganize the official result image, reduce unused space, and make the avatar or key information more visually prominent.
+
+### Avatar / Image Cutout Status
+- MediaPipe Interactive Segmentation PoC succeeded on iPhone Safari using the `.task` model path.
+- Real HEAL3 result images were successfully segmented with useful quality, including a difficult character example that became substantially cleaner when the result-screen background color provided better contrast.
+- The cutout capability is considered a valuable **technical asset**, but the visible "Cut Out" action is temporarily removed from the primary product path.
+- Reasons:
+  - The source avatar image itself is not always high resolution.
+  - Enlarging the extracted avatar can expose source-image quality limits.
+  - The original avatar remains in the base result image, which can create a duplicated or overly edited look.
+  - This can drift away from the product concept of making the official result image "a little nicer" with low effort.
+- Preserve the segmentation implementation and findings for reuse in future scenarios where extracting a specific object is genuinely useful.
+
+### Mask Feature Status
+Mask is now a confirmed product direction: a whole-image atmosphere/effect layer placed above the base image and below user-added stamps/text.
+
+Current rendering order:
+```text
+Base Image
+→ Mask
+→ User-added Stamps / Text
+```
+
+Preview and export should continue to use the same rendering logic.
+
+#### Autumn Mask
+- Status: **Strong adoption candidate / practical quality reached**
+- Animated autumn leaves with depth layers and Weak / Medium / Strong intensity levels.
+- Real-device evaluation found all three strengths useful without feeling excessive or insufficient.
+- Further micro-tuning produced little perceptible difference, so avoid polishing it indefinitely.
+
+#### Sunlight Mask
+- Status: **Usable but not yet at the desired expressive quality**
+- Initial particle-based version felt like rising carbonation bubbles.
+- A later god-ray version produced an unacceptable dark/cheap spotlight appearance.
+- The current revision is improved and no longer has the severe dark-band problem, but even Strong still feels visually restrained and motion is weaker than desired.
+- Pause further refinement for now; preserve the implementation and revisit later if stronger moving light / broad radiant illumination becomes worth pursuing.
+
+### Near-Term Priority
+1. Treat Mask infrastructure as established and continue adding masks later rather than perfecting one effect indefinitely.
+2. Explore **layout presets** as the next major UX/product experiment.
+3. Keep the cutout engine available as a reusable technical capability, but do not make it a primary user-facing action for now.
+4. Continue validating visually sensitive features on real iPhone output; implementation reports are not sufficient acceptance evidence.
+
+### Product Principle Reinforced by These PoCs
+A technically impressive capability is not automatically a good primary product feature.
+
+For HEAL3 SNS-Creator, prefer features that:
+- improve the official result image without making it feel over-edited,
+- preserve fast and simple UX,
+- create an immediate visual payoff,
+- and remain understandable without requiring the user to remember editing concepts.
