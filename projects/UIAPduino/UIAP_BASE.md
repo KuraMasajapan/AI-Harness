@@ -1331,9 +1331,11 @@ Reference part:
 
 BASE側Qwiicを同系統部品で設計する場合、外観イメージではこの寸法を基準とする。
 
-### 7. Parts Not Yet Dimension-Frozen
+### 7. Parts Not Yet Dimension-Frozen — Superseded Snapshot
 
-以下は機能として存在するが、部品型番またはpackageをまだ固定していないため、実寸イメージへ確定寸法で入れない。
+この一覧は2026-09-20の物理部品選定を進める前のsnapshot。最新状態は後述の `Physical Component Freeze V0.2` を優先する。
+
+以下は当時、部品型番またはpackageをまだ固定していなかった項目。
 
 - A action button
 - B action button
@@ -1434,3 +1436,180 @@ Source basis: JLCPCB / LCSC exact-part listing C3975157 and HCTL dimensional dat
 6. **external crystal package**
 
 A / B buttonと2×12 female socketは、現時点では上記候補寸法をPCB粗配置・実物イメージの基準として使用する。
+
+---
+
+## Physical Component Freeze V0.2 — 2026-09-20
+
+実物に近い外観イメージとPCB粗配置を作るため、後戻りコストが小さく、現時点で合理的に決められる物理仕様を試作V0.2の基準として仮固定する。
+
+このFreezeは量産BOMの最終確定ではない。試作・1:1確認・実機評価で問題が見つかった場合は変更する。
+
+### PCB Thickness
+
+初号試作の基板厚は **FR-4 1.6 mm** を基準とする。
+
+理由：
+
+- 一般的で扱いやすい
+- terminal blockやconnectorを載せる試作基板として機械的に扱いやすい
+- 3D tray / spacer設計の基準値を作りやすい
+
+基板外形そのものはまだ固定しない。
+
+### Grove Connector — Prototype Freeze
+
+初号試作のGrove / HY2.0-4P connectorは以下を第一候補として仮固定する。
+
+- Manufacturer: XUNPU
+- MPN: **WAFER-HY2.0-4PWB**
+- JLCPCB: **C3029460**
+- Mounting: SMD right-angle
+- Pitch: 2.0 mm
+- Board envelope: **12.0 mm × 9.2 mm**
+- Height: **5.2 mm**
+- Auxiliary solder support: Yes
+
+CAX C722729より奥行きが約1.3 mm大きいが、cable挿抜を繰り返す教育用途を想定し、補助固定を持つC3029460を試作側で優先する。
+
+電気仕様は最新方針を維持する。
+
+- 3.3V fixed
+- D3 / D4 shared I2C
+- no user voltage selector
+
+### Qwiic Connector — Prototype Freeze
+
+BASE側Qwiic connectorは以下を試作基準とする。
+
+- JST **SM04B-SRSS-TB(LF)(SN)**
+- JLCPCB: **C160404**
+- Pitch: 1.0 mm
+- SMD right-angle
+- Plan envelope: **6.0 mm × 4.32 mm**
+- Height: **2.9 mm**
+- Auxiliary solder supportあり
+- Color: White
+
+UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分かりやすさを優先する。
+
+### Status LED Package
+
+15個のGPIO状態表示LEDは **0805 package** を試作V0.2の基準とする。
+
+- Nominal package footprint: approximately **2.0 mm × 1.25 mm**
+- JLCPCB / EasyEDAで一般的な0805 LED footprintを使用
+- Prototype reference: JLCPCB **C9900003727** (green 0805)
+
+ただし **発光色はまだ最終固定しない**。
+
+重要なのはLEDの物理サイズと配置であり、色はsilkscreen / PCB color / visibilityを見ながら後で決める。
+
+15個は横一列に並べず、UIAPduino各GPIOとの対応が直感的に分かるよう、UIAPduino周辺のpin位置に沿わせる。
+
+### 5-pin Female Socket
+
+右側端子群に対応する5-pin socketの試作候補を以下へ仮固定する。
+
+- Manufacturer: hanxia
+- MPN: **HX PM2.54-1x5P TP H8.5-YQ**
+- JLCPCB / LCSC: **C46635841**
+- 1×5P
+- Pitch: **2.54 mm**
+- Mounting: SMD vertical / top entry
+- Insulation height: **8.5 mm**
+- Body length for 5 positions: **12.70 mm**
+- Current rating: 3 A
+
+UIAPduino用2×12 socketと同じ8.5 mm classの高さを基準にし、外観上の高さを揃えやすくする。
+
+### Right-side Terminal Block
+
+右側terminal blockは、初号試作では**基板直付けのscrew terminal**を基本構造とする。
+
+物理基準family：
+
+- KEFA **KF128-5.08**
+- Pitch: **5.08 mm**
+- Vertical PCB mount
+- Screw terminal
+- Approx. body depth: **10.70 mm**
+- Approx. height above PCB: **14.10 mm**
+- PCB hole: Ø1.4 mm class
+- 2–24 poles family
+
+5P候補としてJLCPCB **C17701597 / KF128-5.08-5P-AA**を物理referenceにする。
+
+ただし、**最終pole count / TB grouping / pin assignmentはまだ固定しない。**
+
+terminal blockの個数と極数は、右側端子群の最終signal groupingとboard outlineに直接依存するため。
+
+したがって外観イメージでは KF128-5.08 family の高さ・奥行き・5.08 mm pitchを使ってよいが、何個並ぶかはまだ確定値として描かない。
+
+### BASE-side USB DNP Footprint
+
+将来用BASE USB-CのDNP footprintは以下を基準とする。
+
+- HRO / Korean Hroparts **TYPE-C-31-M-12**
+- JLCPCB: **C165948**
+- USB Type-C female
+- 16 contacts
+- SMD right-angle
+- Length: **7.35 mm**
+- 10,000 mating cycles class
+
+V0.2標準品ではconnectorを実装しない。
+
+この決定は「将来用footprint / keepout」を確定するためのものであり、BASE USBを標準機能化する決定ではない。
+
+### External Crystal Package
+
+CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** packageを物理基準として固定する。
+
+8 MHz / 3225のJLCPCB実装候補は複数存在する。
+
+ただし以下はまだ固定しない。
+
+- exact manufacturer
+- load capacitance
+- exact crystal part number
+- external load capacitor values
+
+これらはCH32V203 oscillator条件と実回路定数を確認してから決める。
+
+### Mounting Holes
+
+初号試作のmounting interfaceは **M3系** を基準とする。
+
+- PCB clearance hole target: **Ø3.2 mm**
+- 3D printed tray / spacer / screwとの互換を取りやすくする
+
+ただし **穴数と座標はboard outline / rough placementが決まるまで固定しない。**
+
+### Items Deliberately Left Open
+
+現時点で意図的に未確定のまま残すもの：
+
+- UIAP BASE board width / height / outline
+- mounting hole count and coordinates
+- terminal block count / pole grouping / final signal assignment
+- Secret LED package / color / top-bottom mounting / FR-4透過方式
+- status LED final color
+- DPDT switch Z-height
+- exact 8 MHz crystal and load capacitors
+- final silkscreen positions
+- exact IC / passive placement
+
+これらは「情報不足で止まっている」のではなく、rough placementまたは実機評価を見てから決めた方が合理的な項目として保留する。
+
+### Current Physical Rendering Rule
+
+次回の外観イメージでは次を厳守する。
+
+- Frozen dimensions → actual scaleで描く
+- Candidate dimensions → candidateとして描く
+- Open items → arbitrary exact dimensionを付けない
+- board outline → provisionalであることを明示
+- 15 status LEDs → UIAPduino pin correspondenceに沿って配置
+- UIAPduino → 17.8 × 33.0 mm
+- PCB thickness → 1.6 mm
