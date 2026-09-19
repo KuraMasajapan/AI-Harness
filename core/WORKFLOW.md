@@ -277,6 +277,36 @@ Do not add length merely for completeness.
 ---
 
 
+
+## Output Format Selection / 出力形式の選択
+
+成果を作る前に、内容だけでなく**最終的にどの形式が最も使いやすいか**を判断する。
+
+ユーザーが明示的に形式を指定した場合は、その指定を優先する。
+
+指定がない場合の基本方針：
+
+- 短い説明、相談、判断、やり取り → 通常のChat
+- AIへ渡す引継ぎ、Harness保存、再利用・編集するテキスト → Markdown（`.md`）
+- 人間が読むための情報量の多い整理、説明、比較、レポート、「わかりやすくして」系 → HTML（`.html`）を優先
+- PDF、Spreadsheet、Slides等が目的に明確に適する場合 → その専用形式
+
+情報量が多く、ファイル化によって可読性・再利用性が明らかに上がる場合は、ユーザーから「やっぱりファイルにして」と再依頼されるのを待たず、最初から適切なファイル形式で作成する。
+
+同じ長文を一度Chatへ大量出力した後、ほぼ同じ内容をファイルとして再作成する二重作業は避ける。
+
+ファイルを主成果物にする場合、Chatには原則として以下だけを短く提示する。
+
+- 何を作ったか
+- 重要な要点
+- ファイルへのリンク
+
+ただし、短い内容まで機械的にファイル化しない。
+
+判断の基準は「ファイルを作れるか」ではなく、**ユーザーが最終成果を最も使いやすい形は何か**とする。
+
+---
+
 ## Continuity & Context Freshness Check / 継続性・Context鮮度チェック
 
 長期プロジェクトでは、アプリやブラウザの再起動だけを「再開」の条件にしない。
@@ -346,6 +376,93 @@ Paused   = ユーザーが明示的に中断を求めた
 ユーザーから「まとめて」「整理して」「ここまでを要約して」と求められた場合、内容の要約と合わせて、将来再利用すべき決定・設計方針・制約・検証結果・運用原則がHarnessへ反映済みかを確認し、必要なら追加・更新先を提案する。
 
 既存内容と重複・矛盾する場合は単純追記を避け、現在の状態が一意に分かるよう整理する。
+
+---
+
+
+## Lesson Review & Promotion Lifecycle / Lessonレビュー・昇格運用
+
+Lessonは記録して終わりにしない。一方で、すべてを自動的にCoreへ昇格させない。
+
+各Lessonは最低限、以下を持つ。
+
+- Status
+- Priority
+- Related Files
+- Promotion Target（候補または実際の反映先）
+- Promotion Evidence（Promoted時）
+
+### Priority
+
+- Critical — 放置すると重大な誤動作、安全・Privacy・権限・継続性問題につながる
+- High — 繰り返し発生し得て、Harness品質へ大きく影響する
+- Medium — 有用だが追加観察や限定的な適用が必要
+- Low — 局所的・軽微で、すぐにCore化する必要はない
+
+Priorityは昇格そのものを意味しない。重要度と証拠の成熟度は別に扱う。
+
+### Status Lifecycle
+
+```text
+Observation
+   ↓
+Proposed
+   ↓
+Human Review
+   ↓
+Reviewed
+   ↓
+Decision
+   ├─ Promoted
+   ├─ Rejected
+   └─ Obsolete
+```
+
+人間が同じ会話の中で変更方針を明示的に承認し、その変更が実際にCore等へ反映された場合は、Reviewedを経由したものとしてPromotedへ進めてよい。
+
+### Review Triggers
+
+以下の場合、関連するProposed / Reviewed Lessonを確認する。
+
+- Harness / Core / Workflowを変更するとき
+- ユーザーがHarnessの整理・監査・改善状況を尋ねたとき
+- 同種の失敗や観察が再発したとき
+- High / CriticalのLessonが追加されたとき
+- 「まとめて」等のHarness Reflection Checkで、将来再利用する改善が見つかったとき
+
+全Lessonを毎回読む必要はない。変更対象や問題に関係するLessonを優先する。
+
+### Promotion Gate
+
+Coreへ昇格する前に最低限確認する。
+
+1. 実際の問題・失敗・反復観察に基づいているか
+2. 既存Rule / Workflowで既に十分扱われていないか
+3. 特定Project・特定AIだけの問題ではないか
+4. Core化による副作用や過剰適用がないか
+5. 人間の承認があるか
+
+### Promotion Evidence
+
+StatusをPromotedへ変更するだけでは昇格完了とみなさない。
+
+Promoted Lessonには、実際の反映先を `Promotion Target` / `Promotion Evidence` に記録する。
+
+例：
+
+```text
+- Promotion Target: core/WORKFLOW.md
+- Promotion Evidence: Output Format Selection / 出力形式の選択
+- Status: Promoted
+```
+
+反映先が確認できないPromoted Lessonは、監査時に不整合として扱う。
+
+### Human Visibility
+
+`memory/LESSONS.md` の一覧では、少なくとも ID / Priority / Status / Promotion Target を確認できるようにする。
+
+これにより、人間が「Lessonへ入れた後どうなったか」を追跡できる状態を維持する。
 
 ---
 
