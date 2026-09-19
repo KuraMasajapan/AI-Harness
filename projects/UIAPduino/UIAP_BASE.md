@@ -1226,3 +1226,139 @@ M5Stack Port.A互換を理由にBASE全体を5V設計へ寄せない。
 - ユーザー電圧切替は設けない
 - 初号機ではGrove + BASE側Qwiicの両方を実装候補として維持
 - 実機評価後に量産版で削る
+
+
+---
+
+## Physical Component Dimension Baseline V0.1 — 2026-09-20
+
+PCB粗配置や実物に近い外観イメージを作る前段として、現時点で採用済みまたは有力候補となっている主要部品の実寸を整理する。
+
+このセクションは**物理寸法の基準**であり、電気仕様の決定を上書きしない。Grove / Qwiicの電気的扱いは、より新しい `Grove / Qwiic Final Direction Summary — 2026-09-19` を優先する。
+
+### 1. UIAPduino Pro Micro CH32V003 V1.4
+
+実機外形の最重要基準。
+
+- Board size: **17.8 mm × 33.0 mm**
+- Published product height: **3.2 mm**
+- Weight: 2.3 g
+- Mounting holes: **3 × Ø1.7 mm**
+- Through holes: **24 × Ø0.9 mm**
+- USB-C opening is aligned with the board edge.
+- UIAP official dimension drawing is the primary physical reference.
+
+外観イメージでは、UIAPduinoを概算ではなく17.8 × 33.0 mmの実寸比率で描く。
+
+### 2. BASE MCU — CH32V203C8T6
+
+- Package: **LQFP48**
+- Molded body: **7.0 mm × 7.0 mm**
+- Lead pitch: **0.5 mm**
+- Approx. overall lead span: **9.0 mm × 9.0 mm**
+- LQFP overall height: approximately **1.5 mm** class from package drawing
+
+外観イメージでは7 mm角の黒いLQFP本体として扱い、リードを含めた占有幅は約9 mmを基準にする。
+
+Source basis: WCH CH32V203 datasheet.
+
+### 3. LED Driver — SM16206S
+
+- Exact part: SM16206S / LCSC C121618
+- Package: **QSOP-24**
+- Nominal molded body: **8.65 mm × 3.9 mm × 1.4 mm**
+- Lead pitch: **0.635 mm**
+- Datasheet body tolerance:
+  - length D: 8.2–9.2 mm
+  - body width E1: 3.6–4.2 mm
+  - overall lead span E: 5.6–6.5 mm
+  - max package height A: 1.95 mm
+
+外観イメージでは約8.65 × 3.9 mmの細長いIC本体として扱う。
+
+Source basis: Shenzhen Sunmoon Micro SM16206 datasheet.
+
+### 4. DPDT Mode Switch — HanElectricity MST22D18G40-B
+
+- Exact candidate: **MST22D18G40-B**
+- LCSC: **C22435667**
+- Mounting: SMD
+- Circuit: DPDT
+- Body / package plan size: **9.1 mm × 3.5 mm**
+
+LCSCの公開属性ではZ方向の全高が明示されていないため、外観イメージで高さを厳密値として固定しない。
+
+Source basis: LCSC exact-part listing / footprint.
+
+### 5. Grove / HY2.0-4P Connector Candidates
+
+最新方針ではGroveは3.3V固定・UIAPduino D3/D4 I2C bus側として扱う。
+
+#### Candidate A — CAX HY2.0-4P-WT
+
+- JLCPCB: **C722729**
+- Mounting: SMD right-angle
+- Pitch: 2.0 mm
+- Board plan envelope: **12.0 mm × 7.9 mm**
+- Height above board: **5.1 mm**
+
+#### Candidate B — XUNPU WAFER-HY2.0-4PWB
+
+- JLCPCB: **C3029460**
+- Mounting: SMD right-angle
+- Pitch: 2.0 mm
+- Board plan envelope: **12.0 mm × 9.2 mm**
+- Height above board: **5.2 mm**
+- Auxiliary solder supportあり
+
+両候補とも幅12 mm級で、基板エッジ付近の物理占有が大きいため、PCB粗配置と外観イメージでは小物として扱わない。
+
+Source basis: JLCPCB exact-part listings.
+
+### 6. Qwiic Connector Physical Reference
+
+BASE側Qwiicの最終BOM型番はまだ固定しない。
+
+UIAPduino本体に採用されているJST SH 4P right-angle connectorを物理基準として使用できる。
+
+Reference part:
+- JST **SM04B-SRSS-TB(LF)(SN)**
+- UIAPduino BOM / JLCPCB: C160404
+- Pitch: 1.0 mm
+- Plan envelope: approximately **6.0 mm × 4.32 mm**
+- Height above board: **2.9 mm**
+- Right-angle SMD
+
+BASE側Qwiicを同系統部品で設計する場合、外観イメージではこの寸法を基準とする。
+
+### 7. Parts Not Yet Dimension-Frozen
+
+以下は機能として存在するが、部品型番またはpackageをまだ固定していないため、実寸イメージへ確定寸法で入れない。
+
+- A action button
+- B action button
+- dedicated RESET button
+- 15 status LEDs
+- Secret LED
+- left/right 2×12 female sockets for UIAPduino
+- right-side terminal blocks
+- corresponding 5-pin sockets
+- mounting holes for UIAP BASE itself
+- BASE-side USB DNP connector footprint
+- external crystal package
+
+これらは外観へ与える影響が大きい順に部品候補を固定して寸法を追加する。
+
+### 8. Next Physical-Dimension Priority
+
+実物に近い外観イメージを作るため、次は以下を優先して型番・寸法を決める。
+
+1. **A / B action button**
+2. **dedicated RESET button**
+3. **right-side terminal block**
+4. **2×12 female socket / pin-header stack height**
+5. **status LED package**
+6. **5-pin socket**
+7. **UIAP BASE mounting hole size / positions**
+
+特にボタン、端子台、ソケット高さは基板の見た目と立体感へ大きく影響するため、ICより優先して確定する。
