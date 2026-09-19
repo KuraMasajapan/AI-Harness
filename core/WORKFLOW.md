@@ -380,6 +380,73 @@ Paused   = ユーザーが明示的に中断を求めた
 ---
 
 
+
+## LESSON Process / LESSON改善プロセス
+
+このHarnessでは、**LESSON** を個別の記録ではなく、改善が発見されてからCore等へ昇格し、実運用で再検証されるまでのプロセス全体として扱う。
+
+```text
+Observation
+   ↓
+Candidate
+   ↓
+Record
+   ↓
+Priority Evaluation
+   ↓
+Review
+   ↓
+Human Decision
+   ↓
+Promotion
+   ↓
+Integration
+   ↓
+Regression Test
+   ↓
+Real Use
+```
+
+### Cross-Project Priority
+
+LESSONプロセスはすべてのProjectを横断する。
+
+個別Projectの作業中に発見された改善候補であっても、内容がHarness全体へ波及するならProject固有事項として閉じず、LESSONプロセスへ載せる。
+
+High / Criticalまたは複数Projectへ影響する改善候補は、関連するReview Triggerで優先的に再評価する。
+
+Medium / Lowは、現在作業を不必要に中断せず、関連するHarness作業・監査・再発時にレビューする。
+
+### Promotion Event
+
+以下を満たした時点をPromotion Eventとする。
+
+1. 人間による昇格承認がある
+2. Promotion Targetへ実際の変更が反映されている
+3. Promotion Evidenceが記録されている
+4. 必要なRegression Testが追加または既存Testでカバーされている
+5. Lesson Dashboard / Statusが最新化されている
+
+Promotion Eventが発生したら、現在の会話テーマに関係なくユーザーへ短く通知する。
+
+通知例：
+
+```text
+Harness更新: LESSONプロセスで「Lesson昇格の追跡性」をCoreへ昇格しました。
+反映先: core/WORKFLOW.md
+変更: Promotion EvidenceとReview Triggerを必須化。
+```
+
+通知後は元の作業へ戻る。
+
+### No Final Completion
+
+LESSONプロセスに最終完了はない。
+
+Coreへ昇格した内容も、実運用で問題が見つかれば再びObservationへ戻り、修正・統合・廃止の対象になる。
+
+---
+
 ## Lesson Review & Promotion Lifecycle / Lessonレビュー・昇格運用
 
 Lessonは記録して終わりにしない。一方で、すべてを自動的にCoreへ昇格させない。
