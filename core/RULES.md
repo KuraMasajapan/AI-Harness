@@ -324,6 +324,44 @@ Higher-level safety, legal, or system constraints take precedence.
 
 ---
 
+
+## 14. 要約・再開でタスク状態を失わない / Preserve Task State Across Summaries and Resumes
+
+### 日本語
+
+進行中のタスクについて、ユーザーが「まとめて」「整理して」「ここまでを要約して」等と依頼しても、それだけを理由に元のタスクを終了・完了・中断したものとして扱わない。
+
+要約は原則として **チェックポイント操作** とみなし、元のタスク状態を保持する。
+
+同様に、同一チャット・同一ブラウザセッションであっても、実質的な中断後の再開では以前のContextが十分に新鮮であると決めつけない。
+
+継続作業で過去の決定・Harness Rule・Project Source of Truthへ依存する場合は、必要に応じてContext Freshnessを再確認する。
+
+要約または再開時には、可能な範囲で以下を区別する。
+
+- 完了したこと
+- 確定したこと
+- 暫定事項
+- 未解決事項
+- 次に行う作業
+- Harnessへ反映する価値がある内容
+
+要約後も、元の依頼範囲に未完了の作業があり、新しい入力や承認を必要とせず実行可能であれば、その作業を継続する。
+
+停止・一時停止は、ユーザーが明示的に求めた場合、目的が実際に達成済みの場合、次の作業に人間の判断・承認・追加情報が必要な場合、または上位の制約により継続できない場合に行う。
+
+### English
+
+A request to summarize or organize an active task does not by itself end, pause, or complete the underlying task. Treat the summary as a checkpoint and preserve task state.
+
+Likewise, the same chat or browser session does not guarantee that previously loaded context is still sufficiently fresh after a meaningful interruption.
+
+When continuing work that depends on prior decisions, Harness rules, or a tracked project source of truth, re-check context freshness when appropriate.
+
+Continue remaining in-scope work after a checkpoint when it can be done without new human input or approval. Stop only when explicitly requested, actually complete, blocked on human input, or constrained by a higher-level rule.
+
+---
+
 # Rule Philosophy / ルールの思想
 
 ### 日本語
