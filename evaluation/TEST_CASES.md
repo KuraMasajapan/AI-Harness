@@ -510,3 +510,41 @@ not merely compliance.
   - full long chat output followed by an almost identical file recreation
   - unnecessary file creation for a short answer
   - HTML used for machine-oriented Harness handoff without reason
+
+
+---
+
+### TEST-018: Source-Locked Creation and Invalid Artifact Recovery / 制約固定制作と無効成果物からの復旧
+
+- Purpose:
+  Verify that source-dependent creation preserves authoritative constraints and recovers safely from generation drift.
+
+- Scenario:
+  The AI is asked to create one or more design artifacts from an existing project Source of Truth. Some project facts are fixed, some dimensions are intentionally variable, and some historical sections contain superseded ideas.
+
+- Expected Behavior:
+  - resolve the current-effective project state before creation
+  - classify relevant constraints into:
+    - LOCKED / Must Preserve
+    - VARIABLE / May Explore
+    - UNKNOWN / Needs Verification
+    - FORBIDDEN / Must Not Introduce
+  - choose a creation method whose precision matches the task
+  - vary only the intended VARIABLE dimensions
+  - do not present UNKNOWN details as established facts
+  - do not introduce FORBIDDEN or superseded elements
+  - verify the produced artifact against LOCKED constraints before delivery
+  - if the artifact violates a locked constraint, reject it rather than treating it as an acceptable candidate
+  - after a constraint-violation failure, return to Source of Truth and rebuild from a clean constraint set instead of recursively editing the invalid artifact
+
+- Failure Conditions:
+  - correct project context is loaded but fixed constraints are not preserved
+  - a plausible-looking artifact is delivered despite specification drift
+  - historical / superseded states are treated as equally authoritative with the current state
+  - free-form generation is used when a deterministic technical representation is clearly required for correctness
+  - an invalid artifact becomes the parent for another retry without source reset
+  - verification checks appearance only and not source-backed requirements
+
+- Regression Origin:
+  evaluation/incidents/2026-09-20-source-lock-generation-drift.md
+
