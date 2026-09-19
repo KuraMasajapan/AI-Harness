@@ -51,7 +51,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-007 | High | Promoted | core/WORKFLOW.md / memory/LESSONS.md |
 | LESSON-008 | High | Proposed | core/RULES.md / HARNESS.md / evaluation/* |
 | LESSON-009 | High | Proposed | core/WORKFLOW.md |
-| LESSON-010 | High | Proposed | core/WORKFLOW.md |
+| LESSON-010 | High | Promoted | core/WORKFLOW.md / evaluation/* |
 
 この表は人間向けの運用状況一覧である。
 
@@ -534,40 +534,54 @@ The purpose of this Lesson is not to make every rule constantly active. The goal
 ## LESSON-010 Source-Locked Creation / 制作物では確定仕様を固定する
 
 - Date: 2026-09-20
-- Context: During UIAP BASE PCB rough-placement exploration, several concept images were generated to compare physical layout patterns. The project already had durable specifications for the target UIAPduino board, signal count, MCU/driver candidates, connector policy, and other constraints.
-- What Happened: The generated images were visually useful as layout concepts, but some of them silently changed fixed project facts. Examples included depicting the UIAPduino as an ESP32-C6-like board, expanding GPIO counts beyond the known UIAPduino CH32V003 signal set, multiplying Grove/Qwiic connectors, and introducing extra power/USB hardware that had not been adopted.
-- Root Cause: The existing Physical Grounding Check prevents the AI from inferring physical layout from logical topology, but the Creation workflow does not explicitly separate **locked source constraints** from **variables that are allowed to change during exploration**. It also lacks a required post-creation comparison between the generated artifact and the authoritative project source.
-- Lesson: Creative exploration should vary only the dimensions that are intentionally open. Facts already fixed by the current Source of Truth must remain locked unless the task explicitly asks to reconsider them. After creation, the artifact should be checked against those locked constraints before it is treated as a usable design candidate.
+- Context: During UIAP BASE PCB rough-placement exploration, several image-generation attempts materially drifted from project specifications even though the relevant project Source of Truth had already been loaded.
+- What Happened: The generated artifacts silently changed fixed facts and invented unapproved details. Examples included replacing the intended UIAPduino CH32V003 V1.4 with an ESP32-like board, altering GPIO / LED counts and geometry, misrepresenting socket and connector structures, introducing unapproved power / USB details, and failing to create meaningfully distinct layout alternatives. After an initial bad result, a later retry edited the flawed artifact instead of resetting to the authoritative source.
+- Root Cause:
+  1. The existing Physical Grounding Check prevented some logical-to-physical inference errors, but did not explicitly compile current source information into an execution contract.
+  2. The creation workflow did not separate fixed constraints from intentionally variable dimensions.
+  3. Tool selection did not sufficiently consider that free-form image generation naturally invents plausible visual detail when the task actually requires constrained technical layout exploration.
+  4. Verification did not compare the artifact against fixed constraints before delivery.
+  5. Failure recovery did not require a reset to Source of Truth after a constraint-violation failure.
+  6. Long-lived project files may contain superseded historical states, so "source loaded" is not equivalent to "current-effective constraints resolved."
+- Lesson: For creation tasks that depend on an existing Source of Truth, correctness requires a closed constraint loop, not merely context availability. The AI should compile current-effective constraints before creation, choose a tool appropriate to the required precision, verify the artifact before delivery, and discard invalid artifacts rather than recursively editing specification drift.
 - Suggested Change:
-  1. Before a creation task that depends on an existing project specification, identify three sets:
-     - **Locked / Must Preserve** — approved or source-backed facts that must not change.
-     - **Variable / May Explore** — placement, styling, alternatives, or other dimensions intentionally open to exploration.
-     - **Unknown / Needs Verification** — details that should not be invented as if confirmed.
-  2. Pass the locked set into the creation step as explicit constraints.
-  3. After creation, compare the artifact against the locked set and the relevant Source of Truth.
-  4. Treat violations of locked constraints as generation errors, not as acceptable creative variation.
-  5. Keep this lightweight; do not require a large checklist for simple standalone creative work that has no authoritative source constraints.
-  6. When the artifact is only conceptual, clearly distinguish intentional abstraction from factual deviation.
-- Related Files: core/WORKFLOW.md, projects/UIAPduino/UIAP_BASE.md, projects/UIAPduino/UIAPduino.md, evaluation/*, experiments/latent-risk-scan/candidates/01-operationalization-gap.md
+  1. Before source-dependent creation, identify:
+     - **LOCKED / Must Preserve** — current authoritative facts that must not change.
+     - **VARIABLE / May Explore** — dimensions intentionally open to variation.
+     - **UNKNOWN / Needs Verification** — unresolved details that must not be presented as confirmed.
+     - **FORBIDDEN / Must Not Introduce** — rejected, superseded, or unapproved elements.
+  2. Resolve current-effective state when the source contains historical or superseded sections.
+  3. Pass the compiled constraint set into the creation step.
+  4. Perform a **Tool Fit Check**:
+     - use deterministic diagrams / SVG / CAD-like methods when geometric or structural precision matters;
+     - use image generation primarily when visual exploration is the goal and the locked structure can still be preserved.
+  5. After creation, run an **Artifact Gate** against LOCKED and FORBIDDEN constraints before delivery.
+  6. If the artifact violates locked constraints, reject it and return to Source of Truth. Do not use the invalid artifact as the default base for further editing.
+  7. Keep the process lightweight for standalone creative work that has no authoritative source constraints.
+- Related Files: core/WORKFLOW.md, evaluation/TEST_CASES.md, evaluation/incidents/2026-09-20-source-lock-generation-drift.md, projects/UIAPduino/UIAP_BASE.md, projects/UIAPduino/UIAPduino.md, experiments/latent-risk-scan/candidates/01-operationalization-gap.md
 - Priority: High
-- Promotion Target: core/WORKFLOW.md
-- Promotion Evidence: Real UIAP BASE image-generation deviations observed during PCB rough-placement work on 2026-09-20; user review confirmed the direction of the analysis.
-- Status: Proposed
+- Promotion Target: core/WORKFLOW.md / evaluation/*
+- Promotion Evidence: Repeated UIAP BASE image-generation deviations + explicit human review + incident analysis + regression test added on 2026-09-20.
+- Status: Promoted
 
 ### Design Note / 設計メモ
 
-The minimal pattern is:
+The minimal closed loop is:
 
 ```text
-Current Source of Truth
+Current effective Source of Truth
         ↓
-Locked / Variable / Unknown
+Constraint Compile
+LOCKED / VARIABLE / UNKNOWN / FORBIDDEN
+        ↓
+Tool Fit Check
         ↓
 Create
         ↓
-Compare artifact with Locked constraints
+Artifact Gate
         ↓
-Accept / Correct / Recreate
+PASS → Deliver
+FAIL → Reject → Source Reset
 ```
 
 This lesson is adjacent to, but not identical with, the Operationalization Gap candidate.
@@ -575,13 +589,15 @@ This lesson is adjacent to, but not identical with, the Operationalization Gap c
 The relevant operational failure is:
 
 ```text
-Physical Grounding Check exists
+Correct constraints exist
         ↓
-Creation task begins
+constraints are available
         ↓
-fixed project facts are not carried forward strongly enough
+constraints are not enforced through creation
         ↓
-artifact appears plausible but contains specification drift
+artifact drifts
+        ↓
+verification fails to stop delivery
 ```
 
-The lesson should remain Proposed until further use shows whether this pattern generalizes beyond the current image-generation case.
+This incident demonstrates that **Available ≠ Enforced** for source-dependent creation.
