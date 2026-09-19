@@ -121,3 +121,43 @@ but has not been shown to become operationally effective?
 ```
 
 This should remain a candidate until further real-world observations either strengthen, split, or falsify it.
+
+## Reconnection Check — 2026-09-20
+
+After this candidate note was committed and automatically pulled back into the same Obsidian Vault, Smart Connections ranked the original five cases near the top of the candidate note's related sources:
+
+- 03-activation-observability-gap: 0.85
+- 01-logical-boundary-without-enforcement: 0.84
+- 02-context-present-not-triggered: 0.83
+- 04-unread-source-false-absence: 0.83
+- 05-write-approval-handoff-missed: 0.81
+
+Observed loop:
+
+```text
+separate cases
+→ semantic candidate discovery
+→ AI forms a structural hypothesis
+→ hypothesis saved as Markdown
+→ Obsidian re-indexes it
+→ original cases reconnect to the hypothesis
+```
+
+### Interpretation
+
+This supports the practical usefulness of the current workflow for **candidate discovery and hypothesis refinement**.
+
+It does **not** prove that Operationalization Gap is the correct theory or root cause.
+
+The similarity scores are embedding-based semantic proximity signals. They may reflect a mixture of:
+
+- deeper shared meaning
+- overlapping terminology
+- similar writing structure
+- common experiment context
+
+Therefore the correct conclusion is limited:
+
+> The workflow can surface and recycle potentially useful structural hypotheses for later human/AI evaluation.
+
+The candidate remains provisional.
