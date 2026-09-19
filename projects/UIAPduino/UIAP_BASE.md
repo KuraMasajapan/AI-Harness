@@ -1042,3 +1042,187 @@ UIAP BASEでは「Groveなら何でも使える」「M5Stack Unit完全互換」
 UIAP BASEのGrove / M5Stack対応は、対応数を誇ることよりも、初心者が迷わず実際に動かせることを優先する。
 
 「つながる」ではなく「使える」を公式対応の判断基準とする。
+
+
+---
+
+## Grove / Qwiic Final Direction Summary — 2026-09-19
+
+Grove / M5Stack Unit / Qwiic / STEMMA QT / Arduino Modulino周辺について検討した結果、UIAP BASE V003では「最大互換」を狙うのではなく、初心者が安全に使いやすい範囲へ意図的に絞る方針とする。
+
+### 1. Basic Policy
+
+UIAP BASE V003では、汎用性を無制限に広げない。
+
+判断基準は、
+
+> 対応できるかどうかではなく、初心者にとって対応する価値があるか
+
+とする。
+
+追加回路、切替操作、説明負荷、誤接続リスクが増える場合は、対応範囲を絞ることを優先する。
+
+### 2. Qwiic
+
+Qwiicは3.3V I2C ecosystemとして扱う。
+
+- 3.3V
+- SDA / SCL
+- GND
+- UIAPduino D3 / D4を使用
+- SparkFun Qwiic
+- Adafruit STEMMA QT
+- Arduino Modulino等のI2C系への入口として利用可能
+
+UIAPduino本体のCN2 footprintを必須とはせず、UIAP BASE側にもQwiic connectorを設ける方向で検討する。
+
+理由：
+
+- BASE基板端へ使いやすい位置に配置できる
+- 初号機では基板面積を強く制限しない
+- 実物で使用頻度・操作性を評価した後、量産版で削減判断できる
+
+### 3. Grove
+
+UIAP BASE V003のGrove portは **3.3V固定を基本方針** とする。
+
+Grove ecosystem全体は3.3V / 5Vが混在しており、すべてのGrove製品を共通条件で保証することはしない。
+
+教育用途で優先したい以下のような製品群には3.3V対応品が多く、V003用途では十分な選択肢がある。
+
+- Button / Switch
+- LED / Buzzer
+- Light sensor
+- Temperature / Humidity sensor
+- PIR
+- Distance / ToF
+- 小型表示
+- 各種軽量I2C sensor
+
+5V必須になりやすい例：
+
+- Motor / Motor Driver
+- Electromagnet
+- Water Atomization
+- 一部のGas sensor
+- 一部の旧型Relay
+- その他、高消費電力・駆動系・旧設計module
+
+これらはV003初期版で無理に標準対応しない。
+
+### 4. No User Voltage Switching
+
+ユーザーにGrove機器ごとの3.3V / 5V判断を要求しない。
+
+したがって、現時点では以下をV003標準仕様から外す方向とする。
+
+- 3.3V / 5V手動切替switch
+- Grove voltage selection jumper
+- 通常利用時にユーザーが電圧を選択する仕組み
+- 5V Groveを広く保証するためだけの複雑なlevel conversion
+
+「挿す前に電圧を調べて切り替える」操作は、UIAP BASEの初心者向け設計思想と相性が悪い。
+
+### 5. Shared D3 / D4 I2C Bus
+
+Grove I2CとQwiicはUIAPduinoのD3 / D4を共有する。
+
+これはI2Cとして正常な構成であり、異なるI2C addressを持つdeviceは原理上同じbusで同時使用できる。
+
+ただし以下は注意事項として扱う。
+
+- I2C address重複
+- module側pull-up resistorの重複
+- 3.3V以外へpull-upされる製品
+- V003のFlash / SRAM制約
+- 大型library依存
+
+基板上では必要以上に長い説明をせず、例えば以下のような簡潔なsilkscreenを検討する。
+
+`I2C SHARED D3/D4`
+
+Qwiic側には `3V3` を明示する。
+
+Grove側についても3.3V運用が明確になる表示を行う。
+
+### 6. Compatibility Promise
+
+UIAP BASEでは「Grove完全互換」「M5Stack Unit完全互換」「何でも使える」とは表現しない。
+
+公式な約束は以下とする。
+
+> **UIAPduino CH32V003で実際に使いやすいGrove / Qwiic系moduleを簡単につなげる。**
+
+対応可否はconnector形状だけでは判断しない。
+
+実際の動作、電圧、memory負荷、library依存を確認して対応levelを決める。
+
+### 7. Compatibility Levels
+
+対応moduleは将来的に以下のlevelで管理する。
+
+- 🟢 UIAP Ready
+  - V003で動作確認済み
+  - 初心者向け
+  - 公式sampleあり
+
+- 🟡 Advanced
+  - 軽量化、専用driver、memory節約等の工夫が必要
+
+- 🔴 V003非推奨
+  - 5V必須
+  - memory不足
+  - 大型library依存
+  - 機能過多
+  - その他V003用途に不適
+
+### 8. M5Stack Unit Positioning
+
+M5Stack UnitはGroveと同じHY2.0-4P系connectorを使う製品が多いが、電源・signal条件を一括して同一視しない。
+
+M5Stack Unit対応は「connectorが挿さること」ではなく、各Unitの電気条件とV003での実用性を確認してUIAP Ready判定する。
+
+M5Stack Port.A互換を理由にBASE全体を5V設計へ寄せない。
+
+### 9. Prototype Philosophy
+
+初号試作では基板面積を強く削らない。
+
+まずGroveとQwiicを実装して、
+
+- 実際の使いやすさ
+- connector配置
+- cable取り回し
+- 使用頻度
+- 3.3V固定Groveで困るか
+- QwiicをBASE側に持つ価値
+- 対応moduleの広がり
+
+を実機で評価する。
+
+基板サイズ・connector数・不要回路の削減は、その後の量産版で判断する。
+
+### 10. Superseded Ideas
+
+以下は検討過程で出た案だが、現時点の基本方針としては採用しない。
+
+- Grove VCCを5V defaultにして3.3Vへ切替
+- ユーザーが機器ごとに3.3V / 5Vを切り替える
+- 5V I2C対応のためのlevel shifterを標準必須にする
+- Groveを万能portとして全製品対応させる
+- M5Stack Port.AをGrove全体の基準として扱う
+
+これらは将来の上位版・別版で必要性が出た場合に再検討する。
+
+### Current V0.2 Direction
+
+現時点のV0.2方向は以下。
+
+- Qwiic：3.3V固定、D3 / D4
+- Grove：3.3V固定、D3 / D4
+- 両者は同じI2C busを共有
+- 3.3Vで安全に使える製品をUIAP Ready候補とする
+- 5V必須Groveは標準対象外
+- ユーザー電圧切替は設けない
+- 初号機ではGrove + BASE側Qwiicの両方を実装候補として維持
+- 実機評価後に量産版で削る
