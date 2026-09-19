@@ -1643,9 +1643,123 @@ CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** package�
 | 数量 | 4個（TB1〜TB4） | 確定 |
 | 配置 | 基板右側寄り、縦方向へ等間隔 | 確定 |
 | 方式 | ねじ式 | 確定 |
-| TB1既存案 | TX / RX / D3 / D4 / D2 | UX再検討 |
-| TB2既存案 | D5 / D11 / D7 / D8 / D9 | UX再検討 |
-| TB3既存案 | D12 / D6 / D0 / D1 / D10 | UX再検討 |
-| TB4既存案 | 5V / GND / RX / TX / 3V3 | UX再検討 |
+| TB1既存案 | TX / RX / D3 / D4 / D2 | Superseded by UX V0.1 |
+| TB2既存案 | D5 / D11 / D7 / D8 / D9 | Superseded by UX V0.1 |
+| TB3既存案 | D12 / D6 / D0 / D1 / D10 | Superseded by UX V0.1 |
+| TB4既存案 | 5V / GND / RX / TX / 3V3 | Retained in UX V0.1 |
 
 端子台の物理仕様は固定し、今後は**pin assignment / orderingを初心者UXの観点から再設計する**。
+
+---
+
+## Terminal Block UX Pin Assignment V0.1 — 2026-09-20
+
+端子台の機械仕様は以下を維持する。
+
+- KF141V-2.54-5P
+- LCSC C475117
+- 5P × 4
+- TB1〜TB4
+- 基板右側寄りに縦方向へ等間隔配置
+
+ピン配置は、単純なD番号順ではなく、初心者が**用途から接続先を探せること**を優先して再構成する。
+
+### TB1 — BUS / Digital Communication
+
+**D3/SDA / D4/SCL / D7/SCK / D8/MOSI / D9/MISO**
+
+目的：
+
+- I2Cを先頭2pinへまとめる
+- SPIを後半3pinへまとめる
+- 通信系を1つのblockへ集約する
+- シルクで I2C | SPI の視覚的な区切りを作りやすくする
+
+推奨シルク：
+
+SDA  SCL | SCK  MOSI  MISO
+
+小さくD番号を併記する。
+
+### TB2 — ANALOG / Basic Input
+
+**D1/A0 / D0/A1 / D6/A2 / D12/A3 / D2**
+
+目的：
+
+- A0〜A3を連続順で並べ、アナログ入力を見つけやすくする
+- D番号順よりも教材上の意味を優先する
+- 残るD2を汎用digital pinとして末尾へ置く
+
+推奨シルク：
+
+A0  A1  A2  A3 | D2
+
+D番号は補助表示： D1 / D0 / D6 / D12
+
+### TB3 — GENERAL / SPECIAL
+
+**D5 / D10 / D11-SWIO / D16-RX / D15-TX**
+
+目的：
+
+- D5 / D10を一般GPIOとして先頭へ置く
+- D11はSWIO兼用であることを明示して通常GPIOと区別する
+- UARTのRX / TXを後ろ2pinへまとめる
+- TB4と同じ RX → TX の視覚順を維持する
+
+推奨シルク：
+
+D5  D10  D11/SWIO | RX  TX
+
+UART補助表示： RX=D16 / TX=D15
+
+### TB4 — POWER / UART QUICK ACCESS
+
+**5V / GND / RX / TX / 3V3**
+
+この並びは維持する。
+
+目的：
+
+- 電源を両端側へ分かりやすく配置
+- GNDを5Vの隣に置く
+- UART RX / TXを中央へまとめる
+- CH9102F系USB-Serial moduleの 5V / GND / TX / RX 系列に対して、BASE側を 5V / GND / RX / TX とすることでTX↔RXのクロス接続を位置関係で作りやすくする
+- 3.3Vも同一blockから取得可能にする
+
+推奨シルク：
+
+5V  GND | RX  TX | 3V3
+
+### UX Rules
+
+端子台シルクでは、初心者が最初に見る文字を**機能名**にする。
+
+例：
+
+- D3/SDA より、主表示 SDA + 小さく D3
+- D1/A0 より、主表示 A0 + 小さく D1
+
+ただし一般GPIOとしてしか意味を持たないpinはD番号を主表示とする。
+
+特殊pinは機能を隠さない。
+
+- D11 → D11/SWIO
+- D15 → TX
+- D16 → RX
+
+### Current Decision
+
+粗配置・外観イメージでは以下を現行pin assignmentとして使用する。
+
+| Block | Pin 1 | Pin 2 | Pin 3 | Pin 4 | Pin 5 |
+|---|---|---|---|---|---|
+| TB1 BUS | D3/SDA | D4/SCL | D7/SCK | D8/MOSI | D9/MISO |
+| TB2 ANALOG | D1/A0 | D0/A1 | D6/A2 | D12/A3 | D2 |
+| TB3 GENERAL | D5 | D10 | D11/SWIO | D16/RX | D15/TX |
+| TB4 POWER/UART | 5V | GND | RX | TX | 3V3 |
+
+この配置は **UX V0.1として採用**する。
+
+最終PCBでterminal blockの物理向きが確定した際、Pin 1→5が上から下・左から右のどちらに見えるかを確認し、必要ならblock全体を反転する。ただしblock内の論理的な隣接関係は維持する。
