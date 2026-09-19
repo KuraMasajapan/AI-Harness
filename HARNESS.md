@@ -50,6 +50,33 @@ Defines the general process for handling tasks.
 
 ---
 
+
+## Runtime Activation & Revalidation / 実行時の有効化と再検証
+
+Harness files are declarative context, not self-executing runtime code.
+
+Harnessファイルはルールや知識を保存する宣言的Contextであり、ファイルが存在するだけでAIの動作へ自動適用されるわけではない。
+
+したがって、Harnessの利用は「アプリ起動時の一回限りのBootstrap」ではなく、**必要に応じて同一チャット内でも再検証できる仕組み**として扱う。
+
+各AI integrationは以下を満たすことを目標とする。
+
+1. 明示的なSTART / BOOTSTRAP経路を持つ。
+2. Fresh sessionだけでなく、meaningful interruption後やContext freshnessに疑いがある場合に再Bootstrapできる。
+3. 継続Projectでは、会話Memoryだけでなく現在のProject Source of Truthを必要に応じて再取得する。
+4. 重要な継続作業の前には、必要なCore / Workflow / Project Contextが現在のRunで有効か確認する。
+5. 評価では以下を分ける。
+   - Ruleがrepositoryに存在する
+   - START / BOOTSTRAP経路がRuleを参照する
+   - 現在のRunで実際にContextが読み込まれた
+   - 実タスクで期待動作が観察された
+
+利用可能なmessage timestampはResume Boundary判定の有力なシグナルとして使えるが、timestampが常に利用可能とは限らないため、時刻だけを唯一の判定条件にしてはならない。
+
+The practical target is **verifiable activation and revalidation**, not an unsupported claim of universal runtime guarantee.
+
+---
+
 ## 3. Context Loading / コンテキストの読み込み
 
 At the beginning of a task:
