@@ -50,6 +50,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-006 | Medium | Promoted | core/WORKFLOW.md |
 | LESSON-007 | High | Promoted | core/WORKFLOW.md / memory/LESSONS.md |
 | LESSON-008 | High | Proposed | core/RULES.md / HARNESS.md / evaluation/* |
+| LESSON-009 | High | Proposed | core/WORKFLOW.md |
 
 この表は人間向けの運用状況一覧である。
 
@@ -476,3 +477,52 @@ Independent dual approval
 The important property is **independence**. A safety control outside the Harness can protect against failures in the Harness's own self-governance.
 
 However, one observed approval prompt is not enough to claim that every Core write will always be intercepted. This Lesson should remain Proposed until repeated use confirms the behavior and its scope.
+
+
+---
+
+## LESSON-009 Runtime Activation Is Distinct from Rule Existence / ルールの存在と実行時発火は別物
+
+- Date: 2026-09-20
+- Context: Latent Risk Scan V0.1 passed controlled high-risk / low-risk tests, but later real project work showed that relevant Latent Risk Scan context could already be available while the AI still failed to recall or trigger it until the human explicitly pointed to the hidden-risk topic.
+- What Happened: The capability and its rationale existed, and relevant context was present, but the AI did not autonomously invoke the capability at the moment it was needed.
+- Root Cause: The Harness still has a gap between declarative knowledge and runtime activation. A rule or capability can exist in a file, be available in context, and still fail to affect action because no sufficiently reliable trigger / recall / routing path activates it during the task.
+- Lesson: Treat these as separate states:
+  1. Rule or capability exists.
+  2. It is available in current context.
+  3. It is recalled for the current task.
+  4. It is triggered.
+  5. It changes the action or decision.
+  
+  Passing one state does not prove the next.
+- Suggested Change:
+  1. For capabilities that must operate at specific risk boundaries, define a minimal runtime trigger in the workflow rather than relying on file presence alone.
+  2. Keep the trigger narrow enough that low-risk work is not blocked.
+  3. For Latent Risk Scan, candidate trigger conditions include permission expansion, new or materially expanded external actions, Core / Source of Truth changes, and other high-impact or difficult-to-reverse operations.
+  4. When triggered, ask only the minimal pre-failure questions needed to expose assumptions, failure consequences, and missing detection / verification / enforcement layers.
+  5. Do not infer reliable activation merely because the rule was loaded once or because the model can explain it when prompted.
+- Related Files: core/WORKFLOW.md, HARNESS.md, experiments/latent-risk-scan/*
+- Priority: High
+- Promotion Target: core/WORKFLOW.md
+- Promotion Evidence: Controlled Latent Risk Scan Test A/B PASS + exploratory runtime activation-path finding + real-world Context-present / self-trigger-absent observation
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+The operational chain should be evaluated explicitly:
+
+```text
+Rule exists
+    ↓
+Available in context
+    ↓
+Recalled for this task
+    ↓
+Triggered
+    ↓
+Affects action
+```
+
+A failure can occur at any transition.
+
+The purpose of this Lesson is not to make every rule constantly active. The goal is to identify which capabilities require a reliable activation path and to keep those paths minimal, observable, and proportionate to risk.
