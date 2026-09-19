@@ -51,6 +51,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-007 | High | Promoted | core/WORKFLOW.md / memory/LESSONS.md |
 | LESSON-008 | High | Proposed | core/RULES.md / HARNESS.md / evaluation/* |
 | LESSON-009 | High | Proposed | core/WORKFLOW.md |
+| LESSON-010 | High | Proposed | core/WORKFLOW.md |
 
 この表は人間向けの運用状況一覧である。
 
@@ -526,3 +527,61 @@ Affects action
 A failure can occur at any transition.
 
 The purpose of this Lesson is not to make every rule constantly active. The goal is to identify which capabilities require a reliable activation path and to keep those paths minimal, observable, and proportionate to risk.
+
+
+---
+
+## LESSON-010 Source-Locked Creation / 制作物では確定仕様を固定する
+
+- Date: 2026-09-20
+- Context: During UIAP BASE PCB rough-placement exploration, several concept images were generated to compare physical layout patterns. The project already had durable specifications for the target UIAPduino board, signal count, MCU/driver candidates, connector policy, and other constraints.
+- What Happened: The generated images were visually useful as layout concepts, but some of them silently changed fixed project facts. Examples included depicting the UIAPduino as an ESP32-C6-like board, expanding GPIO counts beyond the known UIAPduino CH32V003 signal set, multiplying Grove/Qwiic connectors, and introducing extra power/USB hardware that had not been adopted.
+- Root Cause: The existing Physical Grounding Check prevents the AI from inferring physical layout from logical topology, but the Creation workflow does not explicitly separate **locked source constraints** from **variables that are allowed to change during exploration**. It also lacks a required post-creation comparison between the generated artifact and the authoritative project source.
+- Lesson: Creative exploration should vary only the dimensions that are intentionally open. Facts already fixed by the current Source of Truth must remain locked unless the task explicitly asks to reconsider them. After creation, the artifact should be checked against those locked constraints before it is treated as a usable design candidate.
+- Suggested Change:
+  1. Before a creation task that depends on an existing project specification, identify three sets:
+     - **Locked / Must Preserve** — approved or source-backed facts that must not change.
+     - **Variable / May Explore** — placement, styling, alternatives, or other dimensions intentionally open to exploration.
+     - **Unknown / Needs Verification** — details that should not be invented as if confirmed.
+  2. Pass the locked set into the creation step as explicit constraints.
+  3. After creation, compare the artifact against the locked set and the relevant Source of Truth.
+  4. Treat violations of locked constraints as generation errors, not as acceptable creative variation.
+  5. Keep this lightweight; do not require a large checklist for simple standalone creative work that has no authoritative source constraints.
+  6. When the artifact is only conceptual, clearly distinguish intentional abstraction from factual deviation.
+- Related Files: core/WORKFLOW.md, projects/UIAPduino/UIAP_BASE.md, projects/UIAPduino/UIAPduino.md, evaluation/*, experiments/latent-risk-scan/candidates/01-operationalization-gap.md
+- Priority: High
+- Promotion Target: core/WORKFLOW.md
+- Promotion Evidence: Real UIAP BASE image-generation deviations observed during PCB rough-placement work on 2026-09-20; user review confirmed the direction of the analysis.
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+The minimal pattern is:
+
+```text
+Current Source of Truth
+        ↓
+Locked / Variable / Unknown
+        ↓
+Create
+        ↓
+Compare artifact with Locked constraints
+        ↓
+Accept / Correct / Recreate
+```
+
+This lesson is adjacent to, but not identical with, the Operationalization Gap candidate.
+
+The relevant operational failure is:
+
+```text
+Physical Grounding Check exists
+        ↓
+Creation task begins
+        ↓
+fixed project facts are not carried forward strongly enough
+        ↓
+artifact appears plausible but contains specification drift
+```
+
+The lesson should remain Proposed until further use shows whether this pattern generalizes beyond the current image-generation case.
