@@ -596,27 +596,27 @@ A / BはBASEの日常操作用buttonとし、UIAPduino RESETとは分離する�
 
 A / Bはgameだけでなく、MODE、selection、inspection、future functionにも使う。
 
-### 2. Dedicated UIAPduino RESET
+### 2. UIAPduino RESET Control — Updated by 2026-09-19 A/B Decision
 
-UIAPduino V1.4にはRESET / D17信号が外部端子へ出ているため、BASE側に小型の専用RESET buttonを設ける。
+後の `A / B NORMAL Mode Pin Assignment Decision — 2026-09-19` により、物理RESETの役割はA buttonへ統合する。
 
-physical RESETはBASE MCUが停止していても動作するよう、RESET / D17をbuttonで直接GNDへ落とす。
+- NORMAL mode: A button → UIAPduino D17 / RESET
+- GAME mode: A button → BASE MCU PA4
+- したがって、標準構成では別個の dedicated RESET button を追加しない。
 
-加えて、BASE MCUからもUIAPduinoをresetできるようにする候補として以下を採用する。
+BASE MCUからUIAPduinoをresetできるprogrammatic reset候補は、物理A buttonとは別機能として維持する。
 
 - UIAPduino RESET / D17 → N-MOSFET drain
 - N-MOSFET source → GND
 - N-MOSFET gate → PA6
 - gate → 100kΩ pull-down → GND
-- device candidate：2N7002 class
+- device candidate: 2N7002 class
 
-これにより以下を分離する。
+これにより現行方針では以下を分離する。
 
-- A / B：ユーザー操作
-- RESET：物理的なUIAPduino hard reset
+- A / B：NORMAL / GAMEで切り替わるユーザー操作
+- A NORMAL：BASE MCUに依存しないUIAPduino physical RESET
 - PA6 + MOSFET：BASE MCUからのprogrammatic reset
-
-専用RESET buttonはA / Bより小さくする、または配置を離して誤操作を防ぐ。
 
 ### 3. Secret LED
 
@@ -1354,11 +1354,83 @@ BASE側Qwiicを同系統部品で設計する場合、外観イメージでは�
 実物に近い外観イメージを作るため、次は以下を優先して型番・寸法を決める。
 
 1. **A / B action button**
-2. **dedicated RESET button**
-3. **right-side terminal block**
-4. **2×12 female socket / pin-header stack height**
-5. **status LED package**
-6. **5-pin socket**
-7. **UIAP BASE mounting hole size / positions**
+2. **right-side terminal block**
+3. **2×12 female socket / pin-header stack height**
+4. **status LED package**
+5. **5-pin socket**
+6. **UIAP BASE mounting hole size / positions**
 
 特にボタン、端子台、ソケット高さは基板の見た目と立体感へ大きく影響するため、ICより優先して確定する。
+
+### 9. A / B Action Button Physical Candidate
+
+実物イメージとPCB粗配置用の第一候補として、A / Bには同一の6 mm角SMD tactile switchを使用する方向で仮固定する。
+
+**Candidate: CAX TS-1187UWS-6x6x5-160**
+- JLCPCB: **C49023391**
+- Mounting: Surface Mount, Vertical
+- Circuit: SPST
+- Body plan size: **6.0 mm × 6.0 mm**
+- Switch height: **5.0 mm**
+- Contact current: 50 mA
+- Rated voltage: 12 V
+- Mechanical life: **100,000 cycles**
+- Actuator: round button
+- Operating temperature: -40°C to +80°C
+
+A / Bを同一部品にすることで、操作感・外観・BOMを統一する。
+
+6 × 6 mm / 高さ5 mmは、UIAP BASE上で直接押すアクションボタンとして存在を認識しやすく、3～4 mm級の小型switchよりA / Bの役割を明確にできる。
+
+現時点では**物理配置用の第一候補**であり、最終BOMでは最新価格・在庫・実際の押し心地を再確認する。
+
+Source basis: JLCPCB exact-part listing C49023391.
+
+### 10. RESET Button Physical Treatment
+
+現行の `A / B NORMAL Mode Pin Assignment Decision — 2026-09-19` では、NORMAL時のA button自体がUIAPduino RESETを担当する。
+
+したがって、**別のdedicated RESET switchは現時点の実物イメージへ置かない。**
+
+操作部品の物理基準は現時点で以下とする。
+
+- A button ×1
+- B button ×1
+- DPDT NORMAL / GAME slide switch ×1
+
+### 11. UIAPduino 2×12 Female Socket Physical Candidate
+
+UIAPduinoを上から差し込む左右socketの物理基準として、2.54 mm pitch / 2×12 / vertical top-entryのSMD female headerを候補にする。
+
+**Candidate: HCTL PM254-2-12-S-8.5**
+- JLCPCB / LCSC: **C3975157**
+- Positions: **24P / 2×12**
+- Pitch: **2.54 mm**
+- Row spacing: **2.54 mm**
+- Mounting: **Surface Mount, Vertical**
+- Entry direction: Top
+- Body size: approximately **30.88 mm × 5.00 mm**
+- Insulation height: **8.5 mm**
+- Current rating: 3 A
+- Operating temperature: -40°C to +105°C
+
+実物イメージでは、左右それぞれに **約30.9 × 5.0 mm、高さ8.5 mm** のfemale socketとして配置する。
+
+最終採用前には、UIAPduino側pin headerとの挿入深さ、USB-C周辺干渉、実際のstack height、保持力を実機確認する。
+
+2026-09-20確認時点でJLCPCB/LCSCに現行掲載があり、SMT Assembly対象。価格・在庫は変動するため固定値としてProject要件にはしない。
+
+Source basis: JLCPCB / LCSC exact-part listing C3975157 and HCTL dimensional data.
+
+### 12. Updated Physical-Dimension Priority
+
+専用RESET buttonを現行構成から外し、A / B buttonと2×12 female socketの物理候補を置いたため、次の寸法確定優先順は以下へ更新する。
+
+1. **right-side terminal block**
+2. **status LED package**
+3. **5-pin socket**
+4. **UIAP BASE mounting hole size / positions**
+5. **BASE USB DNP footprint**
+6. **external crystal package**
+
+A / B buttonと2×12 female socketは、現時点では上記候補寸法をPCB粗配置・実物イメージの基準として使用する。
