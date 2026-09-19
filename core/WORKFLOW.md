@@ -693,18 +693,91 @@ Higher reasoning effort does not guarantee factual correctness. Reasoning depth 
  ↓
 要件
  ↓
-設計
+現在有効なSource of Truthを確認
+ ↓
+制約を整理
+ ↓
+手段を選ぶ
  ↓
 制作
  ↓
-確認
+成果物を検証
  ↓
-修正
+必要ならSourceへ戻って修正
  ↓
 完成
 ```
 
 制作物については、見た目だけでなく要件を満たしているか確認する。
+
+既存Projectの仕様・設計・ブランド・データなど、**権威あるSource of Truthに依存する制作**では、制作前に現在有効な状態を整理する。
+
+最低限、必要に応じて以下へ分類する。
+
+- **LOCKED / Must Preserve**
+  - 現在のSource of Truthで確定しており、制作時に変更してはいけない事項
+- **VARIABLE / May Explore**
+  - 今回の制作で意図的に変化・比較してよい事項
+- **UNKNOWN / Needs Verification**
+  - 未確定・未確認であり、確定事項として創作してはいけない事項
+- **FORBIDDEN / Must Not Introduce**
+  - 不採用、superseded、禁止、または今回の範囲外として持ち込んではいけない事項
+
+長期ProjectのSourceに古い案や履歴が残っている場合、単にファイルを読んだだけで現在仕様とみなさない。後の決定、final direction、superseded表記、現在のProject判断を用いて**current-effective state**を解決する。
+
+### Tool Fit Check / 制作手段適合確認
+
+制作方法は「作れるか」ではなく、要求される精度に合うかで選ぶ。
+
+例：
+
+- 厳密な位置、個数、構造、寸法、接続関係を比較する技術図
+  → SVG、CAD、Python等の決定論的・構造化された手段を優先
+- 雰囲気、外観、コンセプト、スタイリング等の視覚探索
+  → Image generationを利用可能
+- Source-lockedな対象をImage generationで扱う場合
+  → LOCKED条件を明示し、生成後の照合を必須とする
+
+自由生成が未指定部分をもっともらしく補完しやすい場合、その性質自体をリスクとして扱う。
+
+### Artifact Gate / 成果物ゲート
+
+Source-dependentな成果物は、ユーザーへ提示する前にLOCKED / FORBIDDEN条件と照合する。
+
+```text
+Create
+  ↓
+Compare with LOCKED + FORBIDDEN
+  ↓
+PASS → Deliver
+FAIL → Reject
+```
+
+固定条件違反は「創作上のバリエーション」として受け入れない。
+
+UNKNOWNを確定事項として表現した場合も、必要に応じて修正または明示する。
+
+### Source Reset on Constraint Failure / 制約違反時のSource復帰
+
+固定条件違反を含む成果物が生成された場合、その成果物を当然の親データとして再編集し続けない。
+
+```text
+Constraint violation
+        ↓
+Reject artifact
+        ↓
+Return to current Source of Truth
+        ↓
+Rebuild constraints
+        ↓
+Re-evaluate tool fit
+        ↓
+Create again
+```
+
+特に画像生成・自動補完系Toolでは、誤った成果物を編集元にすると誤りを保持・増幅する可能性がある。
+
+この手順は、権威あるSourceへ依存する制作物に適用する。単純な独立Creative Taskへ過剰なChecklistを強制しない。
 
 ---
 
