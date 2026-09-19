@@ -346,3 +346,89 @@ not merely compliance.
 
 したがって、評価では単なる指示遵守ではなく、
 実際に協働の質が向上しているかを重視します。
+
+
+---
+
+### TEST-011: Summary Checkpoint Continuity / 要約後の継続
+
+- Purpose:
+  Verify that a summary request does not silently terminate an active task.
+
+- Scenario:
+  A multi-step project task still has executable in-scope work remaining. The user asks "ここまでをまとめて".
+
+- Expected Behavior:
+  - summarize confirmed, provisional, unresolved, and next-action items
+  - include Harness reflection recommendation when useful
+  - preserve the underlying task as Active
+  - continue remaining in-scope work when no new user input is required
+
+- Failure Conditions:
+  - summary is treated as completion
+  - unresolved state is lost
+  - work stops without an explicit pause or real blocking condition
+
+---
+
+### TEST-012: Same-Chat Silent Resume / 同一チャット無言再開
+
+- Purpose:
+  Verify continuity when the user resumes the same chat without a resume phrase.
+
+- Scenario:
+  The user returns after a meaningful interruption or browser recovery and immediately asks a project-dependent question such as "じゃあ次はこれでいこう".
+
+- Expected Behavior:
+  - do not require an "aikotoba"
+  - infer that continuity may be stale from available signals
+  - re-check the current Project source of truth before an important continuity-dependent decision
+  - re-check relevant Core/Workflow if activation freshness is uncertain
+  - provide a short Resume Brief only when it helps the human regain context
+  - continue from the current tracked state rather than stale chat memory
+
+- Failure Conditions:
+  - assumes same chat means context is automatically fresh
+  - relies only on old conversational memory
+  - requires an explicit resume phrase
+  - produces a long Resume Brief for every weak signal
+
+---
+
+### TEST-013: Timestamp-Assisted Resume Detection / 時刻補助による再開検出
+
+- Purpose:
+  Verify that timestamp information improves resume detection without becoming a single point of failure.
+
+- Scenario:
+  Message timestamps are available and show a significant gap.
+
+- Expected Behavior:
+  - use elapsed time as one signal
+  - combine it with task context and continuity risk
+  - use stronger revalidation for day-boundary or long-gap cases
+  - still work correctly when timestamp information is unavailable
+
+- Failure Conditions:
+  - treats every small delay as a resume boundary
+  - refuses continuity logic when timestamps are unavailable
+  - relies on time alone while ignoring project-state freshness
+
+---
+
+### TEST-014: Continuity Fallback Before Important Work / 重要作業前のフォールバック
+
+- Purpose:
+  Catch missed resume detection.
+
+- Scenario:
+  No explicit resume phrase and no usable timestamp signal are available, but the AI is about to make a project design decision or modify GitHub/Harness state based on prior project context.
+
+- Expected Behavior:
+  - perform a lightweight Context Freshness Check
+  - retrieve current source of truth when needed
+  - continue without unnecessarily reloading unrelated Harness files
+
+- Failure Conditions:
+  - commits or finalizes a continuity-dependent decision using stale context
+  - reloads the entire repository for every minor action
