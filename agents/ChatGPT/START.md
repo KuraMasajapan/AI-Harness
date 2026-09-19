@@ -14,6 +14,28 @@
 6. `/agents/ChatGPT/HARNESS.md`
 7. `/agents/ChatGPT/BOOTSTRAP.md`
 
+
+## 1.1 Re-entry / 再入場
+
+このSTARTはアプリ起動時だけの処理ではない。
+
+同一チャットが継続していても、meaningful interruption、Context freshness低下、Project Source of Truthの更新可能性がある場合は、必要な範囲で再入場処理を行う。
+
+再入場のシグナル例：
+
+- 「続き」「再開」「昨日の続き」等の明示表現
+- ブラウザ復旧、離席、日跨ぎの申告
+- 利用可能なtimestampで長い空白が確認できる
+- Projectへ話題が戻った
+- 過去の決定へ依存する重要判断へ入る
+- GitHub / Harness / Project fileを書き換える
+- 現在のProject Source of Truthが最新か確信できない
+
+シグナルがなくても、継続Projectの重要な判断や更新前には、必要に応じて `core/RULES.md`、`core/WORKFLOW.md`、対象Project fileの鮮度を再確認する。
+
+時刻情報は補助シグナルであり、唯一の条件にはしない。
+
+
 ## 2. Understand
 
 読み込んだ情報から、以下を理解する。
