@@ -590,3 +590,49 @@ TEST-010  PASS
 ```
 
 AI-Harnessは、管理されたテストから実運用と観察の段階へ移行する準備ができた。 / The AI-Harness is ready to move from controlled testing into real-world operation and observation.
+
+
+---
+
+## Continuity Regression Review — 2026-09-19
+
+### Trigger
+
+Real UIAP BASE operation identified two gaps:
+
+1. A summary request could become an accidental task-termination point.
+2. Same-chat continuation after browser recovery or a human absence could bypass fresh-session startup logic.
+
+### Implemented Protection
+
+The Harness now uses a layered continuity model:
+
+1. **Core task-state rule** — summary does not imply completion.
+2. **Context Freshness Check** — resume is not limited to fresh startup.
+3. **Multi-signal Resume Boundary** — explicit wording, browser/absence references, available timestamps, topic return, and source-of-truth uncertainty.
+4. **Fallback before important continuity-dependent work** — catches cases where resume detection was missed.
+5. **ChatGPT START/BOOTSTRAP re-entry** — same chat may re-enter Harness loading when freshness is uncertain.
+6. **Regression tests** — TEST-011 through TEST-014.
+
+### Current Evaluation
+
+- Structural rule coverage: **PASS**
+- Same-session application during this Harness-development task: **PASS**
+- Cross-session / browser-recovery behavior: **REQUIRES CONTINUED REAL-WORLD SAMPLING**
+- Universal runtime guarantee: **NOT CLAIMED**
+
+### Limitation
+
+The model may not always receive browser lifecycle events or exact per-message timestamps. Therefore the design intentionally does not depend on either one.
+
+The stronger architecture is:
+
+```text
+Resume signals when available
+        +
+Fallback freshness check before important continuity-dependent work
+        =
+Reduced risk of stale-context continuation
+```
+
+This is a stronger guarantee than "only reload on ChatGPT startup", while remaining compatible with integrations that expose different amounts of session metadata.
