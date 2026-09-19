@@ -20,7 +20,9 @@ CH32V003版で製品・設計として成立させた後、UIAPduino CH32V006版
 
 UIAPduino CH32V003側にはピンヘッダーをはんだ付けする。
 
-UIAP BASE側には、左右それぞれに2×12のメスソケットを配置し、ピンヘッダーを実装したUIAPduinoを差し込んで使用する。
+UIAP BASE側の中央には、UIAPduino挿入用として **2×12Pメスピンソケット（2.54mmピッチ、一体型連結ソケット）** を配置し、ピンヘッダーを実装したUIAPduinoを差し込んで使用する。
+
+中央2列の外側には、露出アクセス用として **1×12Pメスピンソケット×2** を平行配置する。
 
 したがって、現在の設計は完全な「はんだ付け不要」ではない。子どもが組み立てる場合は、親が作業する、または親の監修下ではんだ付けすることを想定する。
 
@@ -1342,9 +1344,7 @@ BASE側Qwiicを同系統部品で設計する場合、外観イメージでは�
 - dedicated RESET button
 - 15 status LEDs
 - Secret LED
-- left/right 2×12 female sockets for UIAPduino
 - right-side terminal blocks
-- corresponding 5-pin sockets
 - mounting holes for UIAP BASE itself
 - BASE-side USB DNP connector footprint
 - external crystal package
@@ -1357,9 +1357,7 @@ BASE側Qwiicを同系統部品で設計する場合、外観イメージでは�
 
 1. **A / B action button**
 2. **right-side terminal block**
-3. **2×12 female socket / pin-header stack height**
 4. **status LED package**
-5. **5-pin socket**
 6. **UIAP BASE mounting hole size / positions**
 
 特にボタン、端子台、ソケット高さは基板の見た目と立体感へ大きく影響するため、ICより優先して確定する。
@@ -1400,33 +1398,40 @@ Source basis: JLCPCB exact-part listing C49023391.
 - B button ×1
 - DPDT NORMAL / GAME slide switch ×1
 
-### 11. UIAPduino 2×12 Female Socket Physical Candidate
+### 11. UIAPduino / Exposed Pin Socket Physical Standard
 
-UIAPduinoを上から差し込む左右socketの物理基準として、2.54 mm pitch / 2×12 / vertical top-entryのSMD female headerを候補にする。
+ピンソケットは特定メーカー・型番へ固定せず、**2.54mmピッチの一般的な黒色樹脂メスピンソケット**を使用する。
 
-**Candidate: HCTL PM254-2-12-S-8.5**
-- JLCPCB / LCSC: **C3975157**
-- Positions: **24P / 2×12**
+#### Central 2-row Socket — UIAPduino insertion
+
+- Type: **2×12P female pin socket**
 - Pitch: **2.54 mm**
-- Row spacing: **2.54 mm**
-- Mounting: **Surface Mount, Vertical**
-- Entry direction: Top
-- Body size: approximately **30.88 mm × 5.00 mm**
-- Insulation height: **8.5 mm**
-- Current rating: 3 A
-- Operating temperature: -40°C to +105°C
+- Construction: **one-piece linked socket**
+- Resin color: **black**
+- Row spacing / insertion geometry reference: **14.73 mm**
+- Purpose: UIAPduino insertion
+- Silkscreen frame: **orange**
+- Status: **Frozen**
 
-実物イメージでは、左右それぞれに **約30.9 × 5.0 mm、高さ8.5 mm** のfemale socketとして配置する。
+メーカー・型番は固定しない。発注時に一般流通の2.54mm規格品から適合品を選ぶ。
 
-最終採用前には、UIAPduino側pin headerとの挿入深さ、USB-C周辺干渉、実際のstack height、保持力を実機確認する。
+#### Outer exposed sockets
 
-2026-09-20確認時点でJLCPCB/LCSCに現行掲載があり、SMT Assembly対象。価格・在庫は変動するため固定値としてProject要件にはしない。
+- Type: **1×12P female pin socket ×2**
+- Pitch: **2.54 mm**
+- Resin color: **black**
+- Placement: central 2×12P socketの左右外側へ平行配置
+- Purpose: UIAPduino pin access / jumper-wire access
+- Silkscreen frame: **light blue**
+- Procurement direction: 秋月調達予定
+- Status: **Frozen**
 
-Source basis: JLCPCB / LCSC exact-part listing C3975157 and HCTL dimensional data.
+外観・PCB粗配置では、中央の2×12P一体型ソケットをUIAPduino挿入部として扱い、その左右外側に1×12Pソケットを1列ずつ平行配置する。
 
+具体的なメーカー、品番、樹脂高さ、端子長は発注時に確認するため、現時点では特定品の寸法をSource of Truthへ固定しない。
 ### 12. Updated Physical-Dimension Priority
 
-専用RESET buttonを現行構成から外し、A / B buttonと2×12 female socketの物理候補を置いたため、次の寸法確定優先順は以下へ更新する。
+専用RESET buttonを現行構成から外し、pin socket構成を2.54mm統一規格として固定したため、次の寸法確定優先順は以下へ更新する。
 
 1. **right-side terminal block**
 2. **status LED package**
@@ -1435,7 +1440,7 @@ Source basis: JLCPCB / LCSC exact-part listing C3975157 and HCTL dimensional dat
 5. **BASE USB DNP footprint**
 6. **external crystal package**
 
-A / B buttonと2×12 female socketは、現時点では上記候補寸法をPCB粗配置・実物イメージの基準として使用する。
+A / B buttonは現行候補寸法を使用し、pin socketは特定型番ではなく上記の2.54mm統一規格構成をPCB粗配置・実物イメージの基準として使用する。
 
 ---
 
@@ -1507,22 +1512,21 @@ UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分か�
 
 15個は横一列に並べず、UIAPduino各GPIOとの対応が直感的に分かるよう、UIAPduino周辺のpin位置に沿わせる。
 
-### 5-pin Female Socket
+### Terminal-block Parallel Pin Sockets
 
-右側端子群に対応する5-pin socketの試作候補を以下へ仮固定する。
+各端子台TB1〜TB4の**左側**に、同じ5信号へ並列接続するメスピンソケットを配置する。
 
-- Manufacturer: hanxia
-- MPN: **HX PM2.54-1x5P TP H8.5-YQ**
-- JLCPCB / LCSC: **C46635841**
-- 1×5P
+- Type: **1×5P female pin socket ×4**
 - Pitch: **2.54 mm**
-- Mounting: SMD vertical / top entry
-- Insulation height: **8.5 mm**
-- Body length for 5 positions: **12.70 mm**
-- Current rating: 3 A
+- Resin color: **black**
+- Placement: **各KF141V-2.54-5P端子台の左側へ平行実装**
+- Electrical relation: 対応する端子台5極と1:1で並列接続
+- Procurement reference: 秋月 約50円級 / LCSC 約20円級
+- Status: **Frozen**
 
-UIAPduino用2×12 socketと同じ8.5 mm classの高さを基準にし、外観上の高さを揃えやすくする。
+この1×5Pソケットも特定メーカー・型番には固定しない。2.54mmピッチの一般的な規格品を使用し、発注時に具体品を選定する。
 
+端子台とソケットの信号順は必ず一致させる。
 ### Right-side Terminal Block — Source-of-Truth Update
 
 端子台は以下を現行基準とする。
@@ -1763,3 +1767,35 @@ UART補助表示： RX=D16 / TX=D15
 この配置は **UX V0.1として採用**する。
 
 最終PCBでterminal blockの物理向きが確定した際、Pin 1→5が上から下・左から右のどちらに見えるかを確認し、必要ならblock全体を反転する。ただしblock内の論理的な隣接関係は維持する。
+
+---
+
+## Pin Socket Specification Decision — 2026-09-20
+
+ピンソケットは**メーカー・型番を固定しない2.54mm統一規格品**として扱う。
+
+| 区分 | 仕様 | 配置 | シルク | 状態 |
+|---|---|---|---|---|
+| 中央2列 / UIAPduino挿入部 | 2×12Pメス、2.54mm、黒色、一体型連結、14.73mm間隔 | 基板中央 | オレンジ枠 | 確定 |
+| 外側2列 / 露出ピン | 1×12Pメス×2、2.54mm、黒色 | 中央2列の左右外側へ平行 | 水色枠 | 確定 |
+| 端子台並列 | 1×5Pメス×4、2.54mm、黒色 | 各TB1〜TB4の左側へ平行 | 端子台信号表示に連動 | 確定 |
+
+### Manufacturer / Part-number Policy
+
+- 2.54mmピッチの一般規格品を前提とする。
+- 特定メーカーへ固定しない。
+- 特定LCSC番号へ固定しない。
+- 発注時に在庫、価格、樹脂高さ、端子長、実装方式を確認して具体品を決める。
+- PCB粗配置および外観イメージでは、一般的な黒色2.54mmメスピンソケットとして描画する。
+
+### Placement Relationship
+
+UIAPduino周辺は内側から外側へ次の構造とする。
+
+`1×12 exposed socket | 2×12 UIAPduino insertion socket | 1×12 exposed socket`
+
+端子台周辺は次の構造を基本とする。
+
+`1×5 female socket | KF141V-2.54-5P terminal block`
+
+1×5ソケットは各端子台の**左側**、端子台は右側に置き、両者を同じ信号順で並列接続する。
