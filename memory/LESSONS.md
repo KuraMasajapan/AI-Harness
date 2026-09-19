@@ -204,7 +204,7 @@ LESSONS.md    ← 何を学び、改善候補にするか
 
   This is not intended for every greeting. It applies when the wording and project context indicate resumption of ongoing work.
 - Related Files: HARNESS.md, core/WORKFLOW.md, memory/MEMORY.md, projects/*
-- Status: Proposed
+- Status: Promoted
 
 ### Design Note / 設計メモ
 
@@ -307,3 +307,47 @@ A useful distinction is:
 - Candidate verification = narrow aggressively using evidence.
 
 This prevents model familiarity from becoming an unintended filter on engineering decisions.
+
+
+---
+
+## LESSON-005 Summary and Resume Continuity / 要約・中断・再開の連続性
+
+- Date: 2026-09-19
+- Context: During ongoing UIAP BASE work, the user identified two continuity risks: (1) asking for a summary can accidentally terminate unfinished work, and (2) browser recovery or returning to the same chat may not look like a fresh startup even though human working context has been interrupted.
+- What Happened: Existing logic treated startup and explicit resume phrases more strongly than silent or implicit resume. The user also noted that they may resume without a trigger phrase.
+- Root Cause: Continuity detection was too event-based. It depended too much on fresh-session startup or explicit resume wording rather than checking whether the working context itself was still fresh.
+- Lesson: Continuity should be modeled as **Context Freshness**, not only as startup/resume commands. The system should detect likely resume boundaries from multiple signals and also perform a fallback freshness check before continuity-dependent important work.
+- Suggested Change:
+  1. Preserve task state across summaries.
+  2. Treat same-chat continuation after meaningful interruption as a possible resume boundary.
+  3. Use multiple signals: explicit resume wording, browser/absence references, available timestamps, topic return, project-state uncertainty.
+  4. Do not rely on an "aikotoba" or timestamp alone.
+  5. Before important project decisions, GitHub writes, or other continuity-dependent actions, re-check current Core/Workflow/Project source of truth when freshness is uncertain.
+  6. Use Resume Brief only when useful to restore the human's working context; do not spam it on every message.
+  7. Add regression tests for silent resume and same-chat browser recovery.
+- Related Files: HARNESS.md, core/RULES.md, core/WORKFLOW.md, agents/ChatGPT/START.md, agents/ChatGPT/BOOTSTRAP.md, evaluation/TEST_CASES.md
+- Status: Promoted
+
+### Design Note / 設計メモ
+
+The continuity model is:
+
+```text
+Startup
+Resume phrase
+Browser recovery
+Long pause
+Topic return
+Important continuity-dependent action
+        ↓
+Context Freshness Check
+        ↓
+Reload only what is needed
+        ↓
+Resume Brief when useful
+        ↓
+Continue task state
+```
+
+The fallback check before important work protects against missed resume detection.
