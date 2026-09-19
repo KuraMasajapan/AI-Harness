@@ -258,6 +258,36 @@ Harnessは以下の優先順位を基本とします。
 
 ---
 
+
+## LESSON as Continuous Meta-Project / 継続的メタプロジェクトとしてのLESSON
+
+AI-Harnessでは、LESSONを単なる教訓ファイルではなく、運用システムそのものを改善する継続的なプロセスとして扱う。
+
+LESSONは、
+
+```text
+Observe
+→ Record
+→ Prioritize
+→ Review
+→ Decide
+→ Promote
+→ Integrate
+→ Verify
+→ Use
+→ Observe again
+```
+
+という循環を持つ。
+
+このプロセスはすべてのProjectを横断する最重要のメタプロジェクトであり、完成状態を持たない。
+
+個別Projectの途中であっても、LESSONプロセスがPromotedへ到達した場合は、その時点の話題に関係なく人間へ短く通知する。
+
+ただし、LESSON改善を理由に現在のユーザー作業を不必要に中断し続けてはならない。通知・必要な反映後は元の作業へ戻る。
+
+---
+
 ## 8. Evolution / 発展
 
 AI-Harness should evolve through actual use.
