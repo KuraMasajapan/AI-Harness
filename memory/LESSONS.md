@@ -49,6 +49,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-005 | High | Promoted | HARNESS.md / core/RULES.md / core/WORKFLOW.md / agents/ChatGPT/* |
 | LESSON-006 | Medium | Promoted | core/WORKFLOW.md |
 | LESSON-007 | High | Promoted | core/WORKFLOW.md / memory/LESSONS.md |
+| LESSON-008 | High | Proposed | core/RULES.md / HARNESS.md / evaluation/* |
 
 この表は人間向けの運用状況一覧である。
 
@@ -435,3 +436,43 @@ The fallback check before important work protects against missed resume detectio
 - Promotion Target: core/WORKFLOW.md / memory/LESSONS.md
 - Promotion Evidence: Lesson Review & Promotion Lifecycle / Lesson Dashboard
 - Status: Promoted
+
+
+---
+
+## LESSON-008 External Permission Gate as Independent Human-Approval Layer / 外部Permission Gateを独立した人間承認層として利用する
+
+- Date: 2026-09-19
+- Context: While ChatGPT attempted to update `core/RULES.md` on the GitHub `development` branch, the GitHub integration displayed a permission warning to the human before allowing the write. The warning detected that the target content included instructions affecting AI behavior, such as priorities, continuation behavior, notifications, and decision criteria.
+- What Happened: The Harness already requires human approval before Core-level self-modification. Independently, the external GitHub integration also inserted a human-facing approval gate before the write could proceed.
+- Root Cause / Structural Observation: Files that govern AI behavior can resemble prompt-injection or self-modification instructions to an external safety layer. This can cause the platform/tool boundary to require explicit human authorization even when the change is intentional.
+- Lesson: An external tool's permission gate can serve as a second, independent human-approval layer around Harness self-modification. This is valuable because the approval mechanism is outside the Harness itself and therefore does not rely solely on the AI obeying its own internal rules.
+- Suggested Change:
+  1. Treat external write-permission prompts as a potential safety feature rather than merely friction when modifying Core/Harness behavior.
+  2. Prefer per-action or narrowly scoped authorization for Core/Harness changes when practical.
+  3. Do not assume this behavior is universal across tools or future platform versions.
+  4. If repeated observations confirm reliable behavior, consider formalizing an "External Approval Gate" as defense-in-depth for Core modification.
+  5. Add a regression/evaluation case if this becomes part of the approved architecture.
+- Related Files: core/RULES.md, HARNESS.md, evaluation/*
+- Priority: High
+- Promotion Target: core/RULES.md / HARNESS.md / evaluation/*
+- Promotion Evidence: Pending repeated observation and human review
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+This creates a potentially valuable defense-in-depth pattern:
+
+```text
+Harness internal rule:
+AI must not silently rewrite Core
+        +
+External integration permission gate:
+Human must explicitly authorize the write
+        =
+Independent dual approval
+```
+
+The important property is **independence**. A safety control outside the Harness can protect against failures in the Harness's own self-governance.
+
+However, one observed approval prompt is not enough to claim that every Core write will always be intercepted. This Lesson should remain Proposed until repeated use confirms the behavior and its scope.
