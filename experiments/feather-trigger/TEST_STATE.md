@@ -1,4 +1,4 @@
 # Feather Trigger Test State
 
-state_version: FT-001
-next_action: ALPHA
+state_version: FT-002
+next_action: BRAVO
