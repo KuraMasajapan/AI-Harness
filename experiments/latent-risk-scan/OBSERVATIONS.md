@@ -158,6 +158,60 @@ Negative / unresolved:
 
 These outcomes are useful because they reveal limitations instead of only confirming the hypothesis.
 
+## Real-World Observation #1 — Context Present, Self-Trigger Absent
+
+A later observation occurred during ordinary Harness improvement work in another project chat.
+
+The relevant Latent Risk Scan V0.1 context and recent validation information were already available to that run.
+
+The task itself was strongly related to Harness improvement and therefore relevant to Latent Risk Scan.
+
+However, the AI did not independently recall or invoke Latent Risk Scan during the work.
+
+Only after the human explicitly asked whether the hidden-risk work had been considered did the AI connect the current task to Latent Risk Scan.
+
+Observed sequence:
+
+```text
+relevant Latent Risk Scan context already available
+        ↓
+strongly related Harness-improvement task
+        ↓
+AI does not independently recall / trigger Latent Risk Scan
+        ↓
+human points to the hidden-risk topic
+        ↓
+AI makes the connection
+```
+
+Interpretation:
+
+```text
+knowledge was present
+≠
+capability was activated at the needed moment
+```
+
+This is best treated as a real-world observation of an **Activation / Recall / Routing Gap**, not a knowledge gap.
+
+It is not a formal failure of V0.1 because the runtime activation path has not yet been promoted into Core, but it provides practical evidence that the earlier Runtime Activation Path finding is real rather than merely hypothetical.
+
+Important distinction:
+
+```text
+rule exists
+≠
+rule is available in context
+≠
+rule is recalled
+≠
+rule is triggered
+≠
+rule affects action
+```
+
+The value of this observation is that it arose during normal project work rather than from a synthetic test.
+
 ## Current Decision
 
 Do not modify Core yet.
