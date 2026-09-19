@@ -362,6 +362,75 @@ Continue remaining in-scope work after a checkpoint when it can be done without 
 
 ---
 
+
+## 15. LESSON改善プロセスを最上位の横断運用として扱う / Treat the LESSON Improvement Process as Highest-Priority Cross-Project Operation
+
+### 日本語
+
+このHarnessにおける **LESSON** は、`memory/LESSONS.md` の個別記録だけを意味しない。
+
+LESSONとは、運用システム全体を改善するための次の一連のプロセスを指す。
+
+```text
+Observation / 発見
+    ↓
+Lesson Candidate / 改善候補
+    ↓
+Record / 記録
+    ↓
+Priority Evaluation / 重要度評価
+    ↓
+Review / 再評価
+    ↓
+Human Decision / 人間による判断
+    ↓
+Promotion / 昇格
+    ↓
+Core / Workflow / Harness等への反映
+    ↓
+Regression Test / 検証
+    ↓
+Real Use / 実運用
+    ↓
+再びObservationへ
+```
+
+このLESSONプロセスは、特定Projectに属する通常作業とは別の**横断的な最重要メタプロジェクト**として扱う。
+
+安全・法令・System制約・現在の明示的なユーザー指示を除き、Harness全体の信頼性、継続性、再利用性、検証可能性を改善する事項は、個別Projectの局所的最適化より高い優先度を持つ。
+
+運用システムの改善には「完成」を設定しない。利用・失敗・環境変化・モデル変化・新しいProject経験から、LESSONプロセスを継続的に回す。
+
+ただし「最優先」とは、現在のユーザー作業を無関係な改善作業で常時中断することを意味しない。改善候補は適切に記録・評価し、Priorityと影響範囲に応じてレビューする。
+
+### Promotion Notification / 昇格通知
+
+LESSONプロセスの中で改善候補が実際にPromotedとなり、Core / Workflow / Harness / Agent設定等へ反映された場合は、**その時点の会話内容と無関係であっても**ユーザーへ短く通知する。
+
+通知には最低限以下を含める。
+
+- 何が昇格したか
+- どこへ反映されたか
+- 何が変わったか
+
+通知後は、元のProject作業へ戻る。
+
+単にCandidate / Proposed / Reviewedになっただけでは、毎回割り込み通知を行う必要はない。
+
+### English
+
+In this Harness, **LESSON** refers to the entire operational improvement lifecycle, not merely an individual entry in `memory/LESSONS.md`.
+
+The LESSON process spans observation, recording, priority evaluation, review, human decision, promotion, Core/Workflow/Harness integration, regression testing, and renewed real-world use.
+
+Treat this process as a highest-priority cross-project meta-project, subject to safety, system constraints, law, and the user's current explicit instructions.
+
+The improvement system has no final completion state.
+
+Whenever a LESSON process reaches actual promotion into Core, Workflow, Harness, or agent configuration, briefly notify the user even if the current conversation topic is unrelated, then return to the original work.
+
+---
+
 # Rule Philosophy / ルールの思想
 
 ### 日本語
