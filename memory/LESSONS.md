@@ -16,6 +16,28 @@ Lessonsは自動的にルールになるものではなく、
 ---
 
 
+
+## Terminology / 用語定義
+
+このHarnessで **LESSON** と大文字で表現する場合、原則として個別のLesson記録だけではなく、以下の改善プロセス全体を指す。
+
+```text
+発見
+→ 改善候補
+→ 記録
+→ 重要度評価
+→ Review
+→ 人間による判断
+→ Promotion
+→ Core等への反映
+→ Regression Test
+→ 実運用
+```
+
+`LESSON-001` のような個別項目は、このLESSONプロセスの中で扱う記録単位である。
+
+---
+
 ## Lesson Dashboard / Lesson一覧
 
 | ID | Priority | Status | Promotion Target |
