@@ -53,6 +53,28 @@ At startup, the following files should be considered the primary Harness context
 These files define the basic operating environment.
 
 
+
+## 3.1 Context Freshness Revalidation
+
+Bootstrapはfresh chat専用ではない。
+
+ChatGPTは、同一会話内でも以下の場合に必要な範囲で再Bootstrap / Context revalidationを行う。
+
+- meaningful interruption後の再開
+- Projectへ話題が戻った
+- 重要な判断・実装・GitHub更新前
+- 会話MemoryとProject Source of Truthのどちらが最新か不明
+- Core / Workflowが現在のRunで読み込まれているか不明
+
+再検証では、全部を毎回読み直すのではなく、現在のタスクに必要な最小範囲を再取得する。
+
+Project continuityが重要な場合は、会話Memoryよりもcurrent Project checkpoint / source of truthを優先する。
+
+If timestamps are available, elapsed time may be used as one signal for a resume boundary. Do not rely on timestamps as the only mechanism because they may be unavailable or incomplete.
+
+A summary/checkpoint request preserves the underlying task state. It does not imply stop or completion.
+
+
 ## 4. Task Classification
 
 Before loading additional context,
