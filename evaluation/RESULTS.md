@@ -739,11 +739,13 @@ An explicit human instruction identified a missing state in source-dependent des
 The Harness now distinguishes:
 
 1. CONFIRMED / LOCKED
-2. DELEGATED DISCRETION
+2. DELEGATED / PROVISIONAL
 3. UNRESOLVED / CONFIRMATION REQUIRED
 
 The gate applies before precision-dependent product output, image generation, design freeze, and GitHub / Source-of-Truth writes.
 
 Explicit delegation is scope-bound and prevents redundant confirmation only for the currently delegated subject. AI-selected delegated decisions remain distinguishable from human-confirmed Frozen facts.
+
+Delegated choices remain provisional until explicit human confirmation. When a later unresolved fact becomes known, affected provisional choices must be re-evaluated and the human must confirm whether to keep or change them before promotion to Frozen.
 
 Status: **IMPLEMENTED / TEST DEFINED**
