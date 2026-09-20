@@ -248,3 +248,89 @@ A stronger formulation for this incident is:
 > **Retrieved ≠ Handed Off ≠ Enforced ≠ Verified**
 
 The missing link between "retrieved" and "handed off" is now an explicit investigation target.
+
+
+## Controlled Clean-Room Evidence — 2026-09-20
+
+Two clean-room UIAPduino-only generation tests were run in a new chat without supplying the earlier UIAP BASE concept images as direct references.
+
+### Test 1 — Source read, weakly packaged constraints
+
+The model was instructed to use the Harness and project Source of Truth, then generate UIAPduino Pro Micro CH32V003 V1.4.
+
+Observed artifact:
+
+- general identity was partially preserved: white small development board, USB-C, CH32V003-like device, Pro Micro-like form
+- MCU changed to CH32V003F4P6 instead of CH32V003F4U6
+- through-hole count expanded beyond the source-backed 24
+- mounting-hole count became four instead of the source-backed three
+- Arduino-like analog pin labels and other generic development-board details were invented
+
+Result: **FAIL** for fixed-attribute preservation.
+
+### Test 2 — Explicit minimal creation contract
+
+A second clean-room prompt repeated the Source-of-Truth procedure but also promoted a small set of auditable attributes to explicit generation anchors:
+
+- MCU = CH32V003F4U6
+- through holes = exactly 24
+- mounting holes = exactly 3
+- board ≈ 17.8 × 33.0 mm
+- USB-C
+- white PCB
+- explicit forbidden substitutions and invented features
+
+Observed artifact:
+
+- MCU text retained CH32V003F4U6
+- 24 through holes were substantially preserved as two rows of 12
+- three mounting holes were preserved
+- USB-C and white PCB were preserved
+- overall vertical identity improved markedly
+- deeper structural fidelity remained imperfect: the physical MCU package / footprint and detailed component placement were still generic or incorrect
+
+Result: **PARTIAL PASS** for explicit attribute preservation; **FAIL** for deeper physical-structure fidelity.
+
+### Evidence interpretation
+
+These two tests strengthen the Constraint Handoff Loss hypothesis.
+
+The observed contrast is:
+
+```text
+Source read
+        ↓
+weak / implicit handoff
+        ↓
+F4P6 + too many holes + 4 mounting holes
+
+Source read
+        +
+explicit generation anchors
+        ↓
+F4U6 + 24 holes + 3 mounting holes
+```
+
+This does not prove the internal implementation of the tool boundary, but it provides behavioral evidence that explicit creation-contract packaging materially improves preservation.
+
+A second distinction is now necessary:
+
+```text
+Discrete explicit attributes
+(name / count / color / connector type)
+        ↓
+can often be strengthened by explicit handoff
+
+Deep structural attributes
+(actual package geometry / exact component placement / exact board topology)
+        ↓
+still vulnerable to generic visual completion unless separately grounded
+```
+
+### Current incident model
+
+The working model is now:
+
+> **Source exists → retrieved → explicitly packaged for handoff → image model enforces some attributes → artifact gate verifies actual output**
+
+The remaining unresolved question is how to preserve deeper relational and physical structure, not merely discrete labels and counts.
