@@ -346,6 +346,44 @@ Do not add length merely for completeness.
 
 **再開検出に失敗しても、重要な継続作業の直前にFreshness Checkが発火することで二重に保護する。**
 
+### Source-State Ambiguity Gate / Source状態の曖昧性ゲート
+
+Source of Truthを再取得した後、現在状態が一意に読めるかを確認する。
+
+#### 一意に読める場合
+
+以下のような明示的な状態表示があり、相互に矛盾しない場合は、その状態を現在有効として扱う。
+
+- Current
+- Final
+- Frozen
+- Decided
+- Superseded / Historical
+- 取り消し線と置換先の明示
+- 現在のユーザーによる明示的な決定
+
+#### 曖昧な場合
+
+複数の記述がどちらも現行に見える、古い記述と新しい記述の優先関係が明示されていない、または一部の不明点が対象全体の状態を左右するか判断できない場合は、**AMBIGUOUS / HUMAN CONFIRMATION REQUIRED** とする。
+
+この状態ではAIは独断でcurrent-effective stateを決めない。
+
+1. 曖昧になっている対象を示す。
+2. Source内の競合する状態を簡潔に示す。
+3. 「作業の積み重ねで表記が曖昧になっている」ことを人間へ伝える。
+4. どちらを現行とするか確認する。
+5. 確認が取れるまで、その論点を確定事項としてGitHub / Project Sourceへ書き戻さない。
+
+人間が現行状態を決めた後は、再発防止のためMarkdown自体を正規化する。
+
+- 現行仕様をCurrent領域へ反映する
+- 誤認しやすい旧記述には `~~取り消し線~~` を付ける
+- `SUPERSEDED` / `HISTORICAL` を明示する
+- 可能なら置換先のDecision / Freeze sectionを示す
+- Current Open Itemsから解決済み項目を外す
+
+**Ambiguity is uncertainty. Uncertainty must not be silently converted into certainty.**
+
 ### Resume Brief / 再開ブリーフ
 
 Resume Boundaryが意味のある中断を示す場合は、必要に応じて短いResume Briefを出す。
@@ -724,6 +762,8 @@ Higher reasoning effort does not guarantee factual correctness. Reasoning depth 
   - 不採用、superseded、禁止、または今回の範囲外として持ち込んではいけない事項
 
 長期ProjectのSourceに古い案や履歴が残っている場合、単にファイルを読んだだけで現在仕様とみなさない。後の決定、final direction、superseded表記、現在のProject判断を用いて**current-effective state**を解決する。
+
+ただし、明示的な根拠だけでは一意に解決できない場合は、`Source-State Ambiguity Gate` を適用し、AIが独断で確定しない。
 
 ### Tool Fit Check / 制作手段適合確認
 
