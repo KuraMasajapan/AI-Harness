@@ -53,6 +53,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-009 | High | Proposed | core/WORKFLOW.md |
 | LESSON-010 | High | Promoted | core/WORKFLOW.md / evaluation/* |
 | LESSON-011 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
+| LESSON-012 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
 
 この表は人間向けの運用状況一覧である。
 
@@ -640,4 +641,29 @@ The current unresolved root-cause question is the boundary between **Retrieved**
 - Priority: High
 - Promotion Target: core/RULES.md / core/WORKFLOW.md / evaluation/*
 - Promotion Evidence: explicit human review + Source-State Ambiguity Gate + TEST-007 expansion
+- Status: Promoted
+
+---
+
+## LESSON-012 Explicit Delegation Must Be Distinguished from Uncertainty / 明示的委任と不確定を分離する
+
+- Date: 2026-09-20
+- Context: Product design work mixed confirmed specifications, undecided choices, AI-discretion choices, and accuracy-blocking unknowns. This created two opposite risks: asking the human to repeat settled choices, or silently filling undecided details during image generation / design / GitHub writes.
+- What Happened: Existing rules distinguished LOCKED and UNKNOWN, and later added ambiguous-source handling, but they did not clearly encode whether an undecided item had actually been delegated to the AI.
+- Root Cause: `Unknown` and `AI may decide` are different states, but the Harness did not have an explicit delegation state or a pre-output gate tied to it.
+- Lesson: For source-dependent design work, distinguish at least:
+  1. CONFIRMED / LOCKED
+  2. DELEGATED DISCRETION
+  3. UNRESOLVED / CONFIRMATION REQUIRED
+  Explicit phrases such as `任せる`, `一任する`, or `好きにして` authorize AI judgment only for the current clearly scoped subject. Without such delegation, unresolved choices that affect output correctness should return to the human before final output or Source-of-Truth update.
+- Suggested Change:
+  1. Add a three-way Design Decision Classification Gate.
+  2. Make delegation scope-bound and non-transitive.
+  3. Apply the gate before product image generation, design freeze, and GitHub writes.
+  4. Preserve AI-selected / Provisional separately from human-confirmed / Frozen.
+  5. Avoid duplicate confirmation when the user has already explicitly delegated that exact scope.
+- Related Files: core/RULES.md, core/WORKFLOW.md, evaluation/TEST_CASES.md
+- Priority: High
+- Promotion Target: core/RULES.md / core/WORKFLOW.md / evaluation/*
+- Promotion Evidence: explicit human instruction + Design Decision Classification Gate + regression test
 - Status: Promoted
