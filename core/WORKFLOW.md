@@ -391,7 +391,7 @@ Product設計、画像生成、回路・PCB仕様確定、部品選定、GitHub 
 | Class | 意味 | 通常の扱い |
 |---|---|---|
 | ① CONFIRMED / LOCKED | 人間が確定済み、またはCurrent / Final / Frozenで一意 | そのまま使用 |
-| ② DELEGATED DISCRETION | 未確定だが、現在の範囲について人間がAIへ明示的に裁量委任 | 委任範囲内でAIが選択可能 |
+| ② DELEGATED / PROVISIONAL | 未確定だが、現在の範囲について人間がAIへ明示的に裁量委任 | 委任範囲内で暫定案を選択可能。確定にはしない |
 | ③ UNRESOLVED / CONFIRMATION REQUIRED | 曖昧・不足・未決定で、正確な出力に影響 | 人間へ確認 |
 
 #### Delegation Scope Check
@@ -401,7 +401,8 @@ Product設計、画像生成、回路・PCB仕様確定、部品選定、GitHub 
 - 現在の対象・現在の工程に明確に掛かる → ②として実行可能
 - 過去の別項目への委任 → 現在の項目へ自動拡張しない
 - 「適当に」「いい感じに」等で範囲が曖昧 → 重要な仕様確定へは拡張しない
-- 委任された結果は `AI-selected / Provisional` と、人間が確定した `Frozen` を区別する
+- 委任された結果は必ず `AI-selected / Provisional` として保存し、人間が確定した `Frozen` と区別する
+- 委任だけではFrozenへ昇格しない
 
 #### Pre-Output / Pre-Write Gate
 
@@ -409,11 +410,31 @@ Product設計、画像生成、回路・PCB仕様確定、部品選定、GitHub 
 
 1. ①だけならそのまま進める。
 2. ②を含む場合：
-   - 現在の範囲への明示委任がある → 進めてよい。
+   - 現在の範囲への明示委任がある → 暫定案の作成までは進めてよい。
+   - 保存時は `AI-selected / Provisional` とする。
+   - 委任だけでCurrent / Frozenへ昇格させない。
    - 委任が推測・古い・範囲不明 → 出力前に確認する。
 3. ③を含み、その不確定性が正確性へ影響する場合：
    - 原則として出力前に人間へ確認する。
    - ただし、その不確定部分を含めて明示的に裁量委任された場合は仮決定してよい。その場合は `AI-selected / Provisional` とする。
+
+#### Provisional Revalidation / 暫定判断の再確認
+
+③の未確定事項が後から決まった、変更された、または新しい事実が追加された場合、その影響を受ける②のProvisional判断を必ず再評価する。
+
+再評価では、
+
+- 変更不要 → `維持候補`
+- 変更必要 → `変更候補`
+- 影響不明 → `要確認`
+
+のいずれかを示す。
+
+そのうえで人間へ、**暫定判断を維持するか変更するか**を確認する。
+
+人間の確認を得るまで、②をCONFIRMED / Frozenへ昇格させない。
+
+この再確認は、画像、回路、PCB、部品選定、BOM、GitHub / Source-of-Truth更新に共通して適用する。
 
 #### Image Generation
 
@@ -426,7 +447,7 @@ Product設計、画像生成、回路・PCB仕様確定、部品選定、GitHub 
 GitHub更新にも同じ分類を適用する。
 
 - ① → Current / Frozenとして書き込み可能
-- ② → 明示委任がある場合のみAI-selected / Provisionalとして書き込み可能。人間確定扱いにしない
+- ② → 明示委任がある場合のみAI-selected / Provisionalとして書き込み可能。人間確定扱いにしない。後続の未確定事項が解決したら必ず再評価対象にする
 - ③ → 人間確認前にCurrent / Frozenへ書き込まない
 
 **「書ける」ことと「確定として書いてよい」ことを分離する。**
