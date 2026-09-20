@@ -617,6 +617,25 @@ This incident demonstrates a more precise chain:
 
 The current unresolved root-cause question is the boundary between **Retrieved** and **Handed Off**.
 
+### Controlled Evidence — 2026-09-20
+
+A clean-room comparison provided behavioral support for the handoff hypothesis.
+
+- Source-driven generation without a strongly explicit attribute contract produced:
+  - CH32V003F4P6 instead of F4U6
+  - too many through holes instead of 24
+  - four mounting holes instead of three
+  - generic Arduino-like invented details
+- A second clean-room generation with explicit anchors for F4U6, exactly 24 through holes, exactly three mounting holes, USB-C, white PCB, and forbidden substitutions materially improved preservation of those discrete attributes.
+- The second result still used an inaccurate generic physical package / component layout.
+
+Current interpretation:
+
+> Explicit handoff packaging improves discrete attribute retention, but deeper structural / relational fidelity remains an open problem.
+
+Therefore LESSON-010 should not be considered fully validated merely because LOCKED constraints are written down. The next research target is **structure-preserving handoff**, including deterministic intermediate representations, reference geometry, or other public methods that can carry exact spatial relationships into image generation.
+
+
 
 ---
 
