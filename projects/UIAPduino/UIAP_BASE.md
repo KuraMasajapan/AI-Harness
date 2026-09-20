@@ -459,7 +459,9 @@ V0.1ではUIAPduinoを電源の親、UIAP BASEを子とする。
 
 - 通常はUIAPduino USB-Cから給電する。
 - UIAPduino 3.3V → BASE_3V3 → CH32V203C8T6 / SM16206S logic
-- UIAPduino 5V → LED_5V → 15個の状態表示LED
+- UIAPduino 5V → LED_5V → SM16206S駆動の15個の信号表示LED
+- 5V rail → 5V power indicator LED（緑）
+- 3.3V rail → 3V3 power indicator LED（緑）
 - GNDは共通とする。
 - USB給電と外部給電を同時に使用しない。
 - BASE側USBを将来実装する場合、VBUSを既存5V railへ直接接続せず二重給電を避ける。
@@ -488,8 +490,8 @@ SM16206Sは3.3Vで動作させる。
 - LE → PA2
 - OE → PA3
 - OEには外部10k pull-upを追加して起動時消灯を強化する。
-- R-EXTは10kΩ前後を初期値とし、約1.65mA/chで視認性を実測する。
-- OUT0～OUT14 → 15個のLED cathode
+- R-EXTは**10kΩを試作初期値**とし、約1.65mA/chを基準に15個の信号表示LEDの視認性を実測する。
+- OUT0～OUT14 → 15個の信号表示LED cathode
 - LED anode → LED_5V
 - OUT15は予備とする。
 - 0.1uF decouplingをVDD直近へ配置する。
@@ -1498,19 +1500,65 @@ BASE側Qwiic connectorは以下を試作基準とする。
 
 UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分かりやすさを優先する。
 
-### Status LED Package
+### LED Package / Color Assignment
 
-15個のGPIO状態表示LEDは **0805 package** を試作V0.2の基準とする。
+現時点ではLED総数を **17個** とする。
 
-- Nominal package footprint: approximately **2.0 mm × 1.25 mm**
-- JLCPCB / EasyEDAで一般的な0805 LED footprintを使用
-- Prototype reference: JLCPCB **C9900003727** (green 0805)
+- Package: **0805 SMD LED**
+- Signal LEDs: **15個**
+- Power LEDs: **2個**
 
-ただし **発光色はまだ最終固定しない**。
+#### White — 13
 
-重要なのはLEDの物理サイズと配置であり、色はsilkscreen / PCB color / visibilityを見ながら後で決める。
+冷白色（bluish white）。以下のGPIO表示用。
 
-15個は横一列に並べず、UIAPduino各GPIOとの対応が直感的に分かるよう、UIAPduino周辺のpin位置に沿わせる。
+- D3
+- D4
+- D2
+- D5
+- D11
+- D12
+- D6
+- D0
+- D1
+- D10
+- D7
+- D8
+- D9
+
+#### Blue — 2
+
+コバルトブルー。
+
+- TX
+- RX
+
+シリアル通信の送受信表示として使用する。
+
+#### Green — 2
+
+黄緑がかった明るい緑。
+
+- 5V
+- 3V3
+
+電源railの存在を視覚化する。
+
+### LED Placement Rule
+
+- D7 / D8 / D9は右側（列4）のみLEDを実装する。
+- 左側には同じD番号のsilkscreen文字のみ残す。
+- 左右両側に同じ番号silkscreenを表示し、子どもがpin対応を追いやすくする。
+- 13 white + 2 blueの信号LEDは、UIAPduino各signalとの対応が直感的に分かる位置へ配置する。
+- 2 green power LEDsは5V / 3V3表示としてsignal LEDとは役割を分ける。
+
+### LED Part-number Policy
+
+色構成と0805 packageは固定する。
+
+具体的な白・青・緑のLCSC / JLCPCB part numberは、過去選定のexact品番が現行Project記録から確認できないため、**未確認のまま捏造しない**。
+
+JLCPCB在庫を再確認して、各色のexact part number / manufacturer / forward voltage / brightnessを確定する。
 
 ### Terminal-block Parallel Pin Sockets
 
@@ -1612,7 +1660,6 @@ CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** package�
 - mounting hole count and coordinates
 - terminal block count / pole grouping / final signal assignment
 - Secret LED package / color / top-bottom mounting / FR-4透過方式
-- status LED final color
 - DPDT switch Z-height
 - exact 8 MHz crystal and load capacitors
 - final silkscreen positions
@@ -1628,7 +1675,9 @@ CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** package�
 - Candidate dimensions → candidateとして描く
 - Open items → arbitrary exact dimensionを付けない
 - board outline → provisionalであることを明示
-- 15 status LEDs → UIAPduino pin correspondenceに沿って配置
+- 15 signal LEDs → UIAPduino pin correspondenceに沿って配置
+- 2 power LEDs → 5V / 3V3 rail indicatorとして配置
+- total LED count → 17
 - UIAPduino → 17.8 × 33.0 mm
 - PCB thickness → 1.6 mm
 
@@ -1799,3 +1848,64 @@ UIAPduino周辺は内側から外側へ次の構造とする。
 `1×5 female socket | KF141V-2.54-5P terminal block`
 
 1×5ソケットは各端子台の**左側**、端子台は右側に置き、両者を同じ信号順で並列接続する。
+
+---
+
+## LED Current / Resistor Architecture Update — 2026-09-20
+
+旧仕様の「LEDごとに1kΩを付ける」前提は、SM16206S採用後のsignal LEDには適用しない。
+
+### 15 Signal LEDs
+
+白13個 + 青2個の15 signal LEDsはSM16206SのOUT0〜OUT14で定電流駆動する。
+
+- 個別series resistor：**不要**
+- Current setting：SM16206Sの **R-EXT 1個**で共通設定
+- Prototype initial R-EXT：**10kΩ**
+- Expected current：datasheet特性から約 **1.65mA/ch**
+
+SM16206S datasheetの代表値：
+
+- R-EXT 1.8kΩ → 約9.2mA/ch
+- R-EXT 920Ω → 約17.9mA/ch
+
+この関係から10kΩでは約1.65mA/chを初期値とする。
+
+白色 / 青色LEDのbrightnessは実機で確認し、必要ならR-EXTのみを変更して15chを一括調整する。
+
+### 5V / 3V3 Power LEDs
+
+緑色2個はsignal LEDではなく、それぞれのpower rail表示とする。
+
+- 5V LED：5V railからseries resistorを介して点灯
+- 3V3 LED：3.3V railからseries resistorを介して点灯
+- この2個はSM16206SのR-EXTでは電流設定しない
+- 各LEDに**個別series resistor 1個ずつ**必要
+
+したがってLED電流設定に関係するresistorは現時点で、
+
+- SM16206S R-EXT ×1
+- 5V power LED series resistor ×1
+- 3V3 power LED series resistor ×1
+
+の **合計3個** を基本とする。
+
+Power LEDの抵抗値は、green LEDのexact LCSC part numberとforward voltageが確認できてから確定する。
+
+計算基準：
+
+- R(5V) = (5.0V - Vf) / target current
+- R(3V3) = (3.3V - Vf) / target current
+
+旧1kΩ指定はこのexact LED確認まで**superseded**とする。
+
+### Secret LED Relationship
+
+今回確定した17個は、
+
+- 15 signal LEDs
+- 2 power LEDs
+
+の合計である。
+
+Secret LEDは別の付加価値候補として扱い、**17個へ自動加算しない**。採用可否を決めた時点で総LED数を更新する。
