@@ -729,3 +729,21 @@ The approved Core change now selects delivery format before large generation whe
 Structural Result: **PASS**
 
 Regression coverage: **TEST-017**
+
+---
+
+## Design Decision Classification Gate — 2026-09-20
+
+An explicit human instruction identified a missing state in source-dependent design work: undecided information is not always the same as information the AI is authorized to decide.
+
+The Harness now distinguishes:
+
+1. CONFIRMED / LOCKED
+2. DELEGATED DISCRETION
+3. UNRESOLVED / CONFIRMATION REQUIRED
+
+The gate applies before precision-dependent product output, image generation, design freeze, and GitHub / Source-of-Truth writes.
+
+Explicit delegation is scope-bound and prevents redundant confirmation only for the currently delegated subject. AI-selected delegated decisions remain distinguishable from human-confirmed Frozen facts.
+
+Status: **IMPLEMENTED / TEST DEFINED**
