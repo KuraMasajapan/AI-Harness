@@ -173,3 +173,30 @@ artwork tile
 ```
 
 This keeps the opening playful while keeping long work sessions calm and familiar.
+
+
+## Flat line-based canvas treatment
+
+Avoid simulated depth as the default visual language.
+
+Use thin linework and spacing to suggest structure:
+
+- 1px hairline borders
+- slightly darker/lighter nested rectangles
+- restrained separators instead of shadows
+- no bevels, glossy highlights, or heavy gradients
+- subtle canvas texture remains in the background
+- panels should feel drawn onto the canvas rather than floating above it
+- selected/focused states can use a clearer outline instead of drop shadows
+
+Target impression:
+
+```text
+flat
++ tactile background
++ precise linework
++ generous spacing
+= elegant, lightweight, calm
+```
+
+This also reduces rendering cost and keeps the visual system consistent with the lightweight requirement.
