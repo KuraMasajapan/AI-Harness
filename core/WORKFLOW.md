@@ -384,6 +384,54 @@ Source of Truthを再取得した後、現在状態が一意に読めるかを�
 
 **Ambiguity is uncertainty. Uncertainty must not be silently converted into certainty.**
 
+### Design Decision Classification Gate / 設計判断3分類ゲート
+
+Product設計、画像生成、回路・PCB仕様確定、部品選定、GitHub / Project Source更新など、正確な状態管理が必要な作業では、実行前に関連事項を次へ分類する。
+
+| Class | 意味 | 通常の扱い |
+|---|---|---|
+| ① CONFIRMED / LOCKED | 人間が確定済み、またはCurrent / Final / Frozenで一意 | そのまま使用 |
+| ② DELEGATED DISCRETION | 未確定だが、現在の範囲について人間がAIへ明示的に裁量委任 | 委任範囲内でAIが選択可能 |
+| ③ UNRESOLVED / CONFIRMATION REQUIRED | 曖昧・不足・未決定で、正確な出力に影響 | 人間へ確認 |
+
+#### Delegation Scope Check
+
+「任せる」「一任する」「好きにして」等は強い委任シグナルだが、**対象範囲を限定して解釈する**。
+
+- 現在の対象・現在の工程に明確に掛かる → ②として実行可能
+- 過去の別項目への委任 → 現在の項目へ自動拡張しない
+- 「適当に」「いい感じに」等で範囲が曖昧 → 重要な仕様確定へは拡張しない
+- 委任された結果は `AI-selected / Provisional` と、人間が確定した `Frozen` を区別する
+
+#### Pre-Output / Pre-Write Gate
+
+ユーザーが完成画像、設計案、回路、BOM、仕様書、GitHub更新等の**具体的アウトプット**を求めた場合：
+
+1. ①だけならそのまま進める。
+2. ②を含む場合：
+   - 現在の範囲への明示委任がある → 進めてよい。
+   - 委任が推測・古い・範囲不明 → 出力前に確認する。
+3. ③を含み、その不確定性が正確性へ影響する場合：
+   - 原則として出力前に人間へ確認する。
+   - ただし、その不確定部分を含めて明示的に裁量委任された場合は仮決定してよい。その場合は `AI-selected / Provisional` とする。
+
+#### Image Generation
+
+正確な製品画像・技術図・レイアウト画像では、③を残したまま「もっともらしい補完」で埋めない。
+
+画像生成前に①②③を確認し、②③に必要な人間確認が残っている場合は、画像生成Toolを呼ぶ前に確認する。
+
+#### GitHub / Source-of-Truth Update
+
+GitHub更新にも同じ分類を適用する。
+
+- ① → Current / Frozenとして書き込み可能
+- ② → 明示委任がある場合のみAI-selected / Provisionalとして書き込み可能。人間確定扱いにしない
+- ③ → 人間確認前にCurrent / Frozenへ書き込まない
+
+**「書ける」ことと「確定として書いてよい」ことを分離する。**
+
+---
 ### Resume Brief / 再開ブリーフ
 
 Resume Boundaryが意味のある中断を示す場合は、必要に応じて短いResume Briefを出す。
@@ -749,6 +797,8 @@ Higher reasoning effort does not guarantee factual correctness. Reasoning depth 
 制作物については、見た目だけでなく要件を満たしているか確認する。
 
 既存Projectの仕様・設計・ブランド・データなど、**権威あるSource of Truthに依存する制作**では、制作前に現在有効な状態を整理する。
+
+Creation Taskでは、Source-Locked分類に加えて `Design Decision Classification Gate` の①②③を適用し、未確定事項の裁量委任有無を明示的に確認する。
 
 最低限、必要に応じて以下へ分類する。
 
