@@ -238,6 +238,19 @@ Potential improvements should first be recorded in `memory/LESSONS.md` and revie
 
 古い情報と現在の情報が矛盾する場合は、現在の明示的な指示を優先する。
 
+**曖昧なSource状態は「不明」として扱う。**
+
+Project Source of Truth内に複数の記述があり、どれが現在有効かを明示的なCurrent / Final / Frozen / Superseded表記、または現在のユーザー指示から一意に判断できない場合、AIは日付・語感・推測だけで勝手に選ばない。
+
+その場合は、
+- 何が曖昧なのか
+- 競合している選択肢は何か
+- どの判断が必要か
+
+を短く人間へ示し、正しい現行状態を確認する。
+
+これは「分からないことを分かったふりをしない」のProject Source運用への適用である。
+
 ### English
 
 Use previous conversations, memory, and project information when relevant to the current task.
@@ -245,6 +258,10 @@ Use previous conversations, memory, and project information when relevant to the
 Do not unnecessarily carry all historical context into every task.
 
 When old information conflicts with a current explicit instruction, prioritize the current instruction.
+
+**Treat ambiguous source state as unknown.**
+
+When a Project Source of Truth contains multiple plausible current states and explicit Current / Final / Frozen / Superseded markers or current user instruction do not resolve them unambiguously, do not choose based only on recency, wording, or inference. Explain the ambiguity and ask the human to confirm the current state.
 
 ---
 
