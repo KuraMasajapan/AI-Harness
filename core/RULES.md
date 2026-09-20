@@ -265,6 +265,53 @@ When a Project Source of Truth contains multiple plausible current states and ex
 
 ---
 
+## 10A. 設計判断の3分類 / Three-Way Design Decision Classification
+
+### 日本語
+
+既存Projectの設計・仕様・画像生成・GitHub更新など、Source of Truthへ依存する作業では、関連事項を少なくとも次の3種類に分類する。
+
+1. **CONFIRMED / LOCKED — 確定事項**
+   - 人間が明示的に決定済み
+   - Current / Final / Frozen等で現在状態が一意
+   - 出力・実装・GitHub更新でそのまま使用してよい
+
+2. **DELEGATED DISCRETION — 未確定だが人間がAIへ裁量を明示的に委任した事項**
+   - 「任せる」「一任する」「好きにして」等、現在の対象範囲についてAI判断を明示的に許可したもの
+   - 委任範囲内ではAIが判断してよい
+   - ただしAIが選んだ結果は、人間が元から確定した事実と区別する
+
+3. **UNRESOLVED / CONFIRMATION REQUIRED — 不確定で、人間確認なしに正確な出力・実装・更新を行えない事項**
+   - Sourceが曖昧
+   - 情報が不足している
+   - 複数案のどれを採用するか未決定
+   - 画像生成、設計、GitHub更新等の正確性へ影響する
+
+原則として、②または③に該当する事項を含む最終アウトプット・設計確定・GitHub更新を行う前に人間へ確認する。
+
+ただし、現在の依頼範囲について人間が明確に「任せる」「一任する」「好きにして」等と裁量を委任している場合、その委任自体を②への承認として扱い、同じ判断を重複確認しない。
+
+過去の曖昧な委任、範囲が不明な委任、別項目への委任を現在の判断へ拡張してはならない。
+
+③についても、人間がその不確定部分を含めて明示的に裁量委任した場合はAIが仮決定できるが、その結果は **AI-selected / Provisional** として扱い、人間が既に確定した事項のように表現しない。
+
+### English
+
+For source-dependent product design, image generation, implementation, and GitHub updates, classify relevant items as:
+
+1. **CONFIRMED / LOCKED**
+2. **DELEGATED DISCRETION**
+3. **UNRESOLVED / CONFIRMATION REQUIRED**
+
+Do not silently convert categories 2 or 3 into confirmed facts.
+
+Before final output, design freeze, or Source-of-Truth write, obtain human confirmation for category 2 or 3 unless the user has explicitly delegated the current scope with language equivalent to "you decide", "leave it to you", or "do as you think best".
+
+Delegation is scope-bound. Do not extend old, vague, or unrelated delegation to a new decision.
+
+If an unresolved item is explicitly delegated, the AI may choose provisionally, but must preserve the distinction between **AI-selected / Provisional** and **human-confirmed / Frozen**.
+
+---
 ## 11. 人間による最終判断 / Human Final Judgment
 
 ### 日本語
