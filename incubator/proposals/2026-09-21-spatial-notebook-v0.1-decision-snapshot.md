@@ -152,3 +152,20 @@ Deferred until a trigger appears:
 - board-to-Markdown export
 - alternate launcher themes
 - more complex multi-window behavior
+
+
+## File / folder link creation
+
+User-facing behavior:
+
+- Dragging a file or folder from Explorer into the app creates a reference card.
+- Dropping a folder creates a folder reference that behaves as a folder entry point; it opens the original folder and can optionally expose its contents in the app later.
+- When drag-and-drop is inconvenient, a standard file/folder picker can be used.
+- Selecting a file or folder from the picker creates the same kind of reference card.
+- In both cases, the original source remains in place.
+- The app creates a link/reference only; it does not move, rename, or duplicate the original unless the user explicitly requests a different operation.
+
+Preferred plain-language description:
+
+> ファイルやフォルダをドラッグ＆ドロップすると、その場所をそのまま参照するリンクカードとして登録されます。フォルダは元のフォルダを開ける入口として機能します。ドラッグ操作が面倒な場合は、ファイル選択画面から目的のファイルやフォルダを指定するだけで、元データを移動せず同じリンクカードを作成できます。
+
