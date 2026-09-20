@@ -1284,15 +1284,29 @@ Source basis: Shenzhen Sunmoon Micro SM16206 datasheet.
 
 ### 4. DPDT Mode Switch — HanElectricity MST22D18G40-B
 
-- Exact candidate: **MST22D18G40-B**
+NORMAL / GAME切替用DPDTは以下を**採用確定**とする。
+
+- Manufacturer: **HanElectricity**
+- Part: **MST22D18G40-B**
 - LCSC: **C22435667**
-- Mounting: SMD
-- Circuit: DPDT
+- Mounting: **SMD**
+- Circuit: **DPDT / 2-position**
+- Terminals: **6**
 - Body / package plan size: **9.1 mm × 3.5 mm**
+- Electrical rating reference: **12 V / 100 mA**
+- Actuator: black slide actuator
+- Status: **Frozen**
 
-LCSCの公開属性ではZ方向の全高が明示されていないため、外観イメージで高さを厳密値として固定しない。
+用途：
 
-Source basis: LCSC exact-part listing / footprint.
+- NORMAL ↔ GAME mode switching
+- A / B 2回路を1個のDPDTで同時切替
+
+LCSC公開情報ではZ方向の全高が明示されていないため、**部品選定そのものは確定**としつつ、3D外観での厳密な高さだけは未確定として扱う。
+
+NIDEC等の上位品は将来のpremium / alternative candidateとして残すが、V0.2試作・初期製品の基準部品はC22435667とする。
+
+Source basis: prior design decision + LCSC exact-part listing / footprint.
 
 ### 5. Grove / HY2.0-4P Connector Candidates
 
@@ -1682,8 +1696,8 @@ CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** package�
 - UIAP BASE board width / height / outline
 - mounting hole count and coordinates
 - terminal block count / pole grouping / final signal assignment
-- Secret LED package / color / top-bottom mounting / FR-4透過方式
-- DPDT switch Z-height
+- Secret / Logo LED exact placement / optical treatment
+- DPDT switch Z-height only (part selection itself is Frozen)
 - exact 8 MHz crystal and load capacitors
 - final silkscreen positions
 - exact IC / passive placement
@@ -1960,3 +1974,30 @@ Secret LEDは別の付加価値候補として扱い、**17個へ自動加算し
 Total: **17 × 0805 LEDs**.
 
 Color assignment and exact LED part numbers are frozen. Resistor values remain prototype tuning values as defined in `LED Current / Resistor Architecture Update`.
+
+---
+
+## DPDT Switch Selection Decision — 2026-09-20
+
+NORMAL / GAME切替用DPDTスイッチは以下で**確定**。
+
+- HanElectricity **MST22D18G40-B**
+- LCSC **C22435667**
+- SMD
+- DPDT / 2-position / 6-terminal
+- Plan size: **9.1 × 3.5 mm**
+- Role: A / B 2回路をNORMAL / GAME間で同時切替
+
+未確定なのはZ方向の正確な全高のみであり、**部品選定は未確定ではない**。
+
+---
+
+## Secret / Logo LED Treatment — 2026-09-20
+
+Secret LEDは優先設計項目から外し、SM16206S OUT15を利用した簡易logo illuminationとして扱う。
+
+- Target: `UIAP BASE` silkscreen / logo
+- Purpose: subtle decorative illumination
+- Priority: Low
+- Count: optional, separate from the confirmed 17 functional LEDs
+- Exact optical structure / location: layout-dependent
