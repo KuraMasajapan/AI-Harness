@@ -142,3 +142,34 @@ The visual shell is therefore reusable for other HARNESS tools as well.
 ## Why preserve this proposal
 
 This provides a consistent, intentionally designed desktop layer without forcing every underlying tool to adopt a custom interface.
+
+
+## Window surface: lightweight canvas texture
+
+Once the morph transition completes, the opened window should keep a familiar application layout but use a subtle canvas-cloth visual treatment.
+
+Goal:
+- tactile and warm rather than glossy
+- visually unified with the artwork-tile launcher
+- light enough not to hurt responsiveness
+- texture should sit behind ordinary controls, not compete with them
+
+Recommended implementation direction:
+- use a lightweight CSS/procedural texture or a very small repeating local texture asset
+- avoid large background images, blur-heavy effects, continuous animation, or GPU-expensive filters
+- keep the central working area bright and readable
+- use restrained paper/canvas grain at low opacity
+- preserve normal window chrome and predictable controls
+- allow the texture layer to be disabled independently if performance or readability suffers
+
+The visual hierarchy should remain:
+
+```text
+artwork tile
+→ morph transition
+→ familiar window structure
+→ subtle canvas texture as atmosphere
+→ practical content remains dominant
+```
+
+This keeps the opening playful while keeping long work sessions calm and familiar.
