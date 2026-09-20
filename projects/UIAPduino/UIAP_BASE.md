@@ -867,7 +867,8 @@ A / Bボタンのモード切替方式について、教育性と実使用時の
 
 ### Current DPDT Selection
 
-複数のJLCPCB / LCSC実装候補を比較した結果、**C22435667を現時点の採用候補とする。**
+複数のJLCPCB / LCSC実装候補を比較した結果、~~**C22435667を現時点の採用候補とする。**~~  
+**SUPERSEDED:** `DPDT Switch Selection Decision — 2026-09-20` により **MST22D18G40-B / C22435667 は採用確定（Frozen）**。
 
 比較時には以下を重視した。
 
@@ -1695,7 +1696,7 @@ CH32V203用8 MHz external crystalは **SMD3225-4P (3.2 mm × 2.5 mm)** package�
 
 - UIAP BASE board width / height / outline
 - mounting hole count and coordinates
-- terminal block count / pole grouping / final signal assignment
+- ~~terminal block count / pole grouping / final signal assignment~~ — **SUPERSEDED:** `Terminal Block Specification Decision — 2026-09-20` および `Terminal Block UX Pin Assignment V0.1 — 2026-09-20` を参照
 - Secret / Logo LED exact placement / optical treatment
 - DPDT switch Z-height only (part selection itself is Frozen)
 - exact 8 MHz crystal and load capacitors
