@@ -1502,15 +1502,23 @@ UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分か�
 
 ### LED Package / Color Assignment
 
-現時点ではLED総数を **17個** とする。
+LED総数は現時点で **17個** とする。
 
 - Package: **0805 SMD LED**
+- Manufacturer: **Hubei KENTO**
 - Signal LEDs: **15個**
 - Power LEDs: **2個**
 
 #### White — 13
 
-冷白色（bluish white）。以下のGPIO表示用。
+- Part: **KT-0805W**
+- LCSC: **C34499**
+- JLCPCB classification: **Basic**
+- Color: cold white / bluish white
+- Purpose: GPIO indication
+- Selection-time stock snapshot: **710,930**
+
+Assignment:
 
 - D3
 - D4
@@ -1528,21 +1536,34 @@ UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分か�
 
 #### Blue — 2
 
-コバルトブルー。
+- Part: **KT-0805B**
+- LCSC: **C2293**
+- JLCPCB classification: **Extended**
+- Color: cobalt blue
+- Purpose: TX / RX serial activity indication
+- Vf reference: approximately **3.1 V**
+- Selection-time stock snapshot: **75,955**
+
+Assignment:
 
 - TX
 - RX
 
-シリアル通信の送受信表示として使用する。
-
 #### Green — 2
 
-黄緑がかった明るい緑。
+- Part: **KT-0805G**
+- LCSC: **C2297**
+- JLCPCB classification: **Basic**
+- Color: bright yellow-green / emerald-green family
+- Purpose: power rail indication
+- Selection-time stock snapshot: **2,680,312**
+
+Assignment:
 
 - 5V
 - 3V3
 
-電源railの存在を視覚化する。
+LED package / color / manufacturer / exact part numbers are **Frozen** for the current design.
 
 ### LED Placement Rule
 
@@ -1552,13 +1573,15 @@ UIAPduino側と同系統のJST SH familyを使い、物理・教材上の分か�
 - 13 white + 2 blueの信号LEDは、UIAPduino各signalとの対応が直感的に分かる位置へ配置する。
 - 2 green power LEDsは5V / 3V3表示としてsignal LEDとは役割を分ける。
 
-### LED Part-number Policy
+### LED Part-number Status
 
-色構成と0805 packageは固定する。
+白・青・緑のexact part numberは以下で確定する。
 
-具体的な白・青・緑のLCSC / JLCPCB part numberは、過去選定のexact品番が現行Project記録から確認できないため、**未確認のまま捏造しない**。
+- White: **KT-0805W / C34499 / Basic**
+- Blue: **KT-0805B / C2293 / Extended**
+- Green: **KT-0805G / C2297 / Basic**
 
-JLCPCB在庫を再確認して、各色のexact part number / manufacturer / forward voltage / brightnessを確定する。
+在庫数は選定時snapshotであり、Source of Truthとして固定するのはpart number / manufacturer / package / color assignmentとする。
 
 ### Terminal-block Parallel Pin Sockets
 
@@ -1875,12 +1898,24 @@ SM16206S datasheetの代表値：
 
 ### 5V / 3V3 Power LEDs
 
-緑色2個はsignal LEDではなく、それぞれのpower rail表示とする。
+緑色2個は **KT-0805G / C2297** を使用し、それぞれのpower rail表示とする。
 
-- 5V LED：5V railからseries resistorを介して点灯
-- 3V3 LED：3.3V railからseries resistorを介して点灯
+LCSC specification reference:
+- Vf: **2.6–3.1 V**
+- nominal test current: **5 mA**
+
+回路：
+- 5V LED：5V rail → series resistor → C2297 → GND
+- 3V3 LED：3.3V rail → series resistor → C2297 → GND
 - この2個はSM16206SのR-EXTでは電流設定しない
 - 各LEDに**個別series resistor 1個ずつ**必要
+
+試作初期値は、旧仕様の1kΩ方針を完全には捨てず、以下から開始する。
+
+- **5V power LED: 1kΩ provisional**
+- **3V3 power LED: 1kΩ provisional**
+
+ただし3.3V側はVfとの差が小さく、5V側よりdimになる可能性が高い。実機で見え方を確認し、必要なら3V3側のみ **470Ω〜1kΩ**、5V側は **1kΩ〜2.2kΩ** の範囲で独立調整する。
 
 したがってLED電流設定に関係するresistorは現時点で、
 
@@ -1890,14 +1925,16 @@ SM16206S datasheetの代表値：
 
 の **合計3個** を基本とする。
 
-Power LEDの抵抗値は、green LEDのexact LCSC part numberとforward voltageが確認できてから確定する。
+### Resistor Architecture Status
 
-計算基準：
+15個のsignal LEDに対して旧仕様のような個別1kΩ抵抗は置かない。
 
-- R(5V) = (5.0V - Vf) / target current
-- R(3V3) = (3.3V - Vf) / target current
+- White 13 + Blue 2 → SM16206S constant-current outputs
+- signal LED current → **R-EXT 1個**
+- current prototype R-EXT → **10kΩ**
+- Green 5V / 3V3 → individual series resistor each
 
-旧1kΩ指定はこのexact LED確認まで**superseded**とする。
+抵抗値はsample実機でbrightness / total currentを確認してから最終freezeする。
 
 ### Secret LED Relationship
 
@@ -1909,3 +1946,17 @@ Power LEDの抵抗値は、green LEDのexact LCSC part numberとforward voltage�
 の合計である。
 
 Secret LEDは別の付加価値候補として扱い、**17個へ自動加算しない**。採用可否を決めた時点で総LED数を更新する。
+
+---
+
+## LED Exact Part Selection — 2026-09-20
+
+| Role | Qty | Part | LCSC | JLCPCB class | Status |
+|---|---:|---|---|---|---|
+| GPIO | 13 | Hubei KENTO KT-0805W | C34499 | Basic | Frozen |
+| TX / RX | 2 | Hubei KENTO KT-0805B | C2293 | Extended | Frozen |
+| 5V / 3V3 | 2 | Hubei KENTO KT-0805G | C2297 | Basic | Frozen |
+
+Total: **17 × 0805 LEDs**.
+
+Color assignment and exact LED part numbers are frozen. Resistor values remain prototype tuning values as defined in `LED Current / Resistor Architecture Update`.
