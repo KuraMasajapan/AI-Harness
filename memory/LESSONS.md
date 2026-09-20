@@ -52,6 +52,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-008 | High | Proposed | core/RULES.md / HARNESS.md / evaluation/* |
 | LESSON-009 | High | Proposed | core/WORKFLOW.md |
 | LESSON-010 | High | Promoted | core/WORKFLOW.md / evaluation/* |
+| LESSON-011 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
 
 この表は人間向けの運用状況一覧である。
 
@@ -614,3 +615,29 @@ This incident demonstrates a more precise chain:
 > **Exists in Source ≠ Retrieved ≠ Handed Off ≠ Enforced ≠ Verified**
 
 The current unresolved root-cause question is the boundary between **Retrieved** and **Handed Off**.
+
+
+---
+
+## LESSON-011 Ambiguous Source State Is Unknown / 曖昧なSource状態は不明である
+
+- Date: 2026-09-20
+- Context: Long-running Project Markdown accumulated candidate, freeze, decision, open-item, and historical records. In UIAP BASE work this repeatedly created situations where information existed but the AI either reopened a settled issue or risked choosing one interpretation from ambiguous records.
+- What Happened: The failure pattern was broader than a single component. The Project source mixed current state and historical state in a way that sometimes required interpretation. The AI attempted to resolve state from available records instead of first asking whether the source itself was unambiguous.
+- Root Cause:
+  1. Context Freshness focused on retrieving current files, not on detecting whether the retrieved Markdown had become structurally ambiguous.
+  2. Current specification and decision history were accumulated in the same document hierarchy.
+  3. Historical candidate wording sometimes remained visually active after later decisions.
+  4. The workflow encouraged current-effective-state resolution but did not clearly say that unresolved ambiguity must remain UNKNOWN and return to the human.
+- Lesson: **Ambiguous source state is itself unknown information.** If explicit markers and current user instruction do not make the current state unique, the AI must not infer a winner. It should explain the ambiguity, ask the human to confirm the correct state, and then normalize the Markdown so the same ambiguity does not recur.
+- Suggested Change:
+  1. Add a Source-State Ambiguity Gate after Source retrieval.
+  2. Resolve automatically only when explicit Current / Final / Frozen / Superseded evidence is unambiguous.
+  3. Otherwise mark HUMAN CONFIRMATION REQUIRED and ask the user.
+  4. After human resolution, strike misleading old text and mark it SUPERSEDED / HISTORICAL with a replacement reference.
+  5. Prefer a Markdown structure separating Current Effective Specification, Current Open Items, and Decision History where practical.
+- Related Files: core/RULES.md, core/WORKFLOW.md, evaluation/TEST_CASES.md, projects/UIAPduino/UIAP_BASE.md
+- Priority: High
+- Promotion Target: core/RULES.md / core/WORKFLOW.md / evaluation/*
+- Promotion Evidence: explicit human review + Source-State Ambiguity Gate + TEST-007 expansion
+- Status: Promoted
