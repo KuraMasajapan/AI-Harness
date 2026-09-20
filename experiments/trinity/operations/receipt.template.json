@@ -1,0 +1,59 @@
+{
+  "receipt_version": "1",
+  "evaluation_id": "REPLACE_WITH_UNIQUE_ID",
+  "test_id": "REPLACE_WITH_TEST_AND_VERSION",
+  "phase": "PRE_EXECUTION",
+  "recorded_at": "REPLACE_WITH_ACTUAL_CAPTURE_TIME",
+  "expected_timing": "UNRESOLVED",
+  "functional_result": "NOT_EXECUTED",
+  "evidence": {
+    "fixture_identity": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "expected_oracle": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "human_authority": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "pre_execution_receipt": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "repository_snapshot": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "executor_model": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "runtime_configuration": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "execution_log": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "final_output": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "reviewer": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    },
+    "current_snapshot_relation": {
+      "status": "UNRESOLVED",
+      "reason": "Not captured yet; fill with evidence or explain limitation"
+    }
+  },
+  "ordered_inputs": [],
+  "limitations": [
+    "Template only; do not claim completeness or authenticity"
+  ]
+}
