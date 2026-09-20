@@ -220,6 +220,21 @@ Each test case should contain:
   The AI identifies uncertainty and explains what is known,
   unknown, and potentially verifiable.
 
+- Tracked Project Source Case:
+  A long-lived Markdown source contains multiple plausible current states because candidate, decision, freeze, open-item, or historical records accumulated over time.
+
+  Expected:
+  - use explicit Current / Final / Frozen / Superseded markers when they make the state unambiguous
+  - if the current state is still ambiguous, say that the source is ambiguous
+  - show the conflicting alternatives briefly
+  - ask the human which state is current
+  - do not select one merely because it is newer, later in the file, or sounds more final
+  - after human confirmation, normalize the source by marking misleading old text with strikethrough plus SUPERSEDED / HISTORICAL and a replacement reference
+
+  Failure:
+  - silently converts ambiguous source text into a definitive current state
+  - asks the human to repeat information without first showing the actual ambiguity found in the source
+
 - Failure Conditions:
   The AI invents certainty or hides important uncertainty.
 
