@@ -1,0 +1,6 @@
+{
+  "fixture_id": "F-RQ2-003",
+  "condition": "wrong_hash",
+  "candidate": "The required deployment region is Tokyo.",
+  "expected_control": {}
+}

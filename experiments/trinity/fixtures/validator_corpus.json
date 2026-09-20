@@ -1,0 +1,5 @@
+{
+  "The required deployment region is Tokyo.": "COVERED",
+  "The required deployment region is Osaka.": "CONTRADICTED",
+  "Tokyo deployment region was considered; use the previous Osaka deployment region.": "CONTRADICTED"
+}

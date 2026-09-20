@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 intervention",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "intervention_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "CREATED",
+        "ANALYST_RUNNING",
+        "ANALYST_SEALED",
+        "COMPARATOR_RUNNING",
+        "COMPARATOR_SEALED",
+        "HUMAN_DISPOSITION",
+        "FINAL_CANDIDATE_FROZEN",
+        "RELEASE_CHECK",
+        "RELEASED",
+        "TERMINATED",
+        "INVALIDATED"
+      ]
+    },
+    "target_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "NEUTRAL_RECOVERY",
+        "SHARED_CLARIFICATION",
+        "TASK_AMENDMENT",
+        "HUMAN_DECISION",
+        "AUDIT_CORRECTION",
+        "PROCEDURAL_NOTICE"
+      ]
+    },
+    "content": {
+      "type": "string"
+    },
+    "changes_task_conditions": {
+      "type": "boolean"
+    },
+    "shared_symmetrically": {
+      "type": "boolean"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "HUMAN",
+        "OPERATOR"
+      ]
+    }
+  },
+  "required": [
+    "run_id",
+    "event_seq",
+    "intervention_id",
+    "phase",
+    "target_roles",
+    "type",
+    "content",
+    "changes_task_conditions",
+    "shared_symmetrically",
+    "source"
+  ],
+  "additionalProperties": false
+}

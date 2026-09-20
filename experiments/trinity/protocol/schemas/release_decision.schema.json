@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 release_decision",
+  "type": "object",
+  "properties": {
+    "candidate_artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "binding_result_artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "semantic_alignment_result_artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "human_disposition_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "RELEASE",
+        "DENY"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "candidate_artifact_id",
+    "binding_result_artifact_id",
+    "semantic_alignment_result_artifact_id",
+    "human_disposition_id",
+    "decision",
+    "reasons"
+  ],
+  "additionalProperties": false
+}

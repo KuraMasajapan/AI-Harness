@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 test_manifest",
+  "type": "object",
+  "properties": {
+    "test_manifest_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol_version": {
+      "const": "TRINITY-V0.1"
+    },
+    "fixture_set_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fixture_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_requirement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_artifact_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "manipulated_condition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected_binding_result": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "expected_semantic_result": {
+            "type": "string",
+            "enum": [
+              "ALIGNED",
+              "MISALIGNED",
+              "UNRESOLVED",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "expected_release_result": {
+            "type": "string",
+            "enum": [
+              "RELEASE",
+              "DENY"
+            ]
+          },
+          "oracle_source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "machine_verifiable_fields": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "pass_condition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fail_condition": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "fixture_id",
+          "target_requirement",
+          "category",
+          "input_artifact_refs",
+          "manipulated_condition",
+          "expected_binding_result",
+          "expected_semantic_result",
+          "expected_release_result",
+          "oracle_source",
+          "machine_verifiable_fields",
+          "pass_condition",
+          "fail_condition"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "test_manifest_id",
+    "protocol_version",
+    "fixture_set_version",
+    "fixtures"
+  ],
+  "additionalProperties": false
+}

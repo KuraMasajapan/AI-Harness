@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 artifact",
+  "type": "object",
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "TASK_PACKAGE",
+        "ANALYST_OUTPUT_A",
+        "ANALYST_OUTPUT_B",
+        "COMPARATOR_OUTPUT",
+        "OPERATOR_INTERVENTION_LOG",
+        "HUMAN_DISPOSITION",
+        "FINAL_RESPONSE_CANDIDATE",
+        "BINDING_RESULT",
+        "SEMANTIC_ALIGNMENT_RESULT",
+        "RELEASE_DECISION",
+        "TEST_MANIFEST",
+        "TEST_RESULT"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "created_event_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sealed": {
+      "const": true
+    },
+    "invalidated": {
+      "type": "boolean"
+    },
+    "source_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "content": {
+      "type": "object"
+    },
+    "record_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "task_package_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "producer_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "run_id",
+    "content_hash",
+    "created_event_seq",
+    "sealed",
+    "invalidated",
+    "source_artifact_ids",
+    "content",
+    "record_hash"
+  ],
+  "additionalProperties": false
+}

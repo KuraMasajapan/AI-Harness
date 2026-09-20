@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 test_result",
+  "type": "object",
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test_manifest_artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test_manifest_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "actual": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "fixture_id",
+    "test_manifest_artifact_id",
+    "test_manifest_hash",
+    "result",
+    "actual"
+  ],
+  "additionalProperties": false
+}

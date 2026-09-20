@@ -1,0 +1,13 @@
+{
+  "protocol_version": "TRINITY-V0.1",
+  "storage": "local-files",
+  "hash": "SHA-256",
+  "encoding": "UTF-8",
+  "newline": "LF",
+  "semantic_validator": null,
+  "semantic_infrastructure_retry_limit": null,
+  "comparator_semantic_lifecycle": null,
+  "semantic_regression_threshold": null,
+  "production_concurrency": null,
+  "crash_recovery": null
+}

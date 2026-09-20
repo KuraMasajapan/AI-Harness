@@ -1,0 +1,9 @@
+{
+  "fixture_id": "F-RQ1-004",
+  "condition": "old_transcript",
+  "candidate": "The required deployment region is Tokyo.",
+  "expected_control": {
+    "state": "INVALIDATED",
+    "conformance_failure": true
+  }
+}

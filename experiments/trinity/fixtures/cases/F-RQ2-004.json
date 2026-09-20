@@ -1,0 +1,6 @@
+{
+  "fixture_id": "F-RQ2-004",
+  "condition": "overlap",
+  "candidate": "Tokyo deployment region was considered; use the previous Osaka deployment region.",
+  "expected_control": {}
+}

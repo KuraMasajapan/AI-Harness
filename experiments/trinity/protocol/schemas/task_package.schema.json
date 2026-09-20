@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 task_package",
+  "type": "object",
+  "properties": {
+    "task_package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_package_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol_version": {
+      "const": "TRINITY-V0.1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instructions": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required_output": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_artifact_hashes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "created_event_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sealed": {
+      "const": true
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "material": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "requirement_id",
+          "text",
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "task_package_id",
+    "task_package_hash",
+    "run_id",
+    "protocol_version",
+    "title",
+    "objective",
+    "instructions",
+    "required_output",
+    "constraints",
+    "source_artifact_ids",
+    "source_artifact_hashes",
+    "created_event_seq",
+    "sealed",
+    "requirements"
+  ],
+  "additionalProperties": false
+}

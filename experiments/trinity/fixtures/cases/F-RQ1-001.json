@@ -1,0 +1,10 @@
+{
+  "fixture_id": "F-RQ1-001",
+  "condition": "amend",
+  "candidate": "The required deployment region is Tokyo.",
+  "expected_control": {
+    "state": "TERMINATED",
+    "replacement_created": true,
+    "clean_inputs": true
+  }
+}

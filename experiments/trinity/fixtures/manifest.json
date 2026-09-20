@@ -1,0 +1,194 @@
+{
+  "test_manifest_id": "trinity-v01-required-fixtures-r1b",
+  "protocol_version": "TRINITY-V0.1",
+  "fixture_set_version": "2-r1b",
+  "fixtures": [
+    {
+      "fixture_id": "F-RQ1-001",
+      "target_requirement": "RQ1",
+      "category": "protocol",
+      "input_artifact_refs": [
+        "cases/F-RQ1-001.json"
+      ],
+      "manipulated_condition": "amend",
+      "expected_binding_result": "NOT_APPLICABLE",
+      "expected_semantic_result": "NOT_APPLICABLE",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release",
+        "state",
+        "replacement_created",
+        "clean_inputs"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ1-002",
+      "target_requirement": "RQ1",
+      "category": "protocol",
+      "input_artifact_refs": [
+        "cases/F-RQ1-002.json"
+      ],
+      "manipulated_condition": "divergent",
+      "expected_binding_result": "NOT_APPLICABLE",
+      "expected_semantic_result": "NOT_APPLICABLE",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release",
+        "state",
+        "conformance_failure"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ1-003",
+      "target_requirement": "RQ1",
+      "category": "protocol",
+      "input_artifact_refs": [
+        "cases/F-RQ1-003.json"
+      ],
+      "manipulated_condition": "old_candidate",
+      "expected_binding_result": "FAIL",
+      "expected_semantic_result": "UNRESOLVED",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo; R1-B Human Decision 7/8: Disposition coverage must bind the current candidate/run; legacy ALIGNED expectation superseded for future executions only",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ1-004",
+      "target_requirement": "RQ1",
+      "category": "protocol",
+      "input_artifact_refs": [
+        "cases/F-RQ1-004.json"
+      ],
+      "manipulated_condition": "old_transcript",
+      "expected_binding_result": "NOT_APPLICABLE",
+      "expected_semantic_result": "NOT_APPLICABLE",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release",
+        "state",
+        "conformance_failure"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ2-001",
+      "target_requirement": "RQ2",
+      "category": "binding-and-semantic",
+      "input_artifact_refs": [
+        "cases/F-RQ2-001.json"
+      ],
+      "manipulated_condition": "wrong_run",
+      "expected_binding_result": "FAIL",
+      "expected_semantic_result": "UNRESOLVED",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo; R1-B Human Decision 7/8: Disposition coverage must bind the current candidate/run; legacy ALIGNED expectation superseded for future executions only",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ2-002",
+      "target_requirement": "RQ2",
+      "category": "binding-and-semantic",
+      "input_artifact_refs": [
+        "cases/F-RQ2-002.json"
+      ],
+      "manipulated_condition": "wrong_context",
+      "expected_binding_result": "PASS",
+      "expected_semantic_result": "MISALIGNED",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ2-003",
+      "target_requirement": "RQ2",
+      "category": "binding-and-semantic",
+      "input_artifact_refs": [
+        "cases/F-RQ2-003.json"
+      ],
+      "manipulated_condition": "wrong_hash",
+      "expected_binding_result": "FAIL",
+      "expected_semantic_result": "ALIGNED",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ2-004",
+      "target_requirement": "RQ2",
+      "category": "binding-and-semantic",
+      "input_artifact_refs": [
+        "cases/F-RQ2-004.json"
+      ],
+      "manipulated_condition": "overlap",
+      "expected_binding_result": "PASS",
+      "expected_semantic_result": "MISALIGNED",
+      "expected_release_result": "DENY",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    },
+    {
+      "fixture_id": "F-RQ2-005",
+      "target_requirement": "RQ2",
+      "category": "binding-and-semantic",
+      "input_artifact_refs": [
+        "cases/F-RQ2-005.json"
+      ],
+      "manipulated_condition": "positive",
+      "expected_binding_result": "PASS",
+      "expected_semantic_result": "ALIGNED",
+      "expected_release_result": "RELEASE",
+      "oracle_source": "Supplied TRINITY V0.1 Specification section 17; human-authored task says Tokyo",
+      "machine_verifiable_fields": [
+        "binding",
+        "semantic",
+        "release"
+      ],
+      "pass_condition": "All fixed expected fields equal actual fields",
+      "fail_condition": "Any expected field differs"
+    }
+  ]
+}

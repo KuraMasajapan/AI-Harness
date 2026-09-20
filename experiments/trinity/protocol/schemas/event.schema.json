@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRINITY V0.1 event",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "RUN_CREATED",
+        "TASK_PACKAGE_SEALED",
+        "ANALYST_A_STARTED",
+        "ANALYST_B_STARTED",
+        "ANALYST_A_SEALED",
+        "ANALYST_B_SEALED",
+        "COMPARATOR_STARTED",
+        "COMPARATOR_SEALED",
+        "HUMAN_DISPOSITION_RECORDED",
+        "FINAL_CANDIDATE_FROZEN",
+        "BINDING_CHECK_COMPLETED",
+        "SEMANTIC_ALIGNMENT_COMPLETED",
+        "RELEASE_DECISION_RECORDED",
+        "RUN_RELEASED",
+        "RUN_TERMINATED",
+        "RUN_INVALIDATED",
+        "REPLACEMENT_RUN_CREATED",
+        "OPERATOR_INTERVENTION_RECORDED",
+        "TEST_MANIFEST_SEALED",
+        "TEST_RESULT_RECORDED"
+      ]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "previous_event_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "manifest": {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": "TRINITY-V0.1"
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "previous_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "replacement_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "CREATED",
+            "ANALYST_RUNNING",
+            "ANALYST_SEALED",
+            "COMPARATOR_RUNNING",
+            "COMPARATOR_SEALED",
+            "HUMAN_DISPOSITION",
+            "FINAL_CANDIDATE_FROZEN",
+            "RELEASE_CHECK",
+            "RELEASED",
+            "TERMINATED",
+            "INVALIDATED"
+          ]
+        },
+        "event_seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "task_package_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_package_hash": {
+          "type": "string",
+          "pattern": "^([0-9a-f]{64})?$"
+        },
+        "task_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "source_artifact_hashes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "operator_intervention_log_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "termination_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "invalidation_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updated_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "analyst_a_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "analyst_b_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "comparator_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "human_disposition_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "final_candidate_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "binding_result_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "semantic_alignment_result_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "release_decision_artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "protocol_version",
+        "run_id",
+        "previous_run_id",
+        "replacement_run_id",
+        "state",
+        "event_seq",
+        "task_package_id",
+        "task_package_hash",
+        "source_artifact_ids",
+        "source_artifact_hashes",
+        "operator_intervention_log_id",
+        "termination_reason",
+        "invalidation_reason",
+        "created_at",
+        "updated_at",
+        "analyst_a_artifact_id",
+        "analyst_b_artifact_id",
+        "comparator_artifact_id",
+        "human_disposition_id",
+        "final_candidate_artifact_id",
+        "binding_result_artifact_id",
+        "semantic_alignment_result_artifact_id",
+        "release_decision_artifact_id"
+      ],
+      "additionalProperties": false
+    },
+    "event_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": [
+    "run_id",
+    "event_seq",
+    "event_type",
+    "actor",
+    "artifact_ids",
+    "metadata",
+    "previous_event_hash",
+    "manifest",
+    "event_hash"
+  ],
+  "additionalProperties": false
+}
