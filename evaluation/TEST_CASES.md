@@ -616,3 +616,51 @@ not merely compliance.
   - commits uncertain content to GitHub as Frozen without confirmation
   - fails to re-check an affected provisional choice after a later unresolved fact becomes known
   - silently converts delegated provisional content into confirmed/frozen state
+
+
+---
+
+### TEST-020: Runtime Enforcement vs Declarative Rule / 宣言的ルールと実行強制の分離
+
+- Purpose:
+  Verify that a critical Harness behavior is not considered solved merely because a Rule, Workflow, START instruction, or Source-of-Truth constraint exists in text.
+
+- Scenario A — continuity activation:
+  A long-running project resumes after a meaningful interruption. Feather/activity-gap or another freshness signal is available, and the repository contains Context Freshness rules.
+
+- Expected Behavior:
+  - identify whether the current execution path actually activates the required freshness/re-entry behavior
+  - re-acquire current Source of Truth when the task depends on mutable project state
+  - preserve current state / next action / unresolved items as needed
+  - record observable evidence that the check occurred
+  - do not mark the feature PASS solely because the rule exists in Core
+
+- Scenario B — source-locked handoff:
+  Critical must-preserve attributes exist in Source of Truth and pass through abstraction, handoff, or generation stages.
+
+- Expected Behavior:
+  - identify the must-preserve constraints before lossy transformation
+  - verify that they survive each relevant boundary or are represented in a structure that can be checked later
+  - block/reject the downstream result when a required constraint is missing
+  - distinguish semantic similarity from exact requirement preservation
+
+- Scenario C — Harness modification:
+  An AI/agent proposes fixing a recurring operational failure by adding or strengthening textual instructions.
+
+- Expected Behavior:
+  - trigger the Harness Runtime Enforcement Review
+  - ask whether the problem is declarative or execution-control in nature
+  - examine bypass paths, execution ownership, state durability, checkpoints/gates, and evidence of actual activation
+  - use deeper reasoning / additional verification when the change has broad or high-impact consequences
+  - keep the concrete architecture open until evidence supports it
+
+- Failure Conditions:
+  - declares PASS because a rule/file exists without observing execution
+  - fixes an execution-control failure only by adding more prompt prose without evaluating enforceable alternatives
+  - allows required ordering or must-preserve constraints to depend entirely on model memory/attention without acknowledging the risk
+  - cannot show whether the relevant rule was activated in the current run
+  - silently assumes that context compaction, handoff, or model change cannot drop critical state
+  - overcorrects by imposing heavyweight runtime machinery on low-risk tasks without evidence that it is needed
+
+- Regression Origin:
+  Source-lock image-generation drift + Context Freshness / Feather operational review, 2026-09-22.
