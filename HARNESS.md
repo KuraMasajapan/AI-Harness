@@ -75,6 +75,14 @@ Harnessファイルはルールや知識を保存する宣言的Contextであり
 
 The practical target is **verifiable activation and revalidation**, not an unsupported claim of universal runtime guarantee.
 
+### Runtime Enforcement Review Trigger / 実行強制レビュー・トリガー
+
+Harnessの構造、自動化、Context制御、継続処理、TRINITY連携、または重要なWorkflowを変更する場合は、`core/WORKFLOW.md` の **Harness Runtime Enforcement Review Trigger** を必ず確認する。
+
+特に、問題が「Ruleや手順が存在しない」ことではなく、**存在するRuleや手順が実行時に発火・保持・順守されなかったこと**に由来する場合、文章上の指示追加だけで解決済みとみなしてはならない。
+
+重要度が高い変更では、必要に応じて深い推論・追加検証・独立レビューを用い、宣言的ルールと実行時制御の境界を再評価する。
+
 ---
 
 ## 3. Context Loading / コンテキストの読み込み
