@@ -936,6 +936,52 @@ AIは推奨案を提示できるが、重要な最終判断は人間が行う。
 
 ---
 
+## Harness Runtime Enforcement Review Trigger / Harness実行強制レビュー・トリガー
+
+Harness、Agent integration、自動化、Context freshness、state管理、TRINITY連携、または重要なWorkflowを改修する場合、実装主体がChatGPT、ASTRA、TRINITY、その他のAI/Agentであっても、改修前にこのレビューを発火させる。
+
+### Trigger conditions / 発火条件
+
+少なくとも以下のどれかに該当する場合に適用する。
+
+- Rule / Workflow / START / BOOTSTRAPが存在するのに、実運用で期待動作が発火しなかった
+- Source of Truthに重要条件が存在するのに、要約・抽象化・handoff・生成段階で失われた
+- Context Freshness、再開、順序制御、必須確認、checkpoint等がAIの記憶や注意力に依存している
+- 「AIへもう一度強く指示する」「Ruleを追加する」だけで再発防止しようとしている
+- Humanが不要な搬送・転記・再確認を担当しており、実行制御へ移せる可能性がある
+- Harness自体の改修が複数Projectへ波及し、誤った初期設計を長期に引きずるリスクがある
+
+### Required review / 必須レビュー
+
+具体的な解決策を先に固定せず、まず以下を深く検討する。
+
+1. **Declarative vs Enforced** — これは「書いてある」だけか、それとも実行時に強制・検証されるか。
+2. **Failure without memory** — AIがRuleを忘れる、Contextが圧縮される、別AIへhandoffされる場合でも成立するか。
+3. **Execution ownership** — 誰が順序、必須条件、再開点、STOP、復旧を保証するのか。
+4. **Gate bypass** — 必須条件を満たさず次工程へ進める経路がないか。
+5. **State durability** — Current State / next action / unresolved / must-preserve を会話外の機械可読状態やcheckpointへ置く価値があるか。
+6. **Constraint preservation** — 抽象化してよい情報と、ID付き等で最後まで保持すべき制約を分離すべきか。
+7. **Runtime options** — Runtime Controller、state machine、preflight、guard/gate、checkpoint、machine-readable state、deterministic validation等のどれが最小で有効か。
+8. **Evidence of execution** — Ruleの存在ではなく、現在のRunで実際に発火・実行・検証されたEvidenceを残せるか。
+9. **Cost / complexity** — 制御追加が問題より重くならないか。既存の単純な機構で十分ではないか。
+10. **Human authority** — 自動化しても、価値判断・保護領域変更・不可逆変更のHuman Authorityを維持できるか。
+
+### Reasoning depth / 深い推論の要求
+
+このレビューがHarness全体、複数Project、長期状態管理、安全境界、または検証系へ影響する場合は、通常の小修正として扱わない。
+
+利用可能なら、より深い推論・構造比較・外部技術調査・独立レビューを優先し、**「文章を追加したので修正完了」**を結論にしない。
+
+ただし、深い推論そのものを正しさの証明として扱わない。最終的には実装可能性、観測可能な挙動、Evidence、回帰テストで確認する。
+
+### Solution neutrality / 解決策を先に固定しない
+
+候補としてRuntime Controller、外部state、state machine、checkpoint、guardrail、deterministic gate等を検討してよいが、これらを必須実装とはしない。
+
+問題の本質は、**重要なRule・状態・順序が「AIが覚えて運用すること」だけに依存していないかを再評価すること**である。
+
+---
+
 # Failure Handling / 失敗への対応
 
 ### 日本語
