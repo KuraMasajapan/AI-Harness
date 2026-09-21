@@ -640,6 +640,104 @@ Promoted Lessonには、実際の反映先を `Promotion Target` / `Promotion Ev
 
 ---
 
+## Development Story Capture / 開発ストーリー捕捉
+
+AI-Harnessの実運用で生じた**開発上の苦労、失敗、認識転換、意外な発見、Human-AI協働の面白い局面**は、将来の公開コンテンツ候補として再利用できる場合がある。
+
+ただし、これは `memory/LESSONS.md` と目的が異なる。
+
+- LESSON = システム改善のための記録
+- DEV-STORY = 後から人間向けコンテンツへ再構成するための材料
+
+同じ出来事が両方に関係してよいが、片方をもう片方の代用にしない。
+
+### Capture Trigger / 捕捉トリガー
+
+次のいずれかが起き、将来説明する価値がありそうな場合は、`incubator/dev-stories/` への保存候補とする。
+
+- 想定外の失敗から重要な仕組み上の問題が見つかった
+- 「最初はAだと思っていたがEvidenceでBだと分かった」という認識転換があった
+- 長時間の検証や試行錯誤から再利用可能な知見が得られた
+- Harness / TRINITY / Agent運用の設計思想が変化した
+- HumanとAIのやり取り自体が、後から説明すると学びになる
+- 実験結果が、一般的なAI運用・Agent設計にもつながる示唆を持つ
+
+些細なミス、単なる進捗、既存知識の再確認は原則として保存しない。
+
+### Capture Content / 保存内容
+
+完成記事ではなく、後から複数形式へ変換できる**素材**として保存する。
+
+最低限、可能な範囲で以下を含める。
+
+1. 起点 / 何が起きたか
+2. 当初の理解 / 仮説
+3. Evidenceで分かったこと
+4. 認識が変わった瞬間
+5. 対策・設計の方向
+6. 未解決事項
+7. 後で使えそうなタイトル・フレーズ
+8. 関連Lesson / Test / Proposal / Commit等
+9. Proven / Inferred / Unresolved の区別
+
+### Lifecycle / 状態
+
+```text
+captured
+  ↓
+curated
+  ↓
+ready
+  ↓
+published
+```
+
+- **captured** = 素材を保存しただけ
+- **curated** = Evidenceを確認し、物語として整理済み
+- **ready** = 公開用へ変換可能
+- **published** = 実際に公開済み
+
+公開自体は自動化しない。公開前にはHuman approvalとPrivacy / overclaim確認を残す。
+
+### Obsidian / GitHub flow
+
+現在のObsidian運用では、GitHub repository自体がVaultであり、Obsidian Gitがremote更新をpullする。
+
+したがって通常の保存経路は、
+
+```text
+AI / Chat
+  ↓
+GitHub development
+  ↓
+incubator/dev-stories/*.md
+  ↓
+Obsidian Git auto-pull
+  ↓
+Obsidian / Smart Connectionsで再発見
+```
+
+とする。
+
+Obsidianへ直接書き込む経路が将来正式導入された場合でも、GitHubのdurable historyと整合することを確認する。
+
+### Privacy / Public-safe capture
+
+repositoryが公開され得るため、会話を逐語保存しない。
+
+- 個人情報
+- private prompts
+- credentials / secrets
+- private paths
+- 家族・個人の不要な情報
+- 公開不要な生ログ
+
+は保存せず、コンテンツ価値を損なわない範囲で抽象化する。
+
+目的はチャットアーカイブではなく、**後から再構成可能な開発Evidenceと物語の核を残すこと**である。
+
+---
+
 ## 9. Step 8 — 教訓を記録する / Learn
 
 ### 日本語
