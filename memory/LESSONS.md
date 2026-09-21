@@ -54,6 +54,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-010 | High | Promoted | core/WORKFLOW.md / evaluation/* |
 | LESSON-011 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
 | LESSON-012 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
+| LESSON-013 | High | Proposed | HARNESS.md / core/WORKFLOW.md / evaluation/* |
 
 この表は人間向けの運用状況一覧である。
 
@@ -688,3 +689,31 @@ Therefore LESSON-010 should not be considered fully validated merely because LOC
 - Promotion Target: core/RULES.md / core/WORKFLOW.md / evaluation/*
 - Promotion Evidence: explicit human instruction + Design Decision Classification Gate + regression test
 - Status: Promoted
+
+
+---
+
+## LESSON-013 Declarative Rules Need Runtime Enforcement Review / 宣言的ルールと実行強制を分離する
+
+- Date: 2026-09-22
+- Context: Two operational failures exposed a common pattern. In source-locked image generation, important project attributes existed in the Source of Truth but could be lost during abstraction/handoff before generation. In continuity handling, Feather Trigger and Context Freshness rules existed, yet the Harness still depended on the AI actually noticing and operating those rules in the correct order. Subsequent review confirmed that Harness files are declarative context and are not self-executing runtime control.
+- What Happened:
+  1. The necessary instruction or mechanism existed on paper.
+  2. The AI could understand it when explicitly tested.
+  3. Real work still allowed an execution path where the instruction was not activated, preserved, or checked at the right stage.
+  4. Adding more prose risked repeating the same failure mode: a stronger instruction that still depended on AI memory/attention.
+- Root Cause: The architecture did not always distinguish **declarative policy** from **enforced execution control**. Important ordering, state freshness, constraint preservation, and gate behavior could remain dependent on model attention, conversation context, or handoff fidelity. A rule being present in a repository was therefore weaker evidence than the rule being activated and verified in the current run.
+- Lesson: **Do not treat the existence of a Rule, Workflow, START path, or Source-of-Truth constraint as proof that it will govern execution.** When an important failure occurs despite the relevant instruction already existing, the next review must ask whether the responsibility belongs in runtime orchestration, durable state, deterministic gates/checks, checkpoints, or another enforceable mechanism rather than in more prompt text.
+- Research Direction: Public agent/workflow patterns reviewed after the incident converged on separating model reasoning from orchestration/state where predictability matters. Candidate techniques include code-driven orchestration, graph/state-machine execution, lifecycle/preflight hooks, blocking gates/guardrails, durable checkpoints/state, and machine-readable current-state/constraint records. These are investigation directions, not preselected mandatory architecture.
+- Suggested Change:
+  1. Add a Harness Runtime Enforcement Review Trigger to Core Workflow.
+  2. Trigger it when Harness/automation/Context/TRINITY changes touch rule activation, sequencing, state, handoff, or constraint preservation.
+  3. Require explicit review of declarative-vs-enforced behavior, bypass paths, execution ownership, durable state, must-preserve constraints, and evidence of actual activation.
+  4. For high-impact Harness changes, favor deeper reasoning and independent verification before fixing a concrete architecture.
+  5. Add regression coverage that fails when a rule merely exists in text but the execution path can bypass or omit it.
+  6. Keep the concrete runtime solution open until current evidence and implementation constraints are reviewed.
+- Related Files: HARNESS.md, core/WORKFLOW.md, evaluation/TEST_CASES.md, experiments/feather-trigger/*
+- Priority: High
+- Promotion Target: HARNESS.md / core/WORKFLOW.md / evaluation/*
+- Promotion Evidence: Human-approved trigger insertion + TEST-020 definition; concrete runtime architecture remains intentionally undecided pending deeper design/review.
+- Status: Proposed
