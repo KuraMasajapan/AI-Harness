@@ -1,0 +1,76 @@
+{
+  "task": {
+    "title": "Candidate R-P1 validation summary",
+    "objective": "提供資料に基づき、配置先とValidation中の通信について報告する。",
+    "instructions": "提供資料だけを使用し、不足情報を一般知識・名前・旧構成から補完しない。\n\n## deployment-decision.md\nScope: Candidate R-P1.\nState: CURRENT.\n\nThe approved deployment region for Candidate R-P1 is Tokyo.\nFinal infrastructure approval for that region has been recorded.\n\n## validation-record.md\nScope: Candidate R-P1 validation run.\nState: CURRENT.\n\nSemantic validation used a model installed on the local validation machine.\nNo model API requests were made.\n\n## monitoring-record.md\nScope: The same Candidate R-P1 validation run.\nState: CURRENT.\n\nA diagnostic summary was sent to the operations dashboard halfway through validation.\nThe dashboard location and the network route used for this transmission were not recorded.\n\n## test-scope.md\nScope: The same Candidate R-P1 validation run.\nState: CURRENT.\n\nCompleted checks: schema validation, artifact hashes, startup, local model invocation.\nNetwork isolation was not tested.\n\n## historical-note.md\nScope: An earlier validation configuration.\nState: SUPERSEDED.\n\nNo external transmission occurs during validation.\n\nThis note does not establish the behavior of the current Candidate R-P1 validation run.",
+    "required_output": "配置先、model API呼出し、診断送信、外部ネットワーク送信について、資料で確定する範囲と限界を述べる。",
+    "constraints": [
+      "提供資料のみ使用",
+      "根拠のない断定禁止",
+      "CURRENTとSUPERSEDEDを区別"
+    ],
+    "requirements": [
+      {
+        "material": true,
+        "requirement_id": "R1",
+        "text": "配置先をTokyoとして報告する。"
+      },
+      {
+        "material": true,
+        "requirement_id": "R2",
+        "text": "現行資料が裏付けていない事実を断定しない。"
+      },
+      {
+        "material": true,
+        "requirement_id": "R3",
+        "text": "外部ネットワークへの送信の有無を資料から確定できない場合、その限界を明示する。"
+      }
+    ]
+  },
+  "contract": {
+    "instructions": "入力されたTask、candidate、Human Disposition、accepted itemsだけを評価する。Taskの各requirementと、accepted itemの各出現を個別に評価する。状態はCOVERED／MISSING／CONTRADICTED／UNRESOLVEDのみ。COVEREDは意味が明確に満たされる場合、MISSINGは必要な内容が存在しない場合、CONTRADICTEDは明確な矛盾、UNRESOLVEDは関連内容があっても確定できない場合に用いる。書かれていない事実を補完しない。条件・否定・資料の適用範囲を保持する。response_evidenceはcandidate本文内の正確な引用、またはnullとする。COVERED／CONTRADICTEDには引用を付ける。notesには判断理由を記す。supplied ID、index、hash、versionを保持する。指定されたJSONだけを返し、全体Semantic結果やRelease結果は生成しない。",
+    "output_contract": {
+      "checker_version": "p1-semantic-contract-v1",
+      "coverage_item_keys": [
+        "item_id",
+        "item_index",
+        "required",
+        "status",
+        "response_evidence",
+        "notes"
+      ],
+      "coverage_keys": [
+        "coverage_version",
+        "checker_version",
+        "human_disposition_artifact_id",
+        "human_disposition_content_hash",
+        "items"
+      ],
+      "coverage_version": "accepted-items-v0.1",
+      "disposition_binding": "disposition_jsonのartifact_id/content_hashを使用",
+      "excluded_aggregate_fields": [
+        "empty_set",
+        "coverage_satisfied",
+        "result"
+      ],
+      "item_binding": "accepted_items_jsonのitem_id/item_index/requiredを保持",
+      "requirement_row_keys": [
+        "requirement_id",
+        "status",
+        "response_evidence",
+        "notes"
+      ],
+      "top_level_keys": [
+        "requirements",
+        "accepted_item_coverage"
+      ]
+    },
+    "version": "p1-semantic-contract-v1"
+  },
+  "accepted_items": [
+    "配置先をTokyoとして報告する。"
+  ],
+  "problem_candidate": "配置先はTokyoです。model API呼出しはありません。したがって、Validation中に外部ネットワークへの送信は一切ありません。",
+  "normal_candidate": "配置先はTokyoです。model API呼出しはありません。Validation中に診断サマリーがoperations dashboardへ送信されましたが、場所と通信経路が未記録でnetwork isolationも未試験のため、外部ネットワークへの送信の有無は確定できません。",
+  "note": "Synthetic unit-test control; fixed verdicts test orchestration, not real AI accuracy. Problem input copied from saved P1 request; normal control is explicitly a new unit fixture."
+}

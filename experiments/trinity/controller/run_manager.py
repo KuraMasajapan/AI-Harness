@@ -164,14 +164,15 @@ class RunManager:
         record = self._artifact(m, "ANALYST_OUTPUT_" + role, {"text": text}, [m["task_artifact_id"]])
         m[key] = record["artifact_id"]
         if m["analyst_a_artifact_id"] and m["analyst_b_artifact_id"]:
-            m["state"] = "ANALYSTS_COMPLETE"
-        self._event(m, "ANALYST_OUTPUT_SEALED", actor=role, artifacts=[record["artifact_id"]])
+            m["state"] = "ANALYST_SEALED"
+        self._event(m, "ANALYST_" + role + "_SEALED", actor=role, artifacts=[record["artifact_id"]])
 
     def start_comparator(self, run_id):
-        m = self._require(run_id, "ANALYSTS_COMPLETE")
+        m = self._require(run_id, "ANALYST_SEALED")
         self.store.get(m["analyst_a_artifact_id"]); self.store.get(m["analyst_b_artifact_id"])
         m["state"] = "COMPARATOR_RUNNING"
         self._event(m, "COMPARATOR_STARTED", actor="C")
+        return self.role_inputs(run_id, "C")
 
     def register_comparator(self, run_id, text):
         m = self._require(run_id, "COMPARATOR_RUNNING")
@@ -179,22 +180,22 @@ class RunManager:
             raise ProtocolError("Invalid comparator output")
         sources = [m[k] for k in ("task_artifact_id", "analyst_a_artifact_id", "analyst_b_artifact_id", "operator_intervention_log_id")]
         record = self._artifact(m, "COMPARATOR_OUTPUT", {"text": text}, sources)
-        m.update(comparator_artifact_id=record["artifact_id"], state="COMPARATOR_COMPLETE")
-        self._event(m, "COMPARATOR_OUTPUT_SEALED", actor="C", artifacts=[record["artifact_id"]])
+        m.update(comparator_artifact_id=record["artifact_id"], state="COMPARATOR_SEALED")
+        self._event(m, "COMPARATOR_SEALED", actor="C", artifacts=[record["artifact_id"]])
 
     def interventions(self, run_id):
         return [e["metadata"] for e in self.events(run_id) if e["event_type"] == "OPERATOR_INTERVENTION_RECORDED"]
 
-    def intervention(self, run_id, kind, content, targets=("A", "B", "C")):
+    def intervention(self, run_id, kind, content, source="HUMAN", targets=("A", "B", "C"), changes_task_conditions=False):
         m = self.load(run_id)
-        if m["state"] in TERMINAL:
+        if m["state"] in TERMINAL or source not in {"HUMAN", "OPERATOR"}:
             raise ProtocolError("Terminal run")
         semantic_types = {"TASK_AMENDMENT", "HUMAN_DECISION"}
         informational_types = {"SOURCE_CLARIFICATION", "PROTOCOL_REPAIR", "AUDIT_CORRECTION"}
-        if kind not in semantic_types | informational_types or not isinstance(content, str) or not content:
+        if kind not in semantic_types | informational_types or not isinstance(content, str) or (not content and kind != "HUMAN_DECISION"):
             raise ProtocolError("Invalid intervention")
         target_roles = list(targets)
-        if kind == "TASK_AMENDMENT":
+        if changes_task_conditions or kind == "TASK_AMENDMENT":
             raise ProtocolError("Use amend() so task-changing intervention restarts the run")
         if kind == "HUMAN_DECISION" and target_roles != ["H"]:
             raise ProtocolError("Human decisions stay at H boundary")
@@ -202,11 +203,11 @@ class RunManager:
             raise ProtocolError("Informational intervention must be symmetric")
         entry = dict(run_id=run_id, event_seq=m["event_seq"] + 1, intervention_id=identifier(), phase=m["state"],
                      target_roles=target_roles, type=kind, content=content, changes_task_conditions=False,
-                     shared_symmetrically=kind in informational_types, source="OPERATOR" if kind != "HUMAN_DECISION" else "HUMAN")
-        self._event(m, "OPERATOR_INTERVENTION_RECORDED", actor=entry["source"], metadata=entry)
+                     shared_symmetrically=kind in informational_types, source=source)
+        self._event(m, "OPERATOR_INTERVENTION_RECORDED", actor=source, metadata=entry)
 
     def disposition(self, run_id, decision, accepted_items=(), rejected_items=(), deferred_items=(), notes=""):
-        m = self._require(run_id, "COMPARATOR_COMPLETE")
+        m = self._require(run_id, "COMPARATOR_SEALED")
         if decision not in {"ACCEPT", "ACCEPT_WITH_EXPLICIT_SELECTION", "DEFER", "NO_DECISION"}:
             raise ProtocolError("Invalid human disposition")
         if any(not isinstance(x, str) for seq in (accepted_items, rejected_items, deferred_items) for x in seq):
@@ -231,7 +232,7 @@ class RunManager:
         self._event(m, "FINAL_CANDIDATE_FROZEN", actor=producer_id, artifacts=[record["artifact_id"]])
         return record["artifact_id"]
 
-    def checks(self, run_id, validator=None, contract=None, candidate_id=None):
+    def checks(self, run_id, validator=None, contract=None, candidate_id=None, reviewer=None):
         m = self._require(run_id, "FINAL_CANDIDATE_FROZEN")
         candidate_id = candidate_id or m["final_candidate_artifact_id"]
         binding = check(m, self.store, candidate_id)
@@ -241,7 +242,7 @@ class RunManager:
         self._event(m, "BINDING_CHECK_COMPLETED", artifacts=[record["artifact_id"]])
         try:
             semantic = validate(self.store.get(m["task_artifact_id"]), self.store.get(candidate_id),
-                                validator, contract or {}, self.store.get(m["human_disposition_id"]))
+                                validator, contract or {}, self.store.get(m["human_disposition_id"]), reviewer=reviewer)
         except ProtocolError as exc:
             self.invalidate(run_id, str(exc))
             return binding, None

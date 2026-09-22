@@ -2,6 +2,7 @@
 from controller.binding_gate import check
 from controller.artifact_store import ProtocolError
 from validation.accepted_coverage import result_is_bound
+from validation.semantic_alignment import confirmation_is_bound
 
 
 def decide(manifest, store):
@@ -26,6 +27,8 @@ def decide(manifest, store):
                 if (disposition["artifact_id"] not in record["source_artifact_ids"]
                         or not result_is_bound(body, disposition, candidate)):
                     reasons.append("Missing, legacy or stale accepted-item Semantic receipt")
+                if not confirmation_is_bound(body, store.get(manifest["task_artifact_id"]), disposition, candidate):
+                    reasons.append("Missing, invalid or unconfirmed Semantic receipt")
         except (ProtocolError, KeyError):
             reasons.append(f"{kind} missing or corrupt")
     return dict(candidate_artifact_id=candidate_id,

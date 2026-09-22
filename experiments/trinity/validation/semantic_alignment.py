@@ -23,7 +23,7 @@ class Validator(Protocol):
         ...
 
 
-def validate(task, candidate, validator, contract, disposition):
+def _evaluate(task, candidate, validator, contract, disposition):
     provenance = dict(checker_id="unconfigured", checker_type="unconfigured", model_name=None,
                       model_version=None, checker_version="unconfigured", config_hash=digest({}), prompt_hash=digest(contract), execution_id=identifier())
     requirements = task["content"]["requirements"]
@@ -49,7 +49,7 @@ def validate(task, candidate, validator, contract, disposition):
         for key in ("config_hash", "prompt_hash"):
             if len(supplied[key]) != 64 or any(c not in "0123456789abcdef" for c in supplied[key]):
                 raise ValueError("Invalid provenance hash")
-        provenance.update({k: supplied[k] for kk in supplied if kk in provenance and kk != "execution_id"})
+        provenance.update({k: supplied[k] for k in supplied if k in provenance and k != "execution_id"})
         request = ValidationRequest(canonical(task), canonical(candidate), canonical(contract),
                                     canonical(disposition), canonical(accepted_coverage.items(disposition)))
         output = json.loads(canonical(validator.evaluate(request)))
@@ -93,3 +93,74 @@ def validate(task, candidate, validator, contract, disposition):
                 task_package_hash=task["content"]["task_package_hash"], result=result,
                 requirements=mapping, accepted_item_coverage=coverage,
                 provenance=provenance, infrastructure_error=error)
+
+
+CONFIRMATION_VERSION = "independent-semantic-confirmation-v1"
+
+
+def validate(task, candidate, validator, contract, disposition, reviewer=None):
+    """Two one-shot evaluations; neither request contains the other's verdict.
+
+    Host must isolate sessions. Distinct declared IDs prevent accidental reuse,
+    not forged identities or correlated model errors. This is not a truth oracle.
+    """
+    primary = _evaluate(task, candidate, validator, contract, disposition)
+    separation_error = None
+    try:
+        if (reviewer is None or reviewer is validator
+                or reviewer.provenance["checker_id"] == primary["provenance"]["checker_id"]):
+            raise ValueError("Separate Semantic reviewer required")
+    except (AttributeError, KeyError, TypeError, ValueError) as exc:
+        reviewer = None
+        separation_error = str(exc)
+    review = _evaluate(task, candidate, reviewer, contract, disposition)
+    if separation_error:
+        review["infrastructure_error"] = separation_error
+    results = [primary["result"], review["result"]]
+    result = ("UNRESOLVED" if primary["infrastructure_error"] is not None else
+              "MISALIGNED" if "MISALIGNED" in results else
+              "ALIGNED" if results == ["ALIGNED", "ALIGNED"] else "UNRESOLVED")
+    return dict(primary, result=result,
+                infrastructure_error=primary["infrastructure_error"] or review["infrastructure_error"],
+                semantic_confirmation=dict(version=CONFIRMATION_VERSION,
+                                           primary_result=primary["result"], review=review))
+
+
+def confirmation_is_bound(body, task, disposition, candidate):
+    """Receipt identity and aggregation only; never infer meaning at Release."""
+    from protocol.schema_validation import validate_named
+    try:
+        validate_named(body, "semantic_result")
+        confirmation = body["semantic_confirmation"]
+        review = confirmation["review"]
+        if (confirmation["version"] != CONFIRMATION_VERSION
+                or confirmation["primary_result"] != "ALIGNED"
+                or body["result"] != "ALIGNED" or review["result"] != "ALIGNED"
+                or body["infrastructure_error"] is not None
+                or review["infrastructure_error"] is not None
+                or body["provenance"]["checker_id"] == review["provenance"]["checker_id"]
+                or body["provenance"]["prompt_hash"] != review["provenance"]["prompt_hash"]):
+            return False
+        required = {r["requirement_id"]: r["material"] for r in task["content"]["requirements"]}
+        for receipt in (body, review):
+            if (receipt["candidate_artifact_id"] != candidate["artifact_id"]
+                    or receipt["candidate_content_hash"] != candidate["content_hash"]
+                    or receipt["task_package_hash"] != task["content"]["task_package_hash"]
+                    or not accepted_coverage.result_is_bound(receipt, disposition, candidate)
+                    or receipt["provenance"]["checker_id"] in {"C", candidate["producer_id"]}
+                    or receipt["provenance"]["checker_type"] in {"human-review", "human-local-review"}):
+                return False
+            rows = receipt["requirements"]
+            if len(rows) != len(required) or {r["requirement_id"] for r in rows} != set(required):
+                return False
+            for row in rows:
+                if row["status"] == "CONTRADICTED" or (required[row["requirement_id"]] and row["status"] != "COVERED"):
+                    return False
+                quote = row["response_evidence"]
+                if quote is not None and quote not in candidate["content"]["text"]:
+                    return False
+                if row["status"] == "COVERED" and not quote:
+                    return False
+        return True
+    except (KeyError, TypeError, ValueError):
+        return False

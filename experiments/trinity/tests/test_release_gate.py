@@ -6,7 +6,7 @@ class ReleaseGate(Base):
         run = self.ready()
         self.assertEqual(self.manager.release(run)["decision"], "DENY")
         run = self.ready()
-        self.manager.checks(run, FixtureValidator(), CONTRACT)
+        self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         self.inject(run, human_disposition_id=None)
         self.assertEqual(self.manager.release(run)["decision"], "DENY")
 
@@ -22,13 +22,13 @@ class ReleaseGate(Base):
 
     def test_misaligned_denies(self):
         run = self.ready("The required deployment region is Osaka.")
-        _, s = self.manager.checks(run, FixtureValidator(), CONTRACT)
+        _, s = self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         self.assertEqual(s["result"], "MISALIGNED")
         self.assertEqual(self.manager.release(run)["decision"], "DENY")
 
     def test_new_candidate_clears_checks(self):
         run = self.ready()
-        self.manager.checks(run, FixtureValidator(), CONTRACT)
+        self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         old = self.manager.load(run)
         self.manager.freeze(run, "The required deployment region is Osaka.", "response-producer")
         current = self.manager.load(run)
@@ -39,7 +39,7 @@ class ReleaseGate(Base):
 
     def test_stale_results_cannot_be_reused(self):
         run = self.ready()
-        self.manager.checks(run, FixtureValidator(), CONTRACT)
+        self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         old = self.manager.load(run)
         self.manager.freeze(run, "The required deployment region is Osaka.", "response-producer")
         self.inject(run, binding_result_artifact_id=old["binding_result_artifact_id"],
@@ -50,11 +50,11 @@ class ReleaseGate(Base):
         run = self.ready()
         self.manager.checks(run)
         with self.assertRaises(ProtocolError):
-            self.manager.checks(run, FixtureValidator(), CONTRACT)
+            self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
 
     def test_tamper_after_checks_denies(self):
         run = self.ready()
-        self.manager.checks(run, FixtureValidator(), CONTRACT)
+        self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         aid = self.manager.load(run)["final_candidate_artifact_id"]
         record = self.manager.store.get(aid)
         record["content"]["text"] = "Substituted output"
@@ -63,7 +63,7 @@ class ReleaseGate(Base):
 
     def test_invalidated_run_denies(self):
         run = self.ready()
-        self.manager.checks(run, FixtureValidator(), CONTRACT)
+        self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         self.manager.invalidate(run, "Explicit protocol failure")
         self.assertEqual(self.manager.release(run)["decision"], "DENY")
 

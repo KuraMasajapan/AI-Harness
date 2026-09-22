@@ -201,6 +201,243 @@
         "coverage_satisfied"
       ],
       "additionalProperties": false
+    },
+    "semantic_confirmation": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "independent-semantic-confirmation-v1"
+        },
+        "primary_result": {
+          "enum": [
+            "ALIGNED",
+            "MISALIGNED",
+            "UNRESOLVED"
+          ]
+        },
+        "review": {
+          "type": "object",
+          "properties": {
+            "candidate_artifact_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidate_content_hash": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "task_package_hash": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "result": {
+              "type": "string",
+              "enum": [
+                "ALIGNED",
+                "MISALIGNED",
+                "UNRESOLVED"
+              ]
+            },
+            "requirements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "requirement_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "COVERED",
+                      "CONTRADICTED",
+                      "MISSING",
+                      "UNRESOLVED"
+                    ]
+                  },
+                  "response_evidence": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "notes": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "requirement_id",
+                  "status",
+                  "response_evidence",
+                  "notes"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "provenance": {
+              "type": "object",
+              "properties": {
+                "checker_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "checker_type": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "model_name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "model_version": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "config_hash": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "prompt_hash": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "execution_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "checker_version": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "checker_id",
+                "checker_type",
+                "model_name",
+                "model_version",
+                "config_hash",
+                "prompt_hash",
+                "execution_id"
+              ],
+              "additionalProperties": false
+            },
+            "infrastructure_error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "accepted_item_coverage": {
+              "type": "object",
+              "properties": {
+                "coverage_version": {
+                  "const": "accepted-items-v0.1"
+                },
+                "checker_version": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "human_disposition_artifact_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "human_disposition_content_hash": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "item_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "item_index": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "required": {
+                        "const": true
+                      },
+                      "status": {
+                        "enum": [
+                          "COVERED",
+                          "MISSING",
+                          "CONTRADICTED",
+                          "UNRESOLVED"
+                        ]
+                      },
+                      "response_evidence": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "notes": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "item_id",
+                      "item_index",
+                      "required",
+                      "status",
+                      "response_evidence",
+                      "notes"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "empty_set": {
+                  "type": "boolean"
+                },
+                "coverage_satisfied": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "coverage_version",
+                "checker_version",
+                "human_disposition_artifact_id",
+                "human_disposition_content_hash",
+                "items",
+                "empty_set",
+                "coverage_satisfied"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "candidate_artifact_id",
+            "candidate_content_hash",
+            "task_package_hash",
+            "result",
+            "requirements",
+            "provenance",
+            "infrastructure_error",
+            "accepted_item_coverage"
+          ],
+          "additionalProperties": false,
+          "description": "Legacy bodies remain readable; new Semantic execution always emits accepted_item_coverage. Legacy results are not eligible for new coverage release."
+        }
+      },
+      "required": [
+        "version",
+        "primary_result",
+        "review"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
@@ -213,5 +450,5 @@
     "infrastructure_error"
   ],
   "additionalProperties": false,
-  "description": "Legacy bodies remain readable; new Semantic execution always emits accepted_item_coverage. Legacy results are not eligible for new coverage release."
+  "description": "Legacy records remain readable and immutable; new release requires a bound independent Semantic confirmation. Distinct IDs do not authenticate isolation or prove truth."
 }

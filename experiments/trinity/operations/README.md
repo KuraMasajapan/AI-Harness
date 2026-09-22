@@ -35,3 +35,41 @@ Still requires Human design decisions: semantic enforcement boundary, coverage
 and materiality rules, checker responsibility, compatibility and the permitted
 uses of provenance-incomplete historical evidence. This operations aid does not
 resolve R1-B or implement Risk 02/04 production fixes.
+
+
+## P1 Semantic confirmation and audit packaging
+
+New Semantic checks require two separately supplied validators:
+`manager.checks(run, primary, contract, reviewer=reviewer)`.
+Both receive the same immutable ValidationRequest, without each other's verdict.
+Each is called at most once. The host must use isolated fresh sessions, exclude
+oracle/peer outputs, and preserve full requests, raw responses and adapter files.
+Different checker IDs are required, but are not authentication or isolation proof.
+No service, automatic AI dispatch or retry has been added.
+
+A single ALIGNED no longer authorizes release. Both valid bound results must be
+ALIGNED. A reported material failure yields MISALIGNED; missing confirmation or
+uncertainty prevents ALIGNED. A missing/broken primary stays UNRESOLVED. Human
+review cannot replace either validator. Old sealed receipts remain readable,
+but receipts without confirmation cannot authorize a new Release decision.
+Binding is unchanged. Release only verifies the Semantic receipt and aggregation.
+This changes single-validator compatibility intentionally; configure a separate
+reviewer to obtain ALIGNED, rather than copying the primary response or renaming
+its identity. Two wrong ALIGNED judgments can still pass: this is a mitigation
+of single-verdict trust, not proof of arbitrary semantic truth.
+
+To package a preselected audit directory outside the repository:
+`python -B -m operations.audit_package EVIDENCE_DIRECTORY NEW_ZIP_PATH`
+The directory must contain adapter-input.json and effective-provenance.json.
+For the second validator, include reviewer-adapter-input.json and
+reviewer-effective-provenance.json together. Preserve original raw files too.
+The tool copies evidence byte-for-byte and adds config hash preimages,
+canonicalization rules and packaging-time implementation bytes under audit-support/.
+It rejects inconsistent effective hashes and refuses overwriting an existing ZIP.
+No oracle/secret filtering is inferred: the operator must preselect blind-safe files.
+Support code is the packaging-time snapshot, not retroactive proof of which code
+executed a historical run. Existing bundles and historical results are not updated.
+
+Targeted tests: `python -B -m unittest tests.test_semantic_trust -v`.
+Fixed verdict injection tests transport, aggregation and fail-closed behavior;
+they do not measure real AI detection accuracy, session isolation or false-reject rates.

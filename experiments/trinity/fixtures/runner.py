@@ -50,7 +50,7 @@ def execute(manager, case):
         m["final_candidate_artifact_id"] = record["artifact_id"]
         manager._event(m, "FINAL_CANDIDATE_FROZEN", artifacts=[record["artifact_id"]],
                        metadata={"fixture_fault_injection": condition})
-    binding, semantic = manager.checks(run, FixtureValidator(), CONTRACT, candidate_id)
+    binding, semantic = manager.checks(run, FixtureValidator(), CONTRACT, candidate_id, reviewer=FixtureValidator("fixture-confirmation"))
     return run, dict(binding=binding["result"], semantic=semantic["result"] if semantic else "UNRESOLVED",
                      release=manager.release(run)["decision"])
 

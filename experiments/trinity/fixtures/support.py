@@ -22,10 +22,10 @@ def prepared(manager, text="The required deployment region is Tokyo."):
 
 class FixtureValidator:
     """Test double only. Reads a fixed response corpus, never the expected-results manifest."""
-    def __init__(self):
+    def __init__(self, checker_id="offline-fixture-adapter"):
         from pathlib import Path
         self.corpus = json.loads((Path(__file__).parent / "validator_corpus.json").read_text(encoding="utf-8"))
-        self.provenance = dict(checker_id="offline-fixture-adapter", checker_type="test-double",
+        self.provenance = dict(checker_id=checker_id, checker_type="test-double",
                                checker_version="fixture-corpus-v2",
                                model_name=None, model_version=None, config_hash=digest(self.corpus),
                                prompt_hash=digest(CONTRACT))

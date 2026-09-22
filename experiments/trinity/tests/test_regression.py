@@ -8,7 +8,7 @@ class SemanticRegression(Base):
 
     def evaluate(self, adapter, text="The required deployment region is Tokyo."):
         run = self.ready(text)
-        return self.manager.checks(run, adapter, CONTRACT)[1]
+        return self.manager.checks(run, adapter, CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))[1]
 
     def test_predeclared_corpus_controls(self):
         for text, expected in (("The required deployment region is Tokyo.", "ALIGNED"),
@@ -83,9 +83,9 @@ class SemanticRegression(Base):
         adapter = LocalReviewValidator(path)
         # The adapter has already captured the review; later file mutations cannot change it.
         write_json(path, {})
-        self.assertEqual(self.manager.checks(run, adapter, CONTRACT)[1]["result"], "ALIGNED")
+        self.assertEqual(self.manager.checks(run, adapter, CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))[1]["result"], "ALIGNED")
         other = self.ready()
-        self.assertEqual(self.manager.checks(other, adapter, CONTRACT)[1]["result"], "UNRESOLVED")
+        self.assertEqual(self.manager.checks(other, adapter, CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))[1]["result"], "UNRESOLVED")
 
     def test_malformed_mapping_fails_closed(self):
         adapter = FixtureValidator()

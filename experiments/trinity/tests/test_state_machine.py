@@ -6,7 +6,7 @@ class StateMachine(Base):
     def test_lifecycle_reload_and_exact_release(self):
         run = self.ready()
         self.manager = RunManager(self.temp.name)
-        b, s = self.manager.checks(run, FixtureValidator(), CONTRACT)
+        b, s = self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         result = self.manager.release(run)
         self.assertEqual((b["result"], s["result"], result["decision"]), ("PASS", "ALIGNED", "RELEASE"))
         self.assertEqual(result["text"], "The required deployment region is Tokyo.")
@@ -110,7 +110,7 @@ class StateMachine(Base):
 
     def test_post_release_audit_repair_does_not_reopen_run(self):
         run = self.ready()
-        self.manager.checks(run, FixtureValidator(), CONTRACT)
+        self.manager.checks(run, FixtureValidator(), CONTRACT, reviewer=FixtureValidator("fixture-confirmation"))
         self.manager.release(run)
         m = self.manager.load(run)
         original = self.manager.store.get(m["analyst_a_artifact_id"])

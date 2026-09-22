@@ -7,8 +7,8 @@ from protocol.schema_validation import validate_named
 
 
 class CoverageValidator(FixtureValidator):
-    def __init__(self, status="COVERED", transform=None):
-        super().__init__()
+    def __init__(self, status="COVERED", transform=None, checker_id="offline-fixture-adapter"):
+        super().__init__(checker_id)
         self.status, self.transform, self.calls = status, transform, 0
         self.provenance["config_hash"] = digest(dict(fixed_status=status, test_only=True))
 
@@ -52,7 +52,7 @@ class AcceptedCoverage(Base):
     def execute(self, status="COVERED", transform=None, **kwargs):
         run = self.prepare(**kwargs)
         adapter = CoverageValidator(status, transform)
-        binding, semantic = self.manager.checks(run, adapter, CONTRACT)
+        binding, semantic = self.manager.checks(run, adapter, CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))
         self.assertEqual(binding["result"], "PASS")
         self.assertEqual(adapter.calls, 1)
         validate_named(semantic, "semantic_result")
@@ -115,7 +115,7 @@ class AcceptedCoverage(Base):
 
     def test_F_stale_disposition_result_denied(self):
         run = self.prepare()
-        self.manager.checks(run, CoverageValidator(), CONTRACT)
+        self.manager.checks(run, CoverageValidator(), CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))
         m = self.manager.load(run)
         old = self.manager.store.get(m["human_disposition_id"])
         new = self.manager.store.seal("HUMAN_DISPOSITION", run, old["content"], m["event_seq"] + 1,
@@ -143,7 +143,7 @@ class AcceptedCoverage(Base):
 
     def test_I_legacy_sealed_receipt_readable_but_denied_unchanged(self):
         run = self.prepare()
-        self.manager.checks(run, CoverageValidator(), CONTRACT)
+        self.manager.checks(run, CoverageValidator(), CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))
         m = self.manager.load(run)
         record = self.manager.store.get(m["semantic_alignment_result_artifact_id"])
         legacy = copy.deepcopy(record["content"])
@@ -165,7 +165,7 @@ class AcceptedCoverage(Base):
         adapter = CoverageValidator()
         original = adapter.evaluate
         adapter.evaluate = lambda request: original(request)["requirements"]
-        result = self.manager.checks(run, adapter, CONTRACT)[1]
+        result = self.manager.checks(run, adapter, CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))[1]
         self.assertEqual(result["result"], "UNRESOLVED")
         self.assertEqual(self.manager.release(run)["decision"], "DENY")
 
@@ -173,10 +173,10 @@ class AcceptedCoverage(Base):
         run = self.prepare()
         adapter = CoverageValidator()
         adapter.provenance["checker_type"] = "human-local-review"
-        self.assertEqual(self.manager.checks(run, adapter, CONTRACT)[1]["result"], "UNRESOLVED")
+        self.assertEqual(self.manager.checks(run, adapter, CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))[1]["result"], "UNRESOLVED")
         self.assertEqual(adapter.calls, 0)
         with self.assertRaises(ProtocolError):
-            self.manager.checks(run, CoverageValidator(), CONTRACT)
+            self.manager.checks(run, CoverageValidator(), CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))
 
     def test_required_cannot_be_disabled_by_validator(self):
         _, result, release = self.execute(transform=lambda o: o["accepted_item_coverage"]["items"][0].update(required=False))
@@ -193,13 +193,13 @@ class AcceptedCoverage(Base):
             run = self.prepare()
             adapter = CoverageValidator()
             adapter.provenance["checker_version"] = version
-            result = self.manager.checks(run, adapter, CONTRACT)[1]
+            result = self.manager.checks(run, adapter, CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))[1]
             self.assertEqual(result["result"], "UNRESOLVED")
             self.assertEqual(self.manager.release(run)["decision"], "DENY")
 
     def test_stored_false_summary_cannot_override_rows(self):
         run = self.prepare()
-        self.manager.checks(run, CoverageValidator("MISSING"), CONTRACT)
+        self.manager.checks(run, CoverageValidator("MISSING"), CONTRACT, reviewer=CoverageValidator(checker_id="coverage-confirmation"))
         m = self.manager.load(run)
         record = self.manager.store.get(m["semantic_alignment_result_artifact_id"])
         body = copy.deepcopy(record["content"])

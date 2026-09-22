@@ -93,9 +93,131 @@ replacement = manager.amend(
 ```
 
 The old run terminates before the new task/run is created. The manifests link
-previous/replacement IDs. Both new analyst starts use identical empvKZ\İÜBš[œ]Ëˆ\™H\È›ÈØ[YK\[ˆ[Y[™Y[™YÛİX][Û‹ÜˆË]ËPKĞˆÚ[›™[‚“›Û‹]\ÚËXÚ[™Ú[™ÈÜ\˜]Üˆ›İXÙ\ÈX^H™HÙÙÙY›Üˆ]Y]È[š™Xİ[™ÈY][Û˜[›X]\šX[[ÈXİ]™HKĞˆÛÛ^È\È[X™\˜][H[˜]˜Z[X›H[ˆ\È›İİ\K‚‚ˆÈÈš[™[™È[™Ù[X[XÈ[YÛ›Y[‚š[™[™ÈÚXÚÜÈ[‹İ\ÚËØØ[™Y]HY[]K\Ú\Ë™\]Z\™YÙX[YKĞ‹ĞËÒ˜\Y˜XİËİ\œ™[\[ˆÛİ\˜ÙH[™XYÙH[™\›Z[˜[Ú[˜[Y][Ûˆİ]\Ëˆ]™]™\‚\Ù\È^Ú[Z[\š]KˆÙ[X[XÈ[YÛ›Y[™XÙZ]™\È[[]]X›H”ÓÓˆİš[™ÜÈ›ÜˆB™^Xİ\ÚË^XİØ[™Y]H[™ÚXÚÙ\ˆÛÛ˜Xİ‚‚˜[Y][Û‹œÙ[X[X×Ø[YÛ›Y[•˜[Y]ÜˆYš[™\ÈHY\\ˆ[\™˜XÙK‚˜[Y][Û‹›ØØ[Ü™]šY]Ë“ØØ[™]šY]Õ˜[Y]ÜˆXØÙ\ÈHÙ\\˜][H™\\™YØØ[œ™]šY]È”ÓÓˆÛÛZ[š[™È\Ú×ÜXÚØYÙWÚ\ÚØ[™Y]WØ\Y˜XİÚY˜Ø[™Y]WØÛÛ[Ú\Ú›İ™[˜[˜ÙH[™™\]Z\™[Y[Ëˆ›İ™[˜[˜ÙH]\İİ\B˜ÚXÚÙ\—ÚYÚXÚÙ\—İ\KÚXÚÙ\—İ™\œÚ[Û‹[Ù[Û˜[YK[Ù[İ™\œÚ[Ûˆ[™›Û\Ú\Ú
-ÒKLMˆÙ‚HØ[›ÛšXØ[ÛÛ˜Xİ
-KˆHY\\ˆ\š]™\ÈÛÛ™šY×Ú\Úœ›ÛHH™]šY]ÈÛÛ[‚•HØ]HYÈH[š\]YH^Xİ][Û—ÚYˆXXÚ™\]Z\™[Y[›İÈİ\Y\È™\]Z\™[Y[ÚYœİ]\Ë™\ÜÛœÙWÙ]šY[˜ÙH[™›İ\Ëˆ]šY[˜ÙH›ÜˆÓÕ‘T‘QĞÓÓ•QPÕQ]\İ™HB›]\˜[^Ù\œ[ˆHœ›Ş™[ˆ™\ÜÛœÙKˆH”ÓÓˆ\È™XYÛ˜ÙHÛÈİXœÙ\]Y[š[B™Y]ÈØ[››İ[\ˆ][›ØØ][Û‹‚‚[HÛÛ˜YXİ[ÛˆÜˆ^XÚ]HX]\šX[Z\ÜÚ[™È][HZY[ÈRTĞSQÓ‘Q‚•[œ™\ÛÛ™YX]\šX[Ûİ™\˜YÙKZ\ÜÚ[™ËÛX[›Ü›YY˜[Y]Üˆİ]][™œ˜\İXİ\™B™˜Z[\™Kİ[HØØ[™]šY]ÈÜˆ[˜]˜Z[X›H˜[Y]ÜˆZY[ÈS”‘TÓÓ‘Qˆİ\Ú\ÙBHXÛ\™Y™\]Z\™[Y[X\[™ÈZY[ÈSQÓ‘Qˆ\ÈYÙÜ™YØ][Ûˆ\È[ˆB˜[Y][Ûˆ›İ[™\K›İHÛÛ›Û\‰ÜÈ™X\ÛÛš[™Ëˆ›ÙXÙ\ˆÙ[‹]˜[Y][Û‚š\È™Z™XİYˆËX\Ë]˜[Y]Üˆ\È\ØX›Y[[]È[[YHY™XŞXÛH\È™]šY]ÙY‚•HÜİ]\İ]][XØ]H[X[‹İ˜[Y]ÜˆY[]Y\ÎÈ\ÙHİš[™ÜÈ\™Bœ›İ™[˜[˜ÙHY[YšY\œË›İ]][XØ][ÛˆÜ™Y[X[Ë‚‚”™[X\ÙH™\]Z\™\ÈHœ™\Úš[™[™ÈTÔËÙ[X[XÈSQÓ‘Q[X[ˆ\ÜÜÚ][Ûˆ[™˜[™\]Z\™YÙX[Y\Y˜XİËˆRSRTĞSQÓ‘QS”‘TÓÓ‘Qİ[H™\İ[Ë˜ÛÜœ\[ÛˆÜˆZ\ÜÚ[™È\Y˜XİÈ[H™[X\ÙKˆ[X[ˆ\ÜÜÚ][ÛˆXÚ\Ú[Ûˆ˜[Y\Â˜\™H™\Ù\™Y\ÈÜXÚYšYYÈ›È™]ÈXÚ\Ú[Û‹Y[[HÛXŞH\È[™[Y‚‚ˆÈÈİÜ˜YÙH[™]Y]‚’”ÓÓˆ[™”ÓÓ“\ÙHU‹NÚ]İ]“ÓH[™‹ˆXXÚ”ÓÓ“[™H\ÈÛ™H”ÓÓˆ]™[‚•HØ[›ÛšXØ[Ù\šX[^˜][Ûˆ\È]Ûˆ”ÓÓˆÚ]ÛÜYÙ^\ËÛÛ\XİÙ\\˜]ÜœË™[œİ\™WØ\ØÚZOQ˜[ÙK[İ×Û˜[Q˜[ÙKˆÒKLMˆ[Ø^\È\Ú\È]ÈU‹N]\Ë‚“›ÈÜ›ÜÜË[[™İXYÙHØ[›ÛšXØ[^˜][Ûˆİ[™\™\ÈÛZ[YY‚‚•\ÚÈ\Ú^ÛY\ÈÛ›H]ÈİÛˆ\Ú×ÜXÚØYÙWÚ\ÚšY[ˆ\Y˜XİÛÛ[Ú\Úš\Ú\ÈÛÛ[È™XÛÜ™Ú\ÚY][Û˜[H›İXİÈHÛÛ\]HY]Y]H[™[ÜK‚‘]™[ÈØ\œHH\ÚÚZ[ˆ[™[Û›İÛšXØ[H[˜Ü™X\Ú[™È]™[ÜÙ\H\ÈBœ™\İ[[™ÈX[šY™\İÛ˜\Úİˆ[Y\İ[\È\™H[™›Ü›X][Û˜[Û[‚‚\Y˜XİÈ\™HÜ™X]Y^Û\Ú]™[H[™™]™\ˆY]Y›İYÚHTKˆÜ\˜]Ü‚›ÙÈ[šY\È]™H[ˆH\[™[Û›H›İ\›˜[™Y™\™[˜ÙYHH[[]]X›HÙÂ˜\Y˜Xİˆ]Y]Ü™\Z\ˆ™XÛÜ™ÈHÜšYÚ[˜[\Ú^XİYYš\ÚX›H˜[œØÜš\˜[™™X\ÛÛ‹[˜ÛY[™ÈY\ˆ\›Z[˜][Û‹Ü™[X\ÙKÚ]İ]™[Ü[š[™ÈHİ]HÜ‚›[ÙYZ[™ÈÙX[Y›ÜÜØ[Ëˆ]Ù\È›İØ\\™HY[ˆ™X\ÛÛš[™Ë‚‚˜]Y]
-[ŠH^ÜÈX[šY™\İË]™[Ë[\™[[Ûˆ[šY\Ë™Xİ\œÚ]™[H™Y™\™[˜ÙY˜\Y˜XİÈ[™˜[Y]HXYÛ›ÜİXÜËˆ[˜[YÛZ\ÜÚ[™È™XÛÜ™È™[XZ[ˆY[YšXX›Bš[ˆ˜[Y]WÜ™XÛÜ™ËˆHXÚ\Ú[Ûˆ™Y™\™[˜Ù\ÈH^Xİ™[X\ÙY\Y˜Xİ‚‚HØØ[^Û\Ú]™HÜš]\ˆX\šÙ\ˆ™Z™XİÈİ™\›\[™È]]][ÛœËˆ›Ü›X[ÛÛ\]Yœ[œÈ™[ØYœ›ÛHš[\Ëˆ[\œ\YÜˆ[˜ÛÛœÚ\İ[›İ\›˜[È˜Z[ÛÜÙY[™œ™\]Z\™HX[X[™]šY]ÎÈHX\šÙ\ˆ\È›İHÜ˜\Ú\™XÛİ™\H›İØÛÛˆš[\Ş\İ[B˜YZ[š\İ˜]ÜœÈØ[ˆ™]Üš]H[œÚYÛ™Y\Ú\ÎÈÚYÛ˜]\™\Ë™[[İH]\İ][Ûˆ[™šÜİ[]™[Y™\œØ\H™\Ú\İ[˜ÙH\™Hİ]ÚYHŒŒK‚‚ˆÈÈØÚ[X\È[™ØÛÜB‚œ›İØÛÛÜØÚ[X\ËÈÛÛZ[œÈ˜YŒŒLLˆ”ÓÓˆØÚ[X\È›Üˆ[™[Ü\È[™\Y˜ÛÛ[Ëˆ\Y˜Xİ›ÙY\È\™H˜[Y]YÙ\\˜][HH\Y˜Xİİ\NÈ[™[ÜB™šY[ÈİXÚ\È[—ÚY[™ÙX[Y\™H›İ\XØ]Y[ˆ]™\H›ÙKˆHÙ™›[™B˜[Y]Üˆ[\[Y[ÈÛ›HH›ØØX[\H\ÙY\™H[™™Z™XİÈ[œİ\ÜYšÙ^]ÛÜ™ÎÈ]\È›İH™\XÙ[Y[›ÜˆHÙ[™\˜[”ÓÓˆØÚ[XH[™Ú[™K‚‚˜ÛÛ™šYËšœÛÛˆ™XÛÜ™Èš^Y[\[Y[][ÛˆÚÚXÙ\È[™[œ™\ÛÛ™YÛÛ™šYİ\˜][Û‚œÚ[Ëˆ]\È\ØÜš\]™K›İHİÚ]Ú]Ø[ˆÚ[™ÙH›İØÛÛÛXŞK‚•S”‘TÓÓ‘Q›YØİ[Y[È™]šY]ËÜ[[YHXÚ\Ú[ÛœËˆ›İØÛÛÜİ]WÛXXÚ[™K›Y™\ØÜšX™\È[İÙY˜[œÚ][ÛœË‚‚“›İ[˜ÛYYˆ[Ù[ËÜÙ\šXÙ\Ë‹RK[\ÜY]šY[˜ÙH›İ][™Ë›ÙXİ[Û‚˜ÛÛ˜İ\œ™[˜ŞKÜ™XÛİ™\K›İ[™ËÛÛœÙ[œİ\ÈØÛÜ™\Ë[˜[\İX˜]KRHÜ˜Ú\İ˜]Ü‹˜]]Û›Û[İ\È™]šY\ËY[ˆÚZ[‹[Ù‹]İYÚØ\\™KÜˆ]]ÛX]XÈÛÜ™HÈ•STÈÂ“TÔÓÓ”È›Û[İ[Û‹ˆÜ[Û˜[Ñ]\™H™X]\™\È™[XZ[ˆİ]ÚYH\È›İİ\K‚‚‚ˆÈÈXØÙ\YZ][HÙ[X[XÈÛİ™\˜YÙH
-ŒKPˆŒŒJB‚š[™[™È™[XZ[œÈY[]KÜÙX[Û[™XYÙHÛ›KˆÙ[X[XÈ›İÈİ\Y\ÈH[[]]X›B’[X[ˆ\ÜÜÚ][Ûˆ[™Ü™\™YXØÙ\YZ][HØØİ\œ™[˜Ù\ÈÈH^\›˜[˜[Y]Ü‚š[ˆ\ÜÜÚ][Û—ÚœÛÛˆ[™XØÙ\YÚ][\×ÚœÛÛ‹[Û™ÜÚYHH^\İ[™È\ÚË˜Ø[™Y]H[™ÛÛ˜Xİİš[™ÜËˆXXÚØØİ\œ™[˜ÙH\ÈH\ÜÜÚ][Û‹RQÚ[™^˜\ÙYš][WÚY][WÚ[™^ÜšYÚ[˜[^[™™\]Z\™Y]YKˆ\]X[İš[™ÜÈ\™H›İY\™ÙYÂœ™Z™XİYÙY™\œ™Y[šY\È\™H›İ[˜ÛYYˆHİ\œ™[\ÜÜÚ][ÛˆØÚ[XH\È›Â›Ü[Û˜[Z][HY]Y]Nˆ[XØÙ\Y[šY\È\™H™\]Z\™Yˆ›È^Ù\[Ûˆ\È[™™\œ™Y‚‚•˜[Y]Ü‹™]˜[X]H™]\›œÈÛ™HØš™XİÚ]™\]Z\™[Y[È
-H^\İ[™È\ÚÈ›İÜÊB˜[™XØÙ\YÚ][WØÛİ™\˜YÙKˆH]\ˆÛÛZ[œÈÛİ™\˜YÙWİ™\œÚ[ÛH˜XØÙ\YZ][\Ë]ŒŒH‹˜ÚXÚÙ\—İ™\œÚ[ÛˆX]Ú[™È›İ™[˜[˜ÙK˜ÚXÚÙ\—İ™\œÚ[Û‹[X[—Ù\ÜÜÚ][Û—Ø\Y˜XİÚYš[X[—Ù\ÜÜÚ][Û—ØÛÛ[Ú\Ú[™][\ËˆXXÚ›İÈØ\œšY\È][WÚY][WÚ[™^œ™\]Z\™Y]YKİ]\Ë™\ÜÛœÙWÙ]šY[˜ÙK[™›Û˜›[šÈ›İ\È^Z[š[™ÈH™\™Xİ‚”İ]\Ù\È\™HÓÕ‘T‘QÓRTÔÒS‘ËĞÓÓ•QPÕQÕS”‘TÓÓ‘QÛ›KˆÓÕ‘T‘QĞÓÓ•QPÕQœ™\]Z\™H[ˆ^Xİ›Û˜›[šÈØ[™Y]H^Ù\œˆÚXÚÚ[™È^Ù\œ›İ™[˜[˜ÙHÙ\È›İš[™™\ˆÙ[X[XÈÛİ™\˜YÙNˆH^\›˜[˜[Y]Üˆİ\Y\ÈHÙ[X[XÈYÛY[‚•\™H\È›ÈÙ^]ÛÜ™ÜİXœİš[™ÈÛİ™\˜YÙHÛ\ÜÚYšY\ˆ[ˆ›ÙXİ[ÛˆÛÙK‚‚•HÙ[X[XÈ›İ[™\H˜[Y]\ÈİXİ\™KØØİ\œ™[˜ÙHY[]K\ÜÜÚ][Ûˆš[™[™Â˜[™YÙÜ™YØ][Û‹ˆ]YÈ[\WÜÙ][™Ûİ™\˜YÙWÜØ]\ÙšYYÈHİÜ™Y™\İ[‚[™\]Z\™Y][\È]\İ™HÓÕ‘T‘Q›ÜˆÛİ™\˜YÙWÜØ]\ÙšYYˆRTÔÒS‘ËĞÓÓ•QPÕQœ›ÙXÙHRTĞSQÓ‘QÈ[œ™\ÛÛ™YÛİ™\˜YÙHØ[››İ›ÙXÙHSQÓ‘Qˆ^\İ[™È\ÚÂœ™\]Z\™[Y[ÚXÚÜÈ]\İ[ÛÈ\ÜËˆ[\H][\È\™H^XÚ]HX\šÙY[\WÜÙ]]YNÂ˜Xİ[İ\ÈØ]\Ù˜Xİ[ÛˆÙ\È›İÛZ[HYX[š[™Ù[Ûİ™\˜YÙKˆ˜[Y]ÜS›Û™H™[XZ[œÂ•S”‘TÓÓ‘Q[™™[X\ÙHS–K[˜ÛY[™È›Üˆ[ˆ[\HÙ]‚‚“ØØ[™]šY]Õ˜[Y]Üˆ[\ÜÈ[ˆ[™\[™[H›ÙXÙY˜[Y]Üˆ™\İ[Ú]BœØ[YH™\]Z\™[Y[È[™XØÙ\YÚ][WØÛİ™\˜YÙHšY[Ë\È^\İ[™È\ÚËØØ[™Y]B˜š[™[™ÜÈ[™›İ™[˜[˜ÙKˆ[X[‹[ØØ[\™]šY]ËÚ[X[‹\™]šY]È\\ÈØ[››İİXœİ]]B™›Üˆ\ÈÛÛ˜Xİˆ\™H\È›ÈX[X[İ™\œšYHÙˆHİÜ™YS”‘TÓÓ‘Q™\İ[‚•H\İYÜİ]\İ]][XØ]HÚXÚÙ\ˆY[]NÈİš[™ÜÈ\™H›İÜ™Y[X[Ë‚‚“YØXŞHÙ[X[XÈØÚ[XH›ÙY\È™[XZ[ˆ™XYX›HÚ]İ]™]Üš][™ËØ˜XÚÙš[ˆ™]ÛB˜Ü™X]YÙ[X[XÈ™\İ[È[Ø^\È[˜ÛYHÛİ™\˜YÙNÈ™[X\ÙHÚXÚÜÈ]È™\œÚ[Û™Y˜š[™[™È›İYÚHÙ[X[XÈ™XÙZ\˜[Y]Üˆ[™˜Z[ÈÛÜÙY›ÜˆYØXŞKÛZ\ÜÚ[™ËÂœİ[HÛİ™\˜YÙKˆ™[X\ÙHÙ\È›İ[\œ™]YX[š[™ËˆÛš^\™\ÉÈØ]™Y\Y˜XİÂ˜\™H[˜Ú[™ÙYˆš^\™HÙ]‹\ŒXˆ^XİÈS”‘TÓÓ‘Q˜]\ˆ[ˆSQÓ‘Q›Üˆ›Ü™ZYÛ‹\[‚˜[™ÛXØ[™Y]HÛİ™\˜YÙKÚ]š[™[™ÈRSÈ™[X\ÙHS–H[˜Ú[™ÙY‚‚•\İÈ\ÙH^XÚ]HX™[Yš^Y™\™XİË[˜ÛY[™È\˜\˜\ÙH[™ÛÛ˜YXİ[Û‚˜Ø\Ù\ËÈ\İHÛÛ˜Xİˆ^HÈ›İ˜[Y]HH›ÙXİ[ÛˆÙ[X[XÈ[Ù[	ÜÂ˜XØİ\˜XŞKˆ›È[Ù[ÜÙ\šXÙH[YÜ˜][ÛˆÜˆš\ÚÈ‹Ì›ÙXİ[ÛˆÚ[™ÙH\È[˜ÛYY‚
+previous/replacement IDs. Both new analyst starts use identical empty-history
+inputs. There is no same-run amendment, negotiation, or C-to-A/B channel.
+Non-task-changing operator notices may be logged for audit; injecting additional
+material into active A/B contexts is deliberately unavailable in this prototype.
+
+## Binding and semantic alignment
+
+Binding checks run/task/candidate identity, hashes, required sealed A/B/C/H
+artifacts, current-run source lineage and terminal/invalidation status. It never
+uses text similarity. Semantic alignment receives immutable JSON strings for the
+exact task, exact candidate and checker contract.
+
+validation.semantic_alignment.Validator defines the adapter interface.
+validation.local_review.LocalReviewValidator accepts a separately prepared local
+review JSON containing task_package_hash, candidate_artifact_id,
+candidate_content_hash, provenance and requirements. provenance must supply
+checker_id, checker_type, checker_version, model_name, model_version and prompt_hash (SHA-256 of
+the canonical contract). The adapter derives config_hash from the review content.
+The gate adds a unique execution_id. Each requirement row supplies requirement_id,
+status, response_evidence and notes. Evidence for COVERED/CONTRADICTED must be a
+literal excerpt in the frozen response. The JSON is read once so subsequent file
+edits cannot alter that invocation.
+
+Any contradiction or explicitly material missing item yields MISALIGNED.
+Unresolved material coverage, missing/malformed validator output, infrastructure
+failure, stale local review or unavailable validator yields UNRESOLVED. Otherwise
+the declared requirement mapping yields ALIGNED. This aggregation is in the
+validation boundary, not the controller's reasoning. Producer self-validation
+is rejected. C-as-validator is disabled until its runtime lifecycle is reviewed.
+The host must authenticate human/validator identities; these strings are
+provenance identifiers, not authentication credentials.
+
+Release requires a fresh Binding PASS, Semantic ALIGNED, human disposition and
+all required sealed artifacts. FAIL, MISALIGNED, UNRESOLVED, stale results,
+corruption or missing artifacts deny release. Human disposition decision values
+are preserved as specified; no new decision-enum policy is invented.
+
+## Storage and audit
+
+JSON and JSONL use UTF-8 without BOM and LF. Each JSONL line is one JSON event.
+The canonical serialization is Python JSON with sorted keys, compact separators,
+ensure_ascii=False, allow_nan=False. SHA-256 always hashes its UTF-8 bytes.
+No cross-language canonicalization standard is claimed.
+
+Task hash excludes only its own task_package_hash field. Artifact content_hash
+hashes content; record_hash additionally protects the complete metadata envelope.
+Events carry a hash chain and monotonically increasing event_seq plus the
+resulting manifest snapshot. Timestamps are informational/null.
+
+Artifacts are created exclusively and never edited through the API. Operator
+log entries live in the append-only journal referenced by the immutable log
+artifact. audit_repair records the original hash, exact added visible transcript
+and reason, including after termination/release, without reopening the state or
+modifying sealed proposals. It does not capture hidden reasoning.
+
+audit(run) exports manifests, events, intervention entries, recursively referenced
+artifacts and validity diagnostics. Invalid/missing records remain identifiable
+in validity_records. The decision references the exact released artifact.
+
+A local exclusive writer marker rejects overlapping mutations. Normal completed
+runs reload from files. Interrupted or inconsistent journals fail closed and
+require manual review; the marker is not a crash-recovery protocol. Filesystem
+administrators can rewrite unsigned hashes; signatures, remote attestation and
+host-level adversary resistance are outside V0.1.
+
+## Schemas and scope
+
+protocol/schemas/ contains draft 2020-12 JSON Schemas for envelopes and typed
+contents. Artifact bodies are validated separately by artifact_type; envelope
+fields such as run_id and sealed are not duplicated in every body. The offline
+validator implements only the vocabulary used here and rejects unsupported
+keywords; it is not a replacement for a general JSON Schema engine.
+
+config.json records fixed implementation choices and unresolved configuration
+points. It is descriptive, not a switch that can change protocol policy.
+UNRESOLVED.md documents review/runtime decisions. protocol/state_machine.md
+describes allowed transitions.
+
+Not included: models/services, DB, UI, imported evidence routing, production
+concurrency/recovery, voting, consensus scores, analyst debate, AI orchestrator,
+autonomous retries, hidden chain-of-thought capture, or automatic Core / RULES /
+LESSONS promotion. Optional/Future features remain outside this prototype.
+
+
+## Accepted-item Semantic coverage (R1-B v0.1)
+
+Binding remains identity/seal/lineage only. Semantic now supplies the immutable
+Human Disposition and ordered accepted-item occurrences to the external validator
+in disposition_json and accepted_items_json, alongside the existing task,
+candidate and contract strings. Each occurrence has a Disposition-ID/index based
+item_id, item_index, original text and required=true. Equal strings are not merged;
+rejected/deferred entries are not included. The current Disposition schema has no
+optional-item metadata: all accepted entries are required. No exception is inferred.
+
+Validator.evaluate returns one object with requirements (the existing task rows)
+and accepted_item_coverage. The latter contains coverage_version="accepted-items-v0.1",
+checker_version matching provenance.checker_version, human_disposition_artifact_id,
+human_disposition_content_hash, and items. Each row carries item_id, item_index,
+required=true, status, response_evidence, and nonblank notes explaining the verdict.
+Statuses are COVERED/MISSING/CONTRADICTED/UNRESOLVED only. COVERED/CONTRADICTED
+require an exact nonblank candidate excerpt. Checking excerpt provenance does not
+infer semantic coverage: the external validator supplies the semantic judgment.
+There is no keyword/substring coverage classifier in production code.
+
+The Semantic boundary validates structure, occurrence identity, Disposition binding
+and aggregation. It adds empty_set and coverage_satisfied to the stored result.
+All required items must be COVERED for coverage_satisfied. MISSING/CONTRADICTED
+produce MISALIGNED; unresolved coverage cannot produce ALIGNED. Existing task
+requirement checks must also pass. Empty items are explicitly marked empty_set=true;
+vacuous satisfaction does not claim meaningful coverage. validator=None remains
+UNRESOLVED and Release DENY, including for an empty set.
+
+LocalReviewValidator imports an independently produced validator result with the
+same requirements and accepted_item_coverage fields, plus existing task/candidate
+bindings and provenance. Human-local-review/human-review types cannot substitute
+for this contract. There is no manual override of a stored UNRESOLVED result.
+The trusted host must authenticate checker identity; strings are not credentials.
+
+Legacy Semantic schema bodies remain readable without rewriting/backfill. Newly
+created Semantic results always include coverage; Release checks its versioned
+binding through the Semantic receipt validator and fails closed for legacy/missing/
+stale coverage. Release does not interpret meaning. Old fixtures' saved artifacts
+are unchanged. Fixture set 2-r1b expects UNRESOLVED rather than ALIGNED for foreign-run
+and old-candidate coverage, with Binding FAIL / Release DENY unchanged.
+
+Tests use explicitly labeled fixed verdicts, including paraphrase and contradiction
+cases, to test the contract. They do not validate a production semantic model's
+accuracy. No model/service integration or Risk 02/04 production change is included.
