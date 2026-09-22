@@ -166,6 +166,7 @@ class RunManager:
         if m["analyst_a_artifact_id"] and m["analyst_b_artifact_id"]:
             m["state"] = "ANALYST_SEALED"
         self._event(m, "ANALYST_" + role + "_SEALED", actor=role, artifacts=[record["artifact_id"]])
+        return record["artifact_id"]
 
     def start_comparator(self, run_id):
         m = self._require(run_id, "ANALYST_SEALED")
