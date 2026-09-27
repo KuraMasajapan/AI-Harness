@@ -444,3 +444,25 @@ They do not independently:
 - disable actions
 
 Any future gameplay effect from subsystem damage requires a separate explicit specification and must not be inferred from artwork alone.
+
+
+## 19. Damage State Thresholds
+
+Prototypeの正式なHP外観閾値は以下とする。
+
+- Stage 1 — Normal: HP 100%〜71%
+- Stage 2 — Light Damage: HP 70%〜41%
+- Stage 3 — Medium Damage: HP 40%〜11%
+- Stage 4 — Heavy Damage: HP 10%〜1%
+- Stage 5 — Destroyed: HP 0%
+
+Reference points:
+
+- 100%
+- 70%
+- 40%
+- 10%
+- 0%
+
+Threshold values are centralized tuning values and may be tuned later,
+but the five-stage visual model remains the default prototype rule unless explicitly changed.
