@@ -346,3 +346,40 @@ Visual Layer実装時は最低限:
 - ServerへAnimation負荷を持ち込まない
 
 ことを確認する。
+
+
+## 16. HP Visibility
+
+Prototype default:
+
+- Own Gear: HP visible
+- Ally Gear: HP visible
+- Enemy Gear: exact HP hidden
+- Enemy Gear: damage state communicated by visual damage only
+
+Enemy damage readability uses staged visual states such as:
+
+- normal
+- lightly scorched / small smoke
+- heavier scorch / more smoke
+- severe damage / strong smoke or heat
+- destroyed / visibly crushed wreck with smoke or flame
+
+Exact thresholds remain centralized tuning values and should not be encoded into sprite art itself.
+
+### Future Option
+
+将来はPlayer preferenceとしてHP表示を切り替えられる余地を残す。
+
+Candidate options:
+
+- own HP only
+- own + ally HP
+- bar only
+- bar + number
+
+PrototypeではSettings UIを作らず、
+
+`own + ally visible / enemy hidden`
+
+を固定標準とする。
