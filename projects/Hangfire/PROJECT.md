@@ -241,7 +241,18 @@ Reference資料をHangfire仕様より優先しない。
 
 ---
 
-## 10. Recovery Rule
+## 10. Spec Alignment Checkpoint
+
+初期仕様との進捗照合:
+
+- `checkpoints/SPEC_ALIGNMENT_2026-09-27.md`
+
+このCheckpointは新しい仕様ではなく、
+初期仕様と現在状態の監査・再確認用。
+
+---
+
+## 11. Recovery Rule
 
 作業再開時に現在位置が分からない場合は、まずこのファイルを読む。
 
