@@ -63,6 +63,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Low-cost server architecture rule documented
 - Gear collision rule documented
 - Tuning seed policy documented
+- Visual direction adopted
 
 ### Development
 - Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
@@ -241,7 +242,21 @@ Reference資料をHangfire仕様より優先しない。
 
 ---
 
-## 10. Spec Alignment Checkpoint
+## 10. Visual Direction
+
+正式なゲーム内Visual Direction:
+
+- `VISUAL_DIRECTION.md`
+
+荒めの2D pixel artを採用。
+速機は明るい白〜青＋オレンジ系アクセント。
+重機は黒〜濃いグレー＋赤系アクセント。
+BODYとBARRELを分離し、砲身は入力角度に応じて回転する。
+StageはBackground / Destructible Terrain / Collision Representationを分離する。
+
+---
+
+## 11. Spec Alignment Checkpoint
 
 初期仕様との進捗照合:
 
@@ -252,7 +267,7 @@ Reference資料をHangfire仕様より優先しない。
 
 ---
 
-## 11. Recovery Rule
+## 12. Recovery Rule
 
 作業再開時に現在位置が分からない場合は、まずこのファイルを読む。
 
