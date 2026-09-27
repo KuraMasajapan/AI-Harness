@@ -326,3 +326,61 @@ A Gear may fall because:
 The server determines whether the Gear crosses the lethal bottom boundary.
 
 Camera zoom or visual scaling must not change the death boundary.
+
+
+## 16. Parallax Scrolling
+
+Hangfire uses horizontal parallax scrolling.
+
+When the camera moves left or right:
+
+- Foreground terrain moves at the camera's primary world rate
+- Background moves in the same direction but at a slower apparent rate
+- The difference in motion helps the player visually separate the playable terrain from distant scenery
+
+This is not only decorative.
+
+Its gameplay / UI purpose is to make the structure of the main playable field easier to recognize.
+
+### Visual Priority
+
+The foreground terrain is the gameplay-critical layer.
+
+The background must not compete with it.
+
+Recommended behavior:
+
+- foreground: 1.0x camera-relative movement
+- background: configurable slower factor, e.g. BACKGROUND_PARALLAX_FACTOR < 1.0
+
+Exact values are tunable.
+
+### Readability Rule
+
+Parallax must preserve:
+
+- clear terrain edges
+- readable ledges
+- readable gaps
+- readable firing surfaces
+- distinction between decorative background geometry and collidable foreground terrain
+
+Background elements must never visually imply solid collision where none exists.
+
+### Zoom Interaction
+
+Zoom changes the camera view only.
+
+Parallax should remain consistent during zoom and pan.
+
+Zoom must not cause the background and foreground to drift out of logical alignment in a way that confuses the player about playable terrain.
+
+## 17. Camera Readability Goal
+
+Camera movement and parallax together should make it immediately clear which layer is:
+
+- playable terrain
+- non-collidable distant background
+- temporary visual effect
+
+The player should be able to understand the main field structure through motion contrast even when the stage contains visually dense industrial scenery.
