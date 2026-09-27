@@ -285,3 +285,10 @@ StageはBackground / Destructible Terrain / Collision Representationを分離す
 4. 必要なreferenceのみ
 
 会話Memoryだけを現在状態の根拠にしない。
+
+
+## Stage E Design Summary
+
+Current consolidated Stage E design checkpoint:
+
+- `checkpoints/STAGE_E_DESIGN_SUMMARY_2026-09-27.md`
