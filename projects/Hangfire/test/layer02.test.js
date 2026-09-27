@@ -6,6 +6,7 @@ import { createApp } from '../server/index.js';
 import { TUNING, TURN_TUNING as T } from '../server/tuning.js';
 import { simulate } from '../server/projectile.js';
 
+const ballistic = ({ resolution, ...shot }) => shot;
 const fire = { angle: TUNING.DEFAULT_ANGLE, power: TUNING.DEFAULT_POWER };
 const move = { direction: 'right', amount: T.DEFAULT_MOVE_DISTANCE };
 const inputFor = (game, fields) => ({
@@ -44,7 +45,7 @@ test('FIRE spends resource, updates delay, uses original projectile and selects 
   assert.equal(player(next, 'A').nextActionTime, T.FIRE_ACTION_COST);
   assert.equal(next.currentPlayer, 'B');
   assert.equal(next.logicalTime, 0);
-  assert.deepEqual(next.latestShot, { id: 1, playerId: 'A', ...simulate(fire, 0) });
+  assert.deepEqual(ballistic(next.latestShot), { id: 1, playerId: 'A', ...simulate(fire, 0) });
 });
 test('different costs produce B,B,B,A rather than strict alternation', () => {
   const game = createGame(0);

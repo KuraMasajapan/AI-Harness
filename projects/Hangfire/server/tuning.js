@@ -31,3 +31,15 @@ export const TURN_TUNING = Object.freeze({
   PLAYER_A_X: TUNING.LAUNCH_X,
   PLAYER_B_X: 60,
 });
+
+// Layer 3 provisional values; independent of visual size and Layer 1/2 tuning.
+export const HIT_TUNING = Object.freeze({
+  HP_MAX: 100,
+  HIT_POINT_X: 0,
+  HIT_POINT_Y: 4,
+  DIRECT_HIT_RADIUS: 2,
+  BLAST_RADIUS: 18,
+  DIRECT_HIT_DAMAGE: 60,
+  BLAST_DAMAGE_MAX: 40,
+  DAMAGE_FALLOFF: 1,
+});

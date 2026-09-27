@@ -29,10 +29,16 @@ function draw(elapsed = Infinity) {
   ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(...xy(points[0]), 5, 0, Math.PI * 2); ctx.fill();
   ctx.textAlign = 'center';
   for (const player of state.players) {
-    const [x, y] = xy(player.position);
-    ctx.fillStyle = player.id === state.currentPlayer ? '#6cdbef' : '#aaa';
+    const [x, y] = xy(player.visualOrigin);
+    ctx.fillStyle = player.eliminated ? '#6b4f50' : player.id === state.currentPlayer ? '#6cdbef' : '#aaa';
     ctx.fillRect(x - 5, y - 10, 10, 10);
     ctx.fillText(player.id, x, y - 16);
+    if ($('dev-hit').checked) {
+      const center = xy(player.hitPoint);
+      ctx.strokeStyle = '#ff8696';
+      ctx.beginPath(); ctx.arc(...center, player.directHitRadius * scale, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillRect(center[0] - 1, center[1] - 1, 2, 2);
+    }
   }
   if (!shot) return;
   ctx.strokeStyle = '#6cdbef'; ctx.lineWidth = 2; ctx.beginPath();
@@ -51,6 +57,13 @@ function draw(elapsed = Infinity) {
   ctx.stroke();
   ctx.fillStyle = '#ffd27d'; ctx.beginPath(); ctx.arc(...xy(current), 5, 0, Math.PI * 2); ctx.fill();
   if (elapsed >= shot.duration) {
+    if ($('dev-hit').checked && shot.resolution) {
+      const center = xy(shot.resolution.explosionCenter);
+      ctx.strokeStyle = '#d2ac56';
+      ctx.beginPath(); ctx.arc(...center, shot.resolution.blastRadius * scale, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillStyle = '#ff8696';
+      ctx.fillRect(center[0] - 3, center[1] - 3, 6, 6);
+    }
     ctx.fillStyle = '#ffd27d';
     ctx.textAlign = shot.impact.x > (minX + maxX) / 2 ? 'right' : 'left';
     ctx.fillText('Impact X=' + shot.impact.x.toFixed(2), ...xy({ x: shot.impact.x, y: 5 }));
@@ -73,12 +86,19 @@ function present(result, animate) {
   animation = requestAnimationFrame(frame);
 }
 function setBusy(busy) {
-  for (const id of ['fire', 'move-left', 'move-right', 'actor', 'refresh']) $(id).disabled = busy;
+  for (const id of ['fire', 'move-left', 'move-right', 'actor', 'refresh']) $(id).disabled = busy || (id !== 'refresh' && state?.matchState === 'finished');
 }
 function showState(next, animate = false) {
   const newShot = next.latestShot && next.latestShot.id !== shot?.id;
   state = next;
-  $('turn').textContent = 'Current Player: ' + state.currentPlayer +
+  $('match').textContent = 'Match: ' + state.matchState + (state.matchState === 'finished'
+    ? ' / ' + (state.winner ? 'Winner: ' + state.winner : 'Draw / 引き分け') : '');
+  $('health').textContent = state.players.map(p => p.id + ' HP ' + p.hp + '/' +
+    state.hitTuning.HP_MAX + (p.eliminated ? ' [eliminated]' : ' [alive]')).join(' / ');
+  const resolution = state.latestShot?.resolution;
+  $('hit-result').textContent = resolution ? 'Hit: ' + resolution.result.toUpperCase() +
+    ' / ' + resolution.damage.map(d => d.playerId + ' ' + d.kind + ' Damage ' + d.amount).join(' / ') : 'Hit: 未発射';
+  $('turn').textContent = 'Current Player: ' + (state.currentPlayer ?? '—') +
     ' / logicalTime: ' + state.logicalTime + ' / revision: ' + state.revision;
   $('players').replaceChildren(...state.players.map(player => {
     const row = document.createElement('tr');
@@ -148,4 +168,5 @@ async function refresh() {
   }
 }
 $('refresh').addEventListener('click', refresh);
+$('dev-hit').addEventListener('change', () => { if (state) { cancelAnimationFrame(animation); draw(); } });
 await refresh();

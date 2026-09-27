@@ -84,7 +84,7 @@ Balance値の集中管理と将来のHuman Playtest調整方針は、
 
 本格的なEditorは後回しにし、各Layerで必要なTuning値だけを追加する。
 
-## Layer 2 Playground（Layer 1弾道を継承）
+## Layer 3 Playground（Layer 1・2を継承）
 
 Node.js 22以上。外部package不要、npm install不要。
 このディレクトリ（projects/Hangfire）で実行する。
@@ -123,7 +123,7 @@ $env:WIND='-12'; $env:PORT='3002'; npm start
 
 ### Authority / tuning / cost
 
-- GET /api/state: Serverのwind、tuning、turnTuning、players、currentPlayer、logicalTime、revision、lastAction、latestShotを取得。
+- GET /api/state: Serverのwind、tuning、turnTuning、hitTuning、players、currentPlayer、logicalTime、revision、lastAction、latestShot、matchState、winnerを取得。
 - POST /api/fire: playerId、expectedRevision、angle、powerだけを受理。移動APIと同じ手番・Resource検証を通す。旧入力だけでは発射できない。
 - Serverだけが初期位置・速度・風・着弾・pathを決定し、最新結果をmemoryに保持。
 - pathは時刻順の {t,x,y} 点列。隣接点を将来の線分判定へ渡せるがGear判定は未実装。
@@ -138,7 +138,7 @@ $env:WIND='-12'; $env:PORT='3002'; npm start
 - 無料枠の実測、10年前の実機性能は未検証。構成は1 process / Canvas / dependencyなし。
 - 認証・rate limit・Room・履歴永続化はない。共有Playgroundであり対戦Serverではない。
 
-最新の検証記録: checkpoints/LAYER_02_2026-09-27.md（Layer 1記録も保持）
+最新の検証記録: checkpoints/LAYER_03_2026-09-27.md（Layer 1・2記録も保持）
 
 ### Layer 2の操作とルール
 
@@ -177,3 +177,40 @@ Layer 1の純粋弾道テストは維持。HTTP回帰テストはactor/revision�
 State応答へ適応し、弾道とAuthorityの元の検証を維持している。
 Layer 2では非手番拒否、Resource消費/不足、State不変、行動順、左右移動、
 移動後発射、改変field拒否、同時要求を追加検証する。
+
+### Layer 3: Hit / Damage / Victory
+
+Serverの各PlayerはHP、eliminated、visualOrigin / hitPoint / groundContactPointを持つ。
+MOVEで各基準をServer側で更新する。見た目のサイズや描画位置は当たり判定の正本ではない。
+FIREの自由飛行pathはLayer 1の式をそのまま使い、各線分とhitPoint円の最初の交差、
+または平地到達で打ち切る。Gear同時接触はID順、Terrainとの完全同時接触はTerrain優先。
+
+- hitPoint = position + (0,4)、Direct Hit Radius=2、HP_MAX=100（暫定）。
+- 最初のcollision pointがExplosion Center。直撃対象にはDirect Damage=60。
+- 他の生存Playerは発射者も含め、hitPointまでの距離でSplash判定。
+- 距離がBlast Radius=18未満なら ceil(40 × (1 - distance/18)^1)。
+  半径境界・外側はDamage 0。直撃対象へSplashを二重加算しない。
+- 一つのExplosionの全Damageを計算後、一括でHPへ適用。HP下限0、HP0でeliminated。
+- 生存者1人ならそのIDをwinner、0人ならwinner=null（Draw）。matchState=finished。
+- eliminatedは手番対象外。finishedでは追加FIRE/MOVEをServerが拒否しState不変。
+- hp/damage/winner/directHit/explosionCenter等をClientから注入する要求は拒否。
+- Resource / Action Costは命中成否に関係なくLayer 2の値を維持。
+  Resource不足では衝突処理前に拒否。回復/PASSは引き続き未実装。
+- UIはHP・脱落・Direct/Splash/Miss・Damage・Winnerを表示。
+  DEVチェック時のみHit Point/RadiusとExplosion Center/Blast Radiusを重ねる。
+  描画toggleはServer Stateを変更しない。地形破壊やGear差ではない。
+
+Human Playtest例（無風、再起動直後、初期位置）:
+1. A: Angle45 / Power28 → BにSplash28、HP72。
+2. B: Angle45 / Power55 → Miss、HP変化なし。
+3. A: Angle45 / Power30 → BにDirect60、HP12。
+4. B: Angle90 / Power10 → 自爆でB HP0、Winner A、finished。
+敵を直撃で倒す例はA(45/30)、B(45/55)、A(45/30)。
+再プレイはServer再起動。勝敗後のBrowser再読込でもfinishedは保持する。
+
+Layer 3値はserver/tuning.jsのHIT_TUNINGのみで調整する。
+例: DIRECT_HIT_RADIUSを2→1.7（85%）、BLAST_RADIUSを18→21.6（20%拡大）、
+HIT_POINT_Yを4→-2（6単位下げる）。変更後はbuild/testとServer再起動。
+DIRECT_HIT_DAMAGEとBLAST_DAMAGE_MAXは別々に調整できる。
+数値は正式Balanceではなく独自の暫定値。Layer 1・2の値は変更していない。
+地形破壊、落下、15秒Timer、Room/Team/Item等のLayer 4以降は未実装。

@@ -2,7 +2,7 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
-import { TUNING, TURN_TUNING } from './tuning.js';
+import { TUNING, TURN_TUNING, HIT_TUNING } from './tuning.js';
 import { createGame } from './game.js';
 
 const assets = new Map([
@@ -15,7 +15,7 @@ const MAX_BODY_BYTES = 1024;
 
 export function createApp({ wind = 0 } = {}) {
   const game = createGame(wind);
-  const publicState = () => ({ ...game.snapshot(), tuning: TUNING, turnTuning: TURN_TUNING });
+  const publicState = () => ({ ...game.snapshot(), tuning: TUNING, turnTuning: TURN_TUNING, hitTuning: HIT_TUNING });
   const json = (res, code, data) => {
     res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify(data));
