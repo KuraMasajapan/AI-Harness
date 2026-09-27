@@ -383,3 +383,64 @@ PrototypeではSettings UIを作らず、
 `own + ally visible / enemy hidden`
 
 を固定標準とする。
+
+
+## 17. Damage State Visual Rules
+
+Enemy Gear damage readability uses 5 visual stages.
+
+### Stage 1 — Normal
+- No visible damage
+- No smoke
+- Mobility system visually intact
+
+### Stage 2 — Light Damage
+- Small scorch marks
+- Small amount of smoke
+- Minor cosmetic damage only
+- Mobility system visually intact
+
+### Stage 3 — Medium Damage
+- More scorch marks
+- Moderate smoke
+- Visible armor / exterior damage
+- Mobility system visually intact
+
+### Stage 4 — Heavy Damage
+- Strong smoke
+- Small flame / heat glow may appear
+- Large exterior damage is allowed
+- Mobility system MUST still look functional
+- Do not depict wheels, tracks, suspension or legs as fully destroyed while HP > 0
+
+### Stage 5 — Destroyed / HP 0
+- Mobility system may collapse
+- Gear may become visibly crushed / flattened
+- Large smoke and flame are allowed
+- Detached debris is allowed
+- Wreck must be visually unmistakable as non-operational
+
+## Mobility Consistency Rule
+
+For any Gear with HP > 0:
+
+- It must remain visually plausible that the Gear can move
+- Wheels / tracks / legs / suspension must not appear completely broken
+- Cosmetic deformation is allowed
+- Functional destruction of mobility parts is reserved for HP 0 unless a future gameplay rule explicitly introduces mobility damage
+
+This rule exists to keep visual state consistent with gameplay capability.
+
+## 18. Visual Damage vs Gameplay State
+
+Damage visuals are descriptive only.
+
+They do not independently:
+
+- reduce movement
+- change projectile behavior
+- alter hitPoint
+- alter groundContactPoint
+- disable actions
+
+Any future gameplay effect from subsystem damage requires a separate explicit specification and must not be inferred from artwork alone.
