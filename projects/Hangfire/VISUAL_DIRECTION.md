@@ -86,3 +86,14 @@ Heavy post-processing、複雑なshader、pixel-perfect Gear collisionは不要�
 
 このファイルはHangfire独自のVisual Direction。
 既存作品のsprite、UI、map、配色、固有デザインを直接コピーしない。
+
+
+## Gear Animation
+
+Gearの簡易Animation・BODY/BARREL分離・Aim rotationの正式仕様は、
+
+`GEAR_ANIMATION.md`
+
+を参照する。
+
+荒めのpixel artを維持し、2〜4 frame中心の軽量Animationを採用する。
