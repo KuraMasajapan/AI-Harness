@@ -28,8 +28,10 @@ Angle・Power・WindによってProjectileの着弾位置が変化する、
 1. `/projects/Hangfire/ASTRA_START.md`
 2. `/projects/Hangfire/PROJECT.md`
 3. `/projects/Hangfire/SERVER_ARCHITECTURE.md`
-4. `/projects/Hangfire/reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
-5. 必要なら `/projects/Hangfire/reference/CLEAN_ROOM/DO_NOT_COPY.md`
+4. `/projects/Hangfire/GEAR_COLLISION.md`
+5. `/projects/Hangfire/TUNING_POLICY.md`
+6. `/projects/Hangfire/reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
+7. 必要なら `/projects/Hangfire/reference/CLEAN_ROOM/DO_NOT_COPY.md`
 
 ---
 
@@ -345,6 +347,8 @@ Test frameworkを大規模に導入しない。
 
 - [ ] Layer 1 Taskを読んだ
 - [ ] Server architecture ruleを読んだ
+- [ ] Gear collision ruleを読んだ
+- [ ] Tuning policyを読んだ
 - [ ] Clean-room mappingを読んだ
 - [ ] repository existing stateを確認した
 - [ ] 今回の技術選択が必要最小限である
@@ -416,6 +420,7 @@ Test frameworkを大規模に導入しない。
 - Omission Check PASS
 - Checkpoint保存済み
 - PROJECT.md更新済み
+- FINAL CLOSE CHECK PASS
 
 その後、Layer 2へ進まない。
 
