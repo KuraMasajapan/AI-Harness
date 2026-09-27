@@ -84,7 +84,7 @@ Balance値の集中管理と将来のHuman Playtest調整方針は、
 
 本格的なEditorは後回しにし、各Layerで必要なTuning値だけを追加する。
 
-## Layer 1 Playground（実装済み）
+## Layer 2 Playground（Layer 1弾道を継承）
 
 Node.js 22以上。外部package不要、npm install不要。
 このディレクトリ（projects/Hangfire）で実行する。
@@ -118,13 +118,13 @@ $env:WIND='12'; $env:PORT='3001'; npm start
 $env:WIND='-12'; $env:PORT='3002'; npm start
 ~~~
 
-それぞれのportをBrowserで開く。Angle=45 / Power=55で着弾Xは
-左風128.500 / 無風196.750 / 右風265.000。同条件で繰り返すと同じ結果。
+それぞれのportをBrowserで開く。初期位置のPlayer A、Angle=45 / Power=55で着弾Xは
+左風128.500 / 無風196.750 / 右風265.000。同じ位置・入力・風なら結果は同じ。発射には現在手番とResourceが必要。
 
 ### Authority / tuning / cost
 
-- GET /api/state: Serverのwind、tuning、最新shotを取得。
-- POST /api/fire: JSONのangle、powerだけを受理。範囲外・型違い・追加fieldは400。
+- GET /api/state: Serverのwind、tuning、turnTuning、players、currentPlayer、logicalTime、revision、lastAction、latestShotを取得。
+- POST /api/fire: playerId、expectedRevision、angle、powerだけを受理。移動APIと同じ手番・Resource検証を通す。旧入力だけでは発射できない。
 - Serverだけが初期位置・速度・風・着弾・pathを決定し、最新結果をmemoryに保持。
 - pathは時刻順の {t,x,y} 点列。隣接点を将来の線分判定へ渡せるがGear判定は未実装。
 - server/tuning.js がGameplay値の唯一の定義。値は独自の暫定値。
@@ -138,4 +138,42 @@ $env:WIND='-12'; $env:PORT='3002'; npm start
 - 無料枠の実測、10年前の実機性能は未検証。構成は1 process / Canvas / dependencyなし。
 - 認証・rate limit・Room・履歴永続化はない。共有Playgroundであり対戦Serverではない。
 
-最新の検証記録: checkpoints/LAYER_01_2026-09-27.md
+最新の検証記録: checkpoints/LAYER_02_2026-09-27.md（Layer 1記録も保持）
+
+### Layer 2の操作とルール
+
+固定Player A / Bの共通Playground。操作対象selectは試作用hotseat入力で、
+ログイン・認証ではない。受理後はServerのcurrentPlayerへselectが追従する。
+別Playerを選んで操作すればServerの手番拒否を確認できる。
+
+- Playerごとにposition、resource、nextActionTimeをServerが保持。
+- FIRE: Resource 20、Action Cost 30。angle/powerでLayer 1弾道を使用。
+- MOVE: left/right、整数amount 1..20。Resourceはamount × 2、Action Cost 10。
+- 初期Resource 100、AのX=0、BのX=60。移動後のFIREはそのServer位置から発射。
+- 行動後にnextActionTime = 行動開始時のlogicalTime + Action Cost。
+- 次PlayerはnextActionTime最小、同値ならID昇順（A→B）。
+- logicalTimeは次PlayerのnextActionTimeへ進む論理値。実時間待機・Timerなし。
+- A FIRE後、BがMOVEを3回行うと、予定時刻A=30/B=30となりAの手番。
+  単純交互ではなく、Action Costの差が行動順に反映される。
+- lastActionにServerが適用したResource / Action Cost / 次回時刻を表示。
+- 他のBrowserから操作した後は「Server状態を更新」で取得する。常時pollingなし。
+- Resource回復・PASS・自動skipは指示範囲外のため未実装。枯渇すると進行できない
+  場合がある。Playtestをやり直すにはServerを再起動する（Browser再読込では回復しない）。
+
+POST /api/moveはplayerId、expectedRevision、direction、amountのみ。
+expectedRevisionは直前に取得したServer revisionを返す前提条件で、状態を書き換える値
+ではない。非手番、Resource不足、古いrevisionは409。入力不正・追加fieldは400。
+拒否ではresource / position / 時刻 / shot / revisionを含む全Stateが不変。
+Serverは検証と弾道計算の成功後に一度だけStateをcommitする。
+同じrevisionの同時要求は最大1つだけ受理される。通信失敗時に自動再送しない。
+
+Layer 2値はserver/tuning.jsのTURN_TUNINGへ集中。例えば移動Resourceコストを70%に
+するならMOVE_RESOURCE_COST_PER_UNITを2→1.4、射撃後遅延を30%増やすなら
+FIRE_ACTION_COSTを30→39へ変更してbuild/test/再起動する。
+現在値はAI-selected / Provisional。Layer 1値は変更していない。
+
+検証コマンド: npm run check / npm run build / npm test。
+Layer 1の純粋弾道テストは維持。HTTP回帰テストはactor/revision付き要求と
+State応答へ適応し、弾道とAuthorityの元の検証を維持している。
+Layer 2では非手番拒否、Resource消費/不足、State不変、行動順、左右移動、
+移動後発射、改変field拒否、同時要求を追加検証する。

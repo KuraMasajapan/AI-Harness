@@ -17,3 +17,17 @@ export const TUNING = Object.freeze({
   PATH_STEP_SECONDS: 1 / 30,
   MAX_PATH_POINTS: 1024,
 });
+
+// Layer 2 provisional values only. Layer 1 values above remain unchanged.
+export const TURN_TUNING = Object.freeze({
+  RESOURCE_MAX: 100,
+  FIRE_RESOURCE_COST: 20,
+  MOVE_RESOURCE_COST_PER_UNIT: 2,
+  FIRE_ACTION_COST: 30,
+  MOVE_ACTION_COST: 10,
+  MOVE_MIN_DISTANCE: 1,
+  MOVE_MAX_DISTANCE: 20,
+  DEFAULT_MOVE_DISTANCE: 5,
+  PLAYER_A_X: TUNING.LAUNCH_X,
+  PLAYER_B_X: 60,
+});

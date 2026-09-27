@@ -19,12 +19,13 @@ Hangfireは、最大8人のターン制砲撃対戦ゲームの核を試作す�
 
 Project name: Hangfire
 
-Status: LAYER_1_COMPLETED
+Status: LAYER_2_COMPLETED
 
 Current phase:
-- Layer 1実装・Acceptance・Validation完了
+- Layer 1をPR #2でdevelopmentへmerge済み
+- Layer 2実装・Acceptance・Layer 1回帰・Validation完了
 - Checkpoint保存済み、Human Playtest / Review待ち
-- Layer 2はHuman GOまで開始しない
+- Layer 3はHuman GOまで開始しない
 
 ---
 
@@ -64,18 +65,19 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Tuning seed policy documented
 
 ### Development
-- Layer 1「弾道と風」Completed
-- CURRENT_LAYER is Layer 1「弾道と風」(completed; stopped)
-- Node.js標準HTTP + Canvas 2DのPlaygroundを実装（AI-selected / Provisional）
-- Serverがwind / initial state / path / impact / latest shotの正本を保持
-- Clientはangle / power入力、発射要求と描画を担当
-- Gameplay値をserver/tuning.jsに集約、外部dependencyなし
-- Layer 2以降は未実装
+- Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
+- Layer 2「ターンと資源、手番遅れ」Completed
+- CURRENT_LAYER is Layer 2 (completed; stopped)
+- Node.js標準HTTP + Canvas 2Dの既存構成を維持
+- Serverがwind / projectile / currentPlayer / logicalTime / players / Resource / Action Costを保持
+- 固定2人、FIRE/MOVE、nextActionTime最小選択・ID順Tie-break
+- Clientは行動入力と表示のみ。MOVE後のServer位置から既存弾道で発射
+- Gameplay値はserver/tuning.jsに集中。Layer 1値変更なし、外部dependencyなし
+- Layer 3以降は未実装
 
 ### Current objective
-Layer 1をHumanがPlaytest / Reviewする。次Layerは明示GOまで実装しない。
-起動・風条件の比較はREADME.md、検証Evidenceは
-checkpoints/LAYER_01_2026-09-27.mdを参照。
+Layer 2をHumanがPlaytest / Reviewする。Layer 3準備は明示GO後。
+Current Task: tasks/LAYER_02_TURN_RESOURCE.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_02_2026-09-27.md。
 
 ---
 
@@ -94,6 +96,14 @@ checkpoints/LAYER_01_2026-09-27.mdを参照。
 ---
 
 ## 6. History
+
+### 2026-09-27 — Layer 2 completed
+- Human指示によりPR #2をdevelopmentへmergeし、4d03e06から開始
+- PRE-FLIGHT → PLAN → IMPLEMENT → BUILD/TEST/RUNを実施
+- 固定2人のServer-authoritativeな手番・Resource・Action Cost・左右MOVEを追加
+- syntax/build、Layer 1回帰7件＋Layer 2テスト8件、Browser runtime PASS
+- Omission Check PASS、Checkpoint保存。Layer 3へ進まず停止
+- 詳細: checkpoints/LAYER_02_2026-09-27.md
 
 ### 2026-09-27 — Layer 1 completed
 - development 5d8f021から既存状態確認、PRE-FLIGHT → PLAN → IMPLEMENTを実施
@@ -166,26 +176,29 @@ checkpoints/LAYER_01_2026-09-27.mdを参照。
 
 ## 7. Current Work Snapshot
 
-CURRENT_LAYER: 1. 弾道と風
+CURRENT_LAYER: 2. ターンと資源、手番遅れ
 
 Completed layers:
-- Layer 1 — 弾道と風
+- Layer 1 — 弾道と風（development merge済み）
+- Layer 2 — ターンと資源、手番遅れ
 
 Working:
 - 実装作業停止。Human Playtest / Review待ち
-- Branch: hangfire/layer-01-projectile-wind（development向け）
+- Branch: hangfire/layer-02-turn-resource（development向け）
 
 Known issues:
-- Layer 1のblocking issueなし
-- Balance値・最小技術構成はAI-selected / Provisional
+- Layer 2のblocking issueなし
+- Balance値はAI-selected / Provisional
 - Hosting provider未選定、無料枠実測・10年前の実機性能は未検証
-- Stateはmemoryのみ、再起動で最新shotは消える
-- 認証・rate limiting・Roomなしの共有Playground（対戦運用は未対応）
+- Stateはmemoryのみ、再起動でPlayer状態と最新shotを初期化
+- Resource回復/PASS/自動skipは未実装。枯渇で進行不能になる場合はServer再起動
+- 固定2人のhotseat選択は認証ではない。Room/Team/対戦運用なし
+- cross-tabの常時同期なし。「Server状態を更新」で再取得
 
 Next action:
 - README.mdの手順でHuman Playtest / Review
-- 必要ならLayer 1範囲の修正・Tuningのみ行う
-- Humanの明示GO後にLayer 2準備へ進む。自動開始しない
+- 必要ならLayer 2範囲の修正・Tuningのみ行う
+- Humanの明示GO後にLayer 3準備。自動開始しない
 
 ---
 
