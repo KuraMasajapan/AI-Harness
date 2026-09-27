@@ -64,6 +64,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Gear collision rule documented
 - Tuning seed policy documented
 - Visual direction adopted
+- Gear animation specification adopted
 
 ### Development
 - Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
@@ -247,6 +248,7 @@ Reference資料をHangfire仕様より優先しない。
 正式なゲーム内Visual Direction:
 
 - `VISUAL_DIRECTION.md`
+- `GEAR_ANIMATION.md`
 
 荒めの2D pixel artを採用。
 速機は明るい白〜青＋オレンジ系アクセント。
