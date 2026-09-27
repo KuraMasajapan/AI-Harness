@@ -2,8 +2,8 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
-import { TUNING } from './tuning.js';
-import { simulate, validateWind } from './projectile.js';
+import { TUNING, TURN_TUNING } from './tuning.js';
+import { createGame } from './game.js';
 
 const assets = new Map([
   ['/', ['index.html', 'text/html; charset=utf-8']],
@@ -14,10 +14,8 @@ const clientRoot = new URL('../client/', import.meta.url);
 const MAX_BODY_BYTES = 1024;
 
 export function createApp({ wind = 0 } = {}) {
-  validateWind(wind);
-  // Private closure: neither returned JSON nor browser display is authoritative.
-  let latestShot = null;
-  let shotId = 0;
+  const game = createGame(wind);
+  const publicState = () => ({ ...game.snapshot(), tuning: TUNING, turnTuning: TURN_TUNING });
   const json = (res, code, data) => {
     res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify(data));
@@ -29,9 +27,9 @@ export function createApp({ wind = 0 } = {}) {
       "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'");
     try {
       if (req.method === 'GET' && req.url === '/api/state') {
-        return json(res, 200, { wind, tuning: TUNING, latestShot });
+        return json(res, 200, publicState());
       }
-      if (req.method === 'POST' && req.url === '/api/fire') {
+      if (req.method === 'POST' && ['/api/fire', '/api/move'].includes(req.url)) {
         if (req.headers['content-type']?.split(';')[0] !== 'application/json') {
           return json(res, 415, { error: 'Use application/json.' });
         }
@@ -48,12 +46,11 @@ export function createApp({ wind = 0 } = {}) {
         let input;
         try {
           input = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-          const result = simulate(input, wind);
-          latestShot = { id: ++shotId, ...result };
+          game.act(req.url === '/api/fire' ? 'FIRE' : 'MOVE', input);
         } catch (error) {
-          return json(res, 400, { error: error.message });
+          return json(res, error.status ?? 400, { error: error.message });
         }
-        return json(res, 200, latestShot);
+        return json(res, 200, publicState());
       }
       const asset = req.method === 'GET' && assets.get(req.url);
       if (asset) {

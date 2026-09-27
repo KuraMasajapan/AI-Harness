@@ -22,9 +22,10 @@ export function validateWind(wind) {
   return wind;
 }
 
-export function simulate(input, wind) {
+export function simulate(input, wind, launchX = T.LAUNCH_X) {
   validateInput(input);
   validateWind(wind);
+  if (!Number.isFinite(launchX)) throw new Error('Invalid server launch position.');
   const radians = input.angle * Math.PI / 180;
   const speed = input.power * T.PROJECTILE_SPEED_SCALE;
   const vx = speed * Math.cos(radians);
@@ -34,7 +35,7 @@ export function simulate(input, wind) {
   const count = Math.ceil(duration / T.PATH_STEP_SECONDS);
   if (count + 1 > T.MAX_PATH_POINTS) throw new Error('Trajectory exceeds path budget.');
   const pointAt = t => ({
-    t, x: T.LAUNCH_X + vx * t + 0.5 * wind * t * t,
+    t, x: launchX + vx * t + 0.5 * wind * t * t,
     y: T.LAUNCH_Y + vy * t - 0.5 * T.GRAVITY * t * t,
   });
   // Adjacent points define ordered movement segments for a future collision layer.
@@ -43,7 +44,7 @@ export function simulate(input, wind) {
   path.push(impact);
   return {
     input: { ...input }, wind,
-    initial: { x: T.LAUNCH_X, y: T.LAUNCH_Y, vx, vy },
+    initial: { x: launchX, y: T.LAUNCH_Y, vx, vy },
     duration, path, impact,
   };
 }

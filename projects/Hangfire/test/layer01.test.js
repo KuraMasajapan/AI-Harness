@@ -55,20 +55,24 @@ test('HTTP authority, rejection, static client and server-state persistence', as
   t.after(() => new Promise(resolve => server.close(resolve)));
   const root = 'http://127.0.0.1:' + server.address().port;
   const get = async () => (await fetch(root + '/api/state')).json();
-  const fire = body => fetch(root + '/api/fire', {
-    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
-  });
+  const fire = async body => {
+    const current = await get();
+    return fetch(root + '/api/fire', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ playerId: current.currentPlayer, expectedRevision: current.revision, ...body }),
+    });
+  };
   const first = await get();
   assert.equal(first.wind, T.WIND_MAX);
   assert.equal(first.latestShot, null);
   const result = await fire(input);
   assert.equal(result.status, 200);
-  const shot = await result.json();
-  assert.deepEqual(shot, { id: 1, ...simulate(input, T.WIND_MAX) });
+  const shot = (await result.json()).latestShot;
+  assert.deepEqual(shot, { id: 1, playerId: 'A', ...simulate(input, T.WIND_MAX) });
   first.wind = T.WIND_MIN;
   shot.impact.x = -999;
   shot.path[0].x = -999;
-  assert.deepEqual((await get()).latestShot, { id: 1, ...simulate(input, T.WIND_MAX) });
+  assert.deepEqual((await get()).latestShot, { id: 1, playerId: 'A', ...simulate(input, T.WIND_MAX) });
   for (const key of ['wind', 'impact', 'path', 'initial', 'tuning']) {
     assert.equal((await fire({ ...input, [key]: -999 })).status, 400);
   }
@@ -82,8 +86,9 @@ test('HTTP authority, rejection, static client and server-state persistence', as
   assert.equal((await fetch(root + '/api/fire', { method: 'POST', body: '{}' })).status, 415);
   assert.equal((await fetch(root + '/api/wind', { method: 'POST' })).status, 404);
   assert.equal((await get()).latestShot.id, 1);
-  const again = await (await fire(input)).json();
-  assert.deepEqual(again.impact, simulate(input, T.WIND_MAX).impact);
+  const again = (await (await fire(input)).json()).latestShot;
+  const currentOrigin = (await get()).players.find(p => p.id === again.playerId).position.x;
+  assert.deepEqual(again.impact, simulate(input, T.WIND_MAX, currentOrigin).impact);
   for (const path of ['/', '/app.js', '/style.css']) {
     assert.equal((await fetch(root + path)).status, 200);
   }
@@ -97,9 +102,9 @@ test('HTTP integration for zero, left and right server wind', async t => {
     await once(server, 'listening');
     t.after(() => new Promise(resolve => server.close(resolve)));
     const result = await fetch('http://127.0.0.1:' + server.address().port + '/api/fire', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(input),
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ playerId: 'A', expectedRevision: 0, ...input }),
     });
-    const shot = await result.json();
+    const shot = (await result.json()).latestShot;
     assert.equal(shot.wind, wind);
     impacts.push(shot.impact.x);
   }
