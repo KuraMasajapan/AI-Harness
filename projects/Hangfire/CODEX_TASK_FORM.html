@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hangfire Codex Task Form</title>
+<style>
+:root{--bg:#0f1115;--panel:#171a21;--panel2:#1f2430;--text:#eef2f7;--muted:#a9b1bd;--line:#2b3340;--accent:#7cc4ff;--good:#8ee0b0;--warn:#ffd580}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.6}
+header{padding:32px 20px;border-bottom:1px solid var(--line)}main{max-width:1100px;margin:auto;padding:24px 20px 60px}
+h1{margin:0 0 6px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+label{display:block;font-weight:700;margin:14px 0 6px}input,textarea,select{width:100%;background:#0b0d11;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit}
+textarea{min-height:110px;resize:vertical}.small{min-height:76px}.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+button{border:1px solid var(--line);border-radius:9px;padding:10px 14px;background:var(--panel2);color:var(--text);font-weight:700;cursor:pointer}
+button.primary{background:var(--accent);color:#081018;border-color:var(--accent)}button.good{background:var(--good);color:#08130d;border-color:var(--good)}
+pre{white-space:pre-wrap;background:#090b0f;border:1px solid var(--line);border-radius:10px;padding:16px;min-height:300px;overflow:auto}
+.badge{display:inline-block;padding:3px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.8rem;margin-right:6px}
+.note{border-left:4px solid var(--warn);padding:10px 14px;background:var(--panel2);border-radius:8px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div style="max-width:1100px;margin:auto">
+<h1>Hangfire — Codex Task Form</h1>
+<div class="muted">固定仕様を保持し、今回の作業層だけを入力してCodex用Markdownを生成する。</div>
+</div></header>
+<main>
+<div class="note">このフォーム自体はゲームを実行しません。入力から指示Markdownを生成するだけです。</div>
+<div class="grid" style="margin-top:18px">
+<section class="card">
+<h2>今回の作業</h2>
+<label>現在の作業層</label>
+<select id="layer">
+<option>1. 弾道と風</option>
+<option>2. ターンと資源、手番遅れ</option>
+<option>3. 当たりと勝敗</option>
+<option>4. 操作と15秒制限</option>
+<option>5. 部屋（偶数開始、最大8、チーム）</option>
+<option>6. 機体2とアイテム2</option>
+<option>7. 見た目は最後</option>
+</select>
+<label>TARGET</label><textarea id="target" placeholder="今回実装する機能"></textarea>
+<label>ALLOWED_FILES</label><textarea id="allowed" class="small" placeholder="変更してよいファイル。未指定なら『必要最小限』"></textarea>
+<label>DO_NOT_TOUCH</label><textarea id="dont" class="small" placeholder="今回触らない領域"></textarea>
+<label>ACCEPTANCE</label><textarea id="accept" placeholder="観察・テスト・ログ等で確認できる完成条件を1行ずつ"></textarea>
+</section>
+
+<section class="card">
+<h2>状態</h2>
+<label>完了した層</label><input id="done" placeholder="例: なし / 1">
+<label>現在動いているもの</label><textarea id="working" class="small"></textarea>
+<label>未完成</label><textarea id="unfinished" class="small"></textarea>
+<label>既知の問題</label><textarea id="issues" class="small"></textarea>
+<label>次の候補</label><textarea id="next" class="small"></textarea>
+<div class="buttons">
+<button class="primary" onclick="generate()">Markdown生成</button>
+<button class="good" onclick="copyOut()">コピー</button>
+<button onclick="downloadMd()">.md保存</button>
+<button onclick="resetForm()">入力クリア</button>
+</div>
+</section>
+</div>
+
+<section class="card" style="margin-top:18px">
+<h2>生成結果</h2>
+<div><span class="badge">Source of Truth保持</span><span class="badge">1層のみ</span><span class="badge">Stop Condition付き</span></div>
+<pre id="out">「Markdown生成」を押すとここに表示されます。</pre>
+</section>
+
+<script>
+const base = `# Hangfire
+
+最大8人のターン制砲撃対戦。完成品ではなく核の試作。
+既存作品の名前、機体、マップ、UI、数値、素材は使わない。再現もしない。
+
+## 目的
+- 交互に弾を撃つ
+- 角度と威力で着弾が変わる
+- 風で軌道が曲がる
+- 移動か攻撃で資源が減る
+- 強い攻撃のあと、次の手番が遅れる
+- 体力0でその機体が落ち、チーム全滅で勝敗が付く
+
+## 部屋と人数
+- 定員は最大8人
+- 開始人数は 2 / 4 / 6 / 8 のみ
+- 奇数では開始しない
+- 開始後の途中参加はしない
+- チーム戦のみ（1v1 / 2v2 / 3v3 / 4v4）
+- 入室順で自動チーム分け
+- 公開は部屋コード招待。ランキング、自動マッチング、観戦は作らない
+- NPCは作らない
+- 開発時のみ、偶数に揃える無思考ダミーを使ってよい。ダミーは立っているだけ、または固定射撃のみ
+
+## 選択
+試合前のみ。途中変更なし。
+- 機体は2種だけ
+  - 速機: 移動が安い。火力は普通
+  - 重機: 移動が重い。直撃が厚い
+- アイテムは2種だけ。各1、使用は任意
+  - 偏流: 次の1発だけ風を強くする
+  - 残熱: 大技のあとの手番遅れを1回だけ軽くする
+- 3種目の機体・アイテム、ショップ、回復、即死は作らない
+
+## オンライン
+- 最初からオンライン対応する
+- クライアントは入力と表示だけ
+- 送ってよい入力: 角度、威力、移動、アイテム使用
+- 風、着弾、ダメージ、資源、手番、遅延、勝敗はサーバが計算する
+- あり得ない入力は捨てる
+- 1試合の入力ログを残す
+- 1手15秒
+
+## 公開
+- クライアントは HTML5（index.html + スクリプト）
+- 公開先は itch.io。ページ内プレイ
+- 部屋サーバは別ホスト
+- 説明は「招待制の偶数対戦。競技用ではない」
+- ROBLOX、Steam、専用ランチャーは今作らない
+
+## 技術
+- ブラウザクライアント + 小さな部屋サーバ
+- 新しい依存は勝手に足さない。必要なら先に理由を書く
+- 画像・音声は生成しない。図形と色だけでよい
+- 重要な数値をクライアントの表示用と判定用で分ける
+
+## Source of Truth
+この文書をゲーム仕様の基準とする。
+実装、既存コード、コメント、過去の会話とこの文書が矛盾した場合は、この文書を優先する。
+ただし、現在の実装状態を無視して全面的に作り直してはいけない。矛盾を発見した場合は、変更前に簡潔に報告する。
+不明な仕様を勝手に補完しない。
+実装に必要だが決まっていない事項がある場合は、現在の作業を止める必要があるか判断し、止める必要がなければ最小限の仮実装にし、仮定した内容を最後に報告する。
+
+## 作業順
+一度に1層だけ進める。
+1. 弾道と風
+2. ターンと資源、手番遅れ
+3. 当たりと勝敗
+4. 操作と15秒制限
+5. 部屋（偶数開始、最大8、チーム）
+6. 機体2とアイテム2
+7. 見た目は最後
+
+## サーバ権威
+試合結果に影響する値の正本はサーバ側に置く。
+サーバが決定するもの:
+- 風
+- 弾道
+- 着弾位置
+- 当たり判定
+- ダメージ
+- 資源消費
+- 手番
+- 手番遅延
+- HP
+- 脱落
+- 勝敗
+
+クライアントが決定してよいもの:
+- 表示
+- 入力UI
+- 演出
+- サーバへ送信する操作要求
+
+クライアントから送られた結果値をそのまま信用しない。
+
+## 入力検証
+サーバは少なくとも以下を確認する。
+- 現在の手番のプレイヤーか
+- 角度が許容範囲か
+- 威力が許容範囲か
+- 移動可能量を超えていないか
+- 必要な資源が残っているか
+- アイテムを所持しているか
+- 使用済みアイテムを再使用していないか
+- 脱落済みプレイヤーではないか
+- 15秒の手番制限内か
+
+不正または成立しない入力は試合状態に反映しない。
+
+## 試合状態
+最低限、サーバは次の状態を管理できるようにする。
+- room
+- players
+- teams
+- currentTurn
+- turnOrder
+- wind
+- HP
+- resource
+- position
+- selectedUnit
+- remainingItems
+- turnDelay
+- matchState
+- winner
+
+名称や内部構造は実装に合わせて変更してよい。
+ただし、同じ状態を複数箇所で別々に正本として保持しない。
+
+## ログ
+1試合について、最低限次の情報を追跡できるようにする。
+- 試合開始
+- 参加プレイヤー
+- チーム
+- 手番
+- プレイヤー入力
+- サーバが受理または拒否した入力
+- 着弾結果
+- ダメージ
+- 資源変化
+- 脱落
+- 勝敗
+
+開発段階では読みやすさを優先する。
+大規模な分析基盤やデータベースは作らない。
+
+## 切断・異常時
+核の試作なので、高度な復旧システムは作らない。
+最低限、プレイヤー切断、サーバエラー、不正入力、制限時間超過によって試合処理が破綻しないことを優先する。
+再接続、試合復帰、永続保存、高可用性は現段階では実装しない。
+
+## 数値
+ゲームバランス値はコード中に無秩序に散らさない。
+HP、移動コスト、攻撃コスト、ダメージ、風の強さ、手番遅延、制限時間など、調整対象になる主要数値は可能な範囲で1か所から確認できるようにする。
+ただし、そのためだけに大規模な設定システムは作らない。
+
+## 依存関係
+新しいライブラリ・フレームワーク・外部サービスを追加する場合は、実装前に以下を示す。
+
+DEPENDENCY:
+REASON:
+WHY_EXISTING_CODE_IS_NOT_ENOUGH:
+
+既存機能または標準機能で十分なら追加しない。
+
+## 検証
+コード変更後は、可能な範囲で実際に検証する。
+優先順位:
+1. 構文・ビルドエラーがない
+2. サーバが起動する
+3. クライアントが起動する
+4. 今回の対象機能が動作する
+5. 既存の完成済み層が壊れていない
+6. 指定人数で試合が進行する
+
+テストが存在する場合は実行する。
+テストがない場合、今回の機能確認に必要な最小限の検証だけ行う。
+テスト基盤そのものの大規模構築は今回の目的にしない。
+
+## 禁止
+- 頼まれていない機能追加
+- メニュー、キャンペーン、複数ステージの作り込み
+- 大きなリファクタ
+- 既存作品への言及をコードや表示に残すこと
+- 今の層以外のファイルを広く編集すること
+- 次の作業層を先回りして実装すること
+- UIを必要以上に装飾すること
+- 「将来便利そう」という理由だけで抽象化すること
+- 未使用コードを大量に追加すること
+- 勝手に技術スタックを変更すること
+- 動いているコードを理由なく書き直すこと
+- ACCEPTANCE達成後に追加改善を続けること
+
+## 完了
+その層について次を満たしたら止める。
+- 起動できる
+- 指定した人数で1試合が終わる
+- 判定がサーバ側で行われている
+- 今回設定したACCEPTANCEを満たしている
+
+未完成部分があっても、それが次の作業層で扱う内容なら今回実装しない。
+
+## Codex作業原則
+Codexはこのプロジェクトについて、仕様を増やす役ではなく、指定された仕様を1層ずつ実装して検証する役として動作する。
+
+優先順位:
+1. この仕様
+2. 今回のCURRENT_LAYER
+3. 今回のACCEPTANCE
+4. 既存コードを壊さないこと
+5. シンプルな実装
+6. 将来拡張
+
+将来拡張性を理由に、現在必要のない複雑さを追加しない。
+`;
+
+function lines(id,fallback){
+ const v=document.getElementById(id).value.trim();
+ if(!v) return "- "+fallback;
+ return v.split(/\n+/).map(x=>"- "+x.trim()).join("\n");
+}
+function generate(){
+ const layer=document.getElementById("layer").value;
+ const target=lines("target","未指定");
+ const allowed=lines("allowed","必要最小限");
+ const dont=lines("dont","今回の層以外");
+ const accept=lines("accept","未指定");
+ const status=[
+   "- 完了した層: "+(document.getElementById("done").value.trim()||"未指定"),
+   "- 現在動いているもの: "+(document.getElementById("working").value.trim()||"未指定"),
+   "- 未完成: "+(document.getElementById("unfinished").value.trim()||"未指定"),
+   "- 既知の問題: "+(document.getElementById("issues").value.trim()||"なし"),
+   "- 次の候補: "+(document.getElementById("next").value.trim()||"未指定")
+ ].join("\n");
+ const dynamic=`
+## 現在の作業層
+CURRENT_LAYER: ${layer}
+
+CURRENT_LAYER以外の機能は、今回の完成に不可欠な場合を除いて実装しない。
+
+## 作業範囲
+
+### TARGET
+${target}
+
+### ALLOWED_FILES
+${allowed}
+
+### DO_NOT_TOUCH
+${dont}
+
+必要性がないファイルを「ついでに」整理・修正しない。
+変更範囲が当初想定より大きくなる場合は、その理由を先に示す。
+
+## Acceptance Criteria
+${accept}
+
+「だいたい動く」「良い感じ」「完成したように見える」は完了条件にしない。
+観察、テスト、ログ、実行結果のいずれかで確認できる条件にする。
+
+## Stop Condition
+以下をすべて満たした時点でコード変更を停止する。
+- 今回のCURRENT_LAYERが動作する
+- ACCEPTANCEを満たす
+- 必要な検証が完了している
+- 既存の完成済み層に明確な破損がない
+
+その後、自主的に次機能へ進まない。
+
+## 状態保存
+STATUS:
+${status}
+
+長い作業ログを状態情報の代わりにしない。
+
+## 返答
+やったこと、起動方法、次に触らないことを3行で書く。
+
+変更: 今回実装した内容
+起動: 起動・確認方法
+停止: 今回実装しなかった次層または残作業
+
+問題がある場合のみ、その直後に短く追記する。
+`;
+ document.getElementById("out").textContent=base+"\n"+dynamic;
+}
+async function copyOut(){
+ generate();
+ const t=document.getElementById("out").textContent;
+ try{await navigator.clipboard.writeText(t);alert("コピーしました");}
+ catch(e){alert("コピーできませんでした。生成結果を手動でコピーしてください。");}
+}
+function downloadMd(){
+ generate();
+ const t=document.getElementById("out").textContent;
+ const blob=new Blob([t],{type:"text/markdown;charset=utf-8"});
+ const a=document.createElement("a");
+ a.href=URL.createObjectURL(blob);
+ a.download="HANGFIRE_TASK.md";
+ a.click();
+ URL.revokeObjectURL(a.href);
+}
+function resetForm(){
+ ["target","allowed","dont","accept","done","working","unfinished","issues","next"].forEach(id=>document.getElementById(id).value="");
+ document.getElementById("layer").selectedIndex=0;
+ document.getElementById("out").textContent="「Markdown生成」を押すとここに表示されます。";
+}
+</script>
+</main>
+</body>
+</html>
