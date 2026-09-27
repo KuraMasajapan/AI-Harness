@@ -67,6 +67,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Gear animation specification adopted
 - Team HP visibility: own + allies visible; enemy exact HP hidden
 - Stage spawn: mixed random spawn; teams are not separated left/right
+- Stage E numeric baseline prepared for later implementation
 
 ### Development
 - Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
