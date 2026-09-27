@@ -341,3 +341,7 @@ Current LayerとTaskが一致しない場合は実装を開始せず、BLOCKED�
 Layer 4開始時は、
 `/projects/Hangfire/tasks/LAYER_04_INPUT_TIMER.md`
 をCurrent Taskとして読む。
+
+Layer 5開始時は、
+`/projects/Hangfire/tasks/LAYER_05_LOBBY_ROOM_TEAM_CHAT.md`
+をCurrent Taskとして読む。

@@ -19,13 +19,13 @@ Hangfireは、最大8人のターン制砲撃対戦ゲームの核を試作す�
 
 Project name: Hangfire
 
-Status: LAYER_4_COMPLETED
+Status: LAYER_5_COMPLETED
 
 Current phase:
 - Layer 1をPR #2でdevelopmentへmerge済み
-- Layer 4実装・Acceptance・Layer 1〜3回帰・Validation完了（39/39 tests PASS）
+- Layer 5実装・Acceptance・Layer 1〜4回帰・Validation完了（47/47 tests PASS）
 - Checkpoint保存済み、Human Playtest / Review待ち
-- Layer 5はHuman GOまで開始しない
+- Layer 6はHuman GOまで開始しない
 
 ---
 
@@ -76,7 +76,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Layer 2「ターンと資源、手番遅れ」Completed
 - Layer 3「当たりと勝敗」Completed
 - Layer 4「操作と20秒制限」Completed
-- CURRENT_LAYER is Layer 4 (completed; stopped)
+- CURRENT_LAYER is Layer 5 (completed; stopped)
 - Node.js標準HTTP + Canvas 2Dの既存構成を維持
 - Serverがwind / projectile / currentPlayer / logicalTime / players / Resource / Action Costを保持
 - 固定2人、FIRE/MOVE、nextActionTime最小選択・ID順Tie-break
@@ -86,11 +86,13 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Clientは入力と表示のみ。DEV overlayでServer-owned collision anchorsを可視化
 - Server時計が20秒期限、5秒充電、連続move/aim、飛翔/着弾effect待ちを管理
 - Layer 2コスト互換を維持。4要素Turn Load、Gear効率差は未実装
-- Layer 5以降は未実装
+- Serverがguest session / Player ID、Lobby / Room / Team / Battle metadataとCommunication routingを保持
+- Layer 5「Lobby / Room / Team / Communication」Completed
+- Layer 6以降は未実装
 
 ### Current objective
-Layer 4をHumanがPlaytest / Reviewする。Layer 5準備は明示GO後。
-Current Task: tasks/LAYER_04_INPUT_TIMER.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_04_2026-09-27.md。
+Layer 5をHumanがPlaytest / Reviewする。Layer 6準備は明示GO後。
+Current Task: tasks/LAYER_05_LOBBY_ROOM_TEAM_CHAT.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_05_2026-09-28.md。
 
 ---
 
@@ -109,6 +111,14 @@ Current Task: tasks/LAYER_04_INPUT_TIMER.md。起動・操作はREADME.md、Evid
 ---
 
 ## 6. History
+
+### 2026-09-28 — Layer 5 completed
+- Human確認済みのguest login、host移譲、入室順Team、Battle退出／切断状態仕様で実装
+- Lobby / Room / Team / Battle metadataと独立Communication routingを追加
+- BATTLE_TEAMは相手Teamへ配信せず、Whisperは所在を問わずsender/targetだけへ配信
+- syntax/build、Layer 1〜4回帰39件＋Layer 5テスト8件、Browser Lobby確認PASS
+- Omission Check PASS、Checkpoint保存。Layer 6へ進まず停止
+- 詳細: checkpoints/LAYER_05_2026-09-28.md
 
 ### 2026-09-27 — Layer 4 completed
 - Human GOによりdevelopment 58999c9から開始。PRE-FLIGHT/PLAN/IMPLEMENT/BUILD/TEST/RUN完了
@@ -202,17 +212,18 @@ Current Task: tasks/LAYER_04_INPUT_TIMER.md。起動・操作はREADME.md、Evid
 
 ## 7. Current Work Snapshot
 
-CURRENT_LAYER: 4. 操作と20秒制限
+CURRENT_LAYER: 5. Lobby / Room / Team / Communication
 
 Completed layers:
 - Layer 1 — 弾道と風（development merge済み）
 - Layer 2 — ターンと資源、手番遅れ
 - Layer 3 — 当たりと勝敗
 - Layer 4 — 操作と20秒制限
+- Layer 5 — Lobby / Room / Team / Communication
 
 Working:
 - 実装作業停止。Human Playtest / Review待ち
-- Branch: hangfire/layer-04-input-timer（development 58999c9基準）
+- Branch: hangfire/layer-05-lobby-room-team-chat（development 23cf229基準）
 
 Known issues:
 - Layer 2のblocking issueなし
@@ -223,13 +234,14 @@ Known issues:
 - 固定2人のhotseat選択は認証ではない。Room/Team/対戦運用なし
 - Clientは100ms polling。latency compensation/切断復帰protocolは未実装
 - 共通移動速度・world境界・effect時間・timeout costはAI-selected / Provisional
-- 4要素Turn Load/回復式、terrain destruction、Room/Team、Gear差、Itemは未実装
+- 4要素Turn Load/回復式、terrain destruction、Gear差、Itemは未実装
+- account DB、password、persistent profile、Battle reconnect、NPC takeover、Voice、moderation、friend/blockは未実装
 - Browser短押し/drag確認済み。長押し時間境界は自動テストで検証、Human操作感確認は継続
 
 Next action:
 - README.mdの手順でHuman Playtest / Review
 - 必要ならLayer 4範囲の修正・Tuningのみ行う
-- Humanの明示GO後にLayer 5準備。自動開始しない
+- Humanの明示GO後にLayer 6準備。自動開始しない
 
 ---
 

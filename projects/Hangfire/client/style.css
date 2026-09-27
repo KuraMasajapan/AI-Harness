@@ -23,3 +23,11 @@ th, td { padding: 6px; overflow-wrap: anywhere; }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 420px; overflow: auto; }
 progress { width: 100%; height: 24px; }
 canvas { touch-action: none; }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.chat { min-height: 160px; max-height: 260px; overflow-y: auto; border: 1px solid #456; padding: 8px; background: #101923; }
+.chat p { margin: 4px 0; }
+.chat-controls { display: flex; gap: 6px; margin: 8px 0 18px; flex-wrap: wrap; }
+.chat-controls input { flex: 1; min-width: 160px; }
+#battle-overlay { position: fixed; top: 12px; left: 12px; width: 36%; max-height: 22vh; overflow-y: auto; background: #10192399; padding: 6px; pointer-events: none; }
+#battle { min-height: 120px; }
+@media (max-width: 760px) { .panels { grid-template-columns: 1fr; } }

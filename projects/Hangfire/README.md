@@ -141,3 +141,21 @@ Resource回復・manual Skip・Room・Team・Gear差・地形破壊・latency co
 Clientは100ms間隔でstateを取得。切断時もServer deadline/MAXは進行する。
 Serverはeffectの固定時間を待つが、非表示/停止したBrowserの描画完了通知は待たない。
 hosting実測・10年前の実機性能は未検証。Layer5へ自動で進まない。
+
+## Layer 5 Lobby / Room / Communication
+
+通常起動はLobbyモードです。外部package・DB・Redis不要。
+
+- Guest Loginでdisplay nameを送るとServerが一時session ID / Player IDを発行します。
+- Create Roomで1v1/2v2/3v3/4v4を選択し、invite codeで参加します。
+- 入室順でTeam A/Bを交互割当。正確な人数・同数TeamだけhostがBattle開始できます。
+- Roomは最大8人。Battle中の任意退出・途中参加・Team変更は不可です。
+- Host退出／切断時は最古の残存参加者へhost権限を移譲します。再ログイン復帰はありません。
+
+CommunicationはRoomから独立したServer routingです。LOBBY、ROOM、BATTLE_GLOBAL、
+BATTLE_TEAM、WHISPERを使用し、BATTLE_TEAMは同Teamだけへ配信します。
+WhisperはPlayer ID指定で所在に依存しません。短期memory履歴、500文字制限、
+10秒あたり5件のrate limitがあります。Voice、NPC takeover、永続profileは未実装です。
+Themeのdefault色はclient表示属性として定義し、channel判定には使用しません。
+
+Layer 5 evidence: `checkpoints/LAYER_05_2026-09-28.md`。
