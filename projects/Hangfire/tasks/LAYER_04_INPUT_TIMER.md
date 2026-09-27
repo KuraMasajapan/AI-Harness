@@ -208,3 +208,27 @@ The client cannot:
 - reset charge after timeout
 - start a second charge after timeout
 - submit power greater than MAX
+
+
+## 12. Power Charge Time
+
+Prototype tuning seed:
+
+- POWER_CHARGE_TO_MAX_SEC = 5.0
+
+Meaning:
+
+- holding Space from minimum power reaches MAX power in 5 seconds
+- power rises continuously in one direction
+- releasing before 5 seconds fires at the current proportional power
+- reaching 5 seconds while still holding Space auto-fires at MAX power
+
+This is an initial tuning value, not a permanent final balance value.
+
+Human playtest direction:
+
+- start at 5 seconds
+- if it feels too fast, increase charge time
+- accepted tuned value then becomes the new Source of Truth
+
+The value must be centralized in tuning/configuration and not hard-coded across multiple client/server locations.
