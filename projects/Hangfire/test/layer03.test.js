@@ -130,7 +130,7 @@ test('new state injection and stale fire reject without HP/shot/resource changes
   unchanged(game, 'FIRE', stale, /Stale/);
 });
 test('HTTP duplicate hit commits damage once, client result injection rejected, winner locked', async t => {
-  const server = createApp();
+  const server = createApp({ legacyTestMode: true });
   server.listen(0, '127.0.0.1'); await once(server, 'listening');
   t.after(() => new Promise(resolve => server.close(resolve)));
   const root = 'http://127.0.0.1:' + server.address().port;

@@ -2,8 +2,9 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
-import { TUNING, TURN_TUNING, HIT_TUNING } from './tuning.js';
+import { TUNING, TURN_TUNING, HIT_TUNING, INPUT_TUNING } from './tuning.js';
 import { createGame } from './game.js';
+import { createRealtimeGame } from './realtime.js';
 
 const assets = new Map([
   ['/', ['index.html', 'text/html; charset=utf-8']],
@@ -13,9 +14,10 @@ const assets = new Map([
 const clientRoot = new URL('../client/', import.meta.url);
 const MAX_BODY_BYTES = 1024;
 
-export function createApp({ wind = 0 } = {}) {
-  const game = createGame(wind);
-  const publicState = () => ({ ...game.snapshot(), tuning: TUNING, turnTuning: TURN_TUNING, hitTuning: HIT_TUNING });
+export function createApp({ wind = 0, legacyTestMode = false, clock } = {}) {
+  const game = legacyTestMode ? createGame(wind) : createRealtimeGame(wind, { clock });
+  const publicState = () => ({ ...game.snapshot(), tuning: TUNING, turnTuning: TURN_TUNING,
+    hitTuning: HIT_TUNING, inputTuning: INPUT_TUNING });
   const json = (res, code, data) => {
     res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify(data));
@@ -29,7 +31,7 @@ export function createApp({ wind = 0 } = {}) {
       if (req.method === 'GET' && req.url === '/api/state') {
         return json(res, 200, publicState());
       }
-      if (req.method === 'POST' && ['/api/fire', '/api/move'].includes(req.url)) {
+      if (req.method === 'POST' && (legacyTestMode ? ['/api/fire', '/api/move'] : ['/api/input']).includes(req.url)) {
         if (req.headers['content-type']?.split(';')[0] !== 'application/json') {
           return json(res, 415, { error: 'Use application/json.' });
         }
@@ -46,7 +48,8 @@ export function createApp({ wind = 0 } = {}) {
         let input;
         try {
           input = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-          game.act(req.url === '/api/fire' ? 'FIRE' : 'MOVE', input);
+          if (legacyTestMode) game.act(req.url === '/api/fire' ? 'FIRE' : 'MOVE', input);
+          else game.act(input);
         } catch (error) {
           return json(res, error.status ?? 400, { error: error.message });
         }
@@ -66,6 +69,12 @@ export function createApp({ wind = 0 } = {}) {
   });
   server.requestTimeout = 5000;
   server.headersTimeout = 5000;
+  let timer;
+  server.on('listening', () => {
+    if (!legacyTestMode) timer = setInterval(() => game.advance(), INPUT_TUNING.SERVER_TICK_MS);
+    timer?.unref();
+  });
+  server.on('close', () => clearInterval(timer));
   return server;
 }
 

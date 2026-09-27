@@ -4,11 +4,11 @@ export const TUNING = Object.freeze({
   WIND_MAX,
   WIND_MIN: -WIND_MAX,
   GRAVITY: 36,
-  POWER_MIN: 10,
+  POWER_MIN: 0,
   POWER_MAX: 100,
   PROJECTILE_SPEED_SCALE: 1.5,
-  ANGLE_MIN: 5,
-  ANGLE_MAX: 175,
+  ANGLE_MIN: 0,
+  ANGLE_MAX: 180,
   DEFAULT_ANGLE: 45,
   DEFAULT_POWER: 55,
   LAUNCH_X: 0,
@@ -42,4 +42,18 @@ export const HIT_TUNING = Object.freeze({
   DIRECT_HIT_DAMAGE: 60,
   BLAST_DAMAGE_MAX: 40,
   DAMAGE_FALLOFF: 1,
+});
+
+// Layer 4 input seeds. No Gear efficiency or future Turn Load coefficients.
+export const INPUT_TUNING = Object.freeze({
+  TURN_INPUT_LIMIT_SEC: 20,
+  POWER_CHARGE_TO_MAX_SEC: 5,
+  AIM_FULL_SWEEP_SEC: 5,
+  MOVE_SPEED_UNITS_PER_SEC: 5,
+  WORLD_MIN_X: -100,
+  WORLD_MAX_X: 200,
+  IMPACT_EFFECT_SEC: 0.3,
+  SERVER_TICK_MS: 50,
+  CLIENT_POLL_MS: 100,
+  TIMEOUT_ACTION_COST: TURN_TUNING.MOVE_ACTION_COST,
 });

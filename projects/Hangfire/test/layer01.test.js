@@ -50,7 +50,7 @@ test('invalid inputs and wind fail explicitly', () => {
   for (const wind of [NaN, Infinity, T.WIND_MAX + 1]) assert.throws(() => createApp({ wind }));
 });
 test('HTTP authority, rejection, static client and server-state persistence', async t => {
-  const server = createApp({ wind: T.WIND_MAX });
+  const server = createApp({ wind: T.WIND_MAX, legacyTestMode: true });
   server.listen(0, '127.0.0.1');
   await once(server, 'listening');
   t.after(() => new Promise(resolve => server.close(resolve)));
@@ -98,7 +98,7 @@ test('HTTP authority, rejection, static client and server-state persistence', as
 test('HTTP integration for zero, left and right server wind', async t => {
   const impacts = [];
   for (const wind of [T.WIND_MIN, 0, T.WIND_MAX]) {
-    const server = createApp({ wind });
+    const server = createApp({ wind, legacyTestMode: true });
     server.listen(0, '127.0.0.1');
     await once(server, 'listening');
     t.after(() => new Promise(resolve => server.close(resolve)));

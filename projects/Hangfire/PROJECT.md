@@ -19,13 +19,13 @@ Hangfireは、最大8人のターン制砲撃対戦ゲームの核を試作す�
 
 Project name: Hangfire
 
-Status: LAYER_3_COMPLETED
+Status: LAYER_4_COMPLETED
 
 Current phase:
 - Layer 1をPR #2でdevelopmentへmerge済み
-- Layer 3実装・Acceptance・Layer 1/2回帰・Validation完了
+- Layer 4実装・Acceptance・Layer 1〜3回帰・Validation完了（39/39 tests PASS）
 - Checkpoint保存済み、Human Playtest / Review待ち
-- Layer 4はHuman GOまで開始しない
+- Layer 5はHuman GOまで開始しない
 
 ---
 
@@ -75,19 +75,22 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
 - Layer 2「ターンと資源、手番遅れ」Completed
 - Layer 3「当たりと勝敗」Completed
-- CURRENT_LAYER is Layer 3 (completed; stopped)
+- Layer 4「操作と20秒制限」Completed
+- CURRENT_LAYER is Layer 4 (completed; stopped)
 - Node.js標準HTTP + Canvas 2Dの既存構成を維持
 - Serverがwind / projectile / currentPlayer / logicalTime / players / Resource / Action Costを保持
 - 固定2人、FIRE/MOVE、nextActionTime最小選択・ID順Tie-break
 - Clientは行動入力と表示のみ。MOVE後のServer位置から既存弾道で発射
-- Gameplay値はserver/tuning.jsに集中。Layer 1値変更なし、外部dependencyなし
+- Gameplay値はserver/tuning.jsに集中。採用仕様によりPower0..100/Aim0..180、外部dependencyなし
 - ServerがhitPoint / directHitRadius / explosion / damage / HP / elimination / winnerを決定
 - Clientは入力と表示のみ。DEV overlayでServer-owned collision anchorsを可視化
-- Layer 4以降は未実装
+- Server時計が20秒期限、5秒充電、連続move/aim、飛翔/着弾effect待ちを管理
+- Layer 2コスト互換を維持。4要素Turn Load、Gear効率差は未実装
+- Layer 5以降は未実装
 
 ### Current objective
-Layer 3をHumanがPlaytest / Reviewする。Layer 4準備は明示GO後。
-Current Task: tasks/LAYER_03_HIT_WIN.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_03_2026-09-27.md。
+Layer 4をHumanがPlaytest / Reviewする。Layer 5準備は明示GO後。
+Current Task: tasks/LAYER_04_INPUT_TIMER.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_04_2026-09-27.md。
 
 ---
 
@@ -106,6 +109,12 @@ Current Task: tasks/LAYER_03_HIT_WIN.md。起動・操作はREADME.md、Evidence
 ---
 
 ## 6. History
+
+### 2026-09-27 — Layer 4 completed
+- Human GOによりdevelopment 58999c9から開始。PRE-FLIGHT/PLAN/IMPLEMENT/BUILD/TEST/RUN完了
+- Server authorityで20秒、Space充電例外、MAX自動発射、連続移動/Aim、着弾effect待ちを追加
+- Syntax/build、39/39 tests、Browser操作確認PASS。Omission/Checkpoint/Final Close確認
+- Layer 5へ進まず停止。詳細: checkpoints/LAYER_04_2026-09-27.md
 
 ### 2026-09-27 — Layer 2 completed
 - Human指示によりPR #2をdevelopmentへmergeし、4d03e06から開始
@@ -193,31 +202,34 @@ Current Task: tasks/LAYER_03_HIT_WIN.md。起動・操作はREADME.md、Evidence
 
 ## 7. Current Work Snapshot
 
-CURRENT_LAYER: 3. 当たりと勝敗
+CURRENT_LAYER: 4. 操作と20秒制限
 
 Completed layers:
 - Layer 1 — 弾道と風（development merge済み）
 - Layer 2 — ターンと資源、手番遅れ
 - Layer 3 — 当たりと勝敗
+- Layer 4 — 操作と20秒制限
 
 Working:
 - 実装作業停止。Human Playtest / Review待ち
-- Branch: hangfire/layer-03-hit-win（development向け）
+- Branch: hangfire/layer-04-input-timer（development 58999c9基準）
 
 Known issues:
 - Layer 2のblocking issueなし
 - Balance値はAI-selected / Provisional
 - Hosting provider未選定、無料枠実測・10年前の実機性能は未検証
 - Stateはmemoryのみ、再起動でPlayer状態と最新shotを初期化
-- Resource回復/PASS/自動skipは未実装。枯渇で進行不能になる場合はServer再起動
+- Resource回復/manual Skipは未実装。枯渇時も20秒timeoutで手番は進むが再起動まで回復しない
 - 固定2人のhotseat選択は認証ではない。Room/Team/対戦運用なし
-- cross-tabの常時同期なし。「Server状態を更新」で再取得
-- Layer 3のbalance値はAI-selected / Provisional。terrain destruction、20秒turn timer、Room/Team、Gear差、Itemは未実装
+- Clientは100ms polling。latency compensation/切断復帰protocolは未実装
+- 共通移動速度・world境界・effect時間・timeout costはAI-selected / Provisional
+- 4要素Turn Load/回復式、terrain destruction、Room/Team、Gear差、Itemは未実装
+- Browser短押し/drag確認済み。長押し時間境界は自動テストで検証、Human操作感確認は継続
 
 Next action:
 - README.mdの手順でHuman Playtest / Review
-- 必要ならLayer 3範囲の修正・Tuningのみ行う
-- Humanの明示GO後にLayer 4準備。自動開始しない
+- 必要ならLayer 4範囲の修正・Tuningのみ行う
+- Humanの明示GO後にLayer 5準備。自動開始しない
 
 ---
 
