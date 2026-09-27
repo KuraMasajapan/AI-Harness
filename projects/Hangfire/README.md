@@ -33,3 +33,20 @@ Hangfireゲーム開発で、毎回のCodex指示を同じ形式で作るため�
 Codexへ渡すMarkdownを生成するだけ。
 
 Source of Truthとなる固定仕様を変更する場合は、フォーム内の固定仕様も明示的に更新する。
+
+
+## ASTRA実行入口
+
+Codex ASTRAでHangfire開発を開始・再開する場合は、
+
+`ASTRA_START.md`
+
+を最初のProject実行指示として使用する。
+
+ASTRAは各Layerで、
+
+`PRE-FLIGHT → PLAN → IMPLEMENT → VALIDATE → OMISSION CHECK → CHECKPOINT → PROJECT更新 → STOP`
+
+の順で進める。
+
+各Layer完了時の記録は `checkpoints/` に保存する。
