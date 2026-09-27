@@ -19,12 +19,12 @@ Hangfireは、最大8人のターン制砲撃対戦ゲームの核を試作す�
 
 Project name: Hangfire
 
-Status: PRE-DEVELOPMENT
+Status: READY_FOR_LAYER_1
 
 Current phase:
-- 開発環境と指示形式の整備
-- 参考資料の整理
-- Codex実装開始前
+- ASTRA実行ループ整備済み
+- PRE-FLIGHT / OMISSION CHECK / CHECKPOINT運用準備済み
+- Layer 1実装開始待ち
 
 ---
 
@@ -101,6 +101,14 @@ Codexによる実装開始前に、
 - 元コードやゲーム資産を直接持ち込まないClean-room方針を採用
 - `reference/` 以下に索引と抽象化資料を追加
 
+### 2026-09-27 — ASTRA execution loop
+- `ASTRA_START.md` を追加
+- PRE-FLIGHT CHECKを追加
+- OMISSION CHECKを追加
+- Layer終了時Checkpoint保存を追加
+- 状態更新はASTRAが自動実行可能とし、仕様変更はHuman Authorityに保持
+- `checkpoints/CHECKPOINT_TEMPLATE.md` を追加
+
 ---
 
 ## 7. Current Work Snapshot
@@ -111,17 +119,19 @@ Completed layers:
 - なし
 
 Working:
-- Codex開発開始前の準備
+- ASTRAによるLayer 1開始待ち
 
 Known issues:
 - 実装技術スタックの詳細はまだ固定していない
-- 最初のAcceptance Criteriaは未設定
 - 実ゲームコードはまだ存在しない
+- Layer 1の最低AcceptanceはASTRA_START.mdに定義済みだが、repository確認後に具体化する
 
 Next action:
-- Layer 1「弾道と風」の実装タスクを定義する
-- Acceptance Criteriaを設定する
-- CodexへPlanを出させる
+- ASTRA_START.mdから開始する
+- PRE-FLIGHT CHECKを実行する
+- repository状態を確認する
+- Layer 1「弾道と風」のPlanを作る
+- Acceptance Criteriaを具体化してLayer 1だけ実装する
 
 ---
 
