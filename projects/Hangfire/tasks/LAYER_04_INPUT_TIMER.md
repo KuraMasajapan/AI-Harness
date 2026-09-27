@@ -260,3 +260,76 @@ power = POWER_MIN + (POWER_MAX - POWER_MIN) * chargeRatio
 
 The server remains authoritative for the accepted charge duration and resulting power.
 Client animation should visually match this same linear relationship.
+
+
+## 14. Aim Angle Control
+
+Hangfire uses two complementary aim-input methods.
+
+### Keyboard Fine Adjustment
+
+Aim angle changes continuously while the aim key is held.
+
+Prototype tuning seed:
+
+- full aim range: 180 degrees
+- full-range traversal time: 5.0 seconds
+- constant angular speed
+- no acceleration / deceleration curve
+
+This means:
+
+```text
+AIM_RANGE_DEG = 180
+AIM_FULL_SWEEP_SEC = 5.0
+AIM_SPEED_DEG_PER_SEC = 36
+```
+
+Keyboard aim is intentionally slower and suited for fine adjustment.
+
+### Mouse Direct Adjustment
+
+The player may directly adjust aim by:
+
+1. left-clicking the active Gear
+2. holding the left mouse button
+3. moving the pointer to indicate the desired firing direction
+
+While dragging:
+
+- aim angle updates immediately from the pointer direction relative to the Gear / barrel pivot
+- this is a direct-positioning input, not a slow sweep
+- the player may use mouse input to move quickly near the desired angle
+- keyboard input may then be used for fine adjustment
+
+Intended interaction:
+
+```text
+mouse drag -> rough / fast angle placement
+keyboard hold -> slow precise adjustment
+```
+
+### Authority
+
+Client may calculate and display the requested angle interactively.
+
+Server remains authoritative for the accepted aim angle used for firing.
+
+Client may not submit values outside the legal aim range.
+
+### Timeout Interaction
+
+Normal aim input is only valid before the 20-second timeout.
+
+After timeout:
+
+- no new keyboard aim adjustment
+- no new mouse aim drag adjustment
+- only an already-active power charge may continue under the overtime rule
+
+### Tuning
+
+The 5-second / 180-degree sweep is a provisional prototype value.
+
+If Human playtest finds keyboard aiming too slow or too fast,
+adjust `AIM_FULL_SWEEP_SEC` while keeping the control model unchanged.
