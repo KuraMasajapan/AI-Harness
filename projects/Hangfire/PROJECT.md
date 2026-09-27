@@ -54,6 +54,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Reference directory created
 - Assault Gear research reference added
 - Clean-room boundary documented
+- Low-cost server architecture rule documented
 
 ### Development
 - Game implementation has not started yet
@@ -101,6 +102,13 @@ Codexによる実装開始前に、
 - 元コードやゲーム資産を直接持ち込まないClean-room方針を採用
 - `reference/` 以下に索引と抽象化資料を追加
 
+### 2026-09-27 — Low-cost server architecture
+- `SERVER_ARCHITECTURE.md` を追加
+- 無料枠または極低コストの小規模Serverを優先
+- Serverはauthoritative game stateに限定し、Visual処理はClientへ分離
+- 不要なDB / Redis / Queue / Microservice等を初期導入しない方針を追加
+- 1 processで複数Roomを扱える単純構成を優先
+
 ### 2026-09-27 — ASTRA execution loop
 - `ASTRA_START.md` を追加
 - PRE-FLIGHT CHECKを追加
@@ -123,6 +131,7 @@ Working:
 
 Known issues:
 - 実装技術スタックの詳細はまだ固定していない
+- Server runtime / hosting providerは未選定だが、無料枠または極低コスト前提
 - 実ゲームコードはまだ存在しない
 - Layer 1の最低AcceptanceはASTRA_START.mdに定義済みだが、repository確認後に具体化する
 
