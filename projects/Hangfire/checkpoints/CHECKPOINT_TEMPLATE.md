@@ -29,9 +29,9 @@ Status: PASS / FAIL / BLOCKED
 - [ ] Server authority preserved
 - [ ] Clean-room boundary preserved
 - [ ] No unapproved dependency
-- [ ] Known issues recorded
-- [ ] PROJECT.md updated
-- [ ] Repository state is sufficient for resume
+- [ ] Known issues identified for recording
+- [ ] Deliberately not implemented items identified
+- [ ] No unresolved omission is hidden
 
 ## Known Issues
 
@@ -43,5 +43,11 @@ None / details
 ## Repository Evidence
 Commit:
 Branch:
+
+## Final Close Check
+- [ ] This checkpoint is saved
+- [ ] PROJECT.md is updated
+- [ ] Checkpoint and PROJECT.md agree on Layer / Status / Next action
+- [ ] Repository state is sufficient for resume
 
 ## Next Action
