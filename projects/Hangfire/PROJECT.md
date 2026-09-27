@@ -368,3 +368,16 @@ Source of Truth:
 Sources:
 - `TURN_LOAD_MODEL.md`
 - `TUNING_POLICY.md`
+
+
+## Development parameter visibility
+
+Human-approved rule:
+
+- DEV / tuning mode shows all gameplay-relevant parameters and derived values
+- normal player mode hides internal debug/tuning values
+- Turn Load component values and resulting delay/recovery must be visible during playtest
+- future gameplay systems should join the same centralized DEV/Tuning surface
+
+Source:
+- `TUNING_POLICY.md`
