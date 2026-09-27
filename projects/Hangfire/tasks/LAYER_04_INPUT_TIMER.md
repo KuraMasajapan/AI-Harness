@@ -394,3 +394,30 @@ Movement must stop or be constrained by authoritative terrain / world rules.
 Layer 4 must not introduce stacked-lane or pseudo-3D movement.
 
 The Gear remains on the single-surface 2D terrain model defined for Hangfire.
+
+
+## 16. Simultaneous Move and Aim
+
+Movement and aim adjustment may be used at the same time during the normal turn window.
+
+Allowed examples:
+
+- hold movement key while holding aim-adjust key
+- move while adjusting aim with the mouse
+- stop movement and continue aiming
+- keep moving while fine-tuning aim
+
+These inputs remain independent client controls.
+
+Server authority still applies to:
+
+- accepted position
+- accepted aim angle
+- movement resource / cooling cost
+- timeout state
+
+At the 20-second timeout:
+
+- active movement stops
+- new aim input stops
+- only an already-active power charge may continue under the overtime rule
