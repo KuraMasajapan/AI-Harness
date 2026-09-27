@@ -44,6 +44,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - `GEAR_COLLISION.md`
 - `TUNING_POLICY.md`
 - `tasks/LAYER_01_PROJECTILE_WIND.md`
+- `tasks/LAYER_04_INPUT_TIMER.md`
 - `CODEX_TASK_FORM.html`
 - `reference/README.md`
 - `reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
@@ -94,7 +95,7 @@ Current Task: tasks/LAYER_03_HIT_WIN.md。起動・操作はREADME.md、Evidence
 1. 弾道と風
 2. ターンと資源、手番遅れ
 3. 当たりと勝敗
-4. 操作と15秒制限
+4. 操作と20秒制限
 5. 部屋（偶数開始、最大8、チーム）
 6. 機体2とアイテム2
 7. 見た目は最後
@@ -210,7 +211,7 @@ Known issues:
 - Resource回復/PASS/自動skipは未実装。枯渇で進行不能になる場合はServer再起動
 - 固定2人のhotseat選択は認証ではない。Room/Team/対戦運用なし
 - cross-tabの常時同期なし。「Server状態を更新」で再取得
-- Layer 3のbalance値はAI-selected / Provisional。terrain destruction、timer、Room/Team、Gear差、Itemは未実装
+- Layer 3のbalance値はAI-selected / Provisional。terrain destruction、20秒turn timer、Room/Team、Gear差、Itemは未実装
 
 Next action:
 - README.mdの手順でHuman Playtest / Review
@@ -304,3 +305,18 @@ StageはBackground / Destructible Terrain / Collision Representationを分離す
 Current consolidated Stage E design checkpoint:
 
 - `checkpoints/STAGE_E_DESIGN_SUMMARY_2026-09-27.md`
+
+
+## Layer 4 Timing Decision
+
+Human-approved Layer 4 rule:
+
+- turn input limit: 20 seconds
+- timeout normally forces turn end with no automatic shot
+- if Space-key power charging started before timeout, that charge may continue past 20 seconds
+- after timeout, only that active charge and its Space release remain valid
+- shot / impact / landing-effect resolution completes before turn end
+
+Source of Truth:
+
+- `tasks/LAYER_04_INPUT_TIMER.md`
