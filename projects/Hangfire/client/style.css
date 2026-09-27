@@ -17,3 +17,6 @@ form { margin: 14px 0; }
 /* Keep the state table readable in a narrow in-app Browser panel. */
 table { width: 100%; table-layout: fixed; }
 th, td { padding: 6px; overflow-wrap: anywhere; }
+.dev-control { display: flex; align-items: center; gap: 8px; margin: 12px 0; }
+.dev-control input { width: auto; }
+#match, #health, #hit-result { overflow-wrap: anywhere; }

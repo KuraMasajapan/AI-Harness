@@ -5,6 +5,7 @@ import { simulate } from '../server/projectile.js';
 import { TUNING as T } from '../server/tuning.js';
 import { createApp } from '../server/index.js';
 
+const ballistic = ({ resolution, ...shot }) => shot;
 const input = { angle: T.DEFAULT_ANGLE, power: T.DEFAULT_POWER };
 test('same input and zero wind give identical full trajectories', () => {
   assert.deepEqual(simulate(input, 0), simulate(input, 0));
@@ -68,11 +69,11 @@ test('HTTP authority, rejection, static client and server-state persistence', as
   const result = await fire(input);
   assert.equal(result.status, 200);
   const shot = (await result.json()).latestShot;
-  assert.deepEqual(shot, { id: 1, playerId: 'A', ...simulate(input, T.WIND_MAX) });
+  assert.deepEqual(ballistic(shot), { id: 1, playerId: 'A', ...simulate(input, T.WIND_MAX) });
   first.wind = T.WIND_MIN;
   shot.impact.x = -999;
   shot.path[0].x = -999;
-  assert.deepEqual((await get()).latestShot, { id: 1, playerId: 'A', ...simulate(input, T.WIND_MAX) });
+  assert.deepEqual(ballistic((await get()).latestShot), { id: 1, playerId: 'A', ...simulate(input, T.WIND_MAX) });
   for (const key of ['wind', 'impact', 'path', 'initial', 'tuning']) {
     assert.equal((await fire({ ...input, [key]: -999 })).status, 400);
   }

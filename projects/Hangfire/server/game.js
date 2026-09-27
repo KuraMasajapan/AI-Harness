@@ -1,5 +1,7 @@
-import { TUNING, TURN_TUNING as T } from './tuning.js';
+import { TUNING, TURN_TUNING as T, HIT_TUNING as H } from './tuning.js';
 import { simulate, validateInput, validateWind } from './projectile.js';
+
+import { syncAnchors, resolveShot, applyDamage, victory } from './collision.js';
 
 export class ActionError extends Error {
   constructor(message, status = 400) { super(message); this.status = status; }
@@ -7,20 +9,20 @@ export class ActionError extends Error {
 
 // Deterministic tie-break independent of insertion order or locale.
 export function selectNextPlayer(players) {
-  return [...players].sort((a, b) => a.nextActionTime - b.nextActionTime ||
+  return players.filter(p => !p.eliminated).sort((a, b) => a.nextActionTime - b.nextActionTime ||
     (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))[0];
 }
 
 export function createGame(wind) {
   validateWind(wind);
   let state = {
-    wind, revision: 0, logicalTime: 0, currentPlayer: 'A',
+    wind, revision: 0, logicalTime: 0, currentPlayer: 'A', matchState: 'active', winner: null,
     players: [
       { id: 'A', position: { x: T.PLAYER_A_X, y: TUNING.GROUND_Y },
         resource: T.RESOURCE_MAX, nextActionTime: 0 },
       { id: 'B', position: { x: T.PLAYER_B_X, y: TUNING.GROUND_Y },
         resource: T.RESOURCE_MAX, nextActionTime: 0 },
-    ],
+    ].map(p => syncAnchors({ ...p, hp: H.HP_MAX, eliminated: false })),
     latestShot: null, lastAction: null,
   };
   const snapshot = () => structuredClone(state);
@@ -39,6 +41,8 @@ export function createGame(wind) {
       }
       const actor = state.players.find(p => p.id === input.playerId);
       if (!actor) throw new ActionError('Unknown player.');
+      if (actor.eliminated) throw new ActionError('Player eliminated.', 409);
+      if (state.matchState === 'finished') throw new ActionError('Match finished.', 409);
       if (actor.id !== state.currentPlayer) throw new ActionError('Not current player.', 409);
       if (input.expectedRevision !== state.revision) throw new ActionError('Stale action. Refresh state.', 409);
       let resourceCost, actionCost, newX = actor.position.x, shot = null;
@@ -60,7 +64,7 @@ export function createGame(wind) {
       if (type === 'FIRE') {
         shot = {
           id: (state.latestShot?.id ?? 0) + 1, playerId: actor.id,
-          ...simulate({ angle: input.angle, power: input.power }, wind, actor.position.x),
+          ...resolveShot(simulate({ angle: input.angle, power: input.power }, wind, actor.position.x), state.players),
         };
       }
       // All validation/calculation completed before the single authoritative commit.
@@ -68,14 +72,23 @@ export function createGame(wind) {
       const next = snapshot();
       const updated = next.players.find(p => p.id === actor.id);
       updated.position.x = newX;
+      syncAnchors(updated);
       updated.resource -= resourceCost;
       updated.nextActionTime = state.logicalTime + actionCost;
-      if (shot) next.latestShot = shot;
+      if (shot) {
+        next.latestShot = shot;
+        applyDamage(next.players, shot.resolution);
+        Object.assign(next, victory(next.players));
+      }
       next.lastAction = { type, playerId: actor.id, resourceCost, actionCost,
         logicalTime: state.logicalTime, nextActionTime: updated.nextActionTime };
-      const selected = selectNextPlayer(next.players);
-      next.currentPlayer = selected.id;
-      next.logicalTime = selected.nextActionTime;
+      if (next.matchState === 'active') {
+        const selected = selectNextPlayer(next.players);
+        next.currentPlayer = selected.id;
+        next.logicalTime = selected.nextActionTime;
+      } else {
+        next.currentPlayer = null;
+      }
       next.revision++;
       state = next;
       return snapshot();

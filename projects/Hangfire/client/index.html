@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hangfire — Layer 2 Playground</title>
+  <title>Hangfire — Layer 3 Playground</title>
   <link rel="stylesheet" href="/style.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
 <main>
-  <h1>Hangfire <small>Layer 2 / ターンと資源、手番遅れ</small></h1>
+  <h1>Hangfire <small>Layer 3 / 当たりと勝敗</small></h1>
   <p>Serverが弾道と着弾を決定します。風はServer起動時の設定です。</p>
-    <p id="turn">Current Player: 接続中</p>
+    <p id="match">Match: 接続中</p><p id="health"></p><p id="hit-result">Hit: 未発射</p>
+  <p id="turn">Current Player: 接続中</p>
   <table><thead><tr><th>Player</th><th>X</th><th>Resource</th><th>nextActionTime</th></tr></thead><tbody id="players"></tbody></table>
   <p id="last-action">行動: なし</p>
   <p class="note">固定2人の試作。操作対象は要求者の選択です。Current PlayerはServerが決定します。</p>
@@ -30,6 +31,7 @@
   <p class="note">Resource回復・PASSは未実装。資源不足で進めない場合はServerを再起動してください。</p>
   <p id="wind">Wind: 接続中</p>
   <p id="status" role="status">Serverへ接続しています…</p>
+  <label class="dev-control"><input id="dev-hit" type="checkbox"> DEV: Hit Point / Radius / Explosionを表示</label>
   <canvas id="field" width="1000" height="480" aria-label="Serverから受信した弾道と平地"></canvas>
   <p id="impact">着弾: 未発射</p>
   <p class="note">座標: 右が +X、上が +Y。画面は受信した軌道全体に合わせて表示します。</p>

@@ -19,13 +19,13 @@ Hangfireは、最大8人のターン制砲撃対戦ゲームの核を試作す�
 
 Project name: Hangfire
 
-Status: LAYER_2_COMPLETED
+Status: LAYER_3_COMPLETED
 
 Current phase:
 - Layer 1をPR #2でdevelopmentへmerge済み
-- Layer 2実装・Acceptance・Layer 1回帰・Validation完了
+- Layer 3実装・Acceptance・Layer 1/2回帰・Validation完了
 - Checkpoint保存済み、Human Playtest / Review待ち
-- Layer 3はHuman GOまで開始しない
+- Layer 4はHuman GOまで開始しない
 
 ---
 
@@ -67,17 +67,20 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 ### Development
 - Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
 - Layer 2「ターンと資源、手番遅れ」Completed
-- CURRENT_LAYER is Layer 2 (completed; stopped)
+- Layer 3「当たりと勝敗」Completed
+- CURRENT_LAYER is Layer 3 (completed; stopped)
 - Node.js標準HTTP + Canvas 2Dの既存構成を維持
 - Serverがwind / projectile / currentPlayer / logicalTime / players / Resource / Action Costを保持
 - 固定2人、FIRE/MOVE、nextActionTime最小選択・ID順Tie-break
 - Clientは行動入力と表示のみ。MOVE後のServer位置から既存弾道で発射
 - Gameplay値はserver/tuning.jsに集中。Layer 1値変更なし、外部dependencyなし
-- Layer 3以降は未実装
+- ServerがhitPoint / directHitRadius / explosion / damage / HP / elimination / winnerを決定
+- Clientは入力と表示のみ。DEV overlayでServer-owned collision anchorsを可視化
+- Layer 4以降は未実装
 
 ### Current objective
-Layer 2をHumanがPlaytest / Reviewする。Layer 3準備は明示GO後。
-Current Task: tasks/LAYER_02_TURN_RESOURCE.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_02_2026-09-27.md。
+Layer 3をHumanがPlaytest / Reviewする。Layer 4準備は明示GO後。
+Current Task: tasks/LAYER_03_HIT_WIN.md。起動・操作はREADME.md、Evidenceはcheckpoints/LAYER_03_2026-09-27.md。
 
 ---
 
@@ -104,6 +107,13 @@ Current Task: tasks/LAYER_02_TURN_RESOURCE.md。起動・操作はREADME.md、Ev
 - syntax/build、Layer 1回帰7件＋Layer 2テスト8件、Browser runtime PASS
 - Omission Check PASS、Checkpoint保存。Layer 3へ進まず停止
 - 詳細: checkpoints/LAYER_02_2026-09-27.md
+
+### 2026-09-27 — Layer 3 completed
+- Layer 3 taskをCurrent Taskとして確認し、Server-authoritativeなHit Point / Damage / HP / Elimination / Winnerを追加
+- syntax/build、Layer 1回帰7件＋Layer 2回帰8件＋Layer 3テスト10件、Browser runtime PASS
+- Direct Hit、Splash、Miss、自爆、勝敗、終了後action拒否、payload改変耐性を確認
+- Omission Check PASS、Checkpoint保存。Layer 4へ進まず停止
+- 詳細: checkpoints/LAYER_03_2026-09-27.md
 
 ### 2026-09-27 — Layer 1 completed
 - development 5d8f021から既存状態確認、PRE-FLIGHT → PLAN → IMPLEMENTを実施
@@ -176,15 +186,16 @@ Current Task: tasks/LAYER_02_TURN_RESOURCE.md。起動・操作はREADME.md、Ev
 
 ## 7. Current Work Snapshot
 
-CURRENT_LAYER: 2. ターンと資源、手番遅れ
+CURRENT_LAYER: 3. 当たりと勝敗
 
 Completed layers:
 - Layer 1 — 弾道と風（development merge済み）
 - Layer 2 — ターンと資源、手番遅れ
+- Layer 3 — 当たりと勝敗
 
 Working:
 - 実装作業停止。Human Playtest / Review待ち
-- Branch: hangfire/layer-02-turn-resource（development向け）
+- Branch: hangfire/layer-03-hit-win（development向け）
 
 Known issues:
 - Layer 2のblocking issueなし
@@ -194,11 +205,12 @@ Known issues:
 - Resource回復/PASS/自動skipは未実装。枯渇で進行不能になる場合はServer再起動
 - 固定2人のhotseat選択は認証ではない。Room/Team/対戦運用なし
 - cross-tabの常時同期なし。「Server状態を更新」で再取得
+- Layer 3のbalance値はAI-selected / Provisional。terrain destruction、timer、Room/Team、Gear差、Itemは未実装
 
 Next action:
 - README.mdの手順でHuman Playtest / Review
-- 必要ならLayer 2範囲の修正・Tuningのみ行う
-- Humanの明示GO後にLayer 3準備。自動開始しない
+- 必要ならLayer 3範囲の修正・Tuningのみ行う
+- Humanの明示GO後にLayer 4準備。自動開始しない
 
 ---
 
