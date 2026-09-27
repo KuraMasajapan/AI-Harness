@@ -238,3 +238,75 @@ Initial playtest direction:
 
 The first development step does not require a polished editor UI.
 The requirement is that the data model is ready for one centralized tuning surface later.
+
+
+## Development Parameter Visibility
+
+During development / tuning mode, expose all gameplay-relevant parameters and derived values needed for balancing and validation.
+
+Principle:
+
+- normal player mode: hide internal tuning/debug values
+- development / tuning mode: show all relevant parameters
+- values shown to developers must reflect current authoritative state, not stale client guesses
+
+At minimum, DEV/Tuning visibility should cover:
+
+### Turn / Timing
+- turn elapsed time
+- remaining turn time
+- timeout state
+- overtime power-charge state
+
+### Power / Aim
+- current aim angle
+- current power
+- charge elapsed time
+- charge ratio
+- max-charge time
+- aim sweep speed
+
+### Movement / Cooling
+- current Cooling Resource
+- Cooling consumed this turn
+- movement speed
+- movement efficiency
+- actual accepted movement distance
+
+### Turn Load
+- timePoint
+- coolingUsedPoint
+- weaponLoadPoint
+- itemLoadPoint
+- final TURN_LOAD_SCORE
+- resulting next-action delay
+- resulting Cooling recovery
+
+### Weapon / Item
+- selected Weapon
+- Weapon load / cost
+- selected Item if any
+- Item additional load
+
+### Combat / Collision
+- HP
+- hitPoint
+- Direct Hit Radius
+- Explosion Center
+- Blast Radius
+- direct / splash damage result
+- elimination / winner state
+
+### Server / State
+- currentPlayer
+- logicalTime / nextActionTime
+- revision
+- authoritative position
+- authoritative accepted input values
+
+As later systems are added, their gameplay-affecting parameters should be included in the same DEV/Tuning surface.
+
+The goal is to make balance changes explainable and observable during playtest without requiring code inspection.
+
+This does not mean every value needs a polished editor control immediately.
+Display/readout comes first; editable controls may be added incrementally where useful.
