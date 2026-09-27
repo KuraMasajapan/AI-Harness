@@ -1,0 +1,13 @@
+Hangfire Stage E — Core Assets
+foreground.png: 1920x720 RGBA
+mask.png: 1920x720 grayscale binary
+mask values: [0, 255]
+
+Rule:
+- mask white (255) = destructible/collidable foreground
+- mask black (0) = empty space
+- foreground is unchanged from approved 1920x720 foreground
+- mask shape is based on the user's latest approved mask; only gray antialiasing was normalized to strict black/white
+
+SHA256 foreground.png: 883924d3b2e5299e0f0439ce53f99ca8ecbeae661c7b14aadfaeb778d8bee0a9
+SHA256 mask.png: ead63720929c29a6416f12383d7d5a8d37275bca747ca6698d549928cb14bca7
