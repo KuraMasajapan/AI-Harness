@@ -56,6 +56,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Clean-room boundary documented
 - Low-cost server architecture rule documented
 - Gear collision rule documented
+- Tuning seed policy documented
 
 ### Development
 - Game implementation has not started yet
@@ -103,6 +104,13 @@ Codexによる実装開始前に、
 - Assault Gearの公開資料を研究対象として整理
 - 元コードやゲーム資産を直接持ち込まないClean-room方針を採用
 - `reference/` 以下に索引と抽象化資料を追加
+
+### 2026-09-27 — Tuning seed policy
+- `TUNING_POLICY.md` を追加
+- Gameplay / Balance値を最初から集中管理する方針を固定
+- 本格的なTuning UI / Editorは主要Layer完成後まで作らない
+- 各Layerで必要な調整値だけ追加する
+- Human Playtestから相対変更を反映しやすい構造を採用
 
 ### 2026-09-27 — Gear collision rule
 - `GEAR_COLLISION.md` を追加
