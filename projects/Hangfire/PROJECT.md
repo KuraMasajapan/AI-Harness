@@ -59,7 +59,8 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 ### Development
 - Game implementation has not started yet
 - No gameplay layer is marked complete
-- CURRENT_LAYER is not yet fixed for implementation
+- CURRENT_LAYER is Layer 1「弾道と風」
+- Layer 1専用Taskを作成済み
 
 ### Current objective
 Codexによる実装開始前に、
@@ -102,6 +103,12 @@ Codexによる実装開始前に、
 - 元コードやゲーム資産を直接持ち込まないClean-room方針を採用
 - `reference/` 以下に索引と抽象化資料を追加
 
+### 2026-09-27 — Layer 1 task
+- `tasks/LAYER_01_PROJECTILE_WIND.md` を追加
+- 弾道・風・Server authorityのAcceptance Criteriaを定義
+- Layer 2以降を先回りしない範囲を明示
+- Layer 1完了時のCheckpoint / PROJECT更新条件を定義
+
 ### 2026-09-27 — Low-cost server architecture
 - `SERVER_ARCHITECTURE.md` を追加
 - 無料枠または極低コストの小規模Serverを優先
@@ -121,7 +128,7 @@ Codexによる実装開始前に、
 
 ## 7. Current Work Snapshot
 
-CURRENT_LAYER: 未指定
+CURRENT_LAYER: 1. 弾道と風
 
 Completed layers:
 - なし
@@ -139,8 +146,9 @@ Next action:
 - ASTRA_START.mdから開始する
 - PRE-FLIGHT CHECKを実行する
 - repository状態を確認する
+- `/projects/Hangfire/tasks/LAYER_01_PROJECTILE_WIND.md` を読む
 - Layer 1「弾道と風」のPlanを作る
-- Acceptance Criteriaを具体化してLayer 1だけ実装する
+- Acceptance Criteriaをrepository状態に合わせて具体化し、Layer 1だけ実装する
 
 ---
 
