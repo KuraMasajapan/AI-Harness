@@ -105,7 +105,7 @@ ASTRAは以下をHumanへの逐次確認なしで更新してよい。
 1. 弾道と風
 2. ターンと資源、手番遅れ
 3. 当たりと勝敗
-4. 操作と15秒制限
+4. 操作と20秒制限
 5. 部屋（偶数開始、最大8、チーム）
 6. 機体2とアイテム2
 7. 見た目は最後
@@ -337,3 +337,7 @@ PROJECT:
 をCurrent Taskとして読む。
 
 Current LayerとTaskが一致しない場合は実装を開始せず、BLOCKEDとして報告する。
+
+Layer 4開始時は、
+`/projects/Hangfire/tasks/LAYER_04_INPUT_TIMER.md`
+をCurrent Taskとして読む。
