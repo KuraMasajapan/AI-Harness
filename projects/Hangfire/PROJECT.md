@@ -355,3 +355,16 @@ Human-approved core rule:
 Source of Truth:
 
 - `TURN_LOAD_MODEL.md`
+
+
+## Turn Load Tuning Direction
+
+- Start Turn Load playtesting with elapsed turn time weighted more heavily
+- Treat all coefficients as provisional
+- Rebalance from Human playtest evidence
+- Keep Turn Load / Cooling recovery values centralized
+- Design data so a later unified tuning tool can adjust the model without gameplay-code rewrites
+
+Sources:
+- `TURN_LOAD_MODEL.md`
+- `TUNING_POLICY.md`
