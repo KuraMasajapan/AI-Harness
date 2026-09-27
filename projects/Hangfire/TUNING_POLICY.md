@@ -210,3 +210,31 @@ Tuning対象なら集中管理する。
 
 本格的なTuning UI / Editorの実装時期は、
 ゲームの主要Layer完成後に判断する。
+
+
+## Turn Load Tuning Tool Readiness
+
+Turn-order / Cooling-recovery tuning is a high-priority balance area.
+
+Implementation should keep all related values centralized so a later tuning tool can adjust them without changing gameplay code.
+
+At minimum, the future tool should be able to expose:
+
+- elapsed-time weight
+- Cooling-used weight
+- Weapon load values
+- Item load values
+- next-action delay scaling
+- Cooling recovery scaling
+- minimum / maximum recovery
+- Skip baseline
+
+Initial playtest direction:
+
+- start with elapsed time weighted more heavily
+- observe actual turn tempo and Skip usage
+- tune from playtest evidence
+- avoid hard-coding final balance early
+
+The first development step does not require a polished editor UI.
+The requirement is that the data model is ready for one centralized tuning surface later.
