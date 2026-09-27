@@ -104,9 +104,12 @@ The stage must support:
 
 Only the required number of spawn slots are selected for that match.
 
-At least 8 valid spawn candidates are required for an 8-player stage.
+Prototype standard:
 
-More than 8 candidate slots may be defined to increase opening variety.
+- Define exactly 12 valid spawn candidate slots
+- For 2 / 4 / 6 / 8 player matches, select only the required number
+- Selection is randomized server-side
+- 12 candidates provide opening variety without making stage authoring unnecessarily complex
 
 ---
 
@@ -187,3 +190,86 @@ Do not add:
 until explicitly specified.
 
 The first goal is a readable, destructible, scrollable battlefield with mixed random spawning.
+
+
+## 12. Camera Input
+
+Prototype desktop camera controls:
+
+### Edge Panning
+
+The player can move the visible area by moving the mouse cursor near the screen edges.
+
+- Left edge zone -> pan left
+- Right edge zone -> pan right
+- Top edge zone -> pan up
+- Bottom edge zone -> pan down
+
+The trigger zone should begin slightly before the absolute outermost pixel of the viewport.
+
+Do not require the cursor to touch the exact screen border.
+
+Use a small configurable edge margin so camera movement is easy and deliberate.
+
+Recommended concept:
+
+- EDGE_PAN_MARGIN
+- EDGE_PAN_SPEED
+
+Camera movement must remain inside world bounds.
+
+### Mouse Wheel Zoom
+
+Mouse wheel controls camera zoom.
+
+Purpose:
+
+- inspect nearby terrain before firing
+- notice small debris or tiny remaining terrain pixels
+- reduce accidental self-damage caused by firing into unnoticed terrain immediately in front of the Gear
+
+Zoom must be client-side visual camera behavior only.
+
+It must not alter:
+
+- projectile physics
+- collision
+- hitPoint
+- terrain state
+- damage
+- authoritative positions
+
+### Zoom Limits
+
+Zoom must have configurable minimum and maximum limits.
+
+The player must not be able to zoom so far out that gameplay readability or intended battlefield information is broken.
+
+The player must be able to zoom in enough to inspect terrain immediately around the active Gear.
+
+### Tiny Terrain Residue
+
+After terrain destruction, extremely small remaining terrain pixels may exist.
+
+This is acceptable prototype behavior.
+
+The system does not need to guarantee cleanup of every single isolated pixel.
+
+However:
+
+- collision representation must remain consistent with what the server considers solid
+- zoom allows the player to inspect suspicious terrain near the active Gear
+- no invisible collision should be intentionally introduced
+
+This behavior is accepted as part of the prototype destruction model.
+
+## 13. Camera Usability
+
+Camera controls should prioritize:
+
+1. quick inspection around the current Gear
+2. easy manual stage navigation
+3. projectile tracking
+4. low implementation complexity
+
+Do not add minimap, drag-to-pan, cinematic camera system, or advanced camera editor unless explicitly requested.
