@@ -88,6 +88,8 @@ ASTRAは以下をHumanへの逐次確認なしで更新してよい。
 - [ ] 現在Task / Acceptance Criteriaを確認した
 - [ ] 必要なSource of Truthだけ読んだ
 - [ ] `SERVER_ARCHITECTURE.md` を確認した
+- [ ] `GEAR_COLLISION.md` を確認した
+- [ ] `TUNING_POLICY.md` を確認した
 - [ ] 必要なreferenceだけ読んだ
 - [ ] DO_NOT_TOUCHを確認した
 - [ ] repositoryの現在コードを確認した
@@ -177,6 +179,8 @@ WRITE CHECKPOINT
   ↓
 UPDATE PROJECT.md
   ↓
+FINAL CLOSE CHECK
+  ↓
 STOP
 ```
 
@@ -197,11 +201,10 @@ Layer終了前に必ず確認する。
 - [ ] 未承認dependencyを追加していない
 - [ ] Known Issueを隠していない
 - [ ] Validation結果を記録した
-- [ ] Checkpointを保存した
-- [ ] PROJECT.mdを現在状態へ更新した
-- [ ] 次回、repositoryだけで現在位置を復元できる
+- [ ] 次回保存すべきKnown Issue / 未実装項目を洗い出した
+- [ ] 現時点の実装内容だけで次回再開に必要な情報を特定できる
 
-1つでもFAILなら完了扱いにしない。
+1つでもFAILなら実装修正または記録整理を行い、PASSするまでCheckpoint作成へ進まない。
 
 ---
 
@@ -255,7 +258,22 @@ Layer終了時に `PROJECT.md` の以下を更新する。
 
 ---
 
-## 12. Stop Condition
+## 12. FINAL CLOSE CHECK
+
+Checkpoint保存とPROJECT.md更新の後に、最後の整合確認を行う。
+
+- [ ] Checkpointが実際に保存されている
+- [ ] PROJECT.mdが現在状態へ更新されている
+- [ ] CheckpointとPROJECT.mdのLayer / Status / Next actionが矛盾していない
+- [ ] Completed扱いにした項目はAcceptance / ValidationのEvidenceを持つ
+- [ ] Known Issue / BLOCKED事項が消えていない
+- [ ] 次回、repositoryだけで現在位置を復元できる
+
+1つでもFAILならSTOPせず、記録を修正して再確認する。
+
+---
+
+## 13. Stop Condition
 
 次をすべて満たしたら停止する。
 
@@ -273,7 +291,7 @@ Layer終了時に `PROJECT.md` の以下を更新する。
 
 ---
 
-## 13. Resume Rule
+## 14. Resume Rule
 
 新しいsession、長い中断、Context圧縮後は、
 過去会話だけで続行しない。
@@ -290,7 +308,7 @@ Layer終了時に `PROJECT.md` の以下を更新する。
 
 ---
 
-## 14. Final Report
+## 15. Final Report
 
 Layer終了時は簡潔に次を返す。
 
