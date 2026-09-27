@@ -213,4 +213,18 @@ Layer 3値はserver/tuning.jsのHIT_TUNINGのみで調整する。
 HIT_POINT_Yを4→-2（6単位下げる）。変更後はbuild/testとServer再起動。
 DIRECT_HIT_DAMAGEとBLAST_DAMAGE_MAXは別々に調整できる。
 数値は正式Balanceではなく独自の暫定値。Layer 1・2の値は変更していない。
-地形破壊、落下、15秒Timer、Room/Team/Item等のLayer 4以降は未実装。
+地形破壊、落下、20秒Timer、Room/Team/Item等のLayer 4以降は未実装。
+
+
+## Layer 4 timing source
+
+操作とTurn制限の正式仕様:
+
+- `tasks/LAYER_04_INPUT_TIMER.md`
+
+Prototype rule:
+- 1 turn = 20 seconds
+- timeout normally forces turn end
+- an already-started Space-key power charge may continue beyond timeout
+- after timeout, only release-to-fire for that active charge remains valid
+- turn ends after projectile / impact effect resolution completes
