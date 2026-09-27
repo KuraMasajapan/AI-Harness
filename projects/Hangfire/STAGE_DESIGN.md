@@ -478,3 +478,37 @@ If ambient wind objects create excessive visual noise on a stage, reduce:
 - animation frequency
 
 before removing the wind readability concept entirely.
+
+
+## 20. Single-Surface 2D Terrain Rule
+
+Pattern E is the Stage layout Source of Truth.
+
+Hangfire stages use a single continuous 2D playable terrain surface.
+
+The player fights on the upper surface of one horizontally extended destructible landmass.
+
+Allowed:
+
+- hills
+- valleys
+- cliffs
+- arches / bridge-like visual structures that remain part of the same 2D terrain silhouette
+- varied elevation along the single terrain surface
+- gaps created by terrain destruction
+
+Do NOT design the stage as stacked platform levels or multiple vertically separated playable lanes.
+
+In particular:
+
+- no upper-floor / lower-floor alternate routes
+- no vertically layered platform combat
+- no floating independent walkable platforms
+- no spawn points on different depth planes
+- no pseudo-3D overlap that implies multiple playable surfaces
+
+The playable field should read as one continuous 2D terrain profile from left to right.
+
+This rule is independent from visual background parallax. Background layers may create depth, but only the foreground terrain surface is playable.
+
+The user-provided Pattern E reference image is the visual baseline for this stage geometry.
