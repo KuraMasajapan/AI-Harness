@@ -1,22 +1,11 @@
 <!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hangfire — Layer 4 Playground</title>
-<link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
-</head>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hangfire — Lobby</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
 <body><main>
-<h1>Hangfire <small>Layer 4 / 操作と20秒制限</small></h1>
-<p>A / D 長押しで移動、↑ / ↓ 長押しでAim。Gearを左ドラッグして直接Aim。</p>
-<p>Space長押しで充電、離すと発射。5秒でMAX自動発射。20秒前に始めた充電だけは延長できます。</p>
-<p id="match">接続中</p><p id="turn"></p>
-<label>Power <progress id="power" value="0" max="100"></progress></label><p id="readout"></p>
-<p id="health"></p><p id="hit-result"></p>
-<table><thead><tr><th>Player</th><th>X</th><th>Resource</th><th>nextActionTime</th></tr></thead><tbody id="players"></tbody></table>
-<p id="wind"></p><p id="status" role="status">Serverへ接続しています…</p>
-<canvas id="field" width="1000" height="480" aria-label="Serverから受信した弾道と平地"></canvas>
-<p id="impact"></p>
-<label class="dev-control"><input id="dev-hit" type="checkbox">DEV / Tuning: Server確定値・設定・衝突を表示</label>
-<pre id="dev-state" hidden></pre>
-<p class="note">固定2人hotseat。Resource回復は未実装。再起動で初期化します。</p>
+<h1>Hangfire <small>Lobby / Room / Team</small></h1>
+<section id="login"><h2>Guest Login</h2><form id="login-form"><label>Display name <input id="display-name" maxlength="32" required></label><button>Enter Lobby</button></form></section>
+<section id="lobby" hidden><p id="identity"></p><div class="panels"><section><h2>Lobby</h2><label>Team mode <select id="mode"><option>1v1</option><option>2v2</option><option>3v3</option><option>4v4</option></select></label><button id="create">Create Room</button><label>Invite code <input id="invite-code" maxlength="6"></label><button id="join">Join Room</button><div id="rooms"></div></section><section><h2>Lobby Chat</h2><div class="chat" id="lobby-chat"></div><div class="chat-controls"><select id="lobby-channel"><option>LOBBY</option><option>WHISPER</option></select><select id="lobby-target" hidden></select><input id="lobby-text" maxlength="500"><button id="lobby-send">Send</button></div></section></div></section>
+<section id="room" hidden><h2>Room <span id="room-code"></span></h2><p id="room-status"></p><div id="room-players"></div><button id="start">Start Battle</button><button id="leave">Leave Room</button><div class="chat" id="room-chat"></div><div class="chat-controls"><select id="room-channel"><option>ROOM</option><option>WHISPER</option></select><select id="room-target" hidden></select><input id="room-text" maxlength="500"><button id="room-send">Send</button></div></section>
+<section id="battle" hidden><div id="battle-overlay"></div><div class="chat-controls"><select id="battle-channel"><option>BATTLE_GLOBAL</option><option>BATTLE_TEAM</option><option>WHISPER</option></select><select id="battle-target" hidden></select><input id="battle-text" maxlength="500"><button id="battle-send">Send</button><button id="battle-side">Switch side</button></div><p class="note">Battle chat is server-routed. Opponent Team messages are never sent to this client.</p></section>
+<p id="status" role="status"></p>
 </main></body></html>
