@@ -72,3 +72,14 @@ ASTRAはBackend / Infrastructure変更前にこのファイルを確認する。
 を参照する。
 
 見た目と被弾判定を分離し、Hit Point + Direct Hit Radius方式を採用する。
+
+
+## Tuning
+
+Balance値の集中管理と将来のHuman Playtest調整方針は、
+
+`TUNING_POLICY.md`
+
+を参照する。
+
+本格的なEditorは後回しにし、各Layerで必要なTuning値だけを追加する。
