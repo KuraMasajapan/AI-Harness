@@ -24,9 +24,10 @@
 ### Hangfire
 5. `/projects/Hangfire/PROJECT.md`
 6. `/projects/Hangfire/README.md`
-7. 現在TaskがあればそのTask
-8. 必要なら `/projects/Hangfire/reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
-9. 境界確認が必要なら `/projects/Hangfire/reference/CLEAN_ROOM/DO_NOT_COPY.md`
+7. `/projects/Hangfire/SERVER_ARCHITECTURE.md`
+8. 現在TaskがあればそのTask
+9. 必要なら `/projects/Hangfire/reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
+10. 境界確認が必要なら `/projects/Hangfire/reference/CLEAN_ROOM/DO_NOT_COPY.md`
 
 ---
 
@@ -83,6 +84,7 @@ ASTRAは以下をHumanへの逐次確認なしで更新してよい。
 - [ ] Completed layersを確認した
 - [ ] 現在Task / Acceptance Criteriaを確認した
 - [ ] 必要なSource of Truthだけ読んだ
+- [ ] `SERVER_ARCHITECTURE.md` を確認した
 - [ ] 必要なreferenceだけ読んだ
 - [ ] DO_NOT_TOUCHを確認した
 - [ ] repositoryの現在コードを確認した
