@@ -55,6 +55,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Assault Gear research reference added
 - Clean-room boundary documented
 - Low-cost server architecture rule documented
+- Gear collision rule documented
 
 ### Development
 - Game implementation has not started yet
@@ -102,6 +103,15 @@ Codexによる実装開始前に、
 - Assault Gearの公開資料を研究対象として整理
 - 元コードやゲーム資産を直接持ち込まないClean-room方針を採用
 - `reference/` 以下に索引と抽象化資料を追加
+
+### 2026-09-27 — Gear collision rule
+- `GEAR_COLLISION.md` を追加
+- Gearの見た目と被弾判定を分離
+- Hit Point + small Direct Hit Radiusを正式採用
+- ExplosionはExplosion CenterからhitPointまでの距離で判定
+- Collision / DamageはServer authority
+- Layer 3で実装、Layer 6でGear別調整
+- DEV modeでHit Point / Radius可視化を行う方針を固定
 
 ### 2026-09-27 — Layer 1 task
 - `tasks/LAYER_01_PROJECTILE_WIND.md` を追加
