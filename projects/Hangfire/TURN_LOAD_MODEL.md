@@ -156,3 +156,52 @@ Human承認なしにLayer順を飛ばさない。
 - Skipの厳密な最小値
 
 これらはPlaytestで調整する。
+
+
+## 9. Initial Weighting Direction
+
+Human-approved tuning direction:
+
+Start playtesting with elapsed turn time weighted more heavily than the other Turn Load inputs.
+
+Initial design intent:
+
+- elapsed time: primary / heavier influence
+- Cooling Resource consumed: secondary
+- Weapon load: secondary
+- Item load: secondary
+
+Do not treat these weights as final balance.
+
+The purpose of the initial time-heavy weighting is to make the intended behavior clearly observable:
+
+- fast decisions should noticeably improve next-turn timing and Cooling recovery
+- slow turns should noticeably cost tempo
+
+After Human playtest, reduce or rebalance the time weight if it dominates too strongly.
+
+Exact coefficients remain TBD and must be changed through centralized tuning rather than scattered formulas.
+
+## 10. Turn Load Tuning Block
+
+The implementation should expose one centralized tuning block for the Turn Load model.
+
+Conceptual structure:
+
+```text
+TURN_LOAD_TUNING = {
+  timeWeight,
+  coolingUsedWeight,
+  weaponLoadWeight,
+  itemLoadWeight,
+  nextActionDelayScale,
+  recoveryScale,
+  recoveryMin,
+  recoveryMax,
+  skipBaseLoad
+}
+```
+
+Names may differ in code, but all related balance values should be adjustable from one place.
+
+A later Human-facing tuning tool may edit these values, but the first implementation should keep the underlying model simple and centralized.
