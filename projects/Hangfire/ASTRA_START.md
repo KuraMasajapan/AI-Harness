@@ -328,3 +328,12 @@ PROJECT:
 ```
 
 とする。
+
+
+## Current Layer Task Discovery
+
+現在の `PROJECT.md` がLayer 3開始を示す場合は、
+`/projects/Hangfire/tasks/LAYER_03_HIT_WIN.md`
+をCurrent Taskとして読む。
+
+Current LayerとTaskが一致しない場合は実装を開始せず、BLOCKEDとして報告する。
