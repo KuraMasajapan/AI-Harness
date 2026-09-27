@@ -50,3 +50,14 @@ ASTRAは各Layerで、
 の順で進める。
 
 各Layer完了時の記録は `checkpoints/` に保存する。
+
+
+## Server Architecture
+
+無料枠または極低コストの小規模Serverを前提とする構成方針は、
+
+`SERVER_ARCHITECTURE.md`
+
+を参照する。
+
+ASTRAはBackend / Infrastructure変更前にこのファイルを確認する。
