@@ -37,7 +37,12 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 
 現時点の主な入口:
 
+- `ASTRA_START.md`
 - `README.md`
+- `SERVER_ARCHITECTURE.md`
+- `GEAR_COLLISION.md`
+- `TUNING_POLICY.md`
+- `tasks/LAYER_01_PROJECTILE_WIND.md`
 - `CODEX_TASK_FORM.html`
 - `reference/README.md`
 - `reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
@@ -104,6 +109,14 @@ Codexによる実装開始前に、
 - Assault Gearの公開資料を研究対象として整理
 - 元コードやゲーム資産を直接持ち込まないClean-room方針を採用
 - `reference/` 以下に索引と抽象化資料を追加
+
+### 2026-09-27 — Execution loop dry-run
+- GitHub上のHangfire実行ループを文書ベースで通し確認
+- OMISSION CHECKがCheckpoint / PROJECT更新を先に要求する循環不整合を検出
+- OMISSION CHECKを実装内容・漏れ検出に限定
+- Checkpoint / PROJECT更新後にFINAL CLOSE CHECKを追加
+- Source of Truth入口一覧を現行ファイル構成へ更新
+- Layer 1の必読資料にGear collision / Tuning policyを明示
 
 ### 2026-09-27 — Tuning seed policy
 - `TUNING_POLICY.md` を追加
