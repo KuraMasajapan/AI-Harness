@@ -232,3 +232,31 @@ Human playtest direction:
 - accepted tuned value then becomes the new Source of Truth
 
 The value must be centralized in tuning/configuration and not hard-coded across multiple client/server locations.
+
+
+## 13. Power Gauge Curve
+
+The power gauge increases at a constant linear rate.
+
+- progression is linear
+- no acceleration
+- no deceleration
+- no easing curve
+- no stepped segments
+- no bounce / reverse
+
+Prototype mapping:
+
+- t = 0.0 sec -> minimum power
+- t = 2.5 sec -> 50% power range
+- t = 5.0 sec -> MAX power and automatic fire
+
+Conceptually:
+
+```text
+chargeRatio = clamp(heldSeconds / POWER_CHARGE_TO_MAX_SEC, 0, 1)
+power = POWER_MIN + (POWER_MAX - POWER_MIN) * chargeRatio
+```
+
+The server remains authoritative for the accepted charge duration and resulting power.
+Client animation should visually match this same linear relationship.
