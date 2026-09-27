@@ -265,6 +265,7 @@ Reference資料をHangfire仕様より優先しない。
 
 - `VISUAL_DIRECTION.md`
 - `GEAR_ANIMATION.md`
+- `GEAR_PERFORMANCE.md`
 - `STAGE_DESIGN.md`
 
 荒めの2D pixel artを採用。
@@ -320,3 +321,16 @@ Human-approved Layer 4 rule:
 Source of Truth:
 
 - `tasks/LAYER_04_INPUT_TIMER.md`
+
+
+## Gear Performance Direction
+
+- Scout move efficiency: 2.0x baseline
+- Heavy move efficiency: 1.0x baseline
+- Same cooling expenditure gives Scout approximately 2x Heavy movement distance
+- Per-Gear cooling-capacity maxima remain to be tuned
+- Implementation belongs to Layer 6; Layer 4 keeps the common control model
+
+Source of Truth:
+
+- `GEAR_PERFORMANCE.md`
