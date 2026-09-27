@@ -384,3 +384,97 @@ Camera movement and parallax together should make it immediately clear which lay
 - temporary visual effect
 
 The player should be able to understand the main field structure through motion contrast even when the stage contains visually dense industrial scenery.
+
+
+## 18. Experimental Three-Layer Parallax
+
+Prototype visual experiment:
+
+- Far Background
+- Mid Background
+- Playable Foreground Terrain
+
+The destructible / collision representation remains separate from these visual layers.
+
+This three-layer visual model is EXPERIMENTAL.
+
+Purpose:
+
+- improve depth perception
+- make playable terrain easier to distinguish through relative motion
+- preserve a modernized 2D artillery presentation
+
+However, visual simplicity has higher priority than extra depth.
+
+If playtesting shows that the mid-background layer makes the stage visually busy or makes terrain harder to read, the prototype may revert to a simpler two-layer presentation:
+
+- Background
+- Playable Foreground Terrain
+
+No gameplay rule depends on the presence of the mid-background layer.
+
+Recommended relative motion concept:
+
+- Playable Foreground: 1.0x
+- Mid Background: slower than foreground
+- Far Background: slower than mid background
+
+Exact parallax factors are tunable.
+
+## 19. Wind Readability Through Ambient Motion
+
+Wind must be readable not only through UI indicators but also through moving environmental objects.
+
+Examples by stage theme:
+
+- outdoor / ruins: leaves, dust, paper scraps, grass particles
+- desert / industrial: dust, ash, light debris
+- snow / ice: snow particles
+- space / low-atmosphere fantasy: small meteor fragments, drifting debris, particles
+
+These objects visually communicate:
+
+- wind direction
+- relative wind strength
+
+### Wind Motion Rule
+
+Ambient wind objects:
+
+- move consistently with the authoritative wind direction
+- move faster / denser / more strongly under stronger wind
+- remain visual-only
+- do not collide with Gear
+- do not damage terrain
+- do not affect projectile physics directly
+
+Projectile physics still uses the authoritative server wind value.
+
+### Readability Goal
+
+The player should be able to estimate wind direction and rough strength from the game scene even before reading a numeric indicator.
+
+The visual motion must not be so dense that it obscures:
+
+- Gear
+- projectile
+- terrain edge
+- spawn / team markers
+- damage state
+
+### Theme Independence
+
+The visual carrier of wind may change by stage theme, but the underlying wind system remains the same.
+
+Do not create different wind physics merely because a stage uses leaves, dust, snow, or space debris.
+
+### Optional Simplification
+
+If ambient wind objects create excessive visual noise on a stage, reduce:
+
+- count
+- size
+- opacity
+- animation frequency
+
+before removing the wind readability concept entirely.
