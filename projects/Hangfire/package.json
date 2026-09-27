@@ -1,0 +1,12 @@
+{
+  "name": "hangfire-layer-01",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server/index.js",
+    "check": "node scripts/check.js",
+    "build": "node scripts/build.js",
+    "test": "node --test"
+  }
+}

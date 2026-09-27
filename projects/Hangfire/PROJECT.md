@@ -19,12 +19,12 @@ Hangfireは、最大8人のターン制砲撃対戦ゲームの核を試作す�
 
 Project name: Hangfire
 
-Status: READY_FOR_LAYER_1
+Status: LAYER_1_COMPLETED
 
 Current phase:
-- ASTRA実行ループ整備済み
-- PRE-FLIGHT / OMISSION CHECK / CHECKPOINT運用準備済み
-- Layer 1実装開始待ち
+- Layer 1実装・Acceptance・Validation完了
+- Checkpoint保存済み、Human Playtest / Review待ち
+- Layer 2はHuman GOまで開始しない
 
 ---
 
@@ -64,19 +64,18 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Tuning seed policy documented
 
 ### Development
-- Game implementation has not started yet
-- No gameplay layer is marked complete
-- CURRENT_LAYER is Layer 1「弾道と風」
-- Layer 1専用Taskを作成済み
+- Layer 1「弾道と風」Completed
+- CURRENT_LAYER is Layer 1「弾道と風」(completed; stopped)
+- Node.js標準HTTP + Canvas 2DのPlaygroundを実装（AI-selected / Provisional）
+- Serverがwind / initial state / path / impact / latest shotの正本を保持
+- Clientはangle / power入力、発射要求と描画を担当
+- Gameplay値をserver/tuning.jsに集約、外部dependencyなし
+- Layer 2以降は未実装
 
 ### Current objective
-Codexによる実装開始前に、
-- 指示形式
-- Source of Truth
-- Reference boundary
-- Current-state tracking
-
-を明確にする。
+Layer 1をHumanがPlaytest / Reviewする。次Layerは明示GOまで実装しない。
+起動・風条件の比較はREADME.md、検証Evidenceは
+checkpoints/LAYER_01_2026-09-27.mdを参照。
 
 ---
 
@@ -95,6 +94,14 @@ Codexによる実装開始前に、
 ---
 
 ## 6. History
+
+### 2026-09-27 — Layer 1 completed
+- development 5d8f021から既存状態確認、PRE-FLIGHT → PLAN → IMPLEMENTを実施
+- 標準HTTP / Canvas、独自の暫定弾道値、Server authorityを実装
+- syntax / build / 7自動テスト / Browser操作によるruntime確認PASS
+- 無風再現性、Angle / Power変更、左右風の着弾変化、入力検証を確認
+- Omission Check PASS、Checkpoint保存。次Layerへ進まず停止
+- 詳細: checkpoints/LAYER_01_2026-09-27.md
 
 ### 2026-09-27 — Project structure
 - Hangfireをゲーム開発プロジェクト名として採用
@@ -162,24 +169,23 @@ Codexによる実装開始前に、
 CURRENT_LAYER: 1. 弾道と風
 
 Completed layers:
-- なし
+- Layer 1 — 弾道と風
 
 Working:
-- ASTRAによるLayer 1開始待ち
+- 実装作業停止。Human Playtest / Review待ち
+- Branch: hangfire/layer-01-projectile-wind（development向け）
 
 Known issues:
-- 実装技術スタックの詳細はまだ固定していない
-- Server runtime / hosting providerは未選定だが、無料枠または極低コスト前提
-- 実ゲームコードはまだ存在しない
-- Layer 1の最低AcceptanceはASTRA_START.mdに定義済みだが、repository確認後に具体化する
+- Layer 1のblocking issueなし
+- Balance値・最小技術構成はAI-selected / Provisional
+- Hosting provider未選定、無料枠実測・10年前の実機性能は未検証
+- Stateはmemoryのみ、再起動で最新shotは消える
+- 認証・rate limiting・Roomなしの共有Playground（対戦運用は未対応）
 
 Next action:
-- ASTRA_START.mdから開始する
-- PRE-FLIGHT CHECKを実行する
-- repository状態を確認する
-- `/projects/Hangfire/tasks/LAYER_01_PROJECTILE_WIND.md` を読む
-- Layer 1「弾道と風」のPlanを作る
-- Acceptance Criteriaをrepository状態に合わせて具体化し、Layer 1だけ実装する
+- README.mdの手順でHuman Playtest / Review
+- 必要ならLayer 1範囲の修正・Tuningのみ行う
+- Humanの明示GO後にLayer 2準備へ進む。自動開始しない
 
 ---
 
