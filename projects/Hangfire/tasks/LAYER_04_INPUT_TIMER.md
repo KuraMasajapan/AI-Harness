@@ -165,3 +165,46 @@ This spec does not yet define:
 - room synchronization for up to 8 players
 
 Those require later explicit decisions or the appropriate Layer.
+
+
+## 10. Power Gauge Direction
+
+The power gauge is one-way only.
+
+- Charge starts from minimum power
+- Holding Space increases power continuously toward maximum
+- The gauge does NOT bounce or reverse
+- The gauge does NOT oscillate between min and max
+
+When Space is released before maximum:
+
+- current gauge value is locked
+- shot fires at that power
+
+When the gauge reaches maximum while Space is still held:
+
+- charge stops at maximum
+- shot fires automatically at MAX power
+- the player does not need to release Space
+- no additional hold time is allowed beyond MAX
+
+This rule also applies during the overtime-charge exception.
+
+If the 20-second limit has already expired and the active charge reaches MAX:
+
+- the shot fires automatically at MAX power
+- projectile / impact / landing-effect resolution completes
+- then the turn ends
+
+## 11. Power Gauge Authority
+
+The client may animate the visual gauge.
+
+The server determines the accepted power value from authoritative charge timing / state.
+
+The client cannot:
+
+- hold beyond MAX to gain extra power
+- reset charge after timeout
+- start a second charge after timeout
+- submit power greater than MAX
