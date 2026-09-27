@@ -43,6 +43,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - `SERVER_ARCHITECTURE.md`
 - `GEAR_COLLISION.md`
 - `TUNING_POLICY.md`
+- `TURN_LOAD_MODEL.md`
 - `tasks/LAYER_01_PROJECTILE_WIND.md`
 - `tasks/LAYER_04_INPUT_TIMER.md`
 - `CODEX_TASK_FORM.html`
@@ -334,3 +335,23 @@ Source of Truth:
 Source of Truth:
 
 - `GEAR_PERFORMANCE.md`
+
+
+## Turn Load / Cooling Recovery
+
+Human-approved core rule:
+
+- Next-turn order and Cooling recovery derive from one Turn Load Score
+- Turn Load Score combines:
+  - elapsed turn time
+  - Cooling Resource consumed
+  - selected Weapon load
+  - Item additional load
+- lower score -> earlier next turn
+- lower score -> larger Cooling recovery
+- immediate manual Skip -> earliest / highest-recovery class
+- exact formulas and weights remain Tuning TBD
+
+Source of Truth:
+
+- `TURN_LOAD_MODEL.md`
