@@ -164,6 +164,30 @@ Layer 1では地形破壊を実装しない。
 
 ---
 
+## Tuning Seed
+
+Layer 1では本格的なTuning UIを作らない。
+
+ただし、以下のようなGameplay値は集中管理する。
+
+- WIND_MAX
+- WIND_MIN
+- GRAVITY
+- POWER_MIN
+- POWER_MAX
+- PROJECTILE_SPEED_SCALE
+
+同じ意味の値を実装コード中へ散在させない。
+
+Human Playtest後に、
+「最大風力を現在の70%にする」のような相対変更を容易に反映できる構造にする。
+
+必要ならDEV-onlyでWind vectorや現在値を表示してよい。
+
+詳細は `/projects/Hangfire/TUNING_POLICY.md` を参照する。
+
+---
+
 ## Performance
 
 このLayerでも低負荷を優先する。
