@@ -273,3 +273,56 @@ Camera controls should prioritize:
 4. low implementation complexity
 
 Do not add minimap, drag-to-pan, cinematic camera system, or advanced camera editor unless explicitly requested.
+
+
+## 14. Bottom Death Boundary
+
+The lower edge of the playable map is a lethal fall boundary.
+
+If a Gear falls below the defined world-bottom / death line:
+
+- that Gear is eliminated
+- it does not continue moving below the map
+- the server resolves the elimination authoritatively
+
+This rule applies regardless of remaining HP unless a future explicit rule says otherwise.
+
+### Spawn Safety
+
+Initial spawn candidates MUST NOT be placed too close to the bottom death boundary.
+
+Each spawn candidate must:
+
+- sit on stable terrain
+- have enough vertical safety margin below the Gear
+- avoid locations where a small movement or minor terrain loss would cause an unavoidable immediate fall
+- remain usable for both Scout and Heavy Gear
+
+Define a configurable minimum safety distance such as:
+
+- SPAWN_BOTTOM_SAFE_MARGIN
+
+The exact value may be tuned later.
+
+### Stage Authoring Rule
+
+When creating future stages:
+
+- do not use very low ledges as normal initial spawn candidates
+- reserve risky lower ledges for mid-match movement / combat choices
+- keep initial spawn slots on stable, readable platforms
+- ensure terrain destruction near a spawn does not make an immediate unavoidable fall likely at match start
+
+The visual stage art and spawn guide must respect this rule.
+
+## 15. Fall and Terrain Consistency
+
+A Gear may fall because:
+
+- supporting terrain is destroyed
+- movement carries it off a ledge
+- gameplay displacement causes it to lose support
+
+The server determines whether the Gear crosses the lethal bottom boundary.
+
+Camera zoom or visual scaling must not change the death boundary.
