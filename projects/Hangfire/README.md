@@ -61,3 +61,14 @@ ASTRAは各Layerで、
 を参照する。
 
 ASTRAはBackend / Infrastructure変更前にこのファイルを確認する。
+
+
+## Gear Collision
+
+機体への当たり判定の正式ルールは、
+
+`GEAR_COLLISION.md`
+
+を参照する。
+
+見た目と被弾判定を分離し、Hit Point + Direct Hit Radius方式を採用する。
