@@ -84,8 +84,23 @@ projects/Hangfire/stages/pattern_e/
 └─ wind_object.png
 ```
 
-Only `stage.json` is being committed now.
-The image assets are future implementation assets.
+### Approved core assets — 2026-09-28
+
+The Human-approved Stage E core images are placed in `stages/pattern_e/`:
+
+- `foreground.png`: approved foreground terrain, 1920 × 720 RGBA.
+- `mask.png`: matching terrain mask, 1920 × 720, 8-bit grayscale.
+  White (255) means destructible / collidable terrain; black (0) means empty space.
+
+These files are the core asset Source of Truth. `stage.json` already references them
+through `assets.foreground` and `assets.collisionMask`, relative to its directory.
+Checksums are recorded in the accompanying `ASSET_MANIFEST.txt` and were verified
+against both files. The mask contains only 0 and 255 across all 1,382,400 pixels.
+No image regeneration, processing or resizing was performed during verification.
+
+This confirmation covers only the foreground and mask. Other asset names above
+remain separate references; this does not approve them or implement stage loading,
+terrain destruction, spawn snapping or Layer 5.
 
 ## Tuning Rule
 
