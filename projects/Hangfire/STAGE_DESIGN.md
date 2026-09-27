@@ -512,3 +512,13 @@ The playable field should read as one continuous 2D terrain profile from left to
 This rule is independent from visual background parallax. Background layers may create depth, but only the foreground terrain surface is playable.
 
 The user-provided Pattern E reference image is the visual baseline for this stage geometry.
+
+
+## 21. Pattern E Numeric Baseline
+
+The provisional implementation-ready numeric baseline is documented in:
+
+- `STAGE_E_BASELINE.md`
+- `stages/pattern_e/stage.json`
+
+These values are prototype defaults and may be tuned after playtest without changing the core Stage E design principles.
