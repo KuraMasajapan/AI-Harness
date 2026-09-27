@@ -1,0 +1,83 @@
+{
+  "id": "pattern_e",
+  "status": "PROVISIONAL_PROTOTYPE_BASELINE",
+  "version": "0.1",
+  "world": {
+    "width": 1920,
+    "height": 720,
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+    "deathY": 720
+  },
+  "camera": {
+    "edgePanMarginPx": 48,
+    "edgePanSpeedPxPerSec": 600,
+    "zoomMin": 0.8,
+    "zoomMax": 2.0,
+    "zoomDefault": 1.0,
+    "followActiveGear": true,
+    "followProjectile": true
+  },
+  "parallax": {
+    "foregroundFactor": 1.0,
+    "midBackgroundFactor": 0.55,
+    "farBackgroundFactor": 0.25,
+    "midBackgroundEnabled": true,
+    "experimental": true
+  },
+  "windVisual": {
+    "enabled": true,
+    "layer": "between_foreground_and_mid_background",
+    "carrierType": "single_reusable_object",
+    "mirrorForOppositeDirection": true,
+    "baseVisualSpeedPxPerSec": 80,
+    "speedScaleWithWindStrength": true,
+    "densityScaleWithWindStrength": true,
+    "collision": false,
+    "gameplayEffect": false
+  },
+  "terrain": {
+    "model": "single_surface_2d",
+    "destructible": true,
+    "backgroundDestructible": false,
+    "tinyResidueAllowed": true,
+    "authoritativeCollisionSeparateFromVisual": true
+  },
+  "spawn": {
+    "candidateCount": 12,
+    "randomizedServerSide": true,
+    "teamSeparatedBySide": false,
+    "bottomSafeMarginPx": 180,
+    "minHorizontalSpacingPx": 110,
+    "points": [
+      { "id": 1,  "x": 130,  "y": 430 },
+      { "id": 2,  "x": 265,  "y": 395 },
+      { "id": 3,  "x": 405,  "y": 455 },
+      { "id": 4,  "x": 545,  "y": 375 },
+      { "id": 5,  "x": 690,  "y": 420 },
+      { "id": 6,  "x": 835,  "y": 350 },
+      { "id": 7,  "x": 985,  "y": 410 },
+      { "id": 8,  "x": 1135, "y": 365 },
+      { "id": 9,  "x": 1285, "y": 440 },
+      { "id": 10, "x": 1435, "y": 385 },
+      { "id": 11, "x": 1585, "y": 425 },
+      { "id": 12, "x": 1740, "y": 390 }
+    ],
+    "note": "Y coordinates are provisional guides and must be snapped to the final terrain surface/mask during stage asset authoring."
+  },
+  "assets": {
+    "backgroundFar": "background_far.png",
+    "backgroundMid": "background_mid.png",
+    "foreground": "foreground.png",
+    "collisionMask": "mask.png",
+    "windObject": "wind_object.png"
+  },
+  "rules": {
+    "fallBelowDeathYEliminatesGear": true,
+    "spawnOnStableTerrainOnly": true,
+    "spawnInsideTerrainForbidden": true,
+    "spawnNearBottomDeathBoundaryForbidden": true,
+    "floatingPlatformsForbidden": true,
+    "stackedPlayableLanesForbidden": true
+  }
+}
