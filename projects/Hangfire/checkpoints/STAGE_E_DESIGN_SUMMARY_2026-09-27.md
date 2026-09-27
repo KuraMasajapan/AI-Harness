@@ -203,8 +203,17 @@ projects/Hangfire/stages/pattern_e/
 └─ wind_object.png
 ```
 
-At present, `stage.json` exists as the provisional numeric baseline.
-Image assets are not yet committed as final implementation assets.
+Repository state confirmed on 2026-09-28:
+
+- `stage.json` remains the provisional numeric baseline.
+- PR #6 merged `foreground.png`, `mask.png`, `background_far.png` and
+  `background_mid.png` into `development`; all four images are Git-tracked.
+- `foreground.png` and `mask.png` are 1920 × 720.
+- `mask.png` contains only 0 and 255 and is the authoritative asset for terrain
+  collision / destruction: white (255) is terrain; black (0) is empty space.
+- `background_far.png` and `background_mid.png` are visual-only, not collision sources.
+
+This records asset availability only; it does not start Layer 5 or terrain destruction implementation.
 
 ## 11. Prototype Numeric Baseline
 
