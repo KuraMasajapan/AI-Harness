@@ -66,6 +66,7 @@ Hangfireの仕様は、Project配下の正式な仕様・タスク資料を優�
 - Visual direction adopted
 - Gear animation specification adopted
 - Team HP visibility: own + allies visible; enemy exact HP hidden
+- Stage spawn: mixed random spawn; teams are not separated left/right
 
 ### Development
 - Layer 1「弾道と風」Completed、PR #2 merge済み（development 4d03e06）
@@ -250,6 +251,7 @@ Reference資料をHangfire仕様より優先しない。
 
 - `VISUAL_DIRECTION.md`
 - `GEAR_ANIMATION.md`
+- `STAGE_DESIGN.md`
 
 荒めの2D pixel artを採用。
 速機は明るい白〜青＋オレンジ系アクセント。
