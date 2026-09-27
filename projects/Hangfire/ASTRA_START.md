@@ -25,10 +25,11 @@
 5. `/projects/Hangfire/PROJECT.md`
 6. `/projects/Hangfire/README.md`
 7. `/projects/Hangfire/SERVER_ARCHITECTURE.md`
-8. 現在TaskがあればそのTask
+8. `/projects/Hangfire/GEAR_COLLISION.md`
+9. 現在TaskがあればそのTask
    - 初回は `/projects/Hangfire/tasks/LAYER_01_PROJECTILE_WIND.md`
-9. 必要なら `/projects/Hangfire/reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
-10. 境界確認が必要なら `/projects/Hangfire/reference/CLEAN_ROOM/DO_NOT_COPY.md`
+10. 必要なら `/projects/Hangfire/reference/CLEAN_ROOM/HANGFIRE_MAPPING.md`
+11. 境界確認が必要なら `/projects/Hangfire/reference/CLEAN_ROOM/DO_NOT_COPY.md`
 
 ---
 
