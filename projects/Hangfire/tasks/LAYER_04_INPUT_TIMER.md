@@ -333,3 +333,64 @@ The 5-second / 180-degree sweep is a provisional prototype value.
 
 If Human playtest finds keyboard aiming too slow or too fast,
 adjust `AIM_FULL_SWEEP_SEC` while keeping the control model unchanged.
+
+
+## 15. Movement Control
+
+Movement uses continuous key-hold input.
+
+Prototype behavior:
+
+- hold left movement key -> Gear moves continuously left
+- hold right movement key -> Gear moves continuously right
+- release key -> movement stops immediately
+- no fixed-step / per-press movement
+- no tile-based movement
+- no click-to-move
+
+Movement is intended to feel direct and analog-like even though input is digital.
+
+### Movement Speed
+
+Movement speed must be centralized in tuning.
+
+Example concept:
+
+```text
+MOVE_SPEED_UNITS_PER_SEC
+```
+
+Scout and Heavy may later use different movement tuning in Layer 6.
+
+Layer 4 should preserve the current common movement model unless the current task explicitly authorizes Gear-specific values.
+
+### Resource Use
+
+Existing Layer 2 movement resource rules remain authoritative.
+
+Continuous movement should consume resource according to actual accepted movement distance / duration rather than arbitrary keypress count.
+
+Exact implementation must preserve:
+
+- server-authoritative position
+- server-authoritative resource cost
+- no client-side teleporting
+- no free movement from repeated input events
+
+### Timeout Interaction
+
+Normal movement is valid only before the 20-second turn deadline.
+
+At timeout:
+
+- active movement stops
+- further movement input is rejected for that turn
+- only an already-started power charge may continue under the overtime rule
+
+### Terrain / Boundary Interaction
+
+Movement must stop or be constrained by authoritative terrain / world rules.
+
+Layer 4 must not introduce stacked-lane or pseudo-3D movement.
+
+The Gear remains on the single-surface 2D terrain model defined for Hangfire.
