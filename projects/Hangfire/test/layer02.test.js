@@ -110,7 +110,7 @@ test('insufficient MOVE rejected when some resource remains; stale same-player r
 });
 
 test('HTTP guards both routes, concurrent duplicate atomicity, invalid transport unchanged', async t => {
-  const server = createApp();
+  const server = createApp({ legacyTestMode: true });
   server.listen(0, '127.0.0.1');
   await once(server, 'listening');
   t.after(() => new Promise(resolve => server.close(resolve)));
