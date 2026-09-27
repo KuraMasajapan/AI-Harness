@@ -281,44 +281,44 @@ SERVER_COST_IMPACT:
 
 ### Startup
 
-- [ ] Serverを起動できる
-- [ ] Clientを起動できる
-- [ ] BrowserでPlaygroundを表示できる
+- [x] Serverを起動できる
+- [x] Clientを起動できる
+- [x] BrowserでPlaygroundを表示できる
 
 ### Input
 
-- [ ] angleを変更できる
-- [ ] powerを変更できる
-- [ ] fire requestをServerへ送れる
+- [x] angleを変更できる
+- [x] powerを変更できる
+- [x] fire requestをServerへ送れる
 
 ### Projectile
 
-- [ ] 無風状態で同じ入力から同じ結果を得られる
-- [ ] angle変更で着弾位置が変化する
-- [ ] power変更で着弾位置が変化する
-- [ ] 右風で無風時より着弾点が右方向へ変化する
-- [ ] 左風で無風時より着弾点が左方向へ変化する
+- [x] 無風状態で同じ入力から同じ結果を得られる
+- [x] angle変更で着弾位置が変化する
+- [x] power変更で着弾位置が変化する
+- [x] 右風で無風時より着弾点が右方向へ変化する
+- [x] 左風で無風時より着弾点が左方向へ変化する
 
 ### Authority
 
-- [ ] Windの正本がServerにある
-- [ ] Projectile結果の正本がServerにある
-- [ ] Clientは着弾結果を決定しない
-- [ ] Client表示だけを改変してもServer結果は変更されない
+- [x] Windの正本がServerにある
+- [x] Projectile結果の正本がServerにある
+- [x] Clientは着弾結果を決定しない
+- [x] Client表示だけを改変してもServer結果は変更されない
 
 ### Scope
 
-- [ ] Layer 2以降を実装していない
-- [ ] 地形破壊を実装していない
-- [ ] 不要なDB / Redis / Queueを追加していない
-- [ ] 不要なVisual処理をServerへ追加していない
+- [x] Layer 2以降を実装していない
+- [x] 地形破壊を実装していない
+- [x] 不要なDB / Redis / Queueを追加していない
+- [x] 不要なVisual処理をServerへ追加していない
 
 ### Quality
 
-- [ ] syntax / type check PASS
-- [ ] build PASS
-- [ ] relevant test PASS
-- [ ] runtime確認 PASS
+- [x] syntax / type check PASS
+- [x] build PASS
+- [x] relevant test PASS
+- [x] runtime確認 PASS
 
 ---
 
@@ -345,13 +345,13 @@ Test frameworkを大規模に導入しない。
 
 加えて確認する。
 
-- [ ] Layer 1 Taskを読んだ
-- [ ] Server architecture ruleを読んだ
-- [ ] Gear collision ruleを読んだ
-- [ ] Tuning policyを読んだ
-- [ ] Clean-room mappingを読んだ
-- [ ] repository existing stateを確認した
-- [ ] 今回の技術選択が必要最小限である
+- [x] Layer 1 Taskを読んだ
+- [x] Server architecture ruleを読んだ
+- [x] Gear collision ruleを読んだ
+- [x] Tuning policyを読んだ
+- [x] Clean-room mappingは今回のHuman指示（必要時のみ）により不要。DO_NOT_COPYで境界確認
+- [x] repository existing stateを確認した
+- [x] 今回の技術選択が必要最小限である
 
 ---
 
@@ -361,12 +361,12 @@ Test frameworkを大規模に導入しない。
 
 加えて確認する。
 
-- [ ] WindのServer authorityを維持した
-- [ ] ProjectileのServer authorityを維持した
-- [ ] 次LayerのTurn systemを追加していない
-- [ ] 地形破壊を追加していない
-- [ ] Reference作品の固有数値・式・UIをコピーしていない
-- [ ] Low-cost server方針を破っていない
+- [x] WindのServer authorityを維持した
+- [x] ProjectileのServer authorityを維持した
+- [x] 次LayerのTurn systemを追加していない
+- [x] 地形破壊を追加していない
+- [x] Reference作品の固有数値・式・UIをコピーしていない
+- [x] Low-cost server方針を破っていない
 
 ---
 
@@ -446,3 +446,8 @@ PROJECT:
 ```
 
 を追加する。
+
+## Execution result — 2026-09-27
+
+Layer 1 completed. Evidence: ../checkpoints/LAYER_01_2026-09-27.md.
+Layer 2 not started. Human GO required.
