@@ -1,6 +1,9 @@
 name: Repomix Pilot Snapshot
 
 on:
+  push:
+    branches:
+      - repomix/pilot-snapshot
   workflow_dispatch:
 
 permissions:
