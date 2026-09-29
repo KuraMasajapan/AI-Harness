@@ -16,8 +16,8 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - レバレッジなし
 - 基準戦略: EMA + RSI
 - 為替分離: USD/JPYを使ったFX-aware検証を実装済み
-- ローカルテスト: 26/26 PASS（2026-09-29確認）
-
+- Local AI Sandbox: Sokudan CPU統合済み（売買影響OFF）
+- ローカルテスト: 33/33 PASS（2026-09-30確認）\n
 ## Source of Truth
 bitbank公式API仕様:
 https://github.com/bitbankinc/bitbank-api-docs
