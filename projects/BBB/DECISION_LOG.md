@@ -53,6 +53,7 @@
 - BTC/JPYにはUSD/JPYの為替影響が混ざることを重要課題として採用。
 - 判断用にBTC/JPY ÷ USD/JPYを利用できるFX-aware構造を実装。
 - 実際の損益評価はJPY建てで維持する。
+- 異なるSignal Basisで学習したChampionを、同じ参照データ無しにPaperへ流用しない。
 
 ### Security
 - API Key / SecretをChatGPTへ貼らない。
@@ -64,3 +65,14 @@
 ### Logging policy
 - BBBの重要決定・仕様変更・検証状態をAI-Harness内にも継続記録する。
 - 秘密情報と大量の実取引生ログはHarnessへ直接保存せず、要約・Checkpoint・検証結果を記録する。
+
+### v0.6 immediate-use direction
+- 「すぐ使えるものに仕上げて渡し、そこから学習を続ける」方針を採用。
+- Windows向けDesktop Research Consoleを追加。
+- BBB_START.batから初回環境構築と起動を行う。
+- Desktop shortcut installerを追加。
+- native shellが使えない場合はlocalhost browser consoleへfallbackする。
+- 継続学習をアプリ起動中に定期実行できるようにする。
+- 新しいトレード手法を一つずつ手作業で差し替えるのではなく、複数Strategy Familyを同じ検証Gateで競わせるStrategy Labを採用。
+- v0.6の初期Strategy Family: EMA+RSI / EMA Cross / Breakout / Mean Reversion / Momentum。
+- Strategy Lab ChampionはPaperへ自動反映可能。ただしLiveへは自動反映しない。
