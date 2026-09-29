@@ -93,6 +93,8 @@ Local AI停止時にもBBB本体が継続可能なFallbackを持つ。
 
 詳細:
 - checkpoints/BBB_FUNDAMENTAL_SENTINEL_CONCEPT_2026-09-29.md
+- agents/Local-AI/README.md
+- Harness-wide model catalog: ../../agents/Local-AI/README.md
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
