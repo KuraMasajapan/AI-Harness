@@ -87,3 +87,18 @@
 - Ctrl+Kコマンドパレット、Toast通知、キーボード画面切替を追加。
 - 監査Snapshot JSON書き出しを追加。
 - UIの便利さを積極的に追求する一方、Live安全境界は別管理し固定する。
+
+### Fundamental Sentinel concept
+- GPUなしPCで動く小型Local AIを、BBB専属のファンダメンタルズ文脈整理エージェントとして検討する。
+- 情報取得はAPI / deterministic collectorで行い、Local AIへWeb探索そのものを主担当させない。
+- Actual / Forecast / Previous等の単純な数値判定はアルゴリズムで処理する。
+- Local AIはニュース・声明文の要約、カテゴリ分類、hawkish/dovish、risk-on/risk-off、BTC/JPY関連度、重要度、不確実性等の文脈処理を担当する。
+- Local AIはBUY / SELLを直接命令しない。固定Schemaの構造化信号だけを返し、BBB側のFundamental Policy EngineがRisk調整等へ変換する。
+- 判断不能時のUNKNOWN / no_overrideを正式な正常系として扱う。
+- Local AI停止時もBBB本体を継続可能にし、AIなしFallbackを持たせる。
+- 初期はFundamental AI Sandboxとして観測専用運用し、売買へ反映しない。
+- Local AI判断とその後のBTC/JPY・USD/JPY等をFundamental Confidence Ledgerへ蓄積し、カテゴリ別にAIの有効性を検証する。
+- 将来Cloud AIを利用する場合も常時稼働させず、Local AIで処理困難な案件のみエスカレーションする。
+- BBBの利益が確認できた場合、利益の一部を高度なCloud AI利用費へ回すSelf-Funding AI構想を検討する。
+- 機能進化と実資金運用信頼性は引き続き別軸で評価する。
+
