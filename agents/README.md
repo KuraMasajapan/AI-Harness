@@ -55,6 +55,31 @@ The directory name identifies the AI environment, not necessarily a specific mod
 
 ディレクトリ名はAIの実行環境を識別するものであり、必ずしも特定のモデルバージョンを意味しない。
 
+## 3.1 Local AI Registry
+## 3.1 ローカルAI登録
+
+Local AI candidates are cataloged under `agents/Local-AI/`.
+
+ローカルAI候補は `agents/Local-AI/` に共通カタログとして登録する。
+
+Current differentiation:
+
+| Candidate | Class | Differentiating feature | Prefer when |
+|---|---|---|---|
+| `sokudan-ja-310m` | Typed classifier / decision model | Free-text generationを避け、choice / bool / score等の限定出力と確率を扱う | ラベルが事前定義でき、高速・軽量・パース安定性を優先 |
+| `PLaMo-Embedding-1B` | Embedding model | 日本語文章を意味ベクトル化し、類似検索・重複除去・クラスタリングに使う | 「過去の何と似ているか」を探す、検索・記憶照合 |
+| `TinySwallow-1.5B-Instruct` | Small generative LLM | 固定分類では扱いにくい曖昧な文章を柔軟に解釈・要約できる | 文脈が複雑、Schemaが可変、分類器の低confidence時のFallback |
+
+Selection principle:
+
+- 構造化数値はAIではなく deterministic code。
+- 固定ラベルならclassifier。
+- 類似検索ならembedding。
+- 曖昧な文章理解だけsmall generative LLM。
+- Localで不足する高価値案件のみCloud AIを検討。
+
+詳細・制約・Sourceは `agents/Local-AI/README.md` を参照する。
+
 
 ## 4. AI-Specific Configuration
 ## 4. AI固有設定
