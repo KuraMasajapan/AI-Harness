@@ -19,11 +19,11 @@ Status: CURRENT
 bitbank Public Market Data
 -> CCXT
 -> OHLCV / Dataset
--> Snapshot Builder
--> EMA / RSI Strategy
+-> Strategy Lab / Research Champion
 -> Risk Manager
 -> Paper Broker
 -> Journal / Report / State
+-> Desktop Research Console
 
 ## 4. Implemented research capabilities
 - Live Paper Trade
@@ -40,12 +40,29 @@ bitbank Public Market Data
 - time-series fold validation
 - unseen holdout validation
 - USD/JPYを用いたFX-aware signal normalization
+- Multi-strategy Strategy Lab
+- Continuous Research Cycle
+- Desktop Research Console
 
 ## 5. Learning definition
 現時点の「学習」はLLMやニューラルネットの再学習ではない。
-EMA/RSI等の戦略パラメータ候補を過去データで評価し、未見Holdoutを含む時系列検証を通してResearch Championを更新する方式とする。
+過去データで複数戦略とパラメータ候補を評価し、未見Holdoutを含む時系列検証を通してResearch Championを更新する方式とする。
 
 安全上、リスク上限は自動学習の対象から外す。
+
+## 5.1 Strategy Lab families
+v0.6では以下をChallengerとして比較可能:
+- EMA + RSI
+- EMA Cross
+- Breakout
+- Mean Reversion
+- Momentum
+
+同一Datasetの再利用だけでは昇格させない。
+前回昇格後に十分な新規ローソク足が増えていない場合も昇格を止める。
+
+Paper Runnerは互換性のあるResearch Championを新しいローソク足ごとに再読込し、Paperへ反映する。
+Research ChampionからLive実資金への自動昇格は禁止。
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -54,6 +71,8 @@ BTC/JPY ÷ USD/JPY
 
 を用いた為替中立化を利用可能とする。
 一方、実際の約定・損益・資産評価はJPY建てのまま保持する。
+
+FX中立シグナルで学習したChampionは、Paper側に同一参照フィードが無い限り自動適用しない。
 
 将来は Global BTC/USD reference を追加し、
 - 世界BTC価格
@@ -76,7 +95,23 @@ https://github.com/bitbankinc/bitbank-api-docs
 - Private認証: HMAC-SHA256
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
-## 8. Live trading boundary
+## 8. Desktop operation
+v0.6はWindows向け起動導線を持つ。
+- BBB_START.bat
+- native desktop shell: pywebview
+- native shellが利用できない場合: localhost browser console fallback
+- Desktop shortcut installer
+
+UIから可能:
+- Paper start/stop
+- single paper decision
+- Kill Switch
+- Strategy Lab / Research Cycle
+- continuous research
+- Research Champion確認
+- recent decision log確認
+
+## 9. Live trading boundary
 CURRENTでは実注文機能を有効にしない。
 
 Liveへ進む前に最低限:
@@ -98,11 +133,13 @@ Liveへ進む前に最低限:
 
 を満たす。
 
-## 9. Credentials
+## 10. Credentials
 API Key / API Secret はAI-Harnessへ保存しない。
 秘密情報はローカル実行環境のSecretとしてのみ扱う。
 
-## 10. Current test state
+## 11. Current test state
 2026-09-29:
-- local pytest: 26 passed
+- local pytest: 28 passed
+- 5 strategy families smoke tested
+- desktop UI asset present
 - live order path: NOT IMPLEMENTED
