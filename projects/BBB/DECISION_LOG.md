@@ -102,3 +102,18 @@
 - BBBの利益が確認できた場合、利益の一部を高度なCloud AI利用費へ回すSelf-Funding AI構想を検討する。
 - 機能進化と実資金運用信頼性は引き続き別軸で評価する。
 
+## 2026-09-30
+
+### v0.8 Local AI Sandbox implementation
+- Sokudan `GeneLab/sokudan-ja-310m` をBBB Local AIの最初の実装候補としてSandbox統合。
+- Local AIは別ローカルプロセスで起動し、BBBと同時にauto-start可能とする。
+- GPUなしWindows PCを前提にCPU実行。
+- Local AI導入は任意。未導入・Loading・Offline・ErrorでもBBB本体は継続。
+- Local AI分類結果は現時点でPaper / Live / Riskへ一切接続しない。
+- 固定Schema: category / importance / BTC relevance / FX relevance / risk bias。
+- 自由生成ではなく、Sokudanのtyped outputを利用する。
+- Sandbox結果はローカル `data/local_ai/fundamental_sandbox.jsonl` に保存。
+- Risk & SystemへLocal AI状態カードと自己テストを追加。
+- 一回限りの `BBB_LOCAL_AI_SETUP.bat` と診断BATを追加。
+- v0.8 package local test: 33 pytest PASS / compileall PASS / UI JS syntax PASS。
+
