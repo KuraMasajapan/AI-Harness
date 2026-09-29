@@ -74,5 +74,16 @@
 - native shellが使えない場合はlocalhost browser consoleへfallbackする。
 - 継続学習をアプリ起動中に定期実行できるようにする。
 - 新しいトレード手法を一つずつ手作業で差し替えるのではなく、複数Strategy Familyを同じ検証Gateで競わせるStrategy Labを採用。
-- v0.6の初期Strategy Family: EMA+RSI / EMA Cross / Breakout / Mean Reversion / Momentum。
+- 初期Strategy Family: EMA+RSI / EMA Cross / Breakout / Mean Reversion / Momentum。
 - Strategy Lab ChampionはPaperへ自動反映可能。ただしLiveへは自動反映しない。
+
+### v0.7 UI / UX Lab
+- Human決定: 過剰でもよいので便利機能とUI/UXを積極的に試す。
+- Desktop Research ConsoleをTrading Research Cockpitへ拡張。
+- 4画面構成: Dashboard / Training Lab / History / Risk & System。
+- bitbank Public OHLCVのローソク足表示を追加。
+- Paper資産曲線、Return、Max Drawdown、判断回数、Fill、Error等の可視化を追加。
+- Strategy Familyカード、Research Jobタイムライン、Operational Readinessを追加。
+- Ctrl+Kコマンドパレット、Toast通知、キーボード画面切替を追加。
+- 監査Snapshot JSON書き出しを追加。
+- UIの便利さを積極的に追求する一方、Live安全境界は別管理し固定する。
