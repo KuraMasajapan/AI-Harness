@@ -1,6 +1,6 @@
 # BBB CURRENT SPEC
 
-Updated: 2026-09-29
+Updated: 2026-09-30
 Status: CURRENT
 
 ## 1. Project identity
@@ -46,6 +46,9 @@ bitbank Public Market Data
 - Paper analytics / equity curve
 - read-only public OHLCV chart
 - audit snapshot export
+- Local AI Fundamental Sentinel Sandbox
+- Sokudan auto-start / health state
+- Local AI self-test / local sandbox ledger
 
 ## 5. Learning definition
 現時点の「学習」はLLMやニューラルネットの再学習ではない。
@@ -74,7 +77,7 @@ Research ChampionからLive実資金への自動昇格は禁止。
 - Multi Timeframe
 - Volume / Orderbook
 
-## 5.2 Future Fundamental Sentinel (CONCEPT / NOT IMPLEMENTED)
+## 5.2 Fundamental Sentinel (SANDBOX IMPLEMENTED / NO TRADE INFLUENCE)
 GPUなしPC上の小型Local AIを、ファンダメンタルズ情報の文脈整理専用エージェントとして利用する構想を採用候補とする。
 
 責務分離:
@@ -88,13 +91,17 @@ Local AIはBUY / SELLを直接決定しない。
 UNKNOWN / no_overrideを正式な正常出力として許可する。
 Local AI停止時にもBBB本体が継続可能なFallbackを持つ。
 
-初期導入はFundamental AI Sandboxとし、AI分類を売買へ反映せず、分類結果とその後の相場を記録して精度を検証する。
+v0.8でSokudanを用いたFundamental AI Sandboxを実装した。
+Local AIは別ローカルプロセスとしてBBB起動時に自動起動可能で、GPUなしCPU運用を前提とする。
+Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
+現在の分類結果は売買へ反映せず、Sandbox Ledgerへ保存して精度を検証する。
 将来はFundamental Confidence Ledgerでカテゴリ別の有効性を評価し、十分な実績がある範囲だけRisk調整へ利用する。
 
 詳細:
 - checkpoints/BBB_FUNDAMENTAL_SENTINEL_CONCEPT_2026-09-29.md
 - agents/Local-AI/README.md
 - Harness-wide model catalog: ../../agents/Local-AI/README.md
+- checkpoints/BBB_V0.8_LOCAL_AI_SANDBOX_2026-09-30.md
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -128,7 +135,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.7はWindows向けTrading Research Cockpitを持つ。
+v0.8はWindows向けTrading Research CockpitとLocal AI Sandboxを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -188,8 +195,11 @@ API Key / API Secret はAI-Harnessへ保存しない。
 秘密情報はローカル実行環境のSecretとしてのみ扱う。
 
 ## 12. Current test state
-2026-09-29:
-- local pytest: 29 passed
-- UI JavaScript syntax check PASS
+2026-09-30:
+- local pytest: 33 passed
+- Python compileall: PASS
+- UI JavaScript syntax check: PASS
 - 5 strategy families available
+- Local AI Sandbox: IMPLEMENTED
+- Local AI trade influence: OFF
 - live order path: NOT IMPLEMENTED
