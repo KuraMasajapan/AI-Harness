@@ -35,3 +35,12 @@ API仕様に関しては上記公式リポジトリを一次資料とする。
 - `CURRENT_SPEC.md`: 現在の設計・安全境界
 - `DECISION_LOG.md`: Human決定と重要判断
 - `checkpoints/`: 節目ごとの状態記録
+
+## AI発展構想
+BBBのAI拡張は `agents/` 配下で管理する。
+
+- `agents/README.md`: BBB向けAI発展マップ
+- `agents/Local-AI/README.md`: Fundamental Sentinel向けLocal AIの役割・Benchmark・段階導入
+- Harness全体のモデル情報は `../../agents/Local-AI/README.md` をSource of Truthとして参照する
+
+BBBではモデル情報を重複保存せず、プロジェクト固有の「何に使うか」「どのGateを通すか」だけを記録する。
