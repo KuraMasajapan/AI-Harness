@@ -74,6 +74,26 @@ Research ChampionからLive実資金への自動昇格は禁止。
 - Multi Timeframe
 - Volume / Orderbook
 
+## 5.2 Future Fundamental Sentinel (CONCEPT / NOT IMPLEMENTED)
+GPUなしPC上の小型Local AIを、ファンダメンタルズ情報の文脈整理専用エージェントとして利用する構想を採用候補とする。
+
+責務分離:
+- API / deterministic collector: 経済指標、ニュース、時刻、数値、本文を取得
+- deterministic rules: Actual/Forecast差分など単純な数値判定
+- Local AI: ニュース・声明の要約、分類、文脈理解、関連度・重要度・不確実性評価
+- Fundamental Policy Engine: AI出力を決定論的なBBB指示へ変換
+- Risk Manager / Live Gate: 最終安全権限
+
+Local AIはBUY / SELLを直接決定しない。
+UNKNOWN / no_overrideを正式な正常出力として許可する。
+Local AI停止時にもBBB本体が継続可能なFallbackを持つ。
+
+初期導入はFundamental AI Sandboxとし、AI分類を売買へ反映せず、分類結果とその後の相場を記録して精度を検証する。
+将来はFundamental Confidence Ledgerでカテゴリ別の有効性を評価し、十分な実績がある範囲だけRisk調整へ利用する。
+
+詳細:
+- checkpoints/BBB_FUNDAMENTAL_SENTINEL_CONCEPT_2026-09-29.md
+
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
 
