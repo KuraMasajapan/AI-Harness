@@ -23,7 +23,7 @@ bitbank Public Market Data
 -> Risk Manager
 -> Paper Broker
 -> Journal / Report / State
--> Desktop Research Console
+-> Desktop Trading Research Cockpit
 
 ## 4. Implemented research capabilities
 - Live Paper Trade
@@ -42,7 +42,10 @@ bitbank Public Market Data
 - USD/JPYを用いたFX-aware signal normalization
 - Multi-strategy Strategy Lab
 - Continuous Research Cycle
-- Desktop Research Console
+- Desktop Trading Research Cockpit
+- Paper analytics / equity curve
+- read-only public OHLCV chart
+- audit snapshot export
 
 ## 5. Learning definition
 現時点の「学習」はLLMやニューラルネットの再学習ではない。
@@ -51,7 +54,7 @@ bitbank Public Market Data
 安全上、リスク上限は自動学習の対象から外す。
 
 ## 5.1 Strategy Lab families
-v0.6では以下をChallengerとして比較可能:
+以下をChallengerとして比較可能:
 - EMA + RSI
 - EMA Cross
 - Breakout
@@ -63,6 +66,13 @@ v0.6では以下をChallengerとして比較可能:
 
 Paper Runnerは互換性のあるResearch Championを新しいローソク足ごとに再読込し、Paperへ反映する。
 Research ChampionからLive実資金への自動昇格は禁止。
+
+今後のStrategy候補:
+- MACD
+- Bollinger
+- ATR Regime
+- Multi Timeframe
+- Volume / Orderbook
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -96,22 +106,40 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.6はWindows向け起動導線を持つ。
+v0.7はWindows向けTrading Research Cockpitを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
 - Desktop shortcut installer
 
-UIから可能:
-- Paper start/stop
-- single paper decision
+UI:
+- Dashboard
+- Training Lab
+- History
+- Risk & System
+- Public OHLCV candlestick chart
+- Paper equity curve
+- Return / Max DD / decision / fill / error metrics
+- Research Champion表示
+- Strategy Family cards
+- Research Job timeline
+- Operational Readiness
 - Kill Switch
-- Strategy Lab / Research Cycle
-- continuous research
-- Research Champion確認
-- recent decision log確認
+- Toast notifications
+- Ctrl+K command palette
+- keyboard navigation
+- audit snapshot export
 
-## 9. Live trading boundary
+## 9. UI / UX policy
+便利機能・UI/UXは過剰気味でも積極的に試す。
+ただし以下はUI実験から独立した固定境界:
+- PAPER / LIVEを視覚的に明確に分離
+- 停止操作を簡単にする
+- Live操作は単一クリックで開始させない
+- Private SecretをUIやログへ表示しない
+- Research ChampionからLiveへの自動昇格を禁止
+
+## 10. Live trading boundary
 CURRENTでは実注文機能を有効にしない。
 
 Liveへ進む前に最低限:
@@ -133,13 +161,13 @@ Liveへ進む前に最低限:
 
 を満たす。
 
-## 10. Credentials
+## 11. Credentials
 API Key / API Secret はAI-Harnessへ保存しない。
 秘密情報はローカル実行環境のSecretとしてのみ扱う。
 
-## 11. Current test state
+## 12. Current test state
 2026-09-29:
-- local pytest: 28 passed
-- 5 strategy families smoke tested
-- desktop UI asset present
+- local pytest: 29 passed
+- UI JavaScript syntax check PASS
+- 5 strategy families available
 - live order path: NOT IMPLEMENTED
