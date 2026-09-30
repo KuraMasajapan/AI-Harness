@@ -1,7 +1,7 @@
 # BBB Local AI
 
-Status: CONCEPT / BENCHMARK CANDIDATES
-Updated: 2026-09-29
+Status: SANDBOX IMPLEMENTED / BENCHMARK IN PROGRESS
+Updated: 2026-10-01
 
 ## Source of model information
 
@@ -156,3 +156,35 @@ Cloud use should be measured against cost and actual value added.
 ## Related BBB documents
 - ../../CURRENT_SPEC.md
 - ../../checkpoints/BBB_FUNDAMENTAL_SENTINEL_CONCEPT_2026-09-29.md
+
+
+## v0.8.3 real-data input
+
+The first real external input path is implemented:
+
+```text
+BOJ News RSS / BOJ Statistics RSS
+        ↓
+Fundamental Data Collector
+        ↓
+dedupe / bootstrap limiting
+        ↓
+sokudan-ja-310m
+        ↓
+Sandbox Ledger + UI
+```
+
+Federal Reserve Press RSS is also collected, but remains `COLLECT ONLY` because the current Sokudan path is treated as Japanese-only.
+
+Operational details:
+- default poll interval: 15 minutes
+- initial historical-feed flood protection: classify latest 2 per source
+- Local AI not READY: queue classification and retry later
+- no trade influence
+- no Risk mutation
+- no Live authority
+
+Source endpoints:
+- https://www.boj.or.jp/rss/whatsnew.xml
+- https://www.boj.or.jp/rss/statistics.xml
+- https://www.federalreserve.gov/feeds/press_all.xml
