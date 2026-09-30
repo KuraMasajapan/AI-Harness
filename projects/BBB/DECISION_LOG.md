@@ -170,3 +170,11 @@
 - Fundamental情報はSandbox観測専用。Paper / Live / Riskへの影響OFF。
 - v0.8.3 package validation: 38 pytest PASS / compileall PASS / UI JS syntax PASS / BAT static check PASS。
 
+### v0.8.3 target collector verification
+- Target Windows PCでFundamental Feedの実データ取得を確認。
+- BOJ Statistics RSS / BOJ News RSSの項目がSokudanで分類され、category / importance / BTC relevance / biasがUIへ表示された。
+- Federal Reserve Press RSSは設計通り `collect_only` で保存された。
+- Local AI未READY時に取得されたBOJ項目が `local_ai_not_ready` として残り、後続のREADY後分類結果と同一項目が別行で表示される重複を確認。
+- 次修正候補: pending classification完了時に既存Feed行を更新/統合し、同一event_idの重複表示を防止。
+- 次修正候補: BBB終了時にSokudan child processを確実に終了するLifecycle cleanup。
+
