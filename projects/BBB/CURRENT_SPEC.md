@@ -1,6 +1,6 @@
 # BBB CURRENT SPEC
 
-Updated: 2026-09-30
+Updated: 2026-10-01
 Status: CURRENT
 
 ## 1. Project identity
@@ -49,6 +49,10 @@ bitbank Public Market Data
 - Local AI Fundamental Sentinel Sandbox
 - Sokudan auto-start / health state
 - Local AI self-test / local sandbox ledger
+- Fundamental Data Collector
+- BOJ News RSS / BOJ Statistics RSS
+- Federal Reserve Press RSS (collect only)
+- Data Sources Hub / Fundamental Feed
 
 ## 5. Learning definition
 現時点の「学習」はLLMやニューラルネットの再学習ではない。
@@ -92,7 +96,9 @@ UNKNOWN / no_overrideを正式な正常出力として許可する。
 Local AI停止時にもBBB本体が継続可能なFallbackを持つ。
 
 v0.8でSokudanを用いたFundamental AI Sandboxを実装した。
-v0.8.1でBBB本体とSokudanのPython環境を分離し、Sokudanは専用 `.venv_local_ai` (Python 3.11-3.13) で動かす。BBB本体がPython 3.14でもLocal AIを独立導入できる。\nv0.8.2でLocal AIセットアップを堅牢化し、Python Launcherの指定から実際の `sys.executable` を解決して専用venvを作成する。初回導入順は `BBB終了 -> BBB_LOCAL_AI_SETUP.bat -> BBB_START.bat` とする。
+v0.8.1でBBB本体とSokudanのPython環境を分離し、Sokudanは専用 `.venv_local_ai` (Python 3.11-3.13) で動かす。BBB本体がPython 3.14でもLocal AIを独立導入できる。
+v0.8.2でLocal AIセットアップを堅牢化し、Python Launcherの指定から実際の `sys.executable` を解決して専用venvを作成する。初回導入順は `BBB終了 -> BBB_LOCAL_AI_SETUP.bat -> BBB_START.bat` とする。
+v0.8.3でFundamental Data Collectorを実装。BOJ News RSS / Statistics RSSを取得し、日本語項目をSokudanへSandbox分類する。Federal Reserve Press RSSは英語のため現段階ではCollect Onlyとする。既定15分poll、重複排除、初回Feed大量投入防止、Local AI未READY時の分類待ち再試行を持つ。
 Local AIは別ローカルプロセスとしてBBB起動時に自動起動可能で、GPUなしCPU運用を前提とする。
 Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 現在の分類結果は売買へ反映せず、Sandbox Ledgerへ保存して精度を検証する。
@@ -103,7 +109,9 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 - agents/Local-AI/README.md
 - Harness-wide model catalog: ../../agents/Local-AI/README.md
 - checkpoints/BBB_V0.8_LOCAL_AI_SANDBOX_2026-09-30.md
-- checkpoints/BBB_V0.8.1_LOCAL_AI_PYTHON_FIX_2026-09-30.md\n- checkpoints/BBB_V0.8.2_LOCAL_AI_SETUP_FIX_2026-09-30.md
+- checkpoints/BBB_V0.8.1_LOCAL_AI_PYTHON_FIX_2026-09-30.md
+- checkpoints/BBB_V0.8.2_LOCAL_AI_SETUP_FIX_2026-09-30.md
+- checkpoints/BBB_V0.8.3_FUNDAMENTAL_COLLECTOR_2026-10-01.md
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -137,7 +145,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.8.2はWindows向けTrading Research Cockpitと分離Python環境のLocal AI Sandboxを持つ。
+v0.8.3はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collectorを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -197,11 +205,14 @@ API Key / API Secret はAI-Harnessへ保存しない。
 秘密情報はローカル実行環境のSecretとしてのみ扱う。
 
 ## 12. Current test state
-2026-09-30:
-- local pytest: 33 passed
+2026-10-01:
+- local pytest: 38 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
 - Local AI Sandbox: IMPLEMENTED
 - Local AI trade influence: OFF
+- Fundamental Collector: IMPLEMENTED / SANDBOX ONLY
+- BOJ RSS: CLASSIFY
+- Fed Press RSS: COLLECT ONLY
 - live order path: NOT IMPLEMENTED
