@@ -117,3 +117,14 @@
 - 一回限りの `BBB_LOCAL_AI_SETUP.bat` と診断BATを追加。
 - v0.8 package local test: 33 pytest PASS / compileall PASS / UI JS syntax PASS。
 
+### v0.8.1 Local AI Python compatibility fix
+- Target PCの初回セットアップでSokudanのPython互換性エラーを確認。
+- Sokudan v0.3.0の対応範囲はPython >=3.11,<3.14。
+- BBB本体とLocal AIを同一venvへ入れる方針を廃止。
+- BBBは `.venv`、Sokudanは `.venv_local_ai` へ分離。
+- Local AI setupはPython 3.13 -> 3.12 -> 3.11の順で探索する。
+- 対応Pythonが無くwingetが利用可能な場合、Human確認後にPython 3.13導入を提案する。
+- BBB本体の既存環境は変更しない。
+- Local AI Managerは専用PythonからSokudan serverを起動する。
+- Sandbox / trade influence OFF / Live Lockedの境界は変更なし。
+
