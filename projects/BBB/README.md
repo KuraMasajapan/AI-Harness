@@ -17,8 +17,9 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - 基準戦略: EMA + RSI
 - 為替分離: USD/JPYを使ったFX-aware検証を実装済み
 - Local AI Sandbox: Sokudan CPU統合済み（売買影響OFF）
+- Fundamental Data Collector: BOJ RSS自動分類 + Fed RSS収集
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 33/33 PASS（2026-09-30確認）
+- ローカルテスト: 38/38 PASS（2026-10-01確認）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -46,3 +47,14 @@ BBBのAI拡張は `agents/` 配下で管理する。
 - Harness全体のモデル情報は `../../agents/Local-AI/README.md` をSource of Truthとして参照する
 
 BBBではモデル情報を重複保存せず、プロジェクト固有の「何に使うか」「どのGateを通すか」だけを記録する。
+
+
+## Fundamental Data Sources
+v0.8.3で以下の公開SourceをSandbox接続。
+
+- BOJ News RSS: https://www.boj.or.jp/rss/whatsnew.xml
+- BOJ Statistics RSS: https://www.boj.or.jp/rss/statistics.xml
+- Federal Reserve Press RSS: https://www.federalreserve.gov/feeds/press_all.xml
+
+BOJはSokudanへ自動分類。Fedは英語のため現段階ではCollect Only。
+既定15分poll。取得結果は売買へ影響しない。
