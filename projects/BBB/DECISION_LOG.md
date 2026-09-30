@@ -136,3 +136,12 @@
 - 初回Local AI導入の正式順序を `BBB終了 -> Setup -> BBB起動` と明記。
 - v0.8.2 package validation: 33 pytest PASS / compileall PASS / UI JS syntax PASS / BAT static check PASS。
 
+### v0.8.2 target PC install success
+- Target Windows PCでLocal AI専用環境の作成に成功。
+- Compatible Python: `C:\Users\Owner\AppData\Local\Programs\Python\Python313\python.exe`
+- Local AI Python: `3.13.15`
+- `.venv_local_ai` 作成成功。
+- Sokudan Local AI installation verification PASS。
+- BBB本体とSokudanは分離Python環境で運用。
+- 次工程: `BBB_START.bat` 起動後、初回モデル重み取得とLocal AI READY / self-test確認。
+
