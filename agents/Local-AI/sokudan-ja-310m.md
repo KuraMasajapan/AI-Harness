@@ -1,7 +1,7 @@
 # sokudan-ja-310m
 
 Status: CANDIDATE / NOT YET APPROVED
-Reviewed: 2026-09-29
+Reviewed: 2026-09-30
 
 ## Identity
 - Developer / publisher: GeneLab
@@ -46,7 +46,13 @@ The model is new and the public evidence is not a BBB financial-news benchmark. 
 
 ## Installation note
 
-As of review date, the model card states that the `sokudan` package is installed from its GitHub repository rather than PyPI.
+As of 2026-09-30, Sokudan v0.3.0 is available from PyPI and the official README documents:
+
+- `pip install sokudan`
+- `pip install "sokudan[serve]"` for the local HTTP server
+- supported Python: >=3.11,<3.14
+
+For Windows CPU use, the package uses the torch backend. Projects running Python 3.14 should isolate Sokudan in a separate Python 3.11-3.13 environment instead of forcing the main application interpreter to downgrade.
 
 ## Harness selection note
 
