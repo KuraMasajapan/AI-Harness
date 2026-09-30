@@ -145,3 +145,13 @@
 - BBB本体とSokudanは分離Python環境で運用。
 - 次工程: `BBB_START.bat` 起動後、初回モデル重み取得とLocal AI READY / self-test確認。
 
+### Local AI target runtime READY
+- Target Windows PCでBBB v0.8.2起動後、Sokudan Local AIが `READY` へ到達。
+- Model: `GeneLab/sokudan-ja-310m`
+- Sokudan package: `0.3.0`
+- Device: CPU
+- Local AI自己テスト実行成功。
+- UIで観測したLast Inference: 1689 ms。
+- Sandbox / Trade influence OFFを維持。
+- 次工程は外部Fundamental Data Collector / RSS・API取り込み。現v0.8.2のLocal AI self-testは固定サンプル文章を直接Sokudanへ渡すだけで、汎用外部API collectorは未実装。
+
