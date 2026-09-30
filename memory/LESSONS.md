@@ -182,3 +182,18 @@ WORKFLOW.md   ← どう仕事をするか
     ↓
 MEMORY.md     ← 何を長期的に覚えるか
 LESSONS.md    ← 何を学び、改善候補にするか
+
+
+
+---
+
+## LESSON-001 Persistent Design Requests Should Create a Harness Record
+
+- Date: 2026-10-01
+- Context: Human asked to keep the NISA Scout concept available for future recall.
+- What Happened: The assistant initially treated the request mainly as conversational memory instead of immediately recording the reusable design in AI-Harness.
+- Root Cause: The persistence request was interpreted as a memory task rather than a Harness documentation task.
+- Lesson: When the Human asks to remember a reusable project design, operating concept, or important decision for future work, create or update the appropriate Harness record rather than relying on conversational memory alone.
+- Suggested Change: Prefer a concrete Harness artifact for durable project concepts. Use `incubator/proposals/` for proposal-stage designs, and use Obsidian for research notes, company/theme observations, hypotheses, and outcomes. Do not change Core rules automatically.
+- Related Files: `incubator/proposals/NISA_SCOUT.md`, `memory/LESSONS.md`
+- Status: Reviewed
