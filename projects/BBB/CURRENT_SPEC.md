@@ -92,7 +92,7 @@ UNKNOWN / no_overrideを正式な正常出力として許可する。
 Local AI停止時にもBBB本体が継続可能なFallbackを持つ。
 
 v0.8でSokudanを用いたFundamental AI Sandboxを実装した。
-v0.8.1でBBB本体とSokudanのPython環境を分離し、Sokudanは専用 `.venv_local_ai` (Python 3.11-3.13) で動かす。BBB本体がPython 3.14でもLocal AIを独立導入できる。
+v0.8.1でBBB本体とSokudanのPython環境を分離し、Sokudanは専用 `.venv_local_ai` (Python 3.11-3.13) で動かす。BBB本体がPython 3.14でもLocal AIを独立導入できる。\nv0.8.2でLocal AIセットアップを堅牢化し、Python Launcherの指定から実際の `sys.executable` を解決して専用venvを作成する。初回導入順は `BBB終了 -> BBB_LOCAL_AI_SETUP.bat -> BBB_START.bat` とする。
 Local AIは別ローカルプロセスとしてBBB起動時に自動起動可能で、GPUなしCPU運用を前提とする。
 Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 現在の分類結果は売買へ反映せず、Sandbox Ledgerへ保存して精度を検証する。
@@ -103,7 +103,7 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 - agents/Local-AI/README.md
 - Harness-wide model catalog: ../../agents/Local-AI/README.md
 - checkpoints/BBB_V0.8_LOCAL_AI_SANDBOX_2026-09-30.md
-- checkpoints/BBB_V0.8.1_LOCAL_AI_PYTHON_FIX_2026-09-30.md
+- checkpoints/BBB_V0.8.1_LOCAL_AI_PYTHON_FIX_2026-09-30.md\n- checkpoints/BBB_V0.8.2_LOCAL_AI_SETUP_FIX_2026-09-30.md
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -137,7 +137,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.8.1はWindows向けTrading Research Cockpitと分離Python環境のLocal AI Sandboxを持つ。
+v0.8.2はWindows向けTrading Research Cockpitと分離Python環境のLocal AI Sandboxを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
