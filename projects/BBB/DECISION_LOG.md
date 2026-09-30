@@ -155,3 +155,18 @@
 - Sandbox / Trade influence OFFを維持。
 - 次工程は外部Fundamental Data Collector / RSS・API取り込み。現v0.8.2のLocal AI self-testは固定サンプル文章を直接Sokudanへ渡すだけで、汎用外部API collectorは未実装。
 
+## 2026-10-01
+
+### v0.8.3 Fundamental Data Collector
+- Local AI実機READY / Self-Test成功後、実データ入力経路を実装。
+- BOJ News RSS と BOJ Statistics RSS を公開Feedとして追加し、日本語項目をSokudanへ自動分類。
+- Federal Reserve Press RSS を追加。Sokudanは日本語向けとして扱うため、現段階ではCollect Only。
+- 既定15分poll。UIのData Sources Hubから手動取得も可能。
+- Feed項目はSHA-256 IDで重複排除。
+- 初回Feed大量投入を避けるため、各Sourceの最新2件のみ処理対象とする。
+- Local AIがLOADING / OFFLINEの場合、分類待ちを保存しREADY後に再試行。
+- Data Sources Hub / Fundamental FeedをRisk & Systemへ追加。
+- FREDはData Sources Hub上でNOT_CONFIGURED / PLANNEDとして明示。構造化Macro APIは次工程。
+- Fundamental情報はSandbox観測専用。Paper / Live / Riskへの影響OFF。
+- v0.8.3 package validation: 38 pytest PASS / compileall PASS / UI JS syntax PASS / BAT static check PASS。
+
