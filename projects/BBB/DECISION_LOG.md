@@ -128,3 +128,11 @@
 - Local AI Managerは専用PythonからSokudan serverを起動する。
 - Sandbox / trade influence OFF / Live Lockedの境界は変更なし。
 
+### v0.8.2 Local AI setup robustness
+- Target PCで `py -3.13` が見つかりvenv作成まで成功した後、v0.8.1のPython判定が停止する事象を確認。
+- v0.8.1セットアップ判定を堅牢化するため、Launcher名ではなく対応Pythonの `sys.executable` 実体パスを解決してvenv作成する方式へ変更。
+- 作成後にLocal AI Python実バージョンを画面・ログへ表示。
+- 既存 `.venv_local_ai` はセットアップ時に再作成する。
+- 初回Local AI導入の正式順序を `BBB終了 -> Setup -> BBB起動` と明記。
+- v0.8.2 package validation: 33 pytest PASS / compileall PASS / UI JS syntax PASS / BAT static check PASS。
+
