@@ -191,3 +191,11 @@
 - Replay結果は data/fundamental_replay 配下のmarket dataset / confidence ledger / reportへ保存する。
 - Replay / Local AI結果は引き続きSandbox only。Paper / Live / Risk / Championへの自動影響はOFF。
 - v0.8.4 package validation: 43 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT label check PASS。
+
+### v0.8.4 target Local AI recovery
+- v0.8.4展開後、一時的にLocal AIが `NOT_INSTALLED` 表示となった。
+- `.venv_local_ai` フォルダ自体は存在していたが、BBB側から有効なLocal AI環境として認識されなかった。
+- `BBB_LOCAL_AI_SETUP.bat` でLocal AI専用環境を再構築。
+- 再構築後、Target Windows PCでLocal AIが `READY` へ復帰した。
+- data保持のまま再セットアップで復旧可能であることを確認。
+
