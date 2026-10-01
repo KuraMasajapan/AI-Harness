@@ -20,10 +20,10 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - Fundamental Data Collector: BOJ RSS自動分類 + Fed RSS収集
 - Fundamental Replay Lab α: 観測済みイベントと後続BTC/JPY反応をSandbox照合
 - Historical Fundamental Import: BOJ公式年別アーカイブから過去Case Studyを作成
-- UI Skin: Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakura
+- UI Skin: Graphite Blue / Deep Navy / Steel Slate / Black Ice
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 52/52 PASS（v0.8.6 package validation）
+- ローカルテスト: 54/54 PASS（v0.8.7 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -104,3 +104,17 @@ v0.8.5でBOJ公式年別アーカイブを過去Case Study Sourceとして追加
 - 4 Skinは低彩度・オフホワイト/スレート中心に再設計。
 - 大きなradial glow、pure white中心、強いgradient、強いshadowを削減。
 - 実製品UIギャラリーの情報階層・限定accentの方向を参考にし、特定製品のコピーはしない。
+
+
+## v0.8.7 Cool Contrast UI
+- Main colors: Deep Navy `#0B1622` + Electric Blue `#2F9EE5`
+- Sidebar / workspace / card / metricの階層差を強め、ページ内コントラストを明確化
+- active navigationはElectric Blueのleft rail
+- Primary actionはflat blue
+- semantic green / yellow / redは状態表示専用
+- Skin:
+  - Graphite Blue / グラファイトブルー
+  - Deep Navy / ディープネイビー
+  - Steel Slate / スチールスレート
+  - Black Ice / ブラックアイス
+- 4 Skinは色調を大きく散らさず、同じCool Product UI familyに統一
