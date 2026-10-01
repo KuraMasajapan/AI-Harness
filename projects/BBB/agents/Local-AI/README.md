@@ -188,3 +188,19 @@ Source endpoints:
 - https://www.boj.or.jp/rss/whatsnew.xml
 - https://www.boj.or.jp/rss/statistics.xml
 - https://www.federalreserve.gov/feeds/press_all.xml
+
+
+## v0.8.4 Replay / calibration path
+
+BBB now records Local AI classifications as replayable observations.
+
+- schema: `bbb-fundamental-v2`
+- new category: `financial_markets`
+- schema version and SHA-256 are stored with new classification records
+- duplicate feed/update rows are merged only in the UI Current View; the audit log remains append-only
+- Fundamental Replay uses BBB `recorded_at` as the knowledge-time boundary
+- forward BTC/JPY reaction windows: 5m / 30m / 1h / 4h / 24h
+- future windows that have not occurred remain unscored
+- output feeds the Fundamental Confidence Ledger, not trade execution
+
+This is the first implementation step from Phase B Shadow / Sandbox toward empirical category-specific calibration.
