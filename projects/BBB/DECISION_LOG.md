@@ -178,3 +178,16 @@
 - 次修正候補: pending classification完了時に既存Feed行を更新/統合し、同一event_idの重複表示を防止。
 - 次修正候補: BBB終了時にSokudan child processを確実に終了するLifecycle cleanup。
 
+
+### v0.8.4 Cleanup + Fundamental Replay Lab α
+- v0.8.3実機確認で見つかったFundamental Feed重複表示を修正。監査用feed_events.jsonlはappend-onlyを維持し、UI Current Viewだけevent_id単位でmergeする。
+- Local AI未READYで取得したイベントが後から分類成功した場合、別ニュースではなく同一イベントの状態更新として扱う。
+- BBB終了時に、自分で起動したSokudan processを明示停止する。Windowsではprocess tree停止をfallbackではなくowned processの標準shutdown pathへ組み込む。
+- 緊急停止補助として BBB_STOP.bat を追加する。
+- Fundamental分類Schemaを bbb-fundamental-v2 とし、financial_markets を追加。為替・国債・決済・流動性等をcrypto_marketから分離する。
+- 分類記録へSchema version / SHA-256を保存し、将来のCase Studyでschema差分を比較可能にする。
+- Fundamental Replay Lab αを追加。BBBが実際に観測した recorded_at をknowledge timeとして、その後のBTC/JPYを5m / 30m / 1h / 4h / 24hで照合する。
+- 未来horizonがまだ存在しない場合はnullとして保持し、未来情報を補完しない。
+- Replay結果は data/fundamental_replay 配下のmarket dataset / confidence ledger / reportへ保存する。
+- Replay / Local AI結果は引き続きSandbox only。Paper / Live / Risk / Championへの自動影響はOFF。
+- v0.8.4 package validation: 43 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT label check PASS。
