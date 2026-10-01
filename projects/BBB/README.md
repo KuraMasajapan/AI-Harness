@@ -20,10 +20,10 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - Fundamental Data Collector: BOJ RSS自動分類 + Fed RSS収集
 - Fundamental Replay Lab α: 観測済みイベントと後続BTC/JPY反応をSandbox照合
 - Historical Fundamental Import: BOJ公式年別アーカイブから過去Case Studyを作成
-- UI Skin: Aurora Light / Sunrise Gold / Midnight / Sakura Tech
+- UI Skin: Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakura
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 48/48 PASS（v0.8.5 package validation）
+- ローカルテスト: 50/50 PASS（v0.8.6 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -91,7 +91,16 @@ v0.8.5でBOJ公式年別アーカイブを過去Case Study Sourceとして追加
 
 ## UI Skin
 4 Skinを切替可能。選択はローカル保存される。
-- Aurora Light / オーロラライト
-- Sunrise Gold / サンライズゴールド
-- Midnight / ミッドナイト
-- Sakura Tech / サクラテック
+- Aurora Mist / オーロラミスト
+- Sand Gold / サンドゴールド
+- Slate Midnight / スレートミッドナイト
+- Dusty Sakura / ダスティサクラ
+
+
+## v0.8.6 Run Timing / Calm Skin
+- background jobは開始から完了までの所要時間を計測。
+- Historical Importは実行中のElapsed / 経過時間をリアルタイム表示。
+- Historical Replayはreport.json / last_report.jsonへelapsed_secondsを保存。
+- 4 Skinは低彩度・オフホワイト/スレート中心に再設計。
+- 大きなradial glow、pure white中心、強いgradient、強いshadowを削減。
+- 実製品UIギャラリーの情報階層・限定accentの方向を参考にし、特定製品のコピーはしない。
