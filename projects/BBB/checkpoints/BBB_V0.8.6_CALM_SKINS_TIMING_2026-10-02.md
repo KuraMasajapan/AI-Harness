@@ -20,12 +20,12 @@ Date: 2026-10-02
 - 参考方向: Mobbin / SaaSFrame等の実製品UIギャラリー。特定UIのコピーはしない。
 
 ## Validation
-- pytest: 50 passed
+- pytest: 52 passed
 - compileall: PASS
 - UI JS syntax: PASS
-- packaged ZIP再展開後pytest: 50 passed
+- packaged ZIP再展開後pytest: 52 passed
 - package: BBB_v0.8.6_Calm_Skins_Run_Timing.zip
-- SHA-256: 98dd5b6ae6934a7258f4619b3f3bb710eac3ff018e34d0b479ebae8d3b2e3e19
+- SHA-256: f784a7dc30199b254a60b552e17d5f308583f54970f59ccf76de8e2bb538598b
 
 ## Safety
 変更なし。Historical Import / Replay / Local AIはSandbox onlyで、Paper / Risk / Liveへ自動影響しない。
