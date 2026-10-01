@@ -221,3 +221,15 @@
 - v0.8.5 package validation: 48 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT label check PASS / packaged ZIP再展開後48 tests PASS。
 - package SHA-256: 8d9a946c5ca8084a169bdb743801f563c1a6464358bdbcc8b5ad7ded5f4aefbf。
 
+### v0.8.6 Run Timing + Calm Skin refinement
+- Human要望: Historical Import / Replay等の実行開始から完了までの経過時間を計測したい。
+- 全background jobにelapsed_secondsを追加。running中は現在時刻との差分で動的更新し、完了後は固定所要時間を保持する。
+- Historical Fundamental ImportカードへElapsed / 経過時間を追加。
+- Historical Replay reportへelapsed_secondsを保存し、24H Bias Alignment欄にもReplay所要時間を表示する。
+- v0.8.5 Light Skinは眩しすぎるとのHuman評価を受け、4 Skinを低彩度・落ち着いたsurfaceへ再調整。
+- Skin名: Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakura。
+- pure white面積、高彩度accent、radial glow、強いgradient、強いshadowを削減。
+- 参考方向としてMobbin / SaaSFrame等の実製品UIギャラリーを確認。個別製品の複製ではなく、低彩度surface・限定accent・情報階層優先の原則だけを採用。
+- v0.8.6 package validation: 50 pytest PASS / compileall PASS / UI JavaScript syntax PASS / packaged ZIP再展開後50 tests PASS。
+- package SHA-256: 98dd5b6ae6934a7258f4619b3f3bb710eac3ff018e34d0b479ebae8d3b2e3e19。
+
