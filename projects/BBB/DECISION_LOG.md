@@ -270,3 +270,12 @@
 - v0.8.7 validation: 54 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root確認 / packaged ZIP再展開後54 tests PASS。
 - package SHA-256: d1a60f524b1b56922820feaefe81fa5f321b6717056bb2e8b8f4b1056eeed64a。
 
+### v0.8.7 Historical Replay live timing hotfix
+- Human実機確認で `Run Historical Replay / 過去リプレイ実行` 後、Import時のようにElapsed表示が動かないことを確認。
+- 原因: Historical Replayはgeneric background jobで走っていたが、Historical cardのElapsed表示はImport statusだけを参照しており、Replay jobとUIが接続されていなかった。
+- `get_historical_fundamental_status()` に最新 `fundamental-history-replay` jobを `replay_job` として公開。
+- UIはReplay中 `REPLAYING` を表示し、Elapsedを2.5秒refreshで更新。Replay中は再実行ボタンをdisabledにする。
+- Replay処理そのもののロジック/保存データ/Safety boundaryは変更なし。
+- validation: pytest 56 PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS。
+- HOTFIX SHA-256: c01724530e266492f810622593a18c492ad2cf9ab3e37fd55e85f4d2bff9ccc2。
+
