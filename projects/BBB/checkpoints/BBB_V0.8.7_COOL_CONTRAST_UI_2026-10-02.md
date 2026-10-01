@@ -46,3 +46,12 @@ Applied only general hierarchy, limited-accent, and analytics-dashboard principl
 
 ## Safety
 No change to trading boundary. UI-only change plus version update.
+
+## Historical Replay timing hotfix
+- Symptom: Replay started but Historical card elapsed numbers did not move.
+- Root cause: UI elapsed metric was bound to import status, not the generic replay background job.
+- Fix: expose `replay_job`, render `REPLAYING`, update elapsed every 2.5 seconds, disable duplicate Replay starts while running.
+- Validation: 56 pytest PASS / compileall PASS / UI JS syntax PASS.
+- Package: BBB_v0.8.7_Cool_Contrast_UI_REPLAY_TIMING_HOTFIX.zip
+- SHA-256: c01724530e266492f810622593a18c492ad2cf9ab3e37fd55e85f4d2bff9ccc2
+
