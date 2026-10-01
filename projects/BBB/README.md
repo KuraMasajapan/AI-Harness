@@ -18,8 +18,9 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - 為替分離: USD/JPYを使ったFX-aware検証を実装済み
 - Local AI Sandbox: Sokudan CPU統合済み（売買影響OFF）
 - Fundamental Data Collector: BOJ RSS自動分類 + Fed RSS収集
+- Fundamental Replay Lab α: 観測済みイベントと後続BTC/JPY反応をSandbox照合
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 38/38 PASS（2026-10-01確認）
+- ローカルテスト: 43/43 PASS（v0.8.4 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -58,3 +59,15 @@ v0.8.3で以下の公開SourceをSandbox接続。
 
 BOJはSokudanへ自動分類。Fedは英語のため現段階ではCollect Only。
 既定15分poll。取得結果は売買へ影響しない。
+
+
+## Fundamental Replay Lab α
+v0.8.4で、分類済みFundamental Eventをbitbank Public BTC/JPY履歴と照合するReplay Labを追加。
+
+- knowledge time: BBBが実際に観測した `recorded_at`
+- forward horizons: 5m / 30m / 1h / 4h / 24h
+- 未到来horizon: nullのまま保持
+- output: Market Dataset / Confidence Ledger / Report
+- Sandbox only / Trade influence OFF
+- Feed UIは同一event_idを1行に統合表示。監査JSONLはappend-onlyを維持
+- BBB終了時にowned Sokudan processを明示停止
