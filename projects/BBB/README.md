@@ -19,8 +19,11 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - Local AI Sandbox: Sokudan CPU統合済み（売買影響OFF）
 - Fundamental Data Collector: BOJ RSS自動分類 + Fed RSS収集
 - Fundamental Replay Lab α: 観測済みイベントと後続BTC/JPY反応をSandbox照合
+- Historical Fundamental Import: BOJ公式年別アーカイブから過去Case Studyを作成
+- UI Skin: Aurora Light / Sunrise Gold / Midnight / Sakura Tech
+- 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 43/43 PASS（v0.8.4 package validation）
+- ローカルテスト: 48/48 PASS（v0.8.5 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -71,3 +74,24 @@ v0.8.4で、分類済みFundamental Eventをbitbank Public BTC/JPY履歴と照�
 - Sandbox only / Trade influence OFF
 - Feed UIは同一event_idを1行に統合表示。監査JSONLはappend-onlyを維持
 - BBB終了時にowned Sokudan processを明示停止
+
+
+## Historical Fundamental Import
+v0.8.5でBOJ公式年別アーカイブを過去Case Study Sourceとして追加。
+
+- Monetary Policy Decisions / 金融政策に関する決定事項等
+- Policy Board Opinions / 金融政策決定会合における主な意見
+- Speeches / 講演・挨拶等
+- Press Conferences / 記者会見
+- default: 2025-01-01 ～ 2025-12-31 / max 100
+- Sokudan Sandbox classification
+- archive date-only eventは23:59:59 JSTを保守的knowledge boundaryとする
+- intraday horizonは採点せず、初期Historical Replayは24hのみ
+- 売買 / Risk / Liveへの影響なし
+
+## UI Skin
+4 Skinを切替可能。選択はローカル保存される。
+- Aurora Light / オーロラライト
+- Sunrise Gold / サンライズゴールド
+- Midnight / ミッドナイト
+- Sakura Tech / サクラテック
