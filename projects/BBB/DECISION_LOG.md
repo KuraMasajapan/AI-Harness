@@ -240,3 +240,12 @@
 - Calm Skin名もcurrent docsで Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakuraへ統一。
 - 回帰防止testを追加し、corrected package validationは52 pytest PASS。
 - corrected package SHA-256: f784a7dc30199b254a60b552e17d5f308583f54970f59ccf76de8e2bb538598b。
+
+### v0.8.6 ZIP root layout correction
+- Human実機確認で、修正版v0.8.6 ZIPを上書きした後もLauncher/UIがv0.8.5のまま起動する事象を確認。
+- 原因: ZIP内部が `BBB_v086_work/` の1段ラッパーフォルダ構造で、既存BBBルートへの上書き時にv0.8.6ファイルがサブフォルダへ入り、ルートのv0.8.5が残った。
+- 対応: ZIP rootをフラット化し、`BBB_START.bat` / `src/` / `config/` 等がZIP直下に来るFIXED packageを作成。
+- FIXED packageで `BBB_START.bat` / runtime version / UI versionがv0.8.6であることを検証。
+- pytest 52/52 PASS。
+- FIXED package SHA-256: 3777b045f66da59ee58e0480eeffd6ae44f3e69221f06366401f8144a67b85d4。
+
