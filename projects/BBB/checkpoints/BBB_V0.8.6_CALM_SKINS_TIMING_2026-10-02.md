@@ -29,3 +29,13 @@ Date: 2026-10-02
 
 ## Safety
 変更なし。Historical Import / Replay / Local AIはSandbox onlyで、Paper / Risk / Liveへ自動影響しない。
+
+## Target PC hotfix
+- Historical Import data confirmed: Stored 100 / Classified 100 / Replayable 100.
+- UI error observed: `ReferenceError: clockDuration is not defined`.
+- Root cause: elapsed-time renderer called an undefined UI helper.
+- Fixed without changing stored Historical data.
+- HOTFIX package: BBB_v0.8.6_Calm_Skins_Run_Timing_HOTFIX.zip
+- SHA-256: 14b26a9def1b27f897da943bc48990a5a050eb339933804600f19fdf2029959f
+- validation remains 52 pytest PASS plus UI JavaScript syntax PASS.
+
