@@ -101,7 +101,8 @@ v0.8.2でLocal AIセットアップを堅牢化し、Python Launcherの指定か
 v0.8.3でFundamental Data Collectorを実装。BOJ News RSS / Statistics RSSを取得し、日本語項目をSokudanへSandbox分類する。Federal Reserve Press RSSは英語のため現段階ではCollect Onlyとする。既定15分poll、重複排除、初回Feed大量投入防止、Local AI未READY時の分類待ち再試行を持つ。
 v0.8.4でFundamental Replay Lab αを実装。Feed監査ログはappend-onlyを維持しつつ、UI Current Viewはevent_id単位で重複統合する。分類Schema v2では financial_markets を追加。ReplayはBBBが実際に観測した recorded_at をknowledge timeとし、その後のBTC/JPYを5分/30分/1時間/4時間/24時間で照合する。未到来の未来horizonはnullのまま保持し、結果はConfidence Ledgerへ保存する。ReplayはSandbox onlyで売買へ影響しない。BBB終了時にはowned Sokudan processを明示停止する。
 v0.8.5でHistorical Fundamental Importを実装。BOJ公式年別アーカイブ（金融政策に関する決定事項等 / 金融政策決定会合における主な意見 / 講演・挨拶 / 記者会見）から過去Eventを取得し、SokudanでSandbox分類する。初期UIは2025年・最大100件。BOJ archiveはdate-onlyのため、正確な時刻を推定せず当日23:59:59 JSTを保守的knowledge boundaryとし、短期5m〜4hは採点しない。初期Historical Replayは24h BTC/JPY反応だけを評価する。UIはAurora Light / Sunrise Gold / Midnight / Sakura Techの4 Skin切替と主要英日併記を追加。
-v0.8.6でRun Timingを追加。全background jobで実行開始から完了までelapsed_secondsを計測し、Historical Importは実行中もリアルタイム経過時間をUI表示、Historical Replayはreportへ所要時間を保存する。4 Skinは眩しさを抑えるため低彩度・オフホワイト/スレート中心へ再調整し、Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakuraへ改名。設計方向はMobbin / SaaSFrame等の実製品UIギャラリーを参考に、pure white、高彩度accent、強いglow/gradient/shadowを削減する。
+v0.8.6でRun Timingを追加。全background jobで実行開始から完了までelapsed_secondsを計測し、Historical Importは実行中もリアルタイム経過時間をUI表示、Historical Replayはreportへ所要時間を保存する。
+v0.8.7でCool Contrast UIへ再設計。Human評価でv0.8.6は明るさを抑えた結果ページ全体のコントラストが弱く見えたため、Deep Navy (#0B1622) + Electric Blue (#2F9EE5) の2色を主軸に固定。Sidebar / workspace / card / metricのsurface階層を明確化し、active navigationはblue left rail、primary actionはflat blue、semantic green/red/yellowは状態表示だけに限定する。4 SkinはGraphite Blue / Deep Navy / Steel Slate / Black Iceとし、すべて同一のcool product UI familyで運用する。
 Local AIは別ローカルプロセスとしてBBB起動時に自動起動可能で、GPUなしCPU運用を前提とする。
 Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 現在の分類結果は売買へ反映せず、Sandbox Ledgerへ保存して精度を検証する。
@@ -150,7 +151,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.8.6はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab α、Historical Fundamental Import、低彩度4種Skin、Run Timingを持つ。
+v0.8.7はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab α、Historical Fundamental Import、4種Cool Skin、Run Timingを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -211,7 +212,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 52 passed
+- local pytest: 54 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
