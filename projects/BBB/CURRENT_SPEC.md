@@ -100,6 +100,7 @@ v0.8.1でBBB本体とSokudanのPython環境を分離し、Sokudanは専用 `.ven
 v0.8.2でLocal AIセットアップを堅牢化し、Python Launcherの指定から実際の `sys.executable` を解決して専用venvを作成する。初回導入順は `BBB終了 -> BBB_LOCAL_AI_SETUP.bat -> BBB_START.bat` とする。
 v0.8.3でFundamental Data Collectorを実装。BOJ News RSS / Statistics RSSを取得し、日本語項目をSokudanへSandbox分類する。Federal Reserve Press RSSは英語のため現段階ではCollect Onlyとする。既定15分poll、重複排除、初回Feed大量投入防止、Local AI未READY時の分類待ち再試行を持つ。
 v0.8.4でFundamental Replay Lab αを実装。Feed監査ログはappend-onlyを維持しつつ、UI Current Viewはevent_id単位で重複統合する。分類Schema v2では financial_markets を追加。ReplayはBBBが実際に観測した recorded_at をknowledge timeとし、その後のBTC/JPYを5分/30分/1時間/4時間/24時間で照合する。未到来の未来horizonはnullのまま保持し、結果はConfidence Ledgerへ保存する。ReplayはSandbox onlyで売買へ影響しない。BBB終了時にはowned Sokudan processを明示停止する。
+v0.8.5でHistorical Fundamental Importを実装。BOJ公式年別アーカイブ（金融政策に関する決定事項等 / 金融政策決定会合における主な意見 / 講演・挨拶 / 記者会見）から過去Eventを取得し、SokudanでSandbox分類する。初期UIは2025年・最大100件。BOJ archiveはdate-onlyのため、正確な時刻を推定せず当日23:59:59 JSTを保守的knowledge boundaryとし、短期5m〜4hは採点しない。初期Historical Replayは24h BTC/JPY反応だけを評価する。UIはAurora Light / Sunrise Gold / Midnight / Sakura Techの4 Skin切替と主要英日併記を追加。
 Local AIは別ローカルプロセスとしてBBB起動時に自動起動可能で、GPUなしCPU運用を前提とする。
 Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 現在の分類結果は売買へ反映せず、Sandbox Ledgerへ保存して精度を検証する。
@@ -114,6 +115,7 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 - checkpoints/BBB_V0.8.2_LOCAL_AI_SETUP_FIX_2026-09-30.md
 - checkpoints/BBB_V0.8.3_FUNDAMENTAL_COLLECTOR_2026-10-01.md
 - checkpoints/BBB_V0.8.4_REPLAY_CLEANUP_2026-10-01.md
+- checkpoints/BBB_V0.8.5_HISTORICAL_IMPORT_SKINS_2026-10-01.md
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -147,7 +149,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.8.4はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab αを持つ。
+v0.8.5はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab α、Historical Fundamental Import、4種Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -208,7 +210,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 43 passed
+- local pytest: 48 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
