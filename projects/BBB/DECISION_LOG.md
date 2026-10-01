@@ -206,3 +206,18 @@
 - Replay結果ファイルが `data/fundamental_replay/run_*/confidence_ledger.jsonl` に生成されたことをUI上で確認。
 - この84.6%は標本13件の初期観測であり、性能証明として扱わない。過去イベント大量投入によるCase Study拡張が次工程。
 
+### v0.8.5 Historical Fundamental Import + Skin System
+- Human要望により、Fundamental Replay Case Studyを過去データへ拡張。
+- 最初のHistorical SourceはBOJ公式年別アーカイブとする。
+- 対象: 金融政策に関する決定事項等 / 金融政策決定会合における主な意見 / 講演・挨拶等 / 記者会見。
+- UI初期値は2025年、最大100件。Source間で偏りすぎないようround-robinで候補を選ぶ。
+- 過去EventはLive Feedと別ファイルへ保存し、SokudanでSandbox分類する。
+- Archiveで保証されるのが日付のみの場合、正確な公表時刻を捏造しない。knowledge_atは当日23:59:59 JSTへ保守的に置き、date-only Eventは5m/30m/1h/4hを未評価とする。
+- 初期Historical ReplayはBTC/JPY 24h reactionを評価する。
+- UI Skinは4種すべて採用: Aurora Light / Sunrise Gold / Midnight / Sakura Tech。
+- Skinは画面右上で切替、localStorageへ保存。初回既定はAurora Light。
+- 主要UIをEnglish / 日本語併記へ移行。和訳はHuman Reviewで随時修正可能。
+- Safety boundaryは変更なし。Historical Import / Replay / Local AIはPaper / Risk / Liveへ影響しない。
+- v0.8.5 package validation: 48 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT label check PASS / packaged ZIP再展開後48 tests PASS。
+- package SHA-256: 8d9a946c5ca8084a169bdb743801f563c1a6464358bdbcc8b5ad7ded5f4aefbf。
+
