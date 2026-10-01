@@ -199,3 +199,10 @@
 - 再構築後、Target Windows PCでLocal AIが `READY` へ復帰した。
 - data保持のまま再セットアップで復旧可能であることを確認。
 
+### v0.8.4 first Fundamental Replay target run
+- Target Windows PCでFundamental Replay Lab αの初回試運転に成功。
+- UI表示: Observed Events 16 / Classified 14。
+- 1h bias alignment: 84.6% (n=13, risk_on / risk_offのみ)。
+- Replay結果ファイルが `data/fundamental_replay/run_*/confidence_ledger.jsonl` に生成されたことをUI上で確認。
+- この84.6%は標本13件の初期観測であり、性能証明として扱わない。過去イベント大量投入によるCase Study拡張が次工程。
+
