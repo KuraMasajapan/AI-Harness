@@ -249,3 +249,13 @@
 - pytest 52/52 PASS。
 - FIXED package SHA-256: 3777b045f66da59ee58e0480eeffd6ae44f3e69221f06366401f8144a67b85d4。
 
+### v0.8.6 Run Timing UI hotfix
+- Human実機確認でHistorical Fundamental Import画面に `ReferenceError: clockDuration is not defined` が表示された。
+- Stored 100 / Classified 100 / Replayable 100は正常で、Historical Import data自体は破損していない。
+- 原因: v0.8.6 UIでRun Timing表示用 `clockDuration()` を呼び出していたが、helper定義が欠落していた。
+- `clockDuration()` を追加し、1時間未満はMM:SS、1時間以上はHH:MM:SSで表示。
+- 既存testは文字列参照だけを見ており定義欠落を検出できなかったため、helper definitionを直接確認する回帰testへ修正。
+- HOTFIX packageはflat ZIP rootを維持。
+- validation: pytest 52 PASS / compileall PASS / UI JavaScript syntax PASS / packaged ZIP再展開test PASS。
+- HOTFIX SHA-256: 14b26a9def1b27f897da943bc48990a5a050eb339933804600f19fdf2029959f。
+
