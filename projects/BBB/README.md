@@ -23,7 +23,7 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - UI Skin: Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakura
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 50/50 PASS（v0.8.6 package validation）
+- ローカルテスト: 52/52 PASS（v0.8.6 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
