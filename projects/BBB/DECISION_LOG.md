@@ -259,3 +259,14 @@
 - validation: pytest 52 PASS / compileall PASS / UI JavaScript syntax PASS / packaged ZIP再展開test PASS。
 - HOTFIX SHA-256: 14b26a9def1b27f897da943bc48990a5a050eb339933804600f19fdf2029959f。
 
+### v0.8.7 Cool Contrast UI
+- Human feedback: v0.8.6は眩しさは減ったが、ページ全体のコントラストが弱く、よりはっきりしたCoolな見た目を希望。
+- Main colorをDeep Navy #0B1622 + Electric Blue #2F9EE5の2色に固定。
+- Sidebarを最暗部、workspaceを中間、card / metricを段階surfaceとして分離。
+- active navigationはblue left rail、primary actionはflat blue。
+- Green / Yellow / Redは成功・警告・エラー等のsemantic status専用とし、通常装飾には使わない。
+- 4 SkinはGraphite Blue / Deep Navy / Steel Slate / Black Iceへ再編。すべてCool product UIの範囲内に統一。
+- Mobbin / SaaSFrame等の実製品UI galleryで見られる、clear hierarchy / limited accent / dark analytics surfaceの方向を参考にした。特定製品の複製はしない。
+- v0.8.7 validation: 54 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root確認 / packaged ZIP再展開後54 tests PASS。
+- package SHA-256: d1a60f524b1b56922820feaefe81fa5f321b6717056bb2e8b8f4b1056eeed64a。
+
