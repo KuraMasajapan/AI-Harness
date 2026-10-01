@@ -230,6 +230,13 @@
 - Skin名: Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakura。
 - pure white面積、高彩度accent、radial glow、強いgradient、強いshadowを削減。
 - 参考方向としてMobbin / SaaSFrame等の実製品UIギャラリーを確認。個別製品の複製ではなく、低彩度surface・限定accent・情報階層優先の原則だけを採用。
-- v0.8.6 package validation: 50 pytest PASS / compileall PASS / UI JavaScript syntax PASS / packaged ZIP再展開後50 tests PASS。
-- package SHA-256: 98dd5b6ae6934a7258f4619b3f3bb710eac3ff018e34d0b479ebae8d3b2e3e19。
+- v0.8.6 package validation: 52 pytest PASS / compileall PASS / UI JavaScript syntax PASS / packaged ZIP再展開後50 tests PASS。
+- package SHA-256: f784a7dc30199b254a60b552e17d5f308583f54970f59ccf76de8e2bb538598b。
 
+
+### v0.8.6 packaging label correction
+- Human確認でv0.8.6 ZIP内の一部runtime/UI表記がv0.8.5のまま残っていることを発見。
+- `BBB_START.bat` / `BBB_LOCAL_AI_SETUP.bat` / runtime `__version__` / Desktop API version / UI header / first-read docsをv0.8.6へ統一。
+- Calm Skin名もcurrent docsで Aurora Mist / Sand Gold / Slate Midnight / Dusty Sakuraへ統一。
+- 回帰防止testを追加し、corrected package validationは52 pytest PASS。
+- corrected package SHA-256: f784a7dc30199b254a60b552e17d5f308583f54970f59ccf76de8e2bb538598b。
