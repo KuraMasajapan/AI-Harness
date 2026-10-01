@@ -204,3 +204,18 @@ BBB now records Local AI classifications as replayable observations.
 - output feeds the Fundamental Confidence Ledger, not trade execution
 
 This is the first implementation step from Phase B Shadow / Sandbox toward empirical category-specific calibration.
+
+
+## v0.8.5 historical case-study path
+
+The Local AI Sandbox can now be fed BOJ historical archive events.
+
+- source: BOJ official yearly archive pages
+- initial sample target: 100 events from 2025
+- event classes: policy decisions, Policy Board opinions, speeches, press conferences
+- classification remains `bbb-fundamental-v2`
+- archive date-only records do not pretend to have an exact release time
+- conservative knowledge boundary: 23:59:59 JST on publication date
+- date-only cases skip 5m / 30m / 1h / 4h scoring
+- first historical market check: BTC/JPY 24h
+- results remain evidence for calibration, not trade authority
