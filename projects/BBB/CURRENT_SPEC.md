@@ -211,7 +211,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 50 passed
+- local pytest: 52 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
