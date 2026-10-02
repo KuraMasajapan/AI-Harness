@@ -33,8 +33,11 @@
         "💬 話を聞いてほしい",
         "📚 勉強を手伝ってほしい",
         "💻 プログラミングしたい",
-        "👀 画像について聞きたい"
-      ]
+        "👀 画像について聞きたい",
+        "🎨 画像をつくりたい"
+      ],
+      "free_type": "毎日リセット",
+      "role": "主役候補"
     },
     {
       "id": "groq",
@@ -62,7 +65,9 @@
         "📚 勉強を手伝ってほしい",
         "💻 プログラミングしたい",
         "🎤 声を文字にしたい"
-      ]
+      ],
+      "free_type": "要確認",
+      "role": "クラウド候補"
     },
     {
       "id": "gemini-api",
@@ -90,7 +95,9 @@
         "📚 勉強を手伝ってほしい",
         "💻 プログラミングしたい",
         "👀 画像について聞きたい"
-      ]
+      ],
+      "free_type": "要確認",
+      "role": "クラウド候補"
     },
     {
       "id": "ollama",
@@ -118,7 +125,9 @@
         "💬 話を聞いてほしい",
         "📚 勉強を手伝ってほしい",
         "💻 プログラミングしたい"
-      ]
+      ],
+      "free_type": "ローカル",
+      "role": "補助・ローカル"
     },
     {
       "id": "piper-local",
@@ -144,7 +153,9 @@
       "audited": "2026-10-02",
       "child_goals": [
         "🔊 AIにしゃべってほしい"
-      ]
+      ],
+      "free_type": "ローカル",
+      "role": "補助・ローカル"
     },
     {
       "id": "lm-studio",
@@ -171,7 +182,9 @@
         "💬 話を聞いてほしい",
         "📚 勉強を手伝ってほしい",
         "💻 プログラミングしたい"
-      ]
+      ],
+      "free_type": "ローカル",
+      "role": "補助・ローカル"
     },
     {
       "id": "whisper-local",
@@ -196,8 +209,123 @@
       "audited": "2026-10-02",
       "child_goals": [
         "🎤 声を文字にしたい"
-      ]
+      ],
+      "free_type": "ローカル",
+      "role": "補助・ローカル"
+    },
+    {
+      "id": "cerebras-inference",
+      "name": "Cerebras Inference",
+      "status": "yellow",
+      "kind": "クラウドAI",
+      "role": "主役候補",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "what": "高速なクラウドLLM API。",
+      "best_for": "会話、推論、プログラミングなど速度が重要な用途。",
+      "free": "新規アカウントに$5の無料クレジット。",
+      "free_period": "クレジット消費まで（期限は公式画面で再確認）",
+      "free_type": "トライアル",
+      "billing": "無料分終了後は有料。",
+      "age": "子どものEnd User利用条件を追加確認中。",
+      "privacy": "データ取扱条件を追加監査中。",
+      "parent": "大人がアカウント/APIキーを管理。",
+      "why": "公式サービスだが子ども利用条件とデータ条件の監査が未完了。",
+      "safety": "Family AI Router側の安全フィルタを前提に評価。",
+      "official": [
+        "https://www.cerebras.ai/inference"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "cohere-api",
+      "name": "Cohere API",
+      "status": "yellow",
+      "kind": "クラウドAI",
+      "role": "主役候補",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "👀 画像について聞きたい"
+      ],
+      "what": "会話、推論、翻訳、画像理解、コードなどのクラウドAI API。",
+      "best_for": "会話・学習・画像理解などを試す用途。",
+      "free": "評価用キーは無料。Chat系など月1,000 API callsの制限あり。",
+      "free_period": "評価用途",
+      "free_type": "評価用",
+      "billing": "Production keyは有料。無料キーは本番・商用向けではない。",
+      "age": "子どものEnd User利用条件を追加確認中。",
+      "privacy": "追加監査中。",
+      "parent": "大人が評価用アカウント/APIキーを管理。",
+      "why": "公式無料評価キーは確認済みだが、家庭の子ども向けルーターとしての条件を未確定。",
+      "safety": "用途・モデルごとの安全条件を追加確認。",
+      "official": [
+        "https://docs.cohere.com/v2/docs/rate-limits",
+        "https://cohere.com/pricing"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "nvidia-nim-api",
+      "name": "NVIDIA NIM API",
+      "status": "yellow",
+      "kind": "クラウドAI",
+      "role": "専門AI候補",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "👀 画像について聞きたい"
+      ],
+      "what": "NVIDIA公式カタログのFree EndpointからAIモデルをAPIで試せる。",
+      "best_for": "会話、推論、画像理解、安全性チェックなど。",
+      "free": "公式カタログにFree Endpointが複数存在。",
+      "free_period": "モデル・Trial条件ごと",
+      "free_type": "無料Endpoint / Trial",
+      "billing": "モデルごとに条件が異なる。",
+      "age": "子どものEnd User利用条件を追加確認中。",
+      "privacy": "Trial Termsとモデル固有ライセンスを個別確認。",
+      "parent": "大人がアカウント/APIキーを管理。",
+      "why": "公式だがモデルごとの規約差が大きいため一括で緑にはしない。",
+      "safety": "Content Safety専用モデルもあり、Routerの安全層候補。",
+      "official": [
+        "https://build.nvidia.com/models",
+        "https://docs.nvidia.com/nim/"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "mistral-api",
+      "name": "Mistral AI / API",
+      "status": "red",
+      "kind": "クラウドAI",
+      "role": "対象外（13歳未満）",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "what": "MistralのクラウドAI/API。",
+      "best_for": "13歳以上で条件を満たす利用者。",
+      "free": "La Plateformeには実験・評価・プロトタイプ向けFree tierがある。",
+      "free_period": "Free tier",
+      "free_type": "無料tier",
+      "billing": "商用tierへ移行可能。",
+      "age": "公式は利用者を13歳以上とし、未成年には必要に応じ保護者許可を要求。",
+      "privacy": "Free tierと商用tierの条件確認が必要。",
+      "parent": "保護者許可があっても13歳未満は対象外。",
+      "why": "小学生も想定する今回のカタログでは13歳未満が明確に対象外。",
+      "safety": "13歳未満Family AI Routerには接続しない。",
+      "official": [
+        "https://help.mistral.ai/en/articles/347631-can-children-use-mistral-products-and-services",
+        "https://legal.mistral.ai/terms/row-consumer-terms/"
+      ],
+      "audited": "2026-10-02"
     }
   ],
-  "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。"
+  "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
+  "display_policy": "クラウドAIを先に表示。子どもの『やりたいこと』から探し、大人が信号と根拠を確認。怪しい/非公式サービスは掲載しない。"
 }
