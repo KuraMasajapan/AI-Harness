@@ -357,3 +357,13 @@
 - validation: pytest 75 PASS / compileall PASS / startup static regression PASS / flat ZIP root PASS。
 - HOTFIX package SHA-256: 3bb6708370b7332ab2ed95e13d9cdbda129870e7db7e70030c31fe7ecde36472。
 
+### v0.9.0 first Global Macro Impact target result
+- Target Windows PCでGlobal Macro Tier-A Import / Impact Replayの実機試験に成功。
+- Stored / Tier A: 62 events (FOMC 16 / CPI 23 / Employment 23)。
+- Overall 24h average absolute BTC/JPY move: 2.30% (n=62)。Replay duration表示: 01:14。
+- FOMC avg |move|: 30m 0.41% / 1h 0.61% / 4h 1.44% / 24h 2.64%。
+- Employment avg |move|: 30m 0.53% / 1h 0.76% / 4h 1.63% / 24h 2.27%。
+- CPI avg |move|: 30m 0.40% / 1h 0.64% / 4h 1.64% / 24h 2.10%。
+- Interim interpretation: Employment shows the largest immediate 30m/1h absolute move; CPI/Employment are nearly tied at 4h; FOMC is largest at 24h.
+- Critical next requirement: add matched non-event/control windows before treating these event magnitudes as excess impact. Current results are association only and may reflect normal BTC volatility/regime effects.
+
