@@ -109,6 +109,7 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 将来はFundamental Confidence Ledgerでカテゴリ別の有効性を評価し、十分な実績がある範囲だけRisk調整へ利用する。
 
 v0.9.0でGlobal Macro Impact Labを実装。BOJ中心のCase StudyからGlobal / USへ重心を移し、Relevance GateでTier Aだけを採用する。初期SourceはFed FOMC Statement / BLS CPI / BLS Employment Situation。公式発表時刻をknowledge timeとしてBTC/JPYの30m / 1h / 4h / 24h後の絶対値動きを測る。Global Macro Schema v3は rates_liquidity / inflation / employment / regulation_etf / crypto_native / geopolitical / jpy_japan_overlay。英語本文は現行Japanese-only Sokudanへ送らず、Source種別で決定論的に分類する。Impactは発表後の関連測定であり因果関係を主張しない。
+v0.9.1でMatched Controlを追加。各Tier-A Eventに対し、同曜日・同じ公式発表時刻の近傍±1/2/3/4週から、import済みTier-A Eventの±24時間を除外した非イベント窓を最大4つ対応付ける。30m / 1h / 4h / 24hでEvent平均絶対値動き、Control平均絶対値動き、Excess、Event/Control Ratio、Event>Control Shareを算出する。通常変動・近いregimeの影響を減らす比較であり、因果関係は主張しない。
 
 v0.8.8でFundamental Confidence Dashboardを実装。Historical Replayのconfidence_ledgerを追加推論なしで読み、24時間方向一致率、平均絶対値動き、カテゴリ別件数/採点数/方向一致率/平均Model Confidence、大きな一致/外れケースを表示する。AlignmentはHuman正解ラベルによるAI分類精度ではなく、risk_on/risk_offと24時間後BTC/JPY方向の一致として明確に分離する。
 v0.8.9でHuman Label Reviewを実装。Historical Fundamentalの分類済みケースをHumanがまず50件採点し、Human Category Accuracyと24h Market Alignmentを別指標として管理する。採点中は24h市場結果をUIへ出さず、hindsight biasを抑える。Human labelsはappend-onlyで data/fundamental_review/human_labels.jsonl に保存し、Paper / Risk / Liveへ影響しない。
@@ -157,7 +158,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.9.0はWindows向けTrading Research Cockpit、Local AI Sandbox、Fundamental Confidence Dashboard、Human Label Review、Global Macro Impact Lab、4種Cool Skinを持つ。
+v0.9.1はWindows向けTrading Research Cockpit、Local AI Sandbox、Fundamental Confidence Dashboard、Human Label Review、Global Macro Impact Lab、Matched Control分析、4種Cool Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -218,7 +219,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 73 passed
+- local pytest: 79 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
@@ -232,3 +233,5 @@ API Key / API Secret はAI-Harnessへ保存しない。
 - checkpoints/BBB_V0.8.9_HUMAN_LABEL_REVIEW_2026-10-02.md
 
 - checkpoints/BBB_V0.9.0_GLOBAL_MACRO_IMPACT_2026-10-02.md
+
+- checkpoints/BBB_V0.9.1_MATCHED_CONTROL_2026-10-03.md
