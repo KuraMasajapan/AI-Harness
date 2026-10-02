@@ -108,6 +108,8 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 現在の分類結果は売買へ反映せず、Sandbox Ledgerへ保存して精度を検証する。
 将来はFundamental Confidence Ledgerでカテゴリ別の有効性を評価し、十分な実績がある範囲だけRisk調整へ利用する。
 
+v0.8.8でFundamental Confidence Dashboardを実装。Historical Replayのconfidence_ledgerを追加推論なしで読み、24時間方向一致率、平均絶対値動き、カテゴリ別件数/採点数/方向一致率/平均Model Confidence、大きな一致/外れケースを表示する。AlignmentはHuman正解ラベルによるAI分類精度ではなく、risk_on/risk_offと24時間後BTC/JPY方向の一致として明確に分離する。
+
 詳細:
 - checkpoints/BBB_FUNDAMENTAL_SENTINEL_CONCEPT_2026-09-29.md
 - agents/Local-AI/README.md
@@ -118,6 +120,7 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 - checkpoints/BBB_V0.8.3_FUNDAMENTAL_COLLECTOR_2026-10-01.md
 - checkpoints/BBB_V0.8.4_REPLAY_CLEANUP_2026-10-01.md
 - checkpoints/BBB_V0.8.5_HISTORICAL_IMPORT_SKINS_2026-10-01.md
+- checkpoints/BBB_V0.8.8_FUNDAMENTAL_CONFIDENCE_2026-10-02.md
 
 ## 6. FX handling
 BTC/JPYにはBTC価格変動とUSD/JPY変動が混在するため、判断用シグナルでは
@@ -151,7 +154,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.8.7はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab α、Historical Fundamental Import、4種Cool Skin、Run Timingを持つ。
+v0.8.8はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab α、Historical Fundamental Import、Fundamental Confidence Dashboard、4種Cool Skin、Run Timingを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -212,7 +215,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 54 passed
+- local pytest: 60 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
