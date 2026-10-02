@@ -233,3 +233,13 @@ Human Label Review answers the first question.
 - labels stored separately from model output
 - category-specific Human agreement and correction directions are summarized
 - no trade authority
+
+
+## v0.9.0 Global Macro boundary
+Global/US historical case studies are separated from the current Sokudan path.
+- English official events are not force-fed to the Japanese-only classifier.
+- Source identity provides deterministic v3 taxonomy categories.
+- First sources: FOMC Statement / CPI / Employment Situation.
+- Market impact is measured independently at 30m / 1h / 4h / 24h.
+- Future English semantic interpretation requires a separate validated language bridge or model.
+- no trade authority
