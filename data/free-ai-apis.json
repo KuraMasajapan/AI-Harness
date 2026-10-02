@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-02",
+  "policy": {
+    "green": "明確な禁止を確認できず、子ども向け経路の候補。実際のモデル・用途も確認する。",
+    "gray": "明確な禁止は確認できないが、未成年End Userなどに不明点が残る。保護者管理でのみ検討。",
+    "red": "未成年向け利用の明確な禁止、非公式API、規約回避など。子ども向けには使わない。"
+  },
+  "services": [
+    {
+      "id": "cloudflare-workers-ai",
+      "name": "Workers AI",
+      "provider": "Cloudflare",
+      "status": "gray",
+      "status_label": "🟡 もう少し確認",
+      "kind": "クラウドAPI",
+      "what": "文章・画像・音声など。使うAIモデルによってできることが変わります。",
+      "best_for": "自作アプリ、AI実験、家庭用AIのバックエンド",
+      "free": "1日10,000 Neuronsまで無料",
+      "free_period": "毎日リセット。固定の終了日は確認されていません。",
+      "billing": "Freeプランでは無料上限を超えると処理失敗。自動的な有料超過を避けやすい。",
+      "age": "サービスは18歳未満向けとして設計されていない旨があるため、保護者契約→子どもEnd User構成を追加確認。",
+      "privacy": "Workers AIへの入力・出力をモデル学習やサービス改善には使用しないと公式説明。",
+      "why": "料金事故とデータ利用の条件は良好。ただし子どもEnd Userの扱いを確定させるまでグレー。",
+      "parent": "保護者がアカウント/APIキーを管理。モデル単位のライセンス・安全性も確認。",
+      "official": [
+        "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "https://developers.cloudflare.com/workers-ai/platform/data-usage/"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "groq",
+      "name": "GroqCloud API",
+      "provider": "Groq",
+      "status": "gray",
+      "status_label": "🟡 もう少し確認",
+      "kind": "クラウドAPI",
+      "what": "高速な文章AI、コード支援、音声認識など。",
+      "best_for": "返事の速いAI、音声→文字、試作品",
+      "free": "Free Planあり。モデルごとに回数・トークン上限あり。",
+      "free_period": "固定の終了日は確認されていません。条件は変更される可能性あり。",
+      "billing": "無料上限はモデル別。利用前に最新Rate Limitsを確認。",
+      "age": "契約者は18歳以上。Customer Application経由のEnd User利用は規約に存在するが、子どもEnd Userについて明確化が必要。",
+      "privacy": "送信データの扱いは用途・設定を含め追加確認対象。",
+      "why": "親が契約してHarness経由で使う構造を明確に禁止する条文は今回確認できず。ただし子ども利用を明示許可とも確認できない。",
+      "parent": "保護者が契約・キー管理。個人情報を送らない。",
+      "official": [
+        "https://console.groq.com/docs/rate-limits",
+        "https://console.groq.com/docs/legal/services-agreement"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "gemini-api",
+      "name": "Gemini API",
+      "provider": "Google",
+      "status": "red",
+      "status_label": "🔴 子ども用には使わない",
+      "kind": "クラウドAPI",
+      "what": "文章、画像理解、コードなど幅広いAI。",
+      "best_for": "大人の開発・実験",
+      "free": "無料枠あり。モデルごとに上限あり。",
+      "free_period": "固定の終了日は確認されていません。",
+      "billing": "無料枠と有料枠があるため契約状態の確認が必要。",
+      "age": "現在の追加規約では18歳未満がアクセスする可能性のあるAPI Clientへの利用を禁止。",
+      "privacy": "無料サービスでは入力・出力が製品改善に使われ、人が確認する場合がある。",
+      "why": "子ども向けHarness用途について明確な禁止条件に当たるため赤。",
+      "parent": "子ども向け経路には接続しない。",
+      "official": [
+        "https://ai.google.dev/gemini-api/terms",
+        "https://ai.google.dev/gemini-api/docs/pricing"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "provider": "Ollama / ローカルモデル",
+      "status": "green",
+      "status_label": "🟢 有力候補",
+      "kind": "ローカルAI",
+      "what": "自宅のPCの中で文章AIを動かします。選ぶモデルによって能力が変わります。",
+      "best_for": "家族AI、プライバシー重視、オフライン実験",
+      "free": "ソフトウェアは無料。PC・電気代は必要。モデルごとのライセンスは別確認。",
+      "free_period": "期間制限なし（ソフトウェア）。",
+      "billing": "クラウドAPI従量課金なし。",
+      "age": "ローカル実行そのものと、使用モデルの条件を分けて確認する必要あり。",
+      "privacy": "ローカルモデルを使う構成なら会話を外部AI APIへ送らず運用可能。",
+      "why": "家庭用では非常に有力。ただし『Ollamaなら全部安全』ではなく、モデルのライセンス・内容・安全設定は別監査。",
+      "parent": "保護者がモデルを選び、子ども用UIと安全フィルターを用意する。",
+      "official": [
+        "https://ollama.com/",
+        "https://github.com/ollama/ollama"
+      ],
+      "audited": "2026-10-02"
+    }
+  ]
+}
