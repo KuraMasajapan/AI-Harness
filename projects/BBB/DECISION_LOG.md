@@ -291,3 +291,16 @@
 - v0.8.8 package validation: 60 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / packaged ZIP再展開後60 tests PASS。
 - package SHA-256: aeae977c337d315f0a749710df72619d76a63c10dee83d690a199b506f8fdb93。
 
+### v0.8.8 first Confidence Dashboard target result
+- Target Windows PCで100件Historical Replay後のFundamental Confidence Dashboardを確認。
+- Scored Cases: 97 / 100。
+- Overall 24H Alignment: 53.6% (aligned 52 / n=97)。
+- Avg absolute 24h move: 1.55%。
+- Evidence Stage: Developing / 蓄積中。
+- Category: Crypto Market 40/40, alignment 55.0%, avg |move| 1.46%, model conf 0.188。
+- Category: Financial Markets 28 events / 26 scored, alignment 50.0%, avg |move| 1.57%, model conf 0.111。
+- Category: Monetary Policy 27 events / 26 scored, alignment 57.7%, avg |move| 1.87%, model conf 0.171。
+- Category: Regulation 3/3, alignment 0.0%, avg |move| 0.25%, thin sample。
+- Category: Employment 2/2, alignment 100.0%, avg |move| 0.66%, thin sample。
+- Interpretation: overall 53.6% alone is not evidence of predictive edge. Small-sample Regulation/Employment must not be interpreted. Next priority is Human-labeled classification accuracy and category/schema cleanup before any Risk influence.
+
