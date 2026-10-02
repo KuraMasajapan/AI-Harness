@@ -475,6 +475,186 @@
         "https://jina.ai/api-dashboard/pricing/"
       ],
       "audited": "2026-10-02"
+    },
+    {
+      "id": "deepgram",
+      "name": "Deepgram",
+      "provider": "Deepgram",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウド音声AI",
+      "role": "対象外（小学生）",
+      "child_goals": [
+        "🎤 声を文字にしたい",
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "STT・TTS・Voice Agent・音声解析API。",
+      "best_for": "成人の音声AI開発。",
+      "free": "Pay As You Go開始時に$200 credit。カード不要。",
+      "free_period": "初回クレジット",
+      "free_type": "初回クレジット",
+      "billing": "無料credit後は従量課金。",
+      "age": "Termsでは18歳以上（または所在地の同意可能年齢以上）。Privacyでは13歳未満向けではない。",
+      "privacy": "現行TermsはYour Contentをサービス改善・モデルtraining/testing等にも利用できる広いライセンスを規定。",
+      "parent": "今回の小学生Family AI音声経路には使わない。",
+      "why": "無料量は大きいが、年齢条件と子どもの音声データ条件が今回の用途に合わない。",
+      "safety": "児童音声を送らない。",
+      "official": [
+        "https://deepgram.com/pricing",
+        "https://deepgram.com/terms",
+        "https://deepgram.com/privacy"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "assemblyai",
+      "name": "AssemblyAI",
+      "provider": "AssemblyAI",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウド音声AI",
+      "role": "対象外（16歳未満データ）",
+      "child_goals": [
+        "🎤 声を文字にしたい"
+      ],
+      "what": "高精度Speech-to-Text API。",
+      "best_for": "成人向け文字起こし。",
+      "free": "公式Pricing FAQで無料開始可能。録音済み最大185時間、Streaming最大333時間。カード不要。",
+      "free_period": "Free tier",
+      "free_type": "恒久/評価無料枠",
+      "billing": "有料利用は従量課金。",
+      "age": "Privacy Policyは16歳未満からPersonal Dataを knowingly collect/solicitしない。16歳未満はServicesを使用したりPersonal Dataを送らないよう明記。",
+      "privacy": "子どもの声はPersonal Dataになり得るため今回の小学生音声経路では送信しない。",
+      "parent": "今回のFamily AIには接続しない。",
+      "why": "無料量は非常に大きいが、小学生の音声データ用途とPrivacy条件が衝突する。",
+      "safety": "児童音声を送らない。",
+      "official": [
+        "https://www.assemblyai.com/pricing/",
+        "https://www.assemblyai.com/legal/privacy-policy"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "huggingface-inference",
+      "name": "Hugging Face Inference Providers",
+      "provider": "Hugging Face",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウドAI",
+      "role": "対象外（13歳未満）",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "👀 画像について聞きたい",
+        "🎨 画像をつくりたい"
+      ],
+      "what": "多数の外部Inference Providerと200+モデルへ統一APIでアクセス。",
+      "best_for": "13歳以上のモデル実験・Provider比較。",
+      "free": "Free userに月$0.10のInference Providers credit（変更可能）。",
+      "free_period": "毎月",
+      "free_type": "月次リセット",
+      "billing": "credit超過後の追加利用はcredits購入が必要。",
+      "age": "Hugging Face Account作成は13歳以上。",
+      "privacy": "利用Providerごとの条件も確認が必要。",
+      "parent": "小学生向けFamily AI経路には接続しない。",
+      "why": "無料額も小さく、13歳未満はAccount対象外。モデル発見源としては有用。",
+      "safety": "第三者モデル/Provider条件が重なる。",
+      "official": [
+        "https://huggingface.co/docs/inference-providers/en/pricing",
+        "https://huggingface.co/terms-of-service"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "fal-ai",
+      "name": "fal.ai",
+      "provider": "fal",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウド画像・メディアAI",
+      "role": "対象外（18歳未満）",
+      "child_goals": [
+        "🎨 画像をつくりたい"
+      ],
+      "what": "画像・動画・音声など生成AIモデルのAPI基盤。",
+      "best_for": "成人の生成メディア開発。",
+      "free": "無料credit/キャンペーンは変動するため恒久無料枠として扱わない。",
+      "free_period": "変動",
+      "free_type": "Trial/Promo候補",
+      "billing": "基本はモデル別従量課金。",
+      "age": "2026-09-08 Termsで18歳未満はServicesを利用不可。",
+      "privacy": "モデル/サービスごとのデータ処理条件あり。",
+      "parent": "今回の子ども経路には接続しない。",
+      "why": "画像APIとして有力だが年齢条件が明確なので赤。",
+      "safety": "Trust & Safety機能があっても年齢条件は変わらない。",
+      "official": [
+        "https://fal.ai/legal/terms-of-service",
+        "https://fal.ai/legal/acceptable-use-policy"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "replicate",
+      "name": "Replicate",
+      "provider": "Replicate",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウド画像・モデルAI",
+      "role": "画像候補（要安全層）",
+      "child_goals": [
+        "🎨 画像をつくりたい",
+        "👀 画像について聞きたい"
+      ],
+      "what": "多数の公開/商用AIモデルをAPI実行できる基盤。",
+      "best_for": "親管理の画像生成実験。",
+      "free": "恒久無料tierは確認できず、基本Pay-as-you-go。無料サービス図鑑の主役にはしない。",
+      "free_period": "なし/Promo除く",
+      "free_type": "有料候補",
+      "billing": "モデルごとの従量課金。prepaidまたは後払い。",
+      "age": "契約者は18歳以上/成年が基本。一方Termsは18歳未満End Userについて親が同意し責任を負う構造を明記。",
+      "privacy": "Privacyでは16歳未満のPersonal Informationを意図的に収集しない。",
+      "parent": "親契約＋子どもの個人情報を送らない＋承認モデルallowlistを前提。",
+      "why": "未成年End User構造はあるが、Replicateは第三者モデル出力を不適切性について監視しないと明記。無料候補としても弱いため黄で参考掲載。",
+      "safety": "モデルallowlist・prompt/output moderationが必須。",
+      "official": [
+        "https://replicate.com/terms/",
+        "https://replicate.com/privacy",
+        "https://replicate.com/pricing"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "fireworks-ai",
+      "name": "Fireworks AI",
+      "provider": "Fireworks AI",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウドAI",
+      "role": "対象外（児童データ）",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "💻 プログラミングしたい",
+        "👀 画像について聞きたい",
+        "🎨 画像をつくりたい"
+      ],
+      "what": "LLM・Vision・Audio・画像生成などの高速Inference基盤。",
+      "best_for": "成人/開発者向け。",
+      "free": "Serverless開始時$1 free credits。",
+      "free_period": "初回クレジット",
+      "free_type": "初回クレジット",
+      "billing": "2026-07-01からself-serveはprepaid。Auto reload設定あり。",
+      "age": "Minor利用は親監督で可能とするTerms条項がある一方、User Contentとして13歳未満のPersonal Informationをupload/make availableしてはならない。Privacyでも13歳未満はServicesを使わずPersonal Dataを提供しないよう記載。",
+      "privacy": "13歳未満Personal Data送信禁止が今回の会話/音声/画像用途と衝突しやすい。",
+      "parent": "小学生Family AIの汎用経路には接続しない。",
+      "why": "親監督条項はあるが、児童Personal Data制限が厳しく、家庭AIの自然な入力を安全に切り分けにくい。",
+      "safety": "児童Personal Dataを送らない。",
+      "official": [
+        "https://fireworks.ai/pricing",
+        "https://fireworks.ai/terms-of-service",
+        "https://fireworks.ai/privacy-policy"
+      ],
+      "audited": "2026-10-02"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -488,6 +668,11 @@
     {
       "name": "SambaNova Cloud",
       "reason": "現在の無料利用条件が今回の『気軽に使える無料AI』基準に合わないため掲載見送り。",
+      "checked": "2026-10-02"
+    },
+    {
+      "name": "Together AI",
+      "reason": "2026-06時点で一般向けFree trialなし。API利用には最低$5 credit購入＋カード接続が必要。無料AIカタログの基準から除外（キャンペーンcreditは恒久無料扱いしない）。",
       "checked": "2026-10-02"
     }
   ],
@@ -541,5 +726,23 @@
       "監査から90日経過"
     ],
     "discovery_sources_note": "第三者ディレクトリは候補発見にのみ利用し、公開判定は公式一次情報を優先する。"
+  },
+  "research_progress": {
+    "as_of": "2026-10-02",
+    "phase": "broad provider census + official audit",
+    "audited_categories": [
+      "LLM/会話",
+      "画像/メディア",
+      "STT/TTS",
+      "OCR/文書"
+    ],
+    "next_categories": [
+      "クラウドTTS追加",
+      "教育/学習特化",
+      "検索/RAG/Embedding",
+      "画像生成の無料恒久枠",
+      "日本語品質"
+    ],
+    "rule": "検索終了は主要カテゴリの候補母集団・採否・除外理由が台帳化され、未監査候補が既知リスト上で解消した時点。"
   }
 }
