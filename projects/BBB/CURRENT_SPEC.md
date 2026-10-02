@@ -109,6 +109,7 @@ Local AI未導入・LOADING・OFFLINE・障害時もBBB本体は継続する。
 将来はFundamental Confidence Ledgerでカテゴリ別の有効性を評価し、十分な実績がある範囲だけRisk調整へ利用する。
 
 v0.8.8でFundamental Confidence Dashboardを実装。Historical Replayのconfidence_ledgerを追加推論なしで読み、24時間方向一致率、平均絶対値動き、カテゴリ別件数/採点数/方向一致率/平均Model Confidence、大きな一致/外れケースを表示する。AlignmentはHuman正解ラベルによるAI分類精度ではなく、risk_on/risk_offと24時間後BTC/JPY方向の一致として明確に分離する。
+v0.8.9でHuman Label Reviewを実装。Historical Fundamentalの分類済みケースをHumanがまず50件採点し、Human Category Accuracyと24h Market Alignmentを別指標として管理する。採点中は24h市場結果をUIへ出さず、hindsight biasを抑える。Human labelsはappend-onlyで data/fundamental_review/human_labels.jsonl に保存し、Paper / Risk / Liveへ影響しない。
 
 詳細:
 - checkpoints/BBB_FUNDAMENTAL_SENTINEL_CONCEPT_2026-09-29.md
@@ -154,7 +155,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.8.8はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Fundamental Replay Lab α、Historical Fundamental Import、Fundamental Confidence Dashboard、4種Cool Skin、Run Timingを持つ。
+v0.8.9はWindows向けTrading Research Cockpit、分離Python環境のLocal AI Sandbox、Fundamental Data Collector、Historical Replay、Fundamental Confidence Dashboard、Human Label Review、4種Cool Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -215,7 +216,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 60 passed
+- local pytest: 67 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
@@ -225,3 +226,5 @@ API Key / API Secret はAI-Harnessへ保存しない。
 - BOJ RSS: CLASSIFY
 - Fed Press RSS: COLLECT ONLY
 - live order path: NOT IMPLEMENTED
+
+- checkpoints/BBB_V0.8.9_HUMAN_LABEL_REVIEW_2026-10-02.md
