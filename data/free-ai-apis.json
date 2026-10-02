@@ -329,6 +329,152 @@
       ],
       "audited": "2026-10-02",
       "status_label": "子ども用には使わない"
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "provider": "OpenRouter",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウドAI",
+      "role": "対象外（18歳未満）",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "👀 画像について聞きたい"
+      ],
+      "what": "多数のAIモデルを1つのAPIから使えるルーター。無料モデルも多数。",
+      "best_for": "成人の開発・比較・プロトタイプ。",
+      "free": "Free planは25+無料モデル、50 requests/day。free routerもある。",
+      "free_period": "継続無料枠（モデル構成は変動）",
+      "free_type": "恒久/変動無料モデル",
+      "billing": "Free planは支払い方法不要。無料モデルの構成と提供者は変動。",
+      "age": "利用規約でService利用者は18歳以上。",
+      "privacy": "リクエストはモデルProviderへ中継。Prompt/CompletionはOpenRouter側では既定でログしないが、Provider条件が別途適用される。",
+      "parent": "今回の13歳未満Family AI経路には接続しない。",
+      "why": "無料モデルは魅力的だが、OpenRouter自身の利用資格が18歳以上のため今回の子どもルートでは赤。",
+      "safety": "Guardrailsでモデル/Provider allowlist、ZDR、PII、予算制限等を設定可能だが年齢条件を上書きしない。",
+      "official": [
+        "https://openrouter.ai/pricing",
+        "https://openrouter.ai/terms",
+        "https://openrouter.ai/docs/guides/features/guardrails/overview"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "elevenlabs-api",
+      "name": "ElevenLabs API",
+      "provider": "ElevenLabs",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウド音声AI",
+      "role": "対象外（13歳未満）",
+      "child_goals": [
+        "🎤 声を文字にしたい",
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "高品質TTS、STT、音声・音楽系API。",
+      "best_for": "成人向け音声AI開発。",
+      "free": "Free planは月10,000 credits。APIキー利用可、カード不要。",
+      "free_period": "毎月",
+      "free_type": "月次リセット",
+      "billing": "Free $0/月。上位プランは有料。",
+      "age": "Prohibited Use Policyで13歳未満にサービスを利用可能にすること、13歳未満向けbundled solutionを禁止。13〜18歳は保護者同意が必要。",
+      "privacy": "Privacy Policyでは18歳未満のPersonal Data/Voice Dataの送信を禁止。",
+      "parent": "小学生向けFamily AIでは使用しない。",
+      "why": "無料音声APIとして強力だが、今回想定する小学生利用と明確に衝突するため赤。",
+      "safety": "児童安全ポリシーは強いが、それ自体が今回の年齢制限の根拠にもなる。",
+      "official": [
+        "https://elevenlabs.io/pricing",
+        "https://elevenlabs.io/use-policy",
+        "https://elevenlabs.io/privacy-policy"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "ocr-space",
+      "name": "OCR.space API",
+      "provider": "OCR.space",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウドOCR",
+      "role": "専門AI候補",
+      "child_goals": [
+        "👀 画像について聞きたい",
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "画像やPDFから文字を読み取るOCR API。",
+      "best_for": "プリント、画像、PDFの文字起こし。",
+      "free": "25,000 requests/月、Freeは500 requests/day/IP。Engine 3は別枠2,500 conversions。",
+      "free_period": "月次/日次",
+      "free_type": "月次リセット",
+      "billing": "Free planあり。PROは別契約。",
+      "age": "子どもEnd User条件を公式規約で追加確認中。",
+      "privacy": "画像/PDFをクラウドへ送るため、児童の個人情報を含む資料は追加監査が必要。",
+      "parent": "大人がAPIキーと送信データを管理。",
+      "why": "無料量は大きく用途にも合うが、未成年データ・利用条件の監査未完了なので黄。",
+      "safety": "個人情報を含む学校資料等は条件確定まで送らない。",
+      "official": [
+        "https://ocr.space/ocrapi"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "llamaparse",
+      "name": "LlamaParse",
+      "provider": "LlamaIndex",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウド文書AI",
+      "role": "専門AI候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい",
+        "👀 画像について聞きたい"
+      ],
+      "what": "PDFや文書をAI向けに解析・構造化するサービス。",
+      "best_for": "教材PDFや複雑な文書の解析。",
+      "free": "Free planは月10,000 credits、20 requests/min。",
+      "free_period": "月次",
+      "free_type": "月次リセット",
+      "billing": "無料credit消費後は402で停止。",
+      "age": "未成年End User条件を追加監査中。",
+      "privacy": "アップロード文書の保持・処理条件を追加監査中。",
+      "parent": "大人管理でのみ候補。",
+      "why": "無料枠と停止挙動は明確だが、子どもの文書を送る前にデータ条件確認が必要。",
+      "safety": "個人情報を含む教材・答案は監査完了まで送らない。",
+      "official": [
+        "https://developers.llamaindex.ai/llamaparse/general/limits/"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "jina-reader",
+      "name": "Jina Reader API",
+      "provider": "Jina AI",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウドWeb/検索AI",
+      "role": "専門AI候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "WebページをAIが読みやすいテキストへ変換。検索・Embedding系APIもある。",
+      "best_for": "Family AIのWeb調査補助。",
+      "free": "ReaderはAPI keyなし20 RPM、Free keyで500 RPM。新規API keyには無料tokensあり。",
+      "free_period": "基本無料/無料tokens",
+      "free_type": "恒久無料＋初回token",
+      "billing": "高い上限や他APIはtoken課金。自動top-up設定に注意。",
+      "age": "未成年End User条件を追加監査中。",
+      "privacy": "取得先WebとJina双方の条件を考慮。",
+      "parent": "子どもが直接操作せずFamily AIの裏側で大人管理する候補。",
+      "why": "無料Web取得として有力だが子ども向け条件を確定するまで黄。",
+      "safety": "検索結果の安全フィルタは別層で必要。",
+      "official": [
+        "https://jina.ai/reader/",
+        "https://jina.ai/api-dashboard/pricing/"
+      ],
+      "audited": "2026-10-02"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -356,5 +502,44 @@
     "source_rule": "判定は公式規約・公式料金・公式ドキュメントを優先。第三者の無料API一覧は候補発見にだけ使う。",
     "freshness": "無料枠・モデル・規約は変わるため監査日を表示し、古い情報は再確認する。",
     "disclaimer": "これは法的助言や安全保証ではない。保護者が最新の公式条件を確認して利用を決める。"
+  },
+  "research_baseline": {
+    "as_of": "2026-10-02",
+    "goal": "次回はゼロから同じ探索をせず、差分監査だけで更新できる基準台帳にする。",
+    "free_taxonomy": [
+      "恒久無料",
+      "日次リセット",
+      "月次リセット",
+      "評価/Trial",
+      "初回クレジット",
+      "ローカル無料"
+    ],
+    "discovery_scope": [
+      "LLM/会話",
+      "画像生成",
+      "Vision/OCR/文書",
+      "STT",
+      "TTS/音声",
+      "コード",
+      "Embedding/Rerank/Search",
+      "ローカルAI"
+    ],
+    "workflow": [
+      "候補発見",
+      "公式料金確認",
+      "公式年齢/End User規約確認",
+      "Privacy/Data確認",
+      "課金事故確認",
+      "子ども用途判定",
+      "採用/黄/赤/掲載外を記録"
+    ],
+    "refresh_triggers": [
+      "料金/Free tier変更",
+      "利用規約/Privacy改定",
+      "モデル終了/追加",
+      "API終了",
+      "監査から90日経過"
+    ],
+    "discovery_sources_note": "第三者ディレクトリは候補発見にのみ利用し、公開判定は公式一次情報を優先する。"
   }
 }
