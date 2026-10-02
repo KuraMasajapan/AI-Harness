@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ChatGPT / Codex Slash Commands</title>
+<style>
+:root{color-scheme:light dark;--bg:#f6f7f9;--card:#fff;--text:#171717;--muted:#666;--line:#ddd;--accent:#111}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1b1b1b;--text:#f5f5f5;--muted:#aaa;--line:#333;--accent:#fff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",sans-serif;line-height:1.55}
+main{max-width:760px;margin:auto;padding:20px 14px 56px}
+h1{font-size:1.7rem;margin:6px 0 4px}
+.lead{color:var(--muted);margin:0 0 22px}
+h2{font-size:1.15rem;margin:28px 2px 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin:10px 0}
+.cmd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.18rem;font-weight:750;margin-bottom:6px}
+.meta{font-size:.92rem;margin:2px 0}.label{font-weight:700}
+.note{font-size:.88rem;color:var(--muted)}
+.flow{font-size:.92rem;color:var(--muted);margin:0 2px 14px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<h1>ChatGPT / Codex Slash Commands</h1>
+<p class="lead">作業プロセス順の早見表。おすすめ対象は「どこで役立ちやすいか」の目安です。</p>
+
+<h2>1. 作業を始める</h2>
+<p class="flow">Project選択 → ローカル環境 → 初期設定 → IDE連携</p>
+
+<div class="card"><div class="cmd">/project</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex / ChatGPT</div><div class="meta"><span class="label">用途：</span>作業するProjectを選ぶ</div><div class="meta"><span class="label">おすすめ：</span>作業開始時</div></div>
+<div class="card"><div class="cmd">/local</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>ローカルプロジェクトで実行</div><div class="meta"><span class="label">おすすめ：</span>手元のRepoで開発するとき</div></div>
+<div class="card"><div class="cmd">/init</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>プロジェクト用の AGENTS.md 雛形を作る</div><div class="meta"><span class="label">おすすめ：</span>新規プロジェクト開始時</div></div>
+<div class="card"><div class="cmd">/ide-context</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>IDEから共有されるコンテキストをON/OFF</div><div class="meta"><span class="label">おすすめ：</span>コードを見ながら作業するとき</div></div>
+
+<h2>2. 計画する</h2>
+<p class="flow">計画 → 継続目標 → 必要なら作業領域を分離</p>
+
+<div class="card"><div class="cmd">/plan</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex / 🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>複数ステップ作業の計画を作る</div><div class="meta"><span class="label">おすすめ：</span>実装前・変更範囲が大きいとき</div></div>
+<div class="card"><div class="cmd">/goal</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex / Work</div><div class="meta"><span class="label">用途：</span>継続して取り組む目標を設定</div><div class="meta"><span class="label">おすすめ：</span>複数工程の作業</div></div>
+<div class="card"><div class="cmd">/worktree</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>新しいGit worktreeで作業</div><div class="meta"><span class="label">おすすめ：</span>本体から分離して安全に変更したいとき</div></div>
+
+<h2>3. 実装・難問に対応する</h2>
+
+<div class="card"><div class="cmd">/reasoning</div><div class="meta"><span class="label">対象：</span>🧠 ChatGPT / 🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>Reasoning effortを変更</div><div class="meta"><span class="label">おすすめ：</span>設計・デバッグ・難しい判断</div></div>
+<div class="card"><div class="cmd">/model</div><div class="meta"><span class="label">対象：</span>🧠 ChatGPT / 🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>使用モデルを選択</div><div class="meta"><span class="label">おすすめ：</span>作業難易度に応じて切り替えるとき</div></div>
+
+<h2>4. 実装後に確認する</h2>
+
+<div class="card"><div class="cmd">/review</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>変更コードをレビュー</div><div class="meta"><span class="label">おすすめ：</span>実装後</div></div>
+
+<h2>5. 長い作業を整理する</h2>
+
+<div class="card"><div class="cmd">/status</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex / 🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>Chat ID・コンテキスト使用量・利用状況などを確認</div><div class="meta"><span class="label">おすすめ：</span>長時間作業の途中</div></div>
+<div class="card"><div class="cmd">/compact</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex / 🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>現在のチャットのコンテキストを圧縮</div><div class="meta"><span class="label">おすすめ：</span>チャットが長くなったとき</div></div>
+
+<h2>6. 別案・外部連携</h2>
+
+<div class="card"><div class="cmd">/fork</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex / 🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>現在地点から別チャット・別worktreeへ分岐</div><div class="meta"><span class="label">おすすめ：</span>別案を試したいとき</div></div>
+<div class="card"><div class="cmd">/mcp</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>接続中のMCPサーバー状態を確認</div><div class="meta"><span class="label">おすすめ：</span>外部ツール連携の確認時</div></div>
+
+<h2>7. 必要なときに使うコマンド</h2>
+
+<div class="card"><div class="cmd">/cloud</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>チャットをクラウド実行へ切り替える</div><div class="meta"><span class="label">おすすめ：</span>クラウド側で実行したいとき</div></div>
+<div class="card"><div class="cmd">/cloud-environment</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>使用するクラウド環境を選択</div><div class="meta"><span class="label">おすすめ：</span>クラウド環境を切り替えるとき</div></div>
+<div class="card"><div class="cmd">/approve</div><div class="meta"><span class="label">対象：</span>🛠 共通</div><div class="meta"><span class="label">用途：</span>拒否された直近の処理を1回だけ再承認</div><div class="meta"><span class="label">おすすめ：</span>安全確認後に再試行したいとき</div></div>
+<div class="card"><div class="cmd">/fast</div><div class="meta"><span class="label">対象：</span>🛠 共通</div><div class="meta"><span class="label">用途：</span>Fastサービス階層をON/OFF</div><div class="meta"><span class="label">おすすめ：</span>利用可能な環境で速度を切り替えるとき</div></div>
+<div class="card"><div class="cmd">/feedback</div><div class="meta"><span class="label">対象：</span>🛠 共通</div><div class="meta"><span class="label">用途：</span>フィードバック画面を開く</div><div class="meta"><span class="label">おすすめ：</span>不具合・改善要望を送るとき</div></div>
+<div class="card"><div class="cmd">/memories</div><div class="meta"><span class="label">対象：</span>🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>そのチャットでMemoryを利用・生成するか設定</div><div class="meta"><span class="label">おすすめ：</span>Memoryの扱いを変えたいとき</div></div>
+<div class="card"><div class="cmd">/personality</div><div class="meta"><span class="label">対象：</span>🧑‍💻 Codex</div><div class="meta"><span class="label">用途：</span>Codexの応答パーソナリティを選択</div><div class="meta"><span class="label">おすすめ：</span>応答スタイルを変えたいとき</div></div>
+<div class="card"><div class="cmd">/side</div><div class="meta"><span class="label">対象：</span>🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>メインチャットを止めず一時的な横チャットを開始</div><div class="meta"><span class="label">おすすめ：</span>本筋を崩さず別件を確認したいとき</div></div>
+<div class="card"><div class="cmd">/task</div><div class="meta"><span class="label">対象：</span>🧠 ChatGPT</div><div class="meta"><span class="label">用途：</span>Projectを使わない新しいチャットを開始</div><div class="meta"><span class="label">おすすめ：</span>独立した作業を始めるとき</div></div>
+<div class="card"><div class="cmd">/pet</div><div class="meta"><span class="label">対象：</span>🖥 Desktop</div><div class="meta"><span class="label">用途：</span>デスクトップPetを表示・非表示</div><div class="meta"><span class="label">おすすめ：</span>好みで</div></div>
+
+<h2>拡張</h2>
+<div class="card"><div class="cmd">Skills</div><div class="meta"><span class="label">用途：</span>有効なSkillがスラッシュメニューに表示される場合がある</div><div class="meta"><span class="label">明示呼び出し：</span><code>$Skill名</code></div></div>
+<div class="card"><div class="cmd">/prompts:&lt;name&gt;</div><div class="meta"><span class="label">用途：</span>登録したCustom Promptを呼び出す</div></div>
+
+<footer>
+<p>※ 利用できるコマンドは、ChatGPT / Codex / Desktop App / 契約プラン / 有効機能によって異なります。</p>
+<p>更新日: 2026-10-02</p>
+</footer>
+</main>
+</body>
+</html>
