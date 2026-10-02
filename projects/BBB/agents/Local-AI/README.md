@@ -219,3 +219,17 @@ The Local AI Sandbox can now be fed BOJ historical archive events.
 - date-only cases skip 5m / 30m / 1h / 4h scoring
 - first historical market check: BTC/JPY 24h
 - results remain evidence for calibration, not trade authority
+
+
+## v0.8.9 Human label calibration
+BBB now separates two questions:
+1. Did Sokudan classify the text the same way a Human would?
+2. Did risk_on / risk_off align with the later BTC/JPY direction?
+
+Human Label Review answers the first question.
+- target: first 50 Historical Fundamental cases
+- market outcome hidden during labelling
+- category label required; risk bias label optional
+- labels stored separately from model output
+- category-specific Human agreement and correction directions are summarized
+- no trade authority
