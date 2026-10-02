@@ -11,21 +11,22 @@
       "id": "cloudflare-workers-ai",
       "name": "Workers AI",
       "provider": "Cloudflare",
-      "status": "gray",
-      "status_label": "🟡 もう少し確認",
-      "kind": "クラウドAPI",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウドAI",
       "what": "文章・画像・音声など。使うAIモデルによってできることが変わります。",
       "best_for": "自作アプリ、AI実験、家庭用AIのバックエンド",
-      "free": "10,000 Neurons/日。Free planでは上限超過後の追加処理は失敗し、自動課金されない。",
+      "free": "Workers Freeで合計10,000 Neurons/日。無料枠は毎日00:00 UTCにリセット。",
       "free_period": "毎日00:00 UTCにリセット",
-      "billing": "Freeプランでは無料上限を超えると処理失敗。自動的な有料超過を避けやすい。",
+      "billing": "Freeでは上限到達後はエラーになり、Workers Paidへ変更しない限り超過課金されない。一部の新しいモデルはPaid/プリペイドが必要なので無料モデルだけを選ぶ。",
       "age": "サービスは18歳未満向けとして設計されていない旨があるため、保護者契約→子どもEnd User構成を追加確認。",
-      "privacy": "Workers AIへの入力・出力をモデル学習やサービス改善には使用しないと公式説明。",
+      "privacy": "CloudflareはWorkers AIのCustomer ContentをAIモデルの学習やCloudflare/第三者サービス改善に使わない（明示的同意がある場合を除く）。",
       "why": "料金事故とデータ利用の条件は良好。ただし子どもEnd Userの扱いを確定させるまでグレー。",
       "parent": "保護者がアカウント/APIキーを管理。モデル単位のライセンス・安全性も確認。",
       "official": [
         "https://developers.cloudflare.com/workers-ai/platform/pricing/",
-        "https://developers.cloudflare.com/workers-ai/platform/data-usage/"
+        "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
+        "https://developers.cloudflare.com/workers-ai/models/"
       ],
       "audited": "2026-10-02",
       "safety": "Guardrailsで入力・出力の危険カテゴリをFlag / Ignore / Blockできる。Guardrails自体もWorkers AI使用量を消費する。",
@@ -43,8 +44,8 @@
       "id": "groq",
       "name": "GroqCloud API",
       "provider": "Groq",
-      "status": "gray",
-      "status_label": "🟡 もう少し確認",
+      "status": "yellow",
+      "status_label": "大人が確認",
       "kind": "クラウドAPI",
       "what": "高速な文章AI、コード支援、音声認識など。",
       "best_for": "返事の速いAI、音声→文字、試作品",
@@ -74,7 +75,7 @@
       "name": "Gemini API",
       "provider": "Google",
       "status": "red",
-      "status_label": "🔴 子ども用には使わない",
+      "status_label": "子ども用には使わない",
       "kind": "クラウドAPI",
       "what": "文章、画像理解、コードなど幅広いAI。",
       "best_for": "大人の開発・実験",
@@ -104,7 +105,7 @@
       "name": "Ollama",
       "provider": "Ollama / ローカルモデル",
       "status": "green",
-      "status_label": "🟢 有力候補",
+      "status_label": "候補",
       "kind": "ローカルAI",
       "what": "自宅のPCの中で文章AIを動かします。選ぶモデルによって能力が変わります。",
       "best_for": "家族AI、プライバシー重視、オフライン実験",
@@ -134,7 +135,7 @@
       "name": "Piper",
       "provider": "Open source",
       "status": "green",
-      "status_label": "🟢 有力候補",
+      "status_label": "候補",
       "kind": "ローカル読み上げ",
       "what": "文字を声にして読み上げます。",
       "best_for": "AIの返事をしゃべらせる、読み上げ、工作の音声案内",
@@ -161,8 +162,8 @@
       "id": "lm-studio",
       "name": "LM Studio",
       "provider": "LM Studio",
-      "status": "gray",
-      "status_label": "🟡 監査待ち",
+      "status": "yellow",
+      "status_label": "大人が確認",
       "kind": "ローカルAI",
       "what": "PCでAIモデルを動かし、ローカルAPIとして使えます。",
       "best_for": "いろいろなローカルモデルを試す、家庭内AIサーバー",
@@ -190,8 +191,8 @@
       "id": "whisper-local",
       "name": "Whisper",
       "provider": "OpenAI / open source model",
-      "status": "gray",
-      "status_label": "🟡 監査待ち",
+      "status": "yellow",
+      "status_label": "大人が確認",
       "kind": "ローカル音声認識",
       "what": "声を文字に変えます。",
       "best_for": "子どもの音声入力、工作への声の命令",
@@ -238,7 +239,8 @@
       "official": [
         "https://www.cerebras.ai/inference"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "status_label": "大人が確認"
     },
     {
       "id": "cohere-api",
@@ -254,7 +256,7 @@
       ],
       "what": "会話、推論、翻訳、画像理解、コードなどのクラウドAI API。",
       "best_for": "会話・学習・画像理解などを試す用途。",
-      "free": "評価用キーは無料。Chat系など月1,000 API callsの制限あり。",
+      "free": "Trial / Evaluation keyは無料。新しいChat系を含め月1,000 API callsの上限。",
       "free_period": "評価用途",
       "free_type": "評価用",
       "billing": "Production keyは有料。無料キーは本番・商用向けではない。",
@@ -267,7 +269,8 @@
         "https://docs.cohere.com/v2/docs/rate-limits",
         "https://cohere.com/pricing"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "status_label": "大人が確認"
     },
     {
       "id": "nvidia-nim-api",
@@ -282,7 +285,7 @@
       ],
       "what": "NVIDIA公式カタログのFree EndpointからAIモデルをAPIで試せる。",
       "best_for": "会話、推論、画像理解、安全性チェックなど。",
-      "free": "公式カタログにFree Endpointが複数存在。",
+      "free": "NVIDIA公式モデルカタログにFree Endpointあり。モデルごとに提供状態が変わるため個別確認。",
       "free_period": "モデル・Trial条件ごと",
       "free_type": "無料Endpoint / Trial",
       "billing": "モデルごとに条件が異なる。",
@@ -295,7 +298,8 @@
         "https://build.nvidia.com/models",
         "https://docs.nvidia.com/nim/"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "status_label": "大人が確認"
     },
     {
       "id": "mistral-api",
@@ -323,7 +327,8 @@
         "https://help.mistral.ai/en/articles/347631-can-children-use-mistral-products-and-services",
         "https://legal.mistral.ai/terms/row-consumer-terms/"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "status_label": "子ども用には使わない"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -339,5 +344,17 @@
       "reason": "現在の無料利用条件が今回の『気軽に使える無料AI』基準に合わないため掲載見送り。",
       "checked": "2026-10-02"
     }
-  ]
+  ],
+  "methodology": {
+    "audience": "子どもが『やりたいこと』から探し、大人が契約・APIキー・利用可否を判断する。",
+    "signals": {
+      "green": "公式サービスで、今回確認した範囲では子ども向けFamily AI経路を妨げる明確な条件を確認していない候補。モデル固有条件は別確認。",
+      "yellow": "サービス自体は正規だが、未成年End User、データ、モデル条件などに確認事項が残る。怪しいサービスという意味ではない。",
+      "red": "正規サービスでも、今回想定する子ども利用に明確な禁止・年齢制限があるため接続しない。"
+    },
+    "exclusion": "非公式API、Cookie/セッション流用、規約回避、運営主体やデータ取扱いが不透明なサービスは信号を付けず掲載対象外。",
+    "source_rule": "判定は公式規約・公式料金・公式ドキュメントを優先。第三者の無料API一覧は候補発見にだけ使う。",
+    "freshness": "無料枠・モデル・規約は変わるため監査日を表示し、古い情報は再確認する。",
+    "disclaimer": "これは法的助言や安全保証ではない。保護者が最新の公式条件を確認して利用を決める。"
+  }
 }
