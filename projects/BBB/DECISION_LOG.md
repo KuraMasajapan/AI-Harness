@@ -336,3 +336,14 @@
 - Interpretation: BOJ-focused text classification shows substantial category mismatch at the current checkpoint; this supports prioritizing schema/category review and shifting the main BTC case-study dataset toward Global/US macro while retaining BOJ as a Japan/JPY overlay set.
 - Do not interpret Risk Bias Agreement as trading edge or predictive accuracy.
 
+### v0.9.0 Global Macro Impact Lab
+- BOJ Human Label Review 28/50を保持したまま主Case StudyをGlobal / USへ移行。
+- Relevance Gateを導入し、初期はTier A公式イベントのみ収集。
+- Initial Sources: Fed FOMC Statement / BLS CPI / BLS Employment Situation。
+- Global Macro Schema v3: rates_liquidity / inflation / employment / regulation_etf / crypto_native / geopolitical / jpy_japan_overlay。
+- 現行Sokudanは日本語運用のため英語本文へ無理に適用しない。Source identityで決定論的categoryを付与。
+- 公式発表時刻をknowledge timeとしてBTC/JPYの30m / 1h / 4h / 24h後の値動きをImpact Replay。
+- 指標は平均絶対値動き等のassociationであり、因果関係や予測優位性を意味しない。
+- Package validation: 73 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 73 PASS。
+- package SHA-256: e0cdc829ff825eac2556da7f27ced607ae9accde7709551804216065c3b9d1b8。
+
