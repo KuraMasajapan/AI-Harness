@@ -319,3 +319,11 @@
 - v0.8.9 validation: 67 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static check PASS / flat ZIP root PASS / packaged ZIP再展開後67 tests PASS。
 - package SHA-256: 44524e4e9f0b087dbd6f98a5be1a455f8510d654bab4ce3bc40ff0c79b5fe907。
 
+### Pause BOJ Human Label Review / shift to Global Macro
+- Human observation: BOJ archive includes many small/low-impact items, and Japan policy may have limited direct explanatory power for BTC direction compared with global/US drivers.
+- Decision: pause the current BOJ-focused Human Label Review at the current progress rather than force completion to 50 labels.
+- Existing Human labels are retained; no data is discarded.
+- BOJ data is re-framed primarily as a JPY / Japan overlay calibration set, not the main BTC driver dataset.
+- Next case-study priority shifts to Global / US macro and crypto-native events: Fed/FOMC, CPI/PCE, employment, US rates, major regulation/ETF/crypto-native events, then geopolitics.
+- Add a relevance/importance gate before future large-scale historical labeling so minor archive items do not dominate the review set.
+
