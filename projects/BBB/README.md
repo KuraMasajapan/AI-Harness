@@ -24,7 +24,7 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - UI Skin: Graphite Blue / Deep Navy / Steel Slate / Black Ice
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 73/73 PASS（v0.9.0 package validation）
+- ローカルテスト: 79/79 PASS（v0.9.1 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -158,3 +158,13 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - English text is not sent to current Japanese-only Sokudan
 - association measurement only; no causal claim
 - BOJ Human Label Review is paused at 28/50 and retained as Japan/JPY Overlay evidence
+
+
+## v0.9.1 Matched Control
+- Tier-A Eventごとに近傍の非イベント窓を比較対象として作成
+- 同曜日・同じ公式発表時刻
+- ±1 / 2 / 3 / 4週候補
+- import済みTier-A Eventの±24時間を除外
+- 1 Event最大4 Control
+- 30m / 1h / 4h / 24hで Event |Move| / Control |Move| / Excess / Ratio / Event>Control Share
+- 通常変動との差を減らすための対照比較であり、因果関係の証明ではない
