@@ -347,3 +347,13 @@
 - Package validation: 73 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 73 PASS。
 - package SHA-256: e0cdc829ff825eac2556da7f27ced607ae9accde7709551804216065c3b9d1b8。
 
+### v0.9.0 Windows startup hotfix
+- Target Windows PCでv0.9.0起動時、Native window失敗後のbrowser fallbackも起動できず `BBB failed to start` となった。
+- Code inspectionでGlobal Macro moduleがimport時に `ZoneInfo("America/New_York")` を生成しており、Windows Python環境でIANA timezone databaseが無い構成ではmodule import自体が失敗し得る起動依存を確認。
+- Global MacroのUS Eastern offset計算をOS/IANA timezone database非依存へ変更。2007年以降のUS DST ruleをrelease dateへ適用。
+- FOMC 14:00 ET / BLS 08:30 ETはDST切替の曖昧な02:00帯ではないため、Tier-A case-study時刻用途では安全に扱える。
+- Browser fallback API allowed-listへGlobal Macro status/import/replayの3 methodを追加。
+- startup regression testsを追加。
+- validation: pytest 75 PASS / compileall PASS / startup static regression PASS / flat ZIP root PASS。
+- HOTFIX package SHA-256: 3bb6708370b7332ab2ed95e13d9cdbda129870e7db7e70030c31fe7ecde36472。
+
