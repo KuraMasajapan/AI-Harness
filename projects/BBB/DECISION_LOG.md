@@ -367,3 +367,15 @@
 - Interim interpretation: Employment shows the largest immediate 30m/1h absolute move; CPI/Employment are nearly tied at 4h; FOMC is largest at 24h.
 - Critical next requirement: add matched non-event/control windows before treating these event magnitudes as excess impact. Current results are association only and may reflect normal BTC volatility/regime effects.
 
+### v0.9.1 Matched Control
+- v0.9.0 Global Macro実機結果: FOMC/CPI/Employment計62件、24h平均絶対値動き2.30%。
+- Human判断により、次段階はEvent後変動を通常時と比較するMatched Controlへ進む。
+- Control候補は同曜日・同じ公式発表時刻の±1/2/3/4週。
+- import済みTier-A Eventの±24時間に入る候補は除外。
+- 1 Eventあたり最大4 Controlを採用。
+- 30m / 1h / 4h / 24hで Event Avg |Move| / Control Avg |Move| / Excess / Event-Control Ratio / Event>Control Shareを算出。
+- Matched Controlは近い時期・同曜日・同時刻を使うことでbaseline/regime biasを減らすが、未収集ニュース等のconfounderは残るため因果関係を主張しない。
+- UIに24h Control / Excess / RatioとEvent Type別Matched Control表を追加。
+- Package validation: 79 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 79 PASS。
+- package SHA-256: 892eb3db738299c1eb130e180de0c9ef9407586bcb3e06584016582091b78164。
+
