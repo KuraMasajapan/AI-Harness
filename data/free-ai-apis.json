@@ -27,7 +27,8 @@
         "https://developers.cloudflare.com/workers-ai/platform/pricing/",
         "https://developers.cloudflare.com/workers-ai/platform/data-usage/"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "safety": "Guardrailsで入力・出力の危険カテゴリをFlag / Ignore / Blockできる。Guardrails自体もWorkers AI使用量を消費する。"
     },
     {
       "id": "groq",
@@ -92,6 +93,74 @@
       "official": [
         "https://ollama.com/",
         "https://github.com/ollama/ollama"
+      ],
+      "audited": "2026-10-02",
+      "safety": "ローカルAPIはAPIキー不要。クラウドモデルを選ぶと外部通信になるため、子ども用はlocal-onlyを基本にする。"
+    },
+    {
+      "id": "piper-local",
+      "name": "Piper",
+      "provider": "Open source",
+      "status": "green",
+      "status_label": "🟢 有力候補",
+      "kind": "ローカル読み上げ",
+      "what": "文字を声にして読み上げます。",
+      "best_for": "AIの返事をしゃべらせる、読み上げ、工作の音声案内",
+      "free": "ソフト本体は無料（MIT）。PC・電気代のみ。",
+      "free_period": "ソフト本体は期間制限なし。",
+      "billing": "クラウド従量課金なし。",
+      "age": "ローカルソフト本体に子ども向けクラウド契約の問題はない。ただし利用する音声モデルの条件は個別確認。",
+      "privacy": "ローカル構成なら読み上げる文章を外部APIへ送らずに処理可能。",
+      "why": "家庭用音声AIに向く。ただし音声モデルごとにライセンスが異なるため、承認済みVoiceだけを使う。",
+      "parent": "保護者が使用Voiceを選び、MODEL_CARDのライセンスを確認する。",
+      "safety": "会話内容の安全性はPiperではなく、前段のLLM/Harness側で管理する。",
+      "official": [
+        "https://github.com/rhasspy/piper",
+        "https://github.com/rhasspy/piper/blob/master/LICENSE.md"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "provider": "LM Studio",
+      "status": "gray",
+      "status_label": "🟡 監査待ち",
+      "kind": "ローカルAI",
+      "what": "PCでAIモデルを動かし、ローカルAPIとして使えます。",
+      "best_for": "いろいろなローカルモデルを試す、家庭内AIサーバー",
+      "free": "Free AI APIsではローカル無制限候補として掲載。正式条件を追加監査中。",
+      "free_period": "追加監査中",
+      "billing": "ローカル実行部分はクラウド従量課金とは別。",
+      "age": "子ども向け利用条件を追加監査中。",
+      "privacy": "ローカルモデルだけなら外部送信を減らせるが、機能・モデルごとの通信を確認する。",
+      "why": "有力そうだが、公開用カタログでは公式条件確認が終わるまで黄色。",
+      "parent": "今は候補として見るだけ。",
+      "safety": "モデル単位の安全性確認が必要。",
+      "official": [
+        "https://lmstudio.ai/"
+      ],
+      "audited": "2026-10-02"
+    },
+    {
+      "id": "whisper-local",
+      "name": "Whisper",
+      "provider": "OpenAI / open source model",
+      "status": "gray",
+      "status_label": "🟡 監査待ち",
+      "kind": "ローカル音声認識",
+      "what": "声を文字に変えます。",
+      "best_for": "子どもの音声入力、工作への声の命令",
+      "free": "Free AI APIsのローカル音声認識候補。ローカル実装・モデル条件を追加監査中。",
+      "free_period": "追加監査中",
+      "billing": "ローカル実行ならクラウドAPI料金とは別。",
+      "age": "ローカル利用とクラウドAPI利用を分けて監査する。",
+      "privacy": "ローカル実行なら音声を外部APIへ送らない構成が可能。",
+      "why": "家族AIには重要な部品だが、公開判定を急がず追加監査。",
+      "parent": "ローカル実行を優先する。",
+      "safety": "音声を文字にする部品。生成AIの安全フィルターとは役割が別。",
+      "official": [
+        "https://github.com/openai/whisper"
       ],
       "audited": "2026-10-02"
     }
