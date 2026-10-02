@@ -16,8 +16,8 @@
       "kind": "クラウドAPI",
       "what": "文章・画像・音声など。使うAIモデルによってできることが変わります。",
       "best_for": "自作アプリ、AI実験、家庭用AIのバックエンド",
-      "free": "1日10,000 Neuronsまで無料",
-      "free_period": "毎日リセット。固定の終了日は確認されていません。",
+      "free": "10,000 Neurons/日。Free planでは上限超過後の追加処理は失敗し、自動課金されない。",
+      "free_period": "毎日00:00 UTCにリセット",
       "billing": "Freeプランでは無料上限を超えると処理失敗。自動的な有料超過を避けやすい。",
       "age": "サービスは18歳未満向けとして設計されていない旨があるため、保護者契約→子どもEnd User構成を追加確認。",
       "privacy": "Workers AIへの入力・出力をモデル学習やサービス改善には使用しないと公式説明。",
@@ -51,10 +51,10 @@
       "free": "Free Planあり。モデルごとに回数・トークン上限あり。",
       "free_period": "固定の終了日は確認されていません。条件は変更される可能性あり。",
       "billing": "無料上限はモデル別。利用前に最新Rate Limitsを確認。",
-      "age": "契約者は18歳以上。Customer Application経由のEnd User利用は規約に存在するが、子どもEnd Userについて明確化が必要。",
+      "age": "契約・Cloud Servicesへの直接アクセスは18歳以上。親など成人Customerが作るCustomer ApplicationのEnd Userとして未成年が利用する構造は規約上想定され、未成年向けアプリの法令順守はCustomer責任。",
       "privacy": "送信データの扱いは用途・設定を含め追加確認対象。",
-      "why": "親が契約してHarness経由で使う構造を明確に禁止する条文は今回確認できず。ただし子ども利用を明示許可とも確認できない。",
-      "parent": "保護者が契約・キー管理。個人情報を送らない。",
+      "why": "成人Customer→Customer Application→End Userという構造は現行規約に明記。ただし未成年向け法令順守とモデル固有条件は保護者側の責任なので黄信号。",
+      "parent": "成人がCustomer/アカウント/APIキーを管理し、子どもはFamily AIのEnd Userとして利用する形を前提。",
       "official": [
         "https://console.groq.com/docs/rate-limits",
         "https://console.groq.com/docs/legal/services-agreement"
@@ -327,5 +327,17 @@
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
-  "display_policy": "クラウドAIを先に表示。子どもの『やりたいこと』から探し、大人が信号と根拠を確認。怪しい/非公式サービスは掲載しない。"
+  "display_policy": "クラウドAIを先に表示。子どもの『やりたいこと』から探し、大人が信号と根拠を確認。怪しい/非公式サービスは掲載しない。",
+  "excluded": [
+    {
+      "name": "GitHub Models",
+      "reason": "2026-07-30に公式に完全終了。古い無料API一覧に残っていても掲載しない。",
+      "checked": "2026-10-02"
+    },
+    {
+      "name": "SambaNova Cloud",
+      "reason": "現在の無料利用条件が今回の『気軽に使える無料AI』基準に合わないため掲載見送り。",
+      "checked": "2026-10-02"
+    }
+  ]
 }
