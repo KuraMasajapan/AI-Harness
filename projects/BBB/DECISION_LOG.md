@@ -279,3 +279,15 @@
 - validation: pytest 56 PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS。
 - HOTFIX SHA-256: c01724530e266492f810622593a18c492ad2cf9ab3e37fd55e85f4d2bff9ccc2。
 
+### v0.8.8 Fundamental Confidence Dashboard
+- Human要望: 100件Historical ReplayからSokudanの得意・不得意を早く見たい。
+- 既存confidence_ledger.jsonlを再利用し、追加のLocal AI推論なしで分析するDashboardを追加。
+- Overall表示: Scored Cases / 24H Alignment / Avg |Move| / Evidence Stage。
+- Category別表示: events / scored / alignment rate / avg absolute move / avg minimum confidence / sample stage。
+- 24h方向一致のうち絶対値動きが大きい一致ケース・外れケースを各最大5件表示。
+- 過去の絶対ledger_pathが移動後に無効でも、current data_dir内の最新run_*/confidence_ledger.jsonlへfallbackする。
+- 方向一致率をAI分類精度と誤認しないよう、Human label accuracyとは別指標であることをUIに明示。
+- Safety boundary変更なし。Dashboardは読み取り専用でPaper / Risk / Liveへ影響しない。
+- v0.8.8 package validation: 60 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / packaged ZIP再展開後60 tests PASS。
+- package SHA-256: aeae977c337d315f0a749710df72619d76a63c10dee83d690a199b506f8fdb93。
+
