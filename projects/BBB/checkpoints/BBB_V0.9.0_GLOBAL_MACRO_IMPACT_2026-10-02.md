@@ -45,3 +45,13 @@ Date: 2026-10-02
 ## Safety
 Sandbox / read-only research only.
 No Paper / Risk / Live behavior change.
+
+## Windows startup hotfix
+- Target symptom: native launch failed, browser fallback also exited before startup completed.
+- Removed import-time dependency on Windows IANA timezone database for America/New_York.
+- US Eastern offset now uses modern US DST calendar rules for Tier-A release timestamps.
+- Browser fallback now exposes Global Macro status/import/replay methods.
+- Validation: 75 pytest PASS / compileall PASS / startup regression PASS.
+- Package: BBB_v0.9.0_Global_Macro_Impact_Lab_WINDOWS_HOTFIX.zip
+- SHA-256: 3bb6708370b7332ab2ed95e13d9cdbda129870e7db7e70030c31fe7ecde36472
+
