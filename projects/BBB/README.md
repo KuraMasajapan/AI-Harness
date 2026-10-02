@@ -19,11 +19,12 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - Local AI Sandbox: Sokudan CPU統合済み（売買影響OFF）
 - Fundamental Data Collector: BOJ RSS自動分類 + Fed RSS収集
 - Fundamental Replay Lab α: 観測済みイベントと後続BTC/JPY反応をSandbox照合
+- Human Label Review / 人手ラベルレビュー: Sokudan分類をHuman基準で50件監査
 - Historical Fundamental Import: BOJ公式年別アーカイブから過去Case Studyを作成
 - UI Skin: Graphite Blue / Deep Navy / Steel Slate / Black Ice
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 60/60 PASS（v0.8.8 package validation）
+- ローカルテスト: 67/67 PASS（v0.8.9 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -132,3 +133,15 @@ Historical Replayの保存済みconfidence ledgerを追加のSokudan推論なし
 - Largest Misses / 大きく外れたケース
 
 AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk_offと24時間後BTC/JPY方向の一致として扱う。
+
+
+## v0.8.9 Human Label Review
+- Historical Fundamentalの分類済みケースをHumanが採点
+- 初期Target: 50件
+- Human Category: 7カテゴリ
+- Human Risk Bias: risk_on / risk_off / unclear（任意）
+- 採点中は24h市場結果を非表示
+- Human Category Accuracyと24H Market Alignmentを別指標で管理
+- AI category別Human一致率と主な修正方向を表示
+- labels: data/fundamental_review/human_labels.jsonl
+- Sandbox only / Trade influence OFF
