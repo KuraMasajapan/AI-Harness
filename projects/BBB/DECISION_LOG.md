@@ -379,3 +379,15 @@
 - Package validation: 79 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 79 PASS。
 - package SHA-256: 892eb3db738299c1eb130e180de0c9ef9407586bcb3e06584016582091b78164。
 
+### v0.9.1 overall Matched Control target summary
+- Target Windows PC screenshot confirmed the full matched-control summary after 62 Tier-A events.
+- Overall 24h Event Avg |Move|: 2.30%.
+- Overall 24h Control Avg |Move|: 1.75%.
+- Overall 24h Excess: +0.56 percentage points.
+- Overall Event / Control ratio: 1.32x.
+- Matched events: n=62; average controls per event: 4.0.
+- Employment remains the strongest broad 24h signal: +0.73% excess, 1.47x, Event>Control 70%.
+- FOMC shows +0.56% 24h excess and 1.27x but Event>Control only 50%, suggesting mean sensitivity to a subset of larger moves; 4h excess is largest at +0.80%.
+- CPI shows moderate positive excess: +0.38% at 24h, 1.22x, Event>Control 61%.
+- Next robustness work should emphasize medians, quantiles/dispersion, bootstrap confidence intervals, and outlier sensitivity before any operational interpretation.
+
