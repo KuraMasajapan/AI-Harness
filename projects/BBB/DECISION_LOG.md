@@ -304,3 +304,18 @@
 - Category: Employment 2/2, alignment 100.0%, avg |move| 0.66%, thin sample。
 - Interpretation: overall 53.6% alone is not evidence of predictive edge. Small-sample Regulation/Employment must not be interpreted. Next priority is Human-labeled classification accuracy and category/schema cleanup before any Risk influence.
 
+### v0.8.9 Human Label Review
+- Human要望: 100件Historical Replayの次に、SokudanがBOJ文章をどう誤分類するかを早く確認したい。
+- Historical Fundamentalの分類済みケースをHumanが採点するReview UIを追加。初期Targetは50件。
+- Human Categoryは monetary_policy / inflation / employment / crypto_market / financial_markets / regulation / geopolitical の7分類。
+- Human Risk Biasは risk_on / risk_off / unclear を任意採点可能。
+- 採点中は24h BTC/JPY結果を表示しない。市場結果を見て分類を後付けするhindsight biasを避ける。
+- Human Category Accuracyと24h Market Alignmentを別指標として保存・表示。
+- Review queueはAI categoryごとのround-robinで偏りを抑える。
+- Human labelsはappend-only data/fundamental_review/human_labels.jsonl に保存。
+- AI category別Human一致率と、AI→Humanの主な修正方向をUI表示。
+- Skip / 保留可能。途中終了してもlabelsは保持。
+- Human labelsはSandbox専用でPaper / Risk / Champion / Liveへ自動影響しない。
+- v0.8.9 validation: 67 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static check PASS / flat ZIP root PASS / packaged ZIP再展開後67 tests PASS。
+- package SHA-256: 44524e4e9f0b087dbd6f98a5be1a455f8510d654bab4ce3bc40ff0c79b5fe907。
+
