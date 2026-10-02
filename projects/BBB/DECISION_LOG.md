@@ -327,3 +327,12 @@
 - Next case-study priority shifts to Global / US macro and crypto-native events: Fed/FOMC, CPI/PCE, employment, US rates, major regulation/ETF/crypto-native events, then geopolitics.
 - Add a relevance/importance gate before future large-scale historical labeling so minor archive items do not dominate the review set.
 
+### BOJ Human Label Review interim 28/50
+- Human provided interim review state before pausing BOJ-focused labeling.
+- Category Labels: 28 / 50.
+- Human Category Accuracy: 28.6% (n=28), approximately 8/28 category matches.
+- Risk Bias Agreement: 57.1% (n=28), approximately 16/28 matches.
+- Remaining: 22 / Skip: 0.
+- Interpretation: BOJ-focused text classification shows substantial category mismatch at the current checkpoint; this supports prioritizing schema/category review and shifting the main BTC case-study dataset toward Global/US macro while retaining BOJ as a Japan/JPY overlay set.
+- Do not interpret Risk Bias Agreement as trading edge or predictive accuracy.
+
