@@ -28,7 +28,13 @@
         "https://developers.cloudflare.com/workers-ai/platform/data-usage/"
       ],
       "audited": "2026-10-02",
-      "safety": "Guardrailsで入力・出力の危険カテゴリをFlag / Ignore / Blockできる。Guardrails自体もWorkers AI使用量を消費する。"
+      "safety": "Guardrailsで入力・出力の危険カテゴリをFlag / Ignore / Blockできる。Guardrails自体もWorkers AI使用量を消費する。",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "👀 画像について聞きたい"
+      ]
     },
     {
       "id": "groq",
@@ -50,7 +56,13 @@
         "https://console.groq.com/docs/rate-limits",
         "https://console.groq.com/docs/legal/services-agreement"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "🎤 声を文字にしたい"
+      ]
     },
     {
       "id": "gemini-api",
@@ -72,7 +84,13 @@
         "https://ai.google.dev/gemini-api/terms",
         "https://ai.google.dev/gemini-api/docs/pricing"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "👀 画像について聞きたい"
+      ]
     },
     {
       "id": "ollama",
@@ -95,7 +113,12 @@
         "https://github.com/ollama/ollama"
       ],
       "audited": "2026-10-02",
-      "safety": "ローカルAPIはAPIキー不要。クラウドモデルを選ぶと外部通信になるため、子ども用はlocal-onlyを基本にする。"
+      "safety": "ローカルAPIはAPIキー不要。クラウドモデルを選ぶと外部通信になるため、子ども用はlocal-onlyを基本にする。",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ]
     },
     {
       "id": "piper-local",
@@ -118,7 +141,10 @@
         "https://github.com/rhasspy/piper",
         "https://github.com/rhasspy/piper/blob/master/LICENSE.md"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "child_goals": [
+        "🔊 AIにしゃべってほしい"
+      ]
     },
     {
       "id": "lm-studio",
@@ -140,7 +166,12 @@
       "official": [
         "https://lmstudio.ai/"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ]
     },
     {
       "id": "whisper-local",
@@ -162,7 +193,11 @@
       "official": [
         "https://github.com/openai/whisper"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "child_goals": [
+        "🎤 声を文字にしたい"
+      ]
     }
-  ]
+  ],
+  "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。"
 }
