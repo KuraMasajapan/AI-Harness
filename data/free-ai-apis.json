@@ -1835,22 +1835,21 @@
         "provider": "Amazon Web Services",
         "tier": "S",
         "audiences": [
-          "中学生（13歳以上）",
-          "高校生",
+          "高校生（日本16歳以上）",
           "高専生",
           "専門学校生",
           "大学生",
           "短大生",
           "大学院生"
         ],
-        "age_scope": "日本では13歳以上から利用可能",
-        "student_offer": "クラウド/AIの無料学習コンテンツとハンズオンラボ。クレジットカード不要。18歳以上はJob Boardも利用可能。",
+        "age_scope": "日本は16歳以上。16〜17歳は親・保護者または教育者の関与が必要。Job Boardは18歳以上。",
+        "student_offer": "クラウド/AIの無料学習コンテンツとハンズオンラボ。クレジットカード不要。日本では16歳以上。Job Boardは18歳以上。",
         "teacher_offer": "教育で利用できるAWS Academy等は別制度。",
         "benefit": "無料クラウド・AI学習＋実習",
         "normal_price": "—",
         "student_price": "0円",
         "discount": "100%無料",
-        "eligibility": "13歳以上。現在のAWS Educateは教育段階や技術経験を問わず参加可能。",
+        "eligibility": "AWS Learner Terms & Conditionsの国別最低年齢を優先し、日本は16歳以上。未成年者には追加の保護者/教育者条件あり。",
         "verification": "メールアドレスで登録。",
         "deadline": "常設",
         "renewal": "無料program",
@@ -1863,12 +1862,15 @@
           "18歳以上求人"
         ],
         "official": [
-          "https://aws.amazon.com/jp/education/awseducate/"
+          "https://aws.amazon.com/legal/learner-terms-conditions/",
+          "https://aws.amazon.com/jp/education/awseducate/",
+          "https://aws.amazon.com/jp/blogs/news/datacenter-aws-academy-jp/"
         ],
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "audit_note": "AWS公式内に13歳・14歳とする紹介/FAQ表記も残るが、2026-06-17更新のAWS Learner Terms & ConditionsはJapan=16と明記。規約を優先。"
       },
       {
         "id": "azure-for-students",
@@ -2449,7 +2451,8 @@
         "公式URLを最低1件付ける",
         "期限・価格・対象者など変動情報は監査日を付ける",
         "複数の候補発見元がある場合は主要なものを残す",
-        "独自探索で公式から直接発見した場合はdiscovered_viaに『公式直接探索』と記録する"
+        "独自探索で公式から直接発見した場合はdiscovered_viaに『公式直接探索』と記録する",
+        "未成年の最低年齢が公式ページ間で矛盾する場合は、最新の利用規約・国別条件を紹介ページ/FAQより優先し、矛盾自体もaudit_noteに残す"
       ]
     }
   }
