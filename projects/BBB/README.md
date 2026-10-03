@@ -213,3 +213,10 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - event-local hourly filesだけ取得しローカルcache
 - Basis Residualはcross-exchange basis / microstructureを含み得る
 - Public read-only / Sandbox only / Trade influence OFF
+
+### Direct USD/JPY first-run progress hotfix
+- 初回は多数のDukascopy hourly file取得で数分かかる場合がある。
+- unique target-hour fileを最大6並列prefetch。
+- UI進捗: FX取得 x/y -> イベント検証 x/62。
+- 2回目以降はdata/fx_cache/dukascopyを再利用。
+
