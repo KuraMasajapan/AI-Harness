@@ -24,7 +24,7 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - UI Skin: Graphite Blue / Deep Navy / Steel Slate / Black Ice
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 106/106 PASS（v0.9.6 package validation）
+- ローカルテスト: 108/108 PASS（v0.9.7 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -245,4 +245,13 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - FRED dailyは30m/1h/4h intraday validationの代替にはしない
 - Dukascopy current daily S3 is Requester Pays; AWS credential/costを要求するdefault pathにはしない
 - Public read-only / Sandbox only / Trade influence OFF
+
+## v0.9.7 FX Evidence Gate
+- FRED official daily baseline and Dukascopy intraday precision are separate evidence layers
+- Daily: READY / CAUTION / BLOCKED
+- Intraday: READY / CAUTION / BLOCKED
+- FRED READY + Intraday BLOCKED => Daily baseline usable, 30m/1h/4h conclusions blocked
+- FRED fast job UX: DONE / processed count / sub-second duration
+- Sidebar selected navigation contrast fixed across all four skins
+- Sandbox only / Trade influence OFF
 
