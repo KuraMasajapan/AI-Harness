@@ -158,7 +158,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.9.7はWindows向けTrading Research Cockpit、Local AI Sandbox、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、Direct USD/JPY Validation、FRED Daily Cross-check、FX Evidence Gate、4種Cool Skinを持つ。
+v0.9.8はWindows向けTrading Research Cockpit、Local AI Sandbox、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、FX Evidence Gate、Global Macro Expansion、4種Cool Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -219,7 +219,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 108 passed
+- local pytest: 113 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
@@ -274,4 +274,8 @@ v0.9.7でFX Evidence Gateを実装。FRED DEXJPUSの日次公式基準とDukasco
 - Reuse existing official-time replay, matched-control, robustness, BTC/USD decomposition, and FX Evidence Gate.
 - Exclude low-priority/state/regional GDP releases from the initial cohort.
 - Research-only; no automated trading influence.
+
+v0.9.8でGlobal Macro Expansionを実装。既存FOMC / CPI / Employmentに、BEA Personal Income and Outlays (PCE)、BLS Producer Price Index (PPI)、BEA national GDPを追加。PCE/PPIはinflation、GDPはgrowthへ分類する。BEA公式年次release scheduleとBLS公式年次scheduleの公表時刻をknowledge timeとして使用。GDPは全国GDPのみを初期cohortとし、State / County / Puerto Rico等の地域系を除外する。既存Matched Control / Robustness / Global BTC decomposition / FX Evidence Gateをそのまま再利用。Global Macro import既定上限は200件へ拡張。Public read-only / Research onlyで売買影響なし。
+
+- checkpoints/BBB_V0.9.8_GLOBAL_MACRO_EXPANSION_2026-10-03.md
 
