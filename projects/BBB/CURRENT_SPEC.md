@@ -158,7 +158,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.9.6はWindows向けTrading Research Cockpit、Local AI Sandbox、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、Direct USD/JPY Validation、FRED H.10 Daily FX Cross-check、4種Cool Skinを持つ。
+v0.9.7はWindows向けTrading Research Cockpit、Local AI Sandbox、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、Direct USD/JPY Validation、FRED Daily Cross-check、FX Evidence Gate、4種Cool Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -219,7 +219,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 106 passed
+- local pytest: 108 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
@@ -256,21 +256,9 @@ v0.9.5でFX Coverage Recoveryを実装。v0.9.4実機初回Direct USD/JPY Valida
 
 - checkpoints/BBB_V0.9.5_FX_COVERAGE_RECOVERY_2026-10-03.md
 
-## Next / Proposed
-- v0.9.6 proposed: Dukascopy Daily Bucket Migration + FRED DEXJPUS Cross-check.
-- Replace legacy hourly-file assumption with current daily `.bi5` layout for Direct USD/JPY tick extraction.
-- Add FRED DEXJPUS daily H.10 reference only as a daily sanity check; do not use it for intraday horizons.
-- Target FX coverage before interpretation: >=95% if source availability permits.
 
 
+v0.9.7でFX Evidence Gateを実装。FRED DEXJPUSの日次公式基準とDukascopy intraday精密層を別レイヤーで評価し、Daily Baseline / Intraday Precisionを個別READY / CAUTION / BLOCKED表示する。FREDが95%以上でもDirect FXが95%未満なら日次基準だけ利用可能とし、30m / 1h / 4hの短期結論はBLOCKEDのまま保持する。FRED fast jobはDONE / 件数 / <1sまたはms所要時間を表示する。Sidebar選択項目は全Skinで濃色背景 + Electric Blue左ライン + 高コントラスト文字に統一し、選択時に文字と背景が同系色で潰れる問題を修正。
 
-v0.9.6でFX Source Cross-checkを実装。Dukascopy hourly public feedは `datafeed.dukascopy.com` と `www.dukascopy.com` のdual-host fallbackを持つ。Direct FX結果はCoverage 95%以上をREADY、50%以上95%未満をCAUTION、50%未満をBLOCKEDとしてUIに明示する。公式FRED DEXJPUS（Federal Reserve H.10、New York noon daily）をno-key daily sanity checkとして追加し、各Global Macro Eventを直前NY正午から直後NY正午でbracketしてFXの桁感・方向を確認する。FRED dailyは30m/1h/4h intraday validationの代替にはしない。Dukascopy current daily S3 bucketは公式資料上Requester Paysのため、AWS credential/costを要求するdefault pathには採用しない。
-
-- checkpoints/BBB_V0.9.6_FX_SOURCE_CROSSCHECK_2026-10-03.md
-
-## Next / Proposed
-- v0.9.7 proposed: FX Evidence Gate + fast-job UX.
-- FRED COMPLETE daily baseline and Direct intraday coverage are displayed as separate evidence layers.
-- Fast FRED jobs show explicit DONE / 62 of 62 / sub-second duration instead of 00:00-only feedback.
-- Direct intraday result remains blocked from interpretation while coverage <50% and non-ready below95%.
+- checkpoints/BBB_V0.9.7_FX_EVIDENCE_GATE_2026-10-03.md
 
