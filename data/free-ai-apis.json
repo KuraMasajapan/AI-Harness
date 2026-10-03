@@ -1489,7 +1489,13 @@
         "official": [
           "https://one.google.com/offer/studentoffer8?hl=ja-JP",
           "https://support.google.com/googleone/answer/17422238?hl=ja"
-        ]
+        ],
+        "audiences": [
+          "大学・高等教育の学生"
+        ],
+        "age_scope": "18歳以上",
+        "student_offer": "Google AI Plus 12か月無料。AI Pro等の学生割引あり。",
+        "teacher_offer": "個人教職員向けの同一学生特典は今回確認できず。Google Workspace for Education等の学校契約は別制度。"
       },
       {
         "id": "adobe-cc-student-jp",
@@ -1509,7 +1515,16 @@
         "official": [
           "https://www.adobe.com/jp/education/students/creativecloud.html",
           "https://www.adobe.com/jp/creativecloud/roc/offer-terms/student-eligibility.html"
-        ]
+        ],
+        "audiences": [
+          "中学生",
+          "高校生",
+          "大学・高専・専門学校生",
+          "教職員"
+        ],
+        "age_scope": "13歳以上（対象教育機関）",
+        "student_offer": "学生・生徒向けCreative Cloud Pro学生・教職員版。",
+        "teacher_offer": "対象教育機関の教職員も同じ学生・教職員版の対象。"
       },
       {
         "id": "m365-student-jp",
@@ -1528,7 +1543,13 @@
         "japan_status": "🇯🇵 日本公式確認済み",
         "official": [
           "https://www.microsoft.com/ja-jp/microsoft-365/college-student-pricing"
-        ]
+        ],
+        "audiences": [
+          "大学生"
+        ],
+        "age_scope": "大学生（在学確認）",
+        "student_offer": "Microsoft 365 Personal 学生割引 50%OFF。",
+        "teacher_offer": "この日本向けPersonal学生50%OFFページでは教職員を対象として確認できず。学校向けMicrosoft 365 Educationは別制度。"
       },
       {
         "id": "github-copilot-student",
@@ -1548,7 +1569,13 @@
         "official": [
           "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students",
           "https://docs.github.com/ja/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack"
-        ]
+        ],
+        "audiences": [
+          "学生"
+        ],
+        "age_scope": "13歳以上＋GitHub Educationの学生資格",
+        "student_offer": "認証済み学生はCopilot Studentを無料利用。",
+        "teacher_offer": "GitHub Educationには教職員向け制度があるが、Copilot Student無料特典とは別扱い。"
       },
       {
         "id": "figma-education",
@@ -1568,7 +1595,15 @@
         "official": [
           "https://help.figma.com/hc/ja/articles/360041061214-Figma-for-Education",
           "https://help.figma.com/hc/en-us/articles/37611757713431-AI-credits-on-the-Education-plan"
-        ]
+        ],
+        "audiences": [
+          "高校生",
+          "大学・高等教育の学生",
+          "教職員"
+        ],
+        "age_scope": "自分で利用規約に同意できる年齢。AI toolsは高等教育・対象bootcamp中心",
+        "student_offer": "対象学生はFigma Education無料。高等教育ではAI tools/月3,000 credits。",
+        "teacher_offer": "対象教職員もEducation planを利用可能。AI利用範囲は教育段階により異なる。"
       },
       {
         "id": "perplexity-education-pro",
@@ -1587,7 +1622,14 @@
         "japan_status": "🇯🇵 日本語公式helpあり。申込画面で最終資格確認推奨。",
         "official": [
           "https://www.perplexity.ai/help-center/ja/articles/12590157-education-pro%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B"
-        ]
+        ],
+        "audiences": [
+          "大学・高等教育の学生",
+          "教職員"
+        ],
+        "age_scope": "大学レベル以上",
+        "student_offer": "対象学生はEducation Pro 月$10。",
+        "teacher_offer": "大学レベル以上の対象教職員もEducation Pro 月$10。"
       },
       {
         "id": "jetbrains-student",
@@ -1607,7 +1649,14 @@
         "official": [
           "https://www.jetbrains.com/ja-jp/academy/student-pack/",
           "https://www.jetbrains.com/ja-jp/store/"
-        ]
+        ],
+        "audiences": [
+          "学生",
+          "教職員"
+        ],
+        "age_scope": "教育資格を満たす学生・教職員",
+        "student_offer": "学生はIDE教育license無料。教育用途のみ。",
+        "teacher_offer": "教員向け無料Educational licenseも提供。授業用途等。"
       },
       {
         "id": "notion-education",
@@ -1626,7 +1675,14 @@
         "japan_status": "🇯🇵 日本語公式help",
         "official": [
           "https://www.notion.com/ja/help/notion-for-education"
-        ]
+        ],
+        "audiences": [
+          "大学・高等教育の学生",
+          "教職員"
+        ],
+        "age_scope": "認定高等教育機関",
+        "student_offer": "学生の1名workspaceでPlus相当機能無料。",
+        "teacher_offer": "対象高等教育機関の教職員も教育向け無料plan対象。"
       },
       {
         "id": "canva-education",
@@ -1645,7 +1701,14 @@
         "japan_status": "🇯🇵 日本を明記した公式eligibility",
         "official": [
           "https://www.canva.com/ja_jp/education/eligibility-guidelines/"
-        ]
+        ],
+        "audiences": [
+          "小中高校の生徒",
+          "小中高校の教職員"
+        ],
+        "age_scope": "K-12/初等中等教育。高等教育は対象外",
+        "student_offer": "生徒は通常、認証済み教員・学校から招待されてCanva教育版を無料利用。",
+        "teacher_offer": "対象K-12教職員は資格確認後Canva教育版を無料利用。"
       },
       {
         "id": "autodesk-flow-education",
@@ -1664,7 +1727,14 @@
         "japan_status": "🌏 日本からのEducation利用可否を申込時最終確認",
         "official": [
           "https://www.autodesk.com/education/edu-software/flow-studio"
-        ]
+        ],
+        "audiences": [
+          "大学・高等教育の学生",
+          "教職員"
+        ],
+        "age_scope": "18歳以上・対象高等教育機関",
+        "student_offer": "対象学生はEducation accessでFlow Studio Lite等を無料利用。教育目的のみ。",
+        "teacher_offer": "対象教職員もEducation accessの対象。教育目的のみ。"
       },
       {
         "id": "grammarly-student",
@@ -1683,7 +1753,13 @@
         "japan_status": "⚠️ 日本のSheerID対象可否を申込時確認",
         "official": [
           "https://support.grammarly.com/hc/en-us/articles/38895500890125-Does-Grammarly-offer-discounts-for-students"
-        ]
+        ],
+        "audiences": [
+          "学生"
+        ],
+        "age_scope": "SheerIDでeligible studentと確認できる学生",
+        "student_offer": "対象学生はGrammarly Proを1 subscription period 50%OFF。",
+        "teacher_offer": "今回確認した個人学生50%OFF制度では教職員向け同一特典を確認できず。"
       }
     ],
     "excluded_or_watch": [
@@ -1699,6 +1775,12 @@
         "name": "Claude",
         "reason": "今回の公式検索で日本の個人学生向け恒常割引を確認できず。教育機関向け契約とは分離。"
       }
-    ]
+    ],
+    "audience_legend": {
+      "小中高校の生徒": "小学生・中学生・高校生など初等中等教育",
+      "高校生": "高校段階",
+      "大学・高等教育の学生": "大学・短大・高専・専門学校等（サービスごとに範囲確認）",
+      "教職員": "教員・教育機関職員（サービスごとに資格確認）"
+    }
   }
 }
