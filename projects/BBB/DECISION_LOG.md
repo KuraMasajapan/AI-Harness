@@ -538,3 +538,13 @@
 - Fast-job UX: explicit DONE, processed count, and sub-second duration for FRED jobs.
 - After the FX evidence layer is stable, next research branch should return to Global Macro / Crypto-native expansion rather than endlessly deepening FX plumbing.
 
+### v0.9.7 FX Evidence Gate implementation
+- FRED official daily baselineとDukascopy intraday precisionを別Evidence Layerとして統合表示。
+- Gate policy: READY >=95%、CAUTION >=50% and <95%、BLOCKED <50%。
+- FREDがREADYでもDirect FXがBLOCKEDなら `DAILY_READY_INTRADAY_BLOCKED` とし、日次sanity checkは利用可能だが30m/1h/4h結論は禁止。
+- FRED fast-job UXを改善: DONE、validated/input件数、1秒未満は<1sまたはms表示。
+- Human screenshotで選択中Sidebar itemが淡色背景 + 淡色文字となり視認性が落ちる問題を確認。
+- Active navigation CSSを全Skin共通で高specificity override: dark panel background、Electric Blue left rail、high-contrast text/subtext/icon。
+- Package validation: 108 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 108 PASS。
+- package SHA-256: 38084f885c75d9a473b53f8c9fad73c9931950c59569028b6fd4b6ecef53b38c。
+
