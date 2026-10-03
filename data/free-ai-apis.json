@@ -2913,6 +2913,246 @@
           "Microsoft公式直接探索"
         ],
         "audited_at": "2026-10-03"
+      },
+      {
+        "id": "kurashiki-vibe-coding-2026",
+        "name": "スマホで始めるバイブコーディング",
+        "provider": "倉敷市 / 岡山県立大学",
+        "tier": "S",
+        "audiences": [
+          "中学生",
+          "高校生",
+          "高専生",
+          "専門学校生",
+          "大学生",
+          "一般"
+        ],
+        "age_scope": "中学生以上。スマホ・パソコン操作ができる人。",
+        "student_offer": "スマホを使い、AIにプログラムを書かせてアプリ開発を体験。",
+        "teacher_offer": "一般参加枠のため教職員専用特典ではない。",
+        "benefit": "無料AIコーディング講座",
+        "normal_price": "無料",
+        "student_price": "無料",
+        "discount": "参加無料",
+        "eligibility": "中学生以上・スマホ/PC操作可能",
+        "verification": "電子申請。応募多数の場合抽選",
+        "deadline": "2026-11-25",
+        "renewal": "単発。次年度類似講座を監視",
+        "ai_relevance": "バイブコーディング / AIへの指示 / アプリ開発",
+        "japan_status": "🇯🇵 岡山県・倉敷市近郊（岡山県立大学）",
+        "opportunity_types": [
+          "募集中",
+          "無料",
+          "AI教室",
+          "バイブコーディング",
+          "定員50人"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.city.kurashiki.okayama.jp/kosodate/lifelong/1002190/1002192/1027162/1027165.html"
+        ],
+        "discovered_via": [
+          "倉敷市公式イベント情報"
+        ],
+        "audited_at": "2026-10-03",
+        "event_date": "2026-12-05",
+        "capacity": "50人",
+        "location": "岡山県立大学 情報工学部棟",
+        "online": false,
+        "status": "募集中"
+      },
+      {
+        "id": "shotoku-genai-presentation-2026",
+        "name": "中高生 生成AIプレゼンテーション作品コンテスト",
+        "provider": "岐阜新聞社 / 岐阜放送 / 岐阜聖徳学園大学ほか",
+        "tier": "S",
+        "audiences": [
+          "中学生（13歳以上）",
+          "高校生",
+          "中学生（12歳・条件付きチーム参加）"
+        ],
+        "age_scope": "13歳以上の中高生は個人または3人以内チーム。12歳中学生は13歳以上を含むチームのみ・生成AI直接利用不可。保護者同意必須。",
+        "student_offer": "生成AIを活用して『岐阜の未来像と魅力』をプレゼン作品化。オンライン生成AIワークショップも無料。",
+        "teacher_offer": "ワークショップは先生・保護者も申込可能。",
+        "benefit": "無料生成AIコンテスト＋オンラインワークショップ",
+        "normal_price": "無料",
+        "student_price": "無料",
+        "discount": "参加無料",
+        "eligibility": "中高生・保護者同意。年齢別AI利用条件あり",
+        "verification": "アカウント登録・エントリー",
+        "deadline": "2026-10-15（作品提出11-28）",
+        "renewal": "次年度開催を監視",
+        "ai_relevance": "生成AI活用そのものを審査対象",
+        "japan_status": "🇯🇵 全国から参加可能。ワークショップZoom",
+        "opportunity_types": [
+          "募集中",
+          "無料",
+          "生成AI",
+          "コンテスト",
+          "オンライン"
+        ],
+        "catalog_categories": [
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://mooc.ha.shotoku.ac.jp/ai/",
+          "https://mooc.ha.shotoku.ac.jp/ai/rules.php",
+          "https://mooc.ha.shotoku.ac.jp/ai/workshop.php"
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03",
+        "event_date": "2026-10〜12",
+        "capacity": "記載なし",
+        "location": "オンライン＋表彰等",
+        "online": true,
+        "status": "募集中"
+      },
+      {
+        "id": "shizuoka-dff-ai-2026",
+        "name": "Digital Future Fest ジュニアプロコン＆AIグランプリin静岡 AI部門",
+        "provider": "静岡県",
+        "tier": "S",
+        "audiences": [
+          "高校生",
+          "高専生",
+          "専門学校生",
+          "大学生",
+          "短大生",
+          "大学院生"
+        ],
+        "age_scope": "AI部門は高校生・専門学生・大学生等。高校生以下は保護者許可。",
+        "student_offer": "企業課題をAIで解決する作品を募集。初心者向けAIセミナーあり。最終審査はオンライン参加可能。",
+        "teacher_offer": "該当なし",
+        "benefit": "自治体主催AIコンテスト",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "AI教材/セミナー支援",
+        "eligibility": "日本国内の対象学校在籍者。個人応募",
+        "verification": "専用サイト応募",
+        "deadline": "2026-10-14",
+        "renewal": "第8回。次年度継続監視",
+        "ai_relevance": "AIを使った企業課題解決",
+        "japan_status": "🇯🇵 全国対象・静岡県主催",
+        "opportunity_types": [
+          "募集中",
+          "AIコンテスト",
+          "高校生以上",
+          "オンライン最終審査"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.pref.shizuoka.jp/kodomokyoiku/school/e-journal/1048469/1084614.html"
+        ],
+        "discovered_via": [
+          "デジ連コンテスト一覧",
+          "静岡県公式確認"
+        ],
+        "audited_at": "2026-10-03",
+        "event_date": "最終審査 2027-01-24",
+        "capacity": "記載なし",
+        "location": "静岡＋オンライン併用",
+        "online": true,
+        "status": "募集中"
+      },
+      {
+        "id": "shizuoka-fujiai-2026",
+        "name": "FuJI:AI (Future Japan AI Innovator)",
+        "provider": "静岡県",
+        "tier": "S",
+        "audiences": [
+          "高校生（静岡県内）",
+          "高専生1〜3年（静岡県内）"
+        ],
+        "age_scope": "静岡県内の高校生・高専1〜3年生。",
+        "student_offer": "約7か月のAIビジネスプランナー育成。AI Boot Camp、企業ツアー、起業家講義、メンタリング。",
+        "teacher_offer": "該当なし",
+        "benefit": "無料長期AI育成program",
+        "normal_price": "無料",
+        "student_price": "無料",
+        "discount": "参加無料",
+        "eligibility": "静岡県内高校/高専1〜3年。10チーム程度・選考",
+        "verification": "応募・選考",
+        "deadline": "2026-08-02終了",
+        "renewal": "次年度募集を重点監視",
+        "ai_relevance": "AIビジネス/Boot Camp/AI企業",
+        "japan_status": "🇯🇵 静岡県限定",
+        "opportunity_types": [
+          "次年度監視",
+          "無料",
+          "AI Boot Camp",
+          "メンタリング",
+          "高校生"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.pref.shizuoka.jp/sangyoshigoto/shokogyoservice/1040895/1064020.html"
+        ],
+        "discovered_via": [
+          "静岡県公式直接探索"
+        ],
+        "audited_at": "2026-10-03",
+        "event_date": "2026-08〜2027-03",
+        "capacity": "10チーム程度",
+        "location": "静岡県ほか",
+        "online": false,
+        "status": "募集終了・次年度監視"
+      },
+      {
+        "id": "tokushima-tokupon-ai-2026",
+        "name": "とくぽんAI塾",
+        "provider": "徳島大学 デザイン型AI教育研究センター",
+        "tier": "A",
+        "audiences": [
+          "小学生",
+          "中学生",
+          "高校生"
+        ],
+        "age_scope": "講座ごとに小学生〜高校生。AIデータサイエンス入門は中高生、AIプログラミング入門は小中高生。",
+        "student_offer": "生成AIの仕組み、データサイエンス、画像認識・対話AIプログラミング等を大学で体験。",
+        "teacher_offer": "該当なし",
+        "benefit": "大学AI教育センターの子ども向けAI塾",
+        "normal_price": "—",
+        "student_price": "募集要項による",
+        "discount": "教育機会",
+        "eligibility": "各講座対象年齢。先着・各回10名程度（最大20名）",
+        "verification": "申込",
+        "deadline": "2026回は終了",
+        "renewal": "次年度募集を重点監視",
+        "ai_relevance": "生成AI/AIプログラミング/データサイエンス",
+        "japan_status": "🇯🇵 徳島大学",
+        "opportunity_types": [
+          "次年度監視",
+          "AI教室",
+          "小学生",
+          "中学生",
+          "高校生"
+        ],
+        "catalog_categories": [
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.tokushima-u.ac.jp/ai/tokupon/pamphlet2026.html"
+        ],
+        "discovered_via": [
+          "徳島大学公式直接探索"
+        ],
+        "audited_at": "2026-10-03",
+        "event_date": "2026-08-22/29終了",
+        "capacity": "各回10名程度・最大20名",
+        "location": "徳島大学",
+        "online": false,
+        "status": "募集終了・次年度監視"
       }
     ],
     "excluded_or_watch": [
@@ -2948,14 +3188,14 @@
       "教職員向け授業支援"
     ],
     "research_progress": {
-      "phase": "CONTINUOUS-COLLECTION-2026-10-03-C",
-      "count": 36,
-      "focus": "学生中心。AIソフト、developer資源、AI/ML internshipを公式確認して追加。教職員は無料/割引特典のみ補助掲載。",
+      "phase": "CHILD-OPPORTUNITY-DISCOVERY-2026-10-03",
+      "count": 41,
+      "focus": "子どもが実際に参加できるAI/プログラミング機会を強化。募集中/終了/次年度監視、締切、定員、地域、onlineを記録。",
       "next": [
-        "国内AI企業 internship 第2巡",
-        "AIソフト学割まとめサイト候補を公式照合",
-        "高校生/高専AI competition",
-        "研究Cloud/GPU creditの学生利用条件精査"
+        "岡山・中国地方の募集中イベント巡回",
+        "全国オンライン生成AIイベント巡回",
+        "小学生向けAIイベントの公式探索",
+        "イベントstatus/締切をUIで目立たせる"
       ]
     },
     "source_policy": {
