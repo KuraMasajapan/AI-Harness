@@ -423,3 +423,13 @@
 - Package validation: 90 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 90 PASS。
 - package SHA-256: 39d62d1ad97a7a78bf56a6bcee96519ca4956d746b453d04f06fd1f5bb0506d5。
 
+### v0.9.3 first Global BTC / JPY Overlay target result
+- Target Windows PCでGlobal BTC / JPY Overlay Decomposition実機結果を確認。
+- Decomposed: 62 / failed 0 / input 62。Job elapsed 00:27。
+- Overall 24h Global BTC |Move|: 2.14%。Overall 24h Implied JPY Overlay |Move|: 0.58%。Global dominant share: 89%。Average magnitude share: 74%。
+- Employment n=23: 30m Global/Overlay 0.36%/0.14%, 1h 0.87%/0.20%, 4h 1.53%/0.26%, 24h 2.17%/0.34%, 24h BTC dominant 96%。
+- CPI n=23: 30m 0.36%/0.11%, 1h 0.88%/0.18%, 4h 1.50%/0.25%, 24h 1.84%/0.56%, 24h BTC dominant 87%。
+- FOMC n=16: 30m 0.83%/0.28%, 1h 0.85%/0.37%, 4h 1.28%/0.40%, 24h 2.54%/0.96%, 24h BTC dominant 81%。
+- Interim interpretation: Tier-A US macro reaction in BTC/JPY is predominantly explained by the Global BTC component in this sample, especially Employment (96% dominant). JPY/Basis residual is relatively small for Employment, larger for FOMC. This supports treating BOJ/Japan mainly as JPY overlay evidence rather than the primary BTC driver set.
+- Important boundary: Implied JPY Overlay is not direct USD/JPY and still includes cross-exchange basis; direct USD/JPY validation remains a future step.
+
