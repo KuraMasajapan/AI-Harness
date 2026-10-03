@@ -530,3 +530,11 @@
 - Introduce FX Evidence Gate combining: FRED COMPLETE baseline + Direct intraday coverage state. Do not let low-coverage intraday aggregates override the complete daily baseline.
 - Prioritize resolving Direct FX source coverage separately; FRED daily remains sanity-check only and does not substitute for 30m/1h/4h measurements.
 
+### v0.9.7 FX Evidence Gate plan
+- Next focus remains FX, but not generic FX expansion. The goal is to reconcile two evidence layers already collected.
+- Layer A: FRED DEXJPUS official daily baseline, currently 62/62 COMPLETE.
+- Layer B: Dukascopy intraday precision layer, currently low/partial coverage and therefore not trusted as the primary conclusion source.
+- v0.9.7 should implement an FX Evidence Gate that keeps these layers separate, prevents low-coverage intraday aggregates from overriding the complete daily baseline, and shows READY / CAUTION / BLOCKED state.
+- Fast-job UX: explicit DONE, processed count, and sub-second duration for FRED jobs.
+- After the FX evidence layer is stable, next research branch should return to Global Macro / Crypto-native expansion rather than endlessly deepening FX plumbing.
+
