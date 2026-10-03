@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-02",
+  "updated_at": "2026-10-03",
   "policy": {
     "green": "明確な禁止を確認できず、子ども向け経路の候補。実際のモデル・用途も確認する。",
     "gray": "明確な禁止は確認できないが、未成年End Userなどに不明点が残る。保護者管理でのみ検討。",
@@ -20,15 +20,15 @@
       "free_period": "毎日00:00 UTCにリセット",
       "billing": "Freeでは上限到達後はエラーになり、Workers Paidへ変更しない限り超過課金されない。一部の新しいモデルはPaid/プリペイドが必要なので無料モデルだけを選ぶ。",
       "age": "サービスは18歳未満向けとして設計されていない旨があるため、保護者契約→子どもEnd User構成を追加確認。",
-      "privacy": "CloudflareはWorkers AIのCustomer ContentをAIモデルの学習やCloudflare/第三者サービス改善に使わない（明示的同意がある場合を除く）。",
-      "why": "料金事故とデータ利用の条件は良好。ただし子どもEnd Userの扱いを確定させるまでグレー。",
+      "privacy": "Workers AI Customer Contentは他顧客へ提供せず、明示的同意なしにAIモデル学習やCloudflare/第三者サービス改善へ使用しないと公式Docsが明記。",
+      "why": "無料量・複数モダリティ・データ利用条件の明確さからFamily AI基盤として有力。未成年End Userの最終法務確認までは黄。",
       "parent": "保護者がアカウント/APIキーを管理。モデル単位のライセンス・安全性も確認。",
       "official": [
         "https://developers.cloudflare.com/workers-ai/platform/pricing/",
         "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
         "https://developers.cloudflare.com/workers-ai/models/"
       ],
-      "audited": "2026-10-02",
+      "audited": "2026-10-03",
       "safety": "Guardrailsで入力・出力の危険カテゴリをFlag / Ignore / Blockできる。Guardrails自体もWorkers AI使用量を消費する。",
       "child_goals": [
         "💬 話を聞いてほしい",
@@ -38,7 +38,9 @@
         "🎨 画像をつくりたい"
       ],
       "free_type": "毎日リセット",
-      "role": "主役候補"
+      "role": "主役候補",
+      "japan_fit": "高",
+      "usage_scope": "親/成人がCloudflare CustomerとしてFamily AIを運用し、子どもはEnd Userとなる構成を想定。"
     },
     {
       "id": "groq",
@@ -655,6 +657,67 @@
         "https://fireworks.ai/privacy-policy"
       ],
       "audited": "2026-10-02"
+    },
+    {
+      "id": "qdrant-cloud",
+      "name": "Qdrant Cloud",
+      "provider": "Qdrant",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Vector DB",
+      "role": "無料RAG基盤候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "Family AIが許可済み教材や家庭内知識を検索するためのVector Database。AIモデルそのものではない。",
+      "best_for": "RAG、教材検索、家族用ナレッジベース。",
+      "free": "Free forever。1 node、0.5 vCPU、1GB RAM、4GB disk、約100万768次元vector。カード不要。",
+      "free_period": "恒久",
+      "free_type": "恒久無料",
+      "billing": "Free clusterは上限超過時にStandardへupgrade。",
+      "age": "子ども本人ではなく成人管理のバックエンドとして使用する前提。Terms/Privacyの児童データ詳細は追加監査。",
+      "privacy": "家庭内文書をクラウドへ保存する場合はPersonal Data分類と保持設計が必要。",
+      "parent": "成人がDBとAPI keyを管理。",
+      "why": "AIそのものではないが、無料Family AIを成立させる周辺基盤として非常に有用。",
+      "safety": "子どもの個人情報を無差別に保存しない。許可済み資料だけをIndex化。",
+      "japan_fit": "候補",
+      "difficulty": "中",
+      "real_cost": "クラウドFree tierならGPU不要",
+      "official": [
+        "https://qdrant.tech/cloud/",
+        "https://qdrant.tech/pricing/"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "serper",
+      "name": "Serper",
+      "provider": "Serper",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Web検索",
+      "role": "検索補助候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "Google検索結果をFamily AIへ渡すSERP API。",
+      "best_for": "最新情報検索、調べ学習の検索入口。",
+      "free": "初回2,500 free queries。カード不要。",
+      "free_period": "初回",
+      "free_type": "初回クレジット",
+      "billing": "使い切り後はtop-up方式。残高0で新規query停止。",
+      "age": "未成年End User条件を追加監査。",
+      "privacy": "検索queryに児童の個人情報を含めない設計が必要。",
+      "parent": "成人管理の裏側検索としてのみ候補。",
+      "why": "検索機能を厚くできるが恒久無料ではないため主役ではなく補助候補。",
+      "safety": "SafeSearch/結果フィルタ等はFamily AI側で別途実装。",
+      "japan_fit": "日本語・日本location指定可能性あり、実機確認待ち",
+      "difficulty": "低〜中",
+      "real_cost": "初回無料、以後有料",
+      "official": [
+        "https://serper.dev/"
+      ],
+      "audited": "2026-10-03"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -728,7 +791,7 @@
     "discovery_sources_note": "第三者ディレクトリは候補発見にのみ利用し、公開判定は公式一次情報を優先する。"
   },
   "research_progress": {
-    "as_of": "2026-10-02",
+    "as_of": "2026-10-03",
     "phase": "broad provider census + official audit",
     "audited_categories": [
       "LLM/会話",
@@ -743,6 +806,52 @@
       "画像生成の無料恒久枠",
       "日本語品質"
     ],
-    "rule": "検索終了は主要カテゴリの候補母集団・採否・除外理由が台帳化され、未監査候補が既知リスト上で解消した時点。"
+    "rule": "検索終了は主要カテゴリの候補母集団・採否・除外理由が台帳化され、未監査候補が既知リスト上で解消した時点。",
+    "benchmark": "海外の2026-09監査では約49〜69 Provider規模。こちらも主要候補との差分を潰す。",
+    "new_sections": [
+      "🧩 Family AIを支える無料部品",
+      "🇯🇵 日本から使う視点",
+      "💰 実質コスト",
+      "🌏 海外ユーザー観測"
+    ],
+    "next_candidates": [
+      "Z.ai/GLM Flash",
+      "SiliconFlow",
+      "Pollinations",
+      "Pinecone",
+      "追加Vector DB",
+      "追加Search/RAG",
+      "教育特化サービス"
+    ]
+  },
+  "content_schema": {
+    "purpose": "各カードを料金表ではなく、家庭での使い道まで判断できる図鑑にする",
+    "fields": [
+      "what",
+      "best_for",
+      "child_goals",
+      "free",
+      "free_type",
+      "billing",
+      "age",
+      "minor_use",
+      "privacy",
+      "parent",
+      "safety",
+      "japan_fit",
+      "difficulty",
+      "real_cost",
+      "usage_scope",
+      "why",
+      "official",
+      "audited"
+    ],
+    "evidence_levels": {
+      "official": "🏛️ 公式一次情報",
+      "community": "🌏 海外利用情報（発見/変化検知）",
+      "japan": "🇯🇵 日本利用確認",
+      "pending": "⚠️ 未確認"
+    },
+    "community_rule": "海外ユーザー情報は候補発見と変化検知に使い、信号判定は公式一次情報へ戻って裏付ける。"
   }
 }
