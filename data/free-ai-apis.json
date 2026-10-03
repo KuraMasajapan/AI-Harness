@@ -452,20 +452,20 @@
     },
     {
       "id": "jina-reader",
-      "name": "Jina Reader API",
+      "name": "Jina AI APIs",
       "provider": "Jina AI",
       "status": "yellow",
       "status_label": "大人が確認",
-      "kind": "クラウドWeb/検索AI",
-      "role": "専門AI候補",
+      "kind": "Family AI基盤 / Search・Reader・Embedding・Rerank",
+      "role": "多機能RAG候補",
       "child_goals": [
         "📚 勉強を手伝ってほしい"
       ],
-      "what": "WebページをAIが読みやすいテキストへ変換。検索・Embedding系APIもある。",
+      "what": "Web検索/Readerに加えEmbedding・Rerankerを一つのAPI keyで利用できる。",
       "best_for": "Family AIのWeb調査補助。",
-      "free": "ReaderはAPI keyなし20 RPM、Free keyで500 RPM。新規API keyには無料tokensあり。",
+      "free": "新規API keyに10M free tokens。Free rate limitはEmbedding/Reranker等で100 RPM / 100K TPM。",
       "free_period": "基本無料/無料tokens",
-      "free_type": "恒久無料＋初回token",
+      "free_type": "初回無料tokens＋Free rate class",
       "billing": "高い上限や他APIはtoken課金。自動top-up設定に注意。",
       "age": "未成年End User条件を追加監査中。",
       "privacy": "取得先WebとJina双方の条件を考慮。",
@@ -473,10 +473,15 @@
       "why": "無料Web取得として有力だが子ども向け条件を確定するまで黄。",
       "safety": "検索結果の安全フィルタは別層で必要。",
       "official": [
-        "https://jina.ai/reader/",
-        "https://jina.ai/api-dashboard/pricing/"
+        "https://jina.ai/api-dashboard/pricing/",
+        "https://jina.ai/embeddings/",
+        "https://jina.ai/reranker/"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-03",
+      "real_cost": "初回10M tokensまで$0",
+      "difficulty": "中",
+      "japan_fit": "日本語ページあり。多言語モデルを実機比較予定",
+      "usage_scope": "Web取得＋RAG部品"
     },
     {
       "id": "deepgram",
@@ -820,6 +825,103 @@
         "https://enter.pollinations.ai/terms"
       ],
       "audited": "2026-10-03"
+    },
+    {
+      "id": "tavily",
+      "name": "Tavily",
+      "provider": "Tavily",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Web検索",
+      "role": "無料検索候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "AI向けWeb検索・Extract・Crawl API。",
+      "best_for": "最新情報を調べて根拠付き回答を作るFamily AI。",
+      "free": "Researcher Free: 1,000 API credits/月。カード不要。",
+      "free_period": "毎月1日にreset",
+      "free_type": "月次リセット",
+      "billing": "無料creditを使い切るとresetまたはupgradeまでrequest停止。",
+      "age": "Customer APIとして成人管理を前提。第三者End User利用はTerms上の扱いを追加確認。",
+      "privacy": "検索queryへ児童Personal Dataを含めない。",
+      "parent": "成人がAPI keyを管理。",
+      "why": "カード不要・月次無料・上限で停止という家庭利用に好ましい課金特性。ただしEnd User条件を追加監査するため黄。",
+      "safety": "検索結果はFamily AI側でSafeSearch/allowlist/引用確認を行う。",
+      "japan_fit": "日本語検索の実機評価予定",
+      "difficulty": "低〜中",
+      "real_cost": "月1,000 creditsまで$0",
+      "usage_scope": "調べ学習・最新情報",
+      "official": [
+        "https://www.tavily.com/pricing",
+        "https://www.tavily.com/terms"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "brave-search-api",
+      "name": "Brave Search API",
+      "provider": "Brave",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Web検索",
+      "role": "無料検索候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "独立Web indexを使う検索API。Web/News/Image等を取得可能。",
+      "best_for": "最新情報検索・調べ学習。",
+      "free": "毎月$5 free credits。Searchは$5/1,000 requestsなので概ね1,000検索分。",
+      "free_period": "毎月",
+      "free_type": "月次無料credit",
+      "billing": "Free利用でもpayment details必須。カードはanti-fraud確認目的と公式説明。",
+      "age": "Customerは契約能力を持つ成人/法人として管理。",
+      "privacy": "API検索queryはbilling/troubleshooting目的で最大90日保持。End User queryのデータ保護責任はCustomer側。",
+      "parent": "成人が契約・API key管理。",
+      "why": "無料検索量は有力だがカード必須＋query保持があるため黄。",
+      "safety": "児童氏名・住所・学校名などをqueryへ送らない。",
+      "japan_fit": "日本語公式ページあり。日本語検索品質は実機評価予定。",
+      "difficulty": "低〜中",
+      "real_cost": "毎月$5 credit内なら$0・カード必要",
+      "usage_scope": "Web検索補助",
+      "official": [
+        "https://brave.com/ja/search/api/",
+        "https://api-dashboard.search.brave.com/documentation/resources/privacy-notice",
+        "https://api-dashboard.search.brave.com/documentation/resources/terms-of-service"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "voyage-ai",
+      "name": "Voyage AI",
+      "provider": "Voyage AI",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Embedding・Rerank",
+      "role": "大容量無料RAG候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "文書や画像をVector化して意味検索するEmbedding/Reranking API。",
+      "best_for": "大量の教材・家族ナレッジ検索。",
+      "free": "主要voyage-4系は最初の200M tokens無料。multilingual-2等は最初の50M tokens無料。Multimodalは200M text tokens +150B pixels無料。",
+      "free_period": "アカウントごとの初回大容量枠",
+      "free_type": "初回無料quota",
+      "billing": "無料quota後はusage-based課金。",
+      "age": "Termsの未成年/End User条件を追加監査。",
+      "privacy": "児童Personal DataをEmbeddingへ送る前にデータ処理条件を追加監査。",
+      "parent": "成人API管理。",
+      "why": "無料量が非常に大きくRAG実験には魅力的。児童データ条件確定までは黄。",
+      "safety": "まず公開教材・非個人情報だけで使用。",
+      "japan_fit": "voyage-multilingual-2は多言語候補。日本語精度を実機比較予定。",
+      "difficulty": "中",
+      "real_cost": "初回2億tokens級まで$0（モデル別）",
+      "usage_scope": "RAG/意味検索",
+      "official": [
+        "https://docs.voyageai.com/docs/pricing",
+        "https://www.voyageai.com/tos"
+      ],
+      "audited": "2026-10-03"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -923,20 +1025,23 @@
     ],
     "next_candidates": [
       "教育特化AI",
-      "日本語TTS/STT追加",
-      "検索API（Tavily/Brave等）",
-      "Embedding/Rerank追加",
-      "画像生成の恒久無料枠",
-      "日本発AI/API"
+      "日本語STT/TTS",
+      "画像生成恒久無料",
+      "日本発AI/API",
+      "ローカル軽量モデル"
     ],
-    "audited_count": 27,
+    "audited_count": 30,
     "excluded_count": 4,
     "notes": [
       "Pollinationsの旧『無料API』情報は現行Pollen体系へ更新",
       "SiliconFlowは$1開始creditで恒久無料扱いしない",
       "Z.aiはAPI DPAと児童Privacyを分離評価",
       "Pinecone StarterはRAG基盤として有力"
-    ]
+    ],
+    "category_findings": {
+      "search_rag": "Tavily/Brave/Jina/Pinecone/Qdrant/Voyageまで候補化。無料枠はLLM本体より潤沢なものが多い。",
+      "billing_safety": "カード不要・上限停止型を家庭用途で高く評価。カード必須やauto top-upは明示。"
+    }
   },
   "content_schema": {
     "purpose": "各カードを料金表ではなく、家庭での使い道まで判断できる図鑑にする",
