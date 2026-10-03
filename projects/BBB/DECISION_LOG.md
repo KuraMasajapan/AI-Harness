@@ -447,3 +447,14 @@
 - Immediate request applies to ordinary BBB Research / Sandbox / UI / analysis changes with a clear next step.
 - Ask before requesting changes when scope is materially ambiguous, destructive/irreversible, or touches Live trading / safety boundaries.
 
+### v0.9.4 Direct USD/JPY Validation
+- v0.9.3実機結果で24h Global BTC主導率89%、Employment 96%、CPI 87%、FOMC 81%を確認。次のMini-BatchとしてImplied JPY Overlayを実USD/JPYで検証。
+- USD/JPY sourceはDukascopy public historical tick。bid/ask midpointを使用し、Private credential不要。
+- Implied JPY Overlay = Direct USD/JPY × Basis Residualとして正確なmultiplicative residualを計算。
+- 30m / 1h / 4h / 24hでDirect USD/JPY |Move|、Basis Residual |Move|、Direct FX magnitude share、FX dominant shareを算出。
+- FOMC / CPI / Employment別の比較Dashboardとelapsed表示を追加。
+- Downloadは必要なevent-local hour fileだけに限定し data/fx_cache/dukascopy へcache。再実行で同じfileを再取得しない。
+- 重要境界: Basis Residualは取引所間BTC basisやmicrostructure差を含み得るため、純粋な市場ノイズやalphaとはみなさない。
+- Package validation: 96 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 96 PASS。
+- package SHA-256: e73137679877b1a0541102dc2f9be3aa9e5dd8a6f3463948b4365d956eb4792d。
+
