@@ -554,3 +554,11 @@
 - Next fix: long machine-state strings must not be rendered as single unbroken display labels. Add human-facing short status labels, keep full machine state in secondary text/tooltip, and add defensive wrapping/min-width rules for metric cards.
 - Scope is UI-only; FX evidence logic and safety boundary remain unchanged.
 
+### v0.9.7 FX Evidence Gate overflow hotfix
+- Human実機確認: Sidebar selected contrastは改善。FX Evidence Gateのmachine state `DAILY_READY_INTRADAY_BLOCKED` がmetric cardから横にはみ出す問題を確認。
+- Machine stateを表示用short labelへmap。`DAILY_READY_INTRADAY_BLOCKED` / `DAILY_READY_INTRADAY_CAUTION` はカード上 `DAILY READY` と表示し、full stateはtitle/hoverへ保持。
+- Defensive CSSとしてmetric min-width:0、valueへoverflow-wrap:anywhere / word-break:break-wordを追加。
+- Logic / gate判定 / Safety boundary変更なし。
+- validation: 109 pytest PASS / compileall PASS / UI JavaScript syntax PASS / extracted package 109 PASS。
+- package SHA-256: d8ab3132db1263b13b59e9e3b0877359a48f3760b929307c6e5b720b91fa49e7。
+
