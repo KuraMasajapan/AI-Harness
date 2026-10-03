@@ -487,3 +487,18 @@
 - Package validation: 101 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 101 PASS。
 - package SHA-256: 0ec75e7c8dcec2895c6f7e29e97d344b86d1556df62106ba7ac06c5f434bcf21。
 
+### v0.9.5 target coverage result
+- Target Windows PCでFX Coverage Recoveryを実行。Validated 13 / input 62、failed 49、coverage 21.0% = LOW_COVERAGE、elapsed 24:20。
+- Diagnostics: cache 27 / network OK 24 / retries 402 / failures 197。主失敗はHTTP 503、SSL handshake timeout、read timeout。
+- v0.9.4の3/62から13/62へ改善したが、依然として分析用途には不十分。24h aggregate (USD/JPY 0.52%, Basis 0.25%, FX share 75%) はcoverage不足のため結論に使わない。
+- Source-side instability / endpoint mismatchが主要ボトルネックと判断。
+
+
+### Proposed v0.9.6 Dukascopy Daily Bucket Migration + FRED Cross-check
+- Current Dukascopy公式資料ではhistorical `.bi5` はcurrent bucket structureで1日1fileのdaily layoutとして案内されている。現v0.9.5のhourly-file前提を見直す。
+- Primary change: USD/JPY sourceをDukascopy current daily bucketへ移行し、1日fileからevent anchor / 30m / 1h / 4h / 24h tickを抽出する。
+- Existing hourly cacheは破棄せずlegacyとして保持。daily cacheは別namespaceに分離。
+- Secondary cross-check: Federal Reserve H.10 / FRED DEXJPUS daily rateを24h級のsanity checkとして追加。Daily noon New York seriesなので30m/1h/4hの代替には使わない。
+- Goal: 62 Tier-A eventのDirect FX coverageをまず95%近くへ回復し、intraday結果とdaily official referenceの整合も確認する。
+- Safety: Public read-only / Sandbox only。Paper / Risk / Liveへの影響なし。
+
