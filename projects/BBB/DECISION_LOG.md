@@ -579,3 +579,15 @@
 - PCE should use BEA Personal Income and Outlays release family; PPI should use BLS Producer Price Index news releases.
 - Safety boundary unchanged: public read-only / research-only / no Paper-Risk-Live influence.
 
+### v0.9.8 Global Macro Expansion implementation
+- Human方針: 通常Research開発はHumanがGitHub承認のみ行い、次工程が明確ならAssistantが連続して進める。
+- Global Macro Tier-Aを6 familyへ拡張: FOMC / CPI / Employment / PCE / PPI / GDP。
+- PCE: BEA Personal Income and Outlays official schedule。
+- PPI: BLS annual release schedule。
+- GDP: BEA national Gross Domestic Product official schedule。State / County / Puerto Rico GDPは除外。
+- Taxonomyを bbb-global-macro-v2 へ更新し growth categoryを追加。PCE/PPIはinflation、GDPはgrowth。
+- Existing replay / matched control / robustness / decomposition / FX Evidence Gate pipelineに新sourceを自動参加させる。
+- UIへPCE / PPI / GDP checkboxとsource countを追加。Global Macro Max Items既定を200へ変更。
+- Package validation: 113 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 113 PASS。
+- package SHA-256: b675324597f807d7b036bac6a361044a73f214619b7f3960021e7cfb93c16fa8。
+
