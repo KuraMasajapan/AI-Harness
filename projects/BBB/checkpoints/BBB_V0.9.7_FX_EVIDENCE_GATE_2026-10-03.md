@@ -53,3 +53,14 @@ If Daily is READY but Intraday is not READY:
 ## Safety
 Research / Sandbox only.
 No Paper / Risk / Champion / Live behavior change.
+
+## Evidence card overflow hotfix
+- Symptom: long machine-state value overflowed the first FX Evidence Gate metric card.
+- Display labels shortened; full machine state retained in title/hover.
+- Metric values now defensively wrap and cards allow shrink with min-width:0.
+- pytest: 109 passed
+- compileall: PASS
+- UI JS syntax: PASS
+- package: BBB_v0.9.7_FX_Evidence_Gate_OVERFLOW_HOTFIX.zip
+- SHA-256: d8ab3132db1263b13b59e9e3b0877359a48f3760b929307c6e5b720b91fa49e7
+
