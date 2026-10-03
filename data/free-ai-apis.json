@@ -1499,7 +1499,11 @@
         ],
         "age_scope": "18歳以上",
         "student_offer": "Google AI Plus 12か月無料。AI Pro等の学生割引あり。",
-        "teacher_offer": "個人教職員向けの同一学生特典は今回確認できず。Google Workspace for Education等の学校契約は別制度。"
+        "teacher_offer": "個人教職員向けの同一学生特典は今回確認できず。Google Workspace for Education等の学校契約は別制度。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "adobe-cc-student-jp",
@@ -1532,7 +1536,11 @@
         ],
         "age_scope": "13歳以上（対象教育機関）",
         "student_offer": "学生・生徒向けCreative Cloud Pro学生・教職員版。",
-        "teacher_offer": "対象教育機関の教職員も同じ学生・教職員版の対象。"
+        "teacher_offer": "対象教育機関の教職員も同じ学生・教職員版の対象。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "m365-student-jp",
@@ -1557,7 +1565,11 @@
         ],
         "age_scope": "大学生（在学確認）",
         "student_offer": "Microsoft 365 Personal 学生割引 50%OFF。",
-        "teacher_offer": "この日本向けPersonal学生50%OFFページでは教職員を対象として確認できず。学校向けMicrosoft 365 Educationは別制度。"
+        "teacher_offer": "この日本向けPersonal学生50%OFFページでは教職員を対象として確認できず。学校向けMicrosoft 365 Educationは別制度。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "github-copilot-student",
@@ -1583,7 +1595,11 @@
         ],
         "age_scope": "13歳以上＋GitHub Educationの学生資格",
         "student_offer": "認証済み学生はCopilot Studentを無料利用。",
-        "teacher_offer": "GitHub Educationには教職員向け制度があるが、Copilot Student無料特典とは別扱い。"
+        "teacher_offer": "GitHub Educationには教職員向け制度があるが、Copilot Student無料特典とは別扱い。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "figma-education",
@@ -1616,7 +1632,11 @@
         ],
         "age_scope": "自分で利用規約に同意できる年齢。AI toolsは高等教育・対象bootcamp中心",
         "student_offer": "対象学生はFigma Education無料。高等教育ではAI tools/月3,000 credits。",
-        "teacher_offer": "対象教職員もEducation planを利用可能。AI利用範囲は教育段階により異なる。"
+        "teacher_offer": "対象教職員もEducation planを利用可能。AI利用範囲は教育段階により異なる。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "perplexity-education-pro",
@@ -1645,7 +1665,11 @@
         ],
         "age_scope": "大学レベル以上",
         "student_offer": "対象学生はEducation Pro 月$10。",
-        "teacher_offer": "大学レベル以上の対象教職員もEducation Pro 月$10。"
+        "teacher_offer": "大学レベル以上の対象教職員もEducation Pro 月$10。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "jetbrains-student",
@@ -1672,7 +1696,11 @@
         ],
         "age_scope": "教育資格を満たす学生・教職員",
         "student_offer": "学生はIDE教育license無料。教育用途のみ。",
-        "teacher_offer": "教員向け無料Educational licenseも提供。授業用途等。"
+        "teacher_offer": "教員向け無料Educational licenseも提供。授業用途等。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "notion-education",
@@ -1701,7 +1729,11 @@
         ],
         "age_scope": "認定高等教育機関",
         "student_offer": "学生の1名workspaceでPlus相当機能無料。",
-        "teacher_offer": "対象高等教育機関の教職員も教育向け無料plan対象。"
+        "teacher_offer": "対象高等教育機関の教職員も教育向け無料plan対象。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "canva-education",
@@ -1729,7 +1761,11 @@
         ],
         "age_scope": "K-12/初等中等教育。高等教育は対象外",
         "student_offer": "生徒は通常、認証済み教員・学校から招待されてCanva教育版を無料利用。",
-        "teacher_offer": "対象K-12教職員は資格確認後Canva教育版を無料利用。"
+        "teacher_offer": "対象K-12教職員は資格確認後Canva教育版を無料利用。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "autodesk-flow-education",
@@ -1758,7 +1794,11 @@
         ],
         "age_scope": "18歳以上・対象高等教育機関",
         "student_offer": "対象学生はEducation accessでFlow Studio Lite等を無料利用。教育目的のみ。",
-        "teacher_offer": "対象教職員もEducation accessの対象。教育目的のみ。"
+        "teacher_offer": "対象教職員もEducation accessの対象。教育目的のみ。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "grammarly-student",
@@ -1783,7 +1823,11 @@
         ],
         "age_scope": "SheerIDでeligible studentと確認できる学生",
         "student_offer": "対象学生はGrammarly Proを1 subscription period 50%OFF。",
-        "teacher_offer": "今回確認した個人学生50%OFF制度では教職員向け同一特典を確認できず。"
+        "teacher_offer": "今回確認した個人学生50%OFF制度では教職員向け同一特典を確認できず。",
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "aws-educate",
@@ -1820,7 +1864,11 @@
         ],
         "official": [
           "https://aws.amazon.com/jp/education/awseducate/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "azure-for-students",
@@ -1851,7 +1899,11 @@
         ],
         "official": [
           "https://azure.microsoft.com/ja-jp/free/students/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "google-cloud-students",
@@ -1885,7 +1937,11 @@
         ],
         "official": [
           "https://cloud.google.com/edu/students?hl=ja"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "google-cloud-faculty",
@@ -1916,7 +1972,11 @@
         "official": [
           "https://cloud.google.com/edu/faculty?hl=ja",
           "https://cloud.google.com/edu/faculty/career-launchpad?hl=ja"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "sakana-student-researcher",
@@ -1946,7 +2006,11 @@
         ],
         "official": [
           "https://sakana.ai/careers/member-of-technical-staff/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "pfn-internship",
@@ -1983,7 +2047,11 @@
         ],
         "official": [
           "https://www.preferred.jp/ja/careers/internship"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "ipa-mitou-it",
@@ -2021,7 +2089,11 @@
         ],
         "official": [
           "https://www.ipa.go.jp/jinzai/mitou/it/about.html"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "toshiba-internship",
@@ -2053,7 +2125,11 @@
         ],
         "official": [
           "https://www.global.toshiba/jp/recruit/corporate/internship.html"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "mitou-junior",
@@ -2087,7 +2163,11 @@
         "official": [
           "https://jr.mitou.org/",
           "https://jr.mitou.org/guideline.html"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "dcon-kosen",
@@ -2119,7 +2199,11 @@
         "official": [
           "https://dcon.ai/",
           "https://www.kosen-all.or.jp/contest/dcon/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "nvidia-ai-learning-education",
@@ -2158,7 +2242,11 @@
           "https://www.nvidia.com/ja-jp/learn/ai-learning-essentials/",
           "https://developer.nvidia.com/ja-jp/teaching-kits",
           "https://www.nvidia.com/ja-jp/training/educator-programs/university-ambassador-program/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "giel-utokyo",
@@ -2190,7 +2278,11 @@
         ],
         "official": [
           "https://genai.t.u-tokyo.ac.jp/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "minnanocode-genai",
@@ -2224,7 +2316,11 @@
         ],
         "official": [
           "https://code.or.jp/news/20260123/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "mirai-for-japan",
@@ -2255,7 +2351,11 @@
         ],
         "official": [
           "https://mirai.clack.ne.jp/"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       },
       {
         "id": "tokyo-ai-lab-hackathon",
@@ -2286,7 +2386,11 @@
         ],
         "official": [
           "https://www.kyoiku.metro.tokyo.lg.jp/information/press/2026/07/2026070702"
-        ]
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       }
     ],
     "excluded_or_watch": [
@@ -2331,6 +2435,21 @@
         "高校生AIコンテスト",
         "大学研究フェローシップ",
         "教職員向け企業program"
+      ]
+    },
+    "source_policy": {
+      "rule": "候補発見元と公式確認元を分離して記録する。第三者まとめ・記事・GitHubリスト等を候補発見に使用した場合はdiscovered_viaへ明記し、対象年齢・価格・期限・地域・資格条件などの確定情報はofficialの一次情報で確認する。",
+      "provenance_labels": {
+        "discovered_via": "🔎 候補発見元（まとめ・記事・コミュニティ等）",
+        "official": "🏛️ 公式確認元（料金・規約・募集要項・公式programページ）"
+      },
+      "rules": [
+        "第三者情報を公式情報として扱わない",
+        "候補発見元を消さない",
+        "公式URLを最低1件付ける",
+        "期限・価格・対象者など変動情報は監査日を付ける",
+        "複数の候補発見元がある場合は主要なものを残す",
+        "独自探索で公式から直接発見した場合はdiscovered_viaに『公式直接探索』と記録する"
       ]
     }
   }
