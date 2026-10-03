@@ -2534,6 +2534,218 @@
         "catalog_categories": [
           "AIデベロッパー"
         ]
+      },
+      {
+        "id": "microsoft-imagine-cup",
+        "name": "Microsoft Imagine Cup",
+        "provider": "Microsoft",
+        "tier": "S",
+        "audiences": [
+          "高校生（18歳以上）",
+          "大学生",
+          "短大生",
+          "大学院生"
+        ],
+        "age_scope": "現行2026公式FAQ/仕組みページは18歳以上の在学中の高校生または大学生等。",
+        "student_offer": "Microsoft AIを使った学生startup competition。Launch/Scale track、mentoring、training、global community。2026はLaunch賞$50,000、Scale上位は世界大会へ。",
+        "teacher_offer": "該当なし",
+        "benefit": "学生AI startup competition",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "賞金・mentoring・resources",
+        "eligibility": "18歳以上の在学学生。詳細は年度Official Rulesを優先。",
+        "verification": "Microsoft account・学生/competition要件",
+        "deadline": "年度大会。2026日程は公式で確認",
+        "renewal": "年次",
+        "ai_relevance": "Microsoft AI/Startup開発",
+        "japan_status": "🇯🇵 日本語公式ページあり・global competition",
+        "opportunity_types": [
+          "AIコンテスト",
+          "Startup",
+          "メンタリング",
+          "賞金"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://imaginecup.microsoft.com/ja-jp/compete/howitworks",
+          "https://imaginecup.microsoft.com/ja-jp/support/faq"
+        ],
+        "discovered_via": [
+          "公式直接探索"
+        ],
+        "audited_at": "2026-10-03",
+        "audit_note": "Microsoft公式Resourceページには16歳以上という旧/不整合表記も残るが、2026 FAQとHow it worksは18歳以上。最新年度条件を優先しOfficial Rulesで最終確認。"
+      },
+      {
+        "id": "aws-ai-ml-scholars",
+        "name": "AWS AI & ML Scholars",
+        "provider": "Amazon Web Services / Udacity",
+        "tier": "S",
+        "audiences": [
+          "高校生（18歳以上）",
+          "高専生（18歳以上）",
+          "専門学校生（18歳以上）",
+          "大学生",
+          "短大生",
+          "大学院生",
+          "18歳以上のAI志望者"
+        ],
+        "age_scope": "2026 programは18歳以上。",
+        "student_offer": "生成AI skillsとAWS PartyRock/Amazon Bedrock等のhands-on experienceを学ぶglobal scholarship program。Udacityと連携。",
+        "teacher_offer": "該当なし",
+        "benefit": "AI scholarship＋project-based learning",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "scholarship/mentoring",
+        "eligibility": "18歳以上。AI careerを目指すlearner。2026募集条件を参照。",
+        "verification": "program応募・選考",
+        "deadline": "2026募集は6月24日締切済み。次回監視",
+        "renewal": "program募集を監視",
+        "ai_relevance": "生成AI/AWS AI career",
+        "japan_status": "🌏 AWS日本語公式情報あり。global program",
+        "opportunity_types": [
+          "AI学習",
+          "奨学program",
+          "メンタリング",
+          "生成AI"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://aws.amazon.com/jp/blogs/training-and-certification/aws-ai-ml-scholars-is-open-for-2026-get-started-on-your-ai-learning-journey/",
+          "https://aws.amazon.com/jp/machine-learning/scholarship/"
+        ],
+        "discovered_via": [
+          "AWS公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
+      },
+      {
+        "id": "google-ai-student-community-2026",
+        "name": "Google AI 学生コミュニティ / キャンパスアンバサダー",
+        "provider": "Google",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "大学院生"
+        ],
+        "age_scope": "全国の大学生・大学院生。",
+        "student_offer": "Gemini等の生成AI活用を学生同士で共有するGoogle AI学生コミュニティ。2026年は約15名のキャンパスアンバサダーも募集。",
+        "teacher_offer": "該当なし",
+        "benefit": "生成AI学生community＋ambassador",
+        "normal_price": "—",
+        "student_price": "登録/応募制",
+        "discount": "学生限定AI機会",
+        "eligibility": "大学生・大学院生。Ambassadorは選考あり。",
+        "verification": "登録/応募",
+        "deadline": "2026 Ambassadorは4月12日締切済み。Community登録は公式最新状況を確認",
+        "renewal": "次年度programを監視",
+        "ai_relevance": "Gemini/生成AI活用",
+        "japan_status": "🇯🇵 Google Japan公式・全国",
+        "opportunity_types": [
+          "学生コミュニティ",
+          "生成AI",
+          "アンバサダー",
+          "AI学習"
+        ],
+        "catalog_categories": [
+          "AIソフト",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://blog.google/intl/ja-jp/feed/student_ambassador2026/"
+        ],
+        "discovered_via": [
+          "Google Japan公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
+      },
+      {
+        "id": "sony-ai-ml-internship",
+        "name": "Sony AI & Machine Learning R&D Internship",
+        "provider": "Sony Group",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "大学院生",
+          "高専専攻科生"
+        ],
+        "age_scope": "Sony職場密着/長期internshipの各募集条件に従う。職場密着は大学・大学院・高専専攻科在学者。",
+        "student_offer": "生成AI、動画生成AI、画像生成AI、Vision+Language Foundation Models等を含むAI & Machine Learning R&D course。",
+        "teacher_offer": "該当なし",
+        "benefit": "AI/ML研究開発internship",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "学生向け実務研究機会",
+        "eligibility": "course/年度募集条件を満たす学生。",
+        "verification": "Sony採用My Page・選考",
+        "deadline": "2026職場密着internship募集は終了。次回監視",
+        "renewal": "年度募集",
+        "ai_relevance": "Generative AI / Vision-Language / ML R&D",
+        "japan_status": "🇯🇵 Sony公式・日本で実施",
+        "opportunity_types": [
+          "インターン",
+          "生成AI",
+          "AI研究",
+          "Machine Learning"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.sony.com/ja/SonyInfo/Jobs/internship/",
+          "https://www.sony.com/ja/SonyInfo/Jobs/internship/en/long-internship/course.html"
+        ],
+        "discovered_via": [
+          "Sony公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
+      },
+      {
+        "id": "sony-steam-girls",
+        "name": "SONY STEAM GIRLS EXPERIENCE",
+        "provider": "Sony Group",
+        "tier": "A",
+        "audiences": [
+          "大学生（対象1年次・女子）",
+          "高専生（対象進学条件・女子）"
+        ],
+        "age_scope": "2026募集は日本国内の対象大学1年次または高専から進学し3年次在籍等の条件。",
+        "student_offer": "理工系女子学生に最大120万円/年、返済不要の給付型奨学金。卒業年度まで支援し、中高生へSTEAMの魅力をつなぐ活動にも参加。",
+        "teacher_offer": "該当なし",
+        "benefit": "STEAM奨学金＋次世代活動",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "最大120万円/年・返済不要",
+        "eligibility": "日本居住、対象学年/専攻、女性等。ほかの奨学金との併給条件あり。",
+        "verification": "応募・選考",
+        "deadline": "2026募集終了。次年度監視",
+        "renewal": "年度募集",
+        "ai_relevance": "STEAM全般。AI専用ではないため関連枠として表示",
+        "japan_status": "🇯🇵 日本国内program",
+        "opportunity_types": [
+          "奨学金",
+          "STEAM",
+          "大学生",
+          "高専"
+        ],
+        "catalog_categories": [
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/"
+        ],
+        "discovered_via": [
+          "Sony公式直接探索"
+        ],
+        "audited_at": "2026-10-03",
+        "audit_note": "AI専用programではない。AI/ML進路にも関係するSTEAM支援としてA tierで掲載。"
       }
     ],
     "excluded_or_watch": [
@@ -2569,14 +2781,14 @@
       "教職員向け授業支援"
     ],
     "research_progress": {
-      "phase": "MINOR-TERMS-REAUDIT-AND-EXPANSION",
-      "count": 27,
-      "focus": "未成年掲載は最新規約・国別条件・保護者/学校管理条件を優先。新規候補も同基準で追加。",
+      "phase": "PAGE-UPDATE-2026-10-03-B",
+      "count": 32,
+      "focus": "3分類別探索＋未成年規約優先監査。期限終了programも次回監視価値が高いものは明示して保存。",
       "next": [
-        "Figma AI年齢/教育段階再監査",
-        "未踏ジュニア年齢・応募条件再監査",
-        "学校導入型生成AI教材の利用規約確認",
-        "国内AI企業学生研究枠追加"
+        "国内AI企業internship/Student Researcher追加",
+        "中高生AIイベント次年度監視",
+        "AIソフト学割第2巡",
+        "教職員向けAI教材/研修追加"
       ]
     },
     "source_policy": {
