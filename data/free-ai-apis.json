@@ -1525,22 +1525,23 @@
           "https://www.adobe.com/jp/creativecloud/roc/offer-terms/student-eligibility.html"
         ],
         "audiences": [
-          "中学生",
+          "中学生（13歳以上）",
           "高校生",
-          "大学生",
-          "短大生",
           "高専生",
           "専門学校生",
+          "大学生",
+          "短大生",
           "大学院生",
           "教職員"
         ],
-        "age_scope": "13歳以上（対象教育機関）",
+        "age_scope": "13歳以上＋対象教育機関の3か月以上の課程",
         "student_offer": "学生・生徒向けCreative Cloud Pro学生・教職員版。",
         "teacher_offer": "対象教育機関の教職員も同じ学生・教職員版の対象。",
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "audit_note": "日本公式の購入資格では中学校・高校・大学・高専・専修学校等を明記。13歳以上。"
       },
       {
         "id": "m365-student-jp",
@@ -1580,7 +1581,7 @@
         "normal_price": "通常Copilot有料plan相当",
         "student_price": "0円",
         "discount": "100%OFF相当",
-        "eligibility": "GitHub Educationで検証済みの学生。GitHub Educationは13歳以上。",
+        "eligibility": "13歳以上で、学位または卒業資格を授与する課程に在籍し、GitHub Educationで学生認証されること。Partner offerには追加年齢条件があり得る。",
         "verification": "GitHub Education申請。学生statusを検証。",
         "deadline": "在学中。資格を定期再評価。",
         "renewal": "GitHub側で資格再評価。Student Packの学生検証は2年間有効後再検証。",
@@ -1591,15 +1592,22 @@
           "https://docs.github.com/ja/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack"
         ],
         "audiences": [
-          "学生（学校段階指定なし）"
+          "中学生（13歳以上・対象課程）",
+          "高校生（13歳以上・対象課程）",
+          "高専生",
+          "専門学校生",
+          "大学生",
+          "短大生",
+          "大学院生"
         ],
-        "age_scope": "13歳以上＋GitHub Educationの学生資格",
+        "age_scope": "13歳以上＋学位または卒業資格につながる課程への在籍",
         "student_offer": "認証済み学生はCopilot Studentを無料利用。",
         "teacher_offer": "GitHub Educationには教職員向け制度があるが、Copilot Student無料特典とは別扱い。",
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "audit_note": "GitHub EducationのStudent Developer Pack規約と学生向けFAQを優先。教職員はStudent Developer Pack対象外だが別のGitHub Education特典あり。"
       },
       {
         "id": "figma-education",
@@ -1759,13 +1767,14 @@
           "高校生",
           "初等中等教育の教職員"
         ],
-        "age_scope": "K-12/初等中等教育。高等教育は対象外",
-        "student_offer": "生徒は通常、認証済み教員・学校から招待されてCanva教育版を無料利用。",
+        "age_scope": "幼小中高の教育機関向け。13歳未満等の『子ども』は通常版ではなくCanva Education経由で利用。",
+        "student_offer": "幼小中高の児童生徒はCanva Educationを学校/教職員の管理経路で無料利用。生成AIは指導者による学習計画内では年齢制限を設けないと日本公式が説明。",
         "teacher_offer": "対象K-12教職員は資格確認後Canva教育版を無料利用。",
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "audit_note": "Canva利用規約では子どもはCanva Education経由以外でサービスを利用できない。個人向け無料AIとしてではなく学校管理型として表示する。"
       },
       {
         "id": "autodesk-flow-education",
@@ -2393,6 +2402,44 @@
           "公式直接探索"
         ],
         "audited_at": "2026-10-03"
+      },
+      {
+        "id": "azure-13-17-github",
+        "name": "Microsoft Azure（GitHub Student Developer Pack・13〜17歳）",
+        "provider": "Microsoft / GitHub Education",
+        "tier": "S",
+        "audiences": [
+          "中学生（13歳以上・GitHub Education対象）",
+          "高校生（17歳以下・GitHub Education対象）"
+        ],
+        "age_scope": "13〜17歳",
+        "student_offer": "GitHub Student Developer Pack経由で、13〜17歳の学生向けAzure cloud servicesとlearning resourcesを無料提供。クレジットカード不要。",
+        "teacher_offer": "該当なし",
+        "benefit": "13〜17歳向けAzure無料枠",
+        "normal_price": "—",
+        "student_price": "0円",
+        "discount": "対象services無料",
+        "eligibility": "13〜17歳かつGitHub Educationの学生認証条件を満たすこと。",
+        "verification": "GitHub Education学生認証",
+        "deadline": "Pack掲載中。Partner offerは変更される場合あり",
+        "renewal": "GitHub Educationの学生認証は2年ごとに再検証",
+        "ai_relevance": "Cloud/開発。AI学習への基盤利用",
+        "japan_status": "🌏 GitHub Student Developer Pack掲載。日本からの利用時はMicrosoft側条件も確認",
+        "opportunity_types": [
+          "13〜17歳",
+          "無料Cloud",
+          "開発環境",
+          "カード不要"
+        ],
+        "official": [
+          "https://education.github.com/pack/",
+          "https://docs.github.com/ja/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack"
+        ],
+        "discovered_via": [
+          "GitHub Student Developer Pack公式一覧"
+        ],
+        "audited_at": "2026-10-03",
+        "audit_note": "18歳以上向けAzure for Studentsとは別枠。Pack内Partner offerなのでMicrosoft側追加条件・提供変更に注意。"
       }
     ],
     "excluded_or_watch": [
@@ -2428,15 +2475,14 @@
       "教職員向け授業支援"
     ],
     "research_progress": {
-      "phase": "EXPANDED-JAPAN-EDUCATION-OPPORTUNITY-SCAN",
-      "count": 26,
-      "focus": "日本で実際に利用・応募できる学生/教職員AI機会。全国枠と地域限定枠を区別。",
+      "phase": "MINOR-TERMS-REAUDIT-AND-EXPANSION",
+      "count": 27,
+      "focus": "未成年掲載は最新規約・国別条件・保護者/学校管理条件を優先。新規候補も同基準で追加。",
       "next": [
-        "国内AI企業Student Researcher/Internship追加",
-        "GPU/研究助成",
-        "高校生AIコンテスト",
-        "大学研究フェローシップ",
-        "教職員向け企業program"
+        "Figma AI年齢/教育段階再監査",
+        "未踏ジュニア年齢・応募条件再監査",
+        "学校導入型生成AI教材の利用規約確認",
+        "国内AI企業学生研究枠追加"
       ]
     },
     "source_policy": {
