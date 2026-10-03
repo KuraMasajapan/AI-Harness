@@ -60,3 +60,15 @@ Direct USD/JPY Validation section:
 ## Safety
 Public read-only research only.
 No Paper / Risk / Champion / Live behavior change.
+
+## First-run progress hotfix
+- Target symptom: 3+ minutes with no visible result change during first Direct USD/JPY validation.
+- Cause profile: many first-run Dukascopy hourly-file fetches were sequential and UI exposed elapsed only, not download/event progress.
+- Fix: up to 6-way unique-hour prefetch + live FX download/event validation counters.
+- Data/cache format unchanged.
+- pytest: 98 passed
+- compileall: PASS
+- UI JavaScript syntax: PASS
+- package: BBB_v0.9.4_Direct_USDJPY_Validation_PROGRESS_HOTFIX.zip
+- SHA-256: 67b55376662679f4a34c58b15b8c1658e1bcb27cdb584bd0bef4b7b882e7e93c
+
