@@ -191,3 +191,11 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - Global-dominant share / magnitude share
 - Overlay is not direct USD/JPY; it may include cross-exchange basis
 - Public read-only / Sandbox only / Trade influence OFF
+
+
+## Development Workflow / 開発運用
+
+- 次工程が明確な場合、「すすめて」を待たず同じ返信ターンでGitHub変更依頼を提出する。
+- 目的はGitHub承認待ちを前倒しし、Humanの追加GOサイン1往復を削減すること。
+- Humanは承認せずに質問・提案へ切替可能。
+- 仕様が大きく曖昧、不可逆変更、安全境界/Live権限に関わる場合は変更依頼前に確認する。
