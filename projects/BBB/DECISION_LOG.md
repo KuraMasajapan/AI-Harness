@@ -502,3 +502,14 @@
 - Goal: 62 Tier-A eventのDirect FX coverageをまず95%近くへ回復し、intraday結果とdaily official referenceの整合も確認する。
 - Safety: Public read-only / Sandbox only。Paper / Risk / Liveへの影響なし。
 
+### v0.9.6 FX Source Cross-check implementation
+- v0.9.5 target result: Validated 13 / 62, coverage 21.0% LOW_COVERAGE, elapsed 24:20。Retry増強だけでは不十分と判断。
+- 実装前再確認で、Dukascopy公式のcurrent daily bucketはRequester Pays S3として案内されており、default採用するとAWS credential/costが必要になるため、当初proposalのDaily Bucket Migrationをdefault pathとしては採用しない。
+- 代わりに既存hourly public feedへdual-host fallbackを追加: datafeed.dukascopy.com -> www.dukascopy.com。
+- Direct FX UIへAnalysis Gateを追加: READY >=95% / CAUTION >=50% / BLOCKED <50%。Low coverage aggregateを分析結論として誤読しないようにする。
+- FRED DEXJPUS (Federal Reserve H.10, NY noon daily) をno-key公式daily cross-checkとして追加。
+- EventがNY正午前なら前営業日noon -> 当日noon、正午後なら当日noon -> 次営業日noonを使用。これはevent-bracketing daily sanity checkであり、exact 24h/intraday returnではない。
+- FRED summary: Coverage / Avg |Bracket Move| / Sign Agreement / FX magnitude share、FOMC/CPI/Employment別表をUI表示。
+- Package validation: 106 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 106 PASS。
+- package SHA-256: 96ba959e0da96f19e4d59471071498b79ef853177330dc022bf14292060a8259。
+
