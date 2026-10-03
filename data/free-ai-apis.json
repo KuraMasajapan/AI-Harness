@@ -718,6 +718,108 @@
         "https://serper.dev/"
       ],
       "audited": "2026-10-03"
+    },
+    {
+      "id": "pinecone",
+      "name": "Pinecone",
+      "provider": "Pinecone",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Vector DB・検索",
+      "role": "無料RAG基盤候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "教材や家庭内知識を意味検索し、Family AIへ必要な情報だけ渡すVector DB/Inference基盤。",
+      "best_for": "RAG、教材検索、Embedding、Rerank。",
+      "free": "Starter $0。Storage 2GB、Write 2M/月、Read 1M/月。Embeddingは対象モデル各5M tokens/月、bge-reranker-v2-m3は500 requests/月など。",
+      "free_period": "恒久Starter",
+      "free_type": "恒久無料",
+      "billing": "Starterから有料Builder/Standardへ明示的に移行する構成。",
+      "age": "成人がCustomerとして契約・管理するFamily AIバックエンドを想定。契約者は法的に契約可能であることを表明。",
+      "privacy": "Customer Dataはサービス提供等のため処理。Restricted Informationを含む資料は保存しない設計を推奨。",
+      "parent": "成人管理。子どもはPineconeを直接操作しない。",
+      "why": "無料量が明確でRAG用途に強い。児童個人情報を蓄積しない設計を前提に黄。",
+      "safety": "許可済み教材のみIndex化し、個人情報・健康・金融等のRestricted Informationを避ける。",
+      "japan_fit": "クラウドregionはStarterで制約あり。日本語Embeddingはmultilingual-e5-largeが候補。",
+      "difficulty": "中",
+      "real_cost": "StarterならGPU不要・$0",
+      "usage_scope": "家庭用RAGの裏側",
+      "official": [
+        "https://www.pinecone.io/pricing/",
+        "https://www.pinecone.io/legal/master-subscription-agreement/"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "zai-api",
+      "name": "Z.ai API",
+      "provider": "Z.ai",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウドAI",
+      "role": "LLM候補（追加検証）",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "what": "GLM系モデルを提供するAPI。Termsは開発者がEnd User向けアプリを作る構造を明示。",
+      "best_for": "親管理Family AIのLLM候補。",
+      "free": "無料モデル/無料quotaの現行条件を追加確認中。無料であることを確定するまで主役候補にしない。",
+      "free_period": "確認中",
+      "free_type": "監査中",
+      "billing": "公式Pricingの現行条件をモデル単位で追加監査。",
+      "age": "一般PrivacyではServicesは18歳未満向けではなく、13歳未満Personal Dataを knowingly collectしない。未成年は保護者の許可を要求。",
+      "privacy": "API DPAではCustomer/End UserがAPIへ提供・生成するcontentは保存しないと明記。Customer Dataは主にSingaporeで処理。",
+      "parent": "成人がAPI Customerとなり、児童のPersonal Dataを送らない構成に限定して検討。",
+      "why": "APIのEnd User構造と非保存DPAは魅力だが、児童Privacy条件と無料枠をさらに確認する必要があるため黄。",
+      "safety": "13歳未満のPersonal Dataを送らない。教育等の重大判断用途には使わない。",
+      "japan_fit": "日本からの利用・日本語品質を実機確認予定",
+      "difficulty": "中",
+      "real_cost": "無料条件監査中",
+      "usage_scope": "親管理APIのみ候補",
+      "official": [
+        "https://z.ai/pricing",
+        "https://chat.z.ai/legal-agreement/terms-of-service",
+        "https://chat.z.ai/legal-agreement/privacy-policy"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "pollinations",
+      "name": "Pollinations.AI",
+      "provider": "Myceli AI / Pollinations",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウド生成AI",
+      "role": "画像・マルチモーダル探索候補",
+      "child_goals": [
+        "🎨 画像をつくりたい",
+        "💬 話を聞いてほしい",
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "画像・Text・Audio・Videoなどを共通APIで扱うコミュニティ型AI基盤。",
+      "best_for": "画像生成などの試作・モデル探索。",
+      "free": "現在はPollen credit方式。Quest等でFree Pollenを獲得可能。『無制限無料API』としては扱わない。",
+      "free_period": "Quest等による無料credit",
+      "free_type": "獲得型無料credit",
+      "billing": "1 Pollen=$1。top-up可能。API key必須。",
+      "age": "Termsの年齢・児童End User条件を追加監査中。",
+      "privacy": "Community modelはupstream providerへproxyされ得るため、モデル/Providerごとの条件も必要。",
+      "parent": "親管理＋公式モデルallowlist前提。",
+      "why": "無料画像候補として有名だが、2026年現在はcredit/Community構造へ変化。古い『完全無料』情報は更新が必要。",
+      "safety": "Community modelを無条件で子どもに開放しない。公式/承認モデルだけallowlist。",
+      "japan_fit": "日本語prompt品質はモデル依存",
+      "difficulty": "低〜中",
+      "real_cost": "Free Pollen獲得分のみ無料",
+      "usage_scope": "実験候補",
+      "official": [
+        "https://pollinations.ai/docs",
+        "https://gen.pollinations.ai/docs",
+        "https://enter.pollinations.ai/terms"
+      ],
+      "audited": "2026-10-03"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -737,6 +839,11 @@
       "name": "Together AI",
       "reason": "2026-06時点で一般向けFree trialなし。API利用には最低$5 credit購入＋カード接続が必要。無料AIカタログの基準から除外（キャンペーンcreditは恒久無料扱いしない）。",
       "checked": "2026-10-02"
+    },
+    {
+      "name": "SiliconFlow",
+      "reason": "2026-10-03公式Pricingでは開始時$1 free credits。恒久無料tierとしては確認できず、基本Pay-as-you-go。無料AI図鑑では『初回クレジット』以上には扱わない。",
+      "checked": "2026-10-03"
     }
   ],
   "methodology": {
@@ -815,13 +922,20 @@
       "🌏 海外ユーザー観測"
     ],
     "next_candidates": [
-      "Z.ai/GLM Flash",
-      "SiliconFlow",
-      "Pollinations",
-      "Pinecone",
-      "追加Vector DB",
-      "追加Search/RAG",
-      "教育特化サービス"
+      "教育特化AI",
+      "日本語TTS/STT追加",
+      "検索API（Tavily/Brave等）",
+      "Embedding/Rerank追加",
+      "画像生成の恒久無料枠",
+      "日本発AI/API"
+    ],
+    "audited_count": 27,
+    "excluded_count": 4,
+    "notes": [
+      "Pollinationsの旧『無料API』情報は現行Pollen体系へ更新",
+      "SiliconFlowは$1開始creditで恒久無料扱いしない",
+      "Z.aiはAPI DPAと児童Privacyを分離評価",
+      "Pinecone StarterはRAG基盤として有力"
     ]
   },
   "content_schema": {
