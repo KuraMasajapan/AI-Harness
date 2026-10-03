@@ -255,3 +255,10 @@ v0.9.4でDirect USD/JPY Validationを実装。v0.9.3のImplied JPY OverlayをDuk
 v0.9.5でFX Coverage Recoveryを実装。v0.9.4実機初回Direct USD/JPY Validationは62件中3件のみ成功・59件失敗、所要15:41だったため、3件の集計値はpipeline疎通確認としてのみ保持し分析結論には使わない。Dukascopy public datafeedの一時的5xx/timeoutを想定したretry、anchor優先prefetch、controlled repair、run-level failure memoization、最大3並列、cache再利用を追加。Coverage stateをCOMPLETE / PARTIAL / LOW_COVERAGEで明示し、UIへcoverage率・cache/network/retry/failure reason diagnosticsを追加する。
 
 - checkpoints/BBB_V0.9.5_FX_COVERAGE_RECOVERY_2026-10-03.md
+
+## Next / Proposed
+- v0.9.6 proposed: Dukascopy Daily Bucket Migration + FRED DEXJPUS Cross-check.
+- Replace legacy hourly-file assumption with current daily `.bi5` layout for Direct USD/JPY tick extraction.
+- Add FRED DEXJPUS daily H.10 reference only as a daily sanity check; do not use it for intraday horizons.
+- Target FX coverage before interpretation: >=95% if source availability permits.
+
