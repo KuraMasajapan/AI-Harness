@@ -458,3 +458,13 @@
 - Package validation: 96 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 96 PASS。
 - package SHA-256: e73137679877b1a0541102dc2f9be3aa9e5dd8a6f3463948b4365d956eb4792d。
 
+### v0.9.4 Direct USD/JPY first-run progress hotfix
+- Human実機確認: Direct USD/JPY Validation初回実行が3分超継続し、結果表示が変わらず失敗に見える状態を確認。
+- Code inspectionで、62 Event × anchor/30m/1h/4h/24hのevent-local targetに対し、Dukascopy hourly fileを初回に多数逐次取得し得る構造を確認。初回は数百hour targetがあり、ネットワーク遅延次第で数分かかり得る。
+- 処理自体の失敗とは限らず、最大の問題は進捗が見えないUXと逐次downloadによる初回wall-time。
+- HOTFIX: unique target-hour fileを最大6並列でprefetchし、同一cacheを再利用。
+- UIへ `FX取得 x/y` -> `イベント検証 x/62` のlive progressを追加。Elapsedは従来どおり2.5秒refresh。
+- 2回目以降はdata/fx_cache/dukascopyを再利用するため短縮が期待される。
+- validation: pytest 98 PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 98 PASS。
+- HOTFIX package SHA-256: 67b55376662679f4a34c58b15b8c1658e1bcb27cdb584bd0bef4b7b882e7e93c。
+
