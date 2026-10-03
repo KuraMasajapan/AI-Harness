@@ -1491,7 +1491,11 @@
           "https://support.google.com/googleone/answer/17422238?hl=ja"
         ],
         "audiences": [
-          "大学・高等教育の学生"
+          "大学生",
+          "短大生",
+          "高専生",
+          "専門学校生",
+          "大学院生"
         ],
         "age_scope": "18歳以上",
         "student_offer": "Google AI Plus 12か月無料。AI Pro等の学生割引あり。",
@@ -1519,7 +1523,11 @@
         "audiences": [
           "中学生",
           "高校生",
-          "大学・高専・専門学校生",
+          "大学生",
+          "短大生",
+          "高専生",
+          "専門学校生",
+          "大学院生",
           "教職員"
         ],
         "age_scope": "13歳以上（対象教育機関）",
@@ -1571,7 +1579,7 @@
           "https://docs.github.com/ja/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack"
         ],
         "audiences": [
-          "学生"
+          "学生（学校段階指定なし）"
         ],
         "age_scope": "13歳以上＋GitHub Educationの学生資格",
         "student_offer": "認証済み学生はCopilot Studentを無料利用。",
@@ -1598,8 +1606,13 @@
         ],
         "audiences": [
           "高校生",
-          "大学・高等教育の学生",
-          "教職員"
+          "大学生",
+          "短大生",
+          "高専生",
+          "専門学校生",
+          "大学院生",
+          "初等中等教育の教職員",
+          "高等教育の教職員"
         ],
         "age_scope": "自分で利用規約に同意できる年齢。AI toolsは高等教育・対象bootcamp中心",
         "student_offer": "対象学生はFigma Education無料。高等教育ではAI tools/月3,000 credits。",
@@ -1624,8 +1637,11 @@
           "https://www.perplexity.ai/help-center/ja/articles/12590157-education-pro%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B"
         ],
         "audiences": [
-          "大学・高等教育の学生",
-          "教職員"
+          "大学生",
+          "短大生",
+          "高専生・専門学校生（対象校なら）",
+          "大学院生",
+          "高等教育の教職員"
         ],
         "age_scope": "大学レベル以上",
         "student_offer": "対象学生はEducation Pro 月$10。",
@@ -1651,7 +1667,7 @@
           "https://www.jetbrains.com/ja-jp/store/"
         ],
         "audiences": [
-          "学生",
+          "学生（学校段階指定なし）",
           "教職員"
         ],
         "age_scope": "教育資格を満たす学生・教職員",
@@ -1677,8 +1693,11 @@
           "https://www.notion.com/ja/help/notion-for-education"
         ],
         "audiences": [
-          "大学・高等教育の学生",
-          "教職員"
+          "大学生",
+          "短大生",
+          "高専生・専門学校生（WHED対象校なら）",
+          "大学院生",
+          "高等教育の教職員"
         ],
         "age_scope": "認定高等教育機関",
         "student_offer": "学生の1名workspaceでPlus相当機能無料。",
@@ -1703,8 +1722,10 @@
           "https://www.canva.com/ja_jp/education/eligibility-guidelines/"
         ],
         "audiences": [
-          "小中高校の生徒",
-          "小中高校の教職員"
+          "小学生",
+          "中学生",
+          "高校生",
+          "初等中等教育の教職員"
         ],
         "age_scope": "K-12/初等中等教育。高等教育は対象外",
         "student_offer": "生徒は通常、認証済み教員・学校から招待されてCanva教育版を無料利用。",
@@ -1729,8 +1750,11 @@
           "https://www.autodesk.com/education/edu-software/flow-studio"
         ],
         "audiences": [
-          "大学・高等教育の学生",
-          "教職員"
+          "大学生",
+          "短大生",
+          "高専生・専門学校生（対象校なら）",
+          "大学院生",
+          "高等教育の教職員"
         ],
         "age_scope": "18歳以上・対象高等教育機関",
         "student_offer": "対象学生はEducation accessでFlow Studio Lite等を無料利用。教育目的のみ。",
@@ -1755,7 +1779,7 @@
           "https://support.grammarly.com/hc/en-us/articles/38895500890125-Does-Grammarly-offer-discounts-for-students"
         ],
         "audiences": [
-          "学生"
+          "学生（学校段階指定なし）"
         ],
         "age_scope": "SheerIDでeligible studentと確認できる学生",
         "student_offer": "対象学生はGrammarly Proを1 subscription period 50%OFF。",
@@ -1781,6 +1805,7 @@
       "高校生": "高校段階",
       "大学・高等教育の学生": "大学・短大・高専・専門学校等（サービスごとに範囲確認）",
       "教職員": "教員・教育機関職員（サービスごとに資格確認）"
-    }
+    },
+    "display_policy": "対象区分は公式条件から、小学生/中学生/高校生/高専生/専門学校生/大学生/短大生/大学院生/教職員へ可能な限り分解する。公式がStudent等としか定義しない場合は推測せず『学生（学校段階指定なし）』と表示。『対象校なら』は教育機関リスト・認証条件に依存することを示す。"
   }
 }
