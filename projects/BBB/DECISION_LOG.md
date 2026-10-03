@@ -411,3 +411,15 @@
 - Interim interpretation: overall matched excess remains positive after trimming/top-1 removal. Employment is currently the strongest category because its bootstrap CI does not cross zero in this matched sample, but this is not causal proof or final significance. FOMC appears more outlier-sensitive; CPI remains positive under robust summaries but category CI crosses zero.
 - Outlier diagnostics include large positive Employment 2025-09 (+6.09pp excess), Employment 2024-04 (+4.73pp), and FOMC 2024-09 (+4.30pp), plus negative CPI/FOMC cases around -2.7pp.
 
+### v0.9.3 Global BTC / JPY Overlay Decomposition
+- Human決定: ここからは2〜3機能を1検証テーマとしてまとめるMini-Batch Developmentへ移行。最初のテーマはBTC/USD + JPY overlay + BTC/JPY分解と比較Dashboard。
+- Tier-A Eventごとにbitbank BTC/JPYとpublic BTC/USDを30分足で同じ公式発表時刻へanchor。
+- Global BTC referenceはCCXT Coinbase優先、Kraken fallback。Private credential不要。
+- Implied JPY Overlay = (1 + BTC/JPY return) / (1 + BTC/USD return) - 1。
+- Overlayはactual USD/JPY quoteではなく、JPY/USD move + cross-exchange basisを含む残差として明示。
+- 30m / 1h / 4h / 24hでBTC/JPY |Move|、Global BTC/USD |Move|、Overlay |Move|、Global magnitude share、Global-dominant shareを算出。
+- FOMC / CPI / Employment別の比較DashboardとJob elapsed表示を追加。
+- Decomposition jobはevent単位の約24h public OHLCV windowのみ取得し、全期間の巨大dataset downloadを避ける。
+- Package validation: 90 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 90 PASS。
+- package SHA-256: 39d62d1ad97a7a78bf56a6bcee96519ca4956d746b453d04f06fd1f5bb0506d5。
+
