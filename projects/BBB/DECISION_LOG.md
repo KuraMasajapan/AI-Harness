@@ -433,3 +433,10 @@
 - Interim interpretation: Tier-A US macro reaction in BTC/JPY is predominantly explained by the Global BTC component in this sample, especially Employment (96% dominant). JPY/Basis residual is relatively small for Employment, larger for FOMC. This supports treating BOJ/Japan mainly as JPY overlay evidence rather than the primary BTC driver set.
 - Important boundary: Implied JPY Overlay is not direct USD/JPY and still includes cross-exchange basis; direct USD/JPY validation remains a future step.
 
+### Development workflow clarification: immediate GitHub change request
+- Human clarification: 「すすめて」という追加GOサインを待たず、次の変更内容が明確ならその返信内でGitHubへの変更依頼（承認UIが出るwrite request）をすぐ提出する。
+- 意図は「会話だけで新バージョンを勝手に完成させる」ことではなく、「GitHub変更承認の待ちを1ターン前倒しする」こと。
+- Humanは承認UIを見て、会話が必要なら承認せず質問・提案へ切り替える。
+- 通常フロー: Humanの結果共有/要望 -> Assistantが必要変更を判断 -> 同じ返信ターンでGitHub変更依頼を提出 -> Human承認後に実装/記録を継続。
+- Assistantが即時変更依頼を出さない条件: 仕様が大きく曖昧、複数案で成果が大きく変わる、不可逆変更、データ破壊、安全境界/Live権限に触れる場合。
+
