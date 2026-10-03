@@ -402,3 +402,12 @@
 - Package validation: 84 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 84 PASS。
 - package SHA-256: 0bfd2c44c352938f879ed7df0579022cd1720b022416c3277e48bc0e94743a7a。
 
+### v0.9.2 first Robustness Check target result
+- Target Windows PCでRobustness Check実機結果を確認。
+- Overall 24h Median Excess: +0.37pp / 10% Trimmed Mean: +0.47pp / Top-1 Removed Mean: +0.47pp / Bootstrap 95% CI: +0.18pp to +0.99pp。
+- FOMC n=16: mean +0.56pp / median +0.19pp / trimmed +0.52pp / Q25-Q75 -0.71 to +1.44pp / bootstrap CI -0.30 to +1.46pp / top-1 removed +0.31pp。
+- CPI n=23: mean +0.38pp / median +0.63pp / trimmed +0.50pp / Q25-Q75 -0.44 to +1.63pp / bootstrap CI -0.25 to +0.97pp / top-1 removed +0.52pp。
+- Employment n=23: mean +0.73pp / median +0.30pp / trimmed +0.48pp / Q25-Q75 -0.12 to +1.14pp / bootstrap CI +0.11 to +1.48pp / top-1 removed +0.49pp。
+- Interim interpretation: overall matched excess remains positive after trimming/top-1 removal. Employment is currently the strongest category because its bootstrap CI does not cross zero in this matched sample, but this is not causal proof or final significance. FOMC appears more outlier-sensitive; CPI remains positive under robust summaries but category CI crosses zero.
+- Outlier diagnostics include large positive Employment 2025-09 (+6.09pp excess), Employment 2024-04 (+4.73pp), and FOMC 2024-09 (+4.30pp), plus negative CPI/FOMC cases around -2.7pp.
+
