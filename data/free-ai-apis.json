@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-03",
+  "updated_at": "2026-10-04",
   "policy": {
     "green": "明確な禁止を確認できず、子ども向け経路の候補。実際のモデル・用途も確認する。",
     "gray": "明確な禁止は確認できないが、未成年End Userなどに不明点が残る。保護者管理でのみ検討。",
@@ -1339,6 +1339,91 @@
       "japan_fit": "高",
       "usage_scope": "Family Link管理の子どもアカウントで直接利用。管理対象アカウントへの提供は段階展開中のため、個別アカウントで未提供の場合あり。",
       "audit_note": "Gemini APIは18歳未満がアクセスするAPI Client用途を禁止しているため赤のまま。今回の緑はConsumer Gemini AppsのFamily Link管理経路であり、APIとは別扱い。"
+    },
+    {
+      "id": "microsoft-copilot-education",
+      "name": "Microsoft Copilot Chat（学校管理）",
+      "provider": "Microsoft",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "クラウドAI・学校管理",
+      "what": "学校のMicrosoft 365 Educationアカウントで利用するCopilot Chat。質問、学習支援、文章作成、調査など。",
+      "best_for": "中高生以上の学校管理AI、授業・学習支援",
+      "free": "対象Microsoft 365 Education SKUの学生・教職員はCopilot Chatを追加料金なしで利用可能。",
+      "free_period": "学校のEducationライセンスと提供条件に依存。",
+      "billing": "個人契約ではなく学校/教育機関のMicrosoft 365 Education環境を前提。",
+      "age": "13歳以上。13〜17歳は学校IT管理者がCopilot Chatを有効化する必要がある。",
+      "privacy": "学校/組織アカウントのenterprise data protectionの範囲で利用。学校側の管理ポリシーにも従う。",
+      "safety": "未成年アクセスは学校管理者による有効化が必要。教育機関管理下の利用経路。",
+      "why": "Microsoftが13歳以上の学生利用を正式に想定し、13〜17歳は学校IT管理者による明示的な有効化を要求。対象Education SKUでは追加料金なし。家庭直契約ではないため『学校管理型グリーン』としてFamily型と分離。",
+      "parent": "家庭から直接登録する経路ではない。学校が提供している場合に利用。",
+      "official": [
+        "https://support.microsoft.com/en-us/topic/copilot-for-students-13-and-older-67c0baf5-8b2d-4b7e-9f41-5a4f5db05b06",
+        "https://www.microsoft.com/education/products/copilot-in-education"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "free_type": "学校ライセンス内",
+      "role": "学校管理型・主役候補",
+      "japan_fit": "高",
+      "usage_scope": "対象Microsoft 365 Education tenantで学校管理者が提供。13〜17歳は管理者による有効化が必要。"
+    },
+    {
+      "id": "claude-consumer",
+      "name": "Claude（Consumer）",
+      "provider": "Anthropic",
+      "status": "red",
+      "status_label": "子ども用には使わない",
+      "kind": "クラウドAI",
+      "what": "会話型生成AI。",
+      "best_for": "成人の一般利用",
+      "free": "Free planあり。",
+      "free_period": "継続型無料枠",
+      "billing": "無料/有料planあり",
+      "age": "Anthropic Consumer Termsでは18歳以上が必要。",
+      "privacy": "Consumer privacy policy/controlsに従う。",
+      "why": "18歳以上という明確な最低年齢条件のため子ども用経路は赤。",
+      "parent": "保護者同意で年齢条件を回避する経路は確認できない。",
+      "official": [
+        "https://www.anthropic.com/legal/consumer-terms"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい"
+      ],
+      "free_type": "無料枠あり",
+      "role": "比較対象"
+    },
+    {
+      "id": "perplexity-consumer",
+      "name": "Perplexity（Consumer）",
+      "provider": "Perplexity",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウドAI",
+      "what": "AI検索・回答サービス。",
+      "best_for": "調べ学習・情報探索",
+      "free": "無料Standard利用あり。",
+      "free_period": "継続型",
+      "billing": "無料/有料planあり",
+      "age": "13歳未満は利用不可。未成年は親または法定代理人が規約に同意する必要がある。",
+      "privacy": "Perplexity privacy/termsに従う。未成年利用では保護者確認が必要。",
+      "why": "13歳以上の未成年利用経路はあるが、Family Linkのような専用保護者管理・子ども向け追加保護を今回確認できていないため黄。",
+      "parent": "13歳以上の未成年は保護者/法定代理人による同意を前提。",
+      "official": [
+        "https://www.perplexity.ai/hub/legal/terms-of-service"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "free_type": "無料Standard",
+      "role": "家庭利用候補"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -1418,7 +1503,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "NON-LOCAL-GREEN-FOUND",
+    "phase": "MAJOR-CONSUMER-RE-AUDIT",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1461,12 +1546,13 @@
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
     "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
     "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
-    "result": "達成: Gemini（Family Link管理）",
-    "audited_at": "2026-10-03",
+    "result": "家庭管理型Green: Gemini Family Link。学校管理型Green: Microsoft Copilot Chat Education。Claude=Red、Perplexity=Yellow。",
+    "audited_at": "2026-10-04",
     "next": [
-      "Gemini Family Link実機/アカウント提供可否確認",
-      "他の家庭利用型グリーン候補探索",
-      "学校管理型グリーンを別区分で整理"
+      "Canva Education AI再監査",
+      "Adobe AI/Firefly教育経路再監査",
+      "Notion AI教育経路再監査",
+      "他大手Consumer AI Family/Education経路探索"
     ]
   },
   "content_schema": {
