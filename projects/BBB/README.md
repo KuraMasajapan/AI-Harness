@@ -24,7 +24,7 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - UI Skin: Graphite Blue / Deep Navy / Steel Slate / Black Ice
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 108/108 PASS（v0.9.7 package validation）
+- ローカルテスト: 113/113 PASS（v0.9.8 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -254,4 +254,16 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - FRED fast job UX: DONE / processed count / sub-second duration
 - Sidebar selected navigation contrast fixed across all four skins
 - Sandbox only / Trade influence OFF
+
+## v0.9.8 Global Macro Expansion
+- Existing baseline: FOMC / CPI / Employment
+- Added: PCE / Personal Income and Outlays (BEA)
+- Added: PPI (BLS)
+- Added: national GDP (BEA)
+- PCE / PPI -> inflation, GDP -> growth
+- State / County / Puerto Rico GDP excluded from initial cohort
+- official release-time anchors
+- existing Matched Control / Robustness / BTC decomposition / FX Evidence Gate reused
+- Global Macro default max items: 200
+- Public read-only / Research only / Trade influence OFF
 
