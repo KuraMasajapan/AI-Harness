@@ -1302,6 +1302,43 @@
         "https://elyza.ai/news/2026/10/02/rsiresearch"
       ],
       "audited": "2026-10-03"
+    },
+    {
+      "id": "gemini-family-link",
+      "name": "Gemini（Family Link管理）",
+      "provider": "Google",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "クラウドAI",
+      "what": "保護者がFamily Linkで管理できる会話型生成AI。質問、学習支援、アイデア出し、創作など。",
+      "best_for": "親子でのAI入門、調べ学習、創作、考え方のヒント",
+      "free": "Google AI有料プランなしでもGemini Appsの標準利用枠あり。利用上限は変動制。",
+      "free_period": "固定終了日なし。標準利用枠・機能は変更される可能性あり。",
+      "billing": "有料Google AIプランへのアップグレードは別。子ども用では標準無料枠を基本とする。",
+      "age": "13歳未満も保護者がFamily Linkでアクセスを許可可能。日本語公式モバイル要件でも13歳未満は保護者承認が必要と明記。",
+      "privacy": "Family Link管理下でもGoogleはGeminiへのクエリ等の利用情報を収集する。13歳未満はGeminiの「アクティビティの保存」設定を利用できない。住所・学校名・家族情報など機密性の高い個人情報を入力しない運用を推奨。",
+      "safety": "未成年向け追加コンテンツフィルタあり。Google自身も完全には防げないと明記し、保護者が一緒に使い方を教えることを推奨。",
+      "why": "Googleが13歳未満の利用を明示的に想定し、Family Linkによる保護者承認・オン/オフ管理、未成年向け追加保護、学習/創作用途を公式案内している。ローカルAI以外で初の家庭利用型グリーン候補。",
+      "parent": "Family Linkで子どものGoogleアカウントを管理し、Gemini Appsへのアクセスを保護者が有効化。個人情報を入力しないルールを併用。",
+      "official": [
+        "https://support.google.com/gemini/answer/16109150?hl=ja",
+        "https://support.google.com/gemini/answer/14579026?co=GENIE.Platform%3DAndroid&hl=ja-JP",
+        "https://families.google.com/familylink/privacy/child-policy/?hl=ja",
+        "https://support.google.com/gemini/answer/16275805?hl=ja-JP"
+      ],
+      "audited": "2026-10-03",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい",
+        "🎨 画像をつくりたい",
+        "👀 画像について聞きたい"
+      ],
+      "free_type": "標準無料枠",
+      "role": "家庭利用型・主役候補",
+      "japan_fit": "高",
+      "usage_scope": "Family Link管理の子どもアカウントで直接利用。管理対象アカウントへの提供は段階展開中のため、個別アカウントで未提供の場合あり。",
+      "audit_note": "Gemini APIは18歳未満がアクセスするAPI Client用途を禁止しているため赤のまま。今回の緑はConsumer Gemini AppsのFamily Link管理経路であり、APIとは別扱い。"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -1381,7 +1418,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "MAJOR-CATEGORY-CENSUS-COMPLETE",
+    "phase": "NON-LOCAL-GREEN-FOUND",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1422,7 +1459,15 @@
       "billing_safety": "カード不要・上限停止型を家庭用途で高く評価。カード必須やauto top-upは明示。"
     },
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
-    "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。"
+    "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
+    "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
+    "result": "達成: Gemini（Family Link管理）",
+    "audited_at": "2026-10-03",
+    "next": [
+      "Gemini Family Link実機/アカウント提供可否確認",
+      "他の家庭利用型グリーン候補探索",
+      "学校管理型グリーンを別区分で整理"
+    ]
   },
   "content_schema": {
     "purpose": "各カードを料金表ではなく、家庭での使い道まで判断できる図鑑にする",
