@@ -231,3 +231,9 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - UI diagnostics: coverage, cache hits, network success, retries, failure reasons
 - existing data/fx_cache/dukascopy remains reusable
 
+### Next: v0.9.6 FX source migration
+- Dukascopy current daily `.bi5` bucketへ切替予定。
+- 1日fileからevent時刻のtickを抽出し、30m / 1h / 4h / 24hを再計算。
+- FRED DEXJPUS daily H.10を24h級sanity checkとして併用予定。
+- 目標Coverage: 95%+（source availabilityが許す範囲）。
+
