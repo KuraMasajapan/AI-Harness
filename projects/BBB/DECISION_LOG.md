@@ -468,3 +468,22 @@
 - validation: pytest 98 PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 98 PASS。
 - HOTFIX package SHA-256: 67b55376662679f4a34c58b15b8c1658e1bcb27cdb584bd0bef4b7b882e7e93c。
 
+### v0.9.4 first Direct USD/JPY target result
+- Target Windows PCでDirect USD/JPY Validation初回実行完了。Elapsed 15:41。
+- Validated 3 / input 62、failed 59。FOMC / Employment / CPI各1件のみ成功。
+- 3件aggregate: 24h USD/JPY |Move| 0.52%、Basis Residual |Move| 0.25%、FX magnitude share 75%、FX dominant 67%。
+- この数値はn=3のため分析結論として扱わず、pipeline疎通確認としてのみ記録する。
+- Public Dukascopy historical feedの取得coverageが主要課題。外部OSSにもDukascopy intermittent 503とrepair workflowの実例があるため、次版はsource resilience / coverage recoveryを優先する。
+
+
+### v0.9.5 FX Coverage Recovery
+- Retryable HTTP/network errorsを最大2 retry。503/timeout等をdiagnosticsへ分類。
+- Anchor hourを先に取得・repairし、horizon hourを後段で取得。
+- Public endpoint負荷を抑えるため最大3並列。失敗hourはcontrolled serial repairを1回実施。
+- Repair後の失敗hourをrun内でmemoizeし、event validationで同じtimeoutを何度も繰り返さない。
+- Coverage state: COMPLETE >=95%、PARTIAL >=50%、LOW_COVERAGE <50%。
+- UIへcoverage率・cache hit・network success・retry数・failure reason上位を表示。
+- Existing fx_cacheはそのまま再利用。
+- Package validation: 101 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 101 PASS。
+- package SHA-256: 0ec75e7c8dcec2895c6f7e29e97d344b86d1556df62106ba7ac06c5f434bcf21。
+
