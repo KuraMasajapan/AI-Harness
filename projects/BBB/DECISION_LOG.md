@@ -513,3 +513,20 @@
 - Package validation: 106 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 106 PASS。
 - package SHA-256: 96ba959e0da96f19e4d59471071498b79ef853177330dc022bf14292060a8259。
 
+### v0.9.6 first FRED FX Cross-check target result
+- Target Windows PCでFRED DEXJPUS official daily cross-checkを実行。処理はほぼ即時完了。
+- Coverage: 62/62 = 100.0% COMPLETE。
+- Overall Avg |Bracket Move|: 0.70%。Overall Sign Agreement vs Implied JPY Overlay 24h: 66%。Coarse FX Share: 51%。
+- Employment n=23: Avg |FX| 0.69% / Median 0.52% / Residual 0.76% / FX Share 46% / Sign Agree 57%。
+- CPI n=23: Avg |FX| 0.56% / Median 0.43% / Residual 0.80% / FX Share 43% / Sign Agree 57%。
+- FOMC n=16: Avg |FX| 0.93% / Median 0.77% / Residual 0.28% / FX Share 69% / Sign Agree 94%。
+- Interpretation: FRED daily bracket is complete and suggests a meaningful direct-FX component, especially around FOMC. Employment/CPI show weaker sign agreement and lower coarse FX share. This is a daily noon bracket sanity check, not intraday causal attribution or exact 24h event return.
+- UX note: job completes sub-second / near-instant because one lightweight daily series is loaded then 62 brackets are computed locally. Current elapsed display rounds to 00:00 and gives no visible progress, which is technically correct but ambiguous.
+
+
+### Proposed v0.9.7 FX Evidence Gate / Fast Cross-check UX
+- FRED cross-check should show `DONE`, `62/62`, and sub-second duration (`<1s` or milliseconds) instead of appearing to do nothing.
+- Treat FRED 100% coverage as coarse official baseline and Dukascopy intraday as precision layer.
+- Introduce FX Evidence Gate combining: FRED COMPLETE baseline + Direct intraday coverage state. Do not let low-coverage intraday aggregates override the complete daily baseline.
+- Prioritize resolving Direct FX source coverage separately; FRED daily remains sanity-check only and does not substitute for 30m/1h/4h measurements.
+
