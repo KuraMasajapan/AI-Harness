@@ -17,13 +17,13 @@ function render(){const ok=x=>(selected==="all"||(x.catalog_tags||[]).includes(s
 fetch("data/free-ai-apis.json").then(r=>r.json()).then(d=>{data=d;
 const counts={green:d.services.filter(x=>x.status==="green").length,yellow:d.services.filter(x=>x.status==="yellow").length,red:d.services.filter(x=>x.status==="red").length};
 const cats=[...new Set(d.services.map(x=>x.kind).filter(Boolean))];
-document.getElementById("progress").innerHTML='<div class="k">RESEARCH PROGRESS / '+esc(d.updated_at)+'</div><div class="progress"><div class="stat"><b>'+d.services.length+'</b><span>監査台帳サービス</span></div><div class="stat"><b>'+counts.green+' / '+counts.yellow+' / '+counts.red+'</b><span>緑 / 黄 / 赤</span></div><div class="stat"><b>'+(d.excluded||[]).length+'</b><span>調査済み・掲載外</span></div><div class="stat"><b>'+cats.length+'</b><span>サービス分類</span></div></div><div class="scope">'+cats.map(x=>'<span>'+esc(x)+'</span>').join("")+'</div><div class="nextbox"><b>🔎 次に厚くする領域</b><br>'+esc((d.research_progress?.next_candidates||[]).join(" ／ "))+'<br><span class="muted">検索完了ではありません。主要カテゴリで有力な未監査候補が残らなくなるまで続けます。</span></div>';const fixed=[
-["💬 話を聞いてほしい","💬 会話"],["📚 勉強を手伝ってほしい","📚 学習"],["🎨 画像をつくりたい","🎨 画像生成"],["👀 画像・OCR","👀 画像・OCR"],["🎤 声を文字にしたい","🎤 音声認識"],["🔊 AIにしゃべってほしい","🔊 音声合成"],["💻 プログラミングしたい","💻 コード"],["🔎 検索・RAG","🔎 検索・RAG"],["🧩 AI基盤","🧩 AI基盤"],["🏠 ローカル","🏠 ローカル"]
+document.getElementById("progress").innerHTML='<div class="k">RESEARCH PROGRESS / '+esc(d.updated_at)+'</div><div class="progress"><div class="stat"><b>'+d.services.length+'</b><span>監査台帳サービス</span></div><div class="stat"><b>'+counts.green+' / '+counts.yellow+' / '+counts.red+'</b><span>緑 / 黄 / 赤</span></div><div class="stat"><b>'+(d.excluded||[]).length+'</b><span>調査済み・掲載外</span></div><div class="stat"><b>'+cats.length+'</b><span>サービス分類</span></div></div><div class="scope">'+cats.map(x=>'<span>'+esc(x)+'</span>').join("")+'</div><div class="nextbox"><b>🔎 次に厚くする領域</b><br>'+esc((d.research_progress?.next_candidates||[]).join(" ／ "))+'<br><span class="muted">'+(d.research_progress?.phase==="MAJOR-CATEGORY-CENSUS-COMPLETE"?"主要カテゴリ総当たり完了。今後は新規Provider・無料枠・規約変更の差分監視へ移行します。":"検索完了ではありません。主要カテゴリで有力な未監査候補が残らなくなるまで続けます。")+'</span></div>';const fixed=[
+["💬 話を聞いてほしい","💬 会話"],["📚 勉強を手伝ってほしい","📚 学習"],["🎨 画像をつくりたい","🎨 画像生成"],["👀 画像・OCR","👀 画像・OCR"],["🎤 声を文字にしたい","🎤 音声認識"],["🔊 AIにしゃべってほしい","🔊 音声合成"],["💻 プログラミングしたい","💻 コード"],["🔎 検索・RAG","🔎 検索・RAG"],["🧩 AI基盤","🧩 AI基盤"],["🏠 ローカル","🏠 ローカル"],["🇯🇵 日本語","🇯🇵 日本語・国内系"]
 ];
 const inferred=x=>{
  const t=[...(x.child_goals||[])]; const k=String(x.kind||"");
  if(k.includes("Family AI基盤"))t.push("🔎 検索・RAG","🧩 AI基盤");
- if(k.startsWith("ローカル"))t.push("🏠 ローカル");
+ if(k.startsWith("ローカル"))t.push("🏠 ローカル");if(/日本語/.test(k)||/VOICEVOX|Aivis|Kotoba|Reazon|LLM-jp|ELYZA/i.test(x.name||""))t.push("🇯🇵 日本語");
  if(/OCR|Vision|画像/.test(k))t.push("👀 画像・OCR");
  if(/音声|STT/.test(k))t.push("🎤 音声認識");
  if(/TTS/.test(k))t.push("🔊 音声合成");
