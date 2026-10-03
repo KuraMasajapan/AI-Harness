@@ -2054,6 +2054,239 @@
         "official": [
           "https://www.global.toshiba/jp/recruit/corporate/internship.html"
         ]
+      },
+      {
+        "id": "mitou-junior",
+        "name": "未踏ジュニア",
+        "provider": "未踏ジュニア",
+        "tier": "S",
+        "audiences": [
+          "小学生（17歳以下）",
+          "中学生",
+          "高校生（17歳以下）"
+        ],
+        "age_scope": "年度基準日で17歳以下。個人または最大4人のグループ。",
+        "student_offer": "約半年、専門メンターと独創的なIT/AIプロジェクトを開発。参加無料。国内参加者はイベント交通費・宿泊費も支給。",
+        "teacher_offer": "応募者向け制度ではない。",
+        "benefit": "小中高生クリエータ支援",
+        "normal_price": "—",
+        "student_price": "0円",
+        "discount": "参加無料＋交通宿泊支援",
+        "eligibility": "17歳以下。学校在籍自体は必須条件ではない。",
+        "verification": "応募・選考",
+        "deadline": "2026年度募集終了。次年度募集を監視",
+        "renewal": "年度公募",
+        "ai_relevance": "IT/AIものづくり",
+        "japan_status": "🇯🇵 国内program",
+        "opportunity_types": [
+          "研究開発支援",
+          "メンタリング",
+          "小中高生",
+          "交通宿泊支援"
+        ],
+        "official": [
+          "https://jr.mitou.org/",
+          "https://jr.mitou.org/guideline.html"
+        ]
+      },
+      {
+        "id": "dcon-kosen",
+        "name": "DCON 全国高等専門学校ディープラーニングコンテスト",
+        "provider": "全国高等専門学校連合会 / DCON",
+        "tier": "S",
+        "audiences": [
+          "高専生"
+        ],
+        "age_scope": "高等専門学校の学生チーム",
+        "student_offer": "ものづくり技術とディープラーニングを組み合わせ、作品の事業性を企業評価額で競う高専生専用コンテスト。メンター支援・本選・起業支援へつながる。",
+        "teacher_offer": "学校/指導教員がチームを支援する形。",
+        "benefit": "高専生AIコンテスト",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "学生限定AI機会",
+        "eligibility": "高専生。大会要項に従う。",
+        "verification": "学校・チーム単位の大会エントリー",
+        "deadline": "DCON2027は2026-09-30締切済み。次大会を監視",
+        "renewal": "年次大会",
+        "ai_relevance": "Deep Learning/事業化",
+        "japan_status": "🇯🇵 全国高専向け",
+        "opportunity_types": [
+          "AIコンテスト",
+          "高専",
+          "メンタリング",
+          "起業支援"
+        ],
+        "official": [
+          "https://dcon.ai/",
+          "https://www.kosen-all.or.jp/contest/dcon/"
+        ]
+      },
+      {
+        "id": "nvidia-ai-learning-education",
+        "name": "NVIDIA AI Learning / 教育者向けDLI",
+        "provider": "NVIDIA",
+        "tier": "S",
+        "audiences": [
+          "高専生",
+          "専門学校生",
+          "大学生",
+          "短大生",
+          "大学院生",
+          "高等教育の教職員"
+        ],
+        "age_scope": "高等教育の学生・教員中心。個別program要件あり。",
+        "student_offer": "教員経由のDLI教育キット等で、本来最大$90/人/コースのonline trainingやGPU cloud学習環境を無償利用できる場合がある。",
+        "teacher_offer": "大学・高専・専門学校等の教員は教育キット等を無償申請可能。University Ambassadorは無料workshop開催、認定、対象経費補助等あり。",
+        "benefit": "AI/GPU学習・教材・Cloud GPU",
+        "normal_price": "DLI courseは通常有料のものあり",
+        "student_price": "対象教育program経由で無料",
+        "discount": "対象course最大$90相当/人を無料",
+        "eligibility": "資格を満たす高等教育教員/学生。",
+        "verification": "教育者申請・NVIDIA Developer登録等",
+        "deadline": "program継続中",
+        "renewal": "program条件による",
+        "ai_relevance": "AI/GPU教育",
+        "japan_status": "🇯🇵 日本語公式program",
+        "opportunity_types": [
+          "無料AI学習",
+          "GPU Cloud",
+          "教職員支援",
+          "認定",
+          "教材"
+        ],
+        "official": [
+          "https://www.nvidia.com/ja-jp/learn/ai-learning-essentials/",
+          "https://developer.nvidia.com/ja-jp/teaching-kits",
+          "https://www.nvidia.com/ja-jp/training/educator-programs/university-ambassador-program/"
+        ]
+      },
+      {
+        "id": "giel-utokyo",
+        "name": "教育における生成AI活用推進リーダープログラム（GiEL）",
+        "provider": "東京大学 吉田塁研究室",
+        "tier": "S",
+        "audiences": [
+          "教職員",
+          "教育関係者"
+        ],
+        "age_scope": "主に学校教育に携わる人を想定。企業所属等も参加可能。",
+        "student_offer": "一般学生向けprogramではない。",
+        "teacher_offer": "生成AIの基礎から教育活用・推進まで学ぶ完全オンラインprogram。オンデマンド＋live session＋community。費用無料。",
+        "benefit": "生成AI教育リーダー育成",
+        "normal_price": "—",
+        "student_price": "0円",
+        "discount": "完全無料",
+        "eligibility": "教育で生成AIの適切な活用を実践・推進したい人。",
+        "verification": "program応募",
+        "deadline": "第2期募集は2026年度。最新募集状況を公式で確認",
+        "renewal": "期ごとの募集",
+        "ai_relevance": "生成AI教育",
+        "japan_status": "🇯🇵 東京大学公式program",
+        "opportunity_types": [
+          "教職員研修",
+          "生成AI",
+          "無料program",
+          "コミュニティ"
+        ],
+        "official": [
+          "https://genai.t.u-tokyo.ac.jp/"
+        ]
+      },
+      {
+        "id": "minnanocode-genai",
+        "name": "プログルラボ みんなで生成AIコース",
+        "provider": "みんなのコード",
+        "tier": "S",
+        "audiences": [
+          "小学生",
+          "中学生",
+          "高校生",
+          "初等中等教育の教職員"
+        ],
+        "age_scope": "小学校・中学校・義務教育学校・高校・中等教育学校・特別支援学校",
+        "student_offer": "学校の授業を通じて生成AIを安全に学ぶ教材。個人学割ではなく学校導入型。",
+        "teacher_offer": "全国の希望する対象校へ2026年度も授業用生成AI教材を無償提供。",
+        "benefit": "小中高向け生成AI授業教材",
+        "normal_price": "—",
+        "student_price": "学校導入で0円",
+        "discount": "2026年度無償提供",
+        "eligibility": "対象学校種。",
+        "verification": "学校/教職員から導入",
+        "deadline": "無償提供 2027-03-31まで",
+        "renewal": "次年度発表を監視",
+        "ai_relevance": "生成AI教育",
+        "japan_status": "🇯🇵 全国の対象校",
+        "opportunity_types": [
+          "小中高",
+          "学校導入",
+          "無料教材",
+          "教職員支援"
+        ],
+        "official": [
+          "https://code.or.jp/news/20260123/"
+        ]
+      },
+      {
+        "id": "mirai-for-japan",
+        "name": "mirAI for JAPAN",
+        "provider": "CLACKほか",
+        "tier": "A",
+        "audiences": [
+          "高校の教職員"
+        ],
+        "age_scope": "高校教員向け",
+        "student_offer": "教員研修を通じた授業展開が主目的。学生個人programではない。",
+        "teacher_offer": "AI基礎から授業・校務活用まで、学校ニーズに応じた高校教員向け研修を無償提供。",
+        "benefit": "高校教員向け無償AI研修",
+        "normal_price": "—",
+        "student_price": "0円",
+        "discount": "受講者負担なし",
+        "eligibility": "高校の先生向け。",
+        "verification": "program申込",
+        "deadline": "公式募集状況を確認",
+        "renewal": "program条件による",
+        "ai_relevance": "AI教育/校務",
+        "japan_status": "🇯🇵 国内高校向け",
+        "opportunity_types": [
+          "高校教員",
+          "無料研修",
+          "AI授業",
+          "校務活用"
+        ],
+        "official": [
+          "https://mirai.clack.ne.jp/"
+        ]
+      },
+      {
+        "id": "tokyo-ai-lab-hackathon",
+        "name": "都立学校AI Lab ハッカソンプログラム",
+        "provider": "東京都教育委員会",
+        "tier": "A",
+        "audiences": [
+          "高校生（都立学校）"
+        ],
+        "age_scope": "都立学校の高校生。4人1チーム。",
+        "student_offer": "生成AI等を活用して社会課題解決アプリを開発。社会人メンターが支援する実践型ハッカソン。",
+        "teacher_offer": "都立学校programとして学校側の運用あり。",
+        "benefit": "生成AIアプリ開発ハッカソン",
+        "normal_price": "—",
+        "student_price": "program参加",
+        "discount": "都立生限定機会",
+        "eligibility": "都立学校の高校生。",
+        "verification": "学校/program経由応募",
+        "deadline": "2026年度募集は開始済み。年度日程を確認",
+        "renewal": "年度programを監視",
+        "ai_relevance": "生成AIアプリ開発",
+        "japan_status": "🇯🇵 東京都限定",
+        "opportunity_types": [
+          "高校生",
+          "AIハッカソン",
+          "メンタリング",
+          "地域限定"
+        ],
+        "official": [
+          "https://www.kyoiku.metro.tokyo.lg.jp/information/press/2026/07/2026070702"
+        ]
       }
     ],
     "excluded_or_watch": [
@@ -2087,6 +2320,18 @@
       "研究開発支援・資金",
       "コンテスト/ハッカソン",
       "教職員向け授業支援"
-    ]
+    ],
+    "research_progress": {
+      "phase": "EXPANDED-JAPAN-EDUCATION-OPPORTUNITY-SCAN",
+      "count": 26,
+      "focus": "日本で実際に利用・応募できる学生/教職員AI機会。全国枠と地域限定枠を区別。",
+      "next": [
+        "国内AI企業Student Researcher/Internship追加",
+        "GPU/研究助成",
+        "高校生AIコンテスト",
+        "大学研究フェローシップ",
+        "教職員向け企業program"
+      ]
+    }
   }
 }
