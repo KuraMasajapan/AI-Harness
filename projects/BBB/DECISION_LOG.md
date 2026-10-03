@@ -562,3 +562,11 @@
 - validation: 109 pytest PASS / compileall PASS / UI JavaScript syntax PASS / extracted package 109 PASS。
 - package SHA-256: d8ab3132db1263b13b59e9e3b0877359a48f3760b929307c6e5b720b91fa49e7。
 
+### Proposed v0.9.8 Global Macro Expansion
+- FX layer is now bounded by FX Evidence Gate: FRED daily baseline is usable, while low-coverage intraday FX remains gated and must not block the main research path.
+- Next primary research branch returns to Global / US macro.
+- Proposed Tier-A additions: U.S. PCE / Personal Income and Outlays, U.S. PPI, and U.S. GDP releases, using official release schedules/archives and the existing event-time replay + matched-control + robustness pipeline.
+- Objective: test whether Employment remains the strongest macro class after adding more major U.S. releases, and separate inflation/growth/liquidity regimes more cleanly.
+- Existing FOMC / CPI / Employment remain the baseline cohort; new sources are additive, not replacements.
+- After this expansion, the next branch should be Crypto Native Tier-A events rather than deeper FX plumbing.
+
