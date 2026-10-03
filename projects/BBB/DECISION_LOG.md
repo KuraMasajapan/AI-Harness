@@ -548,3 +548,9 @@
 - Package validation: 108 pytest PASS / compileall PASS / UI JavaScript syntax PASS / BAT static PASS / flat ZIP root PASS / extracted package 108 PASS。
 - package SHA-256: 38084f885c75d9a473b53f8c9fad73c9931950c59569028b6fd4b6ecef53b38c。
 
+### v0.9.7 FX Evidence Gate card overflow feedback
+- Human実機確認: Sidebar selected-item contrast fix is good and considered resolved.
+- New UI issue: FX Evidence Gate first metric card value `DAILY_READY_INTRADAY_BLOCKED` overflows its card boundary.
+- Next fix: long machine-state strings must not be rendered as single unbroken display labels. Add human-facing short status labels, keep full machine state in secondary text/tooltip, and add defensive wrapping/min-width rules for metric cards.
+- Scope is UI-only; FX evidence logic and safety boundary remain unchanged.
+
