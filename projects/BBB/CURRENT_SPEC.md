@@ -262,3 +262,9 @@ v0.9.7でFX Evidence Gateを実装。FRED DEXJPUSの日次公式基準とDukasco
 
 - checkpoints/BBB_V0.9.7_FX_EVIDENCE_GATE_2026-10-03.md
 
+## Next / Proposed
+- v0.9.8 proposed: Global Macro Expansion.
+- Add Tier-A official U.S. events: PCE / Personal Income and Outlays, PPI, GDP.
+- Reuse existing official-time replay, matched-control, robustness, BTC/USD decomposition, and FX Evidence Gate.
+- Compare new event families against FOMC / CPI / Employment before expanding to Crypto Native Tier-A events.
+
