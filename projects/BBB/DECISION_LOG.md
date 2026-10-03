@@ -440,3 +440,10 @@
 - 通常フロー: Humanの結果共有/要望 -> Assistantが必要変更を判断 -> 同じ返信ターンでGitHub変更依頼を提出 -> Human承認後に実装/記録を継続。
 - Assistantが即時変更依頼を出さない条件: 仕様が大きく曖昧、複数案で成果が大きく変わる、不可逆変更、データ破壊、安全境界/Live権限に触れる場合。
 
+### Development workflow: immediate GitHub change request
+- Human clarification: next change scope is clear, submit the GitHub change request immediately in the same turn without waiting for an extra 「すすめて」 message.
+- This does NOT mean silently completing a whole new version before approval. The intended optimization is to move the GitHub approval request one turn earlier.
+- Human may decline/withhold approval and ask questions or propose changes instead.
+- Immediate request applies to ordinary BBB Research / Sandbox / UI / analysis changes with a clear next step.
+- Ask before requesting changes when scope is materially ambiguous, destructive/irreversible, or touches Live trading / safety boundaries.
+
