@@ -391,3 +391,14 @@
 - CPI shows moderate positive excess: +0.38% at 24h, 1.22x, Event>Control 61%.
 - Next robustness work should emphasize medians, quantiles/dispersion, bootstrap confidence intervals, and outlier sensitivity before any operational interpretation.
 
+### v0.9.2 Robustness Check
+- v0.9.1 Matched Control実機結果でEmployment 24h 1.47x / +0.73pp、FOMC 4h +0.80pp等が見えたため、平均値の外れ値依存を検証する段階へ進行。
+- Event-level Excessに対してMedian / Q25 / Q75 / IQR / 10% Trimmed Mean / 最大|Excess|1件除外平均を追加。
+- Mean Excessへdeterministic percentile bootstrap 95% CI（2,000 resamples）を追加。
+- 24h |Excess|の大きいイベントをOutlier Diagnosticsとして最大8件表示。
+- 既存v0.9.1 reportにrobustness_summaryが無くても、current data_dir配下の最新matched_control_ledger.jsonlを探索し、自動集計・cacheする。既存62件は再Replay不要。
+- UIへRobustness Check / 頑健性確認セクションを追加。
+- Interpretation boundary: CIが0をまたがない場合でも、Matched Sample内の平均Excessの不確実性を示す補助線であり、因果関係・予測優位性・統計的有意性の最終証明として扱わない。
+- Package validation: 84 pytest PASS / compileall PASS / UI JavaScript syntax PASS / flat ZIP root PASS / extracted package 84 PASS。
+- package SHA-256: 0bfd2c44c352938f879ed7df0579022cd1720b022416c3277e48bc0e94743a7a。
+
