@@ -922,6 +922,386 @@
         "https://www.voyageai.com/tos"
       ],
       "audited": "2026-10-03"
+    },
+    {
+      "id": "weaviate-cloud",
+      "name": "Weaviate Cloud",
+      "provider": "Weaviate",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Vector DB・Embedding",
+      "role": "恒久無料RAG基盤",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "Family AIの教材・知識検索用AI Database。EmbeddingとQuery Agentも含む。",
+      "best_for": "教材RAG、意味検索、小規模家庭ナレッジ。",
+      "free": "Free forever。1 cluster、100,000 objects、10GB disk、Embedding 2,000 req/day、Query Agent 1,000 req/month。カード不要。",
+      "free_period": "恒久",
+      "free_type": "恒久無料",
+      "billing": "Free clusterはbilling account不要。必要時のみ有料へupgrade。",
+      "age": "成人管理バックエンドとして利用。児童データ規約は追加運用注意。",
+      "privacy": "個人情報を無差別に保存せず、許可済み教材中心にする。",
+      "parent": "成人がcluster/API key管理。",
+      "why": "無料・カード不要・期限なしが公式明記。クラウドへ児童データを保存する点が残るため黄。",
+      "safety": "教材中心。児童の秘密・健康・住所等は保存しない。",
+      "japan_fit": "日本語Embeddingは実機確認",
+      "difficulty": "中",
+      "real_cost": "$0・GPU不要",
+      "usage_scope": "RAG基盤",
+      "official": [
+        "https://weaviate.io/pricing",
+        "https://docs.weaviate.io/cloud/manage-clusters/create"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "zilliz-cloud",
+      "name": "Zilliz Cloud",
+      "provider": "Zilliz",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Vector DB",
+      "role": "恒久無料RAG基盤",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "Milvus系のmanaged vector database。",
+      "best_for": "教材検索、Embedding保存、RAG。",
+      "free": "Free cluster: 5GB storage、2.5M vCUs/month、最大5 collections、約100万768-dim vectors目安。payment情報不要。",
+      "free_period": "恒久Free cluster",
+      "free_type": "恒久無料",
+      "billing": "Free trialとは別にFree clusterあり。",
+      "age": "成人管理バックエンド前提。",
+      "privacy": "児童Personal Dataを保存しない設計を推奨。",
+      "parent": "成人管理。",
+      "why": "無料clusterが公式に明確。児童データをクラウド保存する条件から黄。",
+      "safety": "公開/許可済み教材中心。",
+      "japan_fit": "候補",
+      "difficulty": "中",
+      "real_cost": "Free cluster $0",
+      "usage_scope": "RAG基盤",
+      "official": [
+        "https://docs.zilliz.com/docs/free-trials"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "exa",
+      "name": "Exa",
+      "provider": "Exa",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "Family AI基盤 / Web検索",
+      "role": "継続無料検索候補",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "what": "AI向けWeb/Search/Contents/Deep Search API。",
+      "best_for": "最新情報、調べ学習、出典探索。",
+      "free": "Starter $0。signup $20 credits、以後$10 credits/month。payment method不要。",
+      "free_period": "月次",
+      "free_type": "月次無料credit",
+      "billing": "Free Starter内で利用。PAYGOは別plan。",
+      "age": "成人がAPIを管理。未成年End User詳細は追加注意。",
+      "privacy": "児童の氏名・住所等をqueryへ含めない。Zero retentionはEnterprise機能。",
+      "parent": "成人管理。",
+      "why": "毎月無料creditが公式明記され有力。検索queryのPrivacy設計が必要なため黄。",
+      "safety": "検索結果フィルタ・引用確認をFamily AI側で実施。",
+      "japan_fit": "日本語検索は実機評価",
+      "difficulty": "低〜中",
+      "real_cost": "$10/月credit内$0",
+      "usage_scope": "Web検索",
+      "official": [
+        "https://exa.ai/pricing"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "cartesia",
+      "name": "Cartesia",
+      "provider": "Cartesia",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウド音声AI",
+      "role": "TTS/STT候補",
+      "child_goals": [
+        "🎤 声を文字にしたい",
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "低遅延TTS/STT API。",
+      "best_for": "Family AIの会話音声入出力。",
+      "free": "Free $0/月、20K credits/month。TTSは約27分/月の目安。",
+      "free_period": "月次",
+      "free_type": "恒久無料plan",
+      "billing": "Free plan上限あり。有料upgradeは別操作。",
+      "age": "未成年End User条件を追加監査対象。",
+      "privacy": "音声はPersonal Dataになり得るため児童音声は最小化。",
+      "parent": "成人API管理。",
+      "why": "継続無料planが公式に明記。ただし児童音声のPrivacy/End User条件確定前なので黄。",
+      "safety": "voice cloningは子ども用では無効化。",
+      "japan_fit": "日本語音声品質を実機評価",
+      "difficulty": "中",
+      "real_cost": "20K credits/月$0",
+      "usage_scope": "音声I/O",
+      "official": [
+        "https://www.cartesia.ai/pricing"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "speechmatics",
+      "name": "Speechmatics",
+      "provider": "Speechmatics",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウド音声AI",
+      "role": "STT/TTS評価候補",
+      "child_goals": [
+        "🎤 声を文字にしたい",
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "55+言語STTとTTS API。",
+      "best_for": "日本語を含む多言語音声認識の比較。",
+      "free": "新規$100 credit。カード不要。",
+      "free_period": "初回",
+      "free_type": "初回クレジット",
+      "billing": "credit消費後、継続にはカード追加。",
+      "age": "成人管理API前提。児童End User詳細は追加注意。",
+      "privacy": "音声データを扱うため児童利用は最小データ方針。",
+      "parent": "成人管理。",
+      "why": "無料量は大きいが恒久無料ではなく評価用途。",
+      "safety": "音声保存・学習opt-in設定を確認して使う。",
+      "japan_fit": "日本語対応あり",
+      "difficulty": "中",
+      "real_cost": "最初$100 credit",
+      "usage_scope": "評価/比較",
+      "official": [
+        "https://www.speechmatics.com/pricing"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "gladia",
+      "name": "Gladia",
+      "provider": "Gladia",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウド音声AI",
+      "role": "STT評価候補",
+      "child_goals": [
+        "🎤 声を文字にしたい"
+      ],
+      "what": "100+言語の多言語STT。",
+      "best_for": "日本語を含む音声認識比較。",
+      "free": "新規€50 one-time credits。約80+時間async / 60+時間real-time目安。",
+      "free_period": "初回",
+      "free_type": "初回クレジット",
+      "billing": "prepaid wallet。auto top-up設定があるためOFF確認必須。",
+      "age": "成人管理API前提。",
+      "privacy": "児童音声はPersonal Dataとして最小化。",
+      "parent": "成人管理。auto top-up無効化。",
+      "why": "無料creditは大きいが月次無料ではない。課金設定にも注意が必要で黄。",
+      "safety": "auto top-upをOFF、児童個人情報を音声に含めない。",
+      "japan_fit": "日本語対応候補",
+      "difficulty": "中",
+      "real_cost": "初回€50",
+      "usage_scope": "評価/比較",
+      "official": [
+        "https://www.gladia.io/pricing"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "voicevox-local",
+      "name": "VOICEVOX",
+      "provider": "VOICEVOX",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "ローカルAI / 日本語TTS",
+      "role": "日本語音声合成の有力候補",
+      "child_goals": [
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "日本語音声合成をPC内で実行。VOICEVOX COREからプログラム組込みも可能。",
+      "best_for": "Family AIの日本語読み上げ。",
+      "free": "ソフトウェア無料。商用・非商用利用可。音声利用時は各音声ライブラリ規約とクレジット表記に従う。",
+      "free_period": "恒久",
+      "free_type": "ローカル無料",
+      "billing": "従量課金なし。",
+      "age": "クラウドアカウント不要。",
+      "privacy": "ローカル処理なら音声生成textを外部APIへ送らない。",
+      "parent": "使用voiceの利用規約を大人が選定。",
+      "why": "ローカル・無料・公式規約が明確。voiceごとの規約遵守を条件に緑候補。",
+      "safety": "承認済みvoiceのみallowlist。",
+      "japan_fit": "非常に高い",
+      "difficulty": "低〜中",
+      "real_cost": "PCのみ",
+      "usage_scope": "日本語TTS",
+      "official": [
+        "https://voicevox.hiroshiba.jp/term/"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "aivisspeech-local",
+      "name": "AivisSpeech",
+      "provider": "Aivis Project",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "ローカルAI / 日本語TTS",
+      "role": "日本語TTS有力候補",
+      "child_goals": [
+        "🔊 AIにしゃべってほしい"
+      ],
+      "what": "ローカルAI音声合成。EngineをFamily AIから呼び出せる。",
+      "best_for": "自然な日本語読み上げ、家庭内Voice AI。",
+      "free": "基本機能は今後も無料と公式FAQ。ソフト本体は個人/法人/商用/非商用を問わず利用可能。model licenseは個別確認。",
+      "free_period": "恒久",
+      "free_type": "ローカル無料",
+      "billing": "基本機能に従量課金なし。",
+      "age": "ローカル利用。",
+      "privacy": "ローカル処理中心。",
+      "parent": "ACML/CC0等、許可条件が明確なmodelを選ぶ。",
+      "why": "ローカル無料で日本語Family AIとの相性が良い。model license確認を条件に緑。",
+      "safety": "承認済みvoice modelのみ利用。",
+      "japan_fit": "非常に高い",
+      "difficulty": "中",
+      "real_cost": "PCのみ",
+      "usage_scope": "日本語TTS",
+      "official": [
+        "https://github.com/Aivis-Project/AivisSpeech"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "kotoba-whisper-local",
+      "name": "Kotoba-Whisper v2.1",
+      "provider": "Kotoba Technologies",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "ローカルAI / 日本語STT",
+      "role": "日本語音声認識候補",
+      "child_goals": [
+        "🎤 声を文字にしたい"
+      ],
+      "what": "日本語向けWhisper系ASRモデル。",
+      "best_for": "Family AIの日本語音声入力。",
+      "free": "Apache 2.0のopen model。ローカル推論可能。",
+      "free_period": "恒久",
+      "free_type": "ローカル無料",
+      "billing": "API従量課金なし。",
+      "age": "ローカルmodel。",
+      "privacy": "ローカル処理なら児童音声をクラウドへ送らない。",
+      "parent": "PC上で管理。",
+      "why": "日本語特化・Apache 2.0・ローカル処理で緑候補。",
+      "safety": "音声ファイルを不要に保存しない。",
+      "japan_fit": "非常に高い",
+      "difficulty": "中",
+      "real_cost": "PC/GPU性能依存",
+      "usage_scope": "日本語STT",
+      "official": [
+        "https://huggingface.co/kotoba-tech/kotoba-whisper-v2.1"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "reazonspeech-local",
+      "name": "ReazonSpeech NeMo v2",
+      "provider": "Reazon Research",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "ローカルAI / 日本語STT",
+      "role": "日本語音声認識候補",
+      "child_goals": [
+        "🎤 声を文字にしたい"
+      ],
+      "what": "日本語長時間音声にも対応する619M ASR model。",
+      "best_for": "日本語音声入力・長時間文字起こし。",
+      "free": "Apache 2.0。model file約2.48GB。",
+      "free_period": "恒久",
+      "free_type": "ローカル無料",
+      "billing": "従量課金なし。",
+      "age": "ローカルmodel。",
+      "privacy": "ローカル処理可能。",
+      "parent": "PC上で管理。",
+      "why": "日本語特化・Apache 2.0・ローカルで緑候補。",
+      "safety": "児童音声を不要に保存しない。",
+      "japan_fit": "非常に高い",
+      "difficulty": "中〜高",
+      "real_cost": "PC/GPU性能依存",
+      "usage_scope": "日本語STT",
+      "official": [
+        "https://huggingface.co/reazon-research/reazonspeech-nemo-v2"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "llm-jp-4-1-local",
+      "name": "LLM-jp-4.1",
+      "provider": "NII / LLM-jp",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "ローカルAI / 日本語LLM",
+      "role": "国産オープンLLM候補",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "what": "日本語に強い国産open LLM。8B、32B-A3B、33B Thinkingを公開。",
+      "best_for": "日本語ローカルFamily AI、研究・学習。",
+      "free": "Apache 2.0。model自体は無料。",
+      "free_period": "恒久",
+      "free_type": "ローカル無料",
+      "billing": "API従量課金なし。",
+      "age": "ローカルmodel。",
+      "privacy": "ローカルならpromptを外部送信しない。",
+      "parent": "大人がsystem prompt/安全層を管理。",
+      "why": "公開licenseが明確でクラウド年齢規約に依存しないため緑候補。ただし生成内容の安全制御はFamily AI側で必要。",
+      "safety": "子ども向けsystem prompt＋content filterを併用。",
+      "japan_fit": "非常に高い",
+      "difficulty": "8B=中、32/33B=高",
+      "real_cost": "8BでもPC性能必要。32/33Bは大型GPU投資候補",
+      "usage_scope": "日本語LLM",
+      "official": [
+        "https://llm-jp.nii.ac.jp/blog/llm-jp-4-1/"
+      ],
+      "audited": "2026-10-03"
+    },
+    {
+      "id": "elyza-thinking-local",
+      "name": "ELYZA-Thinking 1.0 / llm-jp-4",
+      "provider": "ELYZA",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "ローカルAI / 日本語LLM",
+      "role": "大型国産LLM将来候補",
+      "child_goals": [
+        "💬 話を聞いてほしい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "what": "llm-jp-4を基盤に日本語推論・指示追従を強化した33B/32B-A3Bモデル。",
+      "best_for": "高性能な日本語ローカル推論の将来候補。",
+      "free": "Apache 2.0で公開。model代$0。",
+      "free_period": "恒久",
+      "free_type": "ローカル無料",
+      "billing": "従量課金なし。",
+      "age": "ローカルmodel。",
+      "privacy": "ローカルならprompt外部送信なし。",
+      "parent": "安全層を別途実装。",
+      "why": "licenseと国内公開元が明確なので緑候補。ただし家庭PCではhardware costが大きい。",
+      "safety": "モデル単体を子どもへ直接開放せずFamily AI安全層経由。",
+      "japan_fit": "非常に高い",
+      "difficulty": "高",
+      "real_cost": "33B級。model無料だがGPU/RAM投資大",
+      "usage_scope": "大型ローカルLLM",
+      "official": [
+        "https://huggingface.co/elyza/ELYZA-Thinking-1.0-llm-jp-4-33b",
+        "https://elyza.ai/news/2026/10/02/rsiresearch"
+      ],
+      "audited": "2026-10-03"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -1001,7 +1381,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "broad provider census + official audit",
+    "phase": "MAJOR-CATEGORY-CENSUS-COMPLETE",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1024,13 +1404,12 @@
       "🌏 海外ユーザー観測"
     ],
     "next_candidates": [
-      "教育特化AI",
-      "日本語STT/TTS",
-      "画像生成恒久無料",
-      "日本発AI/API",
-      "ローカル軽量モデル"
+      "差分監視のみ：新規Provider",
+      "無料枠変更",
+      "Terms/Privacy変更",
+      "日本利用条件の更新"
     ],
-    "audited_count": 30,
+    "audited_count": 42,
     "excluded_count": 4,
     "notes": [
       "Pollinationsの旧『無料API』情報は現行Pollen体系へ更新",
@@ -1041,7 +1420,9 @@
     "category_findings": {
       "search_rag": "Tavily/Brave/Jina/Pinecone/Qdrant/Voyageまで候補化。無料枠はLLM本体より潤沢なものが多い。",
       "billing_safety": "カード不要・上限停止型を家庭用途で高く評価。カード必須やauto top-upは明示。"
-    }
+    },
+    "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
+    "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。"
   },
   "content_schema": {
     "purpose": "各カードを料金表ではなく、家庭での使い道まで判断できる図鑑にする",
