@@ -1503,7 +1503,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIソフト"
+        ]
       },
       {
         "id": "adobe-cc-student-jp",
@@ -1541,7 +1544,11 @@
           "公式直接探索"
         ],
         "audited_at": "2026-10-03",
-        "audit_note": "日本公式の購入資格では中学校・高校・大学・高専・専修学校等を明記。13歳以上。"
+        "audit_note": "日本公式の購入資格では中学校・高校・大学・高専・専修学校等を明記。13歳以上。",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AIソフト"
+        ]
       },
       {
         "id": "m365-student-jp",
@@ -1570,7 +1577,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIソフト"
+        ]
       },
       {
         "id": "github-copilot-student",
@@ -1607,7 +1617,11 @@
           "公式直接探索"
         ],
         "audited_at": "2026-10-03",
-        "audit_note": "GitHub EducationのStudent Developer Pack規約と学生向けFAQを優先。教職員はStudent Developer Pack対象外だが別のGitHub Education特典あり。"
+        "audit_note": "GitHub EducationのStudent Developer Pack規約と学生向けFAQを優先。教職員はStudent Developer Pack対象外だが別のGitHub Education特典あり。",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AIソフト"
+        ]
       },
       {
         "id": "figma-education",
@@ -1644,7 +1658,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AIソフト"
+        ]
       },
       {
         "id": "perplexity-education-pro",
@@ -1677,7 +1695,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIソフト"
+        ]
       },
       {
         "id": "jetbrains-student",
@@ -1708,7 +1729,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー"
+        ]
       },
       {
         "id": "notion-education",
@@ -1741,7 +1765,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIソフト"
+        ]
       },
       {
         "id": "canva-education",
@@ -1774,7 +1801,10 @@
           "公式直接探索"
         ],
         "audited_at": "2026-10-03",
-        "audit_note": "Canva利用規約では子どもはCanva Education経由以外でサービスを利用できない。個人向け無料AIとしてではなく学校管理型として表示する。"
+        "audit_note": "Canva利用規約では子どもはCanva Education経由以外でサービスを利用できない。個人向け無料AIとしてではなく学校管理型として表示する。",
+        "catalog_categories": [
+          "AIソフト"
+        ]
       },
       {
         "id": "autodesk-flow-education",
@@ -1807,7 +1837,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー"
+        ]
       },
       {
         "id": "grammarly-student",
@@ -1836,7 +1869,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIソフト"
+        ]
       },
       {
         "id": "aws-educate",
@@ -1879,7 +1915,11 @@
           "公式直接探索"
         ],
         "audited_at": "2026-10-03",
-        "audit_note": "AWS公式内に13歳・14歳とする紹介/FAQ表記も残るが、2026-06-17更新のAWS Learner Terms & ConditionsはJapan=16と明記。規約を優先。"
+        "audit_note": "AWS公式内に13歳・14歳とする紹介/FAQ表記も残るが、2026-06-17更新のAWS Learner Terms & ConditionsはJapan=16と明記。規約を優先。",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "azure-for-students",
@@ -1914,7 +1954,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー"
+        ]
       },
       {
         "id": "google-cloud-students",
@@ -1952,7 +1995,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "google-cloud-faculty",
@@ -1987,7 +2034,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "sakana-student-researcher",
@@ -2021,7 +2072,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "pfn-internship",
@@ -2062,7 +2117,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "ipa-mitou-it",
@@ -2104,7 +2163,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "toshiba-internship",
@@ -2140,7 +2203,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "mitou-junior",
@@ -2178,7 +2245,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "dcon-kosen",
@@ -2214,7 +2285,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "nvidia-ai-learning-education",
@@ -2257,7 +2332,11 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "giel-utokyo",
@@ -2293,7 +2372,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "minnanocode-genai",
@@ -2331,7 +2413,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "mirai-for-japan",
@@ -2366,7 +2451,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "tokyo-ai-lab-hackathon",
@@ -2401,7 +2489,10 @@
         "discovered_via": [
           "公式直接探索"
         ],
-        "audited_at": "2026-10-03"
+        "audited_at": "2026-10-03",
+        "catalog_categories": [
+          "AI教室・イベント"
+        ]
       },
       {
         "id": "azure-13-17-github",
@@ -2439,7 +2530,10 @@
           "GitHub Student Developer Pack公式一覧"
         ],
         "audited_at": "2026-10-03",
-        "audit_note": "18歳以上向けAzure for Studentsとは別枠。Pack内Partner offerなのでMicrosoft側追加条件・提供変更に注意。"
+        "audit_note": "18歳以上向けAzure for Studentsとは別枠。Pack内Partner offerなのでMicrosoft側追加条件・提供変更に注意。",
+        "catalog_categories": [
+          "AIデベロッパー"
+        ]
       }
     ],
     "excluded_or_watch": [
@@ -2500,6 +2594,14 @@
         "独自探索で公式から直接発見した場合はdiscovered_viaに『公式直接探索』と記録する",
         "未成年の最低年齢が公式ページ間で矛盾する場合は、最新の利用規約・国別条件を紹介ページ/FAQより優先し、矛盾自体もaudit_noteに残す"
       ]
+    },
+    "catalog_category_policy": {
+      "categories": {
+        "AIデベロッパー": "API、Cloud、GPU、開発環境、研究開発、Student Researcher、インターン、開発支援",
+        "AIソフト": "完成したAIサービス/アプリ、学割プラン、教育ライセンス、学生向けサブスクリプション",
+        "AI教室・イベント": "授業、教材、研修、ハッカソン、コンテスト、ワークショップ、メンタリングprogram"
+      },
+      "rule": "複数カテゴリ該当可。ポジションを第一フィルター、カテゴリを第二フィルターとして使用する。"
     }
   }
 }
