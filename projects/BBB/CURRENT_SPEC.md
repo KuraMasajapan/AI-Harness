@@ -158,7 +158,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.9.2はWindows向けTrading Research Cockpit、Local AI Sandbox、Fundamental Confidence Dashboard、Human Label Review、Global Macro Impact Lab、Matched Control、Robustness Check、4種Cool Skinを持つ。
+v0.9.3はWindows向けTrading Research Cockpit、Local AI Sandbox、Fundamental Confidence Dashboard、Human Label Review、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、4種Cool Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -219,7 +219,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 84 passed
+- local pytest: 90 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
@@ -240,3 +240,8 @@ API Key / API Secret はAI-Harnessへ保存しない。
 v0.9.2でRobustness Checkを実装。Matched Controlのevent-level Excessを使い、Median / Q25-Q75 / 10% Trimmed Mean / 最大|Excess| 1件除外平均 / Mean Excessのdeterministic percentile bootstrap 95% CI（2,000 resamples）/ 最大外れケースを表示する。既存v0.9.1のmatched_control_ledger.jsonlが残っていれば再Import・再Replayなしで自動集計する。これらはMatched Sample内の記述的頑健性確認であり、因果関係・統計的有意性・将来の売買優位性を単独では証明しない。
 
 - checkpoints/BBB_V0.9.2_ROBUSTNESS_CHECK_2026-10-03.md
+
+
+v0.9.3でGlobal BTC / JPY Overlay Decompositionを実装。Tier-A Global Macro Eventをbitbank BTC/JPYとpublic BTC/USD referenceへ同じ公式発表時刻から当て、30m / 1h / 4h / 24hで分解する。BTC/USD referenceはCCXT Coinbaseを優先し、取得失敗時はKrakenへfallbackする。Implied JPY Overlayは (1+BTCJPY return)/(1+BTCUSD return)-1 のcross-rate residualで、実USD/JPYそのものではなくJPY要因と取引所間basisを含む。UIは24h Global BTC |Move| / JPY Overlay |Move| / Global Dominant Shareと、FOMC/CPI/Employment別の各horizon比較を表示。Public read-only / Sandbox onlyで売買影響なし。
+
+- checkpoints/BBB_V0.9.3_GLOBAL_BTC_JPY_OVERLAY_2026-10-03.md
