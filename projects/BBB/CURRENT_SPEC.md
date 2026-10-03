@@ -267,3 +267,10 @@ v0.9.5でFX Coverage Recoveryを実装。v0.9.4実機初回Direct USD/JPY Valida
 v0.9.6でFX Source Cross-checkを実装。Dukascopy hourly public feedは `datafeed.dukascopy.com` と `www.dukascopy.com` のdual-host fallbackを持つ。Direct FX結果はCoverage 95%以上をREADY、50%以上95%未満をCAUTION、50%未満をBLOCKEDとしてUIに明示する。公式FRED DEXJPUS（Federal Reserve H.10、New York noon daily）をno-key daily sanity checkとして追加し、各Global Macro Eventを直前NY正午から直後NY正午でbracketしてFXの桁感・方向を確認する。FRED dailyは30m/1h/4h intraday validationの代替にはしない。Dukascopy current daily S3 bucketは公式資料上Requester Paysのため、AWS credential/costを要求するdefault pathには採用しない。
 
 - checkpoints/BBB_V0.9.6_FX_SOURCE_CROSSCHECK_2026-10-03.md
+
+## Next / Proposed
+- v0.9.7 proposed: FX Evidence Gate + fast-job UX.
+- FRED COMPLETE daily baseline and Direct intraday coverage are displayed as separate evidence layers.
+- Fast FRED jobs show explicit DONE / 62 of 62 / sub-second duration instead of 00:00-only feedback.
+- Direct intraday result remains blocked from interpretation while coverage <50% and non-ready below95%.
+
