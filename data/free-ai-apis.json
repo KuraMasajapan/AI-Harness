@@ -1453,5 +1453,252 @@
       "pending": "⚠️ 未確認"
     },
     "community_rule": "海外ユーザー情報は候補発見と変化検知に使い、信号判定は公式一次情報へ戻って裏付ける。"
+  },
+  "student_discounts": {
+    "as_of": "2026-10-03",
+    "scope": "日本で正式に利用できることを公式情報で確認できた学生・教育向けAI特典を優先。国内まとめ記事の有無だけでは除外しない。",
+    "fields": [
+      "benefit",
+      "normal_price",
+      "student_price",
+      "discount",
+      "eligibility",
+      "verification",
+      "deadline",
+      "renewal",
+      "ai_relevance",
+      "japan_status",
+      "official"
+    ],
+    "items": [
+      {
+        "id": "google-ai-student-jp",
+        "name": "Google AI 学生向け特典",
+        "provider": "Google",
+        "tier": "S",
+        "benefit": "Google AI Plusを12か月無料。AI Pro等の学生割引も提供。",
+        "normal_price": "AI Plus 通常 月725円（公式2026学生案内記載）",
+        "student_price": "AI Plus 12か月 0円",
+        "discount": "12か月100%OFF相当",
+        "eligibility": "18歳以上・対象国/地域の高等教育機関の学生。日本対象。",
+        "verification": "SheerID。学校の有効なメールアドレス。個人Google Account＋有効な支払い方法。",
+        "deadline": "2026-12-31",
+        "renewal": "特典終了後は通常有料planへ移行。事前通知あり。",
+        "ai_relevance": "AI本体",
+        "japan_status": "🇯🇵 日本公式確認済み",
+        "official": [
+          "https://one.google.com/offer/studentoffer8?hl=ja-JP",
+          "https://support.google.com/googleone/answer/17422238?hl=ja"
+        ]
+      },
+      {
+        "id": "adobe-cc-student-jp",
+        "name": "Adobe Creative Cloud Pro 学生・教職員版",
+        "provider": "Adobe",
+        "tier": "S",
+        "benefit": "Photoshop等20+ apps＋Firefly生成AI。初期最大89%OFF。",
+        "normal_price": "9,080円/月（税込）",
+        "student_price": "最初3か月980円/月、4か月目以降2,180円/月、2年目以降4,180円/月",
+        "discount": "最初3か月89%OFF表示",
+        "eligibility": "13歳以上。日本の対象中学・高校・大学・高専・専修学校等。",
+        "verification": "学校メール。必要時は学生証/学生手帳・在学証明書等。",
+        "deadline": "常設（価格promotionは変更あり）",
+        "renewal": "2年目以降も学生教職員価格だが価格上昇。",
+        "ai_relevance": "AI＋制作suite",
+        "japan_status": "🇯🇵 日本公式確認済み",
+        "official": [
+          "https://www.adobe.com/jp/education/students/creativecloud.html",
+          "https://www.adobe.com/jp/creativecloud/roc/offer-terms/student-eligibility.html"
+        ]
+      },
+      {
+        "id": "m365-student-jp",
+        "name": "Microsoft 365 Personal 学生割引",
+        "provider": "Microsoft",
+        "tier": "A",
+        "benefit": "Microsoft 365 Personalを50%割引。Word/Excel/PowerPoint等のCopilot・画像生成を含む。",
+        "normal_price": "通常Personal価格",
+        "student_price": "通常価格の50%",
+        "discount": "50%OFF",
+        "eligibility": "大学生向け日本公式学生割引。",
+        "verification": "大学メール、在学情報、学校account、国際学生証、日付入り学生証等。",
+        "deadline": "常設扱い（条件変更あり）",
+        "renewal": "過去1年以内の在学確認が必要。資格喪失後は通常価格。",
+        "ai_relevance": "AI＋Office",
+        "japan_status": "🇯🇵 日本公式確認済み",
+        "official": [
+          "https://www.microsoft.com/ja-jp/microsoft-365/college-student-pricing"
+        ]
+      },
+      {
+        "id": "github-copilot-student",
+        "name": "GitHub Copilot Student",
+        "provider": "GitHub",
+        "tier": "S",
+        "benefit": "検証済み学生はCopilot premium機能を無料利用。Student Developer Packも利用可能。",
+        "normal_price": "通常Copilot有料plan相当",
+        "student_price": "0円",
+        "discount": "100%OFF相当",
+        "eligibility": "GitHub Educationで検証済みの学生。GitHub Educationは13歳以上。",
+        "verification": "GitHub Education申請。学生statusを検証。",
+        "deadline": "在学中。資格を定期再評価。",
+        "renewal": "GitHub側で資格再評価。Student Packの学生検証は2年間有効後再検証。",
+        "ai_relevance": "AI coding",
+        "japan_status": "🇯🇵 日本語公式docs・地域除外なし",
+        "official": [
+          "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students",
+          "https://docs.github.com/ja/education/about-github-education/github-education-for-students/github-terms-and-conditions-for-the-student-developer-pack"
+        ]
+      },
+      {
+        "id": "figma-education",
+        "name": "Figma for Education",
+        "provider": "Figma",
+        "tier": "S",
+        "benefit": "Education plan無料。高等教育/対象bootcampではAI toolsを利用でき月3,000 AI credits。",
+        "normal_price": "Professional/Enterprise相当",
+        "student_price": "0円",
+        "discount": "Education対象plan無料",
+        "eligibility": "高校/高等教育等。AI toolsは高等教育・bootcamp Education users向け（K-12/高校は対象外）。自分で同意可能な年齢。",
+        "verification": "学校メール。高等教育はSheerID。",
+        "deadline": "在籍statusの再確認あり",
+        "renewal": "Education statusを再確認。",
+        "ai_relevance": "AI＋Design",
+        "japan_status": "🇯🇵 日本語公式help・日本は除外国でない",
+        "official": [
+          "https://help.figma.com/hc/ja/articles/360041061214-Figma-for-Education",
+          "https://help.figma.com/hc/en-us/articles/37611757713431-AI-credits-on-the-Education-plan"
+        ]
+      },
+      {
+        "id": "perplexity-education-pro",
+        "name": "Perplexity Education Pro",
+        "provider": "Perplexity",
+        "tier": "A",
+        "benefit": "Pro全機能＋Learn Mode/Academic等。教育向け月$10。",
+        "normal_price": "通常Pro価格",
+        "student_price": "$10/月",
+        "discount": "教育向け特別価格",
+        "eligibility": "大学レベル以上の学生または教職員。",
+        "verification": "SheerID。個人/学生emailどちらでもaccount可。",
+        "deadline": "在籍中",
+        "renewal": "教育資格に依存",
+        "ai_relevance": "AI本体",
+        "japan_status": "🇯🇵 日本語公式helpあり。申込画面で最終資格確認推奨。",
+        "official": [
+          "https://www.perplexity.ai/help-center/ja/articles/12590157-education-pro%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B"
+        ]
+      },
+      {
+        "id": "jetbrains-student",
+        "name": "JetBrains Student Pack",
+        "provider": "JetBrains",
+        "tier": "A",
+        "benefit": "10 IDE等を無料。JetBrains AI Pro trialを含む。卒業後2年間40%卒業割引。",
+        "normal_price": "各IDE/All Products有料",
+        "student_price": "教育license 0円",
+        "discount": "IDEは100%OFF相当",
+        "eligibility": "学生。教育用途のみ・商用不可。",
+        "verification": "大学domain emailまたはISIC card等。",
+        "deadline": "在学中",
+        "renewal": "学生license失効後2年間40%卒業割引",
+        "ai_relevance": "開発環境＋AI trial",
+        "japan_status": "🇯🇵 日本公式ページあり",
+        "official": [
+          "https://www.jetbrains.com/ja-jp/academy/student-pack/",
+          "https://www.jetbrains.com/ja-jp/store/"
+        ]
+      },
+      {
+        "id": "notion-education",
+        "name": "Notion 学割プラン",
+        "provider": "Notion",
+        "tier": "B",
+        "benefit": "学生・教職員の1名workspace向けPlus相当機能を無料。",
+        "normal_price": "Plus相当",
+        "student_price": "0円",
+        "discount": "workspace機能無料",
+        "eligibility": "WHED登録の認定高等教育機関の学生・教職員。",
+        "verification": "学校メール必須。学生証等の書類認証は不可。",
+        "deadline": "終了日なし",
+        "renewal": "年1回学校メールで再検証。",
+        "ai_relevance": "教育特典（AI割引が主目的ではない）",
+        "japan_status": "🇯🇵 日本語公式help",
+        "official": [
+          "https://www.notion.com/ja/help/notion-for-education"
+        ]
+      },
+      {
+        "id": "canva-education",
+        "name": "Canva教育版",
+        "provider": "Canva",
+        "tier": "A",
+        "benefit": "対象K-12教職員・生徒等にCanva教育版を無料提供。AI機能を含む制作環境として利用可能。",
+        "normal_price": "教育版対象機能",
+        "student_price": "0円",
+        "discount": "教育版無料",
+        "eligibility": "幼小中高の教職員・教育機関中心。高等教育は対象外。生徒は学校/教員経由の利用を基本確認。",
+        "verification": "確認済み教育email、または教員免許証等。日本の教員は教員免許証copyで可。",
+        "deadline": "資格期間",
+        "renewal": "資格確認に依存",
+        "ai_relevance": "AI＋Design",
+        "japan_status": "🇯🇵 日本を明記した公式eligibility",
+        "official": [
+          "https://www.canva.com/ja_jp/education/eligibility-guidelines/"
+        ]
+      },
+      {
+        "id": "autodesk-flow-education",
+        "name": "Autodesk Flow Studio Education",
+        "provider": "Autodesk",
+        "tier": "A",
+        "benefit": "AI-assisted 3D/VFX Flow Studio Lite＋USD exportを無料。",
+        "normal_price": "Flow Studio有料tier",
+        "student_price": "0円",
+        "discount": "Education access無料",
+        "eligibility": "対象大学の18歳以上の学生・教職員。教育目的のみ、商用不可。",
+        "verification": "Autodesk Education資格確認",
+        "deadline": "1年subscription・更新可能",
+        "renewal": "資格があれば1年ごと更新",
+        "ai_relevance": "AI 3D/VFX",
+        "japan_status": "🌏 日本からのEducation利用可否を申込時最終確認",
+        "official": [
+          "https://www.autodesk.com/education/edu-software/flow-studio"
+        ]
+      },
+      {
+        "id": "grammarly-student",
+        "name": "Grammarly Pro Student",
+        "provider": "Grammarly",
+        "tier": "B",
+        "benefit": "対象学生は期間限定でGrammarly Pro 50%OFF。AI learning partner等を含む。",
+        "normal_price": "Grammarly Pro通常価格",
+        "student_price": "1 subscription period 50%OFF",
+        "discount": "50%OFF",
+        "eligibility": "eligible students。",
+        "verification": "SheerID",
+        "deadline": "期間限定・終了日公式supportで明記なし",
+        "renewal": "1 subscription periodのみ割引",
+        "ai_relevance": "AI writing/learning",
+        "japan_status": "⚠️ 日本のSheerID対象可否を申込時確認",
+        "official": [
+          "https://support.grammarly.com/hc/en-us/articles/38895500890125-Does-Grammarly-offer-discounts-for-students"
+        ]
+      }
+    ],
+    "excluded_or_watch": [
+      {
+        "name": "ChatGPT 2026 Back-to-School",
+        "reason": "Plus 4か月無料だが、公式条件は対象となる米国の学位授与機関の大学・大学院生。日本向け枠には掲載しない。"
+      },
+      {
+        "name": "Cursor Student",
+        "reason": "現行公式ページでは恒常的な学生割引を提示せず、campus/event promotion案内。監視対象。"
+      },
+      {
+        "name": "Claude",
+        "reason": "今回の公式検索で日本の個人学生向け恒常割引を確認できず。教育機関向け契約とは分離。"
+      }
+    ]
   }
 }
