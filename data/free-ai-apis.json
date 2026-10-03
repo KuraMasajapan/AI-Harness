@@ -1519,6 +1519,73 @@
       ],
       "free_type": "AI試用のみ",
       "role": "比較対象"
+    },
+    {
+      "id": "brisk-boost",
+      "name": "Brisk Boost（教師管理）",
+      "provider": "Brisk Teaching",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "クラウドAI・教師管理",
+      "what": "教師が教材からAI学習活動を作り、リンクやQRで児童生徒に共有するK-12向けAI。",
+      "best_for": "AIチューター、討論、作文支援、理解確認、AIリテラシー",
+      "free": "教師向けFree Forever planにBrisk Boostあり。学生は教師の共有リンクから参加でき、通常は学生アカウント不要。",
+      "free_period": "Free Forever。Premium機能は別。",
+      "billing": "教師の無料アカウントから利用可能。学校・地区向け上位planあり。",
+      "age": "K-12を正式対象。初等教育から高校まで対応し、教師が活動を作成・管理する教育経路。",
+      "privacy": "学生・教師データをAIモデルの学習・fine-tuning・改善に使用しない。Student Dataは教育目的で学校/教師のために処理。",
+      "safety": "教師が目的・guardrailsを設定し、学生との会話を確認可能。不適切語、侮辱、暴力等を教師へflag。FERPA/COPPA対応を明記。",
+      "why": "K-12専用、教師管理、学生アカウント不要、Free Forever経路、全会話可視化、AI学習不使用まで公式確認できるため教師管理型Green。",
+      "parent": "家庭から子ども単独で使うAIではなく、教師が作ったBoost活動への参加を前提。",
+      "official": [
+        "https://www.briskteaching.com/briskboost",
+        "https://www.briskteaching.com/plans",
+        "https://www.briskteaching.com/privacy/privacy-center",
+        "https://www.briskteaching.com/privacy/student-data-privacy-addendum"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい",
+        "💬 話を聞いてほしい",
+        "🎨 画像をつくりたい"
+      ],
+      "free_type": "Free Forever・教師経由",
+      "role": "教育専用・教師管理型",
+      "japan_fit": "要実地確認",
+      "usage_scope": "教師が作成したBoost活動をリンク/QRで児童生徒へ共有。"
+    },
+    {
+      "id": "schoolai-spaces",
+      "name": "SchoolAI Spaces（教師管理）",
+      "provider": "SchoolAI",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "クラウドAI・教師管理・無料体験型",
+      "what": "教師が作るAI学習空間で学生がAIアシスタントDotと対話する教育専用サービス。",
+      "best_for": "個別学習、AIチューター、理解確認、作文、画像生成を含む教師設計活動",
+      "free": "Free planで年5回のSpace launch。期限切れのない無料枠だが学生利用回数は小さい。",
+      "free_period": "無料枠は期限なし、Space launchは年5回。",
+      "billing": "教師Free planあり。継続的大規模利用はPro/Scale。",
+      "age": "K-12向け。K-2から9-12までの教材/Spacesを提供し、教師管理下で学生が利用。",
+      "privacy": "AI providerは学生データを学習または販売しない契約。FERPA/COPPA対応を明記。",
+      "safety": "教師が全会話をリアルタイム確認可能。無料枠でも個別Spaceの安全アラートが常時有効。guardrailsあり。",
+      "why": "K-12専用、教師監督、データ学習不使用、安全アラート、無料学生セッションまで公式確認。ただし年5 Space launchesなので『無料体験型Green』として区別。",
+      "parent": "教師/学校管理下での利用を前提。",
+      "official": [
+        "https://schoolai.com/pricing",
+        "https://schoolai.com/products/spaces",
+        "https://schoolai.com/blog/understanding-the-new-free-plan"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい",
+        "🎨 画像をつくりたい",
+        "💬 話を聞いてほしい"
+      ],
+      "free_type": "年5 Space launches",
+      "role": "教育専用・無料体験型",
+      "japan_fit": "要実地確認",
+      "usage_scope": "教師がSpaceを作成して学生に提供。無料枠は年5回のlaunch。"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -1598,7 +1665,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "EDUCATION-GREEN-EXPANSION",
+    "phase": "EDUCATION-NATIVE-AI-AUDIT-2",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1641,13 +1708,13 @@
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
     "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
     "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
-    "result": "家庭管理型Green=Gemini Family Link。学校管理型Green=Microsoft Copilot Chat, Canva Education AI, Adobe Express for Education AI。Notion AI=Yellow。",
+    "result": "Brisk Boost=教師管理型Green。SchoolAI Spaces=無料体験型Green。MagicStudent/Khanmigoは調査済みだがGitHub反映は次回再確認。",
     "audited_at": "2026-10-04",
     "next": [
-      "大手Consumer Family経路第2巡",
-      "Khan Academy/Khanmigo等の子ども専用AI調査",
-      "教育AI専用サービスの日本利用可否",
-      "Greenを家庭型/学校型でUI分離"
+      "MagicStudentを再確認して登録",
+      "Khanmigoを参考枠へ登録",
+      "日本語品質/日本からの利用可否を実機確認",
+      "管理方式タグをUI表示"
     ]
   },
   "content_schema": {
