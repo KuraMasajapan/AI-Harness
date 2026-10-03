@@ -24,7 +24,7 @@ BITBANK-BOT（略称 BBB）は、bitbank を対象とした暗号資産取引Bot
 - UI Skin: Graphite Blue / Deep Navy / Steel Slate / Black Ice
 - 主要UI: English / 日本語併記
 - Local AI Python: BBB本体と分離した `.venv_local_ai`（Python 3.11-3.13）
-- ローカルテスト: 96/96 PASS（v0.9.4 package validation）
+- ローカルテスト: 101/101 PASS（v0.9.5 package validation）
 
 ## Source of Truth
 bitbank公式API仕様:
@@ -219,4 +219,15 @@ AlignmentはHuman正解ラベルによる分類精度ではなく、risk_on/risk
 - unique target-hour fileを最大6並列prefetch。
 - UI進捗: FX取得 x/y -> イベント検証 x/62。
 - 2回目以降はdata/fx_cache/dukascopyを再利用。
+
+## v0.9.5 FX Coverage Recovery
+- v0.9.4 target result: 3 / 62 validated, 59 failed, elapsed 15:41
+- 3-event result is pipeline proof only; not statistical evidence
+- retryable HTTP/network retry + controlled repair
+- anchor-hour priority prefetch
+- max 3 concurrent requests
+- run-level failed-hour memoization to prevent repeated long retries
+- Coverage: COMPLETE / PARTIAL / LOW_COVERAGE
+- UI diagnostics: coverage, cache hits, network success, retries, failure reasons
+- existing data/fx_cache/dukascopy remains reusable
 
