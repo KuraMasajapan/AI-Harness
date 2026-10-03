@@ -158,7 +158,7 @@ https://github.com/bitbankinc/bitbank-api-docs
 - ACCESS-TIME-WINDOW方式をLive実装時の優先候補とする
 
 ## 8. Desktop operation
-v0.9.3はWindows向けTrading Research Cockpit、Local AI Sandbox、Fundamental Confidence Dashboard、Human Label Review、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、4種Cool Skinを持つ。
+v0.9.4はWindows向けTrading Research Cockpit、Local AI Sandbox、Fundamental Confidence Dashboard、Human Label Review、Global Macro Impact Lab、Matched Control、Robustness Check、Global BTC / JPY Overlay Decomposition、Direct USD/JPY Validation、4種Cool Skinを持つ。
 - BBB_START.bat
 - native desktop shell: pywebview
 - native shellが利用できない場合: localhost browser console fallback
@@ -219,7 +219,7 @@ API Key / API Secret はAI-Harnessへ保存しない。
 
 ## 12. Current test state
 2026-10-01:
-- local pytest: 90 passed
+- local pytest: 96 passed
 - Python compileall: PASS
 - UI JavaScript syntax check: PASS
 - 5 strategy families available
@@ -245,3 +245,8 @@ v0.9.2でRobustness Checkを実装。Matched Controlのevent-level Excessを使�
 v0.9.3でGlobal BTC / JPY Overlay Decompositionを実装。Tier-A Global Macro Eventをbitbank BTC/JPYとpublic BTC/USD referenceへ同じ公式発表時刻から当て、30m / 1h / 4h / 24hで分解する。BTC/USD referenceはCCXT Coinbaseを優先し、取得失敗時はKrakenへfallbackする。Implied JPY Overlayは (1+BTCJPY return)/(1+BTCUSD return)-1 のcross-rate residualで、実USD/JPYそのものではなくJPY要因と取引所間basisを含む。UIは24h Global BTC |Move| / JPY Overlay |Move| / Global Dominant Shareと、FOMC/CPI/Employment別の各horizon比較を表示。Public read-only / Sandbox onlyで売買影響なし。
 
 - checkpoints/BBB_V0.9.3_GLOBAL_BTC_JPY_OVERLAY_2026-10-03.md
+
+
+v0.9.4でDirect USD/JPY Validationを実装。v0.9.3のImplied JPY OverlayをDukascopy public historical USD/JPY tick midpointで直接検証し、Overlay = Direct USD/JPY × Basis Residualへ再分解する。各Tier-A Eventについて30m / 1h / 4h / 24hを比較し、Direct FX |Move|、Basis Residual |Move|、FX magnitude share、FX dominant shareをFOMC / CPI / Employment別に表示する。Historical tickはevent-local hour fileだけを取得して data/fx_cache/dukascopy へcacheする。Basis Residualにはcross-exchange BTC basisやmicrostructure差が残り得る。Public read-only / Sandbox onlyでPaper / Risk / Liveへの影響なし。
+
+- checkpoints/BBB_V0.9.4_DIRECT_USDJPY_VALIDATION_2026-10-03.md
