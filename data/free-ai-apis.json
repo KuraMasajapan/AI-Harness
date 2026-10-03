@@ -1456,7 +1456,7 @@
   },
   "student_discounts": {
     "as_of": "2026-10-03",
-    "scope": "日本で正式に利用できることを公式情報で確認できた学生・教育向けAI特典を優先。国内まとめ記事の有無だけでは除外しない。",
+    "scope": "日本で利用・応募できるAI関連の学生/教育特典と機会。料金割引だけでなく、無料学習、Cloud/GPU credits、教育license、Student Researcher、AI internship、研究開発支援、competition/mentoringを含む。",
     "fields": [
       "benefit",
       "normal_price",
@@ -1784,6 +1784,276 @@
         "age_scope": "SheerIDでeligible studentと確認できる学生",
         "student_offer": "対象学生はGrammarly Proを1 subscription period 50%OFF。",
         "teacher_offer": "今回確認した個人学生50%OFF制度では教職員向け同一特典を確認できず。"
+      },
+      {
+        "id": "aws-educate",
+        "name": "AWS Educate",
+        "provider": "Amazon Web Services",
+        "tier": "S",
+        "audiences": [
+          "中学生（13歳以上）",
+          "高校生",
+          "高専生",
+          "専門学校生",
+          "大学生",
+          "短大生",
+          "大学院生"
+        ],
+        "age_scope": "日本では13歳以上から利用可能",
+        "student_offer": "クラウド/AIの無料学習コンテンツとハンズオンラボ。クレジットカード不要。18歳以上はJob Boardも利用可能。",
+        "teacher_offer": "教育で利用できるAWS Academy等は別制度。",
+        "benefit": "無料クラウド・AI学習＋実習",
+        "normal_price": "—",
+        "student_price": "0円",
+        "discount": "100%無料",
+        "eligibility": "13歳以上。現在のAWS Educateは教育段階や技術経験を問わず参加可能。",
+        "verification": "メールアドレスで登録。",
+        "deadline": "常設",
+        "renewal": "無料program",
+        "ai_relevance": "AI/Cloud学習",
+        "japan_status": "🇯🇵 AWS日本公式確認済み",
+        "opportunity_types": [
+          "無料学習",
+          "ハンズオン",
+          "デジタルバッジ",
+          "18歳以上求人"
+        ],
+        "official": [
+          "https://aws.amazon.com/jp/education/awseducate/"
+        ]
+      },
+      {
+        "id": "azure-for-students",
+        "name": "Azure for Students",
+        "provider": "Microsoft",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "短大生"
+        ],
+        "age_scope": "18歳以上・認可された2年制/4年制学位授与機関の正規学生",
+        "student_offer": "毎年USD $100 Azure credit。Azure OpenAI等のAI/Cloud技術にアクセス。カード不要。",
+        "teacher_offer": "教職員/教育機関はAzure for Education等の別制度。",
+        "benefit": "$100 credit＋無料Azure services",
+        "normal_price": "従量課金",
+        "student_price": "0円（credit範囲）",
+        "discount": "毎年$100相当",
+        "eligibility": "18歳以上の対象高等教育学生。",
+        "verification": "教育機関メール",
+        "deadline": "学生である間、毎年更新可能",
+        "renewal": "在学確認して更新",
+        "ai_relevance": "AI/Cloud開発",
+        "japan_status": "🇯🇵 日本公式確認済み",
+        "opportunity_types": [
+          "無料credit",
+          "AI開発",
+          "Cloud"
+        ],
+        "official": [
+          "https://azure.microsoft.com/ja-jp/free/students/"
+        ]
+      },
+      {
+        "id": "google-cloud-students",
+        "name": "Google Cloud 学生向けプログラム",
+        "provider": "Google Cloud",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "短大生",
+          "高専生・専門学校生（対象なら）",
+          "大学院生"
+        ],
+        "age_scope": "高等教育中心。各program条件を確認",
+        "student_offer": "Google Skills 200 free credits（発行から1年）＋無料labs/skill badges/Skills Arcade。",
+        "teacher_offer": "教職員向けCloud credits/Career Launchpadは別項目で併記。",
+        "benefit": "AI/Cloud学習creditsとhands-on labs",
+        "normal_price": "—",
+        "student_price": "0円",
+        "discount": "200 Skills credits",
+        "eligibility": "学生向けGoogle Cloud Education resources。",
+        "verification": "program申請/学校条件",
+        "deadline": "creditsは発行から1年",
+        "renewal": "program条件による",
+        "ai_relevance": "AI/Cloud学習",
+        "japan_status": "🇯🇵 日本語公式ページ",
+        "opportunity_types": [
+          "無料credit",
+          "AI学習",
+          "Skill badge",
+          "コミュニティ"
+        ],
+        "official": [
+          "https://cloud.google.com/edu/students?hl=ja"
+        ]
+      },
+      {
+        "id": "google-cloud-faculty",
+        "name": "Google Cloud 教職員向け教育特典",
+        "provider": "Google Cloud",
+        "tier": "S",
+        "audiences": [
+          "高等教育の教職員"
+        ],
+        "age_scope": "対象教育機関の教職員",
+        "student_offer": "教職員の申請を通じ学生1人あたり最大$50 Cloud credits。",
+        "teacher_offer": "教職員1人あたり最大$100 Cloud credits。Career LaunchpadではGoogle DeepMind AI Research Foundations等の無料trainingを授業に導入可能。",
+        "benefit": "授業用Cloud credits＋AI curriculum",
+        "normal_price": "—",
+        "student_price": "授業経由で最大$50 credit",
+        "discount": "教員最大$100＋学生最大$50",
+        "eligibility": "対象教職員/教育機関。",
+        "verification": "教育program申請",
+        "deadline": "program条件による",
+        "renewal": "program条件による",
+        "ai_relevance": "AI教育/Cloud",
+        "japan_status": "🇯🇵 日本語公式ページ",
+        "opportunity_types": [
+          "教職員特典",
+          "授業credit",
+          "AI curriculum"
+        ],
+        "official": [
+          "https://cloud.google.com/edu/faculty?hl=ja",
+          "https://cloud.google.com/edu/faculty/career-launchpad?hl=ja"
+        ]
+      },
+      {
+        "id": "sakana-student-researcher",
+        "name": "Sakana AI Student Researcher / Internship",
+        "provider": "Sakana AI",
+        "tier": "S",
+        "audiences": [
+          "大学院生"
+        ],
+        "age_scope": "part-time Student Researcherは日本在住の大学院生。4か月internship枠もあり。",
+        "student_offer": "東京の先端AI研究チームで4か月internshipまたはpart-time student researcher。",
+        "teacher_offer": "該当なし",
+        "benefit": "AI研究機会",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "料金割引ではなく学生限定機会",
+        "eligibility": "role要件を満たす候補者。Student Researcherは日本在住大学院生。",
+        "verification": "CV/cover letter等で応募・選考",
+        "deadline": "open position期間",
+        "renewal": "採用/契約条件による",
+        "ai_relevance": "AI研究",
+        "japan_status": "🇯🇵 東京・日本在住条件あり",
+        "opportunity_types": [
+          "Student Researcher",
+          "インターン",
+          "AI研究"
+        ],
+        "official": [
+          "https://sakana.ai/careers/member-of-technical-staff/"
+        ]
+      },
+      {
+        "id": "pfn-internship",
+        "name": "Preferred Networks Internship",
+        "provider": "Preferred Networks",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "短大生",
+          "高専生",
+          "専門学校生",
+          "大学院生",
+          "学生（学校段階指定なし・18歳以上）"
+        ],
+        "age_scope": "開始時18歳以上の学生。日本で就労可能であること等。",
+        "student_offer": "生成AI基盤モデル、LLM、VLM、RAG、AI半導体など研究/開発型internship。エンジニア/Researcherがmentor。",
+        "teacher_offer": "該当なし",
+        "benefit": "先端AI研究・開発internship",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "料金割引ではなく学生限定機会",
+        "eligibility": "18歳以上の学生。日本語または英語でcommunication可能。",
+        "verification": "応募・選考",
+        "deadline": "年度ごとの募集。2026夏募集は終了",
+        "renewal": "次年度募集を監視",
+        "ai_relevance": "AI研究/開発",
+        "japan_status": "🇯🇵 日本企業・東京",
+        "opportunity_types": [
+          "インターン",
+          "AI研究",
+          "LLM",
+          "VLM",
+          "RAG"
+        ],
+        "official": [
+          "https://www.preferred.jp/ja/careers/internship"
+        ]
+      },
+      {
+        "id": "ipa-mitou-it",
+        "name": "IPA 未踏IT人材発掘・育成事業",
+        "provider": "IPA",
+        "tier": "S",
+        "audiences": [
+          "中学生（年齢条件を満たせば）",
+          "高校生",
+          "高専生",
+          "専門学校生",
+          "大学生",
+          "短大生",
+          "大学院生",
+          "25歳未満の若者"
+        ],
+        "age_scope": "年度基準日で25歳未満。学生資格自体は必須ではない。",
+        "student_offer": "独創的なIT/AI projectをPMが育成。2026年度は最大3,024,000円のproject推進費支援。AI/LLM採択例あり。",
+        "teacher_offer": "応募者向け制度ではない",
+        "benefit": "開発資金＋トップPM mentoring＋network",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "最大302.4万円支援（2026年度）",
+        "eligibility": "25歳未満等の公募要件。日本在住原則。",
+        "verification": "proposal応募・審査",
+        "deadline": "年度公募。2026年度は終了",
+        "renewal": "次年度公募を監視",
+        "ai_relevance": "AI/IT project育成",
+        "japan_status": "🇯🇵 IPA公式・国内program",
+        "opportunity_types": [
+          "研究開発支援",
+          "資金",
+          "メンタリング",
+          "コンテスト型選考"
+        ],
+        "official": [
+          "https://www.ipa.go.jp/jinzai/mitou/it/about.html"
+        ]
+      },
+      {
+        "id": "toshiba-internship",
+        "name": "東芝 技術系インターンシップ",
+        "provider": "東芝",
+        "tier": "A",
+        "audiences": [
+          "高専生",
+          "大学生",
+          "大学院生"
+        ],
+        "age_scope": "国内大学・大学院の学部/修士/博士、国内高専の本科/専攻科",
+        "student_offer": "研究開発・開発設計・engineering等のinternship。AIテーマは年度テーマ一覧で確認。交通費・昼食補助、条件により宿泊手配。",
+        "teacher_offer": "該当なし",
+        "benefit": "技術系internship",
+        "normal_price": "—",
+        "student_price": "応募制",
+        "discount": "学生限定機会",
+        "eligibility": "国内大学/大学院/高専在籍。",
+        "verification": "採用My Pageから応募・選考",
+        "deadline": "2026冬季① 10/6、冬季② 11/4など年度日程",
+        "renewal": "年度募集",
+        "ai_relevance": "技術/R&D（AIテーマは個別確認）",
+        "japan_status": "🇯🇵 国内公式",
+        "opportunity_types": [
+          "インターン",
+          "研究開発",
+          "技術"
+        ],
+        "official": [
+          "https://www.global.toshiba/jp/recruit/corporate/internship.html"
+        ]
       }
     ],
     "excluded_or_watch": [
@@ -1806,6 +2076,17 @@
       "大学・高等教育の学生": "大学・短大・高専・専門学校等（サービスごとに範囲確認）",
       "教職員": "教員・教育機関職員（サービスごとに資格確認）"
     },
-    "display_policy": "対象区分は公式条件から、小学生/中学生/高校生/高専生/専門学校生/大学生/短大生/大学院生/教職員へ可能な限り分解する。公式がStudent等としか定義しない場合は推測せず『学生（学校段階指定なし）』と表示。『対象校なら』は教育機関リスト・認証条件に依存することを示す。"
+    "display_policy": "対象区分は公式条件から、小学生/中学生/高校生/高専生/専門学校生/大学生/短大生/大学院生/教職員へ可能な限り分解する。公式がStudent等としか定義しない場合は推測せず『学生（学校段階指定なし）』と表示。『対象校なら』は教育機関リスト・認証条件に依存することを示す。",
+    "opportunity_taxonomy": [
+      "学割・無料plan",
+      "無料credit/計算資源",
+      "教育license",
+      "AI学習・資格",
+      "Student Researcher",
+      "インターン",
+      "研究開発支援・資金",
+      "コンテスト/ハッカソン",
+      "教職員向け授業支援"
+    ]
   }
 }
