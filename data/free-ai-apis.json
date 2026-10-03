@@ -1424,6 +1424,101 @@
       ],
       "free_type": "無料Standard",
       "role": "家庭利用候補"
+    },
+    {
+      "id": "canva-education-ai",
+      "name": "Canva Education AI（学校管理）",
+      "provider": "Canva",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "クラウドAI・学校管理",
+      "what": "K-12向けCanva Education内の生成AI/デザインAI。画像生成、デザイン支援など学生向けAI機能を学校管理下で利用。",
+      "best_for": "小中高校でのAI創作、画像・デザイン、プレゼン、デジタルリテラシー",
+      "free": "対象となるK-12教職員・児童生徒にCanva Educationを無料提供。EducationではStandard AIを実質無制限、Premium AI等にも利用枠あり。",
+      "free_period": "在籍・Education資格と提供条件に依存。",
+      "billing": "学校/教師がEducation経路を設定。学生個人の有料契約は不要。",
+      "age": "13歳未満も教師・管理者の監督下にあるCanva EducationでAI利用可能。学生は教師から招待される必要があり、必要な保護者同意は学校/教師側が取得。",
+      "privacy": "Canva EducationのUser ContentはAIトレーニングに使用しない。学生には広告を表示せず、学生データを販売しないと公式Privacy Policyに明記。",
+      "safety": "学生の生成AIは学校側が権限管理。AI機能には安全対策があり、13歳未満はEducation監督経路が前提。",
+      "why": "2026年のAI for All Ages方針で13歳未満を含む学生AI利用を明示。K-12 Education無料、教師/管理者管理、学生データ保護、AI学習不使用まで公式で確認できるため学校管理型Green。",
+      "parent": "家庭から子ども単独で登録する経路ではない。教師/学校のCanva Education招待と監督が必要。",
+      "official": [
+        "https://www.canva.com/ja_jp/education/",
+        "https://www.canva.com/ja_jp/education/schools/",
+        "https://www.canva.com/ja_jp/policies/ai-safety/",
+        "https://www.canva.com/ja_jp/policies/privacy-policy/"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "🎨 画像をつくりたい",
+        "📚 勉強を手伝ってほしい",
+        "💻 プログラミングしたい"
+      ],
+      "free_type": "K-12 Education無料",
+      "role": "学校管理型・主役候補",
+      "japan_fit": "高",
+      "usage_scope": "K-12のCanva Education。学生は教師招待・学校管理下。"
+    },
+    {
+      "id": "adobe-express-education-ai",
+      "name": "Adobe Express for Education AI（学校管理）",
+      "provider": "Adobe",
+      "status": "green",
+      "status_label": "候補",
+      "kind": "クラウドAI・学校管理",
+      "what": "K-12向けAdobe Expressの生成AI付きクリエイティブ環境。画像生成、テンプレート生成、AI編集など。",
+      "best_for": "小中高校の生成AI創作、ポスター、動画、プレゼン、画像制作",
+      "free": "K-12学校・教職員・学生向けAdobe Express for Educationは無料。K-12 Educationには生成AIクレジットも含まれる。",
+      "free_period": "学校/教室アカウントの提供期間。",
+      "billing": "学校・教師経由で無料。Creative Cloud All Apps等は別契約。",
+      "age": "K-12児童生徒を正式対象。学校/教師がClassroomまたは管理アカウントを提供。",
+      "privacy": "K-12向けにstudent data privacyを設計。学生向けsafe search、管理者controls、生成AI prompt/result guardrailsを提供。",
+      "safety": "生成AIのprompt/output guardrails、学生向けsafe search、学校管理者による生成AI機能のオン/オフ。",
+      "why": "AdobeがK-12学生向けの無料AI creativity appと明記し、生成AI機能、学校所有アカウント、管理者controls、安全検索、AI guardrailsまで公式確認できるため学校管理型Green。",
+      "parent": "家庭単独契約ではなく学校/教師経由。学校ごとの提供・設定を確認。",
+      "official": [
+        "https://www.adobe.com/jp/education/k12.html",
+        "https://www.adobe.com/education/express/",
+        "https://helpx.adobe.com/express/web/adobe-express-for-education/for-students/adobe-express-for-k-12-students-overview.html",
+        "https://www.adobe.com/privacy/k12-student-page.html"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "🎨 画像をつくりたい",
+        "📚 勉強を手伝ってほしい"
+      ],
+      "free_type": "K-12 Education無料",
+      "role": "学校管理型・主役候補",
+      "japan_fit": "高",
+      "usage_scope": "K-12学校/教師が提供するAdobe Express for Education。"
+    },
+    {
+      "id": "notion-ai-education",
+      "name": "Notion AI（Education経路）",
+      "provider": "Notion",
+      "status": "yellow",
+      "status_label": "大人が確認",
+      "kind": "クラウドAI",
+      "what": "Notion内の文章・検索・作業支援AI。",
+      "best_for": "高等教育のノート・整理・試用",
+      "free": "学生・教職員向け無料Plus planはあるが、Notion AIの継続利用はBusiness/Enterprise中心。Free/Plusは無料AI回答の試用分のみ。",
+      "free_period": "無料AI回答は試用枠。",
+      "billing": "継続AI利用には上位planが必要。",
+      "age": "Education学割は主に高等教育機関の学生・教職員。子ども向けK-12専用AI経路は今回確認できず。",
+      "privacy": "通常のNotion利用規約/AI条件に従う。",
+      "why": "Education Plusが無料でもNotion AI自体が継続無料ではない。K-12向け専用安全経路も確認できないためGreenにしない。",
+      "parent": "子ども向け主役候補にはしない。",
+      "official": [
+        "https://www.notion.com/ja/help/notion-for-education",
+        "https://www.notion.com/help/notion-ai-faqs",
+        "https://www.notion.com/help/complimentary-ai-responses"
+      ],
+      "audited": "2026-10-04",
+      "child_goals": [
+        "📚 勉強を手伝ってほしい"
+      ],
+      "free_type": "AI試用のみ",
+      "role": "比較対象"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -1503,7 +1598,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "MAJOR-CONSUMER-RE-AUDIT",
+    "phase": "EDUCATION-GREEN-EXPANSION",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1546,13 +1641,13 @@
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
     "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
     "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
-    "result": "家庭管理型Green: Gemini Family Link。学校管理型Green: Microsoft Copilot Chat Education。Claude=Red、Perplexity=Yellow。",
+    "result": "家庭管理型Green=Gemini Family Link。学校管理型Green=Microsoft Copilot Chat, Canva Education AI, Adobe Express for Education AI。Notion AI=Yellow。",
     "audited_at": "2026-10-04",
     "next": [
-      "Canva Education AI再監査",
-      "Adobe AI/Firefly教育経路再監査",
-      "Notion AI教育経路再監査",
-      "他大手Consumer AI Family/Education経路探索"
+      "大手Consumer Family経路第2巡",
+      "Khan Academy/Khanmigo等の子ども専用AI調査",
+      "教育AI専用サービスの日本利用可否",
+      "Greenを家庭型/学校型でUI分離"
     ]
   },
   "content_schema": {
