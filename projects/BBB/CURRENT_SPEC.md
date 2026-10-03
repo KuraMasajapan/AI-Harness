@@ -268,3 +268,10 @@ v0.9.7でFX Evidence Gateを実装。FRED DEXJPUSの日次公式基準とDukasco
 - Reuse existing official-time replay, matched-control, robustness, BTC/USD decomposition, and FX Evidence Gate.
 - Compare new event families against FOMC / CPI / Employment before expanding to Crypto Native Tier-A events.
 
+## v0.9.8 approved scope: Global Macro Expansion
+- Add official Tier-A U.S. PCE / Personal Income and Outlays, PPI, and national GDP release families.
+- Preserve FOMC / CPI / Employment baseline cohorts.
+- Reuse existing official-time replay, matched-control, robustness, BTC/USD decomposition, and FX Evidence Gate.
+- Exclude low-priority/state/regional GDP releases from the initial cohort.
+- Research-only; no automated trading influence.
+
