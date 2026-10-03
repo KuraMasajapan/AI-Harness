@@ -570,3 +570,12 @@
 - Existing FOMC / CPI / Employment remain the baseline cohort; new sources are additive, not replacements.
 - After this expansion, the next branch should be Crypto Native Tier-A events rather than deeper FX plumbing.
 
+### v0.9.8 Global Macro Expansion approval request
+- Human directive: BBB通常開発では追加の「すすめて」待ちを廃止し、次工程が明確ならGitHub変更依頼を即時提出して連続開発する。
+- v0.9.8 scope: official Tier-A U.S. macro expansion with PCE / Personal Income and Outlays, PPI, and GDP.
+- Existing FOMC / CPI / Employment remain baseline cohorts.
+- New sources must use official release archives/schedules, official release-time anchors, existing Matched Control / Robustness / Global BTC decomposition / FX Evidence Gate pipeline.
+- GDP initial cohort should use headline national GDP releases only; state GDP and secondary regional releases are excluded.
+- PCE should use BEA Personal Income and Outlays release family; PPI should use BLS Producer Price Index news releases.
+- Safety boundary unchanged: public read-only / research-only / no Paper-Risk-Live influence.
+
