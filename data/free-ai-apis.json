@@ -2746,6 +2746,173 @@
         ],
         "audited_at": "2026-10-03",
         "audit_note": "AI専用programではない。AI/ML進路にも関係するSTEAM支援としてA tierで掲載。"
+      },
+      {
+        "id": "microsoft-study-learn",
+        "name": "Microsoft Study and Learn エージェント",
+        "provider": "Microsoft",
+        "tier": "S",
+        "audiences": [
+          "中学生（13歳以上・学校管理）",
+          "高校生（13歳以上・学校管理）",
+          "大学生",
+          "短大生",
+          "大学院生"
+        ],
+        "age_scope": "Microsoft 365 Education A1/A3/A5の13歳以上。13〜17歳は学校IT管理者によるCopilot Chat有効化が必要。",
+        "student_offer": "学習科学に基づくCopilot学習エージェント。資料を使った対話、フラッシュカード、クイズ等。Education licenseユーザーは追加料金なし。",
+        "teacher_offer": "Education tenantで学校側が設定・管理。",
+        "benefit": "教育機関経由のAI学習エージェント無料",
+        "normal_price": "—",
+        "student_price": "追加料金なし",
+        "discount": "Education SKUに含まれる",
+        "eligibility": "対象Microsoft 365 Education license＋Copilot Chat有効化。",
+        "verification": "学校アカウント/教育tenant",
+        "deadline": "常設機能（提供条件変更に注意）",
+        "renewal": "学校licenseに依存",
+        "ai_relevance": "Copilot AI学習支援",
+        "japan_status": "🇯🇵 Microsoft日本語公式support確認",
+        "opportunity_types": [
+          "AIソフト",
+          "学習支援",
+          "学校導入",
+          "13歳以上"
+        ],
+        "catalog_categories": [
+          "AIソフト"
+        ],
+        "official": [
+          "https://support.microsoft.com/ja-jp/education/copilot/study-learn-agent",
+          "https://www.microsoft.com/ja-jp/education/ai-in-education"
+        ],
+        "discovered_via": [
+          "Microsoft公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
+      },
+      {
+        "id": "cyberagent-ai-ml-internships",
+        "name": "CyberAgent AI / ML 学生インターン",
+        "provider": "サイバーエージェント",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "大学院生",
+          "高専生・専門学校生（募集要件を満たす場合）"
+        ],
+        "age_scope": "各学生インターン募集要件に従う。",
+        "student_offer": "ABEMAのエンタメ×AI ML、スポーツ映像の機械学習など、実サービスのAI/ML課題に取り組む学生インターン。",
+        "teacher_offer": "該当なし",
+        "benefit": "実サービスAI/MLインターン",
+        "normal_price": "—",
+        "student_price": "応募・選考",
+        "discount": "学生向け実務機会",
+        "eligibility": "各positionの技術要件・採用条件を満たす学生。",
+        "verification": "採用応募・選考",
+        "deadline": "ABEMA MLは2027-08-03まで、WINTICKET MLは2027-09-20まで掲載（募集状況は随時確認）",
+        "renewal": "通年/不定期募集",
+        "ai_relevance": "Machine Learning / AI /映像音声",
+        "japan_status": "🇯🇵 国内企業・現在募集中枠あり",
+        "opportunity_types": [
+          "インターン",
+          "Machine Learning",
+          "AI開発",
+          "募集中"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.cyberagent.co.jp/careers/students/tech/internship/"
+        ],
+        "discovered_via": [
+          "サイバーエージェント公式採用一覧"
+        ],
+        "audited_at": "2026-10-03"
+      },
+      {
+        "id": "lycorp-ai-ml-internship",
+        "name": "LINEヤフー AI / Machine Learning Internship",
+        "provider": "LINEヤフー",
+        "tier": "S",
+        "audiences": [
+          "大学生",
+          "大学院生",
+          "学生（募集要件を満たす場合）"
+        ],
+        "age_scope": "年度の新卒向けインターン応募資格・各position要件による。",
+        "student_offer": "Yahoo!検索AI回答改善、生成AI×大規模データ広告研究、機械学習モデル開発などの実務型インターン。2026 AI/ML枠は時給2,600円の例あり。",
+        "teacher_offer": "該当なし",
+        "benefit": "AI/ML実務インターン",
+        "normal_price": "—",
+        "student_price": "応募・選考",
+        "discount": "有給学生機会",
+        "eligibility": "Python/生成AI/ML等、position別要件。日本で就労可能・期間中日本居住等の条件がある枠あり。",
+        "verification": "新卒採用My Page・選考",
+        "deadline": "2026年度AI/ML枠は受付終了。次年度監視",
+        "renewal": "年次",
+        "ai_relevance": "生成AI/検索AI/ML/Data Science",
+        "japan_status": "🇯🇵 国内実施",
+        "opportunity_types": [
+          "有給インターン",
+          "生成AI",
+          "Machine Learning",
+          "次年度監視"
+        ],
+        "catalog_categories": [
+          "AIデベロッパー",
+          "AI教室・イベント"
+        ],
+        "official": [
+          "https://www.lycorp.co.jp/ja/recruit/newgrads/internship/engineer/"
+        ],
+        "discovered_via": [
+          "LINEヤフー公式採用一覧"
+        ],
+        "audited_at": "2026-10-03"
+      },
+      {
+        "id": "microsoft-education-copilot-chat",
+        "name": "Microsoft 365 Copilot Chat for Education",
+        "provider": "Microsoft",
+        "tier": "S",
+        "audiences": [
+          "中学生（13歳以上・学校管理）",
+          "高校生（13歳以上・学校管理）",
+          "高等教育の学生",
+          "教職員"
+        ],
+        "age_scope": "対象Microsoft 365 Education環境。未成年は学校側の年齢制御/有効化条件あり。",
+        "student_offer": "対象Education SKUでCopilot ChatやAIベースの教育ツールを追加費用なしで利用できる学校経由特典。",
+        "teacher_offer": "教師・スタッフも追加料金なしのCopilot Chat対象。",
+        "benefit": "学校経由Copilot Chat無料",
+        "normal_price": "—",
+        "student_price": "追加料金なし",
+        "discount": "対象Education環境に含まれる",
+        "eligibility": "対象教育機関のMicrosoft 365 Educationアカウント。",
+        "verification": "学校アカウント",
+        "deadline": "常設（製品条件変更に注意）",
+        "renewal": "学校契約に依存",
+        "ai_relevance": "Copilot/AIソフト",
+        "japan_status": "🇯🇵 Microsoft日本語公式",
+        "opportunity_types": [
+          "AIソフト",
+          "学校導入",
+          "13歳以上",
+          "教職員特典"
+        ],
+        "catalog_categories": [
+          "AIソフト"
+        ],
+        "official": [
+          "https://www.microsoft.com/ja-jp/education/ai-in-education",
+          "https://www.microsoft.com/ja-jp/microsoft-365/academic/compare-office-365-education-plans"
+        ],
+        "discovered_via": [
+          "Microsoft公式直接探索"
+        ],
+        "audited_at": "2026-10-03"
       }
     ],
     "excluded_or_watch": [
@@ -2781,14 +2948,14 @@
       "教職員向け授業支援"
     ],
     "research_progress": {
-      "phase": "PAGE-UPDATE-2026-10-03-B",
-      "count": 32,
-      "focus": "3分類別探索＋未成年規約優先監査。期限終了programも次回監視価値が高いものは明示して保存。",
+      "phase": "CONTINUOUS-COLLECTION-2026-10-03-C",
+      "count": 36,
+      "focus": "学生中心。AIソフト、developer資源、AI/ML internshipを公式確認して追加。教職員は無料/割引特典のみ補助掲載。",
       "next": [
-        "国内AI企業internship/Student Researcher追加",
-        "中高生AIイベント次年度監視",
-        "AIソフト学割第2巡",
-        "教職員向けAI教材/研修追加"
+        "国内AI企業 internship 第2巡",
+        "AIソフト学割まとめサイト候補を公式照合",
+        "高校生/高専AI competition",
+        "研究Cloud/GPU creditの学生利用条件精査"
       ]
     },
     "source_policy": {
