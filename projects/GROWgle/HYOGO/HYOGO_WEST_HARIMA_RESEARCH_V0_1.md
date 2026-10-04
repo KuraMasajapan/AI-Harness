@@ -252,3 +252,277 @@ Second Pass:
 - 神河町
 
 その後、姫路以東へ拡張。
+
+
+---
+
+# 9. 第2ブロック — 太子・宍粟・加西・福崎・市川・神河
+
+## 太子町
+
+### MULTI_CATEGORY — Sランク
+
+#### あそびっ子教室
+- 町内小学生対象。
+- 学校生活では経験しにくい体験活動・学習教室を、公民館等で年間開催。
+- 2026年度例:
+  - 和太鼓
+  - レザークラフト
+  - 秋の自然観察
+  - 版画
+  - 現代アート
+- 判定: ELEMENTARY / RESIDENT_ONLY / CREATIVE + CULTURE + NATURE / SランクWATCH
+- 公式: https://www.town.hyogo-taishi.lg.jp/soshikikarasagasu/syakyou/doyoubi/1571892652442.html
+
+### SPORTS — 継続型
+- 2026年度に小1〜3向け器械体操、小4〜6向けバドミントン等の年間教室を確認。
+- 判定: ELEMENTARY / CONTINUOUS / SPORTS / WATCH
+- 公式広報: https://www.town.hyogo-taishi.lg.jp/material/files/group/2/kouhoutaishi_r804-2.pdf
+
+### 重要
+太子町は公民館ベースの小学生向け体験が継続しており、地域社会教育をSOURCE_MASTER化する価値がある。
+
+---
+
+## 宍粟市
+
+### CREATIVE / CULTURE / WORKS — Sランク
+
+#### 夏休みワクワク講座
+- 2026-07-25〜26。
+- 市内小学生対象。
+- 木工、陶芸、茶道、冠句などを地域団体から学ぶ。
+- 判定: ELEMENTARY / RESIDENT_ONLY / CREATIVE + CULTURE + WORKS / SランクWATCH
+- 公式: https://www.city.shiso.lg.jp/soshiki/machizukuri-bu/shiminnkyoudou/tantojoho/gakuyukan/gakuyukankodom/sv_e_c.html
+
+### NATURE / SUPPORTING_INFRASTRUCTURE — 最重要Sランク
+
+#### 森林で子育て / 木育
+- 市が森林・里山・水辺・田園を子育て資産として明示。
+- 木育を地域施策として推進し、森林や木との触れ合いを通じ地域愛着まで育てる。
+- 判定: POLICY_SOURCE / NATURE + WORKS + COMMUNITY / Sランク
+- 公式: https://www.city.shiso.lg.jp/teiju/kosodate.html
+
+#### 森林・アウトドア資産
+- キャンプ、登山、森林セラピー、冬季スポーツを家族向けに体系化。
+- 「宍粟50名山」は小学生でも挑戦可能と市が案内。
+- 判定: CONSTANT / NATURE + SPORTS / Sランク情報源
+- 公式: https://www.city.shiso.lg.jp/teiju/kyujitsu.html
+
+### SUPPORTING_INFRASTRUCTURE — SPORTS / CULTURE
+- 2026年から中学校部活動終了後の受け皿として「宍粟市認定地域クラブ」制度を開始。
+- スポーツ・文化芸術活動の継続機会を確保。
+- 判定: MIDDLE / SUPPORTING_INFRASTRUCTURE / SPORTS + CREATIVE / SランクWATCH
+- 公式: https://www.city.shiso.lg.jp/soshiki/machizukuri-bu/shiminnkyoudou/tantojoho/chiikikurabu/tiikidanntaisidousyamukejouhou/21739.html
+
+### GLOBAL / COMMUNICATION
+- 2026-10-25「宍粟国際ふれあいまつり」。
+- 世界の料理、民族衣装、楽器、中国文化、クラフト等。子どもから大人まで参加可能。
+- 判定: OPEN_PUBLIC / GLOBAL + CULTURE / WATCH
+- 公式: https://www.city.shiso.lg.jp/event/20632.html
+
+### 重要
+宍粟市は「森林都市」という地域特性を、木育・アウトドア・文化・地域クラブまで政策的につないでいる。
+
+---
+
+## 加西市
+
+### MULTI_CATEGORY — 最重要SOURCE_MASTER
+
+#### 小中学生向けプログラム / 子ども情報誌
+- 市が小中学生向け体験情報を「子ども情報誌」として集約し、2026夏号からLINE等のデジタル配信へ移行。
+- 「土曜日をもっと楽しもう!!」として地域と学校の連携活動も推進。
+- 判定: ELEMENTARY / MIDDLE / SOURCE_MASTER / MULTI_CATEGORY / Sランク
+- 公式: https://www.city.kasai.hyogo.jp/site/kyoiku/7067.html
+
+### AI / STEAM — Sランク
+
+#### CoderDojo加西 in 図書館
+- 2026-10-25開催を市イベント情報で確認。
+- 子ども向けプログラミングの継続発生源候補。
+- 判定: ELEMENTARY / MIDDLE候補 / AI + STEAM / SランクWATCH
+- 公式イベント一覧: https://www.city.kasai.hyogo.jp/soshiki/list5-2.html
+
+### CULTURE / WORKS
+- 2026-10-03「玉丘古墳かんたん発掘調査」は高校生以上対象。
+- 学芸員による解説＋発掘調査体験。
+- 判定: HIGH / OPEN_PUBLIC / CULTURE + WORKS + STEAM / WATCH
+- 公式イベントカレンダー: https://www.city.kasai.hyogo.jp/calendar/
+
+### SPORTS
+- 市がニュースポーツ等の運動体験会を継続。
+- 判定: MULTI_AGE / OPEN_PUBLIC / SPORTS / WATCH
+- 公式: https://www.city.kasai.hyogo.jp/site/seijinnnokenko/53286.html
+
+### 重要
+加西市は個別イベント以上に、子ども情報誌という「自治体自身の集約面」が強い。
+GROWgleが自治体と将来連携する際の情報供給モデル候補。
+
+---
+
+## 福崎町
+
+### SCHOOL_ONLY — COMMUNITY / LIFE_SKILLS / CULTURE
+
+#### こども議会
+- 2026年、町内小学校6年生が議場を使って模擬議会を体験。
+- 議長、議員、町長、課長役に分かれ議事運営を学ぶ。
+- 判定: ELEMENTARY / SCHOOL_ONLY / COMMUNITY + CIVIC / Sランク教育基盤
+- 公式学校記録: https://www.town.fukusaki.hyogo.jp/school/0000000809.html
+
+### NATURE / WORKS
+- 田植え・芋苗植え等を地域営農組合や行政と連携して学校で実施。
+- 小5自然学校ではカッター・カヌー・カヤック等を体験。
+- 判定: ELEMENTARY / SCHOOL_ONLY / NATURE + WORKS + SPORTS / WATCH
+- 公式:
+  - https://www.town.fukusaki.hyogo.jp/school/0000000770.html
+  - https://www.town.fukusaki.hyogo.jp/school/0000000801.html
+
+### BACKLOG
+- 妖怪・民俗文化を使った公開型CREATIVE/CULTURE体験
+- 公開型小中学生イベント
+- 中高生ENTRE/WORKS
+
+### 重要
+福崎町は学校内体験はかなり厚い。公開参加型はSecond Passで別途掘る。
+
+---
+
+## 市川町
+
+### MULTI_CATEGORY — Sランク情報源
+
+#### 教育委員会 生涯学習講座
+- 2026年度も各種講座を年間計画。
+- 公式ページで「小学生対象のサマースクール等も計画」と明記。
+- 判定: ELEMENTARY / LOCAL / SOURCE_MASTER / CREATIVE + STEAM + COMMUNITY / SランクWATCH
+- 公式: https://www.town.ichikawa.lg.jp/Info/1596
+
+### COMMUNITY / PARTICIPATION
+- 小学校統合に伴う新校の校章・校歌アイデア募集を町が実施。
+- 子ども自身の応募条件は要確認だが、地域参画型プロジェクトの発生源としてWATCH。
+- 公式: https://www.town.ichikawa.lg.jp/menu/34
+
+### BACKLOG
+- サマースクールの2026具体内容
+- ゴルフ産業等の地域資産
+- 工場・職業体験
+- SPORTS / NATURE
+
+### 重要
+市川町はWeb上で個別イベントが薄いため、生涯学習課の年間講座・広報PDFをSOURCE_MASTERとして追う必要がある。
+
+---
+
+## 神河町
+
+### NATURE / SCHOOL_ONLY — Sランク教育基盤
+
+#### ふるさと冬の自然体験
+- 2026-02-05、町内小学1・4年生が峰山高原で実施。
+- 地域の自然環境を教材化。
+- 判定: ELEMENTARY / SCHOOL_ONLY / NATURE + SPORTS / SランクWATCH
+- 公式: https://www.town.kamikawa.hyogo.jp/0000003819.html
+
+#### 田植え体験
+- 2026年、神崎小5年生と幼稚園・保育園児が地域で田植え。
+- 秋に稲刈りも予定。
+- 判定: ELEMENTARY / SCHOOL_ONLY / NATURE + WORKS / WATCH
+- 公式: https://www.town.kamikawa.hyogo.jp/0000003941.html
+
+### CREATIVE — OPEN_PUBLIC
+
+#### 出張オープンカレッジ
+- 2026-03-29、町図書コミュニティ公園。
+- 町内外の親子が、光る泥だんご、レザークラフト、推しグッズ制作等を体験。
+- 判定: ELEMENTARY / FAMILY / OPEN_PUBLIC / CREATIVE + STEAM / SランクWATCH
+- 公式: https://www.town.kamikawa.hyogo.jp/0000003876.html
+
+### SPORTS — OPEN_PUBLIC
+- 2026-06-20、ダブルダッチ体験会＆アジャタ大会。
+- 判定: MULTI_AGE / SPORTS / WATCH
+- 公式: https://www.town.kamikawa.hyogo.jp/0000003964.html
+
+### WORKS — SCHOOL_ONLY
+- 2026年度トライやる・ウィーク:
+  - 中2 69名
+  - 町内28事業所
+  - 5日間の社会体験
+- 判定: MIDDLE / SCHOOL_ONLY / WORKS / Sランク
+- 公式広報: https://www.town.kamikawa.hyogo.jp/cmsfiles/contents/0000003/3889/2026.06kouhou247.pdf
+
+### 重要
+神河町は自然・農業・職業体験が学校教育と地域資源に強く結びつく。
+公開体験は町広報・トピックスを直接監視するのが有効。
+
+---
+
+# 10. 第2ブロック重要発見
+
+1. **宍粟は「森林」を学習基盤にしている**
+   - 木育
+   - 登山
+   - キャンプ
+   - 森林セラピー
+   - 木工
+   - 地域クラブ
+   を一つの地域文脈として扱える。
+
+2. **加西は情報集約そのものが強い**
+   - 子ども情報誌
+   - LINE配信
+   - 小中学生向けプログラム
+   → GROWgleとの将来のデータ連携モデル候補。
+
+3. **太子は公民館型の年間体験**
+   - 低コストでCREATIVE/CULTURE/NATUREを継続。
+
+4. **神河・福崎は兵庫型の学校体験教育が厚い**
+   - 自然学校
+   - トライやる・ウィーク
+   - 地域農業
+   - こども議会
+
+5. **市川は個別検索より年間講座・広報監視型**
+   - 小規模自治体における情報源戦略の違いが明確。
+
+---
+
+# 11. 兵庫県西播磨〜中播磨 初期Checkpoint判定
+
+State: **V1_PROGRESS_CHECKPOINT**
+
+完了済みFirst Pass:
+- 赤穂市
+- 上郡町
+- 佐用町
+- 相生市
+- たつの市
+- 姫路市
+- 太子町
+- 宍粟市
+- 加西市
+- 福崎町
+- 市川町
+- 神河町
+
+Second Pass優先:
+- 赤穂: 海洋・塩・博物館・公開スポーツ
+- 相生: ペーロン・造船・海洋・公開型WORKS
+- 上郡: アフタースクール具体化
+- 福崎: 公開型CULTURE/妖怪資産
+- 市川: サマースクール詳細
+- 神河: 公開型自然・観光体験
+
+次ブロック候補:
+- 加古川
+- 高砂
+- 稲美
+- 播磨
+- 明石
+- 小野
+- 三木
+- 加東
+- 西脇
+- 多可
