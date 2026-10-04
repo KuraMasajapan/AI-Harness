@@ -1,6 +1,6 @@
 # Grok AI Technology Observer
 
-Status: PROPOSAL / PILOT  
+Status: ACTIVE / PRODUCTION v1  
 Active core rule: NO  
 Recorded: 2026-10-04
 Updated: 2026-10-04
@@ -19,7 +19,7 @@ Core role split:
 - AI-Harness = rules, access, validation, audit
 - Human = final approval
 
-## Current pilot configuration
+## Production v1 configuration
 
 Grok project:
 
@@ -137,14 +137,35 @@ REPLACE must identify whether it applies to the full Harness or only a specific 
 
 ## Current operating rule
 
-The system is currently semi-automatic.
+The system is in PRODUCTION v1 and remains intentionally semi-automatic.
 
 Grok performs scheduled discovery and may write high-value candidates to Airtable.
 ChatGPT reads and verifies Airtable when invoked.
 Human makes the final decision.
 
-Do not add ChatGPT-side scheduled review until Grok -> Airtable scheduled handoff has been observed working reliably for several runs.
+ChatGPT-side scheduled review is not required for PRODUCTION v1. Keep Human-invoked downstream review until there is a clear reason to automate it.
 
+
+## Production decision — 2026-10-04
+
+Human decision: promote the Grok -> Airtable -> ChatGPT observer path from PILOT to PRODUCTION v1.
+
+Rationale:
+
+- end-to-end transport has been verified
+- Airtable state and approval boundaries worked
+- existing records remained protected during unattended submission
+- downstream ChatGPT verification caught a real upstream interpretation error before adoption
+- the discovered failure mode was converted into explicit freshness/date guards
+- Human remains the final authority for consequential changes
+
+Production v1 is intentionally semi-automatic:
+
+`Grok Automation -> Airtable Harness Inbox -> ChatGPT review when invoked -> Human decision`
+
+GitHub remains configuration / architecture history and is not in the runtime path.
+
+No further manual pilot rerun is required before production use. The next scheduled Automation run can be treated as the first production run.
 
 ## Pilot Run #1 — 2026-10-04
 
