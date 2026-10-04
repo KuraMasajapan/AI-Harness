@@ -96,3 +96,33 @@ Cross-Category Capture導入前にFirst Pass / Second Passで確認した地域:
 この再走査は任意ではない。
 
 **Cross-Category Capture導入以前の調査範囲は、後で必ず再走する。**
+
+
+## 進捗更新 2026-10-04
+
+State: IN_PROGRESS
+
+### 岡山県南部
+Cross-Category再走査 第1ブロック完了:
+- [x] 岡山市
+- [x] 倉敷市
+- [x] 総社市
+- [x] 玉野市（追加深掘りあり）
+- [x] 早島町（追加深掘りあり）
+- [ ] 井原市
+- [ ] 矢掛町
+- [ ] 浅口市
+- [ ] 里庄町
+- [ ] 笠岡市
+- [ ] 赤磐市
+- [ ] 瀬戸内市
+- [ ] 備前市
+- [ ] 吉備中央町
+
+調査ログ:
+- `projects/GROWgle/CROSS_CATEGORY/OKAYAMA_SOUTH_RESCAN_V0_1.md`
+
+重要発見:
+- 倉敷市はENTRE以外ではWORKS / STEAM / NATUREの継続情報源が厚い。
+- 常設施設・年間プログラム・単発イベントを別タイプとして保持する必要がある。
+- 「GLOBAL / COMMUNICATION」候補が発生したためHUMAN_REVIEWへ送る。
