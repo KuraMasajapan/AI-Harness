@@ -1326,7 +1326,7 @@
         "https://families.google.com/familylink/privacy/child-policy/?hl=ja",
         "https://support.google.com/gemini/answer/16275805?hl=ja-JP"
       ],
-      "audited": "2026-10-03",
+      "audited": "2026-10-04",
       "child_goals": [
         "💬 話を聞いてほしい",
         "📚 勉強を手伝ってほしい",
@@ -1338,7 +1338,9 @@
       "role": "家庭利用型・主役候補",
       "japan_fit": "高",
       "usage_scope": "Family Link管理の子どもアカウントで直接利用。管理対象アカウントへの提供は段階展開中のため、個別アカウントで未提供の場合あり。",
-      "audit_note": "Gemini APIは18歳未満がアクセスするAPI Client用途を禁止しているため赤のまま。今回の緑はConsumer Gemini AppsのFamily Link管理経路であり、APIとは別扱い。"
+      "audit_note": "Gemini APIは18歳未満がアクセスするAPI Client用途を禁止しているため赤のまま。今回の緑はConsumer Gemini AppsのFamily Link管理経路であり、APIとは別扱い。",
+      "access_type": "🏠 家庭管理型",
+      "practical_status": "日本語公式経路確認済み・実機確認待ち"
     },
     {
       "id": "microsoft-copilot-education",
@@ -1370,7 +1372,10 @@
       "free_type": "学校ライセンス内",
       "role": "学校管理型・主役候補",
       "japan_fit": "高",
-      "usage_scope": "対象Microsoft 365 Education tenantで学校管理者が提供。13〜17歳は管理者による有効化が必要。"
+      "usage_scope": "対象Microsoft 365 Education tenantで学校管理者が提供。13〜17歳は管理者による有効化が必要。",
+      "access_type": "🏫 学校・教師管理型",
+      "practical_status": "日本公式ページで利用経路確認済み",
+      "audit_note": "日本Microsoft公式で13歳以上、M365 Education A1/A3/A5、13-17歳はIT管理者有効化、追加費用なしを確認。"
     },
     {
       "id": "claude-consumer",
@@ -1457,7 +1462,10 @@
       "free_type": "K-12 Education無料",
       "role": "学校管理型・主役候補",
       "japan_fit": "高",
-      "usage_scope": "K-12のCanva Education。学生は教師招待・学校管理下。"
+      "usage_scope": "K-12のCanva Education。学生は教師招待・学校管理下。",
+      "access_type": "🏫 学校・教師管理型",
+      "practical_status": "日本公式ページで利用経路確認済み",
+      "audit_note": "日本向け教育版ページで幼小中高の児童生徒・教員に無料、AI機能、安全管理を確認。"
     },
     {
       "id": "adobe-express-education-ai",
@@ -1490,7 +1498,10 @@
       "free_type": "K-12 Education無料",
       "role": "学校管理型・主役候補",
       "japan_fit": "高",
-      "usage_scope": "K-12学校/教師が提供するAdobe Express for Education。"
+      "usage_scope": "K-12学校/教師が提供するAdobe Express for Education。",
+      "access_type": "🏫 学校・教師管理型",
+      "practical_status": "日本公式ページで利用経路確認済み",
+      "audit_note": "日本向けK-12ページでAdobe Express無料提供と責任ある生成AIを確認。"
     },
     {
       "id": "notion-ai-education",
@@ -1771,7 +1782,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "GREEN-ROUTE-CLASSIFICATION",
+    "phase": "JAPAN-GREEN-PRACTICAL-AUDIT",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1814,12 +1825,12 @@
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
     "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
     "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
-    "result": "Greenを利用経路別に分類。MagicStudentを教師管理型Green、Khanmigoを条件不一致Yellowとして登録。",
+    "result": "Gemini Family Link、Canva Education AI、Adobe Express Education AI、Microsoft Copilot Educationの日本公式経路を確認。Canva/Adobe/Microsoftは日本適合High。Geminiは公式経路確認済みで実機確認待ち。",
     "audited_at": "2026-10-04",
     "next": [
-      "Green各サービスの日本からの実利用可否確認",
-      "日本語対応品質確認",
-      "UIへ管理方式タグを表示"
+      "MagicStudent/Brisk/SchoolAIの日本語・日本利用可否",
+      "Green管理方式タグをUI表示",
+      "日本で今すぐ試せる順に並べる"
     ]
   },
   "content_schema": {
