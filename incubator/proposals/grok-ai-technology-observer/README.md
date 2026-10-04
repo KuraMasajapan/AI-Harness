@@ -3,14 +3,17 @@
 Status: PROPOSAL / PILOT  
 Active core rule: NO  
 Recorded: 2026-10-04
+Updated: 2026-10-04
 
 ## Purpose
 
 Use Grok as an external AI-industry sensor, especially for public X posts and fast-moving Web information, while keeping ChatGPT Plus / AI-Harness as the primary place for validation, integration, and Human approval.
 
+The observer is not intended to protect the current AI-Harness architecture. It should also discover architectures, tools, or design ideas that can simplify, partially replace, or fully replace the current design if evidence supports doing so.
+
 Core role split:
 
-- Grok = discovery / X sensor
+- Grok = discovery / X sensor / rough triage
 - Airtable = Harness Inbox / work board
 - ChatGPT Plus = verification, synthesis, integration
 - AI-Harness = rules, access, validation, audit
@@ -18,7 +21,7 @@ Core role split:
 
 ## Current pilot configuration
 
-Grok project name:
+Grok project:
 
 `AI_Technology_observer`
 
@@ -31,61 +34,34 @@ Automation:
 - Human attention shortlist: maximum 3
 - Primary sources: X and Web
 - X posts are treated as signals, not proof
-- Prefer official docs, official announcements, GitHub releases, primary-source developer posts, or multiple independent reports for confirmation
+- Prefer latest primary sources for current-state confirmation
+- Evaluate trade-offs and complexity, not benchmark gains alone
+- Deduplicate against existing Harness Inbox records
 
-Evidence labels:
+## Airtable MCP integration
 
-- CONFIRMED
-- MULTIPLE REPORTS
-- SINGLE REPORT
-- UNVERIFIED
-- CONFLICTING
+Status: CONNECTION VERIFIED
 
-Harness relevance:
+Flow:
 
-- HIGH
-- MEDIUM
-- LOW
+`Grok Automation -> Airtable MCP -> AI-Harness / Harness Inbox -> ChatGPT -> Human`
 
-## Priority topics
+Verified on 2026-10-04:
 
-- OpenAI / ChatGPT / ChatGPT Plus
-- ChatGPT Work
-- Codex
-- Plugins / Connectors
-- Sign in with ChatGPT
-- AI agents
-- MCP
-- AI Harness
-- Human-in-the-loop
-- Memory
-- Event triggers / Scheduled Tasks
-- AI evaluation / validation
-- Local AI / Ollama
-- AI OSS
-- Free AI services
-- Free-tier, pricing, rate-limit, and student-plan changes
+- Grok successfully created a connection-test record through Airtable MCP
+- ChatGPT successfully read the same record through the Airtable plugin
+- ChatGPT successfully updated Airtable record Status values
+- Human Approved remained false during the handoff test
 
-## Optimization for this user
+Current Base:
 
-The user already subscribes to ChatGPT Plus.
+`AI-Harness`
 
-Therefore, de-prioritize generic AI use cases that ChatGPT Plus already handles well. Prefer findings that:
+Table:
 
-1. add capability beyond ChatGPT Plus,
-2. reduce cost,
-3. improve AI-Harness,
-4. improve local AI,
-5. reveal useful free tiers or OSS,
-6. surface early real-world signals from X.
+`Harness Inbox`
 
-## Airtable handoff
-
-Airtable Base: `AI-Harness`
-
-Table: `Harness Inbox`
-
-Current fields:
+Fields:
 
 - Title
 - Observed At
@@ -101,36 +77,80 @@ Status lifecycle:
 
 `NEW -> REVIEW -> APPROVED / HOLD -> DONE`
 
-Current interface:
+Important boundary:
 
-`AI-Harness Control`
+- Grok may discover, evaluate, and submit candidates
+- Grok must not set Human Approved to true
+- Grok must not auto-promote candidates into AI-Harness Core
+- ChatGPT may verify and organize candidates
+- Human retains final approval
 
-Pages:
+## Evaluation policy
 
-- Observation List
-- Review & Approval
-- Status Board
+Do not equate virality, novelty, or benchmark gain with architectural value.
 
-## Current integration boundary
+For each candidate consider:
 
-Grok -> Airtable direct automation is not yet implemented.
+- Benefit
+- Trade-off
+- Complexity
+- Simpler alternative
+- Failure mode
+- Reversibility
+- Affected Harness layer
+- Whether it duplicates an existing capability
 
-Pilot sequence:
+Preferred findings:
 
-1. Validate Grok Observer output quality.
-2. Run daily at 18:00.
-3. Review false positives / misses for several days.
-4. Test one-item handoff into Airtable.
-5. Only then automate Grok -> Airtable if useful.
+- improve performance while simplifying structure
+- reduce Human transport work without removing Human approval
+- remove or replace existing Harness components
+- reduce model lock-in
+- improve validation, safety, or maintainability
 
-Google Drive / Gmail are not required for this pilot. Gmail was intentionally avoided because the requested permission scope was broader than desired. Google Drive integration remains optional.
+## Candidate labels
+
+Evidence:
+
+- CONFIRMED
+- MULTIPLE REPORTS
+- SINGLE REPORT
+- UNVERIFIED
+- CONFLICTING
+
+Current state:
+
+- ACTIVE
+- CHANGED
+- RETIRED
+- UNKNOWN
+
+Suggested action:
+
+- KEEP
+- ABSORB
+- EXPERIMENT
+- REPLACE
+- IGNORE
+
+REPLACE must identify whether it applies to the full Harness or only a specific layer.
+
+## Current operating rule
+
+The system is currently semi-automatic.
+
+Grok performs scheduled discovery and may write high-value candidates to Airtable.
+ChatGPT reads and verifies Airtable when invoked.
+Human makes the final decision.
+
+Do not add ChatGPT-side scheduled review until Grok -> Airtable scheduled handoff has been observed working reliably for several runs.
 
 ## Temporal Layer note
 
-This pilot also supports the emerging Harness concept:
+This pilot supports the emerging Harness concept:
 
 `Temporal Layer = time-based behavior and review`
 
-Calendar / scheduled automation provides the time signal; the Harness determines what to do when that time signal arrives.
+The scheduler provides the time signal; the Harness determines what to do when that signal arrives.
 
-This concept is a candidate for later Trinity validation before promotion into core architecture.
+This remains a validation candidate, not an active Core rule.
