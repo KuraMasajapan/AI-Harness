@@ -840,3 +840,147 @@ The combination could eventually support:
 
 Status:
 PROPOSAL / NOT ACTIVE
+
+
+---
+
+## Update 2026-10-04 — External Collection / Retrieval Stack Candidates
+
+This section records three OSS candidates as future comparison targets for the Observer / Retrieval layer.
+They are not approved for deployment and should not all be installed by default.
+
+### Candidate: Agent-Reach / Sensor & Retrieval Router
+
+Source:
+- https://github.com/Panniantong/Agent-Reach
+
+Observed role:
+- capability layer above individual collection tools
+- selects, installs, diagnoses, and routes to platform-specific backends
+- supports Web, YouTube, RSS, GitHub, X, Reddit and other sources
+- uses ordered primary / fallback backends per platform
+- provides `agent-reach doctor` for reachability and configuration checks
+
+Potential Harness role:
+- Sensor Adapter / Retrieval Router
+- abstract platform-specific collectors behind a swappable routing layer
+- reduce direct coupling between Harness and one specific scraper / CLI / API
+
+Potential value:
+- backend replacement without redesigning the whole Harness
+- multi-source collection with graceful fallback
+- explicit health checks for each source path
+- strong fit with Model-neutral Core + Adapter and Multi-Sensor Observer concepts
+
+Risks / trade-offs:
+- some channels require cookies or existing browser login state
+- account-ban / platform-policy risk exists for scripted access
+- dependency chain is broad and may increase operational complexity
+- upstream tools can change independently
+- should not become a mandatory monolithic dependency
+
+Suggested action:
+EXPERIMENT / HOLD.
+
+Use primarily as an architectural reference for a pluggable Sensor / Retrieval Router before considering installation.
+
+### Candidate: Scrapling / General Extraction & Crawl Engine
+
+Source:
+- https://github.com/D4Vinci/Scrapling
+
+Observed role:
+- adaptive scraping framework from single-page fetch to full crawling
+- HTTP and browser-based fetchers
+- dynamic-page support, sessions, concurrent crawling, pause/resume
+- proxy rotation and blocking detection
+- adaptive element relocation when site structure changes
+- `capture_xhr` support for capturing matching XHR / fetch responses
+- MCP server and Agent Skill support
+
+Potential Harness role:
+- Extraction Engine behind the Retrieval layer
+- structured collection from dynamic pages and site-internal API responses
+- candidate engine when simple Web / official API / connector retrieval is insufficient
+
+Potential value:
+- one engine can cover page extraction, crawl, browser, and XHR capture
+- useful for evidence collection from sources without clean APIs
+- can feed structured data into downstream verification instead of raw browser pages
+
+Risks / trade-offs:
+- anti-bot / stealth features increase policy, account, and operational risk
+- heavier than simple HTTP / connector retrieval
+- browser and proxy operation can add cost and maintenance
+- overlap exists with other collectors; avoid duplicate stacks
+
+Suggested action:
+EXPERIMENT / HOLD.
+
+Prefer simpler official APIs, connectors, Jina-style readers, or direct retrieval first. Consider Scrapling only when those are insufficient.
+
+### Candidate: Patchright Enhanced / Browser Fallback
+
+Source:
+- https://github.com/whaleyxbt/patchright-enhanced
+
+Observed role:
+- lightweight wrapper around Patchright
+- creates stealth-oriented Chrome sessions
+- intended for sites with WAF / anti-bot friction
+- relies mainly on Patchright's built-in stealth patches rather than providing a separate extraction framework
+
+Potential Harness role:
+- last-resort Browser Transport / Fallback
+- support collection flows where ordinary browser automation or direct HTTP access fails
+
+Important distinction:
+- this is not the preferred general extraction engine
+- network interception / data extraction can be built on browser automation, but this repository's primary value is stealth browser session setup
+
+Risks / trade-offs:
+- highest policy / account / anti-bot risk among these three candidates
+- brittle against site-defense changes
+- easy to overuse when a simpler retrieval method would work
+- should remain isolated from core Harness logic
+
+Suggested action:
+HOLD.
+
+Do not standardize this path. Keep only as a fallback candidate for tightly scoped experiments.
+
+### Provisional role split
+
+`Agent-Reach = source routing / backend selection`
+
+`Scrapling = extraction / crawling / XHR capture`
+
+`Patchright Enhanced = stealth browser fallback`
+
+Combined with the previously recorded Angelic Angel candidate:
+
+`Angelic Angel = curated X real-time Event Sensor`
+
+`Grok = broad X discovery`
+
+`Agent-Reach = multi-source Retrieval Router`
+
+`Scrapling = generalized Extraction Engine`
+
+`Patchright Enhanced = difficult-site Browser Fallback`
+
+Architectural principle:
+Do not install every collector simply because it is available.
+Prefer the simplest reliable path, keep adapters replaceable, and escalate only when a lower-complexity route fails.
+
+Validation questions:
+- Which capabilities are actually missing from current Web / GitHub / connectors?
+- Can Agent-Reach's routing design be reused without adopting its whole dependency stack?
+- Does Scrapling materially improve evidence quality versus simpler retrieval?
+- What failure / maintenance burden appears after site changes?
+- Can credentials and browser state be isolated with least privilege?
+- Are terms-of-service / account risks acceptable for each target source?
+- Can each collector be removed without changing Core Harness logic?
+
+Status:
+PROPOSAL / NOT ACTIVE
