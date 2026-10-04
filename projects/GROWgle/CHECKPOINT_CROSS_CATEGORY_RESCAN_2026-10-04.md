@@ -148,3 +148,21 @@ Cross-Category再走査完了:
 - [ ] 瀬戸内市
 - [ ] 備前市
 - [ ] 吉備中央町
+
+
+### 進捗更新 — 岡山県南部 Cross-Category v1 完了
+
+完了:
+- [x] 赤磐市
+- [x] 瀬戸内市
+- [x] 備前市
+- [x] 吉備中央町
+
+これにより岡山県南部14自治体のCross-Category再走査 v1 を完了。
+
+次:
+- 岡山県北部 Cross-Category再走査
+
+State:
+- 岡山県南部: COMPLETE
+- 岡山県北部: TODO
