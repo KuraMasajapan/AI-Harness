@@ -45,7 +45,8 @@
         "💬 会話・学習",
         "🎨 画像",
         "💻 開発・API"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "groq",
@@ -80,7 +81,8 @@
         "💬 会話・学習",
         "🎤 音声",
         "💻 開発・API"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "gemini-api",
@@ -279,7 +281,8 @@
       "display_categories": [
         "💬 会話・学習",
         "💻 開発・API"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "cohere-api",
@@ -314,7 +317,8 @@
         "💬 会話・学習",
         "🎨 画像",
         "💻 開発・API"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "nvidia-nim-api",
@@ -347,7 +351,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🎨 画像"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "mistral-api",
@@ -482,7 +487,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🎨 画像"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "llamaparse",
@@ -514,7 +520,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🎨 画像"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "jina-reader",
@@ -551,7 +558,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "deepgram",
@@ -716,7 +724,8 @@
       "audited": "2026-10-02",
       "display_categories": [
         "🎨 画像"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "fireworks-ai",
@@ -788,7 +797,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "serper",
@@ -822,7 +832,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "pinecone",
@@ -858,7 +869,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "zai-api",
@@ -897,7 +909,8 @@
       "display_categories": [
         "💬 会話・学習",
         "💻 開発・API"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "pollinations",
@@ -937,7 +950,8 @@
         "💬 会話・学習",
         "🎨 画像",
         "🎤 音声"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "tavily",
@@ -973,7 +987,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "brave-search-api",
@@ -1010,7 +1025,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "voyage-ai",
@@ -1046,7 +1062,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "weaviate-cloud",
@@ -1082,7 +1099,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "zilliz-cloud",
@@ -1117,7 +1135,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "exa",
@@ -1152,7 +1171,8 @@
       "display_categories": [
         "💬 会話・学習",
         "🧩 基盤部品"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "cartesia",
@@ -1187,7 +1207,8 @@
       "audited": "2026-10-03",
       "display_categories": [
         "🎤 音声"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "speechmatics",
@@ -1222,7 +1243,8 @@
       "audited": "2026-10-03",
       "display_categories": [
         "🎤 音声"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "gladia",
@@ -1256,7 +1278,8 @@
       "audited": "2026-10-03",
       "display_categories": [
         "🎤 音声"
-      ]
+      ],
+      "access_type": "🧑‍💻 成人・開発者管理型"
     },
     {
       "id": "voicevox-local",
@@ -1615,7 +1638,8 @@
       "role": "家庭利用候補",
       "display_categories": [
         "💬 会話・学習"
-      ]
+      ],
+      "access_type": "👤 本人＋保護者同意型"
     },
     {
       "id": "canva-education-ai",
@@ -1728,7 +1752,8 @@
       "role": "比較対象",
       "display_categories": [
         "💬 会話・学習"
-      ]
+      ],
+      "access_type": "🎓 教育アカウント型"
     },
     {
       "id": "brisk-boost",
@@ -1803,7 +1828,7 @@
       "role": "教育専用・無料体験型",
       "japan_fit": "中〜高",
       "usage_scope": "教師がSpaceを作成して学生に提供。無料枠は年5回のlaunch。",
-      "access_type": "🧪 無料体験型 / 🏫 教師管理",
+      "access_type": "🏫 学校・教師管理型",
       "practical_status": "日本語音声入力対応確認済み・日本利用実機確認待ち",
       "audit_note": "公式HelpでJapanese (ja) のSpeech-to-Text対応、chat modelはmultilingual。Freeは年5 Space launches。",
       "display_categories": [
@@ -1858,7 +1883,8 @@
       "japan_fit": "家庭向け対象外",
       "display_categories": [
         "💬 会話・学習"
-      ]
+      ],
+      "access_type": "🏠 家庭管理型 / 🏫 学校・教師管理型"
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -3877,5 +3903,19 @@
       },
       "rule": "複数カテゴリ該当可。ポジションを第一フィルター、カテゴリを第二フィルターとして使用する。"
     }
+  },
+  "access_type_policy": {
+    "axis": "利用・管理経路",
+    "rule": "公開候補（green/yellow）は、子どもがどの経路で利用するかをaccess_typeで分類する。無料・有料・Trialなど料金形態はfree_typeの別軸とし、access_typeへ混在させない。",
+    "values": {
+      "🏠 家庭管理型": "保護者・家庭がアカウントや利用許可を管理する公式経路。",
+      "🏫 学校・教師管理型": "学校・教師・教育機関が利用許可やアカウントを管理する経路。",
+      "🧑‍💻 成人・開発者管理型": "成人が契約・APIキー・バックエンドを管理し、子どもは直接契約しない経路。",
+      "👤 本人＋保護者同意型": "年齢条件を満たす未成年本人が、保護者同意を伴って利用する経路。",
+      "🎓 教育アカウント型": "学生・教職員資格や教育機関メール等を条件に本人が利用する教育向け経路。",
+      "💻 ローカル型": "クラウド契約ではなく、家庭PC等でローカル実行する経路。"
+    },
+    "public_rule": "redは公開候補に表示しないため、access_typeの完全付与対象はgreen/yellowとする。",
+    "audited_at": "2026-10-04"
   }
 }
