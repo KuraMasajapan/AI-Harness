@@ -365,3 +365,85 @@ ENTRE公開企画は未確定だが、地域資源・自然教育・特産品の
 - HUMAN_REVIEW候補のHuman判定
 
 北部はSecond Pass後半へ進行中。
+
+
+---
+
+## K. 北部Second Pass 後半・v1締め（2026-10-04）
+
+### 津山市 — e-PROJECTの継続性と対象を補強
+- 2023年に津山市内高校生向けとして開始し、2024年度も津山市内高校生・高専生を対象に継続。
+- 2024年度は年間6回程度の継続型で、自己理解、地域課題、生成AI活用、課題解決、Canvaを使ったピッチまで扱った実績を確認。
+- 2026年には参加者がOKAYAMA STARTUP AWARDへ登壇し、地域課題型事業構想へ接続。
+- 主催系統: NPO法人マルイ・エンゲージメントキャピタル / Ziba Platform、岡山大学起業部連携。
+- 判定: SランクWATCH
+- 公式・準公式:
+  - https://www2.tsuyama-ct.ac.jp/oshirase/dekigoto/dekigoto202312.html
+  - https://npomec.or.jp/pdf/2024-activity-results.pdf
+  - https://momosta.com/archives/event_detail/event_detail-7031
+
+### 勝央町 — 2026最新募集は未確認のままv1へ
+- しょうおう志援協会公式では「こども起業塾」の過去継続実績を確認できるが、2026年度募集ページは今回の検索では確認できず。
+- 「見つからない＝未実施」とは扱わず、SランクWATCHを維持。
+- 次回は協会SNS、町広報、教育委員会、イベント告知を再監視。
+
+### 西粟倉村 — 公開型ENTREは未確定、学校内ENTRE環境は強い
+- 2026年度の西粟倉中で、役場・ローカルベンチャー・林業関係者を講師に「村の課題に対してどんなアプローチがあるか」を考えるキャリア教育を確認。
+- 「あわくらみらい学」と職場体験を、地域課題解決と仕事の意味へ接続している。
+- 一般募集型イベントは未確定だが、学校内ENTRE教育の強さはSランク。
+- 公式:
+  - https://www.vill.nishiawakura.okayama.jp/wp/%E8%A5%BF%E7%B2%9F%E5%80%89%E4%B8%AD%E5%AD%A6%E6%A0%A1%E3%80%80%E5%AD%A6%E6%A0%A1%E3%81%AE%E6%A7%98%E5%AD%90%E3%80%80%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6/
+  - https://www.vill.nishiawakura.okayama.jp/wp/%E7%B7%8F%E5%90%88%E6%8C%AF%E8%88%88%E8%A8%88%E7%94%BB/
+
+### 高梁・新見 — 2026一般応募型を確定
+
+#### INCLUDE — びしん「ミライイノベーション・プロジェクト」
+- 主催: 備北信用金庫
+- 学生部門: 高校生・専門学校生・大学生等
+- 対象地域: 高梁市・新見市・吉備中央町・真庭市旧北房町にゆかりのある方等
+- テーマ: 地域課題解決＆ビジネスアイデア
+- 応募締切: 2026-10-31
+- 学生ミライアイデア賞あり
+- 判定: OPEN_PUBLIC / INCLUDE / S
+- 公式案内:
+  - https://r.goope.jp/srb-33-26/info/6813678
+  - https://www.shinkin.co.jp/bihoku/news/news.html
+
+#### WATCH — 新見市 新しい特産品開発プロジェクト
+- 新見高校生物生産科が規格外トマトを活用したミネストローネの商品化・パッケージデザインへ取り組む。
+- 次年度以降も新たな開発に取り組むと市公式が明記。
+- 判定: SCHOOL_ONLY / SランクWATCH
+- 公式: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/44745.html
+
+### 真庭市 — 制度型ENTREを一次情報で補強
+- 高校生チャレンジ支援事業は2026年度も実施。
+- 探究の社会実装、商品開発、サンプル制作、情報発信等に1チーム最大10万円。
+- 個人申込のIT、デザイン、エンジニア等の講座・資格にも1人最大5万円の支援。
+- 対象: 真庭市内高校在学生、および真庭市在住で市外高校に通う生徒。
+- 公式: https://www.city.maniwa.lg.jp/soshiki/40/115867.html
+- 判定: INCLUDE / S
+
+---
+
+## L. 岡山県北部 ENTRE v1 判定
+
+State: **V1_COMPLETE**
+
+### 完了理由
+- 津山、勝央・奈義・美咲・鏡野、真庭・新庄、美作・西粟倉、高梁・新見をFirst Pass + Second Passで走査。
+- 公開参加型、学校限定型、地域制度型、情報源型を分離。
+- 勝央町ベンチマークと同等の地域粒度で学校・NPO・起業支援・自治体制度まで確認。
+- 未確定事項はBACKLOGとして残し、「存在しない」と断定していない。
+- Cross-Category Capture導入後の他カテゴリ候補も別ファイルへ引き渡す。
+
+### 北部BACKLOG
+- 勝央町: 2026年度こども起業塾の最新開催/募集確認
+- 津山: 2026年度e-PROJECTの募集ページ・日程
+- 西粟倉: 小中学生が一般応募できる公開型ENTRE企画
+- 新庄: ENTRE公開企画。NATUREでは再走査優先
+- HUMAN_REVIEW: 鏡野の若者政策参画など境界事例
+
+### 次の必須工程
+広島へ進む前に、チェックポイント
+`projects/GROWgle/CHECKPOINT_CROSS_CATEGORY_RESCAN_2026-10-04.md`
+に従い、岡山県南部→北部のCross-Category再走査を行う。
