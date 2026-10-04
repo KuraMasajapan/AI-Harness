@@ -145,6 +145,38 @@ Human makes the final decision.
 
 Do not add ChatGPT-side scheduled review until Grok -> Airtable scheduled handoff has been observed working reliably for several runs.
 
+
+## Pilot Run #1 — 2026-10-04
+
+Result: END-TO-END HANDOFF PASS / INFORMATION QUALITY NEEDS GUARDS
+
+Observed flow:
+
+`Grok Automation -> Airtable MCP -> Harness Inbox -> ChatGPT verification -> Human`
+
+Verified:
+
+- Grok created three new `NEW` records through Airtable MCP
+- existing Harness Inbox records were not modified
+- Human Approved remained false
+- ChatGPT could independently read and review the new records
+- the downstream review caught a temporal interpretation error in one official-source item
+
+Lesson:
+
+An official source can still be misinterpreted if the publication year, relative date, or 24-hour observation window is not checked explicitly.
+
+Therefore the observer now requires:
+
+- explicit publication/update-date verification
+- absolute-date resolution for future changes
+- strict 24-hour window classification
+- `IN_WINDOW / OUT_OF_WINDOW / UNKNOWN` labeling
+- no automatic Airtable registration for out-of-window items
+- no unattended modification of existing Airtable records
+
+This run is the first verified end-to-end pilot of the external observer -> structured Inbox -> independent AI review -> Human decision path.
+
 ## Temporal Layer note
 
 This pilot supports the emerging Harness concept:
