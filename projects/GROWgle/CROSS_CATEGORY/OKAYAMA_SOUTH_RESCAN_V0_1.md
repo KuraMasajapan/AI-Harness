@@ -634,3 +634,317 @@ Cross-Category再走査済み:
 
 南部完了後:
 - 岡山県北部 Cross-Category再走査
+
+
+---
+
+# 12. 第3ブロック再走査 — 赤磐・瀬戸内・備前・吉備中央
+
+## 赤磐市
+
+### NATURE / STEAM — Sランク情報源
+
+#### あかいわジオシティ講座・ジオフェスタ
+- 2026年度は全5回の講座とワークショップを実施。
+- 対象年齢制限なし。
+- 地質、文化財、天文を横断して地域資源を学ぶ。
+- 2026-08-02「ジオフェスタinあかいわ2026」は子どもから大人まで参加可能。
+- 2026-12-19に第5回「みんなのジオ」予定。
+- 判定: OPEN_PUBLIC / NATURE + STEAM / SランクWATCH
+- 公式: https://www.city.akaiwa.lg.jp/shisei/keikaku/chishitsu/13253.html
+
+### SPORTS — Sランク情報源
+
+#### ボールゲームフェスタ in 赤磐
+- 2026-08-29。
+- 年中〜小3親子向け「あそビバ」と、小学生向け「キッズチャレンジ」。
+- バレーボール、バスケットボール、ホッケー等を体験。
+- 参加無料。
+- 判定: OPEN_PUBLIC / SPORTS / 年次WATCH
+- 公式: https://www.city.akaiwa.lg.jp/kosodate/sports/sports/sportskannren/13411.html
+
+#### 2026スポレクフェステ赤磐
+- 2026-10-12。
+- 子どもから大人まで参加可。
+- 卓球、バレーボール、ヨガ、ピックルボール、ホッケー、ペタンク等を体験。
+- 判定: OPEN_PUBLIC / SPORTS / SランクWATCH
+- 公式: https://www.city.akaiwa.lg.jp/annai/kyouikuiinkai/sportsshinkou/kosodate-sports/sports/sports/spoets_event/12139.html
+
+### CREATIVE / LITERACY
+
+#### 永瀬清子賞
+- 岡山県内の小中学生対象の詩コンクール。
+- 2002年開始、2026年度も第24回を募集。
+- 表彰・朗読発表まで行う。
+- 判定: OPEN_PUBLIC(県内) / CREATIVE / 年次WATCH
+- 公式: https://www.city.akaiwa.lg.jp/annai/kyouikuiinkai/kumayama/tenjisitu/shou/index.html
+
+### STEAM / COMMUNITY
+
+#### 中央公民館主催講座
+- 2026年度に「あかいわふるさと探検隊」「めざせ！こども防災マイスター」「おもしろ理科実験＆工作講座」等を実施。
+- 判定: OPEN_PUBLIC候補 / STEAM + COMMUNITY / WATCH
+- 公式: https://www.city.akaiwa.lg.jp/annai/kyouikuiinkai/tyuuou/kosodate/sports/syougai/kouminkan/kouza/index.html
+
+### 重要
+赤磐市はENTREだけでなく、地域地質資源・公民館講座・スポーツの継続型が強い。
+「ジオシティ」を地域独自の学び資産としてSランク情報源化する価値が高い。
+
+---
+
+## 瀬戸内市
+
+### STEAM — Sランク情報源
+
+#### 中央公民館「はじめての3Dプリンター体験講座」
+- 2026-10-03。
+- 小中学生限定。小4以下は保護者同伴。
+- 3Dプリンターでオリジナルネームプレートを制作。
+- 定員8名、満員。
+- 判定: OPEN_PUBLIC / STEAM / 年次WATCH
+- 公式: https://www.city.setouchi.lg.jp/soshiki/57/159431.html
+
+### CREATIVE / WORKS — Sランク情報源
+
+#### 備前長船刀剣博物館
+- 常設の刀剣文化・技術拠点。
+- 中学生以下は多くの展示で無料。
+- 常駐職方（刀匠、塗師、白銀師、金工師）の作業公開あり。
+- 2026年度も年間を通じて企画展を実施。
+- 判定: CONSTANT / CREATIVE + WORKS / SランクWATCH
+- 公式:
+  - https://www.city.setouchi.lg.jp/site/token/
+  - https://www.city.setouchi.lg.jp/site/token/111308.html
+
+#### 小刀製作講座
+- 毎月第1・第3土曜。
+- 2〜4回程度で完成。
+- 職人技術・ものづくり体験として強い。
+- 年齢条件は本調査時に追加確認。
+- 判定: CONSTANT_PROGRAM / CREATIVE + WORKS / WATCH
+- 公式: https://www.city.setouchi.lg.jp/site/token/109312.html
+
+### COMMUNITY / LEARNING POLICY
+
+#### 瀬戸内キズナ・ホリデー
+- 2026年度から市内小中学校で導入。
+- 年度内最大3日。
+- 子どもが学校を休み、家庭・地域で自然、文化、社会、職業体験などを自ら考え実行できる制度。
+- 判定: SUPPORTING_INFRASTRUCTURE / GROWgleとの親和性S
+- 公式: https://www.city.setouchi.lg.jp/soshiki/37/156540.html
+- コメント: GROWgle掲載情報を実際の体験日に接続し得る制度として非常に重要。
+
+### SPORTS
+- 2026年11月、瀬戸内ブルーシャインズ選手による親子ボール遊び講座を確認。
+- 4歳以上の子どもと保護者、30組。
+- 判定: OPEN_PUBLIC / SPORTS / WATCH
+- 公式: https://www.city.setouchi.lg.jp/calendar/index.php?d=1&dsp=1&m=11&y=2026
+
+### 重要
+瀬戸内市は「イベント」だけでなく、キズナ・ホリデーという学外体験を制度的に支える仕組みが特徴。
+GROWgleの社会実装先・将来連携候補として記録価値が高い。
+
+---
+
+## 備前市
+
+### STEAM / SPORTS — Sランク情報源
+
+#### eスポーツ＆STEAM教育イベント in 旧閑谷学校
+- 2026-10-04。
+- 教育版Minecraftを使い、旧閑谷学校の歴史・文化・建築を学ぶ。
+- プロゲーマーチームによるeスポーツ体験・対戦会も実施。
+- 判定: OPEN_PUBLIC / STEAM + SPORTS + CULTURE / S
+- 公式: https://www.city.bizen.okayama.jp/soshiki/104/39700.html
+
+### SPORTS
+
+#### 備前市民総合スポーツフェスティバル2026
+- 2026-10-12。
+- 子どもから大人まで。
+- 参加無料、申込不要。
+- 「こどもにいろんなスポーツを体験させたい」家庭向けと市が明記。
+- 判定: OPEN_PUBLIC / SPORTS / SランクWATCH
+- 公式: https://www.city.bizen.okayama.jp/site/supo-tusinnkougakari/26018.html
+
+### CREATIVE / CULTURE — Sランク情報源
+
+#### 岡山県こども備前焼作品展
+- 岡山県内在住の高校生以下。
+- 小3以下、小4、小5・6、中学生、高校生の5部門。
+- 備前焼を通じ、感性・創造性・地域文化を育む。
+- 2026年度も作品募集。
+- 判定: OPEN_PUBLIC(県内) / CREATIVE / SランクWATCH
+- 公式: https://www.city.bizen.okayama.jp/soshiki/31/31240.html
+
+#### 備前焼まつり
+- 2026-10-17〜18。
+- 子ども向け個別体験の有無は本カテゴリで追加確認。
+- 備前焼の地域産業・職人文化に接続する情報源としてWATCH。
+- 公式: https://www.city.bizen.okayama.jp/soshiki/105/39340.html
+
+### 重要
+備前市は旧閑谷学校、備前焼、海・アウトドア、スポーツ、eスポーツ/STEAMを横断する特徴的な地域。
+市観光振興課のイベント更新頻度が高く、Sランク情報源として監視価値が高い。
+
+---
+
+## 吉備中央町
+
+### NATURE / OUTDOOR — Sランク情報源
+
+#### 国立吉備青少年自然の家
+- 吉備中央町の最重要クロスカテゴリ情報源。
+- 2026年も子ども・家族向け教育事業を継続。
+- 例:
+  - バンブーキャンプ IN 吉備 2026（3泊4日、子ども対象）
+  - カッター体験会（家族対象）
+  - 防災キャンプ
+  - 出発！きびトラベル
+- 判定: OPEN_PUBLIC / NATURE + COMMUNITY + STEAM / SランクWATCH
+- 公式:
+  - https://kibi.niye.go.jp/
+  - https://kibi.niye.go.jp/event/detail.php?id=50
+
+#### 図書館講座「きのこの教室」
+- 2026-09-26。
+- 小学生以上、親子参加。
+- 野外で自然科学を学ぶ継続講座。
+- 判定: OPEN_PUBLIC / NATURE + STEAM / 年次WATCH
+- 発見元: ぱるネット岡山
+- 主催: 吉備中央町図書館
+- 参考: https://www.pal.pref.okayama.jp/pal/search/searchdtl.aspx?ht=1&knd=1&pageNum=0&pageSiz=0&stdycd=14125
+
+#### 田植え・稲刈り体験
+- 2026年に親子向け田植え、稲刈り・収穫祭を確認。
+- 農業、食、自然体験。
+- 民間主催のため一次情報・継続性は本調査で再確認。
+- 判定: OPEN_PUBLIC / NATURE + WORKS(農業) / WATCH
+
+### STEAM — Sランク情報源
+
+#### 星空の学校2026
+- ミニプラネタリウム工作、天文シミュレーター、星空観察、大型望遠鏡。
+- 小学校低学年は保護者同伴。
+- 主催: 吉備中央町観光協会、後援: 吉備中央町教育委員会。
+- 判定: OPEN_PUBLIC / STEAM + NATURE / 年次WATCH
+- 公式/主催: https://kibichuo-kanko.jp/event/11604/
+
+### CREATIVE / COMMUNITY / WORKS
+
+#### 吉備高原都市さんさん祭り
+- 2026年で第35回。
+- 学校・地域団体・国立吉備青少年自然の家・職業リハビリテーションセンター等が展示・体験を実施。
+- ハンドクラフト、作品展示、木製レーザー加工品等。
+- 判定: OPEN_PUBLIC / COMMUNITY + CREATIVE + WORKS / WATCH
+- 公式広報: https://www.town.kibichuo.lg.jp/uploaded/attachment/12977.pdf
+
+### SPORTS
+- 吉備中央町スポーツ協会がニュースポーツ用品を常設貸出。
+- 子どもから高齢者まで対象。
+- 個別子ども向け大会・教室は次回SPORTS本調査で追加確認。
+- 判定: SUPPORTING_INFRASTRUCTURE / WATCH
+- 公式: https://www.town.kibichuo.lg.jp/soshiki/27/17950.html
+
+### 重要
+吉備中央町は自治体公式イベント欄だけでは見えにくいが、
+- 国立吉備青少年自然の家
+- 観光協会
+- 図書館
+- 民間自然体験
+まで広げると、NATURE / STEAMの体験機会がかなり厚い。
+これは勝央町ベンチマーク型の探索が必要な代表例。
+
+---
+
+# 13. 岡山県南部 Cross-Category v1 判定
+
+State: **V1_COMPLETE**
+
+## 完了理由
+- 岡山県南部14自治体をCross-Categoryルールで再走査。
+- ENTREだけでは見えなかった WORKS / STEAM / CREATIVE / NATURE / SPORTS / COMMUNITY の主要情報源を回収。
+- 常設施設、年間型講座、単発イベント、学校限定活動、制度型支援を分離して整理。
+- 地域固有の強みを複数確認。
+- 未確認事項はBACKLOGとして残した。
+
+## 南部の代表的な地域資産
+
+### 岡山市
+- サイピア
+- 岡山県立美術館
+- ファジアーノ岡山
+
+### 倉敷市
+- JFE
+- ベティスミス
+- 倉敷科学センター
+- 自然史博物館
+- 環境学習センター
+- 自然の家
+
+### 総社市
+- サイエンスフェスティバル
+- 岡山県立大学
+- 雪舟体験
+
+### 玉野市
+- キッズビジネスタウン
+- 自然環境体験公園
+
+### 早島町
+- はやしまの日
+- スポーツ/生涯学習イベント
+
+### 井原市
+- おしごと体験フェス
+- おしごと探検ツアー
+- 美星天文台
+
+### 矢掛町
+- やかげ学
+- 伝統文化体験
+- アウトドア/防災
+
+### 浅口市
+- 岡山天文博物館
+- こども天文クラブ
+
+### 里庄町
+- 仁科会館
+- ロボットコンテスト
+
+### 笠岡市
+- カブトガニ博物館
+- カブトガニマイスター
+
+### 赤磐市
+- あかいわジオシティ
+- スポレク
+- 永瀬清子賞
+
+### 瀬戸内市
+- 備前長船刀剣博物館
+- 3Dプリンター講座
+- キズナ・ホリデー
+
+### 備前市
+- 旧閑谷学校 eスポーツ/STEAM
+- 備前焼
+- スポーツフェス
+
+### 吉備中央町
+- 国立吉備青少年自然の家
+- 星空の学校
+- 自然科学/農業体験
+
+## 南部BACKLOG
+- 各Sランク情報源の次回募集開始日を自動/半自動監視する設計
+- 常設施設の「いつでも行ける」表示
+- 学校限定活動を公開ページでどう見せるか
+- GLOBAL / COMMUNICATIONカテゴリのHuman判断
+- SPORTS系の自治体横断比較
+- 工場・企業見学の企業公式一次確認
+
+## 次
+Checkpointに従い、岡山県北部Cross-Category再走査へ移る。
