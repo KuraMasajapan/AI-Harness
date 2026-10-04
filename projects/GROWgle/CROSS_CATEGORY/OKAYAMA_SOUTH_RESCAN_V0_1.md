@@ -363,3 +363,274 @@ Cross-Category再走査済み（第1ブロック）:
 - 瀬戸内市
 - 備前市
 - 吉備中央町
+
+
+---
+
+# 9. 第2ブロック再走査 — 井原・矢掛・浅口・里庄・笠岡
+
+## 井原市
+
+### WORKS — Sランク情報源
+
+#### 井原おしごと体験フェス
+- 2026-05-30、芳井生涯学習センター。
+- 市内企業・事業所を中心に体験・展示21ブース、はたらくくるま12ブース等を予定。
+- 地場産業の「魅力・秘密・自慢・すごいところ」を子どもが体験する構成。
+- 主催: 井原市・井原市教育委員会・井原商工会議所・備中西商工会。
+- 判定: OPEN_PUBLIC / WORKS / SランクWATCH
+- 公式/準公式: https://hitozukuri-no-machi-ibara.jp/news/news-7447/
+
+#### 井原おしごと探検ツアー
+- 2026-07-28。
+- 対象: 小4以上と保護者、中学生。
+- 訪問先: 生興運送、井原鉄道。
+- 地域企業をバスで巡り、仕事内容・設備・地域産業を体験。
+- 判定: OPEN_PUBLIC / WORKS / SランクWATCH
+- 公式/準公式: https://hitozukuri-no-machi-ibara.jp/news/news-7460/
+
+### STEAM / NATURE — Sランク情報源
+
+#### 美星天文台
+- 一般公開型の常設天文施設。
+- 2026年度も七夕観望会、流星群観察会、お月見会、街なか観望会、天文講座、高校生向け「星の学校」を実施/予定。
+- 高校生向けの観測・研究体験が明示されている。
+- 夜間は101cm望遠鏡等を使った観望を継続。
+- 判定: CONSTANT / STEAM + NATURE / SランクWATCH
+- 公式:
+  - https://www.bao.city.ibara.okayama.jp/?page_id=4696
+  - https://www.bao.city.ibara.okayama.jp/?page_id=2
+
+### SPORTS
+
+#### 井原市スポーツフェスティバル2026
+- 2026-10-04、井原運動公園。
+- 各種スポーツ体験ブース、事前申込不要、参加無料。
+- 判定: OPEN_PUBLIC / SPORTS / 年次WATCH
+- 公式: https://www.city.ibara.okayama.jp/site/20260727sportsfestival/12704.html
+
+### 重要
+井原市は「ENTRE公開機会が弱い地域」ではなく、WORKSとSTEAMの公開体験が非常に強い。
+特に「ひとづくりのまち井原」と美星天文台を情報源マスターへ登録する価値が高い。
+
+---
+
+## 矢掛町
+
+### CREATIVE / CULTURE — Sランク情報源
+
+#### みて・きいて・ふれて・やってみよう 伝統文化体験 in 矢掛町 2026
+- 体験の部: 2026-07-20。
+- 教室の部: 2026-08-13〜16。
+- 対象: 小学生〜大人。就学前親子も一部参加可。
+- 箏、三味線、琵琶、尺八、篠笛、小鼓、長唄、日本舞踊、歌舞伎衣装、茶道等。
+- 参加無料、要申込。
+- 主催: 矢掛町、共催: 矢掛町教育委員会。
+- 判定: OPEN_PUBLIC / CREATIVE + CULTURE / SランクWATCH
+- 公式:
+  - https://bunka.yakage-kyouiku.info/event
+  - https://www.town.yakage.okayama.jp/gyosei/kohou/yakage/files/202606-675.pdf
+
+### NATURE / SPORTS / 防災
+
+#### アウトドアヴィレッジやかげ 防災体験デイキャンプ
+- 2026年度実施。
+- 募集が定員を上回り、申込締切を前倒しした実績を確認。
+- 判定: OPEN_PUBLIC候補 / NATURE + SPORTS + 防災 / WATCH
+- 対象年齢・体験内容は本カテゴリ調査時にチラシを再確認。
+- 公式: https://www.town.yakage.okayama.jp/news/2026/07/post_1576.html
+
+### WORKS / ENTRE / COMMUNITY
+- 矢掛高校「やかげ学」「やかげ学実践」は既にENTRE側で回収。
+- 町内13施設での長期実習、地元企業での体験、商品開発、販売まで行うためWORKSにも強く接続。
+- 公式:
+  - https://www.yakage.okayama-c.ed.jp/new2021/02threecourse/threecourse.php
+  - https://www.yakage.okayama-c.ed.jp/new2021/03community/community.php
+- 判定: SCHOOL_ONLY / WORKS + ENTRE / SランクWATCH
+
+### 重要
+矢掛町は人口規模に対して、学校×地域、伝統文化、アウトドア体験の密度が高い。
+一般ポータルより町広報・文化センター・高校サイトを直接監視する価値が高い。
+
+---
+
+## 浅口市
+
+### STEAM — Sランク情報源
+
+#### 岡山天文博物館
+- 常設施設。国立天文台188cm望遠鏡、京都大学せいめい望遠鏡に隣接。
+- 2026年度も望遠鏡見学ツアー等を継続。
+- 判定: CONSTANT / STEAM / SランクWATCH
+- 公式: https://www.city.asakuchi.lg.jp/site/museum/
+
+#### こども天文クラブ
+- 対象: 浅口市在住の小4〜6。
+- 年7回、望遠鏡の仕組み・使い方、星の観察等。
+- 定員10名、参加費無料（材料費の場合あり）。
+- 2026年度は申込後も空きがあり、電話受付を継続していた。
+- 判定: RESIDENT_ONLY / STEAM / SランクWATCH
+- 公式: https://www.city.asakuchi.lg.jp/site/museum/20491.html
+
+### CREATIVE / CULTURE / STEAM
+
+#### 子ども体験活動教室
+- 年間型。
+- 幼児〜中学生対象。
+- 科学工作、茶道、和太鼓、コーラス、詩吟など複数教室。
+- 地域ボランティアが指導。
+- 判定: RESIDENT/LOCAL / CREATIVE + STEAM + CULTURE / SランクWATCH
+- 公式: https://www.city.asakuchi.lg.jp/page/10836.html
+
+#### 浅口市総合文化祭 体験コーナー
+- 2026-10-24〜25、11-07〜08。
+- 小中学生は体験コーナー参加無料。
+- 子どもの作品展示も実施。
+- 判定: OPEN_PUBLIC候補 / CREATIVE / WATCH
+- 公式: https://www.city.asakuchi.lg.jp/page/11447.html
+
+### 重要
+浅口市は岡山天文博物館を核に、天文・科学の「常設＋年間講座」が非常に強い。
+単発イベントより、施設そのものをSランク情報源として扱う。
+
+---
+
+## 里庄町
+
+### STEAM — Sランク情報源
+
+#### 仁科会館 / 科学振興仁科財団
+- 仁科芳雄博士を顕彰する科学教育拠点。
+- ロボットコンテスト、科学講演会、理化学研究所里庄セミナー等を継続。
+- 館内に触れて学べる科学展示あり。
+- 判定: CONSTANT / STEAM / SランクWATCH
+- 公式:
+  - https://www.kagaku.nishina.town.satosho.okayama.jp/
+  - https://www.town.satosho.okayama.jp/soshiki/3/1104.html
+
+#### 里庄町ロボットコンテスト
+- 1993年開始、2026年で第34回。
+- 対象: 岡山県内の中学生・高校生。
+- アイデア・技術・ものづくりを競う継続大会。
+- 2026年8月30日開催実績。
+- 判定: SCHOOL/TEAM_ENTRY / STEAM / SランクWATCH
+- 公式根拠: 仁科会館サイト（ロボコンを継続事業として明記）
+- 現地レポート: https://kuratoco.com/article-185508/
+
+### SPORTS
+
+#### 里庄町民スポーツ交流大会
+- 2026-09-27。
+- 小学生リレーの一般募集あり。
+- 判定: RESIDENT_ONLY / SPORTS / 年次WATCH
+- 公式: https://www.town.satosho.okayama.jp/site/calendar-kyouiku/13007.html
+
+### 重要
+里庄町は、前回ENTRE単独では公開型が弱く見えたが、STEAMでは県内でも特徴的な長期資産を持つ。
+「カテゴリを変えると自治体の強みが反転する」代表例。
+
+---
+
+## 笠岡市
+
+### NATURE / STEAM — Sランク情報源
+
+#### 笠岡市立カブトガニ博物館
+- 世界で唯一のカブトガニをテーマにした博物館。
+- 天然記念物の繁殖地に隣接し、恐竜公園も併設。
+- 2026年度:
+  - バックヤードツアー
+  - 特別展示「GATAMON～干潟のいきもん～」
+  - カブトガニマイスター養成講座1級
+  - 新春企画等
+- 判定: CONSTANT / NATURE + STEAM / SランクWATCH
+- 公式: https://www.city.kasaoka.okayama.jp/site/kabutogani/
+
+#### カブトガニマイスター養成講座
+- 小学生以上の子どもを含む笠岡市内家族を対象にした継続型学習。
+- フィールドワーク、飼育、放流まで行い、段階的に認定。
+- 2026年度は前年2級取得家族を対象に1級講座を実施。
+- 判定: RESIDENT_ONLY / NATURE + STEAM / S
+- 公式:
+  - https://www.city.kasaoka.okayama.jp/site/kabutogani/67445.html
+  - https://www.city.kasaoka.okayama.jp/site/kabutogani/73912.html
+
+### STEAM / WORKS
+
+#### リコチャレ関連
+- 笠岡市は2026年も「夏のリコチャレ2026」の情報を発信。
+- 2025年には「わたしの未来発見！理工チャレンジ教室 in 笠岡市」を実施。
+- 理工系の仕事・進路体験情報の発生源として男女共同参画部門をWATCH。
+- 判定: WATCH / STEAM + WORKS
+- 公式:
+  - https://www.city.kasaoka.okayama.jp/soshiki/17/
+  - https://www.gender.go.jp/c-challenge/event/2026/summer.html
+
+### SPORTS
+
+#### カブトガニ駅伝大会
+- 2026-12-13。
+- 小学生の部、中学生の部あり。
+- 判定: OPEN_PUBLIC/TEAM / SPORTS / 年次WATCH
+- 公式: https://www.city.kasaoka.okayama.jp/soshiki/44/61775.html
+
+### 重要
+笠岡市は「カブトガニ」という地域固有資産を、展示だけでなく家族参加型の継続学習へ発展させている。
+NATURE/STEAMの代表的ローカルモデルとして保存価値が高い。
+
+---
+
+# 10. 第2ブロック再走査の重要発見
+
+1. **井原市はWORKSとSTEAMが非常に強い**
+   - おしごと体験フェス
+   - おしごと探検ツアー
+   - 美星天文台
+   という「地域産業＋科学」の二本柱がある。
+
+2. **里庄町はSTEAMで評価が大きく変わる**
+   - 仁科会館
+   - 34年継続のロボットコンテスト
+   → ENTREだけでは見えなかった地域資産。
+
+3. **浅口市は天文・科学の継続型が強い**
+   - 岡山天文博物館
+   - こども天文クラブ
+   - 年間子ども体験活動教室
+
+4. **笠岡市は自然資産を継続教育に変えている**
+   - カブトガニ博物館
+   - マイスター制度
+   - 飼育→放流
+   → 単発イベント以上にGROWgle向き。
+
+5. **矢掛町は文化・地域・体験学習が厚い**
+   - 伝統文化体験
+   - やかげ学
+   - 防災アウトドア
+   → CREATIVE / WORKS / COMMUNITYで強い。
+
+---
+
+# 11. 進捗更新
+
+Cross-Category再走査済み:
+- 岡山市
+- 倉敷市
+- 総社市
+- 玉野市
+- 早島町
+- 井原市
+- 矢掛町
+- 浅口市
+- 里庄町
+- 笠岡市
+
+次:
+- 赤磐市
+- 瀬戸内市
+- 備前市
+- 吉備中央町
+
+南部完了後:
+- 岡山県北部 Cross-Category再走査
