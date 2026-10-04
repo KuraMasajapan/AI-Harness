@@ -677,3 +677,77 @@ PROPOSAL / NOT ACTIVE
 
 これらは既存Candidate B / C / D / E / G / Hと重なる部分が多いため、
 新しいCoreを増やす前に統合可能性を確認する。
+
+
+---
+
+## Update 2026-10-04 — Human Interface / Action-First Output
+
+この節は、ユーザーが共有した `i-have-adhd` Skillの紹介文から、AI-Harnessへ転用価値がある設計思想だけを抽出して保存する。
+ADHD向けという名称・対象ユーザー分類そのものは採用せず、Human Interface設計として一般化する。
+
+### Principle W: Action-First Output
+
+AIの内部処理量とHumanへ見せる情報量を分離する。
+
+基本順序:
+1. 結論
+2. 次にやること
+3. 必要な手順
+4. 必要な場合だけ詳細・根拠
+
+狙い:
+- Humanが次の判断をすぐ行える
+- 長文説明による判断遅延を減らす
+- 「どこまで進んだか」「次に何をするか」を見失いにくくする
+- Human-in-the-loopを実運用しやすくする
+
+重要:
+短くすること自体を目的にしない。
+詳細が必要なTaskではEvidenceやRiskを省略しない。
+
+### Principle X: Progressive Disclosure for Human Review
+
+Humanへ最初から全情報を出さず、判断に必要な情報を優先して提示する。
+
+候補UI:
+- Summary: 結論 / Current State / Next Action
+- Expand: Evidence / Risk / Alternatives / Full Details
+
+仮説:
+AIは深く処理してよいが、Humanの認知負荷は必要最小限に保つ。
+
+これはCandidate J Operational Visibility / Fleet Status UIと接続して評価する。
+
+### Principle Y: Output Mode by Task Type
+
+すべてのTaskを同じ出力形式に固定しない。
+
+暫定モード:
+- Action Mode:
+  結論 → 次Action → 必要手順
+- Evidence Mode:
+  結論 → Evidence → 不確実性 → 次Action
+- Decision Mode:
+  選択肢 → 推奨 → Risk → Human承認点
+- Review Mode:
+  問題 → 対象箇所 → 理由 → 修正候補
+
+Harness側でTask種別またはHumanの目的に応じて出力Contractを切り替える。
+
+### Human Interface Design Decision
+
+保存する中核思想:
+- AIの思考量とHumanへの表示量は別物
+- Humanには「次に押すハンコ」が分かる形で出す
+- 詳細は必要時に展開する
+- 重要Taskでは短さのためにEvidence / Riskを削らない
+- UI / Output Contractとして扱い、Core reasoningやValidationを弱めない
+
+Status:
+PROPOSAL / NOT ACTIVE
+
+候補位置づけ:
+- Candidate J Operational VisibilityのHuman-facing output版
+- Human-in-the-loopの負荷削減策
+- Trinity / Validation結果の提示形式としても検証可能
