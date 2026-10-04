@@ -32,11 +32,39 @@ Automation:
 - Search window: previous 24 hours
 - Maximum findings: 10
 - Human attention shortlist: maximum 3
-- Primary sources: X and Web
+- Primary discovery source: X
+- Web role: verification / evidence / current-state confirmation
 - X posts are treated as signals, not proof
 - Prefer latest primary sources for current-state confirmation
 - Evaluate trade-offs and complexity, not benchmark gains alone
 - Deduplicate against existing Harness Inbox records
+
+
+## X-first observer principle
+
+Production v1 intentionally uses X as the main discovery sensor.
+
+Runtime research logic:
+
+`X discovery -> Signal classification -> Web/primary-source verification where appropriate -> Airtable -> ChatGPT -> Human`
+
+Signal classes:
+
+- FACT: factual change or release; verify with primary sources.
+- IDEA: original theory, architecture, or hypothesis; lack of external confirmation is not a rejection reason.
+- ANOMALY: minority failure, contradiction, or unusual observation; inspect for structural significance.
+
+Operating principles:
+
+- Consensus is not equivalent to truth.
+- Popularity is not evidence.
+- Novelty is not evidence of falsehood.
+- Unverified ideas can still have validation value.
+- Grok is allowed to use its own unusual attention and judgment during discovery.
+- Grok's independent selection does not grant authority to adopt or approve.
+- Discovery remains permissive; downstream adoption remains strict.
+
+This approach is itself provisional. Run it for a period and evaluate whether it produces useful, non-obvious signals. If the yield is poor or the noise is too high, change the discovery approach rather than protecting the current method.
 
 ## Airtable MCP integration
 
