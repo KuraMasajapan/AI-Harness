@@ -40,7 +40,12 @@
       "free_type": "毎日リセット",
       "role": "主役候補",
       "japan_fit": "高",
-      "usage_scope": "親/成人がCloudflare CustomerとしてFamily AIを運用し、子どもはEnd Userとなる構成を想定。"
+      "usage_scope": "親/成人がCloudflare CustomerとしてFamily AIを運用し、子どもはEnd Userとなる構成を想定。",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "groq",
@@ -70,7 +75,12 @@
         "🎤 声を文字にしたい"
       ],
       "free_type": "要確認",
-      "role": "クラウド候補"
+      "role": "クラウド候補",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎤 音声",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "gemini-api",
@@ -100,7 +110,12 @@
         "👀 画像について聞きたい"
       ],
       "free_type": "要確認",
-      "role": "クラウド候補"
+      "role": "クラウド候補",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "ollama",
@@ -130,7 +145,12 @@
         "💻 プログラミングしたい"
       ],
       "free_type": "ローカル",
-      "role": "補助・ローカル"
+      "role": "補助・ローカル",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "piper-local",
@@ -158,7 +178,11 @@
         "🔊 AIにしゃべってほしい"
       ],
       "free_type": "ローカル",
-      "role": "補助・ローカル"
+      "role": "補助・ローカル",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "lm-studio",
@@ -187,7 +211,12 @@
         "💻 プログラミングしたい"
       ],
       "free_type": "ローカル",
-      "role": "補助・ローカル"
+      "role": "補助・ローカル",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "whisper-local",
@@ -214,7 +243,11 @@
         "🎤 声を文字にしたい"
       ],
       "free_type": "ローカル",
-      "role": "補助・ローカル"
+      "role": "補助・ローカル",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "cerebras-inference",
@@ -242,7 +275,11 @@
         "https://www.cerebras.ai/inference"
       ],
       "audited": "2026-10-02",
-      "status_label": "大人が確認"
+      "status_label": "大人が確認",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "cohere-api",
@@ -272,7 +309,12 @@
         "https://cohere.com/pricing"
       ],
       "audited": "2026-10-02",
-      "status_label": "大人が確認"
+      "status_label": "大人が確認",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "nvidia-nim-api",
@@ -301,7 +343,11 @@
         "https://docs.nvidia.com/nim/"
       ],
       "audited": "2026-10-02",
-      "status_label": "大人が確認"
+      "status_label": "大人が確認",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像"
+      ]
     },
     {
       "id": "mistral-api",
@@ -330,7 +376,11 @@
         "https://legal.mistral.ai/terms/row-consumer-terms/"
       ],
       "audited": "2026-10-02",
-      "status_label": "子ども用には使わない"
+      "status_label": "子ども用には使わない",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "openrouter",
@@ -362,7 +412,12 @@
         "https://openrouter.ai/terms",
         "https://openrouter.ai/docs/guides/features/guardrails/overview"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "elevenlabs-api",
@@ -392,7 +447,10 @@
         "https://elevenlabs.io/use-policy",
         "https://elevenlabs.io/privacy-policy"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "ocr-space",
@@ -420,7 +478,11 @@
       "official": [
         "https://ocr.space/ocrapi"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像"
+      ]
     },
     {
       "id": "llamaparse",
@@ -448,7 +510,11 @@
       "official": [
         "https://developers.llamaindex.ai/llamaparse/general/limits/"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像"
+      ]
     },
     {
       "id": "jina-reader",
@@ -481,7 +547,11 @@
       "real_cost": "初回10M tokensまで$0",
       "difficulty": "中",
       "japan_fit": "日本語ページあり。多言語モデルを実機比較予定",
-      "usage_scope": "Web取得＋RAG部品"
+      "usage_scope": "Web取得＋RAG部品",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "deepgram",
@@ -511,7 +581,10 @@
         "https://deepgram.com/terms",
         "https://deepgram.com/privacy"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "assemblyai",
@@ -539,7 +612,10 @@
         "https://www.assemblyai.com/pricing/",
         "https://www.assemblyai.com/legal/privacy-policy"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "huggingface-inference",
@@ -571,7 +647,12 @@
         "https://huggingface.co/docs/inference-providers/en/pricing",
         "https://huggingface.co/terms-of-service"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "fal-ai",
@@ -599,7 +680,10 @@
         "https://fal.ai/legal/terms-of-service",
         "https://fal.ai/legal/acceptable-use-policy"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "🎨 画像"
+      ]
     },
     {
       "id": "replicate",
@@ -629,7 +713,10 @@
         "https://replicate.com/privacy",
         "https://replicate.com/pricing"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "🎨 画像"
+      ]
     },
     {
       "id": "fireworks-ai",
@@ -661,7 +748,12 @@
         "https://fireworks.ai/terms-of-service",
         "https://fireworks.ai/privacy-policy"
       ],
-      "audited": "2026-10-02"
+      "audited": "2026-10-02",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "qdrant-cloud",
@@ -692,7 +784,11 @@
         "https://qdrant.tech/cloud/",
         "https://qdrant.tech/pricing/"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "serper",
@@ -722,7 +818,11 @@
       "official": [
         "https://serper.dev/"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "pinecone",
@@ -754,7 +854,11 @@
         "https://www.pinecone.io/pricing/",
         "https://www.pinecone.io/legal/master-subscription-agreement/"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "zai-api",
@@ -789,7 +893,11 @@
         "https://chat.z.ai/legal-agreement/terms-of-service",
         "https://chat.z.ai/legal-agreement/privacy-policy"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "pollinations",
@@ -824,7 +932,12 @@
         "https://gen.pollinations.ai/docs",
         "https://enter.pollinations.ai/terms"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "🎤 音声"
+      ]
     },
     {
       "id": "tavily",
@@ -856,7 +969,11 @@
         "https://www.tavily.com/pricing",
         "https://www.tavily.com/terms"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "brave-search-api",
@@ -889,7 +1006,11 @@
         "https://api-dashboard.search.brave.com/documentation/resources/privacy-notice",
         "https://api-dashboard.search.brave.com/documentation/resources/terms-of-service"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "voyage-ai",
@@ -921,7 +1042,11 @@
         "https://docs.voyageai.com/docs/pricing",
         "https://www.voyageai.com/tos"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "weaviate-cloud",
@@ -953,7 +1078,11 @@
         "https://weaviate.io/pricing",
         "https://docs.weaviate.io/cloud/manage-clusters/create"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "zilliz-cloud",
@@ -984,7 +1113,11 @@
       "official": [
         "https://docs.zilliz.com/docs/free-trials"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "exa",
@@ -1015,7 +1148,11 @@
       "official": [
         "https://exa.ai/pricing"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "💬 会話・学習",
+        "🧩 基盤部品"
+      ]
     },
     {
       "id": "cartesia",
@@ -1047,7 +1184,10 @@
       "official": [
         "https://www.cartesia.ai/pricing"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "speechmatics",
@@ -1079,7 +1219,10 @@
       "official": [
         "https://www.speechmatics.com/pricing"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "gladia",
@@ -1110,7 +1253,10 @@
       "official": [
         "https://www.gladia.io/pricing"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "voicevox-local",
@@ -1141,7 +1287,11 @@
       "official": [
         "https://voicevox.hiroshiba.jp/term/"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "aivisspeech-local",
@@ -1172,7 +1322,11 @@
       "official": [
         "https://github.com/Aivis-Project/AivisSpeech"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "kotoba-whisper-local",
@@ -1203,7 +1357,11 @@
       "official": [
         "https://huggingface.co/kotoba-tech/kotoba-whisper-v2.1"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "reazonspeech-local",
@@ -1234,7 +1392,11 @@
       "official": [
         "https://huggingface.co/reazon-research/reazonspeech-nemo-v2"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "🎤 音声"
+      ]
     },
     {
       "id": "llm-jp-4-1-local",
@@ -1267,7 +1429,12 @@
       "official": [
         "https://llm-jp.nii.ac.jp/blog/llm-jp-4-1/"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "elyza-thinking-local",
@@ -1301,7 +1468,12 @@
         "https://huggingface.co/elyza/ELYZA-Thinking-1.0-llm-jp-4-33b",
         "https://elyza.ai/news/2026/10/02/rsiresearch"
       ],
-      "audited": "2026-10-03"
+      "audited": "2026-10-03",
+      "access_type": "💻 ローカル型",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "gemini-family-link",
@@ -1340,7 +1512,12 @@
       "usage_scope": "Family Link管理の子どもアカウントで直接利用。管理対象アカウントへの提供は段階展開中のため、個別アカウントで未提供の場合あり。",
       "audit_note": "Gemini APIは18歳未満がアクセスするAPI Client用途を禁止しているため赤のまま。今回の緑はConsumer Gemini AppsのFamily Link管理経路であり、APIとは別扱い。",
       "access_type": "🏠 家庭管理型",
-      "practical_status": "日本語公式経路確認済み・実機確認待ち"
+      "practical_status": "日本語公式経路確認済み・実機確認待ち",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "microsoft-copilot-education",
@@ -1375,7 +1552,11 @@
       "usage_scope": "対象Microsoft 365 Education tenantで学校管理者が提供。13〜17歳は管理者による有効化が必要。",
       "access_type": "🏫 学校・教師管理型",
       "practical_status": "日本公式ページで利用経路確認済み",
-      "audit_note": "日本Microsoft公式で13歳以上、M365 Education A1/A3/A5、13-17歳はIT管理者有効化、追加費用なしを確認。"
+      "audit_note": "日本Microsoft公式で13歳以上、M365 Education A1/A3/A5、13-17歳はIT管理者有効化、追加費用なしを確認。",
+      "display_categories": [
+        "💬 会話・学習",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "claude-consumer",
@@ -1402,7 +1583,10 @@
         "📚 勉強を手伝ってほしい"
       ],
       "free_type": "無料枠あり",
-      "role": "比較対象"
+      "role": "比較対象",
+      "display_categories": [
+        "💬 会話・学習"
+      ]
     },
     {
       "id": "perplexity-consumer",
@@ -1428,7 +1612,10 @@
         "📚 勉強を手伝ってほしい"
       ],
       "free_type": "無料Standard",
-      "role": "家庭利用候補"
+      "role": "家庭利用候補",
+      "display_categories": [
+        "💬 会話・学習"
+      ]
     },
     {
       "id": "canva-education-ai",
@@ -1465,7 +1652,12 @@
       "usage_scope": "K-12のCanva Education。学生は教師招待・学校管理下。",
       "access_type": "🏫 学校・教師管理型",
       "practical_status": "日本公式ページで利用経路確認済み",
-      "audit_note": "日本向け教育版ページで幼小中高の児童生徒・教員に無料、AI機能、安全管理を確認。"
+      "audit_note": "日本向け教育版ページで幼小中高の児童生徒・教員に無料、AI機能、安全管理を確認。",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "💻 開発・API"
+      ]
     },
     {
       "id": "adobe-express-education-ai",
@@ -1501,7 +1693,11 @@
       "usage_scope": "K-12学校/教師が提供するAdobe Express for Education。",
       "access_type": "🏫 学校・教師管理型",
       "practical_status": "日本公式ページで利用経路確認済み",
-      "audit_note": "日本向けK-12ページでAdobe Express無料提供と責任ある生成AIを確認。"
+      "audit_note": "日本向けK-12ページでAdobe Express無料提供と責任ある生成AIを確認。",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像"
+      ]
     },
     {
       "id": "notion-ai-education",
@@ -1529,7 +1725,10 @@
         "📚 勉強を手伝ってほしい"
       ],
       "free_type": "AI試用のみ",
-      "role": "比較対象"
+      "role": "比較対象",
+      "display_categories": [
+        "💬 会話・学習"
+      ]
     },
     {
       "id": "brisk-boost",
@@ -1566,7 +1765,11 @@
       "usage_scope": "教師が作成したBoost活動をリンク/QRで児童生徒へ共有。",
       "access_type": "🏫 学校・教師管理型",
       "practical_status": "多言語対応確認済み・日本語実機確認待ち",
-      "audit_note": "Boostは活動ごとに言語指定可能で50+言語翻訳・母語配信を公式確認。日本語が個別列挙された公式資料は未確認のため実機確認待ち。"
+      "audit_note": "Boostは活動ごとに言語指定可能で50+言語翻訳・母語配信を公式確認。日本語が個別列挙された公式資料は未確認のため実機確認待ち。",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像"
+      ]
     },
     {
       "id": "schoolai-spaces",
@@ -1602,7 +1805,11 @@
       "usage_scope": "教師がSpaceを作成して学生に提供。無料枠は年5回のlaunch。",
       "access_type": "🧪 無料体験型 / 🏫 教師管理",
       "practical_status": "日本語音声入力対応確認済み・日本利用実機確認待ち",
-      "audit_note": "公式HelpでJapanese (ja) のSpeech-to-Text対応、chat modelはmultilingual。Freeは年5 Space launches。"
+      "audit_note": "公式HelpでJapanese (ja) のSpeech-to-Text対応、chat modelはmultilingual。Freeは年5 Space launches。",
+      "display_categories": [
+        "💬 会話・学習",
+        "🎨 画像"
+      ]
     },
     {
       "id": "magicstudent",
@@ -1625,7 +1832,10 @@
       "japan_fit": "中〜高",
       "access_type": "🏫 学校・教師管理型",
       "practical_status": "日本語対応確認済み・日本からの実機確認待ち",
-      "audit_note": "公式FAQで日本語を含む24 UI言語、98翻訳言語を確認。Freeは教師向け基本機能。Student Rooms等の学生機能はプラン差があるため無料範囲を過大表示しない。"
+      "audit_note": "公式FAQで日本語を含む24 UI言語、98翻訳言語を確認。Freeは教師向け基本機能。Student Rooms等の学生機能はプラン差があるため無料範囲を過大表示しない。",
+      "display_categories": [
+        "💬 会話・学習"
+      ]
     },
     {
       "id": "khanmigo",
@@ -1645,7 +1855,10 @@
       "audited": "2026-10-04",
       "free_type": "家庭向け有料",
       "role": "教育AI設計の参考",
-      "japan_fit": "家庭向け対象外"
+      "japan_fit": "家庭向け対象外",
+      "display_categories": [
+        "💬 会話・学習"
+      ]
     }
   ],
   "catalog_note": "選ぶのは大人。探し方は子どもの『やりたいこと』から。クラウドAIを主役にし、ローカルAIは別カテゴリで表示する。",
@@ -1714,7 +1927,31 @@
       "🏫 学校・教師管理型",
       "💻 ローカル型",
       "🧪 無料体験型"
-    ]
+    ],
+    "sidebar_filters": {
+      "status": [
+        "green",
+        "yellow",
+        "red"
+      ],
+      "access": [
+        "🏠 家庭管理型",
+        "🏫 学校・教師管理型",
+        "💻 ローカル型",
+        "🧪 無料体験型"
+      ],
+      "category": [
+        "💬 会話・学習",
+        "🎨 画像",
+        "🎤 音声",
+        "💻 開発・API",
+        "🧩 基盤部品"
+      ],
+      "japan": [
+        "高以上",
+        "確認待ち"
+      ]
+    }
   },
   "excluded": [
     {
@@ -1791,7 +2028,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "GREEN-JAPANESE-AUDIT",
+    "phase": "UI-RECLASSIFICATION",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1834,7 +2071,7 @@
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
     "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
     "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
-    "result": "MagicStudentは日本語UI/翻訳対応確認。SchoolAIは日本語STT確認。Briskは50+言語・母語配信確認、日本語個別確認は実機待ち。",
+    "result": "用途/信号/利用経路/日本適合を分離。ローカルGreenへ💻ローカル型を正規付与。表示カテゴリを5系統へ再分類。",
     "audited_at": "2026-10-04",
     "next": [
       "UIへ管理方式・日本適合・実用確認status表示",
