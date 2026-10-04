@@ -166,3 +166,30 @@ Cross-Category再走査完了:
 State:
 - 岡山県南部: COMPLETE
 - 岡山県北部: TODO
+
+
+### 進捗更新 — 岡山県北部 Cross-Category v1 完了
+
+完了:
+- [x] 津山市
+- [x] 勝央町
+- [x] 奈義町
+- [x] 美咲町
+- [x] 鏡野町
+- [x] 真庭市
+- [x] 新庄村
+- [x] 美作市
+- [x] 西粟倉村
+- [x] 高梁市
+- [x] 新見市
+
+これにより、Cross-Category Capture導入前に調査した岡山県南部・北部の再走査を完了。
+
+State:
+- 岡山県南部: COMPLETE
+- 岡山県北部: COMPLETE
+- CHECKPOINT_CROSS_CATEGORY_RESCAN_2026-10-04: COMPLETE
+
+詳細ログ:
+- `projects/GROWgle/CROSS_CATEGORY/OKAYAMA_SOUTH_RESCAN_V0_1.md`
+- `projects/GROWgle/CROSS_CATEGORY/OKAYAMA_NORTH_RESCAN_V0_1.md`
