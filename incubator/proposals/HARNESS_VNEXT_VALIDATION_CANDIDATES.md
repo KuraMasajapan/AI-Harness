@@ -751,3 +751,92 @@ PROPOSAL / NOT ACTIVE
 - Candidate J Operational VisibilityのHuman-facing output版
 - Human-in-the-loopの負荷削減策
 - Trinity / Validation結果の提示形式としても検証可能
+
+
+---
+
+## Update 2026-10-04 — Event-driven X Push Sensor Candidate
+
+### Candidate: Angelic Angel / Event-driven External Observer
+
+Source:
+- https://github.com/sh1ma/Angelic-Angel
+- Rust / MIT
+- Repository description: browser Web Push emulation for streaming X/Twitter notifications
+
+Observed architecture:
+- emulate a browser Web Push client
+- register a push subscription with Mozilla AutoPush
+- register that endpoint with X/Twitter notification settings
+- receive notifications over WebSocket
+- decrypt Web Push payloads
+- forward decrypted payloads to a configured Webhook
+
+Potential Harness role:
+
+`External Event -> Trigger -> Condition -> Job -> Human / AI-Harness`
+
+This differs from the current Grok observer pattern:
+
+`Temporal signal (18:00) -> Grok searches X -> Airtable -> ChatGPT -> Human`
+
+Angelic Angel suggests an additional event-driven path:
+
+`followed / notification-enabled X account posts -> Web Push -> Angelic Angel -> Webhook -> Harness event`
+
+Important distinction:
+- Grok remains useful for broad discovery across X, including unknown people, ideas, and anomalies.
+- Angelic Angel would be suitable only for a curated watchlist of accounts already followed with X post notifications enabled.
+- Therefore this is not a direct Grok replacement candidate.
+
+Potential value:
+- near-real-time detection instead of scheduled polling
+- natural fit with Event / Trigger / Condition design
+- low-latency observation of high-priority accounts or projects
+- could complement Temporal Layer with a true external Event source
+
+Potential role split:
+- Grok = broad X discovery / unknown-signal search
+- Angelic Angel = curated real-time push sensor
+- Airtable = structured Inbox / Human review boundary
+- ChatGPT = downstream verification
+- Human = final authority
+
+Risks / trade-offs:
+- requires X session credentials (`auth_token` and `ct0`) stored locally
+- uses X internal notification API behavior rather than an official developer streaming API
+- may break if X changes browser notification internals
+- account / security / terms-of-service implications must be reviewed before any live use
+- event volume and duplicate handling require explicit limits
+- Webhook endpoint becomes a new trust boundary
+- Event-driven immediacy may increase noise and Human notification pressure
+
+Validation questions:
+- Does it still work reliably with current X behavior?
+- Can it operate from an isolated local environment with least privilege?
+- What exact data is contained in the push payload?
+- Can Webhook intake be authenticated and rate-limited?
+- Can Event IDs be made idempotent?
+- How should duplicate posts / reconnect replay be handled?
+- What is the real account-security risk of holding `auth_token` / `ct0`?
+- Does the real-time benefit justify the operational and policy risk?
+- Would a simpler official source or periodic Grok run be sufficient?
+
+Suggested action:
+EXPERIMENT / HOLD.
+
+Do not deploy now.
+Keep as a future Event Layer validation candidate.
+
+Architectural significance:
+This is a concrete implementation example for the emerging distinction:
+
+- Temporal Layer = "time arrived, so evaluate"
+- Event Layer = "external world changed, so evaluate"
+
+The combination could eventually support:
+
+`Temporal + Event -> Trigger -> Condition -> Job -> Human Approval -> Harness`
+
+Status:
+PROPOSAL / NOT ACTIVE
