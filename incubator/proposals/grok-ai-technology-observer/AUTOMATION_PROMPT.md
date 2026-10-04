@@ -1,6 +1,6 @@
 # AUTOMATION_PROMPT.md
 
-Status: PILOT / ACTIVE AUTOMATION
+Status: PRODUCTION v1 / ACTIVE AUTOMATION
 Schedule: daily at 18:00 JST
 Mode: Fast
 
