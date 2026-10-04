@@ -140,3 +140,34 @@ Human向け修正版: `free-ai-apis-qa.html`
 また、カード上で「利用経路」と `free_type` を分けて確認できるようにする。
 
 正式ソースへのHTML反映はまだ行わない。Humanが実験版を確認してから採用判断する。
+
+
+## 2026-10-04 正式ページへ反映
+
+Humanが実験版の利用経路6分類を承認したため、実験版 `free-ai-apis-access-routes.html` を正式 `free-ai-apis.html` へ昇格。
+
+反映内容:
+- 公開候補はgreen/yellowのみ
+- redは公開候補・発見ポケット・全体一覧から除外
+- 利用・管理経路を6分類へ統一
+  - 🏠 家庭管理型
+  - 🏫 学校・教師管理型
+  - 🧑‍💻 成人・開発者管理型
+  - 👤 本人＋保護者同意型
+  - 🎓 教育アカウント型
+  - 💻 ローカル型
+- `free_type` を料金条件としてaccess_typeから分離
+- 学年・立場フィルタを維持
+- 「やりたいこと」の複数選択を維持
+- 日本での確認条件を維持
+- カード上で利用経路と無料タイプを別表示
+- 「ローカル」はやりたいことから外し、利用経路側へ整理
+- 「検索・RAG」は表示上「調べる・検索」に平易化
+
+正式HTML commit:
+- `e62c832` — promote reviewed GROWgle AI discovery and filter redesign
+
+データcommit:
+- `cbf1da3` — complete public access route classification
+
+現時点では、正式ページのUI構造・検索軸・公開/非公開ルールをこの版を基準とする。
