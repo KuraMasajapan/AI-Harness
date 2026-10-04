@@ -1562,8 +1562,11 @@
       ],
       "free_type": "Free Forever・教師経由",
       "role": "教育専用・教師管理型",
-      "japan_fit": "要実地確認",
-      "usage_scope": "教師が作成したBoost活動をリンク/QRで児童生徒へ共有。"
+      "japan_fit": "中",
+      "usage_scope": "教師が作成したBoost活動をリンク/QRで児童生徒へ共有。",
+      "access_type": "🏫 学校・教師管理型",
+      "practical_status": "多言語対応確認済み・日本語実機確認待ち",
+      "audit_note": "Boostは活動ごとに言語指定可能で50+言語翻訳・母語配信を公式確認。日本語が個別列挙された公式資料は未確認のため実機確認待ち。"
     },
     {
       "id": "schoolai-spaces",
@@ -1595,8 +1598,11 @@
       ],
       "free_type": "年5 Space launches",
       "role": "教育専用・無料体験型",
-      "japan_fit": "要実地確認",
-      "usage_scope": "教師がSpaceを作成して学生に提供。無料枠は年5回のlaunch。"
+      "japan_fit": "中〜高",
+      "usage_scope": "教師がSpaceを作成して学生に提供。無料枠は年5回のlaunch。",
+      "access_type": "🧪 無料体験型 / 🏫 教師管理",
+      "practical_status": "日本語音声入力対応確認済み・日本利用実機確認待ち",
+      "audit_note": "公式HelpでJapanese (ja) のSpeech-to-Text対応、chat modelはmultilingual。Freeは年5 Space launches。"
     },
     {
       "id": "magicstudent",
@@ -1616,7 +1622,10 @@
       "audited": "2026-10-04",
       "free_type": "Forever Free・制限あり",
       "role": "教育専用・教師管理型",
-      "japan_fit": "要実地確認"
+      "japan_fit": "中〜高",
+      "access_type": "🏫 学校・教師管理型",
+      "practical_status": "日本語対応確認済み・日本からの実機確認待ち",
+      "audit_note": "公式FAQで日本語を含む24 UI言語、98翻訳言語を確認。Freeは教師向け基本機能。Student Rooms等の学生機能はプラン差があるため無料範囲を過大表示しない。"
     },
     {
       "id": "khanmigo",
@@ -1782,7 +1791,7 @@
   },
   "research_progress": {
     "as_of": "2026-10-03",
-    "phase": "JAPAN-GREEN-PRACTICAL-AUDIT",
+    "phase": "GREEN-JAPANESE-AUDIT",
     "audited_categories": [
       "LLM/会話",
       "画像/メディア",
@@ -1825,12 +1834,12 @@
     "coverage_note": "主要カテゴリ（LLM/画像/Vision-OCR/STT/TTS/Code/Search/RAG-Embedding/Vector DB/日本語ローカル）を横断検索し、主要候補の一次監査を完了。今後は新規Provider・料金/規約変更の差分監視を基本とする。",
     "saturation_signal": "追加検索ではTrial・重複model・規約不明小規模serviceの比率が高まり、主要候補の新規発見率が低下。",
     "goal": "ローカルAI以外のグリーンを1つ公式根拠付きで確定する",
-    "result": "Gemini Family Link、Canva Education AI、Adobe Express Education AI、Microsoft Copilot Educationの日本公式経路を確認。Canva/Adobe/Microsoftは日本適合High。Geminiは公式経路確認済みで実機確認待ち。",
+    "result": "MagicStudentは日本語UI/翻訳対応確認。SchoolAIは日本語STT確認。Briskは50+言語・母語配信確認、日本語個別確認は実機待ち。",
     "audited_at": "2026-10-04",
     "next": [
-      "MagicStudent/Brisk/SchoolAIの日本語・日本利用可否",
-      "Green管理方式タグをUI表示",
-      "日本で今すぐ試せる順に並べる"
+      "UIへ管理方式・日本適合・実用確認status表示",
+      "Greenを日本で試しやすい順に整理",
+      "無料範囲の誤認防止ラベル追加"
     ]
   },
   "content_schema": {
