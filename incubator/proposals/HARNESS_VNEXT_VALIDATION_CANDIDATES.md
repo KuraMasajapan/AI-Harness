@@ -477,3 +477,203 @@ AI-Harnessという名称・現在構造を守ることを目的にしない。
 - Focused testまたはTrinity比較を実施
 - Humanが採用 / 保留 / 棄却を判断
 
+
+
+---
+
+## Update 2026-10-04 — Design Principles Extracted from Claude Code Setup Article
+
+この節は、ユーザーが共有した記事本文から、AI-Harnessへ転用価値がある「設計思想」だけを抽出して保存する。
+Claude Code固有の設定値・バージョン依存仕様・コマンド・ファイル配置を、そのままHarness標準として採用するものではない。
+記事内の個別仕様は実装時に公式一次情報で再確認する。
+
+### Principle N: Instruction Budget / Progressive Loading
+
+常時読み込ませる指示を増やし続けない。
+入口となる共通指示は短く保ち、詳細資料は用途と参照先を明示して必要時に読む。
+
+狙い:
+- Context肥大化の抑制
+- 重要Ruleの埋没防止
+- モデル変更時の移植性向上
+- 長時間作業での指示欠落を減らす
+
+考え方:
+- 常時: 目的 / 境界 / 完了条件 / 参照先
+- 必要時: 背景 / 長い手順 / 過去事例 / 詳細資料
+
+既存Candidate D Retrieval Layerと接続して評価する。
+
+### Principle O: Executable Validation Before AI Judgment
+
+機械で判定できる項目を、AIの自己評価だけに任せない。
+
+例:
+- JSON / YAML等の構文
+- 必須ファイルの存在
+- import / 参照先
+- 重複
+- 循環
+- build / test / diff check
+- 設定整合
+
+考え方:
+AI review
+≠
+deterministic check
+
+機械的検査で確認できるものは先に自動判定し、
+意味・妥当性・根拠の質など、機械判定できない部分をAI / Trinityへ渡す。
+
+Candidate C Definition of DoneとCandidate G/Hの安全機構を補強する候補。
+
+### Principle P: Capability-Separated Reviewer
+
+作成役と確認役を役割だけで分けるのではなく、可能なら権限も分ける。
+
+基本形:
+- Builder: 必要なWrite / Execute権限
+- Reviewer: Read中心
+- Human: 最終承認
+
+Reviewerに不要な編集・公開・送信・外部変更権限を持たせない。
+
+狙い:
+- Reviewerが指摘と同時に勝手に修正するのを防ぐ
+- 独立性をPromptだけでなくAccessで補強する
+- Trinity等の独立検証とAccess Separationを接続する
+
+既存Candidate B Rule / Access Separationとの統合候補。
+
+### Principle Q: Failure → Durable Improvement
+
+失敗をその場の注意で終わらせない。
+再発した失敗は、原因に応じて適切な層へ反映する。
+
+反映先の例:
+- Rule不足 → Rule候補
+- 手順不足 → Skill / Workflow候補
+- 機械的見落とし → Check / Validator候補
+- 資料不足 → Retrieval / Reference候補
+- 権限事故 → Access候補
+
+重要:
+失敗を検出したAIが自動でCore Ruleを書き換えるのではない。
+Proposal
+→ Validation
+→ Human判断
+→ Promotion
+の流れを維持する。
+
+これはHarnessを「経験を蓄積する仕組み」にするが、
+自己変更の暴走は防ぐ。
+
+### Principle R: Idempotent Harness Configuration
+
+Harness自身のセットアップ・設定更新にも冪等性を要求する。
+
+同じセットアップや修正指示を複数回実行しても、
+- Ruleが重複しない
+- Hookが重複しない
+- Folderが増殖しない
+- 同じ設定項目が二重登録されない
+- 既存の意味を壊さない
+
+ことを目標にする。
+
+Candidate G Idempotencyを外部Actionだけでなく、
+Harness configuration / migrationへ拡張する。
+
+### Principle S: Reversible Changes / Local Rollback
+
+AIが設定を変更する場合、今回の差分だけを復元可能にする。
+
+狙い:
+- 大きな破壊的Rollbackを避ける
+- 未コミット変更を巻き込まない
+- Humanが変更単位を理解できる
+- Pilot / Experimentを安全に戻せる
+
+禁止方向:
+- reset --hardのような広域破壊
+- 無関係な既存設定の上書き
+- 原本の勝手な移動
+
+Experiment系Candidateの共通安全要件として扱う。
+
+### Principle T: Model-Neutral Core + Model-Specific Adapter
+
+共通の設計思想と、特定AI製品の機能を分離する。
+
+共通Coreの候補:
+- Rule
+- Access
+- DoD
+- State
+- Evidence
+- Memory / Retrieval
+- Validation
+- Handoff
+
+製品固有Adapterの候補:
+- Claude CodeのRules / Skills / Hooks / Subagents
+- Codex固有設定
+- ChatGPT / Work固有機能
+- Local AI固有設定
+
+原則:
+HarnessをClaude Code化しない。
+Claude CodeをHarnessに接続する。
+
+同様に、他モデルでもCoreを変えずAdapterだけ差し替えられる構造を目指す。
+
+Candidate E Externalized Memory / Model-Swappable Architectureと強く関連する。
+
+### Principle U: Separate Content Quality from Configuration Integrity
+
+「設定が壊れていないこと」と「成果物の内容が良いこと」を同じ検査にしない。
+
+例:
+- Configuration integrity:
+  構文、参照、重複、Hook登録、ファイル存在
+- Content quality:
+  根拠、正確性、完成条件、可読性、依頼適合
+
+前者は軽量な自動検査、
+後者はAI review / Trinity / Human reviewへ分離する。
+
+これによりStop Hook等の機械チェックが、
+成果物品質の誤った代理指標になるのを防ぐ。
+
+### Principle V: Minimal Change / Preserve Existing Structure
+
+AIによる環境整備では、「理想構成へ全面移行」より既存構成を尊重する。
+
+原則:
+- 同等構成が既にあれば再利用
+- 原本を勝手に移動しない
+- 未知の設定キーを削除しない
+- 既存Hookや配列を丸ごと置換しない
+- 小さな変更に大規模再編を持ち込まない
+
+Harness導入コストと既存運用破壊を減らすための共通原則として候補化する。
+
+## Article-derived Design Decision
+
+この記事から採用候補とするのは、Claude Code固有の「神設定」そのものではない。
+
+保存する中核思想は以下:
+1. 短い入口 + 必要時Retrieval
+2. 機械判定可能な項目はExecutable Validationへ
+3. Reviewerは役割だけでなくAccessも分離
+4. 失敗を再利用可能な改善候補へ変換
+5. Harness自身の設定変更も冪等・可逆にする
+6. Model-neutral CoreとModel-specific Adapterを分ける
+7. Configuration integrityとContent qualityを別検査にする
+8. 既存構成を尊重し最小変更で統合する
+
+Status:
+PROPOSAL / NOT ACTIVE
+
+これらは既存Candidate B / C / D / E / G / Hと重なる部分が多いため、
+新しいCoreを増やす前に統合可能性を確認する。
