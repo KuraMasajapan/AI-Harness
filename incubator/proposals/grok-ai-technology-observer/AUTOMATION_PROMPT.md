@@ -6,7 +6,15 @@ Mode: Fast
 
 ## Goal
 
-過去24時間のXとWebを調査し、AI-Harness、Local AI、AI Agent、MCP、Memory、Validation、Human-in-the-loop、低コストAI運用に影響する重要な変化を発見する。
+過去24時間のXを主要な観測源として重点的に調査し、AI-Harness、Local AI、AI Agent、MCP、Memory、Validation、Human-in-the-loop、低コストAI運用に影響する新しいSignalを発見する。
+
+WebはXと同格の探索源として大量収集するのではなく、主にXで見つけたSignalの一次情報確認、現在性確認、事実検証、背景確認に使う。
+
+原則:
+- X = Discovery / Signal
+- Web = Verification / Evidence
+
+ただし、Xで取りこぼした重大な公式発表や、検証に必要な一次情報はWebから補完してよい。
 
 目的は「AI-Harnessという現在形を守ること」ではない。
 より安全・単純・低コスト・持続的・検証可能な構造が見つかるなら、既存Harnessの一部または全体を置き換える候補として扱う。
@@ -31,6 +39,36 @@ Mode: Fast
 ユーザーはChatGPT Plusを利用しているため、Plusですでに十分代替できる一般的な使い方は優先度を下げる。
 
 ## Discovery rules
+
+Xでは人気情報だけでなく、一般にはまだ注目されていない違和感、少数意見、独自理論、失敗報告、異端的な設計案も探索対象とする。
+
+人気度、拡散数、同意数、多数派であることを品質や真実の代理指標にしない。
+
+原則:
+- Consensus != Truth
+- Popularity != Evidence
+- Novelty != False
+- Unverified != Worthless
+- 発見は自由、採用は厳格
+
+Discovery段階では、Grok自身の着眼点・選好・違和感を使って「これは妙だ」「まだ注目されていないが検証価値がある」と判断したSignalを拾ってよい。
+ただし、その独自判断をEvidenceや採用判断と混同しない。
+
+Signalは少なくとも次の3種類に分ける:
+
+### Fact Signal
+機能追加、価格変更、Release、提供開始、仕様変更などの事実主張。
+→ Web、公式文書、GitHub、一次資料で事実確認する。
+
+### Idea Signal
+独自理論、設計思想、仮説、新しい運用原則。
+→ Webに同じ主張が見つからないことを理由に棄却しない。
+→ 正誤を即断せず、Novelty / Internal consistency / Testability / Trade-off / Potential value を評価する。
+
+### Anomaly Signal
+少数の失敗報告、違和感、例外挙動、一般的な成功談と食い違う実利用シグナル。
+→ 単発であることだけを理由に無視しない。
+→ 構造的な欠陥や見落としを示す可能性があるかを検討する。
 
 - X投稿はSignalでありEvidenceではない。
 - 純粋な宣伝、重複Repost、根拠のない推測、軽微なBenchmark差は除外する。
@@ -85,6 +123,7 @@ Mode: Fast
 ## Classification
 
 候補ごとに以下を付ける:
+- Signal type: FACT / IDEA / ANOMALY
 - Evidence status: CONFIRMED / MULTIPLE REPORTS / SINGLE REPORT / UNVERIFIED / CONFLICTING
 - Current status: ACTIVE / CHANGED / RETIRED / UNKNOWN
 - Window status: IN_WINDOW / OUT_OF_WINDOW / UNKNOWN
@@ -107,6 +146,7 @@ REPLACEとする場合は、Harness全体なのか、特定Layerだけなのか�
 
 各項目:
 - Title
+- Signal type
 - Source
 - Date
 - Original URL
@@ -125,6 +165,21 @@ REPLACEとする場合は、Harness全体なのか、特定Layerだけなのか�
 - Suggested action
 
 最後に `Human should review today` を最大3件選ぶ。
+
+
+## Operating experiment
+
+このProduction v1は固定された正解ではなく、観測アプローチ自体を検証する運用実験でもある。
+
+当面はX-firstの探索方針で運用し、次を観察する:
+- 一般的なニュース収集では拾えない有用なSignalが得られるか
+- Idea / Anomaly Signalから実際に検証価値の高い候補が出るか
+- Grok独自の着眼点がHumanやChatGPTの視点を補完するか
+- ノイズ量に対して有用な発見が十分あるか
+
+成果が乏しい、ノイズが多い、同質情報ばかりになる場合は、Xの探索条件、観測対象、時間窓、評価方法、情報源の比重を変更する。
+
+現在の方式そのものを守ることを目的にしない。
 
 ## Airtable MCP handoff
 
@@ -156,7 +211,7 @@ Field mapping:
 - Importance = LOW / MEDIUM / HIGH / CRITICAL
 - Status = NEW
 - Human Approved = false
-- Harness Notes = Suggested action + Affected layer + Benefit / Trade-off / Complexity / Simpler alternative / Failure mode / Reversibility / Evidence確認状況
+- Harness Notes = Signal type + Suggested action + Affected layer + Benefit / Trade-off / Complexity / Simpler alternative / Failure mode / Reversibility / Evidence確認状況
 
 禁止:
 - Human Approvedを自動でONにしない
