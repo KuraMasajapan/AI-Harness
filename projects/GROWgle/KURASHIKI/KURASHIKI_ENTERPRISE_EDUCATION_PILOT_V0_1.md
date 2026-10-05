@@ -4683,3 +4683,174 @@ High-yield:
 - 医療3大SOURCE（倉敷中央 / 川崎 / 成人病センター）を比較整理
 - 水島・玉島の常設GROUP_BOOKING工場見学をcurrent statusで再検証
 - 繊博2026参加20社の完全回収は継続
+
+
+## 77. Current 2026 medical / seasonal access batch — 2026-10-05
+
+### 倉敷成人病センター — VERY_HIGH_VALUE / OPEN_PUBLIC / RECURRING
+2026公式で、子ども・高校生向けの公開体験プログラムを複数確認。
+
+#### みんなde性教育セミナー
+2026-08-23:
+- 小学5年生〜高校生＋保護者
+- 無料
+- 先着25名
+- 助産師・看護師・保育士による講座
+- 体験コーナー
+- お産エリア、新生児室見学
+- 小中学生は保護者同伴必須
+
+#### 公開体験セミナー第7弾「教えて！病院のお仕事！」
+2026-09-13:
+- 高校生対象
+- 保護者同伴可
+- 無料
+- 先着70名
+- 医療職の仕事内容を体験型で学ぶ
+- 病院スタッフとの交流
+- タイトル上「第7弾」で継続性を確認
+
+#### 手術体験イベント
+- 2024に「ブラック・ジャックセミナー」開催実績
+- 医療職・手術体験SOURCEとしての過年度継続性あり
+
+Classification:
+OPEN_PUBLIC / RECURRING
+ELEMENTARY_HIGH / JUNIOR_HIGH / HIGH_SCHOOL / FAMILY
+MEDICAL / HEALTH / CAREER / LIFE_EDUCATION
+hands_on: VERY_HIGH
+Region: 倉敷中心部
+
+Evidence:
+https://www.fkmc.or.jp/data/2994/news_dtl/
+https://www.fkmc.or.jp/data/3021/news_dtl/
+https://www.fkmc.or.jp/list/event_news/
+
+GROWgle note:
+倉敷中央病院・川崎学園に加え、倉敷成人病センターも一般家庭が直接アクセスできる医療体験SOURCE。
+医療分野は倉敷Pilotの主要柱として確定的。
+
+### JFEスチール 西日本製鉄所 倉敷地区 — seasonal recurrence strengthened
+市公式広報から季節別一般向け工場見学を確認。
+
+2025冬:
+- 12/22・23
+- 午前・午後
+- 小学生以上
+- 小学生は保護者同伴
+- 各回70名
+- 無料
+
+2026春:
+- 3/30・31
+- 午前・午後
+- 小学生以上
+- 各回70名
+- 無料
+
+既確認:
+- 夏休み工場見学
+- JFE西日本フェスタ
+
+Classification:
+OPEN_PUBLIC / RECURRING_SEASONAL
+ELEMENTARY+ / FAMILY
+WORKS / STEEL / LOCAL_INDUSTRY
+hands_on: OBSERVATION_HIGH
+Region: 水島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1013066/1021516/1021519.html
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1022190/1023619/1023622.html
+
+GROWgle note:
+JFEは単発フェスタではなく、春・夏・冬の一般公開見学＋フェスタ＋学校見学という多層アクセスSOURCE。
+
+## 78. 繊博2026 — current program confirmation strengthened
+
+倉敷市公式ページで2026年度内容を再確認。
+
+### Online textile-region tour
+- 2026-10-01〜11-30
+- 高校生〜専門・大学生を主対象
+- 産地企業の技術力・ものづくり・働く魅力を紹介
+
+### Real textile-region tour
+- 2026-11-04 / 11-10 / 11-18
+- 普段は見られない企業内部を巡る
+- 体験型ツアー
+- 申込締切 2026-10-21
+- 定員到達で終了
+
+### Governance
+実行委員会:
+- 倉敷市
+- 井原市
+- 岡山県
+- 倉敷市立短期大学
+- 岡山県アパレル工業組合
+- 倉敷ファッションセンター
+
+公式サイト:
+- 2026 LOCAL CREATORS BOOKで産地代表20社を掲載
+- 社長〜若手社員のリアルな声を掲載
+
+Classification:
+CURRENT_2026 / INDUSTRY_GATEWAY
+HIGH_SCHOOL / VOCATIONAL / UNIVERSITY / GENERAL_CANDIDATE
+TEXTILE / CAREER / WORKS / LOCAL_INDUSTRY
+COLLABORATION: MUNICIPALITY_X_UNIVERSITY_X_INDUSTRY_ASSOCIATION
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/industry/1012608/1012614/1012615/1010540.html
+https://k-ff.jp/
+
+GROWgle note:
+2026年度の「学生→企業内部→現場で働く人」接続が公式に明確。
+企業単体の工場見学を探すより、産地Gatewayを先に押さえる戦略が正しいことを再確認。
+
+## 79. Screening acceleration — practical operating rule
+
+今後の企業母集団スクリーニングは以下の順で高速化する。
+
+Step 1: Gateway extraction
+- 企業学び楽舎
+- Challenge Work
+- 繊博
+- こじまファクトリー
+- 商工会議所
+- 市民講座
+- 大学PBL
+- 工業団地
+- 港湾 / コンビナート
+
+Step 2: Quick triage
+- A1 = OPEN_PUBLIC current
+- A2 = SCHOOL / GROUP current
+- A3 = STUDENT / PBL current
+- B = past activity + repeat likely
+- C = industry-only candidate / education unverified
+
+Step 3: Deepen only A first
+- 年齢
+- 内容
+- hands-on
+- activity location
+- recurrence
+- collaborators
+- primary evidence
+
+Step 4: B batch verification
+Step 5: C postponed
+
+目的:
+今の粒度を維持しつつ、母集団100+組織を停滞なく走査する。
+
+## 80. Next route — speed priority
+
+1. 繊博2026 20社を可能な範囲で個社回収
+2. こじまファクトリー39社との重複差分作成
+3. Challenge Work高体験候補をA/B/C振分
+4. 医療OPEN_PUBLIC SOURCEの2024〜2026継続性確認
+5. 2026秋〜冬の一般公開企業イベントを横断
+6. 倉敷市民講座から企業工場見学を逆抽出
