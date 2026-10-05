@@ -985,3 +985,220 @@ Unfinished / deeper verification:
 - JFE物流
 - 医療 / 福祉64社群の独自Open Hospital・職場体験
 - 保育園群の地域向け活動
+
+
+## 20. Enterprise reverse-search batch 3 — 2026-10-05
+
+### M.S.E. — VERY_HIGH_VALUE / OPEN + SCHOOL + PBL
+2026年の公式・準公式情報で、企業学び楽舎外の活動を複数確認。
+
+- 高梁川流域未来人材育成事業の連携可能企業
+  - 技術指導
+  - 会社・工場見学
+- 地元小学校でワークショップ
+- 高校生の工場見学を積極受入
+- 製造過程で出る廃電線を使う「デンセンストラップ」
+- 2026年「本物の電線に触れよう。デンセンストラップ ワークショップ」
+- 倉敷観光コンベンションビューローでも工場見学＋ストラップ製作体験を紹介
+  - 制御盤の役割
+  - ものづくり現場
+  - 実際の電線に触れる制作体験
+
+Classification:
+OPEN_OR_GROUP_BOOKING / SCHOOL_ONLY / HIGH_SCHOOL / PBL
+ELEMENTARY / HIGH_SCHOOL
+STEAM / WORKS / UPCYCLING / LOCAL_INDUSTRY
+hands_on: HIGH
+Region: 玉島
+
+Evidence:
+https://mse1026.co.jp/2026/06/24/2326/
+https://mse1026.co.jp/company/
+https://kankou-kurashiki.jp/2026/05/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%80%80m-s-e/
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+
+GROWgle note:
+従業員10人規模の町工場でも、工場見学・小学校WS・高校見学・アップサイクル教材まで持つ。企業規模で探索優先度を下げるべきでない代表例。
+
+### 下津井電鉄 — COMPANY_X_HIGH_SCHOOL_X_UNIVERSITY / PRODUCT_DEVELOPMENT
+倉敷市の2026未来人材育成事業で連携可能企業。
+- 商品開発
+- 会社・工場見学
+
+実例:
+- 倉敷鷲羽高校ビジネス研究部
+- 環太平洋大学 現代経営学科
+- 下津井電鉄
+が共同し、鴻ノ池SAの新メニュー「児島塩3Cサンデー」を開発。
+高校生・大学生が地域観光資源を使った商品企画、試作、協議、販売PRを経験。
+
+Classification:
+COMPANY_X_HIGH_SCHOOL_X_UNIVERSITY
+HIGH_SCHOOL / UNIVERSITY
+ENTRE / LOCAL_INDUSTRY / TOURISM / FOOD
+hands_on: HIGH
+Region connection: 児島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+https://www.u-presscenter.jp/article/6059
+https://digitalpr.jp/r/118667
+
+GROWgle note:
+「企業×学生」だけでなく、高校＋大学＋企業による世代混合PBLの好例。
+
+### 廣珍 — HIGH_VALUE / WORK_EXPERIENCE + PBL
+2026未来人材育成事業で連携可能企業:
+- 商品開発
+- 技術指導
+- 会社・工場見学
+
+地域実績:
+- 中学生の職場体験を受入
+- 特別支援学校の現場実習を受入
+- 実際の店舗業務と同じ達成リストを使い、接客等を段階的に体験
+- 地元玉島の食材を積極利用
+
+Classification:
+SCHOOL_ONLY / PBL
+JUNIOR_HIGH / SPECIAL_NEEDS_STUDENT / HIGH_SCHOOL_CANDIDATE
+WORKS / ENTRE / FOOD / COMMUNITY
+hands_on: HIGH
+Region: 玉島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+https://kouchin.jp/
+https://article.yahoo.co.jp/detail/0aafc3ebfe8015d2ea4fb4fbcdf3e868819e4bf8
+
+### 中央設備 — PBL / COMPANY_VISIT
+2026未来人材育成事業の連携可能企業として会社・工場見学を提供可能。
+企業学び楽舎では大同設備工業と共同し、中学生へ:
+- 水道・ガス配管
+- 空調設備
+- 生活インフラの仕事
+- 現場作業服・ハーネス試着
+を提供。
+
+Classification:
+SCHOOL_ONLY / HIGH_SCHOOL_PBL_AVAILABLE
+JUNIOR_HIGH / HIGH_SCHOOL
+WORKS / INFRASTRUCTURE
+hands_on: MEDIUM-HIGH
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+https://kuratoco.com/kigyomanabigakusya/
+
+### 大同設備工業 — RECURRING_CANDIDATE
+中央設備との企業学び楽舎共同講座で、中学生に配管・空調等の生活インフラと実物安全装備を体験させる。
+2026年時点で倉敷創業60周年の地域密着設備会社。
+
+Classification:
+SCHOOL_ONLY
+JUNIOR_HIGH
+WORKS / INFRASTRUCTURE
+hands_on: MEDIUM-HIGH
+
+Evidence:
+https://kuratoco.com/kigyomanabigakusya/
+https://daido-s.jp/
+
+### 日本非破壊検査 水島 — RECURRING / HIGH_STEAM
+企業公式ブログで2023企業学び楽舎参加を確認。
+新田中2年向けに:
+- 渦電流探傷試験
+- 赤外線サーモグラフィー試験
+- ドローン
+を体験。
+
+さらに2025年、水島中で水島鋼板工業と企業学び楽舎を実施。
+安全防護具等を用いた体験も確認。
+
+Classification:
+SCHOOL_ONLY / RECURRING_CONFIRMED
+JUNIOR_HIGH
+STEAM / WORKS / SAFETY / INSPECTION_TECH
+hands_on: VERY_HIGH
+Region: 水島
+
+Evidence:
+https://www.jndi.com/blog/
+https://www.kurashiki-oky.ed.jp/mizushima-j/2025-1manabi.html
+
+GROWgle note:
+非破壊検査は、物理・センサー・熱画像・ドローンを仕事として統合して見せられる高密度STEAM案件。
+
+### 松井織物 — SCHOOL_SOURCE / TEXTILE
+水島中で2024年度の企業学び楽舎参加を確認。
+- 仕事の内容
+- 働く意義
+- コミュニケーション
+- 体験学習
+また郷内中でも企業学び楽舎としてテオリ・水島鋼板工業と並び実体験型講座を実施。
+
+Classification:
+SCHOOL_ONLY / RECURRING_CANDIDATE
+JUNIOR_HIGH
+LOCAL_INDUSTRY / TEXTILE
+Region: 児島
+Status:
+一般向けワークショップ／工場見学の恒常提供は今回未確定。追加確認。
+
+Evidence:
+https://www.herikoubou.co.jp/
+https://www.kurashiki-oky.ed.jp/mizushima-j/2024manabi.html
+
+### シンニチロ — PBL / FACTORY_VISIT
+2026高梁川流域未来人材育成事業で会社・工場見学の連携可能企業。
+水島事業所、南畝工場、松江工場を持ち、JFE製鉄関連、製造請負、機械整備等を行う。
+
+Classification:
+HIGH_SCHOOL_PBL_AVAILABLE
+WORKS / LOCAL_INDUSTRY
+Region: 水島
+Status:
+小中学生向け独自プログラムは未確認。企業学び楽舎との接続を継続調査。
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+https://shinnichiro.co.jp/company/
+
+### 三菱ケミカル 岡山事業所 — SCHOOL_VISIT / CHEMISTRY
+岡山県公式「おかやま子育て応援宣言企業」ページで:
+- 子どもたちに化学の楽しさを知ってもらうため
+- 事業所見学
+- 体験教育学習への参加
+を実施方針として明記。
+
+岡山事業所は倉敷市潮通の水島コンビナート拠点。
+
+Classification:
+SCHOOL_OR_GROUP_VISIT
+STEAM / CHEMISTRY / LOCAL_INDUSTRY
+Region: 水島
+Status:
+2026直近の具体開催日・対象校・一般公募性は追加確認。
+
+Evidence:
+https://www.pref.okayama.jp/page/detail-92324.html
+https://www.mcgc.com/group/outline/mcc/location/plant.html
+
+## 21. Batch 3 structural findings
+
+1. 町工場を軽視すると重要案件を落とす。
+   M.S.E.は従業員10名規模でも、工場見学・学校WS・高校見学・アップサイクル制作を持つ。
+
+2. PBLを独立検索すると「イベント検索」では出にくい企業が見つかる。
+   2026未来人材育成事業だけで、シンニチロ、廣珍、中央設備、下津井電鉄、M.S.E.等が連携可能企業として表出。
+
+3. 下津井電鉄の事例は、高校・大学・企業が同一商品を共同開発するため、GROWTH_PATHではなく CROSS_AGE_PBL として扱う価値がある。
+
+4. 日本非破壊検査の講座は、渦電流・赤外線・ドローンを含み、製造業系の中でもSTEAM密度が非常に高い。
+
+5. 食品・飲食企業も「調理体験」だけではなく、接客・店舗運営・商品開発・地域食材を通じたキャリア教育SOURCEになり得る。
+
+## 22. Search-status note
+
+今回までで、企業学び楽舎64社のうち製造・建設・金融・交通・デジタル・食品系の重要SOURCEはかなり輪郭が出てきた。
+次段階では未深掘りの医療・福祉系をまとめて逆引きし、Open Hospital、職場体験、地域講座、学校出前の独自活動を確認する。
