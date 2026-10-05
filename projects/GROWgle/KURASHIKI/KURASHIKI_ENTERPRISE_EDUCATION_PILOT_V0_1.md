@@ -5227,3 +5227,285 @@ B historical/current-check master:
 - 医療OPEN_PUBLIC群のイベント内容を比較
 - ENGI秋公開ページ更新を追跡
 - 繊博2026 20社回収を継続
+
+
+## 88. Speed-up batch — Kojima work-experience / SDGs gateway / emerging mobility — 2026-10-05
+
+### 児島しごと博 — MAJOR CURRENT CAREER GATEWAY
+2026-10-24に第7回開催予定。
+2021年開始の地域企業×高校生キャリア教育イベント。
+
+Purpose:
+- 児島地域の高校生が地元企業を知る
+- 地元企業・業種・職種の理解
+- 地元就職の接続強化
+
+Format:
+- 倉敷鷲羽高校・倉敷翔南高校を中心
+- 企業説明だけでなく模擬就業体験・ワークショップ型
+- 生徒が複数企業を回る
+- 2025から保護者参加も可
+
+Scale history:
+- 2021: 11社 / 高校生56名
+- 2022: 11社 / 48名
+- 2023: 23社 / 45名
+- 2024春: 16社 / 140名
+- 2024秋: 18社 / 143名
+- 2025: 第6回
+- 2026: 第7回予定
+
+運営:
+- 児島しごと博実行委員会
+- 事務局: 株式会社児島技研
+- 後援: 児島商工会議所
+
+Classification:
+CURRENT_2026 / REGIONAL_CAREER_GATEWAY
+HIGH_SCHOOL / FAMILY_COMPANION
+COMPANY_X_SCHOOL_X_CHAMBER
+WORKS / CAREER / LOCAL_INDUSTRY
+hands_on: VERY_HIGH
+Region: 児島
+
+Evidence:
+https://kojima-shigotohaku.net/
+https://www.pref.okayama.jp/site/255/1002634.html
+https://www.pref.okayama.jp/uploaded/life/1002634_9664865_misc.pdf
+https://kojima-shigotohaku.net/wp-content/uploads/2024/01/%E5%85%90%E5%B3%B6%E3%81%97%E3%81%94%E3%81%A8%E5%8D%9A2023%E9%96%8B%E5%82%AC%E6%A1%88%E5%86%85.pdf
+
+GROWgle note:
+企業学び楽舎 / Challenge Work / くらたん / 繊博とは別の独立した児島企業教育Gateway。
+高校生向け「模擬就業体験」を必須に近い形で要求している点が特に強い。
+
+### 児島しごと博 — historical company master
+2023 participant companies:
+- 明石スクールユニフォームカンパニー
+- 綾野工務店
+- 浦上染料店
+- 王慈福祉会
+- 片山住建
+- 児島技研
+- 琴浦製作所
+- しおかぜ
+- ジャスト
+- 角南被服
+- 瀬戸内ビルサービス
+- 高谷建設
+- 中国銀行
+- 中桐紙器
+- 西鉄
+- BEKKAN
+- 藤森運輸
+- 藤原組
+- 松下鉄工所
+- 水島信用金庫
+- 森川造園
+- 山口技商
+- リアライズ
+
+2024 participant list:
+- 明石スクールユニフォームカンパニー
+- 綾野工務店
+- 児島技研
+- 琴浦製作所
+- しおかぜ
+- ジャスト
+- 角南被服
+- 瀬戸内ビルサービス
+- 高谷建設
+- 中国銀行
+- 西鉄
+- BEKKAN
+- 松下鉄工所
+- 水島信用金庫
+- 山口技商
+- リアライズ
+
+Classification:
+HISTORICAL_GATEWAY_MASTER
+Status:
+複数年登場企業は RECURRING_CANDIDATE として優先昇格対象。
+
+Evidence:
+https://kojima-shigotohaku.net/category/kigyo/
+https://kojima-shigotohaku.net/wp-content/uploads/2024/04/%E9%96%8B%E5%82%AC%E6%A1%88%E5%86%852024.pdf
+
+### 児島技研 — VERY_HIGH_VALUE / RECURRING / ORGANIZER
+企業自身が児島しごと博の企画・運営中核。
+
+Educational activity:
+- 高校生向け体験ブース
+- 管内カメラ操作
+- 測量機器等
+- クイズ形式の機器体験
+- 地元高校生と企業をつなぐイベントそのものを企画
+- 大学生インターンにイベント企画を任せた実績
+
+2021大学インターン:
+- 1か月
+- 北海道大学生＋岡山の大学生
+- 「児島地域の高校生と企業をつなぐイベント」をゼロから企画
+- 企業・学校訪問
+- 児島しごと博2021へ実装
+
+Classification:
+HIGH_SCHOOL + UNIVERSITY
+RECURRING / ORGANIZER_SOURCE
+INFRASTRUCTURE / SURVEYING / CIVIL_ENGINEERING / ENTRE
+hands_on: VERY_HIGH
+
+Evidence:
+https://kgiken.co.jp/%E6%8E%A1%E7%94%A8%E6%83%85%E5%A0%B1/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%83%E3%83%97/
+https://www.toda-mirai.or.jp/assets/recipient/leaflet_2025.pdf
+
+GROWgle note:
+単なる参加企業ではなく「地域企業教育ネットワークを自ら生み出す企業」。
+SOURCE priority: TOP_TIER。
+
+### 綾野工務店 — hands-on construction education strengthened
+External corporate SDGs declaration via Chugoku Bank:
+- 木工タイル教室
+- 地元学生の職場体験受入
+- 児島しごと博参加
+を明記。
+
+Classification:
+SCHOOL / HIGH_SCHOOL / COMMUNITY
+CONSTRUCTION / CREATIVE / WORKS
+RECURRING_CANDIDATE
+hands_on: HIGH
+Region: 児島
+
+Evidence:
+https://www.chugin.co.jp/assets/media/2025/03/250306_2.pdf
+
+### 高梁川流域SDGsアクションクエスト2026 — MAJOR OPEN_PUBLIC GATEWAY
+2026-09-12〜13、イオンモール倉敷。
+- 高梁川流域SDGsパートナー企業・団体
+- 「暮らし」「仕事」「自然」3エリア
+- 展示 / 販売 / ワークショップ
+- 小学生以下対象「冒険ミッション」ラリー
+- 家族来場前提
+- 高校生ボランティア各日25名
+- 高校生はワークショップ補助・企業との交流を通じ、地域企業・キャリア・デザインを学ぶ
+
+2026 participating organizations confirmed on current city page include:
+- POLA倉敷新田店
+- 倉敷グリーンファーム
+- スマイルファクトリー
+- 倉敷ビッグアメリカンショップ
+- 川上建設
+- 人形の喜峯
+- 大原芸術財団
+- 水島地域環境再生財団
+- 明治
+- 中央建設
+- 三井住友海上火災保険
+ほか
+
+2025 edition:
+- 計30企業・団体
+- アイムス
+- 坂本織物
+- キャンドルフェアリー
+- 家具のひらやま
+- 丸米醤油
+等も出展
+
+Classification:
+OPEN_PUBLIC / RECURRING
+ELEMENTARY / FAMILY / HIGH_SCHOOL_VOLUNTEER
+COMPANY_X_MUNICIPALITY_X_COMMUNITY
+SDGS / WORKS / COMMUNITY / CREATIVE / NATURE
+hands_on: HIGH_NETWORK
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/plan/1002086/1002090.html
+
+GROWgle note:
+「子どもはワークショップ参加」「高校生はイベント運営・企業交流」という年齢別アクセスが同一Gateway内にある。
+
+### 次世代モビリティ / 空飛ぶクルマ — FUTURE STRATEGIC GATEWAY
+倉敷市 2026地域おこし協力隊募集内容から、市が明示的に以下を計画:
+- 高梁川流域の次世代モビリティ関連地域企業
+- 大学生・高校生向け説明会
+- 体験ツアー
+- インターンシップ
+- 児童・生徒向け講演会 / ワークショップ
+- 高梁川流域版「空の移動革命」官民協議会
+- 住民向け啓発イベント
+
+Classification:
+FUTURE_STRATEGIC_GATEWAY / WATCH
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+STEAM / MOBILITY / DRONE / ENTRE / REGIONAL_INNOVATION
+Region: 高梁川流域 / 倉敷ハブ
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/industry/1012566/1005543/1024573.html
+
+GROWgle note:
+まだ個別ACTIVITY確定前だが、市が「子ども→高校生→大学生→企業」を接続する新産業教育エコシステムを政策として明示。
+EMERGING_LOCAL_INDUSTRYの最重要WATCH候補。
+
+### ナイスコーポレーション — 2026 OPEN-FACTORY DIRECTION / WATCH
+2026-01:
+- 児島の旧幼稚園をリノベーションし工場移転
+- 2026-02-02 工場併設直営店オープン
+- ものづくり現場に近い場所でデニムを体感できる拠点を志向
+
+企業代表インタビュー:
+- 今後、工場見学ツアー
+- 地元学校との連携
+を進めたい方針を明言
+
+Classification:
+CURRENT_FACTORY_SHOP + FUTURE_EDUCATION_WATCH
+GENERAL_PUBLIC / SCHOOL_FUTURE
+TEXTILE / WORKS / COMMUNITY
+Region: 児島
+
+Evidence:
+https://www.nicecorporation.jp/news/842/
+https://www.nicecorporation.jp/company/
+https://shachomeikan.jp/industry_article/5899
+
+GROWgle note:
+現時点で学校向け定例ツアーをACTIVE扱いしないが、2026新拠点は要追跡。
+
+## 89. New Gateway hierarchy
+
+Priority tier now:
+
+TIER S — 大規模・継続・教育体験性が高い
+- 企業学び楽舎
+- Challenge Work 14
+- 児島しごと博
+- 繊博
+- 医療OPEN_PUBLIC群
+
+TIER A — 地域産業・一般公開の高密度Gateway
+- JAPAN DENIM DAYS
+- SDGsアクションクエスト
+- 商工会議所イベント
+- 市民講座企業見学
+- Future Talent PBL
+
+TIER B — future / strategic
+- ENGIデジタルコンテンツ
+- 次世代モビリティ
+- 新設オープンファクトリー候補
+
+Speed rule:
+S/A Gatewayの企業名を先に一括抽出し、重複排除後に個社current確認。
+Bは活動開始時点で昇格。
+
+## 90. Next fast-pass
+
+- 児島しごと博2025参加企業一覧を全件回収
+- 2026第7回参加企業公開を追跡
+- SDGsアクションクエスト2026出展企業を全件回収
+- 2026繊博20社の一覧回収
+- 児島しごと博×こじまファクトリー×繊博の企業重複を整理
+- 非繊維企業（建設、物流、福祉、金融）の高体験SOURCEを優先昇格
