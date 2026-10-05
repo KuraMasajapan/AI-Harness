@@ -984,3 +984,259 @@ Validation questions:
 
 Status:
 PROPOSAL / NOT ACTIVE
+
+
+---
+
+## Update 2026-10-05 — Durable Agent Recovery / State Survival Candidates
+
+This section records the architectural lesson extracted from a 10-project durable-agent OSS roundup.
+The projects are comparison targets, not approved dependencies.
+Before adoption, current licensing, maintenance status, security posture, and official documentation must be rechecked.
+
+### Core lesson: Design for recovery, not perfect execution
+
+The useful principle is not "prevent every failure."
+Long-running AI work should assume that tool calls, workers, browsers, networks, APIs, and models can fail.
+
+Target recovery loop:
+
+`Task -> Execute -> Failure -> Inspect -> Restore State -> Idempotency Check -> Retry / Compensate / Escalate Human -> Validate -> Continue`
+
+Important:
+- durable execution, persistent memory, failure isolation, and observability are different layers
+- do not solve all four by adding one large framework
+- completed work should not be repeated after restart
+- external side effects must be checked for idempotency before retry
+- Human escalation remains available when automatic retry is unsafe
+
+This directly connects to existing Candidates C, E, G, H, I and J.
+
+### Category A: Durable Execution / Workflow Recovery
+
+#### Temporal
+Source:
+- https://github.com/temporalio/temporal
+
+Role:
+- durable workflow execution
+- reconstruct workflow state from persisted execution history after process / worker failure
+- strong reference architecture for long-running execution
+
+Harness position:
+REFERENCE / EXPERIMENT.
+
+Use primarily as a benchmark for what "durable execution" should guarantee.
+Likely heavier than needed for the current personal Harness unless runtime complexity grows substantially.
+
+#### Inngest
+Source:
+- https://github.com/inngest/inngest
+
+Role:
+- step-oriented durable execution
+- event / schedule / API triggers
+- retries, waits, and long-running workflows
+- useful conceptual fit for Human approval waits and resumable agent steps
+
+Harness position:
+HIGH-PRIORITY EXPERIMENT candidate.
+
+Why important:
+Its execution model maps closely to the emerging Harness flow:
+
+`Event / Temporal -> Trigger -> Job -> Step -> Wait Human -> Resume -> Validate`
+
+Also relevant to Candidate G because retries around external side effects require idempotency protection.
+
+Caution:
+Server / CLI licensing should be reviewed separately from SDK licensing before any self-hosted adoption.
+
+#### Hatchet
+Source:
+- https://github.com/hatchet-dev/hatchet
+
+Role:
+- orchestration for long-running tasks
+- retries, schedules, event / webhook triggers, pause / resume, monitoring
+- Postgres-backed durability
+
+Harness position:
+HIGH-PRIORITY EXPERIMENT candidate.
+
+Potential comparison:
+Inngest vs Hatchet as a lighter-weight practical runtime layer before considering Temporal-scale infrastructure.
+
+#### LangGraph
+Source:
+- https://github.com/langchain-ai/langgraph
+
+Role:
+- checkpoint / resume for graph-based agent workflows
+- persistence around graph super-steps
+- can preserve completed progress across interruptions
+
+Harness position:
+REFERENCE / EXPERIMENT.
+
+Important:
+Do not rebuild the Harness around graph orchestration just to gain checkpointing.
+First evaluate whether checkpoint / pending-write / resume patterns can be absorbed independently.
+
+#### Prefect
+Source:
+- https://github.com/PrefectHQ/prefect
+
+Role:
+- retries, scheduling, workflow state, observability and recovery for Python workflows
+
+Harness position:
+LOWER-PRIORITY REFERENCE.
+
+Useful as a mature workflow-recovery comparison, but less directly agent-specific than Inngest / Hatchet / LangGraph.
+
+### Category B: Persistent Memory / Cross-session State
+
+#### Letta
+Source:
+- https://github.com/letta-ai/letta
+- active source location should be rechecked before future testing
+
+Role:
+- stateful agents with persistent memory across sessions
+- memory architecture worth studying separately from runtime durability
+- Git-backed / file-oriented memory ideas are especially relevant to Externalized Memory
+
+Harness position:
+MEMORY RESEARCH / EXPERIMENT.
+
+Potential value:
+- explicit durable memory artifacts
+- versioned state / rollback concepts
+- separation from ephemeral chat context
+
+Important:
+Persistent memory is not the same as execution checkpoint state.
+
+#### Mem0
+Source:
+- https://github.com/mem0ai/mem0
+
+Role:
+- extracted / retrieved persistent memory across runs and sessions
+
+Harness position:
+LOWER-PRIORITY MEMORY REFERENCE.
+
+Caution:
+Automatic memory extraction can still omit important facts.
+It should not be assumed to solve the known "handoff summary dropped a critical decision" problem by itself.
+
+### Category C: Failure Isolation
+
+#### E2B
+Source:
+- https://github.com/e2b-dev/E2B
+
+Role:
+- disposable / isolated execution sandboxes for agent-generated code
+
+Harness interpretation:
+`Failure Containment != Failure Recovery`
+
+Harness position:
+EXISTING RELEVANT CANDIDATE / REFERENCE.
+
+Potential value:
+A broken execution step damages an isolated sandbox rather than the main environment.
+This is complementary to durable execution, not a substitute for it.
+
+### Category D: Observability / Failure Inspection
+
+#### Langfuse
+Source:
+- https://github.com/langfuse/langfuse
+
+Role:
+- traces model calls, tool calls, retrieval, latency, cost and evaluation data
+
+Harness interpretation:
+`Observability = find what broke`
+
+Harness position:
+EXISTING OBSERVABILITY CANDIDATE / REFERENCE.
+
+It helps diagnose failures but does not by itself restore or resume execution.
+
+#### AgentOps
+Source:
+- https://github.com/AgentOps-AI/agentops
+
+Role:
+- inspect, trace and replay agent sessions
+
+Harness position:
+LOWER-PRIORITY OBSERVABILITY REFERENCE.
+
+Potential value:
+session-level inspection / replay for debugging, but compare against Langfuse and lightweight custom tracing before adding another observability stack.
+
+### Provisional priority for future comparison
+
+High priority:
+1. Inngest
+2. Hatchet
+
+Reference architectures:
+3. Temporal
+4. LangGraph
+
+Memory research:
+5. Letta
+
+Existing / adjacent candidate examples:
+6. E2B
+7. Langfuse
+
+Lower priority:
+8. Prefect
+9. Mem0
+10. AgentOps
+
+### Architectural decision to preserve
+
+Do not evaluate these ten projects as ten interchangeable "agent frameworks."
+
+Separate the problem:
+
+`Durable Execution`
+- save execution progress
+- resume after failure
+- avoid replaying completed steps
+
+`Persistent Memory`
+- preserve user / project knowledge across sessions
+
+`Failure Isolation`
+- contain risky execution
+
+`Observability`
+- inspect why the run failed
+
+Then choose the smallest component necessary for the missing capability.
+
+### Future validation questions
+
+- Can the current Harness gain durable resume without adopting a large orchestration framework?
+- What is the minimal checkpoint unit: Task, Job, Step, Tool call, or external side effect?
+- How are completed steps distinguished from externally committed actions?
+- Can retries always carry an Operation ID / Idempotency Key?
+- When should retry become compensation or Human escalation?
+- Can Human approval pause survive process restart?
+- How should durable execution connect to Airtable state without making Airtable the execution engine?
+- Can GitHub remain architecture / config history rather than runtime state?
+- Does Inngest or Hatchet reduce custom runtime code enough to justify dependency and operational cost?
+- What is the smallest observability layer required to reconstruct a failure?
+
+Status:
+PROPOSAL / NOT ACTIVE
