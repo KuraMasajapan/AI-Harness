@@ -2779,3 +2779,238 @@ Note:
 - 玉島ハーバーフェスティバル2026の出展企業を抽出し、子ども向け技術展示の有無を確認
 - 倉敷クリエイティブパーク / 船穂 / 市場工業団地の企業リスト化
 - Challenge Work 14の学校別受入先抽出
+
+
+## 46. Industrial-park / school-network batch — 2026-10-05
+
+### 倉敷市内3工業団地 — enterprise master expanded
+倉敷市公式の「立地企業」ページから、企業学び楽舎・児島繊維・玉島ハーバー以外の公的母集団を追加。
+
+#### 倉敷クリエイティブパーク
+- さくら白玉
+- エイ・クリエイション
+- 興南設計
+- フラップ
+- 岡本製作所
+- ウッドメイク工業
+- 松井精機
+- 阪本
+- 鳴海合金製作所
+- ヨシカワ
+- キッカワ
+
+#### 船穂産業団地
+- 浮田工業
+- 倉敷レーザー
+- わかば食品
+- 玉島活版所
+
+#### 市場工業団地
+- 今仙電機製作所
+- タケシンパッケージ
+- 金澤電子
+- 仁沢工業
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/industry/1012624/1005555.html
+
+### 興南設計 — HIGH_VALUE / UNIVERSITY_STUDENT / HANDS_ON
+2026公式NEWS:
+- 2028年卒向け3daysインターン
+- 倉敷本社で「依頼をもとに製品を作る設計体験」
+- スマホスピーカー製作
+- 設計→製品化を体験
+- 7〜9月に複数回
+
+過年度:
+- チラシ制作等、コミュニケーションデザイン系インターンも実施
+
+Classification:
+STUDENT_ONLY / RECURRING
+UNIVERSITY
+STEAM / DESIGN / ENGINEERING / CREATIVE
+hands_on: VERY_HIGH
+Region: 倉敷クリエイティブパーク
+
+Evidence:
+https://www.konan-sekkei.co.jp/news/index.html
+https://www.konan-sekkei.co.jp/
+
+### 倉敷レーザー — CONSTANT_FACTORY_VISIT / BUSINESS_ONLY_CURRENTLY
+Current official site:
+- 随時工場見学
+- 切断、曲げ、溶接等の最新鋭板金加工
+- サンプル展示
+- 事前申込制
+- 現状は法人申込が前提と読める
+
+Classification:
+GROUP_BOOKING / BUSINESS_ONLY_CURRENTLY
+STEAM / METALWORK / DIGITAL_MANUFACTURING
+CONSTANT
+Region: 船穂
+
+GROWgle note:
+一般家庭・学校向け公開条件は未確認。現時点ではACTIVE CHILD ACTIVITYに数えない。
+
+Evidence:
+https://www.k-lasergroup.com/
+
+### タケシンパッケージ — STUDENT / FACTORY_VISIT
+2024新卒向け会社説明会で:
+- 真備工場
+- 会社概要説明
+- 工場見学
+- 先輩社員座談会
+を複数日実施。
+
+Classification:
+STUDENT_CAREER
+HIGH_SCHOOL_OR_COLLEGE_CANDIDATE
+PACKAGING / DESIGN / WORKS
+Region: 真備
+Status:
+子ども・学校向け独自活動は未確認。学生キャリアSOURCEとして保持。
+
+Evidence:
+https://takeshin-pk.co.jp/information/%E3%80%902025%E5%B9%B4%E6%96%B0%E5%8D%92%E5%90%91%E3%81%91%E3%80%91%E4%BC%9A%E7%A4%BE%E8%AA%AC%E6%98%8E%E4%BC%9A%E3%81%AE%E6%97%A5%E7%A8%8B%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F/
+
+### 玉島活版所 — MEDIA / CHILD_INFORMATION SOURCE, DIRECT_ACTIVITY_UNVERIFIED
+Current official:
+- 印刷・WEB・デザイン企業
+- 会社見学は採用希望者向けに随時受付
+- 子育て応援フリーペーパー「KidsDo岡山県版」を発行
+
+Classification:
+MEDIA_SOURCE / CHILD_INFORMATION
+DIRECT_CHILD_EXPERIENCE: UNVERIFIED
+Region: 船穂
+
+GROWgle note:
+自社の子ども体験イベントではないが、地域の子育て・体験情報を流通させる「INFORMATION_GATEWAY」として価値あり。
+イベントSOURCEとは分離する。
+
+Evidence:
+https://tama-katsu.com/
+https://saiyou.tama-katsu.com/
+https://kidsdo.jp/okayama/
+
+### 今仙電機製作所 岡山工場 — SCHOOL_VISIT_HISTORY / INDUSTRIAL_SOURCE
+岡山工場:
+- 真備町市場
+- シートアジャスタ、ランプ製造
+- 溶接・塗装・組立ライン
+- 環境配慮型生産設備
+
+学校側の過去記録:
+- 倉敷工業高校1年生の工場見学先として今仙電機製作所を確認
+
+Classification:
+SCHOOL_VISIT_HISTORY
+HIGH_SCHOOL
+AUTOMOTIVE_PARTS / WORKS / STEAM
+Region: 真備
+Status:
+2024〜2026の直近見学実績は未確認。WATCH。
+
+Evidence:
+https://www.imasen.co.jp/company/profile_office/plant_okayama/
+https://www.kurako.okayama-c.ed.jp/wordpress/?p=35907
+
+### わかば食品 — INDUSTRIAL_SOURCE_CANDIDATE
+Current official:
+- 船穂本社工場
+- お好み焼き・焼きそば等の食品製造
+- JFS-B取得
+- 最新設備・衛生・品質管理
+
+今回、一般・学校向け工場見学は未確認。
+
+Classification:
+FOOD_INDUSTRY_SOURCE_CANDIDATE
+ACTIVITY_STATUS: UNVERIFIED
+Region: 船穂
+
+Evidence:
+https://wakaba-foods.jp/
+https://wakaba-foods.jp/factory/
+
+## 47. Challenge Work 14 — scale reconfirmed
+
+学校側サイトから、個別中学校単位でも大規模な受入網を確認。
+
+### 倉敷北中
+2025:
+- 2年生が65事業所で3日間職場体験
+2025年2月実施回:
+- 70事業所
+
+### 味野中
+2025:
+- 2年生が41事業所で3日間チャレンジワーク
+
+### 郷内中
+2024:
+- 2年生が29事業所で3日間チャレンジワーク
+
+### 水島中
+2025:
+- 7月1〜3日に実施
+- 学校前の小ざくら保育園など具体受入先も確認
+
+Classification:
+REGIONAL_NETWORK / SCHOOL_X_BUSINESS
+JUNIOR_HIGH
+WORKS / CAREER
+RECURRING / CITYWIDE
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kita-j/todaytopic.html
+https://www.kurashiki-oky.ed.jp/ajino-j/r7_tayori_2.html
+https://www.kurashiki-oky.ed.jp/gonai-j/koutyour6-4-7.html
+https://www.kurashiki-oky.ed.jp/mizushima-j/koutyou2025.html
+
+GROWgle note:
+1校だけで40〜70事業所規模。
+全26中学校を合算すると、受入事業所の重複を差し引いても巨大な地域キャリア教育ネットワーク。
+今後は「全受入企業名の完全抽出」より、企業名が学校側で公開されているものを優先し、SOURCE masterへ追加する。
+
+## 48. Kojima textile source-quality screen
+
+### BIG JOHN — current status caution
+児島商工会議所の藍染め体験ページでは、一部の藍染体験施設が現在休止中であることを確認。
+よって過去の体験情報をそのままACTIVEとせず、CURRENT STATUSを都度確認する。
+
+Evidence:
+https://www.kojima-cci.or.jp/sightseeing/experience/aizome.html
+
+### こじまファクトリー — official master revalidated
+2026時点:
+- 39事業所
+- 2026-06-25「児島地区のインターンシップ受入企業のご紹介」を公式掲載
+- 企業情報は製品・工程・技術タグ単位で整理
+
+Evidence:
+https://www.kojima-cci.or.jp/kojima-factory/
+https://www.kojima-cci.or.jp/kojima-factory/company_cat/industries
+
+GROWgle note:
+インターン受入企業の個別一覧は検索結果から完全取得できていないため、企業名を推測しない。
+確認できた企業のみ個別SOURCEへ昇格。
+
+## 49. Batch 6 structural findings
+
+1. 倉敷市の公的工業団地だけでも、これまでの母集団外に約20社規模の追加候補がある。
+2. 企業団地の全社を教育SOURCE扱いせず、教育接点を確認できた企業のみ昇格する。
+3. 興南設計のような「設計・制作」企業は製造現場とは違うSTEAM体験を提供できる。
+4. Challenge Work 14は1校40〜70事業所規模で、企業学び楽舎64社とは別の巨大な受入網。
+5. 地域の情報流通企業（玉島活版所/KidsDo）のようなINFORMATION_GATEWAYも発見。体験主体とは分離して保持する。
+6. 児島の体験情報は「現在休止中」もあるため、過去掲載をACTIVE扱いしないCURRENT STATUS確認が必要。
+
+## 50. Next route
+
+- クリエイティブパーク未確認企業の学校・大学・地域連携探索
+- 船穂産業団地の浮田工業 / わかば食品 / 玉島活版所周辺を追加確認
+- 市場工業団地の今仙 / タケシン / 金澤電子 / 仁沢工業を学校側から逆引き
+- Challenge Work 14で公開企業名が見える学校を優先探索
+- こじまファクトリー39社のCURRENTな見学・インターン・WSを継続スクリーニング
