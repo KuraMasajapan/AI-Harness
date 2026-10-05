@@ -1397,3 +1397,260 @@ https://sweet-town.jp/hospital/
 4. 福祉法人は地域支援サービスそのものを持つため、「イベントSOURCE」と「地域支援インフラ」を分離管理する必要がある。
 
 5. 倉敷の企業・地域教育資源は製造業だけでなく、医療・福祉が第二の大きな柱として成立している。
+
+
+## 25. Enterprise reverse-search batch 4 — 2026-10-05
+
+### 三菱自動車 水島製作所 — benchmark resolved / RECURRING
+ユーザーが既知例として挙げていた「三菱自動車のお祭り」の正体を一次情報で確認。
+
+2024-10-20:
+- 三菱自動車水島製作所感謝祭
+- 水島製作所構内
+- 入場無料
+- 三菱車展示
+- ショー
+- 福引き
+- 模擬店
+- 水島警察署、西日本三菱自動車販売等と協働した「クルマの学校」
+  - マイパイロットパーキング同乗体験
+  - パトカー・白バイ・消防車展示等
+
+2026:
+- 三菱自動車公式イベントカレンダーで2026-10-18 10:00〜15:00
+- イベント名「三菱感謝祭」
+- 会場: 三菱自動車 水島製作所構内
+を確認。
+- 同会場で新型パジェロ先行展示会も実施予定。
+
+Past continuity:
+- 2018にも「三菱自動車感謝祭」開催記録あり
+- 2023には水島製作所で水島警察署と「クルマの学校」を実施、約120名来場
+- 2024感謝祭でも「クルマの学校」を実施
+
+Classification:
+OPEN_PUBLIC / FAMILY / RECURRING
+WORKS / COMMUNITY / TRAFFIC_SAFETY / AUTOMOTIVE
+Region: 水島
+hands_on: MEDIUM-HIGH
+
+Evidence:
+https://www.mitsubishi-motors.co.jp/carlife/calendar/2026/pajero/okayama.html
+https://www.mitsubishi-motors.com/jp/sustainability/society/contribution/report/2024/11/29.html
+https://west-mitsubishi-motor-sales.com/
+https://www.mitsubishi-motors.com/jp/sustainability/society/contribution/report/2023/09/04.html
+
+GROWgle note:
+既知の基準イベントを正式に再発見。学校限定工場見学とは別ACTIVITYとして保持する。
+「工場見学SOURCE」「出前授業SOURCE」「地域感謝祭SOURCE」が同一企業内に併存する代表例。
+
+### 倉敷化工 — HIGH_VALUE / SCHOOL_ONLY / RECURRING_CANDIDATE
+2026企業学び楽舎で体験内容を具体確認。
+- 紙・ペットボトルキャップ等で4種類の構造模型を制作
+- 制震・免震・耐震の違いを、実際に模型を揺らして比較
+- 身近な建物の耐震構造と企業技術を接続
+
+別ルート:
+- 倉敷観光WEBが、近隣小学校の要望を受けた社会科工場見学を紹介
+- 本社工場で機械設備と部品→製品工程を学習
+- 一般向け工場見学は不可
+
+Classification:
+SCHOOL_ONLY / RECURRING_CANDIDATE
+ELEMENTARY / JUNIOR_HIGH
+STEAM / WORKS / DISASTER_PREVENTION / MECHANICAL_ENGINEERING
+hands_on: HIGH
+Region: 水島・連島
+
+Evidence:
+https://kuratoco.com/article-178068/
+https://www.kurashiki-tabi.jp/rm_experience/rm-experience49/
+https://www.kuraka.co.jp/
+
+GROWgle note:
+防振・免震を工作で理解させるため、建設系とは異なる「材料・機械・防災STEAM」SOURCE。
+
+### 水島鋼板工業 — RECURRING confirmed
+企業公式で複数年継続を確認。
+
+2023:
+- 黒崎中1・2年
+- マイクロメータ／ノギスで鋼板の厚さ・幅を測定
+
+2024:
+- 福田南中・南中
+- 鉄の厚さ・長さ測定
+- 鉄を曲げる体験
+
+2025:
+- 水島中で日本非破壊検査と企業学び楽舎
+- 安全防護具着用等
+- 真備陵南高校でも職業講座
+
+Classification:
+SCHOOL_ONLY / RECURRING_CONFIRMED
+JUNIOR_HIGH / HIGH_SCHOOL
+WORKS / STEAM / METROLOGY / STEEL
+hands_on: VERY_HIGH
+Region: 水島
+
+Evidence:
+https://www.mizuko.co.jp/information/detail.php?id=33&page=3
+https://www.mizuko.co.jp/information/detail.php?id=40
+https://www.mizuko.co.jp/information/
+https://www.kurashiki-oky.ed.jp/mizushima-j/2025-1manabi.html
+
+GROWgle note:
+「測る」「曲げる」「安全装備」という非常に具体的な製造技能体験。製造系Hands-on比較の基準SOURCE候補。
+
+### 川崎学園 — VERY_HIGH_VALUE / OPEN_PUBLIC / LONG_RUNNING
+「かわさき夏の子ども体験教室」は2009年から開催履歴を確認。
+2026:
+- 8月18・19日
+- 小1〜4: 午前
+- 小5〜中学生: 午後
+- 各日65名
+- 無料、抽選
+- 災害救助体験
+- 医師体験
+- 看護師体験
+- ドクターヘリ見学
+- ライフサイエンスへの関心と将来の学びの動機づけが目的
+
+Classification:
+OPEN_PUBLIC / FAMILY / LONG_RUNNING_RECURRING
+ELEMENTARY / JUNIOR_HIGH
+MEDICAL / STEAM / EMERGENCY / CAREER
+hands_on: VERY_HIGH
+Region: 中庄 / 松島
+
+Evidence:
+https://k.kawasaki-m.ac.jp/data/summer/
+https://k.kawasaki-m.ac.jp/data/summer2026/summer_dtl/
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1022190/1025520/1025522.html
+
+### 川崎リハビリテーション学院 — OPEN_PUBLIC / HIGH_VALUE
+2026夏休み:
+- 小4〜6: 24名
+- 中学生: 12名
+- 無料
+- リハビリ検査体験
+- 治療器具作成
+
+Classification:
+OPEN_PUBLIC
+ELEMENTARY_HIGH / JUNIOR_HIGH
+MEDICAL / REHABILITATION / STEAM / WORKS
+hands_on: VERY_HIGH
+Region: 中庄 / 松島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1022190/1025520/1025522.html
+
+### ふるいち — VERY_HIGH_VALUE / MULTI-AGE / RECURRING
+2026企業学び楽舎:
+- 中高生向け職業体験授業
+- 代表による「働くとは何か」「働く楽しさ」の講話
+- 倉敷名物ぶっかけうどんの盛り付け体験
+- 2026-09-11 連島中
+- 2026-09-25 玉島西中
+
+別活動「キッズうどん教室」:
+- 地元幼稚園・保育園対象
+- 2024開始
+- 2024〜2026の3年間で6回
+- 園児延べ210名
+- 2026年11月にも新たに2園予定
+- 地域の食文化を体験で継承
+
+Classification:
+SCHOOL_ONLY / PRESCHOOL / JUNIOR_HIGH / HIGH_SCHOOL / RECURRING
+FOOD / LOCAL_CULTURE / CAREER / COMMUNITY
+hands_on: HIGH
+
+Evidence:
+https://www.atpress.ne.jp/news/619851
+https://www.atpress.ne.jp/news/631300
+https://kuratoco.com/kigyomanabigakusya/
+
+GROWgle note:
+幼児→中高生まで同じ企業が年齢別活動を持つ。地域食文化SOURCEとしても強い。
+
+### ドルフィン・エイド — SCHOOL_ONLY / CHILDCARE_CAREER
+企業学び楽舎で保育の仕事を題材に:
+- スライム作り
+- 感触遊び
+- 子どもの遊びを通したコミュニケーション
+を中学生が体験。
+
+Classification:
+SCHOOL_ONLY
+JUNIOR_HIGH
+CHILDCARE / WORKS / CREATIVE
+hands_on: HIGH
+
+Evidence:
+https://kuratoco.com/kigyomanabigakusya/
+
+### 玉島信用金庫 — OPEN_PUBLIC / CURRENT_2026 confirmed
+2026公式サイトで複数の子ども向け企画を確認。
+- 7月「キッズマネースクール2026」
+- 7月 本店営業部 夏休みワークショップ「マグネット黒板づくり」
+- 8月「たましんpresents マジックショー」
+- 「子育て応援project〜未来を担う子どもの力でより良い街に〜」
+- 「こどものみらい古本募金」
+- 過年度にもジュニア倶楽部サマースクール等
+
+Classification:
+OPEN_PUBLIC_OR_MEMBER / RECURRING
+ELEMENTARY / FAMILY
+FINANCIAL_LITERACY / CREATIVE / COMMUNITY
+Region: 玉島
+
+Evidence:
+https://www.shinkin.co.jp/tamashima-sk/
+https://www.shinkin.co.jp/tamashima-sk/info/
+
+### 行雲 — SOURCE_CANDIDATE / LOCALITY_STRONG, ACTIVITY_VERIFY
+企業学び楽舎64社に参加。
+企業公式では倉敷美観地区を拠点に:
+- 古民家飲食
+- 地域商社
+- 岡山・倉敷資源の商品企画
+- 岡山くだものミュージアム
+- 地域への還元を企業方針として明記
+
+Classification:
+LOCAL_INDUSTRY / TOURISM / FOOD / ENTRE
+Status:
+企業学び楽舎内の具体的体験内容、子ども向け独自企画は次回確認。
+「地域商社」「商品企画」系PBL候補としてHIGH_WATCH。
+
+Evidence:
+https://ko-un.jp/
+https://ko-un.jp/about-us/
+https://ko-un.jp/regional_trade/
+
+## 26. Batch 4 structural findings
+
+1. 三菱自動車感謝祭を正式に再発見できたため、既知benchmark 2件（JFE / 三菱）の再現性を確保。
+2. 企業学び楽舎の逆引きでは「同一企業に複数の教育入口」があることが繰り返し確認される。
+3. 水島鋼板工業のような中小製造企業でも複数年継続が明確。大企業だけをRECURRING SOURCEとみなすべきではない。
+4. ふるいちは幼児〜高校生まで年齢階層を跨ぐ地域食文化・キャリアSOURCE。
+5. 川崎学園は2009年からの開催履歴があり、医療系OPEN_PUBLICの長期継続SOURCEとして最重要級。
+6. 倉敷化工の免震工作は、防災×ものづくり×STEAMの交差領域。
+7. OPEN_PUBLIC / SCHOOL_ONLY / GROUP_BOOKINGの区別は必須。一般家庭が直接参加できる機会と学校経由のみの機会を混ぜない。
+
+## 27. Next exploration route
+
+次は、企業学び楽舎64社の未深掘りを継続しつつ、企業名起点だけでなく以下の逆方向探索へ進む。
+
+- 倉敷商工会議所 / 玉島商工会議所 / 児島商工会議所等の子ども・学生向け事業
+- 水島コンビナート協議体
+- 児島繊維業界団体
+- 企業スポーツチーム
+- 企業博物館 / PR館
+- 学校サイトの社会見学・探究・職場体験から企業名を抽出
+- 大学PBL成果物から企業名を抽出
+- 2024〜2026の「夏休み」「感謝祭」「フェスタ」「工場祭」を企業横断検索
+
