@@ -5022,3 +5022,208 @@ https://www.ksu.ac.jp/food_culture/food_culture_sangakurenkei
 - Challenge Work 14高体験企業のcurrent status
 - 2026秋冬のOPEN_PUBLIC企業イベント
 - 医療系OPEN_PUBLICイベントの年次継続確認
+
+
+## 84. Speed batch — current public access / PBL / new gateway signals — 2026-10-05
+
+### 倉敷市立市民病院 オープンホスピタル2026 — NEW OPEN_PUBLIC MEDICAL SOURCE
+2026-11-14:
+- 13:00〜16:00
+- 倉敷市立市民病院
+- 誰でも参加可能
+- 一部ブースは事前予約・抽選
+- 体験会形式
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026
+CHILD / FAMILY / GENERAL
+MEDICAL / HEALTH / CAREER
+Region: 児島
+hands_on: HIGH_CANDIDATE
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/hospital/1016524/1016805/1027172.html
+
+GROWgle note:
+倉敷中央病院・川崎学園・倉敷成人病センターに続く、一般公開型医療SOURCEを追加。
+医療OPEN_PUBLIC層は単発例ではなく地域横断で複数存在。
+
+### 親子漁業体験 — VERY_HIGH_VALUE / PRIMARY_INDUSTRY
+2026-07-25:
+- 高梁川流域7市3町の小学生＋保護者
+- 15組30名
+- 児島漁業協同組合
+- 漁船で底びき網漁業を体験
+- 漁獲物の取り上げ・仕分作業見学
+- 魚の捌き方教室
+
+2026-10-31:
+- 黒崎連島漁業協同組合
+- 定置網漁業体験
+- 小学生＋保護者
+- 15組30名
+- 魚の仕分け・捌き方教室
+
+Classification:
+OPEN_PUBLIC_LIMITED / RECURRING_WITHIN_YEAR
+ELEMENTARY / FAMILY
+PRIMARY_INDUSTRY / FISHERY / FOOD / NATURE_ASSET
+hands_on: VERY_HIGH
+Region: 児島 + 玉島黒崎
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/agriculture/1013001/1005645/1005656.html
+
+GROWgle note:
+企業中心枝の周辺SOURCEだが、「地域の仕事を親子で実地体験」というGROWgle核に非常に近い。
+漁協をREGIONAL_INDUSTRY_SOURCEとして扱う。
+
+### 高梁川流域未来人材育成事業 — 2026 current company list locked
+2026市公式の「連携可能企業」を8法人で確定:
+- シンニチロ：会社・工場見学
+- 廣珍：商品開発 / 技術指導 / 会社・工場見学
+- イシダ工務店：商品開発 / 技術指導 / 会社・工場見学 / 空き家活用・まちづくり企画
+- 中央設備：会社・工場見学
+- 下津井電鉄：商品開発 / 会社・工場見学
+- 亀龍会：技術指導 / 会社・工場見学
+- 温故知新会：技術指導 / 会社・工場見学
+- M.S.E.：技術指導 / 会社・工場見学
+
+制度:
+- 高梁川流域内企業との連携が必須
+- 2026年7月開始
+- 2027-01-23成果発表会予定
+
+Classification:
+CURRENT_2026 / PBL_GATEWAY
+HIGH_SCHOOL / UNIVERSITY
+COMPANY_X_SCHOOL_X_MUNICIPALITY
+PRODUCT_DEVELOPMENT / WORKS / COMMUNITY / CAREER
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+
+GROWgle note:
+「連携可能企業」が明示されたため、候補ではなくCURRENT PBL SOURCEとして扱える。
+
+### 過年度Future Talent — historical company discovery master
+倉敷市公式の令和5年度事業ページから、学校×企業の実績企業を追加。
+倉敷エリアの例:
+- 戸川電工
+- 倉敷看板
+- ミズシマ・パークマネージメントLab.
+- みずしま財団
+- 玉井堂
+- 岡山シーガールズ
+- 笠岡信用組合
+- 玉島商工会議所
+- パックロード
+- 倉敷アイビースクエア
+- 倉敷市児島産業振興センター
+- 岡山ルートサービス
+- スズキ麺工
+
+Classification:
+HISTORICAL_PBL_SOURCE_MASTER
+Status:
+2024〜2026 current continuity to be batch-verified.
+Do not auto-promote to current activity.
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/training/1011032.html
+
+### ENGI × 倉敷市 — CURRENT STRATEGIC CREATIVE SOURCE
+2026-07-07 包括連携協定:
+- 倉敷市
+- ENGI（KADOKAWAグループ）
+目的:
+- 子どもの創造性育成
+- デジタルコンテンツ人材育成
+- 地元定着
+- 行政・民間・教育機関の連携
+- 中高向け出前講座
+- ENGI倉敷スタジオを就業先・産業集積拠点として活用
+
+2026:
+- アニメ人材育成事業ページを秋公開予定
+- デジタルコンテンツ人材育成・拠点整備事業も進行
+
+Classification:
+CURRENT_STRATEGIC_SOURCE / COMPANY_X_MUNICIPALITY_X_EDUCATION
+JUNIOR_HIGH / HIGH_SCHOOL / YOUTH
+CREATIVE / DIGITAL_CONTENT / CAREER / STEAM
+Region: 倉敷
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1026953.html
+https://www.city.kurashiki.okayama.jp/business/employment/1005580/1005581.html
+https://www.city.kurashiki.okayama.jp/business/contract/1013065/1014314/1025974.html
+
+GROWgle note:
+これまで「新興産業候補」だったが、2026市政策で正式に次世代人材育成SOURCEへ格上げ。
+
+### くらしきアーキツーリズム × 浦辺設計 — COMPANY_X_MUNICIPALITY / OPEN_PUBLIC
+2026-11:
+- 小学生以上（小学生は保護者同伴）
+- 倉敷市庁舎ツアー
+- 美観地区建物ツアー
+- 「新旧調和」を建築から学ぶ
+- 各回30名
+- 主催: アートのまち倉敷実行委員会
+- 問い合わせ: 浦辺設計
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026
+ELEMENTARY+ / FAMILY / STUDENT / GENERAL
+ARCHITECTURE / DESIGN / CULTURAL_ASSET / COMMUNITY
+COLLABORATION: MUNICIPALITY_X_ARCHITECTURE_FIRM
+hands_on: OBSERVATION_HIGH
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/culture/tourism/1001881/1016114/1026711/1027248.html
+
+GROWgle note:
+企業見学ではなく、設計会社が地域建築を教材化する「専門職×街」型SOURCE。
+
+## 85. Current-event search gateway
+
+倉敷市公式「新着更新情報」を、CURRENT ACTIVITY探索の監視入口として採用。
+2026-10初頭だけでも:
+- 倉敷市立市民病院オープンホスピタル
+- 子育てマルシェ
+- 産業・観光・自然史系イベント
+等が追加更新。
+
+Operational use:
+- 月単位のイベント検索より、市公式新着→企業/団体名を逆引きする方がcurrent漏れを減らせる。
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/newslist.html
+
+## 86. Speed batch classification outcome
+
+A1 OPEN_PUBLIC current newly strengthened:
+- 倉敷市立市民病院
+- 親子漁業体験
+- アーキツーリズム
+
+A3 current PBL / youth:
+- Future Talent 8法人
+- ENGI × 倉敷市
+
+B historical/current-check master:
+- 戸川電工
+- 倉敷看板
+- パックロード
+- 岡山ルートサービス
+- スズキ麺工
+- 玉井堂
+ほか
+
+## 87. Next fast-pass
+
+- Future Talent過年度企業のcurrent照合をまとめて実施
+- 倉敷市新着イベントから企業・専門職SOURCEを横断抽出
+- 医療OPEN_PUBLIC群のイベント内容を比較
+- ENGI秋公開ページ更新を追跡
+- 繊博2026 20社回収を継続
