@@ -2304,3 +2304,265 @@ G. 一般向け産業観光・教育旅行掲載企業
 - 倉敷クリエイティブパーク、船穂産業団地、市場工業団地も企業マスター化
 - 企業博物館／資料館／PRセンターを常設SOURCEとして独立抽出
 - 学校側の2024〜2026企業見学先をさらに横断抽出
+
+
+## 37. Kojima textile deep-dive / current public routes — 2026-10-05
+
+### ジャパンブルー — HIGH_VALUE / CONSTANT_SOURCE
+Current corporate CSR page explicitly states:
+- 国内外からのデザイン・製造研修受入
+- 学校・企業からの職業体験
+- 岡山・児島地域での地域貢献活動
+- 見学・研修問い合わせ窓口を常設
+
+Factory-tour history:
+- 児島製織所の一般・学校・団体向け見学を継続
+- 2024年時点で月2回程度の完全予約制見学枠を案内
+- 製織工場を中心に、旧式力織機とデニム生地製造を見学
+- 大学・専門学校等の見学、国内外インターン受入実績あり
+
+Classification:
+GROUP_BOOKING / SCHOOL / STUDENT / WORK_EXPERIENCE
+JUNIOR_HIGH+ / UNIVERSITY / GENERAL_GROUP
+TEXTILE / DESIGN / WORKS / LOCAL_INDUSTRY
+CONSTANT_SOURCE / RECURRING_ACTIVITY
+Region: 児島
+
+Evidence:
+https://www.japanblue.co.jp/csr.html
+https://www.japanblue.co.jp/topics/2760.html
+https://www.japanblue.co.jp/topics/393.html
+https://www.japanblue.co.jp/contact.html
+
+GROWgle note:
+「産地ブランド」だけではなく、製織・縫製・店舗・デザイン・販売まで学べる多工程SOURCE。
+
+### 髙田織物 — VERY_HIGH_VALUE / CONSTANT
+Official factory-tour page:
+- 営業日の見学可能日に実施
+- 団体10〜48名程度
+- 小学生以上
+- 工場見学のみ無料
+- ミニ畳制作を含む体験コースあり
+- 整経→製造→艶付け→展示→制作まで一連で見学可能
+
+児島商工会議所も教育・観光体験SOURCEとして掲載。
+過去には夏休み時期に小学生参加可の工場見学＋ミニ畳制作ワークショップも開催。
+
+Classification:
+GROUP_BOOKING / CONSTANT
+ELEMENTARY+ / SCHOOL / FAMILY_GROUP
+TEXTILE / CREATIVE / LOCAL_INDUSTRY / CULTURAL_ASSET
+hands_on: VERY_HIGH
+Region: 児島唐琴
+
+Evidence:
+https://ohmiyaberi.co.jp/factorytour/
+https://www.kojima-cci.or.jp/sightseeing/experience/tatami.html
+https://flat-kojimaberi.com/event/flat_workshop_7_8/
+
+### セロリー — SCHOOL + STUDENT / STRONG CONTINUITY
+Current official corporate / social contribution pages:
+- 地元小・中学校、高校の会社見学を受入
+- 中学生から大学生まで職場体験・インターンシップを受入
+- 学校へ残り布を提供
+- 地域スポーツイベントのボランティア等
+
+Classification:
+SCHOOL_ONLY / STUDENT
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+TEXTILE / CAREER / COMMUNITY / CIRCULAR_RESOURCE
+CONSTANT_SOURCE
+Region: 児島
+
+Evidence:
+https://www.selery.co.jp/corporate/info/
+https://www.selery.co.jp/activity/social_activity.html
+
+GROWgle note:
+小学生見学→中高職場体験→大学インターンの年齢連続性が明確な繊維企業。
+
+### BIG JOHN — OPEN + SCHOOL / RECURRING
+School / group:
+- 小学校・中学校・高校・大学・企業団体のデニム雑貨制作体験を受入
+- 修学旅行・校外学習実績あり
+- ボタン・リベット打ち、ストラップ、トート等
+
+General public:
+- 児島本店で体験系プログラム
+- 2024、2025と年末のBIG JOHN感謝祭を連続確認
+- 2025感謝祭: しめ縄編み込み、ボタン打ち、塗り絵、Tシャツプリント等
+- 2020記事では「毎年年末恒例」と明記
+- 2026年開催は2026-10-05時点では公式告知未確認 → WATCH_DECEMBER
+
+Classification:
+OPEN_PUBLIC + GROUP_BOOKING / RECURRING
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY / FAMILY
+TEXTILE / CREATIVE / LOCAL_INDUSTRY
+hands_on: VERY_HIGH
+Region: 児島
+
+Evidence:
+https://bigjohn.co.jp/blogs/blog/big-john-%E5%85%90%E5%B3%B6%E6%9C%AC%E5%BA%97%E3%81%A7%E3%81%AF%E5%9B%A3%E4%BD%93%E6%A7%98%E3%82%82%E6%89%BF%E3%82%8A%E3%81%BE%E3%81%99
+https://bigjohn.co.jp/blogs/blog/big-john%E6%84%9F%E8%AC%9D%E7%A5%ADin-%E5%85%90%E5%B3%B6%E6%9C%AC%E5%BA%97-12%E6%9C%886%E6%97%A5%E9%96%8B%E5%82%AC
+https://bigjohn.co.jp/blogs/blog/%E6%84%9F%E8%AC%9D%E7%A5%AD%E4%B8%AD%E6%AD%A2-%E3%81%A8-%E3%81%97%E3%82%81%E7%B8%84%E3%82%AD%E3%83%83%E3%83%88%E7%84%A1%E6%96%99%E9%85%8D%E5%B8%83-%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B
+
+### 明石被服興業 / AKASHI S.U.C. — PERMANENT SHOWROOM + STUDENT_EVENT
+Current official school-facing page:
+- 倉敷本社内に学校制服・体育服・作業服・介護服等を年間常設展示
+- 学校関係者向け見学案内あり
+
+Past educational event:
+- 岡山大学留学生を招き、裁断工場・制服展示場見学
+- 各国制服事情ディスカッション
+- 学生服着用による地域文化体験
+
+Classification:
+GROUP_BOOKING / SCHOOL_RELATION
+STUDENT / SCHOOL_STAFF
+TEXTILE / CULTURE / DESIGN / LOCAL_INDUSTRY
+CONSTANT_SHOWROOM
+Region: 児島
+
+Evidence:
+https://akashi-suc.jp/school/showroom/index.html
+https://akashi-suc.jp/company/newsrelease/webdir/76.html
+
+## 38. New 2026 parent-child industrial visit
+
+### 住友重機械工業 岡山製造所 — OPEN_PUBLIC_LIMITED / PARENT_CHILD
+2026-08-04 倉敷市・玉島公民館「くらしき市民講座」:
+- 「親子工場見学 ～住友重機械工業㈱ 岡山製造所編～」
+- 小学5・6年生＋保護者
+- 20組
+- 無料
+- ギヤボックス製造工場を見学
+- 玉島支所産業課連携
+- 社員が講師
+
+Classification:
+OPEN_PUBLIC_LIMITED / FAMILY
+ELEMENTARY_HIGH
+WORKS / STEAM / MECHANICAL_ENGINEERING / LOCAL_INDUSTRY
+COLLABORATION: COMPANY_X_MUNICIPALITY
+Region: 玉島乙島
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/tamashima-ph/natu_kouza2016_2.html
+
+GROWgle note:
+住友重機械工業は企業学び楽舎64社外だが、市民講座側から発見。自治体講座を企業発見センサーとして使う有効例。
+
+## 39. Current event — 瀬戸内産業芸術祭2026 / 児島
+
+2026-10-03〜10-31:
+「瀬戸内産業芸術祭2026」が岡山・愛媛の産業現場を舞台に初開催。
+倉敷会場:
+- 児島ジーンズストリート協同組合
+- 旧野﨑家住宅
+- 児島ジーンズストリートの工場・ショップを巡るスタンプラリー型体験
+- デニムの原料である綿花→糸→布→縫製→ジーンズという地域産業史をアートとともに体験
+- 限定ガイドブック「MADE IN KOJIMA, JAPAN.」
+- 全作品事前予約制
+- 年齢制限は今回確認できず → GENERAL / AGE_UNVERIFIED
+
+Classification:
+OPEN_PUBLIC_ADVANCE_RESERVATION / CURRENT_2026
+GENERAL / FAMILY_CANDIDATE
+LOCAL_INDUSTRY / TEXTILE / CREATIVE / CULTURAL_ASSET
+COLLABORATION: INDUSTRY_ASSOCIATION_X_ART_FOUNDATION
+Region: 児島
+
+Evidence:
+https://www.sai-art.jp/
+https://prtimes.jp/main/html/rd/p/000000012.000186934.html
+https://www.okayama-kanko.jp/event/detail_1002827.html
+
+GROWgle note:
+「工場・産業現場そのものを文化体験化する」新しいタイプ。
+企業教育イベントと観光・芸術祭の境界にあり、地域産業への入口として保持。
+
+## 40. Tamashima Harbor Island master expansion
+
+岡山県公式の立地記録から、既存マスターに追加すべき企業を確認。
+
+2014 food complex:
+- JA西日本くみあい飼料
+- J-オイルミルズ
+- 全農サイロ
+
+2017 newly located:
+- 明治
+- 岐阜プラスチック工業
+- シーアール物流
+- アイム
+- 上組
+
+Existing / historical industrial assets:
+- 日本エアロフォージ
+- ナカシマプロペラ 玉島工場
+- ヒラキン リサイクルステージ玉島
+- 田中商会 玉島工場
+- 水島港国際物流センター
+- 住友重機械工業 岡山製造所（隣接E地区）
+
+Classification:
+INDUSTRIAL_CLUSTER_MASTER
+Region: 玉島乙島 / ハーバーアイランド
+
+Evidence:
+https://www.pref.okayama.jp/site/160/409663.html
+https://www.pref.okayama.jp/site/160/540711.html
+https://www.city.kurashiki.okayama.jp/culture/tourism/1001881/1008126/1008137/1008145.html
+
+### 水島港国際物流センター — facility-tour status strengthened
+岡山県港湾課公式:
+- 玉島ハーバーアイランド国際コンテナターミナルの施設見学を受付
+- 水島港国際物流センターへ事前連絡
+
+Classification:
+GROUP_BOOKING / CONSTANT
+GENERAL_GROUP / SCHOOL_CANDIDATE
+PORT / LOGISTICS / INFRASTRUCTURE
+Region: 玉島
+
+Evidence:
+https://www.pref.okayama.jp/page/detail-43059.html
+
+Status:
+学校・子ども向け専用プログラムの有無は未確認。GENERAL_GROUPとして保持。
+
+## 41. Master count / methodology update
+
+こじまファクトリー「業種」ページで、現在の対象事業所数39件を再確認。
+その全件を一律ACTIVITYにしない。
+以下の順で昇格させる:
+
+1. OPEN_PUBLIC / GROUP_BOOKINGの体験・見学が現行公開
+2. 学校見学・職場体験が現行公式で確認
+3. インターン受入を現行公式で確認
+4. 過去複数年の教育活動があり再開催性が高い
+5. 上記未確認は INDUSTRY_SOURCE_CANDIDATE として残す
+
+児島繊維で今回までに高優先SOURCEへ昇格:
+- ベティスミス
+- BIG JOHN
+- 髙田織物
+- ジャパンブルー
+- 菅公学生服
+- セロリー
+- 明石被服興業
+- 浦上染料店
+- 坂本織物
+- 松井織物
+ほか継続確認中。
+
+## 42. Next route — updated
+
+Priority:
+- こじまファクトリー残り企業の教育接点を全件スクリーニング
+- 玉島ハーバーアイランド追加企業（明治 / J-オイルミルズ / 全農サイロ / JA西日本くみあい飼料 / 上組 / CR物流 / ナカシマプロペラ）の学校・一般見学逆引き
+- 倉敷市内工業団地（倉敷クリエイティブパーク / 船穂産業団地 / 市場工業団地）立地企業マスター化
+- 2026現在開催中の企業・産業イベントを別途 CURRENT_ACTIVITY として抽出
+- 商工会議所・公民館・市民講座から企業SOURCEを逆発見
+- 中学校「チャレンジ・ワーク14」の受入事業所名を学校側記録から抽出
