@@ -529,3 +529,164 @@ Human decision: GROWgleの企業・地域教育資源を将来ヒートマップ
 ### Data collection rule from this point
 今後追加するSOURCE / ACTIVITYは、可能な範囲で上記heatmap-ready属性を同時取得する。
 過去取得分はKurashiki Pilot完了時にbackfillする。
+
+
+## 14. Enterprise reverse-search batch 1 — 2026-10-05
+
+企業学び楽舎64組織のうち、外部活動・学校連携・一般公開・学生向け活動を企業公式情報中心に逆引き。
+
+### 萩原工業
+Official sustainability pageで以下を確認。
+- 地元小学生等の工場見学受入れ
+- 防災イベントへの参加。製品展示・体験を通じ、防災時の用途を学ぶ
+- 津山工業高等専門学校と包括連携・協力協定。研究・教育面で連携
+- BRIDGE SETOUCHI: 製造工程で出るブルーシート等を再利用し、防災・減災活動基金へ
+Classification:
+- SCHOOL / GROUP_VISIT
+- COMPANY_X_HIGHER_EDUCATION
+- COMMUNITY / DISASTER_EDUCATION
+- RECURRING_SOURCE
+GROWgle note:
+製造業体験と防災・資源循環を接続できるSOURCE。企業学び楽舎外にも教育的活動あり。
+
+### ENEOS 水島製油所
+Current official site:
+- 岡山県内の水島製油所近隣の学校関係・官公庁等を原則対象に見学受入
+- 火・水・木、70分程度、5〜40名、DVD・概要説明・構内見学
+- 3か月前までに申込
+Community / next-generation activities:
+- 2024年度: 近隣小学校で出前サッカースクール
+- ENEOS児童文化賞受賞者によるアウトリーチ公演を水島拠点でも実施
+- 2025-12-13: 倉敷市で地元中学生48名向けENEOS野球教室
+- 2024年度にも水島製油所連携で中学生向け野球教室
+Classification:
+- SCHOOL / GOVERNMENT_GROUP_BOOKING
+- SPORTS / COMMUNITY
+- RECURRING
+GROWgle note:
+「石油・エネルギー」だけでなく企業スポーツが独立教育ルートになっている。
+
+### JFE物流
+Official sustainability page:
+- 毎年開催されるJFEフェスタで、倉敷の船上見学会運営に参加
+- 地域来訪者向けの体験機会をJFEスチールと共同で支える
+Student route:
+- 2026年7〜9月に倉敷で複数回のオープン・カンパニー
+- 製鉄所内の物流現場体験、社員解説、オフィス見学、座談会
+Classification:
+- COMPANY_X_COMPANY / COMMUNITY
+- UNIVERSITY_STUDENT / CAREER
+- RECURRING
+GROWgle note:
+同じJFEフェスタでもJFEスチール単独イベントとせず、物流会社も教育機会の供給主体として紐づける。
+
+### カザケン
+Official site:
+- 専門学生インターンを随時受入。現場で測量、出来形管理、鉄筋組立検査、朝礼・KY等を実習
+- 2021年、真備陵南高校生の3日間インターン。重機乗車、測量、施工現場見学等
+- 小田川堤防強化工事では岡田小4年32名、川辺小6年生を現場見学会へ招待
+Classification:
+- COMPANY_X_HIGH_SCHOOL
+- COMPANY_X_VOCATIONAL_STUDENT
+- COMPANY_X_ELEMENTARY_SCHOOL
+- WORKS / INFRASTRUCTURE / DISASTER_RECOVERY
+GROWgle note:
+真備の復旧・治水工事そのものを学習資源化している。地域史・防災教育との接続候補。
+
+### ピープルソフトウェア
+Official site:
+- 2025「OICおしごと体験 ～みんなの『好き』が未来をつくる！～」への出展実績
+- 大学生向けインターンシップ・仕事体験を継続受付
+Classification:
+- WORKS / IT
+- CAREER_EDUCATION
+- UNIVERSITY_STUDENT
+Status:
+- 子ども向け出展の詳細内容を次段階で要確認
+- 倉敷での継続性・対象年齢を追加確認
+
+### 菅公学生服 / カンコー学生服 倉敷工場
+Official company information:
+- 倉敷工場のセーラー服製造工程を題材にした工場見学動画を公開
+- 全国の小学生の社会科見学・家庭科教材として利用可能
+- 全国の中高向けオンライン工場見学プログラムを開始
+- 映像とライブ配信、制服に込めた思い、工場社員とのトークセッションを組み合わせる
+Classification:
+- SCHOOL_ONLY / ONLINE
+- ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL
+- LOCAL_INDUSTRY / TEXTILE
+GROWgle note:
+現地見学だけでなくONLINE_ACTIVITYもSOURCEモデルに保持すべき事例。
+
+### ベティスミス
+Official site:
+- 日本最古のジーンズ工場を平日に窓越し見学可能
+- ジーンズミュージアムで国産ジーンズ史を学べる
+- ジーンズ作り体験あり
+- 小さな子どものいる家族向け貸切体験室も用意
+- 敷地内ガーデンを一般開放。不定期で農作物収穫イベントもあり
+Classification:
+- OPEN_PUBLIC / CONSTANT
+- FAMILY
+- LOCAL_INDUSTRY / TEXTILE / CREATIVE
+GROWgle note:
+工場見学 + ミュージアム + 制作体験を一か所で完結できる児島の強い常設SOURCE。
+
+### 株式会社ヤマダ
+Official site news:
+- 2024、2025と連続して「企業学び楽舎」参加を確認
+- 高校生向け就職応援メディア掲載、応募前職場見学も実施
+Classification:
+- SCHOOL_ONLY / RECURRING confirmed for 企业学び楽舎
+- HIGH_SCHOOL_CAREER
+Next:
+- 学び楽舎のクレーン試乗・簡単操作内容と公式ニュース詳細を紐づける
+
+### 日本非破壊検査 水島事業所
+Official siteで水島事業所・技術センターの所在を確認。
+企業学び楽舎では非破壊検査を教育題材として採用。
+Status:
+- 学び楽舎外の一般公開／学校見学は未確認
+- HIGH_VALUE_WATCH: 技術自体がSTEAM / SAFETY学習に適するため継続探索
+
+### 三菱ケミカル 岡山事業所
+Official siteで岡山事業所の製品・製造拠点を確認。
+企業学び楽舎参加は確認済み。
+Status:
+- 独自の子ども／学校向け一般公開活動は今回の公式検索では未確定
+- 次回、岡山事業所RCレポート・地域交流資料・過去NEWSを遡る
+
+### ENEOS historic continuity note
+旧JX時代の水島製油所では、1976年から2014年まで小4〜6対象サッカースクールを38年間継続した記録あり。
+現在は形式を変え、学校への出前サッカーや野球教室等へ次世代育成活動が継続している。
+GROWgleではイベント名の継続だけではなく、「企業スポーツを通じた地域児童育成」というSOURCE-level continuityとして扱う。
+
+## 15. Batch 1 findings
+
+- 企業学び楽舎参加企業を逆引きすると、制度内の1講座だけでは見えない別活動が複数出る。
+- 特に萩原工業、ENEOS、JFE物流、カザケンは外部教育・地域活動が明確。
+- 水島は製造見学だけでなくSPORTS、環境、防災、物流へ枝分かれする。
+- 真備では建設会社が豪雨復旧・治水工事を児童・高校生の学びへ接続している。
+- 児島では工場を「見せる」だけでなく、歴史展示・制作体験・オンライン教材まで多層化している。
+- SOURCEごとに一般公開、学校限定、学生キャリアを分離して持つ必要性が再確認された。
+
+## 16. Next reverse-search batch
+
+優先:
+- 江口電機
+- ENGI倉敷スタジオ
+- 下津井電鉄
+- 玉島信用金庫
+- 広島銀行 倉敷支店
+- 住友生命 倉敷匠支部
+- ナイカイアーキット
+- 目黒建設
+- 中央建設
+- エムイーシーテクノ中国事業所
+- 新来島サノヤス造船
+- 倉敷化工
+- 水島鋼板工業
+- アキオカ
+- 松井織物 / 坂本織物
+- 廣珍
+- 倉敷市管事業協会
