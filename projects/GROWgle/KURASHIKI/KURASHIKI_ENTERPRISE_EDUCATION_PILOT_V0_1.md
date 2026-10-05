@@ -4428,3 +4428,258 @@ Current next high-yield routes:
 3. Challenge Work企業のcurrent照合
 4. 作陽大学・川崎系の企業PBL
 5. 2026 upcoming public corporate/industry events
+
+
+## 77. 2026 SDGs gateway / medical / utility current-status batch — 2026-10-05
+
+### 高梁川流域SDGsアクションクエスト2026 — VERY_HIGH_VALUE GATEWAY
+倉敷市公式で2026-09-12〜13開催を確認。
+会場: イオンモール倉敷。
+内容:
+- 高梁川流域SDGsパートナーの企業・団体が「暮らし」「仕事」「自然」の3エリアで出展
+- 展示・販売・ワークショップ
+- 小学生以下向け「冒険ミッション」ラリー
+- 高校生25名/日をイベント運営ボランティアとして募集
+  - ワークショップ補助
+  - 出展企業とのコミュニケーション
+  - 地域企業・キャリア・デザインを学ぶ設計
+- 2026実績: 計36企業・団体
+
+2026出展例:
+- POLA倉敷新田店
+- 倉敷グリーンファーム
+- 倉敷ビッグアメリカンショップ
+- 川上建設
+- 人形の喜峯
+- 大原芸術財団
+- 水島地域環境再生財団
+- 明治
+- 中央建設
+- 三井住友海上
+- ますみ会
+- アイムス
+- 坂本織物
+- 赤野住宅工房
+- 旭テクノプラント
+- 丸米醤油
+- 日本生命 倉敷支社
+- 玉島だるま虎製造所
+- くらしき作陽大学
+- 倉敷芸術科学大学
+- 川崎医療福祉大学
+- 児島産業振興センター
+ほか。
+
+Classification:
+OPEN_PUBLIC / RECURRING_GATEWAY
+CHILD / FAMILY / HIGH_SCHOOL / GENERAL
+COMMUNITY / STEAM / CREATIVE / SDGS / CAREER
+COLLABORATION: MUNICIPALITY_X_COMPANY_X_UNIVERSITY_X_NPO
+hands_on: HIGH_TO_VERY_HIGH
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/plan/1002086/1002090.html
+https://www.goodcity.jp/kurashiki.takahashiriver/
+
+GROWgle note:
+単なる啓発フェアではなく、
+「子ども向けワークショップ」＋「高校生の運営参加」＋「企業・大学・NPOとの直接接触」
+が同時に成立する大型地域教育GATEWAY。
+
+### 旭テクノプラント — NEW CURRENT FAMILY EXPERIENCE SOURCE
+2026-09-13 SDGsアクションクエスト出展を企業公式で確認。
+
+展示・体験:
+- 自社の植物工場で栽培したレタス、エディブルフラワー
+- 電気設備工事で培った制御技術を植物工場へ応用
+- WOTA製水循環型手洗いスタンド「WOSH」
+- 使用水98%以上再利用等、水循環・災害時衛生を紹介
+- 子どもたちがミッションラリーでブース訪問
+- イベント後半にレタス収穫体験
+
+Classification:
+OPEN_PUBLIC_EVENT / CURRENT_2026
+CHILD / FAMILY
+STEAM / AGRITECH / ENERGY / WATER / DISASTER / SDGS
+hands_on: HIGH
+Region: 倉敷
+
+Evidence:
+https://www.asahi-techno-p.co.jp/blog/category/%E5%9C%B0%E5%9F%9F%E8%B2%A2%E7%8C%AE%E7%AD%96/
+
+GROWgle note:
+電気設備会社→植物工場→子どもの収穫体験という、一見離れた技術をつなぐ好例。
+
+### 倉敷グリーンファーム — VERY_HIGH_VALUE / CONSTANT
+Current official:
+- 倉敷市祐安
+- 苔玉づくり・苔リウム体験を常設
+- 1名から予約可能
+- 出張教室対応
+- 通年
+- 近隣のもみ殻炭等を材料に使用
+
+2026 continuity:
+- 倉敷市民講座で5月/7月に出張実績
+- 2026-09 SDGsアクションクエスト出展
+- 2026年にも地域イベント多数
+- 過去に倉敷市内小学校子ども会等で出張
+- 年齢を問わず楽しめると公式明記
+
+Classification:
+OPEN_PUBLIC + GROUP_BOOKING + OUTREACH / CONSTANT
+CHILD / FAMILY / GENERAL
+NATURE / CREATIVE / ENVIRONMENT / LOCAL_RESOURCE
+hands_on: VERY_HIGH
+Region: 倉敷
+
+Evidence:
+https://kurashikigf.com/experience/
+https://kurashikigf.com/product/
+https://kurashikigf.com/work/community/
+
+GROWgle note:
+「一般家庭が直接予約できる」「学校・団体へ出張できる」「イベントにも出る」の3経路を持つ優良SOURCE。
+
+### 倉敷成人病センター — VERY_HIGH_VALUE / OPEN_PUBLIC / RECURRING_MEDICAL
+2026公式イベント:
+
+1. 「みんなde性教育セミナー」
+- 2026-08-23
+- 小5〜高校生＋保護者
+- 無料
+- 助産師・看護師・保育士
+- 体験コーナー
+- お産エリア・新生児室見学
+
+2. 公開体験セミナー第7弾「教えて！病院のお仕事！」
+- 2026-09-13
+- 高校生
+- 無料
+- 先着70名
+- 医療職の仕事内容を体験型で学習
+- 病院スタッフと交流
+- 「第7弾」のため継続性が明確
+
+3. 2026看護師インターンシップ
+- 学生キャリア層
+
+Classification:
+OPEN_PUBLIC / STUDENT / RECURRING
+ELEMENTARY_HIGH / JUNIOR_HIGH / HIGH_SCHOOL
+MEDICAL / HEALTH / CAREER / SEX_EDUCATION
+hands_on: VERY_HIGH
+Region: 倉敷中心部
+
+Evidence:
+https://www.fkmc.or.jp/data/2994/news_dtl/
+https://www.fkmc.or.jp/data/3021/news_dtl/
+https://www.fkmc.or.jp/list/event_news/
+
+GROWgle note:
+倉敷中央病院・川崎学園に続く、第三の強いOPEN_PUBLIC医療教育SOURCE。
+
+### 中国電力 水島発電所 — CURRENT STATUS 2026 CONFIRMED
+倉敷観光公式、2026-01更新:
+- 小学生以上
+- 5〜80名
+- 事前予約
+- 発電設備概要、映像、設備見学
+- 無料
+- 平日
+
+Classification:
+GROUP_BOOKING / CONSTANT
+ELEMENTARY+ / SCHOOL / GENERAL_GROUP
+STEAM / ENERGY / INFRASTRUCTURE / ENVIRONMENT
+Region: 水島
+
+Evidence:
+https://www.kurashiki-tabi.jp/rm_experience/rm-experience48/
+
+### 中国電力 玉島発電所 — CONSTANT
+Current tourism official:
+- 小学生以上
+- 5〜30名程度
+- 3週間前予約
+- 火力発電の概要説明、DVD、設備見学
+- 無料
+
+Classification:
+GROUP_BOOKING / CONSTANT
+ELEMENTARY+ / SCHOOL / GENERAL_GROUP
+STEAM / ENERGY / INFRASTRUCTURE
+Region: 玉島
+
+Evidence:
+https://www.kurashiki-tabi.jp/see/see-2333/
+
+### クラレ 倉敷事業所 — factory-tour status caution
+倉敷観光公式:
+- 工場見学自体は小学生高学年以上、5〜30名という案内が残る
+- ただし「新型コロナウイルス感染症の影響で受け入れ中止」と現ページに記載
+
+Therefore:
+- 化学教室・地域イベント等はACTIVE SOURCEとして継続
+- 一般の通常工場見学はCURRENT ACTIVEに数えない
+- 再開確認まで WATCH
+
+Evidence:
+https://www.kurashiki-tabi.jp/see/see-2332/
+
+### JFEスチール 倉敷地区 — seasonal public continuity strengthened
+倉敷市公式で:
+- 2025夏休み工場見学会
+- 2025冬休み工場見学会
+- 2026春休み工場見学会
+を確認。
+
+共通:
+- 原則小学生以上
+- 小学生は保護者同伴
+- 各回70名
+- 無料
+- 概要説明→工場見学→質疑応答
+
+Classification:
+OPEN_PUBLIC / SCHOOL_HOLIDAY / RECURRING_CONFIRMED
+ELEMENTARY+ / FAMILY
+WORKS / STEEL / STEAM
+Region: 水島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1013066/1016952/1016953.html
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1013066/1021516/1021519.html
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1022190/1023619/1023622.html
+
+## 78. Gateway-scale finding
+
+高梁川流域SDGsポータル:
+- 2026時点で登録法人・団体200件
+- 活動100件
+- M.S.E.の企業学び楽舎
+- 和田組インターン
+- ナイカイアーキット地域活動
+- セブン-イレブンの小中学生向け出張授業
+等が一つの地域プラットフォームに集約。
+
+Classification:
+REGIONAL_NETWORK / DISCOVERY_GATEWAY
+
+Evidence:
+https://www.goodcity.jp/kurashiki.takahashiriver/
+
+Research implication:
+「企業学び楽舎64」「こじまファクトリー39」「Challenge Work」「繊博」に加えて、
+SDGsパートナー200団体も企業教育接点を発見する母集団として有効。
+ただし200団体全件深掘りはせず、「教育・子ども・体験・インターン」活動のある団体から優先抽出。
+
+## 79. Next route — accelerated
+
+High-yield:
+- SDGsポータル200団体から EDUCATION / CHILD / INTERNSHIP タグ相当を優先抽出
+- 2026アクションクエスト36団体のうち新規企業をA/B/Cスクリーニング
+- 倉敷グリーンファーム級のOPEN_PUBLIC常設体験を追加探索
+- 医療3大SOURCE（倉敷中央 / 川崎 / 成人病センター）を比較整理
+- 水島・玉島の常設GROUP_BOOKING工場見学をcurrent statusで再検証
+- 繊博2026参加20社の完全回収は継続
