@@ -4854,3 +4854,171 @@ Step 5: C postponed
 4. 医療OPEN_PUBLIC SOURCEの2024〜2026継続性確認
 5. 2026秋〜冬の一般公開企業イベントを横断
 6. 倉敷市民講座から企業工場見学を逆抽出
+
+
+## 81. 2026 current gateway / university reverse batch — 2026-10-05
+
+### 繊博2026 — official current details locked
+倉敷市公式で2026年度開催条件を確定。
+
+Online tour:
+- 2026-10-01〜11-30
+- 高校生〜専門・大学生向け
+- 産地企業の技術力・ものづくり・「産地で働く魅力」を紹介
+
+Real tour:
+- 2026-11-04 / 11-10 / 11-18
+- 普段見られない企業内部を巡る体験型ツアー
+- 申込締切 2026-10-21
+- 定員到達で終了
+
+実行委員会:
+- 倉敷市
+- 井原市
+- 岡山県
+- 倉敷市立短期大学
+- 岡山県アパレル工業組合
+- 倉敷ファッションセンター
+
+Classification:
+CURRENT_2026 / INDUSTRY_GATEWAY
+HIGH_SCHOOL / VOCATIONAL / UNIVERSITY
+TEXTILE / CAREER / WORKS / LOCAL_INDUSTRY
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/industry/1012608/1012614/1012615/1010540.html
+https://k-ff.jp/
+
+### 倉敷芸術科学大学 — company-discovery gateway reconfirmed
+研究・地域連携センターが公式に:
+- 企業・自治体・教育機関からの相談窓口
+- 出張講義
+- 共同研究
+- 作品制作
+- 地域連携
+を一元的に受ける構造。
+
+小中学校向け:
+- 教員＋大学生が研究紹介
+- 学生が児童生徒へアドバイス
+- ワークショップ支援
+- 例: 連島東小「湿布薬をつくろう」
+
+Classification:
+UNIVERSITY_GATEWAY
+SCHOOL / COMMUNITY / COMPANY_COLLAB
+STEAM / CREATIVE / CAREER
+
+Evidence:
+https://www.kusa.ac.jp/research/coo-center/
+
+GROWgle note:
+企業名だけで検索するより、大学の地域連携窓口から「企業×学生×地域」の案件を逆引きする方が高効率。
+
+### 小倉屋 × 倉敷芸術科学大学 — collaboration revalidated
+大学公式の芸術学科ページでKOKURAYA SDGs Projectを再確認。
+- 倉敷をイメージしたアパレル商品
+- 学生デザイン
+- 地元発祥「倉敷染」
+- 地域活性化目的
+
+Classification:
+COMPANY_X_UNIVERSITY / RECURRING
+UNIVERSITY
+TEXTILE / DESIGN / PRODUCT_DEVELOPMENT / LOCAL_IDENTITY
+
+Evidence:
+https://www.kusa.ac.jp/academics/dept-arts/region.html
+
+### 倉敷芸術科学大学 30周年パートナー制度 — NEW COMPANY NETWORK
+大学公式で地域共創パートナー企業を確認。
+
+掲載企業例:
+- アイサワ工業
+- 大本組
+- 亀屋防災
+- ベッセルテクノサービス
+- アイアットOEC
+- 協同
+- 倉敷ヤンマー
+- ダイキンエアテクノ
+- 蜂谷工業
+- マイクロメイト岡山
+- 山口電工
+ほか
+
+Classification:
+UNIVERSITY_X_COMPANY_NETWORK
+CURRENT_PARTNERSHIP
+STEAM / CONSTRUCTION / IT / MACHINERY / COMMUNITY
+ACTIVITY_STATUS:
+- partner relationship verified
+- educational activity per company NOT YET VERIFIED
+
+Evidence:
+https://www.kusa.ac.jp/about-university/donation/
+
+GROWgle note:
+新たな企業母集団として保持。ただしパートナー掲載だけではGROWgle ACTIVITYに昇格しない。
+
+### 倉敷屏風プロジェクト — recurring community collaboration
+2026-03大学公式:
+- 芸術学部日本画ゼミ
+- 和紙・伝統技術で屏風制作
+- 2025倉敷屏風祭、日本遺産フェスティバル等で展示
+- 2026年2月に成果報告
+- 次年度へ継承予定
+
+Classification:
+UNIVERSITY_X_COMMUNITY / RECURRING
+UNIVERSITY
+CREATIVE / CULTURAL_ASSET / COMMUNITY
+Region: 倉敷
+
+Evidence:
+https://www.kusa.ac.jp/news/2026/03/20260310-1.html
+
+GROWgle note:
+企業中心枝では補助レイヤーだが、地域文化×学生の継続教育SOURCEとして保持。
+
+### くらしき作陽大学 — corporate PBL gateway revalidated
+大学公式産学連携ページ:
+- ハナマルキ
+- 西日本フード
+- 味の素
+- JA晴れの国岡山
+等と継続的な商品企画・健康・地産地消プロジェクト。
+
+Classification:
+UNIVERSITY_X_COMPANY_GATEWAY
+UNIVERSITY
+FOOD / HEALTH / PRODUCT_DEVELOPMENT / ENTRE
+
+Evidence:
+https://www.ksu.ac.jp/food_culture/food_culture_sangakurenkei
+
+## 82. Speed / saturation note
+
+現時点で企業探索は「個社検索」から「Gateway master」中心へ完全移行。
+
+高効率Gateway:
+1. 企業学び楽舎
+2. Challenge Work 14
+3. 繊博
+4. こじまファクトリー
+5. 倉敷芸術科学大学 研究・地域連携
+6. くらしき作陽大学 産学連携
+7. 商工会議所
+8. 市民講座
+9. 産業団地 / 港湾 / コンビナート
+10. 医療系オープンホスピタル
+
+今後はGatewayごとに企業母集団を回収し、A/B/C判定を高速適用する。
+
+## 83. Next batch priority
+
+- 繊博2026参加20社の個社名回収
+- 倉敷芸術科学大学30周年パートナー企業の教育活動逆引き
+- Challenge Work 14高体験企業のcurrent status
+- 2026秋冬のOPEN_PUBLIC企業イベント
+- 医療系OPEN_PUBLICイベントの年次継続確認
