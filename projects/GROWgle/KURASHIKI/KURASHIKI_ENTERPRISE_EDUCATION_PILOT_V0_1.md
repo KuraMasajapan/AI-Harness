@@ -690,3 +690,298 @@ GROWgleではイベント名の継続だけではなく、「企業スポーツ�
 - 松井織物 / 坂本織物
 - 廣珍
 - 倉敷市管事業協会
+
+
+## 17. Enterprise reverse-search batch 2 — 2026-10-05
+
+### 中央建設 — HIGH_VALUE / RECURRING
+Official newsで2025〜2026に複数の子ども・学生向け活動を確認。
+
+- 2025-01-29 倉敷市立旭丘小学校6年生2クラス向けドローン体験会
+  - ドローンの歴史・種類・法律・建設業での活用を座学
+  - 児童が一人ずつ操縦
+  - 仕事との接続まで説明
+- 2025年11月にも旭丘小学校6年生2クラスで再度ドローン体験
+  - 2025年内2回目。児童の要望から再開催
+- 2026 高校生インターン
+  - 入札ゲーム
+  - 安全巡視
+  - CAD
+  - 測量
+  - 施工事例
+- 2026 玉島笠岡道路工事で高校生の現場見学、産業教育共通研修を受入
+- 2026-10 倉敷商工会議所の「はたらく車」子ども向け建設イベントに参加
+
+Classification:
+SCHOOL_ONLY / ELEMENTARY / HIGH_SCHOOL / RECURRING
+WORKS / STEAM / INFRASTRUCTURE
+COMPANY_X_SCHOOL / COMPANY_X_CHAMBER
+hands_on: HIGH
+
+GROWgle note:
+単発の企業学び楽舎参加ではなく、ドローン・測量・CAD・入札・現場見学まで年齢別に複数の教育接点を持つ強いSOURCE。
+
+Evidence:
+https://chuo-kensetsu.co.jp/
+https://chuo-kensetsu.co.jp/news/
+
+### 目黒建設 — HIGH_VALUE / RECURRING
+Official「社会貢献」で中学生職場体験を定期受入と明記。
+
+- 毎年、倉敷市立中学校の職場体験を受入
+- 建設現場見学
+- 測量
+- 簡単な現場作業
+- BIMソフト操作
+- ドローン操作
+- 企業学び楽舎にも初年度から参加
+- 学校経由のインターンは日数・時期を相談可能
+- 2022/2023 倉敷チャレンジ・ワーク14実績確認
+
+Classification:
+SCHOOL_ONLY / GROUP_OR_SCHOOL_REQUEST
+JUNIOR_HIGH / STUDENT
+CONSTANT_OR_RECURRING
+WORKS / STEAM / INFRASTRUCTURE
+
+Evidence:
+https://www.meguro-kensetu.co.jp/contributions
+
+### ナイカイアーキット — RECURRING_CANDIDATE
+2024 企業学び楽舎で中1向け出前授業。
+体験:
+- ドローン操縦チーム戦
+- 建設業でのドローン活用説明
+- 入札の仕組み説明
+- 模擬入札ゲーム
+
+過去には高校生3日間インターン:
+- 杭打ち施工管理
+- 浄水場耐震補強
+- 浚渫船、水質監視
+- 潮位観測
+- 測量実習
+
+Classification:
+SCHOOL_ONLY
+JUNIOR_HIGH / HIGH_SCHOOL
+WORKS / STEAM / INFRASTRUCTURE
+hands_on: HIGH
+
+Evidence:
+https://www.naikai-archit.jp/information/1514
+
+### アキオカ — HIGH_VALUE
+2026 企業学び楽舎:
+- 生徒が鋳造工程を実体験
+- 砂を固めた型づくり
+- 金属を型に流し込む作業
+
+高校生向け:
+- 2026新社屋
+- 高卒候補者の職場見学を随時受付
+- 砂型、1,500℃溶解・注湯、研磨、塗装、検査などの工程を紹介
+
+Classification:
+SCHOOL_ONLY + HIGH_SCHOOL_CAREER_VISIT
+JUNIOR_HIGH / HIGH_SCHOOL
+WORKS / STEAM / LOCAL_INDUSTRY
+hands_on: VERY_HIGH
+Region: 玉島
+
+Evidence:
+https://akioka1966.co.jp/
+https://akioka1966.co.jp/recruit/highschool/
+
+### 新来島サノヤス造船 水島製造所 — HIGH_VALUE
+学校側記録で企業学び楽舎の体験内容を確認。
+- 中学生が船の構造を紙で作り、強度を出す体験
+- 船体構造・造船工学を簡易模型で理解
+
+大学・高専等学生向け:
+- 2026夏期インターン募集
+- 水島製造所で2日間就業体験
+- 溶接・ガス切断・設計実習
+- 工場見学、社員座談会
+
+Classification:
+SCHOOL_ONLY / UNIVERSITY_STUDENT
+JUNIOR_HIGH / UNIVERSITY
+WORKS / STEAM / SHIPBUILDING
+hands_on: HIGH
+Region: 児島塩生 / 水島製造所
+
+Evidence:
+https://www.sanoyas.skdy.co.jp/
+https://www.sanoyas.skdy.co.jp/recruit/
+
+### 坂本織物 — OPEN / CONSTANT
+倉敷教育旅行公式SOURCE。
+
+- 倉敷真田紐の解説
+- 真田紐＋ラインストーンのキーホルダー制作
+- 小学生 / 中学生 / 高校生 800円
+- 約20分
+- 最大20名
+- 2日前まで要予約
+- 倉敷市自然の家のファミリーキャンプにも講師派遣実績
+- 一般向けにはキーホルダー、コースター等のワークショップも実施
+
+Classification:
+OPEN_OR_GROUP_BOOKING / CONSTANT
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL / FAMILY
+CREATIVE / LOCAL_INDUSTRY / CULTURAL_ASSET
+Region: 児島
+
+Evidence:
+https://kankou-kurashiki.jp/kyouiku_ryokou/theme/monodukuri/1921/
+https://www.sanadahimo.info
+
+### ENGI 倉敷スタジオ — STRATEGIC_SOURCE
+倉敷市と包括連携。
+市公式が以下を明記:
+- 企業学び楽舎で中高向け出前講座
+- 教育現場へのプロの知見導入
+- アニメ人材育成
+- 育成人材の市内就業先として連携
+- 官民学一体のデジタルコンテンツ産業育成
+
+企業公式:
+- 倉敷スタジオは若手作画スタッフ育成拠点
+- 2026 学生向けアニメーター説明会
+- ポートフォリオ講習・講評
+- 倉敷スタジオ見学
+学校側:
+- 2024 倉敷高校でスタジオ所長がアニメーター職業講話
+
+Classification:
+COMPANY_X_MUNICIPALITY / COMPANY_X_SCHOOL
+JUNIOR_HIGH / HIGH_SCHOOL / STUDENT
+CREATIVE / DIGITAL_CONTENT / CAREER
+RECURRING / STRATEGIC_NETWORK
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1005580/1005581.html
+https://engi-st.net/studio/kurashiki/
+
+GROWgle note:
+倉敷の企業教育では珍しい「アニメ・デジタルコンテンツ産業」。製造業偏重を補完する重要カテゴリ。
+
+### 江口電機 — CAREER + SCHOOL_SOURCE
+- 企業学び楽舎2026参加
+- FA（Factory Automation）を題材とする企業
+- 大学・大学院生向け採用直結型インターンを本社（倉敷市中島）で実施
+- 座学＋現場体験
+
+Classification:
+SCHOOL_ONLY + UNIVERSITY_STUDENT
+STEAM / WORKS / AUTOMATION
+Status:
+企業学び楽舎での具体的ハンズオン内容はパンフレット情報と突合継続。
+
+Evidence:
+https://eguchi-denki.co.jp/
+
+### 玉島信用金庫 — VERY_HIGH_VALUE / OPEN_PUBLIC
+今回の逆引きで大きな発見。
+
+2026:
+- 「キッズマネースクール2026」を開催
+- 本店営業部で夏休みワークショップ「マグネット黒板づくり」
+- 子ども向けマジックショー
+- 「子育て応援project〜未来を担う子どもの力でより良い街に〜」
+
+継続プログラム:
+- ジュニア倶楽部
+- 主催キッズ・マネースクールや子ども向け企画情報
+- 2023 キッズサマースクール
+- 2024 キッズサマースクール
+- 2024 お金の○×クイズ / キッズフリーマーケット
+- 2024 空飛ぶクルマ見学＆体験ツアー
+- 2025 English Technology Camp
+- 2026 キッズマネースクール
+
+Classification:
+OPEN_PUBLIC_OR_MEMBER_EVENT / RECURRING
+ELEMENTARY / FAMILY
+ENTRE / FINANCIAL_LITERACY / STEAM / COMMUNITY
+Region: 玉島
+
+GROWgle note:
+金融機関が単なる金融教育を超え、テクノロジー・空飛ぶクルマ・工作等の子ども体験SOURCEになっている。企業中心探索で特に価値が高い。
+
+Evidence:
+https://www.shinkin.co.jp/tamashima-sk/
+https://www.shinkin.co.jp/tamashima-sk/jrclub/
+
+### 広島銀行 倉敷支店 — GROUP_LEVEL_SOURCE, LOCALITY_UNVERIFIED
+広島銀行全体では公式に:
+- 小学生向けキッズ・マネースクール
+- 中高生向け職場体験学習
+- 大学への出張講座
+を継続。
+
+倉敷市内には倉敷・児島・水島・玉島支店あり。
+ただし今回、上記教育活動が倉敷支店で直近実施された一次情報までは確認できず。
+
+Classification:
+FINANCIAL_EDUCATION_SOURCE
+LOCAL_ACTIVITY_STATUS: VERIFY
+Do not count as Kurashiki active ACTIVITY until locality confirmed.
+
+Evidence:
+https://www.hirogin.co.jp/company/csr/social/
+
+### 住友生命 倉敷匠支部 — GROUP_LEVEL_SOURCE, LOCALITY_UNVERIFIED
+住友生命全体:
+- 小学校〜大学へ金融教育等の出前授業
+- 中高向け金融、キャリア、コミュニケーション、がん教育、課題解決型授業
+- 2024年度末まで累計200回超
+- 小学校高学年向け金融教育も開始
+
+企業学び楽舎64社に倉敷匠支部が登録されているため、倉敷では制度経由の教育接点あり。
+ただし独自の倉敷地域開催実績は継続確認。
+
+Evidence:
+https://www.sumitomolife.co.jp/about/sustainability/important/stakeholder/fr.html
+
+## 18. Batch 2 structural findings
+
+1. 建設会社群が予想以上に強い。
+   - ドローン
+   - BIM / CAD
+   - 測量
+   - 模擬入札
+   - 工事現場
+   - 防災・インフラ
+   が学校教育へ直接接続されている。
+
+2. 玉島信用金庫は金融教育だけでなく、継続的な「子ども体験プロデューサー」に近い。
+   地域金融機関を単に FINANCE とせず EVENT_SOURCE として逆引きする。
+
+3. ENGIは倉敷における新産業育成政策と教育が直結した例。
+   「既存地場産業」だけでなく「地域が新たに育てようとしている産業」をGROWgleで別タグ化する価値あり。
+   Candidate tag: EMERGING_LOCAL_INDUSTRY
+
+4. 新来島サノヤス造船、アキオカ、中央建設等は、中学生の簡易体験から高校・大学の実務体験まで段階的接続が可能。
+
+5. 金融・保険の全国企業は、全国施策が存在しても倉敷実施を確認できない限りKurashiki ACTIVITYとして数えない。
+   SOURCE候補とLOCAL VERIFIED ACTIVITYを分離する。
+
+## 19. Next queue
+
+Unfinished / deeper verification:
+- 玉島信用金庫 2026キッズマネースクール詳細
+- 下津井電鉄: バス職業体験・学校受入の有無
+- 松井織物
+- 廣珍
+- 倉敷市管事業協会
+- 中央設備 / 大同設備工業
+- エムイーシーテクノ中国事業所
+- 日本非破壊検査 水島事業所
+- シンニチロ
+- 三菱ケミカル岡山事業所
+- ENEOS水島製油所の学校見学・企業スポーツ追加確認
+- JFE物流
+- 医療 / 福祉64社群の独自Open Hospital・職場体験
+- 保育園群の地域向け活動
