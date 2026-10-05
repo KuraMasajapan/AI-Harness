@@ -2566,3 +2566,216 @@ Priority:
 - 2026現在開催中の企業・産業イベントを別途 CURRENT_ACTIVITY として抽出
 - 商工会議所・公民館・市民講座から企業SOURCEを逆発見
 - 中学校「チャレンジ・ワーク14」の受入事業所名を学校側記録から抽出
+
+
+## 43. Tamashima harbor + Kojima textile continuation — 2026-10-05
+
+### ナカシマプロペラ 玉島工場 — INDUSTRIAL_SOURCE / FACTORY_TOUR_NOT_PUBLIC
+Current official site:
+- 玉島工場: 倉敷市玉島乙島8259-12
+- 2005年に大型船用プロペラ製造拠点として完成
+- 2026年5月、玉島ハーバーフェスティバルでプロペラ展示
+- 一方、公式問い合わせページでは「原則として工場見学の受け入れは行っていない」と明記
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+MARITIME / PROPULSION / ADVANCED_MANUFACTURING
+PUBLIC_FACTORY_TOUR: NO_IN_PRINCIPLE
+COMMUNITY_EVENT: VERIFIED_2026
+Region: 玉島ハーバーアイランド
+
+Evidence:
+https://www.nakashima.co.jp/company/office
+https://www.nakashima.co.jp/contact
+https://www.nakashima.co.jp/news
+
+GROWgle note:
+工場見学不可でも、地域フェスで技術展示を行う企業は「教育接点なし」とは扱わない。
+ACTIVITY単位で「工場見学不可」「地域イベント展示あり」を分離する。
+
+### 上組 玉島支店 — LOGISTICS_SOURCE / LOCAL_EDU_UNVERIFIED
+Current official:
+- 水島港を拠点に、港湾荷役・通関・サイロ・定温倉庫・配送まで一貫物流
+- 玉島支店・ハーバーアイランド物流センター・複数サイロを保有
+- 玉島支店採用窓口あり
+- 地域との関わりとして職場周辺清掃活動を公式記載
+
+今回の一次情報検索では、子ども・学校向け見学や職場体験の玉島実績は未確認。
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+LOGISTICS / PORT / FOOD_SUPPLY_CHAIN
+ACTIVITY_STATUS: LOCAL_EDUCATION_UNVERIFIED
+Region: 玉島ハーバーアイランド
+
+Evidence:
+https://www.kamigumi.co.jp/company/domestic/tamashima/
+https://www.kamigumi.co.jp/recruit/entry/
+
+### 全農サイロ 倉敷支店 — LOGISTICS / FOOD_INFRASTRUCTURE SOURCE
+Current official:
+- 玉島ハーバーアイランドの食料コンビナート
+- サイロ110,000トン
+- 120,000トン級本船バース
+- 穀物・大豆ミール等を扱う大規模物流拠点
+
+今回、子ども・学校向け見学の現行公開情報は未確認。
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+FOOD / PORT / LOGISTICS / AGRICULTURE_INFRASTRUCTURE
+ACTIVITY_STATUS: UNVERIFIED
+Region: 玉島ハーバーアイランド
+
+Evidence:
+https://www.zsilo.co.jp/company/access/
+
+### J-オイルミルズ 倉敷工場 — FOOD_INDUSTRY SOURCE
+Official corporate release:
+- 玉島乙島新湊8266
+- 大豆搾油拠点
+- JA西日本くみあい飼料、全農サイロと食料コンビナートを形成
+
+今回の一次情報検索では、倉敷工場の子ども・学校向け工場見学は未確認。
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+FOOD / AGRICULTURE / MANUFACTURING
+ACTIVITY_STATUS: UNVERIFIED
+
+Evidence:
+https://www.j-oil.com/press/article/210512_002577.html
+
+### 明治 倉敷工場 — FOOD / SPORTS_NUTRITION SOURCE
+Official release:
+- 玉島ハーバーアイランドにスポーツ栄養製品（ザバス等）の生産工場
+- Current Meiji public factory-tour network lists other designated “なるほどファクトリー” sites, but 倉敷工場 is not in that public-tour list.
+
+Therefore:
+- 玉島工場の存在は確認
+- 一般工場見学は現時点で確認できず
+- 全国の明治工場見学制度を倉敷へ自動適用しない
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+FOOD / SPORTS_NUTRITION / MANUFACTURING
+PUBLIC_TOUR_STATUS: UNVERIFIED / NOT_LISTED_IN_PUBLIC_FACTORY_NETWORK
+
+Evidence:
+https://www.meiji.co.jp/corporate/pressrelease/2018/20180213_01.html
+https://www.meiji.co.jp/learned/factory/
+
+### シーアールグループ / 岡山シーアール物流 玉島 — LOGISTICS_SOURCE
+Current official:
+- 倉敷営業所: 玉島乙島新湊8263-29
+- 飼料原料・家畜飼料配送等の物流
+- 採用サイトに「会社説明・見学会」「長期インターンシップ」の導線あり
+- 玉島・水島エリア求人を継続
+
+ただし今回、子ども・中高生向けの玉島地域教育活動は未確認。
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE / STUDENT_CAREER_CANDIDATE
+LOGISTICS / FOOD_SUPPLY_CHAIN
+LOCAL_CHILD_ACTIVITY: UNVERIFIED
+
+Evidence:
+https://cr-logi.co.jp/group/okayama/
+https://cr-logi.co.jp/recruit/entry/search_2.php
+
+### ショーワ — STUDENT_FACTORY_VISIT / DENIM_PROCESS
+岡山県公式で2024年のファッション専門校エスモード学生による工場見学を確認。
+- 倉敷市児島稗田町
+- デニムの染色・織布
+- 専門学生が製造工程を見学
+
+さらに2025年、児島観光ガイド協会が地域産業研修として工場見学。
+- 整経
+- 糸染色
+- 分繊・サイジング
+- 自動織機
+- 生地仕上げ
+を見学。
+
+Classification:
+STUDENT / PROFESSIONAL_EDUCATION / GROUP_VISIT
+TEXTILE / STEAM / LOCAL_INDUSTRY
+REPEAT_LIKELY
+Region: 児島
+
+Evidence:
+https://www.pref.okayama.jp/page/931540.html
+https://kojimaguide.com/showa/
+
+GROWgle note:
+一般公募型ではないが、専門教育・地域ガイド研修を受け入れる産業教育SOURCEとして昇格。
+
+### ジョンブル — STUDENT_FACTORY_VISIT / RECURRING
+岡山県公式で:
+- 2019
+- 2023
+- 2024
+- 2025
+にファッション専門校学生の児島工場見学を確認。
+主な学習:
+- ジーンズ等の縫製
+- 地場デニム産業
+- ファッション産業の生産工程
+
+Classification:
+STUDENT_ONLY / PROFESSIONAL_EDUCATION
+TEXTILE / DESIGN / WORKS
+RECURRING_CONFIRMED
+Region: 児島
+
+Evidence:
+https://www.pref.okayama.jp/page/639385.html
+https://www.pref.okayama.jp/page/884679.html
+https://www.pref.okayama.jp/page/931540.html
+https://www.pref.okayama.jp/page/997814.html
+
+### 豊和 — STUDENT_FACTORY_VISIT / LONG_CONTINUITY
+岡山県公式で2019・2023・2024・2025に専門学生のデニム加工工場見学を確認。
+- ジーンズの洗い加工
+- 岡山デニム産地の製造工程
+- 2025は玉野市玉原拠点だが、児島産業ネットワークの教育ルートとして継続
+
+倉敷市立短期大学の過年度研究でも明石被服興業とともに工場見学先として登場。
+
+Classification:
+STUDENT / PROFESSIONAL_EDUCATION
+TEXTILE / DESIGN / LOCAL_INDUSTRY
+RECURRING_NETWORK_SOURCE
+
+Evidence:
+https://www.pref.okayama.jp/page/884679.html
+https://www.pref.okayama.jp/page/931540.html
+https://www.pref.okayama.jp/page/997814.html
+https://www.kurashiki-cu.ac.jp/kk/index.php/2021fs4/
+
+Note:
+現行拠点が倉敷市外を含むため、Kurashiki point-sourceとしては活動場所を都度確認する。
+
+## 44. Methodology refinement from batch
+
+1. 「工場見学を受け入れない」企業も、地域フェス・技術展示で教育接点を持つ場合がある。
+   SOURCE単位で0/1判定せず、ACTIVITY単位に分解する。
+
+2. 産業クラスター企業は、所在地だけでACTIVE SOURCEにしない。
+   工場見学・学校連携等が見つからない場合は SOURCE_CANDIDATE のまま保持する。
+
+3. 全国企業の工場見学制度を倉敷拠点へ横展開して推定しない。
+   明治のように、公開見学対象工場が限定されている場合がある。
+
+4. 岡山県の産業人材・産地育成事業から、児島企業の教育受入実績を複数年で確認できる。
+   自治体「産業振興」側も探索ルートへ常設追加。
+
+5. 一般向けOPEN_PUBLICだけでなく、専門学校・大学生向けの産地研修は「地域産業を次世代へ継承する教育資源」として重要。
+
+## 45. Next route
+
+- こじまファクトリー残企業のうち、学生見学・職場体験・学校連携が見つかる企業を抽出
+- 玉島食料コンビナート企業について、学校・大学・行政側から逆検索
+- 玉島ハーバーフェスティバル2026の出展企業を抽出し、子ども向け技術展示の有無を確認
+- 倉敷クリエイティブパーク / 船穂 / 市場工業団地の企業リスト化
+- Challenge Work 14の学校別受入先抽出
