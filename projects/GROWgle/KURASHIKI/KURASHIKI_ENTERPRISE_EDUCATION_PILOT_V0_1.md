@@ -4056,3 +4056,166 @@ https://www.pref.okayama.jp/uploaded/attachment/362468.pdf
 - JAPAN DENIM DAYS 2026の詳細ワークショップ・参加企業公開を追跡
 - 川崎医科大学 / 川崎医療福祉大学の産学連携から医療企業SOURCEを逆引き
 - 作陽大学の商品開発実習から連携企業をさらに抽出
+
+
+## 69. Medical-industry / retail-public collaboration batch — 2026-10-05
+
+### イオンスタイル倉敷 / イオンモール倉敷 × 川崎医療福祉大学 × 倉敷市保健所
+2026産学官連携事業「イオンdeくら★けん」。
+- 2026-06に第1回
+- 2026-09-05に第2回
+- 2026-10-24、2027-01-23の継続予定も公式告知
+- 会場: イオンモール倉敷
+- 子ども〜高齢者まで参加
+- 親子で「見て・触って・体を動かして」学ぶ
+- がん検診クイズ
+- 治療費シミュレーション
+- 全身反応測定
+- 血管年齢測定
+- 大学学生・教員がブース運営
+
+Classification:
+COMPANY_X_UNIVERSITY_X_MUNICIPALITY
+OPEN_PUBLIC / RECURRING_CONFIRMED
+CHILD / FAMILY / GENERAL
+MEDICAL / HEALTH / COMMUNITY
+hands_on: HIGH
+Region: 倉敷
+
+Evidence:
+https://w.kawasaki-m.ac.jp/data/10723/topicsDtl/
+https://w.kawasaki-m.ac.jp/data/10760/topicsDtl/
+
+GROWgle note:
+商業施設が「集客会場」だけでなく、大学・行政との地域健康教育ハブとして機能する代表例。
+
+### KMSメディカル・アーク2026 — MEDICAL_INDUSTRY_GATEWAY
+2026-02-19、川崎医科大学附属病院で第10回開催。
+目的:
+- 医療ニーズ・研究シーズと企業・団体を接続
+- 医療技術の産学連携
+- 地域医療ニーズの可視化
+- 学生研究展示
+
+2026:
+- 入場無料 / 現地開催
+- 企業・団体4社による舞台発表
+- 7件の研究シーズ発表
+- 学生研究ポスター展示
+- 企業・大学・自治体・医療機関が交流
+
+登壇企業・団体例:
+- AIメディカルサービス（基調講演）
+- ロケットスタジオ
+- テンダーハーツ
+- 倉敷中央病院付属予防医療プラザ
+- 岡山県産業振興財団 / 企業と大学との共同研究センター
+
+Classification:
+MEDICAL_INDUSTRY_GATEWAY
+COMPANY_X_UNIVERSITY_X_MEDICAL_X_MUNICIPALITY
+UNIVERSITY / RESEARCHER / INDUSTRY / GENERAL_CANDIDATE
+MEDICAL / STEAM / ENTRE / INNOVATION
+RECURRING_LONG_RUNNING (10th)
+
+Evidence:
+https://m.kawasaki-m.ac.jp/kenkyu/sanchi/kms/2026.php
+https://m.kawasaki-m.ac.jp/kma/
+
+GROWgle note:
+小中学生体験イベントではないが、倉敷の「医療×企業×大学」のSOURCE NETWORKとして重要。
+子ども向け層とは別レイヤーで保持。
+
+### 川崎学園 × Tech Doctor × Philosophia — CURRENT COMPANY_X_UNIVERSITY RESEARCH
+2025公表の共同研究:
+- 川崎医科大学
+- 川崎医療福祉大学
+- テックドクター
+- フィロソフィア
+- 倉敷脳神経内科クリニック
+が共同し、進行期パーキンソン病患者のQOL・ADLに関する長期研究。
+
+Classification:
+COMPANY_X_UNIVERSITY_X_MEDICAL
+RESEARCH / DIGITAL_HEALTH / MEDICAL
+Student/child direct activity: NONE_CONFIRMED
+
+Evidence:
+https://m.kawasaki-m.ac.jp/kenkyu/document/2025/20250314.pdf
+
+GROWgle note:
+直接体験ではないため主イベントDBには出さず、「地域産学連携ネットワーク」側の根拠として保持。
+
+### 川崎医科大学発ベンチャー — 株式会社クロバーナ
+川崎医科大学公式の大学発ベンチャーとして確認。
+
+Classification:
+UNIVERSITY_SPINOFF / ENTRE / MEDICAL
+ACTIVITY_STATUS: CHILD_STUDENT_EXPERIENCE_UNVERIFIED
+Region: Kawasaki ecosystem
+Do not promote to active GROWgle activity without educational interaction evidence.
+
+Evidence:
+https://m.kawasaki-m.ac.jp/sanchi/venture.php
+
+## 70. University / school collaboration network findings
+
+### 倉敷芸術科学大学 — structured outreach infrastructure
+Current Research & Community Collaboration Center:
+- 高校向け大学レベル出張講義
+- 地域小中学校向け研究紹介
+- 大学生が教員に同行し、児童生徒へ学生目線の助言・ワークショップ補助
+- 例: 連島東小「湿布薬をつくろう」
+- 公開講座・一般公開「おもしろ体験でえ〜」
+
+Classification:
+UNIVERSITY_X_SCHOOL_X_COMMUNITY
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL
+STEAM / CREATIVE / CAREER
+CONSTANT_INFRASTRUCTURE
+
+Evidence:
+https://www.kusa.ac.jp/research/coo-center/
+
+GROWgle note:
+企業中心枝では「企業との共同活動」を主に抽出するが、大学自体が学校・地域への教育SOURCEであることをネットワーク上に保持。
+
+### 川崎医療福祉大学 — high-school outreach continuity
+2026公式:
+- 倉敷古城池高校
+- 倉敷南高校
+- 倉敷高校
+等をキャンパス見学へ複数回受入
+- 学科見学・大学概要説明
+- 高校向け出張講義も常設
+
+Classification:
+UNIVERSITY_X_HIGH_SCHOOL
+HIGH_SCHOOL
+MEDICAL / WELFARE / CAREER
+RECURRING
+
+Evidence:
+https://w.kawasaki-m.ac.jp/center/tand/
+https://w.kawasaki-m.ac.jp/center/tand_visittour01/
+
+## 71. Source-network interpretation update
+
+倉敷の企業教育ネットワークには、企業単独SOURCE以外に以下の「場」がある。
+
+- 商業施設型: イオンモール倉敷
+- 大学産学連携イベント型: KMSメディカル・アーク
+- 産地産学連携型: 繊博
+- 大学地域連携センター型: 倉敷芸術科学大学
+- 商工会議所×短大型: くらたん合同企業説明会
+- 行政プロジェクト型: 倉敷未来プロジェクト
+
+これらは企業名を直接検索するより、多数の企業・学生・子どもを一度に接続するGATEWAYとして優先的に追う。
+
+## 72. Next route
+
+- イオンdeくら★けんの6月回、10月回参加学科・企業の詳細回収
+- KMSメディカル・アーク出展企業のうち倉敷地域企業を抽出
+- 産学連携の企業側NEWSを逆引きし、継続性確認
+- 児島繊維企業の学校・学生向け実務体験を個社単位で深掘り
+- 食品・農業の大学PBL連携企業を作陽大学側から追加抽出
