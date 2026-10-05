@@ -1202,3 +1202,198 @@ https://www.mcgc.com/group/outline/mcc/location/plant.html
 
 今回までで、企業学び楽舎64社のうち製造・建設・金融・交通・デジタル・食品系の重要SOURCEはかなり輪郭が出てきた。
 次段階では未深掘りの医療・福祉系をまとめて逆引きし、Open Hospital、職場体験、地域講座、学校出前の独自活動を確認する。
+
+
+## 23. Medical / welfare reverse-search batch — 2026-10-05
+
+### 倉敷中央病院 — OPEN_PUBLIC / VERY_HIGH_VALUE
+2026-06-06「オープンホスピタル2026」。
+地域の小中学生を主対象に病院施設見学・仕事体験を実施。
+予約制プログラム例:
+- 超音波検査体験
+- 手術室探検
+- こども薬剤師
+- 放射線部門体験
+- 救急・レスキュー体験
+- 歯科材料実験
+小さな子どもも参加可能な一般向け企画あり。
+
+Classification:
+OPEN_PUBLIC / FAMILY / RECURRING_CANDIDATE
+ELEMENTARY / JUNIOR_HIGH
+MEDICAL / STEAM / WORKS
+hands_on: VERY_HIGH
+
+Evidence:
+https://www.kchnet.or.jp/about_us/open-hospital-2026/
+
+### 倉敷中央病院リバーサイド — OPEN_PUBLIC
+2026-08-08 Open Hospital。
+小中学生向けに:
+- こども薬剤師
+- 顕微鏡
+- 歯科材料工作
+- 放射線部門
+- 高齢者疑似体験
+- 病院食
+等。
+
+Classification:
+OPEN_PUBLIC / FAMILY
+ELEMENTARY / JUNIOR_HIGH
+MEDICAL / STEAM / WELFARE
+hands_on: HIGH
+
+Evidence:
+https://www.kchnet.or.jp/krh/about_us/open-hospital-2026/
+
+### 水島協同病院 — HIGH_VALUE / RECURRING_CANDIDATE
+2026広報で複数の若者向け接点を確認。
+- 2026-03-11 古城池高校生の看護体験
+- 2026年夏〜秋に高校生向け医療体験・地元高校生への健康教育を継続
+- 広報紙に「リアルな医療業界を体感」等を掲載
+
+Classification:
+SCHOOL_OR_STUDENT_PROGRAM
+HIGH_SCHOOL
+MEDICAL / CAREER
+RECURRING_CANDIDATE
+
+Evidence:
+https://mizukyo.jp/letter/letter-4428/
+https://mizukyo.jp/letter/
+
+### コープリハビリテーション病院 — RECURRING
+病院広報で:
+- 2025年も中学生職場体験（倉敷チャレンジ・ワーク14）
+- 夏の高校生医療体験
+を確認。
+
+Classification:
+SCHOOL_ONLY / STUDENT_PROGRAM
+JUNIOR_HIGH / HIGH_SCHOOL
+MEDICAL / REHABILITATION / CAREER
+RECURRING
+
+Evidence:
+https://coopreha.jp/tayori
+
+### 創心會 — HIGH_VALUE / MULTI-AGE
+2026企業学び楽舎:
+- 車いすに乗る／押す
+- ビジョントレーニング
+- 作業療法士の仕事
+を中高生へ提供。
+
+2026-09:
+- 倉敷市高校のキャリア教育へ作業療法士が参加
+- 実際の道具に触れながら仕事説明
+
+学生向け:
+- 倉敷本社で施設見学付き会社説明会
+- 1DAYオープンカンパニーでサービス現場体験
+
+Classification:
+SCHOOL_ONLY / HIGH_SCHOOL / UNIVERSITY_STUDENT
+JUNIOR_HIGH / HIGH_SCHOOL / STUDENT
+WELFARE / MEDICAL / CAREER
+RECURRING_CANDIDATE
+hands_on: HIGH
+
+Evidence:
+https://www.soushinkai.com/news/4676
+https://www.soushinkai.com/news/4280
+
+### 亀龍会 — HIGH_VALUE / PBL_AVAILABLE
+企業学び楽舎で:
+- 車いす試乗
+- 車いす操作
+- 段差移動
+- 介護職の責任・役割
+を体験。
+
+2026高梁川流域未来人材育成事業では:
+- 技術指導
+- 会社・施設見学
+の連携可能法人。
+
+Classification:
+SCHOOL_ONLY / HIGH_SCHOOL_PBL_AVAILABLE
+JUNIOR_HIGH / HIGH_SCHOOL
+WELFARE / COMMUNITY
+hands_on: HIGH
+
+Evidence:
+https://kuratoco.com/kigyomanabigakusya/
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+
+### クムレ — COMMUNITY_INFRASTRUCTURE / CAREER
+法人自体が地域子育て支援・障がい児支援・親子通園等を継続提供。
+教育・キャリア面:
+- 施設見学を随時受付
+- ボランティアを広く受入
+- 保育士・児童指導員志望者向け「お仕事体験」を随時実施
+- 保育園、乳児保育、児童発達支援等の複数拠点で現場体験
+
+地域親子向け:
+- 園庭・サロン無料開放
+- 親子教室
+- 保育園体験
+- 子育て相談
+
+Classification:
+COMMUNITY / STUDENT_CAREER / FAMILY
+PRESCHOOL / FAMILY / STUDENT
+WELFARE / CHILDCARE / COMMUNITY
+CONSTANT
+
+Evidence:
+https://cumre.or.jp/
+https://www.cumre-recruit.com/gathercat/new-graduate/
+https://cumre.or.jp/qa/
+
+GROWgle note:
+クムレは「体験イベントSOURCE」だけでなく、地域の子育て・福祉インフラとして別種の恒常SOURCE。GROWgleに含める場合はイベントDBと支援施設DBを混同しない。
+
+### 富田ケアセンター — STUDENT / COMMUNITY
+- 新卒者向け就業体験を随時受付
+- 個別事業所見学に対応
+- 2026現在、地域貢献事業・子育て事業も運営
+- 企業学び楽舎参加済み
+
+Classification:
+STUDENT_CAREER / SCHOOL_SOURCE
+WELFARE
+Status:
+小中高生向け独自一般イベントは追加確認。
+
+Evidence:
+https://www.tomicare.com/recruit/index.cgi?c=faq-1
+https://www.tomicare.com/
+
+### 倉敷スイートホスピタル — STUDENT / SCHOOL_SOURCE
+2026:
+- インターンシップ案内
+- 企業学び楽舎では心臓マッサージ、採血、松葉杖、低周波等の実体験講座を提供
+
+Classification:
+SCHOOL_ONLY + STUDENT
+MEDICAL / CAREER
+hands_on: VERY_HIGH
+
+Evidence:
+https://sweet-town.jp/
+https://sweet-town.jp/hospital/
+
+## 24. Medical / welfare structural findings
+
+1. 医療・福祉は「見る」より「やる」比率が高い。
+   薬剤師、超音波、救急、放射線、車いす、作業療法等、職業体験密度が非常に高い。
+
+2. Open Hospital型は一般家庭から直接アクセスできるため、SCHOOL_ONLY中心の企業学び楽舎を補完する。
+
+3. 医療機関は中学生職場体験、高校生医療体験、大学生インターンまで年齢連続性が強い。
+
+4. 福祉法人は地域支援サービスそのものを持つため、「イベントSOURCE」と「地域支援インフラ」を分離管理する必要がある。
+
+5. 倉敷の企業・地域教育資源は製造業だけでなく、医療・福祉が第二の大きな柱として成立している。
