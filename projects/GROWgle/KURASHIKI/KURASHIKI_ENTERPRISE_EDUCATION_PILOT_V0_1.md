@@ -5509,3 +5509,267 @@ Bは活動開始時点で昇格。
 - 2026繊博20社の一覧回収
 - 児島しごと博×こじまファクトリー×繊博の企業重複を整理
 - 非繊維企業（建設、物流、福祉、金融）の高体験SOURCEを優先昇格
+
+
+## 91. Speed batch — local career expo / chamber union / current-status corrections — 2026-10-05
+
+### 児島しごと博2025/2026 — scale + current status strengthened
+岡山県公式:
+- 2025-10-25開催
+- 倉敷鷲羽高校・倉敷翔南高校2年生 約150名
+- 9業種20社
+- 企業説明＋模擬就業体験
+- 2025から保護者参加可
+
+2026:
+- 第7回を2026-10-24開催予定
+- 2026-10-05時点の公式サイト表示では「参加企業募集中」
+- したがって2026参加企業一覧は未確定として扱い、2025企業名を2026へ自動転記しない
+
+Classification:
+CURRENT_2026 / REGIONAL_CAREER_GATEWAY
+HIGH_SCHOOL / FAMILY_COMPANION
+RECURRING_CONFIRMED
+hands_on: VERY_HIGH
+
+Evidence:
+https://kojima-shigotohaku.net/
+https://www.pref.okayama.jp/site/255/1002634.html
+https://www.pref.okayama.jp/uploaded/life/1002634_9664865_misc.pdf
+
+### 児島しごと博 — repeat company screen
+2023→2024で継続参加を確認できる企業:
+- 明石スクールユニフォームカンパニー
+- 綾野工務店
+- 児島技研
+- 琴浦製作所
+- しおかぜ
+- ジャスト
+- 角南被服
+- 瀬戸内ビルサービス
+- 高谷建設
+- 中国銀行
+- 西鉄
+- BEKKAN
+- 松下鉄工所
+- 水島信用金庫
+- 山口技商
+- リアライズ
+
+2023のみ追加:
+- 浦上染料店
+- 王慈福祉会
+- 片山住建
+- 中桐紙器
+- 藤森運輸
+- 藤原組
+- 森川造園
+
+Classification:
+RECURRING_CANDIDATE_MASTER
+
+Operational implication:
+上記16社は、単年度参加より一段高い優先度でcurrent確認する。
+
+Evidence:
+https://kojima-shigotohaku.net/wp-content/uploads/2024/01/%E5%85%90%E5%B3%B6%E3%81%97%E3%81%94%E3%81%A8%E5%8D%9A2023%E9%96%8B%E5%82%AC%E6%A1%88%E5%86%85.pdf
+https://kojima-shigotohaku.net/wp-content/uploads/2024/04/%E9%96%8B%E5%82%AC%E6%A1%88%E5%86%852024.pdf
+
+### くらしき三ツ星フェア2026 — NEW CHAMBER_UNION GATEWAY
+2026-07-29〜08-04、岡山髙島屋で初開催。
+主催:
+- 倉敷商工会議所
+- 玉島商工会議所
+- 児島商工会議所
+3会議所連携「くらしきユナイト」
+
+Scale / content:
+- 地域の食・雑貨・デニム等
+- 33社 / 170商品を出品（開催後報道）
+- 百貨店の食品表示・衛生・品質基準を地域事業者が実践的に学ぶ
+- 地元高校生が日替わりで店頭に立ち、販売・接客へ参加
+
+出品例:
+- 倉敷鷲羽高校
+- 倉敷児島塩結びプロジェクト
+- 倉敷真田紐 / 坂本織物
+- 倉敷いぐさ 今吉商店
+- 阪本鶏卵
+- 下津井漁師 武豊丸
+- 三冠酒造
+- 十八盛酒造
+- 熊屋酒造
+- 地域菓子・農園・キャンドル等多数
+
+Classification:
+CHAMBER_UNION_GATEWAY
+HIGH_SCHOOL + LOCAL_BUSINESS
+ENTRE / RETAIL / FOOD / LOCAL_INDUSTRY / PRODUCT_DEVELOPMENT
+CURRENT_2026 / FIRST_EDITION
+hands_on: HIGH
+
+Evidence:
+https://www.jcci.or.jp/news/2026/0723111420.html
+https://ab.jcci.or.jp/article/130585/
+https://www.kura-cci.or.jp/event/
+https://www.kojima-cci.or.jp/info/20260121-kurashikimitsuboshifea.html
+
+GROWgle note:
+「企業を見学する」のではなく、高校生が地域商品の販売現場へ入るタイプ。
+3商工会議所を横断する新しい企業教育Gatewayとして保持。
+
+### 2026春 児島フェス #せんいさい — LARGE PUBLIC INDUSTRY GATEWAY
+2026-04-25〜26。
+エリア:
+- 児島駅周辺
+- 三白市
+- ジーンズストリート
+- 味野商店街
+- 旧野﨑家住宅周辺
+
+内容:
+- 繊維製品
+- 地域飲食
+- 地元企業・商店の出店
+- 市民参加型イベント
+
+Classification:
+OPEN_PUBLIC / RECURRING
+FAMILY / GENERAL
+LOCAL_INDUSTRY / TEXTILE / COMMUNITY
+Region: 児島
+
+Evidence:
+https://www.kojima-cci.or.jp/info/20260206-2026harukojimafes.html
+
+GROWgle note:
+体験特化のJAPAN DENIM DAYSとは別。こちらは地域産業・商業を広く開く大型Gateway。
+
+### 玉島ハーバーフェスティバル2026 — CURRENT STATUS CORRECTION
+重要修正:
+市公式ページでは2026-06-06〜07開催予定として掲載されていたが、
+玉島商工会議所は2026-06-07付近の最新告知で
+「玉島ハーバーフェスティバル中止のお知らせ」を掲載。
+
+Therefore:
+- 2026年度を ACTIVE / HELD と数えない
+- 過年度から続くRECURRING_EVENT_SOURCEとして保持
+- 2026 = CANCELLED
+
+Past / structural value:
+- 水島港玉島地区
+- 防災・防衛
+- 地場産業・物産PR
+- 2006年以来の開催履歴
+- 企業・港湾・船舶・大型製造の地域接点
+
+Classification:
+RECURRING_SOURCE
+2026_STATUS: CANCELLED
+PORT / INDUSTRY / COMMUNITY / DISASTER_PREVENTION
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/culture/tourism/1001881/1008126/1008127/1008136.html
+https://www.tamashima-cci.or.jp/
+
+GROWgle note:
+予定情報と開催実績を分けるCURRENT STATUS管理の重要例。
+過去の予定ページだけを見て「2026開催済み」としない。
+
+### 高梁川流域SDGsアクションクエスト2026 — participant gateway strengthened
+市公式の開催後更新から2026出展企業・団体を追加確認:
+- POLA倉敷新田店
+- 玉島商業高校探究チーム タマタン
+- 倉敷グリーンファーム
+- 就労継続支援B型事業所まーる
+- スマイルファクトリー
+- 倉敷ビッグアメリカンショップ
+- 倉敷市シルバー人材センター
+- 川上建設
+- 人形の喜峯
+- くらしき女子コレクション
+- 倉敷・総社温暖化対策協議会
+- 大原芸術財団
+- 水島地域環境再生財団
+- 明治
+- 中央建設
+- 三井住友海上火災保険
+ほか
+
+2026 activity:
+- 展示
+- 販売
+- ワークショップ
+- 小学生以下ラリー
+- 高校生イベント運営ボランティア
+- 出展企業とのコミュニケーション
+
+Classification:
+OPEN_PUBLIC + HIGH_SCHOOL_PARTICIPATION
+RECURRING
+SDGS / COMMUNITY / WORKS / NATURE / ENTRE
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/plan/1002086/1002090.html
+
+### 岡山県アパレル工業組合 — ADDITIONAL INDUSTRY_MASTER
+現行会員・青年部から、児島企業母集団を補完:
+- 協同
+- 倉敷繊維加工
+- 児島
+- 三愛
+- 島田商事
+- 神馬本店
+- 桑和
+- ダイレック
+- つちや産業
+- ニシキ
+- 西原織物
+- モリ・フロッキー
+- 吉岡
+- 清原
+- YKK岡山営業所
+等
+
+Classification:
+INDUSTRY_MASTER
+TEXTILE / MATERIALS / PARTS / WORKWEAR
+ACTIVITY_STATUS:
+個社の教育接点を別途確認。
+
+Evidence:
+https://www.okayama-ap.or.jp/aboutus/aboutus_4.html
+https://okayama-ap.or.jp/aboutus/aboutus_5.html
+
+GROWgle note:
+こじまファクトリー39社・繊博企業群と重ねることで、
+「産地の企業母集団そのもの」の抜けをさらに減らせる。
+
+## 92. Current-state validation rule
+
+今後CURRENTイベントは以下の優先順位で状態確定:
+1. 開催後レポート
+2. 主催者の直近NEWS
+3. 自治体の更新済みページ
+4. 当初の開催予定ページ
+
+If conflict:
+開催予定 < 中止・延期・開催後情報
+
+Status:
+- UPCOMING
+- HELD
+- CANCELLED
+- POSTPONED
+- UNKNOWN
+
+This rule is now mandatory for 2026 current-event inventory.
+
+## 93. Next speed pass
+
+- 児島しごと博2025の20社を可能なら全件回収
+- 2026第7回参加企業の公開監視
+- SDGsアクションクエスト2026全出展企業をmaster化
+- 3商工会議所「くらしきユナイト」の今後事業をGateway追跡
+- 岡山県アパレル工業組合会員とこじまファクトリー・繊博の差分抽出
+- CANCELLED / HELD を含むcurrent statusを2026イベント全体へ適用
