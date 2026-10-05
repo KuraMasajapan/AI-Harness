@@ -446,3 +446,86 @@ C. 各企業・NPO独自網
 企業祭、ファクトリーツアー、夏休み企画、環境学習、インターン等
 
 したがって完全性を高めるには、A/B/Cの和集合をSOURCEマスター化してから重複排除する必要がある。
+
+
+## 13. Heatmap-ready data model — approved
+
+Human decision: GROWgleの企業・地域教育資源を将来ヒートマップ化する。
+目的は企業ランキングではなく、地域に存在する次世代育成資源の密度・偏り・空白を可視化すること。
+
+### SOURCEに追加する地理属性
+- municipality
+- local_subarea
+- address
+- latitude
+- longitude
+- geocode_precision
+- location_type: SOURCE_SITE / ACTIVITY_SITE / SERVICE_AREA
+
+### ACTIVITYに追加する可視化属性
+- target_age: PRESCHOOL / ELEMENTARY_LOW / ELEMENTARY_HIGH / JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY / FAMILY / GENERAL
+- access: OPEN_PUBLIC / GROUP_BOOKING / SCHOOL_ONLY / STUDENT_ONLY / RESIDENT_ONLY / PARTNER_ONLY
+- category: AI / ENTRE / WORKS / STEAM / CREATIVE / NATURE / SPORTS / COMMUNITY
+- regional_asset: LOCAL_INDUSTRY / NATURE_ASSET / CULTURAL_ASSET / EDUCATION_ASSET / MEDICAL / INFRASTRUCTURE / OTHER
+- continuity: CONSTANT / RECURRING / REPEAT_LIKELY / ONE_OFF / UNKNOWN
+- collaboration: COMPANY_X_STUDENT / COMPANY_X_UNIVERSITY / COMPANY_X_MUNICIPALITY / COMPANY_X_NPO / UNIVERSITY_X_RESIDENT / COMPANY_X_SCHOOL_X_GOVERNMENT / OTHER
+- hands_on_level: 0-3
+  - 0 information only
+  - 1 observation / tour
+  - 2 guided hands-on
+  - 3 real tools / production / professional task simulation
+- recurrence_years
+- last_verified_date
+- next_watch_date
+- source_confidence
+
+### Derived heatmap layers
+1. EXPERIENCE_DENSITY
+   - 子ども・若者向けACTIVITYの地理密度
+2. OPEN_ACCESS_DENSITY
+   - 個人・家族がアクセスできるOPEN_PUBLIC密度
+3. HANDS_ON_DENSITY
+   - hands_on_level 2-3を重視した体験密度
+4. AGE_COVERAGE
+   - 年齢層別の機会密度
+5. CATEGORY_DENSITY
+   - STEAM / WORKS / AI / MEDICAL / NATURE等の分野別密度
+6. REGIONAL_OPENNESS
+   - 企業・大学等が地域へ継続的に開いている度合い
+7. COLLABORATION_DENSITY
+   - 企業×学校×大学×自治体×NPO等の連携密度
+8. CONTINUITY_DENSITY
+   - CONSTANT / RECURRINGを重視した持続的教育資源
+9. OPPORTUNITY_GAP
+   - 人口・学校・企業等に対して体験機会が相対的に少ない地域／年齢／カテゴリ
+10. YEAR_OVER_YEAR_CHANGE
+   - 年次で教育資源が増加／減少している地域
+
+### Important scoring policy
+- 「掲載されていない企業 = 悪い企業」とは判定しない。
+- 未発見と活動不存在を区別する。
+- 件数だけで企業価値を順位付けしない。
+- 大規模イベント1件と、小規模でも毎月継続する活動を同一扱いしない。
+- SCHOOL_ONLYも地域教育資源として保持するが、OPEN_PUBLICとは別レイヤーにする。
+- 活動場所と本社所在地を混同しない。
+- 点データが少ない段階ではヒートマップを断定的な「評価地図」として公開しない。
+
+### Heatmap design principle
+可視化の主語は「企業評価」ではなく「地域の次世代育成環境」。
+地図から以下を発見できることを目標とする。
+- 強い地域資産
+- 子どもがアクセスできる機会
+- 年齢の谷
+- 分野の谷
+- 地理的空白
+- 連携の強い地域
+- 新しいCSR／教育施策を置くと効果が高い場所
+
+### Future policy / CSR use
+十分なデータ量と検証期間を得た後は、自治体・学校・企業・NPOが
+「どの地域／年齢／分野に次の教育機会を追加すれば空白を埋められるか」
+を判断する基盤として利用可能にする。
+
+### Data collection rule from this point
+今後追加するSOURCE / ACTIVITYは、可能な範囲で上記heatmap-ready属性を同時取得する。
+過去取得分はKurashiki Pilot完了時にbackfillする。
