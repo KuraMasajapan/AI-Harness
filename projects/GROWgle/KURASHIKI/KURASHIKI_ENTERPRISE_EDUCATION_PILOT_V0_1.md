@@ -2001,3 +2001,306 @@ https://www.kurashiki-oky.ed.jp/mizushima-e/r0_00.html
 - 倉敷・児島・玉島商工会議所の過去3年イベントアーカイブ横断
 - 「企業博物館 / PRセンター / ミュージアム / 資料館」の常設SOURCE探索
 - 学校サイトから2024〜2026の工場見学・職場体験先企業を抽出
+
+
+## 32. Industrial-cluster / permanent-source batch — 2026-10-05
+
+### 児島「こじまファクトリー」 — INDUSTRY_MASTER / VERY_HIGH_VALUE
+児島商工会議所 児島繊維産業未来Vision委員会が、児島の繊維関連事業所を技術工程単位で体系化した企業マスターを公開。
+
+2026時点で公式一覧に少なくとも39事業所を確認。
+掲載例:
+- 明石被服興業
+- 菅公学生服
+- 浦上染料店
+- 髙田織物
+- ジャパンブルー
+- ショーワ
+- 豊和
+- 児島
+- 日本被服
+- セロリー
+- ドミンゴ
+- COTTLE
+- ACID HOUSE
+- 桑和
+- 晃立
+- 荻野製織
+- 池田製紐所
+- 小倉屋
+- マルイ
+- マルトク
+等。
+
+工程・技術タグ:
+- 商品企画
+- パターン
+- 裁断
+- 縫製
+- 染色・加工
+- 製織
+- 仕上げ・アイロン
+- 副資材
+- 卸売
+等。
+
+2026-06-25には「児島地区のインターンシップ受入企業」情報を公開。
+
+Classification:
+INDUSTRY_MASTER / COMPANY_NETWORK
+TEXTILE / DESIGN / MANUFACTURING / CAREER
+Region: 児島
+
+Evidence:
+https://www.kojima-cci.or.jp/kojima-factory/
+https://www.kojima-cci.or.jp/kojima-factory/company
+https://www.kojima-cci.or.jp/kojima-factory/company_cat/industries
+
+GROWgle note:
+企業学び楽舎64社とは独立した第三の企業母集団。
+児島については「イベントを探す」より先に、この39社を逆引きする方が高再現性。
+全39社を一律ACTIVITY扱いせず、教育・見学・インターン等の実績が確認できた企業のみ昇格させる。
+
+### 玉島ハーバーアイランド — INDUSTRIAL_CLUSTER MASTER
+倉敷市公式で245ha規模の企業団地として確認。
+地域の産業教育上、単一企業ではなく以下のテーマが集積:
+- 港湾・国際物流
+- 航空宇宙鍛造
+- リサイクル
+- 食料コンビナート
+- 大型製造
+
+既確認SOURCE:
+- 日本エアロフォージ
+- ヒラキン リサイクルステージ玉島
+- 田中商会 玉島工場
+- 水島港国際物流センター
+- JA西日本くみあい飼料
+- J-オイルミルズ
+- 全農サイロ
+
+2017以降、JA西日本くみあい飼料・J-オイルミルズ・全農サイロの3社が食料コンビナートを形成。
+
+Classification:
+INDUSTRIAL_CLUSTER / LOCAL_SUBAREA
+WORKS / LOGISTICS / FOOD / STEAM / CIRCULAR_ECONOMY / AEROSPACE
+Region: 玉島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/industry/1012624/1011031.html
+https://www.pref.okayama.jp/site/chijikaiken/397622.html
+https://www.callcenter-kurashiki-city.jp/faq/detail.aspx?id=999
+
+Next:
+立地企業を企業マスター化し、工場見学・学校連携・地域イベントを逆引き。
+
+### 水島港国際物流センター — VIEWPOINT / LOGISTICS SOURCE
+倉敷市FAQ:
+- 事前連絡により屋上から玉島ハーバーアイランド見学可能
+- 立地企業・港湾を俯瞰できる
+
+Classification:
+GROUP_BOOKING_CANDIDATE / INFRASTRUCTURE
+LOGISTICS / PORT
+Region: 玉島
+Status:
+子ども・学校向けプログラムとしての運用条件は要確認。
+
+Evidence:
+https://www.callcenter-kurashiki-city.jp/faq/detail.aspx?id=999
+
+### 日本エアロフォージ — continuity strengthened
+追加確認:
+- 2026-06 岡山県立笠岡工業高校が工場見学
+- 企業公式採用ページ: 学生の工場見学を随時受付
+- 1日インターン＋長期インターン相談可
+- 2025従業員家族工場見学会
+- 2026倉敷市民講座: 小5・6対象工場見学
+
+よってSOURCE continuity:
+ELEMENTARY → HIGH_SCHOOL → UNIVERSITY/STUDENT
+の段階接続が成立。
+
+Evidence:
+https://japan-aeroforge.com/
+https://japan-aeroforge.com/recruit/
+https://www.kasako.okayama-c.ed.jp/wordpress/?p=47809
+https://www.kurashiki-oky.ed.jp/tamashima-ph/natu_kouza2016_2.html
+
+### 田中商会 — municipal learning conversion confirmed
+2026-07-29 企業公式NEWS:
+- 「くらしき市民講座」で工場見学受入
+
+市民学習側では過去に:
+- 水島エコワークス
+- 田中商会 玉島工場
+を組み合わせたリサイクル工場見学ツアーを実施。
+
+Classification:
+MUNICIPAL_PROGRAM_X_COMPANY
+GROUP_BOOKING / REPEAT_LIKELY
+CIRCULAR_ECONOMY / WORKS / NATURE
+hands_on: OBSERVATION
+
+Evidence:
+https://tanaka-rc.co.jp/
+https://www.kurashiki-oky.ed.jp/lpk-shimin-gakushu-c/documents/izanai62.pdf
+
+### ヒラキン リサイクルステージ玉島 — adult route also confirmed
+2026-11-13:
+- 倉敷市市民学習センターと商工課水島港振興室連携
+- 15歳以上20名
+- 無料
+- 破砕・選別工程見学
+
+既に小学校高学年以上の工場見学SOURCEとして確認済み。
+子ども向け／成人向け双方に地域学習資源として開かれている。
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/searchdtl.aspx?stdycd=14141
+
+### 三菱ガス化学 水島工場 — SOURCE_CANDIDATE / EDUCATION_UNVERIFIED
+水島コンビナート活性化検討会構成企業。
+倉敷市水島海岸通3-10の化学製造拠点。
+主要製品分野:
+- キシレン異性体
+- メタキシレン誘導品
+- 特殊芳香族製品
+- 多価アルコール類
+
+今回の一次情報検索では、2024〜2026の子ども・学生向け工場見学や出前授業の具体的ローカル実績を確認できず。
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+CHEMISTRY / LOCAL_INDUSTRY
+ACTIVITY_STATUS: UNVERIFIED
+Do not count as active GROWgle activity yet.
+
+Evidence:
+https://www.mgc.co.jp/corporate/access/mf.html
+
+GROWgle note:
+「見つからない」と「実施していない」を区別する運用例として保持。
+
+## 33. Permanent / museum-style source findings
+
+### ベティスミス ジーンズミュージアム＆ヴィレッジ
+既確認に加え、2026公式サイトで常設性を再確認:
+- ジーンズミュージアム
+- 日本最古のジーンズ工場
+- ジーンズ作り体験
+- 家族で利用できる施設群
+- 団体・修学旅行対応
+
+Classification:
+OPEN_PUBLIC / CONSTANT / MUSEUM_X_FACTORY_X_WORKSHOP
+LOCAL_INDUSTRY / TEXTILE / CREATIVE / HISTORY
+
+Evidence:
+https://betty.co.jp/
+
+### 三菱自動車 水島製作所 PRセンター
+工場見学入口としてPRセンターを常設。
+学校見学と出前授業の起点。
+
+Classification:
+SCHOOL_ONLY / CONSTANT_INFRASTRUCTURE
+AUTOMOTIVE / WORKS / STEAM
+
+Evidence:
+https://www.mitsubishi-motors.com/jp/sustainability/society/contribution/factory/mizushima.html
+
+### 児島学生服資料館
+児島商工会議所「体験する」公式リストに常設体験SOURCEとして掲載。
+- 学生服・セーラー服試着体験
+- 児島の学生服産業史への入口
+
+Classification:
+OPEN_PUBLIC_OR_GROUP / CONSTANT
+TEXTILE / CULTURE / LOCAL_INDUSTRY
+
+Evidence:
+https://www.kojima-cci.or.jp/sightseeing/experience
+
+## 34. School-side new SOURCE candidates
+
+### 岐阜プラスチック工業 倉敷工場
+2026倉敷市立工業高校、過去倉敷工業高校の複数年見学実績。
+高卒採用公式ページでも、倉敷工場見学が就職動機になった社員事例を確認。
+
+Status:
+RECURRING_CANDIDATE → strong
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kogyo-h/news.html
+https://www.risu.co.jp/recruit/high-school/
+
+### ニッパツ水島
+2026倉敷市立工業高校見学。
+企業公式では高校生1〜3年＋保護者対象のオープンカンパニー実績:
+- 工場見学
+- 質問会
+- 複数日
+- 少人数
+
+Classification:
+HIGH_SCHOOL / OPEN_COMPANY / FAMILY_COMPANION
+CAREER / WORKS / AUTOMOTIVE_PARTS
+
+Evidence:
+https://nhkseating-mizushima.co.jp/info/%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%AB%E3%83%B3%E3%83%91%E3%83%8B%E3%83%BC%E3%81%B8%E3%81%AE%E5%8F%82%E5%8A%A0%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/
+https://www.kurashiki-oky.ed.jp/kogyo-h/news.html
+
+### 洋服の青山 倉敷総本店
+2026倉敷市立工業高校4年:
+- スーツ着こなし
+- 社会人マナー
+の出前講座。
+
+Classification:
+SCHOOL_ONLY
+HIGH_SCHOOL
+CAREER / LIFE_SKILLS / RETAIL_SERVICE
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kogyo-h/news.html
+
+### シモハナ物流
+2026倉敷翔南高校2年:
+- 企業・大学見学で訪問
+- キャリア学習
+
+Classification:
+SCHOOL_ONLY
+HIGH_SCHOOL
+LOGISTICS / CAREER
+Status:
+倉敷拠点での独自教育プログラムは要確認。
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kurashiki-shonan-h/blog.html
+
+## 35. Enterprise-master strategy update
+
+倉敷Pilotの企業母集団は、少なくとも以下の独立リストを統合する。
+
+A. 企業学び楽舎 64組織
+B. 水島コンビナート活性化検討会 主要8主体
+C. 児島こじまファクトリー 約39繊維事業所
+D. 玉島ハーバーアイランド立地企業
+E. 学校側から発見した見学・講座受入企業
+F. 商工会議所・業界団体経由の参加企業
+G. 一般向け産業観光・教育旅行掲載企業
+
+重複を考慮しても、倉敷の企業系探索母集団は100組織規模に達する可能性が高い。
+ただし「母集団企業数」と「GROWgle適合ACTIVITYを持つ企業数」は厳密に分けて集計する。
+
+## 36. Next route
+
+- こじまファクトリー39社のうち、工場見学・WS・インターン公開企業を優先抽出
+- 玉島ハーバーアイランド企業の全リスト化
+- 食料コンビナート3社の学校／親子見学探索
+- 水島コンビナート主要企業で未確認の三菱ガス化学をWATCH
+- 倉敷クリエイティブパーク、船穂産業団地、市場工業団地も企業マスター化
+- 企業博物館／資料館／PRセンターを常設SOURCEとして独立抽出
+- 学校側の2024〜2026企業見学先をさらに横断抽出
