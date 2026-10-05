@@ -3014,3 +3014,223 @@ GROWgle note:
 - 市場工業団地の今仙 / タケシン / 金澤電子 / 仁沢工業を学校側から逆引き
 - Challenge Work 14で公開企業名が見える学校を優先探索
 - こじまファクトリー39社のCURRENTな見学・インターン・WSを継続スクリーニング
+
+
+## 51. Media / local-food / advanced-manufacturing batch — 2026-10-05
+
+### 倉敷ケーブルテレビ（KCT） — VERY_HIGH_VALUE / CONSTANT SCHOOL SOURCE
+企業公式の施設見学案内で、教育目的の受入を明確に確認。
+
+対象:
+- 小学5年生の社会科見学
+- 中学2年生の職場体験学習
+
+内容:
+- ケーブルテレビ事業ガイダンス
+- ニュース番組制作
+- デスク / ディレクター / 記者 / アナウンサーの役割
+- 編集室 / 副調 / スタジオ見学
+- 学校のニーズに応じてカリキュラム選択
+- 2週間前までの予約制
+
+2026-05には多津美中の生徒が3日間のチャレンジ・ワークをKCTで実施したことも確認。
+
+Classification:
+SCHOOL_ONLY / CONSTANT
+ELEMENTARY_HIGH / JUNIOR_HIGH
+MEDIA / INFORMATION_LITERACY / CAREER / CREATIVE
+hands_on: MEDIUM-HIGH
+Region: 倉敷
+
+Evidence:
+https://www.kct.co.jp/introduction/tour.html
+https://tv.kct.jp/program/detail.php?id=39843
+https://www.tokaiholdings.co.jp/stories/article_Eg265041.html
+
+GROWgle note:
+「地域メディア」も企業教育資源として強い。製造・医療偏重を補う情報リテラシー系SOURCE。
+
+### 倉敷青果 / クラカアグリ — VERY_HIGH_VALUE / FOOD_EDUCATION / RECURRING
+企業公式:
+- 倉敷市学校給食会と連携
+- 子ども・保護者へ食に関する知識を広める農業体験
+- 毎年収穫体験を実施
+- スマート農業・地域農業の担い手育成にも注力
+
+2023:
+- NPO法人くらしき放課後児童クラブ支援センターの児童25名を社内見学へ受入
+- 倉敷青果の仕事紹介
+- 市場内、冷蔵施設、カット野菜関連等を見学
+
+Challenge Work:
+- 2023実施事業所一覧にも倉敷青果を確認
+
+Classification:
+OPEN_OR_PARTNER_PROGRAM / SCHOOL_OR_CHILD_GROUP / RECURRING
+ELEMENTARY / FAMILY / JUNIOR_HIGH
+FOOD / AGRICULTURE / SMART_AGRI / WORKS
+COLLABORATION: COMPANY_X_SCHOOL_FOOD_ASSOCIATION / COMPANY_X_NPO
+hands_on: HIGH
+
+Evidence:
+https://kuraka-g.com/agri/
+https://kuraka-g.com/wp/?p=7027
+https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/011/141/1007370_ma_01.pdf
+
+GROWgle note:
+「市場・食品加工・農業」の3層を一社グループ内で学べる。一次産業〜流通〜加工をつなぐSOURCE。
+
+### 株式会社クラビズ — HIGH_VALUE / UNIVERSITY_PBL / CURRENT_2026
+2026サマーインターン:
+- 倉敷市を舞台に2日間
+- 「スポーツ×カルチャー×街づくり」の新規事業提案
+- 美観地区フィールドワーク
+- 倉敷の干拓、綿・い草、繊維産業、大原家・アイビースクエア等の地域史を学びながら事業案を作成
+- 経営陣が直接フィードバック
+- 倉敷発サッカーチーム FCオニト倉敷等を題材化
+
+さらに2026には、岡山県内大学生の長期インターン受入実績も確認。
+
+Classification:
+UNIVERSITY_STUDENT / RECURRING_CANDIDATE
+ENTRE / CREATIVE / COMMUNITY / LOCAL_HISTORY / SPORTS
+hands_on: VERY_HIGH
+Region: 倉敷中心部
+
+Evidence:
+https://kurabiz.jp/column/news/summerinternship202602/
+https://kurabiz.jp/recruit/
+
+GROWgle note:
+地域史→フィールドワーク→事業提案までつながる高密度PBL。企業×大学生の地域課題型学習SOURCE。
+
+### 倉敷ボーリング機工 — HIGH_VALUE / STUDENT WORK EXPERIENCE
+2026公式:
+- 本社サイトで工場見学NEWSを複数回掲載
+- 採用募集要項で会社見学・工場見学あり
+- 本社は倉敷市松江
+
+2026学生向け:
+- 1day仕事体験「製造に必要な図面に触れよう」
+- 図面読み・CAD体験
+- 1day仕事体験「会社SNSをジャックしよう」
+- 会社見学会
+- 倉敷本社で開催
+
+Classification:
+STUDENT_ONLY / RECURRING_CANDIDATE
+UNIVERSITY / COLLEGE / TECHNICAL_STUDENT
+STEAM / WORKS / CAD / ADVANCED_MATERIALS / MEDIA
+hands_on: VERY_HIGH
+Region: 水島周辺 / 松江
+
+Evidence:
+https://www.kbknet.co.jp/
+https://www.kbknet.co.jp/recruit/recruitment/
+https://www.kbknet.co.jp/topics/
+https://job.mynavi.jp/28/pc/corpinfo/displayInternship/index?corpId=212633&optNo=RywRU
+
+GROWgle note:
+同一企業で「製造技術」と「広報/SNS」という異なる職種体験を用意。学生向けSOURCEとして強い。
+
+### 株式会社キッカワ — HIGH_SCHOOL / UNIVERSITY PBL / INDUSTRY
+Current official:
+- 倉敷を本社とするプラントメンテナンス企業
+- CSRで地域ニュース「倉敷経済新聞」運営
+- 高校生の職場見学を随時受付（先生経由）
+- 個別会社説明会を継続
+- 水島コンビナート関連工事、重機、環境・太陽光、海外事業等
+
+Past municipal practical internship:
+- 倉敷市実践型インターンシップで
+  「地域のグローバル企業でコミュニケーション課題を解決」プロジェクトを実施
+
+Classification:
+HIGH_SCHOOL / UNIVERSITY_STUDENT
+WORKS / ENERGY / GLOBAL / MEDIA / ENTRE
+RECURRING_CANDIDATE
+Region: 倉敷 / 水島
+
+Evidence:
+https://kikkawa-japan.com/
+https://kikkawa-japan.com/recruit/
+https://kikkawa-japan.com/photonews/478/
+https://kurashiki.area-i.org/
+
+GROWgle note:
+プラント企業でありながら、地域メディア・海外・再エネ・学生PBLまで接点が広い。
+
+## 52. Challenge Work 14 — public master utilization
+
+倉敷市公式ページは2026現在、
+「令和7年度 倉敷チャレンジ・ワーク14実施事業所一覧」PDFを公開している。
+制度自体は市内全26中学校2年生、約3日間、2026年度で26年目。
+
+Current PDFの全文抽出は今回の取得経路では未完了。
+ただし2023年度の公式一覧PDFは全文検索可能で、企業発見マスターとして利用できる。
+
+2023公式一覧から企業系SOURCEとして再発見・追加候補になった例:
+- 倉敷ケーブルテレビ
+- 倉敷青果
+- 倉敷ボーリング機工
+- 今仙電機製作所
+- カモ井加工紙
+- 菅公学生服 倉敷工場
+- 目黒建設
+- カザケン
+- 岡山キムラヤ 倉敷工場
+- 岡山交通 倉敷営業所
+- Honda Cars 倉敷南 水島店（現Honda Cars総社 水島店）
+- 自動車販売 / 建設 / 小売 / 飲食 / 医療 / 福祉 / 公共施設 等
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kosodate/kyoiku/1013006/1011141.html
+https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/011/141/1007370_ma_01.pdf
+
+Operational rule:
+- Challenge Work掲載 = JUNIOR_HIGH WORK EXPERIENCE VERIFIED for that年度
+- ただし古い年度のみの場合は CURRENT ACTIVE と断定しない
+- 別の公式情報で近年継続が確認できれば RECURRINGへ昇格
+
+## 53. New methodology finding — gateway source types
+
+企業中心探索の中で、企業そのもの以外に以下の「発見ゲートウェイ」が高効率と確認。
+
+1. CITY_PROGRAM_GATEWAY
+   - 企業学び楽舎
+   - チャレンジ・ワーク14
+   - くらしき市民講座
+
+2. INDUSTRY_GATEWAY
+   - こじまファクトリー
+   - 水島コンビナート
+   - 玉島ハーバーアイランド
+   - 工業団地
+
+3. SCHOOL_GATEWAY
+   - 学校の社会見学
+   - 職場体験
+   - 探究 / PBL
+
+4. CHAMBER_GATEWAY
+   - 倉敷 / 玉島 / 児島商工会議所
+
+5. MEDIA_GATEWAY
+   - KCT等の地域メディア
+   - 地域イベント報道からSOURCEを逆発見
+
+6. MUNICIPAL_LIFELONG_LEARNING_GATEWAY
+   - 公民館
+   - 市民学習センター
+   - 親子工場見学
+
+GROWgle research implication:
+企業を直接検索するより、まずGateway一覧を横断して「教育接点のある企業」を抽出し、その後企業公式を逆引きする方が高精度・高再現性。
+
+## 54. Next route
+
+- Challenge Work 2023公式一覧から、企業系かつ高体験性の候補をカテゴリ抽出
+- 2024〜2026の個社継続実績を照合し、RECURRINGへ昇格
+- 食品 / 農業 / メディア / 小売 / 自動車販売等、製造業外のSOURCEを補強
+- 児島39社の残りをCURRENT statusでスクリーニング
+- 企業名ではなくGateway経由で未発見企業を増やす
