@@ -1,92 +1,73 @@
 # GROWgle — 大阪府 v1 Checkpoint
 
 更新: 2026-10-05
-State: CHECKPOINT / OSAKA_V1_COMPLETE_WITH_BACKLOG
+State: CHECKPOINT / OSAKA_V1_COMPLETE
 
-## 完了ブロック
-1. 大阪市・北摂主要
-2. 北摂東部・北河内
-3. 東部・南河内北部・堺
-4. 南河内・泉州
+## 完了
+大阪府43市町村をFirst Pass / Cross-Category方針で走査。
+大都市部では単発イベントより、継続SOURCE・産業ネットワーク・区/地域単位の特色を重視。
 
-## 代表的ベンチマーク
-- 大阪市「こども 夢・創造プロジェクト」
-- 東大阪「モノづくり教育 / こーばへ行こう！」
-- 八尾「こどもたちの未来創造フェスタ」
-- 柏原「キッズ・ワークエキスポ」
-- 堺「企業による学びの応援プログラム」
-- 摂津「青少年未来体験フェスタ」
-- 茨木「おにクル」
-- 富田林「夏休みこどもイベント」
-- 河内長野「公民館子ども教室」
-- 貝塚「善兵衛ランド科学教室」
-- 熊取「カブトムシまつり」
+## 正式軸
+AI / ENTRE / WORKS / STEAM / CREATIVE / NATURE / SPORTS / COMMUNITY
++
+REGION_IDENTITY / LOCAL_INDUSTRY / NATURE_ASSET / CULTURAL_ASSET / EDUCATION_ASSET / EXPERIENCE_CONNECTION
 
-## 大阪府で確立した重要知見
-- 大都市では自治体だけでなく大学・企業・専門学校・財団が巨大SOURCE_MASTER。
-- 子ども向けイベントの公式集約面を優先登録すると探索効率が大きく上がる。
-- 中河内はMAKER_CLUSTERとして地域単位評価が有効。
-- 都市インフラ、医療、航空、製造業をWORKS/STEAMへ含める。
-- 月刊広報、公民館、児童館は小規模自治体でも強いMONTHLY_SOURCE。
-- SUPPORTING_INFRASTRUCTUREとSOURCE_MASTERの区別が重要。
+## 大阪で見えた代表的な地域色
+- 大阪市: 商い・市場・中小ものづくり・メディア/エンタメ・多文化
+- 堺: 刃物・自転車・ものづくり・古墳・茶・港湾
+- 東大阪: 中小製造業そのものが教育インフラ
+- 八尾/門真: FactorISMによる広域オープンファクトリー文化
+- 柏原: 地域企業・商工会による子どもの仕事体験
+- 高槻: 科学・電子工作・建築/大工・古代史
+- 交野: 星・天文・里山・農・昆虫
+- 河内長野: 森林・奥河内・自然教育
+- 泉佐野: 関空・国際性＋農/森林＋映画制作
+- 岬: 海・ビオトープ・里山
 
-## 現在のデータ型候補
-- EVENT
-- CONTINUOUS_PROGRAM
-- CONSTANT_FACILITY
-- SCHOOL_ONLY
-- SOURCE_MASTER
-- SUPPORTING_INFRASTRUCTURE
-- REGION_CLUSTER
-- COMPANY_EDUCATION_NETWORK
-- MAKER_CLUSTER
-- JOB_EXPO
+## 大阪で追加された重要概念
+### REGION_NETWORK
+自治体境界を越える産業・文化・自然圏を別レイヤーで保持する。
 
-## 補助タグ候補
-- UNIVERSITY_SOURCE
-- INFRASTRUCTURE
-- CAREER
-- PROFESSIONAL_EXPERIENCE
-- HEALTH
-- PEER_LEADERSHIP
-- OPEN_FACTORY
-- CITY_HUB
-- MONTHLY_SOURCE
-- CHILDREN_MEDIA_SOURCE
+例:
+- FactorISM / ものづくり企業群
+- 北摂の森林・里山
+- 古市古墳群
+- 関空・泉州沿岸
+- 淀川水系
 
-## BACKLOG優先
-- 泉佐野: 関空・航空・物流
+### LOCAL_SUBAREA
+大都市では市単位だけで粗すぎる場合がある。
+大阪市などは区・市場・湾岸・産業集積等の小地域単位の特色も必要。
+
+## 重要な構造
+GROWgleの地域情報は
+場所
+→ 地域資産
+→ 産業・文化・自然
+→ 人/企業/学校/行政
+→ 子どもの体験
+→ 次の成長機会
+として保持する。
+
+## Second Pass重点
+- 箕面: 森林・昆虫
+- 池田: 自動車・インスタントラーメン・五月山
+- 吹田: 大学研究・医療・万博公園・スポーツ
+- 豊中: 空港
+- 摂津/守口: 製造・物流
+- 藤井寺/羽曳野: 古市古墳群
+- 岸和田: だんじり・城下町・地場産業
 - 高石: 臨海工業
-- 和泉
-- 岸和田
-- 岬
-- 大阪狭山
-- 河南
-- 守口
-- 池田・箕面の企業/大学系
-- 大阪市の巨大SOURCE_MASTER全抽出
+- 和泉: 工芸・農
+- 忠岡: 毛布/繊維
+- 田尻: 海・漁業・関空
+- 泉南/阪南: 海・漁業
+- 堺: 刃物・自転車・古墳・茶
 
-## 次地域
+## 判定
+大阪府 v1 COMPLETE。
+不足はSecond Passへ送り、全体探索を止めない。
+
+## 次
 京都府。
-
-入口候補:
-- 京都市
-- 宇治市
-- 長岡京市
-- 向日市
-- 八幡市
-- 京田辺市
-- 木津川市
-- 亀岡市
-- 南丹市
-- 福知山市
-- 舞鶴市
-- 綾部市
-- 京丹後市
-等をブロック分割。
-
-## 再開
-「大阪Checkpointから再開」
-または
-「京都へ進めて」
-で再開。
+大阪で導入した REGION_NETWORK / LOCAL_SUBAREA も最初から適用する。
