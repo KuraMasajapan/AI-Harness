@@ -5773,3 +5773,34 @@ This rule is now mandatory for 2026 current-event inventory.
 - 3商工会議所「くらしきユナイト」の今後事業をGateway追跡
 - 岡山県アパレル工業組合会員とこじまファクトリー・繊博の差分抽出
 - CANCELLED / HELD を含むcurrent statusを2026イベント全体へ適用
+
+
+## 94. Course correction — exploration saturation rule — 2026-10-05
+
+Human review pointed out that recent research had become too concentrated on the same Kojima/textile/gateway area.
+
+Assessment:
+- Research was still producing new evidence, but marginal value was declining.
+- Repeated cross-validation through Kojima Factory / Senhaku / Kojima Shigoto Expo / apparel association was useful for continuity and deduplication, but was beginning to crowd out underexplored sectors and subareas.
+- Therefore breadth-first exploration is restored.
+
+Immediate rule:
+- Freeze deepening of KOJIMA_TEXTILE unless a clearly new CURRENT public activity appears.
+- Do not spend additional passes merely reconstructing nearly identical company lists.
+- Treat existing textile gateway data as sufficient for the current Kurashiki Pilot midpoint.
+
+Next priority = coverage gaps:
+1. Remaining unchecked organizations from the 64-company "企業学び楽舎" list.
+2. Childcare / nursery / welfare organizations not yet deeply checked.
+3. Central Kurashiki / Nakasho / Mabi / Funao / non-Kojima, non-Mizushima local areas.
+4. Transport / retail / utilities / finance / IT / food businesses outside the current manufacturing-heavy set.
+5. Public family-access opportunities that can be joined without school mediation.
+6. Chamber / school / municipal gateways only when they reveal genuinely new sources.
+
+Saturation control:
+- Mark a domain/subarea as SATURATED_FOR_PILOT when repeated searches mostly return already-known sources.
+- Once saturated, move to the least-covered domain instead of continuing verification loops.
+- Revisit saturated domains only for current-event updates or when a new gateway produces genuinely new organizations.
+
+Goal:
+Maximize breadth of unique regional learning sources before further deepening.
