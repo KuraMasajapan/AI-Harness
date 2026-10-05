@@ -3702,3 +3702,357 @@ GROWgleの主軸はAを中心とし、B〜Dを補助レイヤーにする。
 - 日本被服: 社会見学の申込条件・対象学年を可能なら補完
 - 岡山県立大学・川崎医療福祉大学・倉敷芸術科学大学側から倉敷企業名を逆引き
 - Challenge Work公式リストの高体験候補をcurrent照合
+
+
+## 62. University-side reverse discovery / textile network batch — 2026-10-05
+
+企業側だけでなく、大学・短大の地域連携ページから企業名を逆引き。
+
+### 小倉屋 × 倉敷芸術科学大学 — RECURRING COMPANY_X_UNIVERSITY
+倉敷芸術科学大学 研究・地域連携センター公式:
+- 倉敷市児島柳田町の作業服メーカー「小倉屋」と学生がコラボ
+- 倉敷をテーマにした半袖Tシャツ15品目を開発
+- 2024年8月から順次発売
+- 学生が倉敷をテーマに1人5種類ずつデザイン
+- 2022年開始、2024時点で3回目
+
+大学公式「芸術学科 地域との連携」でもKOKURAYA SDGs Projectとして掲載。
+
+Classification:
+COMPANY_X_UNIVERSITY / RECURRING
+UNIVERSITY
+TEXTILE / DESIGN / PRODUCT_DEVELOPMENT / LOCAL_IDENTITY
+hands_on: VERY_HIGH
+Region: 児島
+
+Evidence:
+https://www.kusa.ac.jp/research/coo-center/
+https://www.kusa.ac.jp/academics/dept-arts/region.html
+https://www.kusa.ac.jp/news/2022/11/
+
+GROWgle note:
+就職説明会ではなく、学生デザインが実際の商品化まで進む継続型産学連携。
+
+### 倉敷日本酒パロール × 倉敷芸術科学大学 — LOCAL_BUSINESS_X_UNIVERSITY
+2025:
+- 地元蔵元、日本酒バー側から大学へ依頼
+- コミックイラストコース学生2名がイベントのキャラクター、ポスター、パンフレット、SNS展開を担当
+- 学生が依頼者との打合せ、提案、修正まで主体的に実施
+
+Classification:
+LOCAL_BUSINESS_NETWORK_X_UNIVERSITY
+UNIVERSITY
+DESIGN / CREATIVE / LOCAL_FOOD_CULTURE / EVENT_PRODUCTION
+hands_on: VERY_HIGH
+Region: 倉敷中心部
+
+Evidence:
+https://www.kusa.ac.jp/research/coo-center/
+
+GROWgle note:
+地域産業・飲食のイベントを「学生が広報デザインする」実務型PBL。
+
+### 倉敷芸術科学大学「プラ芸」 — UNIVERSITY_X_NPO_X_COMMUNITY / CURRENT 2026
+2026-09:
+- 学生チーム Precious Plastic Kurashiki
+- NPO法人唐津Farm&Foodと連携
+- 大学工房で自作射出成形機を使ったテスト成形
+- 9/19 瀬戸内市民図書館で約30名向け無料ワークショップ
+- 廃プラビーズのブレスレット制作
+- 子ども、学生、高齢者、市職員等が参加
+- 学生が地域の金属加工企業と射出成形機を自作したと報告されているが、企業名は一次情報で未特定のため推測しない
+
+Classification:
+UNIVERSITY_X_NPO_X_COMMUNITY
+CHILD / UNIVERSITY / GENERAL
+STEAM / CIRCULAR_ECONOMY / MAKING
+RECURRING_NETWORK_CANDIDATE
+hands_on: VERY_HIGH
+Source location: 倉敷
+Activity: 倉敷大学工房 + 瀬戸内市
+
+Evidence:
+https://karatsu-f-f.com/plagei.html
+https://karatsu-f-f.com/sdgs.html
+https://www.kusa.ac.jp/research/
+
+GROWgle note:
+企業名は未特定だが、「大学生＋地域製造企業＋NPO＋子ども」という連携構造として保持。
+
+### くらしき作陽大学 × 船穂ワイナリー — COMPANY_X_UNIVERSITY_X_MUNICIPALITY
+2025-09-10:
+- 学生が船穂ワイナリー訪問
+- マスカット・オブ・アレキサンドリア収穫体験
+- ワイン醸造見学
+- 新品種「マスカット・シラガイ」を使ったスイーツ開発を検討
+- 倉敷未来プロジェクトの産官学連携・体験型教育の一部
+- 2026-02成果発表
+
+Classification:
+COMPANY_X_UNIVERSITY_X_MUNICIPALITY
+UNIVERSITY
+FOOD / AGRICULTURE / PRODUCT_DEVELOPMENT / LOCAL_ASSET
+hands_on: VERY_HIGH
+Region: 船穂
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/culture/tourism/1002026/1024892.html
+https://www.city.kurashiki.okayama.jp/culture/tourism/1002026/1014466.html
+https://www.ksu.ac.jp/food_culture/news_food_culture/
+
+### 産直市場ぼっけぇ～きて屋玉島TOPS店 × くらしき作陽大学
+倉敷市公式:
+- 学生が倉敷産米粉、連島ごぼう、ほうれん草、高梁紅茶等を使ったベジドーナツを企画・開発
+- 試作から製造・販売まで実施
+- 店頭で161個を販売した実績
+
+Classification:
+LOCAL_BUSINESS_X_UNIVERSITY / PRODUCT_DEVELOPMENT
+UNIVERSITY
+FOOD / ENTRE / AGRICULTURE / LOCAL_ASSET
+hands_on: VERY_HIGH
+Region: 玉島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/culture/tourism/1002026/1018100.html
+
+## 63. Kurashiki City College × Kojima enterprises — network strengthened
+
+### くらたん合同企業説明会 — RECURRING COMPANY_NETWORK
+児島商工会議所 × 倉敷市立短期大学 服飾美術学科。
+
+Continuity:
+- 2024 開催
+- 2025 開催
+- 2026 開催
+- 2026は17社参加と参加企業側の公式NEWSで確認
+
+2025 explicit 15 companies:
+- アイムス
+- 明石スクールユニフォームカンパニー
+- 大川被服
+- 菅公学生服
+- 晃立
+- 児島
+- ジャパンブルー
+- 角南被服
+- 桑和
+- 天満屋ホテルズ＆リゾーツ せとうち児島ホテル
+- BEKKAN
+- 豊和
+- モリ・フロッキー
+- 下津井電鉄
+- ベティスミス
+
+2026:
+- 17社参加
+- モリ・フロッキーの参加を企業公式で確認
+- 全17社名は一次情報から完全抽出できていないため推測しない
+
+Classification:
+CHAMBER_X_UNIVERSITY_X_COMPANY
+UNIVERSITY / JUNIOR_COLLEGE
+TEXTILE / TOURISM / TRANSPORT / CAREER
+RECURRING_CONFIRMED
+Region: 児島
+
+Evidence:
+https://www.kojima-cci.or.jp/info/20260116-kuratangoudoukigyousetsumeikai.html
+https://www.kurashiki-cu.ac.jp/kcc/index.php/2025/05/03/r7kuratrangoudousetsumeikai/
+https://www.mori-flocky.jp/news/kuratan2026/
+
+GROWgle note:
+児島の「学生→地域企業就職」の接続網。39社こじまファクトリー母集団とクロス照合する。
+
+### 水島信用金庫 児島南支店 × 倉敷市立短期大学
+2025・2026:
+- 支店ロビーを学生の卒業制作展・ミニ展示に提供
+- 服飾美術学科の研究成果・作品を地域へ公開
+
+Classification:
+COMPANY_X_UNIVERSITY_X_COMMUNITY
+UNIVERSITY / GENERAL_PUBLIC
+FINANCE / TEXTILE / CREATIVE / COMMUNITY
+REPEAT_LIKELY
+Region: 児島
+
+Evidence:
+https://www.kurashiki-cu.ac.jp/kcc/index.php/chiiki/
+
+GROWgle note:
+金融機関が「教育成果の地域発信スペース」になるタイプ。
+
+## 64. Kurashiki Fashion Frontier / 繊博 — MAJOR INDUSTRY_GATEWAY
+
+### 繊博2025（2025-09-30〜2026-01-17）
+主催:
+- 倉敷市
+- 井原市
+- 岡山県
+- 倉敷市立短期大学
+- 岡山県アパレル工業組合
+- 倉敷ファッションセンター
+
+Program:
+- オンライン繊維産地ツアー
+- リアル繊維産地ツアー
+- 学生ピッチコンテスト
+
+Result:
+- オンライン延べ4,429名
+- リアルツアー56名
+- 学生ピッチ6チーム
+- 学生と産地企業が課題に共同で取り組み、企業から助言・協力
+- 企業とのマッチング支援あり
+
+2025 participating/cooperating enterprises list includes:
+- 明石スクールユニフォームカンパニー
+- 菅公学生服
+- トンボ
+- カイタックトレーディング
+- ジョア
+- セロリー
+- 桑和
+- アイムス
+- ジャパンブルー
+- 角南被服
+- 総社カイタックファクトリー
+- ドミンゴ
+- ナイスコーポレーション
+- ニイヨンイチ
+- ビッグジョン
+- ベティスミス
+- ワイヤード
+- 襟立製帽所
+- 晃立
+- 山陽ハイクリーナー
+- 豊和
+- クロキ
+- 髙田織物
+- 協同
+- 池田製紐所
+- 倉敷市児島産業振興センター デザイナーズインキュベーション
+
+Classification:
+INDUSTRY_GATEWAY / OPEN_TOUR + STUDENT_PBL
+STUDENT / GENERAL_TOUR
+TEXTILE / DESIGN / WORKS / CAREER / ENTRE
+RECURRING_CANDIDATE
+Region: 児島〜岡山繊維産地
+
+Evidence:
+https://k-ff.jp/2025/contest/
+https://k-ff.jp/report/
+https://k-ff.jp/company_list_2025/02/
+https://www.zaikei.co.jp/releases/3082778/
+
+GROWgle note:
+児島企業探索の「こじまファクトリー」と並ぶ巨大な企業教育母集団。
+「産地ツアー」「学生PBL」「企業マッチング」を一体化している。
+
+### 菅公学生服 × 岡山ビジネスカレッジ — CURRENT 2026 STUDENT PBL
+繊博学生ピッチ:
+- 専門学校生と菅公学生服が共同
+- 「誰もが選びやすいスカート」をテーマに制服の新しい形を検討
+- 2026-01-17ピッチで1位
+- 菅公学生工学研究所公式でも産学連携事例として紹介
+
+Classification:
+COMPANY_X_VOCATIONAL_STUDENT
+STUDENT
+TEXTILE / DESIGN / DIVERSITY / PRODUCT_DEVELOPMENT
+hands_on: VERY_HIGH
+
+Evidence:
+https://kanko-gakuseifuku.co.jp/lab/contents/students-ideas/
+https://www.obcnet.ac.jp/topics/19231/
+
+## 65. Current 2026 public industry event — JAPAN DENIM DAYS
+
+2026-11-07〜08予定。
+公式:
+- 児島駅前西口広場
+- 毎年開催
+- 「体験・ワークショップに特化したデニムイベント」
+- 職人技を見る
+- 製品を企画する
+- Tシャツを染める
+- デニムを加工する
+などを通して産業を体験
+
+Classification:
+OPEN_PUBLIC / RECURRING
+FAMILY / GENERAL / STUDENT_CANDIDATE
+TEXTILE / CREATIVE / WORKS / LOCAL_INDUSTRY
+hands_on: VERY_HIGH
+Region: 児島
+Status: UPCOMING_2026
+
+Evidence:
+https://japandenimdays.com/
+
+GROWgle note:
+企業単独イベントではなく「産地職人・企業群を一般市民へ開く」重要なINDUSTRY_GATEWAY。
+秋の児島フェスと同日程だが、役割は販売中心ではなく体験特化として分離管理。
+
+## 66. Candidate status updates
+
+### みのる産業 倉敷工場
+公式:
+- 倉敷市茶屋町早沖に倉敷工場が存在
+- 企業として「地域の子どもの社会科見学・職場体験への協力」を宣言
+- 2026大学生向けインターンでは農業機械の設計→加工→組立→実証まで体験する高密度プログラムを実施
+
+ただし:
+- 2026大学生インターンの実施拠点が倉敷工場であることは今回確認できず
+- 子ども向け社会科見学が倉敷工場で直近実施された一次情報も未確認
+
+Classification:
+INDUSTRIAL_SOURCE_CANDIDATE
+AGRI_TECH / STEAM / MECHANICAL_ENGINEERING
+KURASHIKI_LOCAL_ACTIVITY: UNVERIFIED
+Region: 倉敷工場=茶屋町
+
+Evidence:
+https://www.minoru-sangyo.co.jp/company/outline/
+https://www.pref.okayama.jp/page/271898.html
+https://job.mynavi.jp/28/pc/corpinfo/displayInternship/index?corpId=233193
+
+### 高梨乳業 岡山工場
+岡山県公式資料:
+- 倉敷市片島町187-1
+- 牛乳、加工乳、乳製品等の製造拠点
+
+Challenge Work過去一覧では中学生受入候補として確認済み。
+今回、2024〜2026の公式な子ども・学生向け現行プログラムは確認できず。
+
+Classification:
+FOOD_INDUSTRY_SOURCE_CANDIDATE
+JUNIOR_HIGH_WORK_EXPERIENCE_HISTORY
+CURRENT_ACTIVITY: VERIFY
+Region: 倉敷片島
+
+Evidence:
+https://www.pref.okayama.jp/uploaded/attachment/362468.pdf
+
+## 67. Structural finding — university reverse-search is high-yield
+
+大学側から逆引きすると、企業公式だけでは拾いにくい以下が出る:
+- 商品開発
+- デザイン制作
+- 地域イベントの広報実務
+- 産業課題解決PBL
+- 学生ピッチ
+- 地場企業との就職・インターン接続
+- 企業店舗・金融機関の展示スペース活用
+
+企業探索ルートに「大学の研究・地域連携センター / 学科NEWS / 産学共同 / キャリア支援」を常設する。
+
+## 68. Next route
+
+- 繊博参加企業26社とこじまファクトリー39社を差分比較し、未調査企業を抽出
+- 2026くらたん合同企業説明会17社の全社名を可能なら回収
+- 小倉屋・モリフロッキー・晃立・桑和等のcurrent見学 / インターン / 学校連携を個社逆引き
+- JAPAN DENIM DAYS 2026の詳細ワークショップ・参加企業公開を追跡
+- 川崎医科大学 / 川崎医療福祉大学の産学連携から医療企業SOURCEを逆引き
+- 作陽大学の商品開発実習から連携企業をさらに抽出
