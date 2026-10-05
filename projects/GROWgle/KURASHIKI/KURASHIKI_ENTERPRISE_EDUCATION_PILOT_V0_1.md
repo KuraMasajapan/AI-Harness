@@ -3234,3 +3234,193 @@ GROWgle research implication:
 - 食品 / 農業 / メディア / 小売 / 自動車販売等、製造業外のSOURCEを補強
 - 児島39社の残りをCURRENT statusでスクリーニング
 - 企業名ではなくGateway経由で未発見企業を増やす
+
+
+## 55. Manufacturing / food / craft expansion batch — 2026-10-05
+
+### ペガサスキャンドル — HIGH_VALUE / SCHOOL_PBL / CREATIVE
+Current official:
+- 本社・工場とも倉敷市内
+- キャンドル製造・販売・体験関連事業
+- 手作りキャンドル商品・体験ノウハウを継続保有
+
+School collaboration:
+2024 玉島商業高校「船穂スイートピー商品化プロジェクト」
+- 廃棄スイートピーを活用したフラワーキャンドル案
+- 生徒がペガサスキャンドル倉敷工場を訪問
+- 工場長から素材・製法・商品化上の助言
+- 工場見学
+- キャンドル原料の再利用について学習
+
+Classification:
+COMPANY_X_HIGH_SCHOOL / PBL / FACTORY_VISIT
+HIGH_SCHOOL
+CREATIVE / WORKS / CIRCULAR_RESOURCE / PRODUCT_DEVELOPMENT
+hands_on: HIGH
+Region: 倉敷 / 船穂連携
+
+Evidence:
+https://www.pegasuscandle.com/company/
+https://www.tamasho.okayama-c.ed.jp/?p=24093
+https://www.pegasuscandle.com/candleworld/blog/detail.php?id=320
+
+GROWgle note:
+「ものづくり＋フラワーロス＋商品開発」を接続する良質な高校PBL SOURCE。
+
+### 丸五ゴム工業 — RECURRING / MULTI-AGE CAREER SOURCE
+岡山県公式:
+- 中学生の倉敷チャレンジ・ワーク14受入を明記
+- 高校生・大学生インターンを積極受入
+
+企業公式:
+2024大学生（理系）向け
+- オープンカンパニー
+- 半日ワークショップ
+- 研究開発職の仕事体験
+- 工場見学
+- 若手社員座談会
+
+2026学生向けでも倉敷事業所で半日型仕事体験を複数月実施。
+
+Classification:
+JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+SCHOOL_ONLY + STUDENT
+WORKS / STEAM / MATERIALS / AUTOMOTIVE_PARTS / R&D
+RECURRING
+hands_on: HIGH
+Region: 倉敷上富井
+
+Evidence:
+https://www.pref.okayama.jp/page/303253.html
+https://www.marugo-rubber.co.jp/cgi/web/index.cgi?c=news-zoom&pk=127
+https://www.marugo-rubber.co.jp/recruit/detail/
+
+GROWgle note:
+中学生→高校生→大学生までキャリア接続が明確な製造企業。
+
+### とら醤油 — CONSTANT / LOCAL_FOOD_INDUSTRY
+岡山県観光公式:
+- 麹づくりから完成までの醤油製造工程を見学可能
+- 平日
+- 見学開始 10:00〜15:00
+- 倉敷市酒津
+
+学校側:
+- 小学5年社会見学で利用実績
+- 醤油原料・発酵熟成・大きなタンク等を学習
+
+Past regional project:
+- 「倉敷未来プロジェクト ひやさい2019」で工場見学＋オリジナル醤油づくり
+
+Classification:
+GROUP_BOOKING / CONSTANT
+ELEMENTARY / SCHOOL / GENERAL_GROUP
+FOOD / FERMENTATION / LOCAL_HISTORY / WORKS
+hands_on: OBSERVATION_TO_HIGH
+Region: 酒津
+
+Evidence:
+https://www.okayama-kanko.jp/spot/detail_10257.html
+https://www.kurashiki-tabi.jp/ryuiki/extra/megumi/kurashiki.html
+https://www.ginganosato.ed.jp/%EF%BC%95%E5%B9%B4%E7%94%9F%E7%A4%BE%E4%BC%9A%E8%A6%8B%E5%AD%A6/
+
+### 琴浦製作所 — STUDENT / FACTORY_VISIT SOURCE
+Challenge Work 2023:
+- 中学生受入事業所として確認
+
+Current student career:
+- 会社見学・工場見学あり
+- 先輩社員との質問会・懇談会
+- 倉敷市児島下之町
+
+Classification:
+JUNIOR_HIGH_HISTORY + STUDENT_CURRENT
+WORKS / STEAM / MACHINING / LOCAL_INDUSTRY
+REPEAT_LIKELY
+Region: 児島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/011/141/1007370_ma_01.pdf
+https://job.mynavi.jp/27/pc/search/corp245739/recruiting_course27054181/recruiting_course.html
+
+Status:
+小中高向け独自一般プログラムは未確認。工場見学受入の継続状況を追加確認。
+
+### 水島プレス工業 — JUNIOR_HIGH HISTORY / INDUSTRIAL SOURCE
+Challenge Work 2023で中学生受入事業所として確認。
+Current official:
+- 倉敷市福井
+- 自動車用ステアリングシャフト・ドアヒンジ等
+- 素材から製品まで一貫生産
+- 塑性加工技術
+- 環境・カーボンニュートラル方針
+
+Classification:
+JUNIOR_HIGH_WORK_EXPERIENCE_HISTORY
+WORKS / STEAM / AUTOMOTIVE_PARTS
+ACTIVITY_CURRENT_STATUS: VERIFY
+Region: 倉敷福井
+
+Evidence:
+https://www.mizushima-press.co.jp/company/
+https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/011/141/1007370_ma_01.pdf
+
+### Challenge Work master — high-value manufacturing candidates added
+2023 official listから、今後の深掘り候補として以下を追加:
+- 高梨乳業 岡山工場
+- ペガサスキャンドル
+- 丸五ゴム工業
+- 水島プレス工業
+- みのる産業 倉敷工場
+- 琴浦製作所
+- とら醤油
+- 高田工業所
+- 中電工
+- ナカハラ・インコム
+- 日本被服
+- 岡山キムラヤ 倉敷工場
+- 倉敷木材
+- 倉敷ケーブルテレビ
+- 倉敷青果
+- 倉敷ボーリング機工
+ほか。
+
+Selection rule:
+一般小売・飲食店舗を全件深掘りするのではなく、
+製造工程・専門技能・地域産業・技術・食育・メディア等、学習密度の高いSOURCEを優先。
+
+## 56. Source-type balance check
+
+倉敷Pilotで現在までに強いSOURCE群:
+
+- Heavy industry / chemical / auto:
+  JFE / Mitsubishi Motors / Asahi Kasei / Kuraray / ENEOS / Mitsubishi Chemical
+- SME manufacturing:
+  Akioka / Mizushima Steel Plate / M.S.E. / Kurashiki Boring / Marugo Rubber / Pegasus Candle
+- Textile:
+  Betty Smith / BIG JOHN / Japan Blue / Takada Orimono / Selery / Kanko / Kojima Factory network
+- Construction / infrastructure:
+  Chuo Kensetsu / Meguro / KazaKen / Naikai Archit / utility companies
+- Food / agriculture:
+  Furuichi / Kurashiki Seika / Tora Shoyu / Tamashima food cluster
+- Medical / welfare:
+  Kurashiki Central Hospital / Kawasaki / Mizushima Kyodo / So-Shin-Kai etc.
+- Finance:
+  Tamashima Shinkin / banks via school programs
+- Media / digital:
+  KCT / ENGI / Kurabiz
+- Transport / logistics:
+  Mizushima Rinkai Railway / JFE Logistics / harbor network
+- Culture / craft:
+  candle / denim / tatami-edge / sanada-himo etc.
+
+Finding:
+倉敷企業教育資源は、製造業偏重ではなく「産業・医療・食・メディア・クリエイティブ」へかなり広く分布。
+
+## 57. Next route
+
+- Challenge Work 2023高体験候補をcurrent 2024〜2026で照合
+- 高梨乳業 / 岡山キムラヤ / みのる産業 / 中電工 / 日本被服 / 倉敷木材を逆引き
+- ペガサスキャンドルの一般向け現行体験導線を確認
+- 食育系SOURCEを学校給食会・農業法人側から拡張
+- MEDIA / CREATIVE系企業を学校・大学側から追加抽出
