@@ -3424,3 +3424,281 @@ Finding:
 - ペガサスキャンドルの一般向け現行体験導線を確認
 - 食育系SOURCEを学校給食会・農業法人側から拡張
 - MEDIA / CREATIVE系企業を学校・大学側から追加抽出
+
+
+## 58. Permanent textile / local workshop / university-link batch — 2026-10-05
+
+### 日本被服株式会社 / 児島学生服資料館 — VERY_HIGH_VALUE / CONSTANT
+企業公式の「社会見学」ページで、学生服工場の教育向け見学を明確に確認。
+
+学生服工場社会見学:
+- 所要約2時間
+- 児島の繊維産業・学生服産業の歴史を学習
+- 裁断 → 縫製 → 仕上げアイロン → 箱入れまで一貫見学
+- 児島で繊維産業が発達した背景を紙芝居で解説
+- 戦前のミシン・学生服・販促物等を資料館で見学
+- 撥水・透けにくい等の最新生地を体験
+- BIGサイズ制服等の体験コーナー
+
+併設「児島学生服資料館」:
+- 10:00〜17:00
+- 入館無料
+- 不定休
+- 学生服・セーラー服・ブレザーを自由に着替えて撮影可能
+- 団体は事前連絡
+- 大型バス駐車可
+
+Classification:
+OPEN_PUBLIC_MUSEUM + GROUP_BOOKING / CONSTANT
+ELEMENTARY+ / SCHOOL / FAMILY / GENERAL
+TEXTILE / LOCAL_HISTORY / MUSEUM / WORKS / CREATIVE
+hands_on: MEDIUM-HIGH
+Region: 児島
+
+Evidence:
+https://nipponhifuku.jp/company/study/index.html
+https://nipponhifuku.jp/company/museum/index.html
+
+GROWgle note:
+「工場見学＋産業史＋体験＋常設資料館」が一体化した、児島の最重要常設SOURCEの一つ。
+
+### Candle Fairy — NEW INDEPENDENT LOCAL SME SOURCE
+注意:
+現在のCandle Fairyは、ペガサスキャンドルの旧「キャンドルワールドショップ」を引き継いだ独立店舗として扱い、Pegasus Candleの現行直営ACTIVITYと混同しない。
+
+Current official:
+- 倉敷市阿知3-18-6
+- 子ども〜大人が手作りキャンドル体験可能
+- 団体体験・出張体験対応
+- 2025-03: 児童クラブ26名がアロマモザイクグラスキャンドル制作
+- 2025-09: ハートランド倉敷へ手作りキャンドル体験出店
+- 季節ごとの体験メニューを継続更新
+
+Classification:
+OPEN_PUBLIC + GROUP_BOOKING + OUTREACH / CONSTANT
+CHILD / FAMILY / GENERAL
+CREATIVE / CRAFT / COMMUNITY
+hands_on: VERY_HIGH
+Region: 倉敷美観地区周辺
+
+Evidence:
+https://candle-fairy.jp/
+https://candle-fairy.jp/shop/
+https://candle-fairy.jp/blog/
+https://candle-fairy.jp/information/detail.php?id=82
+
+GROWgle note:
+企業マスターから派生して、地域の小規模事業者にも高密度な子ども体験SOURCEが存在する例。
+
+### 岡山キムラヤ 倉敷工場 — FOOD_EDUCATION_CANDIDATE
+2023倉敷チャレンジ・ワーク14で倉敷工場の中学生受入実績を確認。
+
+Current non-primary education source:
+- 学校給食パン・米飯を多数の学校へ供給
+- 子ども向け「サンドイッチ教室」等の食育活動が紹介されている
+
+ただし企業公式サイトで2024〜2026の倉敷開催を今回確認できていないため、
+LOCAL CURRENT ACTIVEにはまだ昇格しない。
+
+Classification:
+JUNIOR_HIGH_WORK_EXPERIENCE_HISTORY
+FOOD_EDUCATION_SOURCE_CANDIDATE
+ACTIVITY_LOCAL_CURRENT_VERIFY
+Region: 倉敷
+
+Evidence:
+https://www.okayama-kimuraya.co.jp/kurashikikojobaiten/
+https://okayama-oshigoto.ohk.co.jp/oshigoto/2025-08/
+Challenge Work official list
+
+### 中電工 — GROUP-LEVEL EDUCATION SOURCE / KURASHIKI CURRENT UNVERIFIED
+企業公式で次世代教育の長期継続を確認。
+
+「夏のリコチャレ / 夏休みお仕事体験 in 中電工」:
+- 2015年度から毎年
+- 女子中高生・女子学生対象
+- 3D CAD設計体験
+- ドローン操作
+- VR安全体験
+- 女性技術者との座談会
+- 2024・2025・2026開催確認
+
+Kurashiki locality:
+- 2023 Challenge Work公式一覧で中電工の倉敷市内中学生受入実績あり
+- ただし2026リコチャレ自体の会場は倉敷開催と確認できない
+
+Classification:
+GROUP_LEVEL_RECURRING_SOURCE
+JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+STEAM / ELECTRICAL / CONSTRUCTION / DRONE / CAD
+KURASHIKI_ACTIVITY:
+- Challenge Work historical = VERIFIED
+- Current special program = LOCALITY_UNVERIFIED
+
+Evidence:
+https://www.chudenko.co.jp/sustainability/investment.html
+https://www.chudenko.co.jp/news/2026/index.html
+Challenge Work official list
+
+GROWgle note:
+全国・広域企業の優良プログラムでも「倉敷で実施」と自動推定しない原則を適用。
+
+### 萩原工業 × 岡山県立大学 — CURRENT 2026 COMPANY_X_UNIVERSITY
+岡山県立大学協力会の2026活動:
+- 2026-07-27「産業技術特別講義」で萩原工業が講義
+- 2024にも「技術者と社会」で萩原工業の講義実績あり
+
+Classification:
+COMPANY_X_UNIVERSITY / RECURRING_CANDIDATE
+UNIVERSITY
+STEAM / INDUSTRY / CAREER
+Region: company base 倉敷 / activity 総社
+
+Evidence:
+https://commu.oka-pu.ac.jp/
+https://commu.oka-pu.ac.jp/newslist_commu.html
+
+GROWgle note:
+活動場所は総社だが、倉敷企業が地域高等教育へ提供する教育資源としてSOURCE側に紐づける。
+
+### 倉敷化工 × 岡山県立大学 — CURRENT 2026 COMPANY_X_UNIVERSITY
+岡山県立大学協力会:
+- 2026-07-14「産業技術特別講義」で倉敷化工が講義
+
+Classification:
+COMPANY_X_UNIVERSITY
+UNIVERSITY
+STEAM / MATERIALS / ENGINEERING / CAREER
+Activity location: 総社
+Source location: 倉敷
+
+Evidence:
+https://commu.oka-pu.ac.jp/
+https://commu.oka-pu.ac.jp/newslist_commu.html
+
+### 琴浦製作所 × 岡山県立大学 — NETWORK LINK
+2026岡山県立大学協力会の会員企業として登録。
+- 2026-02 県大生限定業種説明会の参加企業に琴浦製作所
+- 舶用エンジン部品・大型タービン軸受等の企業情報を学生へ提供
+
+Classification:
+COMPANY_X_UNIVERSITY / CAREER
+UNIVERSITY
+WORKS / STEAM / MARITIME / ENERGY
+Region: SOURCE=児島, activity=総社
+
+Evidence:
+https://commu.oka-pu.ac.jp/member/membership085/index.html
+https://commu.oka-pu.ac.jp/session/20260212/index.html
+
+## 59. Media / timber / community education expansion
+
+### 玉島テレビ放送 — COMMUNITY EDUCATION SOURCE
+Challenge Work過年度受入企業として企業探索母集団に含む。
+
+2026 current community action:
+- 2026-08-24〜28
+- たまテレホールを無料自習室として開放
+- 対象: 中学生・高校生・大学生
+- 定員25名
+- 予約不要
+
+Classification:
+COMMUNITY_EDUCATION / OPEN_PUBLIC
+JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+MEDIA / COMMUNITY
+Region: 玉島
+Activity type:
+教育体験ではなく学習環境提供。CAREER ACTIVITYとは別レイヤー。
+
+Evidence:
+https://www.tamashima.tv/catv/oshirase.html
+
+Status:
+現行の職場体験・スタジオ体験プログラムは追加確認。
+
+### クラモク / 倉敷木材 — PERMANENT OPEN SOURCE
+Current official「木のショールーム」:
+- 倉敷市中島、本社内
+- 平日＋第4日曜
+- 無垢材、木材建材、家具、自然素材等を自由に閲覧
+- 子ども向け木のおもちゃ・木の小物も展示販売
+- 専門スタッフが木・住まいについて案内
+
+Classification:
+OPEN_PUBLIC / CONSTANT
+FAMILY / GENERAL
+NATURE_ASSET / WOOD / HOUSING / CREATIVE
+hands_on: LOW-MEDIUM
+Region: 倉敷中島
+
+Evidence:
+https://www.kuramoku.com/kuramoku/showroom.html
+
+Historical continuity:
+- 過去に「暮らしと木のフェア」で親子木工・左官体験等を長期開催した記録あり
+- 2026の同フェア開催は未確認のため CURRENT EVENTには数えない
+
+Separate industry network:
+- 2026倉敷市こどもまつりでは「倉敷木材組合」が木工教室を出展
+- 木製ペンダント・ブンブンごま等
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/lpk-shimin-gakushu-c/documents/8kodomomatsuri_omote.pdf
+https://www.kurashiki-oky.ed.jp/lpk-shimin-gakushu-c/documents/8kodomomatsuri_ura.pdf
+
+GROWgle note:
+「倉敷木材株式会社」と「倉敷木材組合」は別SOURCEとして管理。
+
+### 山陽新聞社 — EDUCATION CONTENT + STUDENT CAREER SOURCE
+Current official:
+- NIE「さん太のワークシート」を継続提供
+- 新聞記事を教材に、小中学生の読解・思考を支援
+- 2026も更新継続
+- 学生向け1day新聞記者仕事体験を複数回開催
+
+Kurashiki:
+- 倉敷本社を持つ
+- 2023 Challenge Work受入リストにも企業名あり
+- ただし2026の記者仕事体験会場は岡山本社で、倉敷ローカルACTIVITYとしては数えない
+
+Classification:
+EDUCATION_CONTENT_SOURCE / STUDENT_CAREER / LOCAL_HISTORY
+MEDIA / INFORMATION_LITERACY
+KURASHIKI_LOCAL_CURRENT_ACTIVITY: PARTIAL / VERIFY
+
+Evidence:
+https://c.sanyonews.jp/n_d/nie/sheet.html
+https://c.sanyonews.jp/recruit/event.html
+
+## 60. Source quality / scope refinement
+
+今回の追加で企業系SOURCEを4種類にさらに分ける必要性を確認:
+
+A. DIRECT_EXPERIENCE_SOURCE
+子ども・学生が企業現場で直接体験
+例: 日本被服工場見学、JFE、M.S.E.
+
+B. PERMANENT_LEARNING_SOURCE
+常設資料館・ショールーム・企業展示
+例: 児島学生服資料館、クラモク木のショールーム
+
+C. EDUCATION_CONTENT_SOURCE
+現場体験ではないが教育コンテンツを継続提供
+例: 山陽新聞NIE
+
+D. COMMUNITY_LEARNING_INFRASTRUCTURE
+企業が地域へ学習場所等を開放
+例: 玉島テレビの無料自習室
+
+Ranking / mapではA〜Dを単純合算しない。
+GROWgleの主軸はAを中心とし、B〜Dを補助レイヤーにする。
+
+## 61. Next route
+
+- 高梨乳業岡山工場 / みのる産業倉敷工場: Challenge Work後のcurrent activity確認
+- 玉島テレビ: 現行職場体験・放送体験の有無
+- クラモク: 2024〜2026の親子木工・地域イベントを追加確認
+- 日本被服: 社会見学の申込条件・対象学年を可能なら補完
+- 岡山県立大学・川崎医療福祉大学・倉敷芸術科学大学側から倉敷企業名を逆引き
+- Challenge Work公式リストの高体験候補をcurrent照合
