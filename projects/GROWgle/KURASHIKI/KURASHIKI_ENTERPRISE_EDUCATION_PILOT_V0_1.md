@@ -1654,3 +1654,350 @@ https://ko-un.jp/regional_trade/
 - 大学PBL成果物から企業名を抽出
 - 2024〜2026の「夏休み」「感謝祭」「フェスタ」「工場祭」を企業横断検索
 
+
+
+## 28. Network / chamber / emerging-source batch — 2026-10-05
+
+企業単体の逆引きから、商工会議所・学校・地域産業網側からの逆引きへ拡張。
+
+### 倉敷商工会議所 建設委員会 × 岡山県建設業協会倉敷支部 — RECURRING / OPEN_PUBLIC
+2025と2026の連続開催を確認。
+イベント:
+- 「見てさわって学べる！はたらく車 乗車体験イベント」
+- 小4〜6と保護者
+- 無料
+- 重機見学・乗車
+- 木工制作
+- 2026はショベルカー、ダンプ、高所作業車等11台
+- 2026で2回目
+
+Classification:
+OPEN_PUBLIC / FAMILY / RECURRING
+ELEMENTARY_HIGH
+WORKS / INFRASTRUCTURE / CAREER / CREATIVE
+COLLABORATION: CHAMBER_X_INDUSTRY_ASSOCIATION_X_EDUCATION
+hands_on: VERY_HIGH
+
+Evidence:
+https://www.kura-cci.or.jp/event/event-24351/
+https://www.jcci.or.jp/news/news/2026/0910164726.html
+https://www.kura-cci.or.jp/event/event-20046/
+
+GROWgle note:
+個社ではなく業界団体が複数企業の仕事をまとめて子どもへ開く「INDUSTRY_GATEWAY SOURCE」。
+
+### 玉島商工会議所 × 金光学園 — 職業クエスト / PBL
+2026「職業クエスト」:
+- 中等部14歳
+- 5〜10名程度で地域事業所を訪問
+- 現場見学
+- 企業が抱える課題を持ち帰る
+- 生徒グループが解決策を考える
+- 商工会議所が参加企業を募集
+
+Classification:
+SCHOOL_ONLY / PBL
+JUNIOR_HIGH
+ENTRE / WORKS / COMMUNITY
+COLLABORATION: CHAMBER_X_SCHOOL_X_COMPANY
+hands_on: HIGH
+Status: SOURCE_NETWORK / 参加企業は実施後に追跡
+
+Evidence:
+https://www.tamashima-cci.or.jp/news/o-828.html
+
+GROWgle note:
+「職場を見る」から「企業課題を解く」へ一段深い。企業×中学生PBLの標準モデル候補。
+
+### 玉島商工会議所 — 地域文化体験SOURCE
+2025・2026の連続開催を確認:
+- 西爽亭「お抹茶点て方体験」
+- 小学生以上
+- 2026年度は5月〜翌3月に複数回
+- 和菓子製作体験付き回あり
+
+Classification:
+OPEN_PUBLIC / RECURRING
+ELEMENTARY_PLUS / FAMILY / GENERAL
+CULTURAL_ASSET / COMMUNITY
+Region: 玉島
+
+Evidence:
+https://www.tamashima-cci.or.jp/news/i-97.html
+https://www.tamashima-cci.or.jp/news/i-92.html
+
+### 児島商工会議所 × 倉敷市立短期大学 — RECURRING
+児島繊維産業未来Vision委員会が倉敷市立短期大学との連携強化として合同企業説明会を継続。
+- 2024
+- 2025
+- 2026
+と3年継続を確認。
+目的:
+- 学生に児島の事業所を知ってもらう
+- 地元企業への就職関心を高める
+- 企業と学生の交流
+
+Classification:
+STUDENT_ONLY / RECURRING
+UNIVERSITY / JUNIOR_COLLEGE
+LOCAL_INDUSTRY / TEXTILE / CAREER
+COLLABORATION: CHAMBER_X_UNIVERSITY_X_COMPANY
+
+Evidence:
+https://www.kojima-cci.or.jp/info/20260116-kuratangoudoukigyousetsumeikai.html
+
+### 児島商工会議所 — ものづくり体験ハブ
+公式「体験する」ページから、企業学び楽舎とは別の常設・予約型SOURCE群を再確認。
+- 髙田織物: 畳縁製造工程、ミニ畳づくり。小学生以上、団体最大48名
+- BIG JOHN: 藍染め・デニム加工
+- ベティスミス: リベット打ち
+- 浦上染料店 / どんぐり工房: 藍染め
+- 児島学生服資料館: 学生服・セーラー服試着
+- 野﨑家塩業歴史館: 塩づくり
+
+Classification:
+GROUP_BOOKING / OPEN_PUBLIC_MIXED / CONSTANT
+ELEMENTARY_PLUS / FAMILY / SCHOOL
+LOCAL_INDUSTRY / TEXTILE / CREATIVE / CULTURE
+
+Evidence:
+https://www.kojima-cci.or.jp/sightseeing/experience
+
+### クラレ 倉敷事業所 — LONG_RUNNING / MULTI-ACTIVITY
+公式CSRで強く確認。
+
+少年少女化学教室:
+- 1992年開始
+- 毎年開催
+- 小学生対象
+- 2025年に国内累計参加者1万人超
+- 倉敷事業所では「おもしろかがく館」
+- 社員ボランティアが講師・アシスタント
+
+倉敷事業所の地域交流:
+- クラレ杯子ども会球技大会
+- サマーフェスタ
+- クリスマスファンタジー
+- 地域小学校・こども園への支援
+- 「小鳥の森」による環境・生物多様性教育資源候補
+
+2025クリスマスファンタジー:
+- 1990年開始、2025年で通算34回
+- 地域一般来場可能
+
+Classification:
+SCHOOL / OPEN_PUBLIC / RECURRING_LONG_RUNNING
+ELEMENTARY / FAMILY / COMMUNITY
+STEAM / CHEMISTRY / SPORTS / COMMUNITY / NATURE
+Region: 玉島乙島
+
+Evidence:
+https://www.kuraray.com/jp-ja/sustainability/3p/relationship_with_society/
+https://www.kuraray.com/jp-ja/news/2025/1215_2/
+https://100th.kuraray.com/ja/
+
+GROWgle note:
+一企業で「化学」「スポーツ」「地域祭」「自然」「イルミネーション」の複数入口を持つため、SOURCE→ACTIVITY分離の代表例。
+
+### 旭化成 水島製造所 — FACTORY + SPORTS + SCIENCE
+工場見学:
+- 小学生高学年以上
+- 10〜40人程度
+- 45分
+- 製造所紹介、概要、車窓プラント見学
+- 1か月前予約
+
+地域教育:
+- 水島製造所が岡山県で旭化成柔道教室を企画
+- 世界レベルの柔道部員が地域の子どもへ直接指導
+- 製造所は以前から地元中学生へのスポーツ活動支援
+- 環境保全や化学の楽しさを伝える出前授業も実施
+
+Classification:
+GROUP_BOOKING + SCHOOL / RECURRING_SOURCE
+ELEMENTARY_HIGH / JUNIOR_HIGH / CHILD
+STEAM / CHEMISTRY / SPORTS / LOCAL_INDUSTRY
+hands_on: MEDIUM-HIGH
+
+Evidence:
+https://www.kurashiki-tabi.jp/rm_experience/rm-experience46/
+https://www.asahi-kasei.com/jp/asahikasei-brands/stories/judo
+
+### JFEスチール — SPORTS layer追加
+公式社会貢献活動:
+- 各製鉄所・製造所で福利厚生施設を地域へ開放
+- 陸上、サッカー、野球、バレー、バスケ等の地域大会
+- 2025年度: 22大会、約9,100人参加（全社）
+- 硬式野球部等が子ども向け教室
+- 中高生向け指導も実施
+- 倉敷地区発の「アクティブ体操」「安全体力」も教育現場へ展開
+
+Kurashiki-specific activity countsは個別確認継続。
+
+Classification:
+SPORTS / HEALTH / COMMUNITY / EDUCATION
+SOURCE_LEVEL_CONFIRMED
+LOCAL_ACTIVITY_COUNT: VERIFY
+
+Evidence:
+https://www.jfe-steel.co.jp/company/csr.html
+
+### 水島港みなと親子学習会 — PORT / LOGISTICS NETWORK
+2026-10-24:
+- 水島港玉島ハーバーアイランド周辺
+- 小学生＋保護者
+- 24人
+- 無料
+- 船で港を探検
+- 港湾について学習
+- 中国地方整備局 宇野港湾事務所
+
+Classification:
+OPEN_PUBLIC / FAMILY
+ELEMENTARY
+WORKS / LOGISTICS / INFRASTRUCTURE / PORT
+Region: 玉島ハーバーアイランド
+Note:
+企業主催ではないが、港湾企業群への入口となるNETWORK SOURCE。
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1022190/1027202/1027203.html
+
+### 日本エアロフォージ — NEW VERY_HIGH_VALUE SOURCE
+学校・企業双方から2026活動を確認。
+
+2026-07-31 倉敷市民講座:
+- 小5・6
+- 20名
+- 無料
+- 玉島ハーバーアイランド工場
+- 世界有数の5万トン大型鍛造プレス
+- 航空機パーツの製造工場を見学
+
+企業公式:
+- 2026-06 笠岡工業高校工場見学
+- 学生向け工場見学を随時受付
+- 1日インターン、長期インターン相談可
+- 2025-11 従業員家族向け工場見学会を2日開催
+
+Classification:
+OPEN_PUBLIC_LIMITED + STUDENT + SCHOOL + FAMILY_INTERNAL
+ELEMENTARY_HIGH / HIGH_SCHOOL / UNIVERSITY_STUDENT
+STEAM / WORKS / AEROSPACE / MATERIALS / FORGING
+hands_on: OBSERVATION_HIGH
+Region: 玉島ハーバーアイランド
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/tamashima-ph/natu_kouza2016_2.html
+https://japan-aeroforge.com/
+https://japan-aeroforge.com/recruit/
+https://japan-aeroforge.com/2025/11/24/2714/
+
+GROWgle note:
+玉島に「航空宇宙・大型鍛造」という新しい地域学習カテゴリが存在。非常に強いLOCAL_INDUSTRY資源。
+
+### 岐阜プラスチック工業 倉敷工場 — NEW SOURCE
+2026:
+- 倉敷市立工業高校1年生が工場見学
+
+過去:
+- 倉敷工業高校電子機械科2年生が工場見学
+- 最先端デジタル技術を導入した工場設備、原料、製品、環境対応を学習
+- 同校卒業生が就職し、仕事内容・社会人生活を説明
+- 同社高卒採用サイトにも「高校2年時の倉敷工場見学が入社のきっかけ」とする社員例
+
+Classification:
+SCHOOL_ONLY / HIGH_SCHOOL
+WORKS / STEAM / PLASTICS / DIGITAL_MANUFACTURING
+RECURRING_CANDIDATE
+Region: 倉敷
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kogyo-h/news.html
+https://www.kurako.okayama-c.ed.jp/wordpress/?p=65410
+https://www.risu.co.jp/recruit/high-school/
+
+### ニッパツ水島 — NEW SOURCE / HIGH_SCHOOL_OPEN_COMPANY
+2026:
+- 倉敷市立工業高校2年生が工場見学
+
+2024企業公式:
+- 岡山県内高校1〜3年と保護者向けオープンカンパニー
+- 工場見学＋質問会
+- 1回4名
+- 複数日開催
+
+Classification:
+HIGH_SCHOOL / FAMILY_COMPANION
+WORKS / AUTOMOTIVE_PARTS / CAREER
+RECURRING_CANDIDATE
+Region: 水島
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kogyo-h/news.html
+https://nhkseating-mizushima.co.jp/info/%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%AB%E3%83%B3%E3%83%91%E3%83%8B%E3%83%BC%E3%81%B8%E3%81%AE%E5%8F%82%E5%8A%A0%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/
+
+### 田中商会 — NEW RECYCLING SOURCE
+2026:
+- 公式NEWSで「くらしき市民講座」で工場見学受入を確認
+- 玉島工場を含む複数拠点で資源リサイクル
+- 市民学習センターでは過去にも水島エコワークス＋田中商会玉島工場のリサイクル工場見学ツアーを実施
+
+Classification:
+GROUP / MUNICIPAL_PROGRAM
+GENERAL / FAMILY_CANDIDATE
+NATURE / STEAM / CIRCULAR_ECONOMY / WORKS
+Region: 玉島 / 水島 / 中島
+REPEAT_LIKELY
+
+Evidence:
+https://tanaka-rc.co.jp/
+https://www.kurashiki-oky.ed.jp/lpk-shimin-gakushu-c/documents/izanai62.pdf
+
+## 29. School-side reverse discovery findings
+
+学校側サイトから企業を探索すると、企業学び楽舎64社に含まれないSOURCEが新たに出ることを確認。
+
+2026 倉敷市立工業高校:
+- 岐阜プラスチック工業 倉敷工場
+- ニッパツ水島
+- 洋服の青山 倉敷総本店（着こなし・社会人マナー）
+
+2026 倉敷翔南高校:
+- シモハナ物流
+- 倉敷芸術科学大学
+- 倉敷アイビースクエアで進路ガイダンス
+
+過年度学校実績:
+- 大阪富士工業 水島支店
+- ENEOS水島による小学校観劇支援
+
+これらはすべて「企業学び楽舎母集団外から見つかる企業教育接点」。
+今後、学校サイトを企業発見センサーとして定常利用する。
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kogyo-h/news.html
+https://www.kurashiki-oky.ed.jp/kurashiki-shonan-h/blog.html
+https://www.kurashiki-oky.ed.jp/kogyo-h/news-r7.html
+https://www.kurashiki-oky.ed.jp/mizushima-e/r0_00.html
+
+## 30. Batch 5 structural findings
+
+1. 商工会議所はイベント告知媒体ではなく、複数企業を束ねる教育SOURCEとして扱うべき。
+2. INDUSTRY_GATEWAY（建設業界、児島繊維等）を設定すると企業単体検索より効率よく裾野を広げられる。
+3. 玉島に航空宇宙・大型鍛造という強い学習資産を追加。
+4. 学校Webサイトは、64社リスト外の企業教育活動を見つける高精度な逆引き元。
+5. 企業スポーツは製造業の地域接点として独立カテゴリ価値がある。
+6. 市・商工会議所が企業の工場見学を一般親子向けに変換している例があり、企業自身の募集ページだけでは拾えない。
+7. 「企業×子ども」探索は、企業公式・学校・自治体・商工会議所の4面照合が必要。
+
+## 31. Next route
+
+- 企業学び楽舎64社の残り未精査
+- 水島コンビナート8社: 三菱ガス化学を追加深掘り
+- 64社外の学校発見SOURCE: 洋服の青山 / シモハナ物流 / 大阪富士工業 / 岐阜プラスチック / ニッパツ水島
+- 玉島ハーバーアイランド立地企業を企業リスト化
+- 児島商工会議所の繊維産業未来Vision参加企業を抽出
+- 倉敷・児島・玉島商工会議所の過去3年イベントアーカイブ横断
+- 「企業博物館 / PRセンター / ミュージアム / 資料館」の常設SOURCE探索
+- 学校サイトから2024〜2026の工場見学・職場体験先企業を抽出
