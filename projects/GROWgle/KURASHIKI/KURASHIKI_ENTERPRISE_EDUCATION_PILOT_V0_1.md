@@ -5804,3 +5804,475 @@ Saturation control:
 
 Goal:
 Maximize breadth of unique regional learning sources before further deepening.
+
+
+## 95. Breadth reset batch — 64-company unexamined sectors — 2026-10-06
+
+児島繊維の深掘りを停止し、企業学び楽舎64組織の未精査領域へ戻った。
+2026年度版の倉敷市公式パンフレットを直接参照し、福祉・保育・自動車・IT・電力・設備・測量・屋根・鉄骨・水道へ横展開。
+
+Official baseline:
+- 2026年度 協力企業: 64社
+- R7実績: 中学校19校 / 3,499名、高校3校 / 448名
+- R7協力企業等: 地域企業59社
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1005580/1005581.html
+https://www.city.kurashiki.okayama.jp/_res/projects/default_project/_page_/001/005/581/r8pamphlet.pdf
+
+### 社会福祉法人しおかぜ — RECURRING / VERY_HANDS_ON
+2026 official program:
+- おしり人形を使った介護体験
+- 脳トレ
+- 手遊び
+- 姿勢解析
+- 高齢者福祉・介護＋認定こども園領域
+
+2025 school-side actual:
+- 味野中2年
+- 紙おむつを人形へ履かせる
+- 認知症対策ゲーム
+
+Classification:
+SCHOOL_ONLY / RECURRING_CONFIRMED
+JUNIOR_HIGH / HIGH_SCHOOL
+WELFARE / CARE / CHILDCARE
+hands_on: VERY_HIGH
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/ajino-j/r7_tayori_2.html
+R8 official 企業学び楽舎 brochure
+
+### ますみ会 ますみ荘 — CURRENT SCHOOL SOURCE
+2026 official:
+- 介護の魅力・やりがい
+- 講座＋介護体験
+- 高齢者に寄り添う仕事を具体化
+
+Current facility / recruitment:
+- 倉敷市中島
+- 介護ロボット・ICT機器を導入
+- 施設見学可
+
+Classification:
+SCHOOL_ONLY / CURRENT_2026
+JUNIOR_HIGH / HIGH_SCHOOL
+WELFARE / CARE / TECHNOLOGY_IN_CARE
+hands_on: HIGH
+
+Evidence:
+https://masumikai.or.jp/recruit/
+R8 official 企業学び楽舎 brochure
+
+### 郁青会 サンバードナーシングホーム — CURRENT SCHOOL SOURCE
+2026 official:
+- 高齢者レクリエーションの目的・効果
+- 実際のレクリエーション体験
+- 福祉専門職の魅力と未来を考える
+
+Related organization current activity:
+- 同一福寿会・郁青会グループの藤戸クリニックが2026-02-28「お仕事体験ラボ」に参加
+- 中高生へ理学療法士の仕事内容、進学、国家試験等を説明
+- 2025には倉敷天城中で医師の仕事講義も実施
+
+Classification:
+SCHOOL_ONLY + CAREER_OUTREACH_NETWORK
+JUNIOR_HIGH / HIGH_SCHOOL
+WELFARE / MEDICAL / CAREER
+REPEAT_LIKELY
+
+Evidence:
+https://www.fukujyu.or.jp/
+https://www.fukujyu.or.jp/fujitoclinic/news
+R8 official 企業学び楽舎 brochure
+
+### 温故知新会 ひかりの里 — CURRENT SCHOOL + PBL
+2026 official:
+- 様々なタイプの車椅子乗車・操作
+- 血圧測定
+- 介護施設・介護職の理解
+
+別ルート:
+- 2026高梁川流域未来人材育成事業の連携可能企業
+- 技術指導 / 会社・施設見学対応
+
+Classification:
+SCHOOL_ONLY + HIGH_SCHOOL_PBL_AVAILABLE
+JUNIOR_HIGH / HIGH_SCHOOL
+WELFARE / CARE / HEALTH
+hands_on: VERY_HIGH
+
+Evidence:
+https://onkochishinkai.or.jp/
+R8 official 企業学び楽舎 brochure
+Kurashiki Future Talent 2026 page
+
+### 小谷かなりや認定こども園 — CURRENT SCHOOL SOURCE
+2026 official:
+- 保育士の役割・仕事内容
+- パネルシアター
+- 手遊び
+- 手作りおもちゃ
+- 保育の工夫を体験的に理解
+
+Classification:
+SCHOOL_ONLY / CURRENT_2026
+JUNIOR_HIGH / HIGH_SCHOOL
+CHILDCARE / CREATIVE / CAREER
+hands_on: HIGH
+
+Evidence:
+https://k-kanariya.or.jp/kotani/
+R8 official 企業学び楽舎 brochure
+
+### 八幡認定こども園 — CURRENT SCHOOL SOURCE
+2026 official:
+- こども園 / 保育園の仕組み
+- 園児になった想定で園生活を体験
+- 保育職の魅力を学習
+
+Classification:
+SCHOOL_ONLY / CURRENT_2026
+CHILDCARE / CAREER
+hands_on: HIGH
+
+Evidence:
+R8 official 企業学び楽舎 brochure
+
+### めばえ保育園 — CURRENT SCHOOL SOURCE
+2026 official:
+- 保育教諭の役割
+- 遊びを通した学び
+- 食事や身の回りの支援
+- 体験＋進路相談
+
+Classification:
+SCHOOL_ONLY / CURRENT_2026
+CHILDCARE / CAREER
+hands_on: HIGH
+
+Evidence:
+R8 official 企業学び楽舎 brochure
+
+### ドルフィン・メイトこども園 新倉敷 — CURRENT SCHOOL SOURCE
+2026 official:
+- 企業主導型保育の特徴
+- 保育士の仕事内容
+- 子どもの一日の流れ
+
+Current official:
+- 新倉敷駅前に園
+- 施設見学予約導線あり
+
+Classification:
+SCHOOL_ONLY / CURRENT_2026
+JUNIOR_HIGH / HIGH_SCHOOL
+CHILDCARE / CAREER
+hands_on: MEDIUM-HIGH
+
+Evidence:
+https://www.childcare.dolphinaid.jp/
+R8 official 企業学び楽舎 brochure
+
+### 中山保育園 — RECURRING confirmed
+2026 official:
+- 保育士の役割・仕事
+- 手遊び
+- 手作り玩具
+
+2025 school-side actual:
+- 味野中で「園児が楽しめるおもちゃ作り」
+
+Classification:
+SCHOOL_ONLY / RECURRING_CONFIRMED
+JUNIOR_HIGH
+CHILDCARE / CREATIVE / CAREER
+hands_on: HIGH
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/ajino-j/r7_tayori_2.html
+R8 official 企業学び楽舎 brochure
+
+## 96. Non-manufacturing / services breadth batch
+
+### よしゐ屋BASE — CONSTANT OPEN/GROUP EXPERIENCE
+Current Kurashiki MICE official:
+- 切子ちょうちんづくり
+- 通年
+- 1〜36名
+- 会場を用意すれば出張最大200名
+- 和紙・マスキングテープで装飾
+- LEDを灯して完成品を持ち帰れる
+
+R8企業学び楽舎:
+- 手まり
+- お茶
+- 生け花
+- まち歩き
+- 夜の天文台等、地域文化・観光商品を紹介
+
+Classification:
+OPEN/GROUP_BOOKING + SCHOOL
+CHILD/FAMILY/GENERAL/JUNIOR_HIGH/HIGH_SCHOOL
+CULTURAL_ASSET / TOURISM / CREATIVE / LOCAL_IDENTITY
+CONSTANT
+hands_on: VERY_HIGH
+
+Evidence:
+https://kurashiki-mice.jp/experience/70/
+R8 official 企業学び楽舎 brochure
+
+### ディー・エス笹沖（オートバックス） — CURRENT / SCHOOL
+2026 official:
+- 実店舗商品に触れる
+- 簡単な整備作業
+- 自動車用品販売・メンテナンスの仕事
+
+Company official:
+- 「中学生向けのキャリア支援」として企業学び楽舎参加を明記
+- 近隣小学校への教材寄付等の地域貢献も実施
+
+Classification:
+SCHOOL_ONLY / CURRENT
+JUNIOR_HIGH / HIGH_SCHOOL
+AUTOMOTIVE / RETAIL / MAINTENANCE / CAREER
+hands_on: HIGH
+
+Evidence:
+https://dssasaoki.co.jp/activities
+R8 official 企業学び楽舎 brochure
+
+### ピープルソフトウェア — CURRENT 2026 / SCHOOL + STUDENT
+R8 school program:
+- IT・AIの可能性
+- 困りごとを解決するアプリ企画
+- 生成AIを使った開発体験
+- SEの仕事理解
+
+2026 student route:
+- 夏のお仕事体験 / オープンカンパニー受付
+- 倉敷本社で生成AIを含む5日〜2週間未満の開発体験
+- プログラマー / SE職
+- 成果物フィードバック
+
+Classification:
+SCHOOL_ONLY + STUDENT
+JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+AI / IT / STEAM / PRODUCT_DESIGN / CAREER
+RECURRING
+hands_on: VERY_HIGH
+
+Evidence:
+https://pscsrv.co.jp/recruit/
+R8 official 企業学び楽舎 brochure
+
+GROWgle note:
+GROWgleのAIカテゴリへ直接接続できる地域企業SOURCE。
+
+## 97. Infrastructure / utilities breadth batch
+
+### 中国電力 玉島発電所 — CONSTANT GROUP_BOOKING + SCHOOL
+Current public facility tour:
+- 平日
+- 5〜40名程度
+- 約90分
+- 発電所説明
+- タービン室
+- 中央制御室
+- 構内見学
+- 事前予約
+
+R8 school program:
+- 火力発電の仕組み
+- 重油 / 天然ガス→蒸気→タービン→発電
+- 見て・聞いて・体験
+
+Classification:
+GROUP_BOOKING / SCHOOL_ONLY
+ELEMENTARY+/SCHOOL/GROUP
+ENERGY / STEAM / INFRASTRUCTURE
+CONSTANT
+hands_on: OBSERVATION_HIGH
+
+Evidence:
+https://www.energia.co.jp/area/okayama/entry/288.html
+R8 official 企業学び楽舎 brochure
+
+### 中国電力ネットワーク 倉敷 — SCHOOL + FACILITY TOUR
+Current group-level official:
+- 変電所等を体験学習の場として見学可能
+- 学校向け「わくわくEスクール」
+- 実験・体験を交えた電気・エネルギー出前授業
+
+倉敷ネットワークセンター:
+- 倉敷市中庄2293-2
+
+R8 school program:
+- 家庭・学校へ安定して電気を届ける仕事を体験
+
+Classification:
+SCHOOL_ONLY + GROUP_BOOKING
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL
+ENERGY / ELECTRIC_GRID / STEAM
+CONSTANT_SOURCE
+
+Evidence:
+https://www.energia.co.jp/nw/safety/facility/guide.html
+https://www.energia.co.jp/nw/company/office/center/
+R8 official 企業学び楽舎 brochure
+
+### 岡山県瓦工事協同組合 — CURRENT SCHOOL / INDUSTRY_ASSOCIATION
+2026 official:
+- 瓦クイズ
+- 実物に触れる
+- 瓦割り
+- 屋根仕事の理解
+
+Current association:
+- 県内の瓦工事業者団体
+- 倉敷・井笠支部に倉敷市内複数社
+- 真備にも組合員企業あり
+
+Classification:
+SCHOOL_ONLY / CURRENT
+JUNIOR_HIGH / HIGH_SCHOOL
+CONSTRUCTION / CRAFT / DISASTER_RESILIENCE / LOCAL_TRADE
+hands_on: VERY_HIGH
+
+Evidence:
+https://www.okayamakawarakojikumiai.org/
+https://www.okayamakawarakojikumiai.org/blank-8
+R8 official 企業学び楽舎 brochure
+
+### 中央設備 — CURRENT SCHOOL
+2026 official:
+- 実際の設備資材でロボット制作
+- 現場アイテム着用体験
+- 水・設備工事の仕事
+
+Classification:
+SCHOOL_ONLY / CURRENT
+CONSTRUCTION / WATER / STEAM
+hands_on: VERY_HIGH
+
+Evidence:
+R8 official 企業学び楽舎 brochure
+
+### 大同設備工業 — CURRENT SCHOOL
+2026 official:
+- 水道が蛇口から出る仕組みを模型で学習
+- 建物内の見えない設備の役割
+
+Classification:
+SCHOOL_ONLY / CURRENT
+CONSTRUCTION / WATER / INFRASTRUCTURE / STEAM
+hands_on: HIGH
+
+Evidence:
+R8 official 企業学び楽舎 brochure
+
+### 松永創作事務所 — CURRENT SCHOOL / SURVEYING
+2026 official:
+- 測量・墨出し
+- クイズ
+- 実際の現場機器を使う作業体験
+- 伝統技法と最新機器の組み合わせ
+
+SDGs partner official:
+- 企業学び楽舎への参加を提供可能な人的資源として明記
+
+Classification:
+SCHOOL_ONLY / CURRENT
+SURVEYING / CONSTRUCTION / STEAM
+hands_on: VERY_HIGH
+
+Evidence:
+https://www.goodcity.jp/kurashiki.takahashiriver/registration/4286
+R8 official 企業学び楽舎 brochure
+
+### 協同組合倉敷市管事業協会 — NEW CURRENT SCHOOL SOURCE
+2026 newly added:
+- 漏水修理
+- 修理材料・方法
+- 水道メーター取替
+- 実作業体験
+
+Classification:
+SCHOOL_ONLY / CURRENT_NEW_2026
+JUNIOR_HIGH / HIGH_SCHOOL
+WATER / INFRASTRUCTURE / CONSTRUCTION
+hands_on: VERY_HIGH
+
+Evidence:
+R8 official 企業学び楽舎 brochure
+
+## 98. Local steel / construction-source identity resolution
+
+### 株式会社西鉄 — identity resolved + CURRENT SCHOOL
+Important:
+「西鉄」は鉄道会社ではなく、倉敷市児島の鉄骨加工・組立企業。
+
+Company:
+- 倉敷市児島味野4051-12
+- 鉄骨加工・組立
+- 建築鉄骨
+
+R8 school program:
+- CAD基本操作
+- 鉄骨設計で使う三角法
+- 鉄骨模型組立
+- 建築構造の理解
+
+Classification:
+SCHOOL_ONLY / CURRENT
+JUNIOR_HIGH / HIGH_SCHOOL
+STEAM / CAD / STRUCTURAL_ENGINEERING / WORKS
+hands_on: VERY_HIGH
+Region: 児島
+
+Evidence:
+https://www.nishitetsu-kk.co.jp/company.html
+R8 official 企業学び楽舎 brochure
+
+GROWgle note:
+同名企業の誤同定リスクを解消。
+
+## 99. Breadth-reset finding
+
+今回の横展開で、直前まで薄かった分野が大きく補完された:
+- 保育
+- 高齢者福祉
+- 自動車小売・整備
+- IT / AI
+- 電力・送配電
+- 水道設備
+- 測量
+- 屋根・瓦
+- 鉄骨/CAD
+- 観光文化ワークショップ
+
+児島繊維を追加で深掘りするより、64社未精査を埋める方が新規性・カテゴリ多様性とも高い。
+
+Saturation:
+- KOJIMA_TEXTILE = SATURATED_FOR_PILOT
+- 64_COMPANY_UNCHECKED = ACTIVE_PRIORITY
+- WELFARE_CHILDCARE = substantially improved, still open-public layer needs search
+
+## 100. Next breadth route
+
+1. 64社のうち残る未精査:
+   - 広島銀行倉敷支店
+   - 住友生命倉敷匠支部
+   - 行雲
+   - 一部福祉法人
+   - 岡山県警察
+   - 起業ラボ
+   - ENEOS school content detail
+2. OPEN_PUBLICの不足カテゴリを優先:
+   - IT / AI
+   - インフラ
+   - 福祉
+   - 金融
+   - 自動車
+3. 真備・船穂・中庄・中心部の非製造業SOURCE探索
+4. 64社外の新規企業はGatewayからのみ追加し、個社無限探索は避ける
