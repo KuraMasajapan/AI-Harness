@@ -1240,3 +1240,183 @@ Then choose the smallest component necessary for the missing capability.
 
 Status:
 PROPOSAL / NOT ACTIVE
+
+
+---
+
+## Update 2026-10-07 — OpenAI Decisions API / Bounded Decision Layer
+
+Source:
+- OpenAI API Changelog, 2026-10-06
+- https://developers.openai.com/api/docs/changelog
+- Decisions API reference
+- https://developers.openai.com/api/reference/resources/decisions/methods/create
+- User-supplied OpenAI Developers post:
+  https://x.com/openaidevs/status/2107573382229188645
+
+Status:
+PUBLIC BETA / PROPOSAL / NOT ACTIVE
+
+### What changed
+
+OpenAI released the Decisions API in public beta using `gpt-6-luna`.
+
+The endpoint is:
+
+`POST /v1/decisions`
+
+Officially supported answer forms:
+- Predicate: probability that a statement is true
+- Choice: select from predefined options
+- Score: evaluate against ordered levels / rubric
+
+The API accepts shared text evidence and user messages containing text and inline images.
+For image input, the Decisions API reference currently requires inline base64 data URLs; external URLs and file IDs are not supported.
+
+OpenAI states that the Decisions API can return typed answers up to approximately 10x faster than using GPT-6 Luna through the Responses API.
+
+### Architectural significance
+
+This is a concrete implementation of a bounded-decision layer:
+
+```
+Input / Event / Observation
+        ↓
+Bounded Decision
+        ↓
+Route / Classify / Score
+        ↓
+Normal path / Reviewer / Strong model / Human
+```
+
+The key distinction is:
+
+`Bounded Decision != Open-ended Reasoning`
+
+Use the cheapest narrow decision primitive that can safely answer the question.
+Escalate to a reasoning model or Human when the task is ambiguous, high-impact, destructive, or outside the fixed decision contract.
+
+### Potential AI-Harness roles
+
+Candidate uses:
+- route a task to model / tool / agent
+- classify Grok / Airtable observer signals
+- rank or score evidence
+- choose a narrow next action from predefined options
+- triage UI / image states
+- pre-screen risky tool calls
+- decide whether a task should escalate to a more capable model
+- reduce expensive LLM calls on repetitive classification tasks
+
+Possible flow:
+
+```
+Sensor / Human Input
+        ↓
+Decisions API
+        ↓
+LOW RISK       AMBIGUOUS       HIGH IMPACT
+   ↓               ↓                ↓
+auto path       reviewer        Human approval
+```
+
+### Relationship to existing candidates
+
+This overlaps with the previously recorded idea of lightweight / bounded decision models such as Cloudflare Clef and Jev-style interfaces.
+
+Do not delete local / open alternatives.
+
+Provisional distinction:
+
+```
+OpenAI Decisions API
+- cloud
+- OpenAI-native
+- typed probabilistic outputs
+- fast integration with existing OpenAI API workflows
+
+Clef / local bounded model
+- potentially local / self-hosted
+- lower provider coupling
+- useful for offline or privacy-sensitive routing
+```
+
+The architectural candidate should therefore remain provider-neutral:
+
+`Bounded Decision Adapter`
+
+Possible implementations can be swapped underneath it.
+
+### Human approval boundary
+
+Do not use a probability score as a direct replacement for Human approval on destructive, irreversible, financial, credential, security, or other high-impact actions.
+
+A safer interpretation is:
+
+```
+Decision score
+    ↓
+routing / escalation policy
+    ↓
+Human remains final authority where required
+```
+
+This keeps the decision model as a pre-filter or router rather than a self-authorizing actor.
+
+### Pricing note — NEEDS VERIFICATION
+
+The user-supplied report states:
+- $0.10 / 1M input tokens
+- no output / cache-read / cache-write charges
+- regional and long-context multipliers apply
+
+The first-party public materials checked on 2026-10-07 confirm the Decisions endpoint, model, speed claim, supported outputs, and input constraints.
+
+However, the general GPT-6 Luna pricing page separately lists normal input, cached-input, cache-write, and output rates.
+
+Therefore:
+- do not encode the user-supplied Decisions-specific pricing as a permanent fact yet
+- re-check the dedicated Decisions guide / pricing documentation before cost modeling or implementation
+
+### Suggested experiment
+
+Do not wire this into production immediately.
+
+First experiment against one low-risk repetitive classification task, for example:
+- Harness Inbox importance / route classification
+- tool-risk pre-screening
+- simple model-routing decision
+
+Measure:
+- accuracy against Human labels
+- false-negative rate on risky cases
+- latency
+- cost
+- calibration of returned probabilities
+- escalation rate
+- behavior under ambiguous inputs
+- image-input usefulness if applicable
+
+### Current decision
+
+KEEP AS HIGH-PRIORITY VALIDATION CANDIDATE.
+
+Do not make it a new core dependency yet.
+
+The reusable architectural idea is more important than the vendor endpoint:
+
+```
+Cheap bounded decision
+        ↓
+Escalate only when needed
+        ↓
+Reasoning model / Reviewer / Human
+```
+
+This directly supports:
+- Rule / Access separation
+- Model-neutral Core + Adapter
+- Human approval fatigue reduction
+- retrieval / observer triage
+- cost-aware model routing
+- capability-separated review
