@@ -6276,3 +6276,235 @@ Saturation:
    - 自動車
 3. 真備・船穂・中庄・中心部の非製造業SOURCE探索
 4. 64社外の新規企業はGatewayからのみ追加し、個社無限探索は避ける
+
+
+## 101. Breadth-first continuation — underexplored finance / Mabi / open-public infrastructure — 2026-10-07
+
+児島繊維の追加深掘りを止め、未探索カテゴリ・地域へ移動。
+
+### 行雲 — CURRENT COMPANY VISIT + STUDENT INTERNSHIP
+Current official recruitment pages:
+- 倉敷美観地区の本社・各店舗を巡る「誰でもカジュアル会社訪問」を受付
+- 日帰り半日〜数時間で、本社・各店舗・スタッフとの対話を組み合わせた見学モデルあり
+- オンライン会社案内にも対応
+- 2027新卒向けでは、2026年夏以降に各店舗や菓子製造部門でインターン参加→実務確認→選考の導線を明示
+
+Classification:
+GROUP/INQUIRY_COMPANY_VISIT + STUDENT_INTERNSHIP
+HIGH_SCHOOL/UNIVERSITY/GENERAL_CANDIDATE
+TOURISM / FOOD / RETAIL / HOSPITALITY / LOCAL_IDENTITY / CAREER
+CURRENT_2026
+Region: 倉敷美観地区
+
+Evidence:
+https://ko-un.jp/recruit/everybody_meet/
+https://ko-un.jp/recruit/recruitment/
+https://ko-un.jp/
+
+GROWgle note:
+企業学び楽舎参加だけでなく、自社側に「会社そのものを見てもらう」公開導線を持つ。
+小中学生向け一般公開プログラムとは断定しないが、学生・若者の地域企業理解SOURCEとして昇格。
+
+### 株式会社MORIYA鉢木「まびっこ竹」 — NEW OPEN_PUBLIC LOCAL SOURCE
+2026 current:
+- 真備町下二万の竹林でタケノコ掘り体験
+- 2026年4月〜5月初旬
+- 予約制
+- 大人 / 小学生 / 幼児料金を設定
+- 3歳以下無料
+- 掘ったタケノコを持ち帰り
+- 子どもの「体験学習」、家族利用を公式に案内
+- 2025にも多数の県内外利用者・リピーター
+- 岡山県観光公式でも「観光農園＋農家体験の中間」「家族・子ども向け体験学習・食育」と紹介
+
+運営者:
+- 株式会社MORIYA鉢木
+- 倉敷市真備町下二万2002-1
+
+Classification:
+OPEN_PUBLIC / RESERVATION / RECURRING_SEASONAL
+PRESCHOOL / ELEMENTARY / FAMILY / GENERAL
+NATURE / AGRICULTURE / FOOD_EDUCATION / LOCAL_ASSET
+hands_on: VERY_HIGH
+Region: 真備
+
+Evidence:
+https://www.mabi-takenoko.com/
+https://www.mabi-takenoko.com/contact
+https://www.okayama-kanko.jp/okatabi/detail_1767.html
+
+GROWgle note:
+真備で待望の「一般家庭が学校を介さず直接参加できる」民間体験SOURCE。
+地域資産（竹・タケノコ）→収穫→食への接続が明確。
+
+### 日本FP協会 岡山支部「キッズ・マネー教室」 — OPEN_PUBLIC FINANCE GATEWAY
+2026-07-26:
+- ライフパーク倉敷
+- 小学生＋保護者
+- 先着40組
+- 無料
+- 子ども向け金融教育
+- 岡山県教育委員会 / 倉敷市教育委員会 / 中国財務局岡山財務事務所 / 岡山県金融広報委員会が後援
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026
+ELEMENTARY / FAMILY
+FINANCIAL_LITERACY / LIFE_SKILLS
+PROFESSIONAL_ASSOCIATION_GATEWAY
+Region: 水島・福田
+
+Evidence:
+https://fair.jafp.or.jp/shibu/osaka/seikatsu/seminar/detail/okayama/62
+
+GROWgle note:
+64社の銀行・保険系が主にSCHOOL_ONLYなのに対し、一般家庭が直接参加できる金融教育の不足を補う。
+企業単体ではなく専門職団体SOURCEとして別管理。
+
+### 下水処理場親子探検隊 — OPEN_PUBLIC INFRASTRUCTURE GAP-FILL
+2026:
+- 水島下水処理場
+- 倉敷市内在住・通学の小学4〜6年＋保護者
+- 午前・午後 各20組程度
+- 実験＋下水処理場見学
+- 電子申請等で募集
+
+Classification:
+OPEN_PUBLIC_LIMITED / CURRENT_2026
+ELEMENTARY_HIGH / FAMILY
+WATER / INFRASTRUCTURE / ENVIRONMENT / STEAM
+hands_on: HIGH
+Region: 水島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1003907.html
+
+GROWgle note:
+企業ではないが、中央設備・大同設備・管事業協会等の「水インフラ職業SOURCE」と組み合わせると、
+水道・下水道の地域学習ルートを形成できる。
+
+### 水島清掃工場 — CONSTANT GROUP_BOOKING PUBLIC INFRASTRUCTURE
+Current 2026 official:
+- 5月8日以降の平日に事前申込で見学
+- 小学校向け紹介DVD貸出も実施
+- ごみ焼却・資源循環の現場学習
+
+Classification:
+GROUP_BOOKING / SCHOOL
+ELEMENTARY / GENERAL_GROUP
+CIRCULAR_ECONOMY / INFRASTRUCTURE / ENVIRONMENT
+CONSTANT
+Region: 水島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1003838/1003840/1003841.html
+
+### くらしき健康福祉プラザまつり — OPEN_PUBLIC WELFARE GATEWAY
+2026-11-08:
+- 各事業の体験コーナー
+- おでかけ児童館
+- ダンボール迷路
+- ステージ
+- 作品展示
+- スタンプラリー
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026
+CHILD / FAMILY / GENERAL
+WELFARE / HEALTH / COMMUNITY
+GATEWAY_SOURCE
+Region: 倉敷
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/fukushi/welfare/1012648/1015600/1018440/1027269.html
+
+GROWgle note:
+個別福祉法人の学校向け職業体験とは別に、一般家庭が福祉サービス・団体へ接触できる入口として保持。
+
+### いきいきふれあいフェスティバル2026 — OPEN_PUBLIC WELFARE / INCLUSION GATEWAY
+2026-10-18:
+- 水島緑地福田公園
+- 健康づくり・生きがいづくりを体験
+- 障がいの有無に関わらず相互理解を目的
+- 倉敷 / 児島 / 玉島 / 真備・船穂方面から無料送迎あり
+
+Classification:
+OPEN_PUBLIC / RECURRING
+CHILD / FAMILY / GENERAL
+WELFARE / HEALTH / INCLUSION / COMMUNITY
+GATEWAY_SOURCE
+Region: 水島（市域アクセス）
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/fukushi/welfare/1004008/1012647.html
+
+## 102. Autombile open-public caution
+
+### オートバックス「コドモバックス」 — GROUP PROGRAM EXISTS / LOCALITY UNVERIFIED
+Autobacs group current:
+- 子ども向け職業体験
+- 整備士体験
+- タイヤ交換
+- 親子工作
+- E-motorsports等
+- 無料イベントとして全国で展開
+
+Local:
+- オートバックス笹沖は倉敷市に現行店舗
+- 企業学び楽舎では中高生向け整備・商品接触SOURCEとしてCURRENT
+- ただし2026年に「コドモバックス」が笹沖店で開催された一次情報は今回確認できず
+
+Therefore:
+LOCAL_OPEN_PUBLIC_ACTIVITY = UNVERIFIED
+Do not count nationwide Kodomobacs as a Kurashiki event.
+
+Evidence:
+https://www.autobacs.co.jp/ja/sustainability/activity/nextgeneration.html
+https://www.autobacs.com/kodomobacs/about.html
+https://shop.autobacs.com/ja/retail/shops/101093
+
+GROWgle note:
+全国制度を倉敷へ誤適用しないという既存ルールを再確認。
+
+## 103. 64-company program scale / saturation context
+
+倉敷市公式 current:
+- 令和8年度企業学び楽舎 = 倉敷市内事業所64社
+- 中高生が実際の作業を体験するキャリア教育制度
+- 令和9年度からの新規協力企業を2026年5月から募集
+
+Historical city statement:
+- 令和6年度は55社
+- 中学校16校 + 高校5校
+- 約3,800人へ実施
+- その後64社へ拡大
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1005580/1005581.html
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1010595.html
+https://www.city.kurashiki.okayama.jp/cityinfo/mayor/1010449/1016561.html
+
+Interpretation:
+64社リストは固定企業名簿ではなく拡大型Gateway。
+Pilotでは「64社の全企業を無限に深掘り」より、
+未精査企業を一巡した後は新規企業募集・入替をWATCHし、OPEN_PUBLIC・地域空白を優先する。
+
+## 104. Breadth coverage update
+
+Newly improved gaps:
+- 真備: OPEN_PUBLIC private experience added
+- 金融: OPEN_PUBLIC child/family gateway added
+- 福祉: OPEN_PUBLIC gateway layer added
+- 水インフラ: OPEN_PUBLIC + group-booking route added
+
+Still weak:
+- 船穂の一般家庭向け民間体験
+- 中庄の企業OPEN_PUBLIC（医療は強い）
+- IT/AIの一般家庭向け地域企業イベント
+- 保険会社・銀行支店の倉敷ローカルOPEN_PUBLIC
+- 自動車販売/整備の倉敷ローカルOPEN_PUBLIC
+
+Priority next:
+1. 船穂・真備・中庄の地域資産型民間SOURCE
+2. OPEN_PUBLIC IT/AI / 金融 / 自動車
+3. 64社残りを「CURRENT school / public / student / no evidence」で閉じる
+4. 同じ企業・Gatewayに3回以上戻らない
