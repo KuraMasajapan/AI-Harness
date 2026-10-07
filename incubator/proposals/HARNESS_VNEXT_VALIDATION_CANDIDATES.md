@@ -1420,3 +1420,223 @@ This directly supports:
 - retrieval / observer triage
 - cost-aware model routing
 - capability-separated review
+
+
+---
+
+## Update 2026-10-08 — EmbeddingGemma 2 / Local Semantic Warehouse Candidate
+
+Status:
+HIGH-VALUE EXPERIMENT CANDIDATE / NOT ACTIVE
+
+Source context:
+- User-provided summary of Google DeepMind's EmbeddingGemma 2 announcement (2026-10-06).
+- Verify the current official model card / documentation again before implementation.
+
+### Core idea
+
+Treat EmbeddingGemma 2 not as a chatbot, but as a local semantic "warehouse keeper" for AI-Harness.
+
+The model's job is not to answer the Human directly.
+Its job is to understand the semantic contents of stored information, identify what is relevant to the current need, and return where the authoritative source lives.
+
+```
+Human / AI query
+      ↓
+Local semantic warehouse keeper
+      ↓
+Find semantically relevant items
+      ↓
+Return source locations / IDs
+      ↓
+Human or AI fetches the authoritative originals
+      ↓
+Reason / act
+```
+
+### Important distinction
+
+The warehouse keeper does not become the Source of Truth.
+
+Authoritative data remains in systems such as:
+- GitHub
+- Airtable
+- Obsidian
+- Google Drive or other external storage
+- local files
+
+The semantic index is disposable and rebuildable.
+
+```
+Original stores = authoritative
+Semantic index = searchable map / catalog
+```
+
+If the embedding model changes, the index can be regenerated from the originals.
+
+### What the warehouse keeper should know
+
+Not only storage addresses or labels.
+
+It should use semantic embeddings to understand the contents well enough to answer questions such as:
+
+- "Where is the material about the Task Fork idea?"
+- "Find the design note most related to this UI screenshot."
+- "Which previous rule / decision is relevant to this new request?"
+- "Find the code, notes, image, audio or video most semantically related to this query."
+
+The retrieval result should ideally contain:
+- source system
+- file / record / object identifier
+- path or address
+- relevance score
+- updated timestamp
+- data type
+- access class / policy metadata if available
+
+### Proposed architecture
+
+```
+Airtable ─────┐
+GitHub ───────┤
+Obsidian ─────┤
+Drive ────────┤
+Local files ──┘
+       ↓
+Storage Adapters
+       ↓
+Local Semantic Index
+EmbeddingGemma 2
+       ↓
+Retrieval Gateway
+       ↓
+Access / Policy Filter
+       ↓
+Return source locations
+       ↓
+Fetch only required originals
+       ↓
+ChatGPT / Hermes / Local LLM / Human
+```
+
+### Model-neutral advantage
+
+The retrieval layer should not belong to Gemini or any single reasoning model.
+
+```
+                Local Retrieval Gateway
+                       │
+          ┌────────────┼────────────┐
+          ↓            ↓            ↓
+       ChatGPT       Hermes      Local LLM
+```
+
+The same semantic index can serve different reasoning models.
+This supports Model-Neutral Core + Model-Specific Adapter.
+
+### Multimodal value
+
+A major reason to track EmbeddingGemma 2 is the possibility of mapping multiple content types into one semantic space:
+
+- text
+- code
+- images
+- audio
+- video
+
+Potential future queries:
+- text -> related image
+- audio note -> related design document
+- screenshot -> related code / requirement
+- natural language -> related codebase location
+- image -> related prior conversation notes
+
+This could make the Retrieval Gateway a common information entrance for the Harness rather than a text-only RAG layer.
+
+### Possible lightweight routing role
+
+Semantic similarity may also support low-cost, local pre-routing for narrow cases such as:
+- task category
+- likely source
+- likely relevant Skill / Rule / Memory
+- zero-shot intent grouping
+
+Do not use embedding similarity alone to authorize destructive or high-impact actions.
+
+```
+Embedding / similarity
+       ↓
+candidate / route
+       ↓
+Validator / LLM / policy
+       ↓
+Human where required
+```
+
+### Why this fits current cost constraints
+
+The attraction is specifically local execution.
+
+Target:
+- no per-query API charge for the warehouse keeper
+- local/private indexing
+- only fetch originals and call cloud AI when needed
+- reduce unnecessary cloud retrieval / context loading
+
+Cloud-hosted inference is not required for the intended experiment.
+
+### First experiment
+
+Keep the experiment small.
+
+Phase 1:
+- index only AI-Harness Markdown / text artifacts
+- ask natural-language queries
+- compare retrieval quality against current filename / keyword / repository search
+- return source paths only; do not let the index become authoritative
+
+Phase 2, only if Phase 1 is useful:
+- add Airtable records
+- then code
+- then images / audio / video
+
+Measure:
+- retrieval precision
+- missed critical records
+- stale-index behavior
+- index rebuild time
+- storage size
+- latency on available local hardware
+- usefulness of lower-dimensional embeddings
+- operational simplicity versus current retrieval paths
+
+### Safety / design constraints
+
+- Original storage remains authoritative.
+- Access rules must be checked before returning or fetching sensitive content.
+- Embedding similarity is not proof of correctness.
+- Human approval boundaries remain unchanged.
+- Index corruption must never damage source data.
+- Prefer rebuild over complex index repair.
+- Do not expose all storage credentials directly to every reasoning model if the Retrieval Gateway can mediate access.
+
+### Current decision
+
+KEEP AS HIGH-VALUE EXPERIMENT CANDIDATE.
+
+The architectural idea to preserve is:
+
+```
+External Stores
+      ↓
+Local semantic warehouse keeper
+      ↓
+Best source locations
+      ↓
+Fetch only what is needed
+      ↓
+Any reasoning model / Human
+```
+
+Potential Harness role:
+`Retrieval Gateway / Local Semantic Warehouse`
