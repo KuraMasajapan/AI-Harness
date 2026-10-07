@@ -1640,3 +1640,195 @@ Any reasoning model / Human
 
 Potential Harness role:
 `Retrieval Gateway / Local Semantic Warehouse`
+
+
+---
+
+## Update 2026-10-08 — Tailscale / Local Semantic Broker Bridge
+
+Status:
+HIGH-VALUE ARCHITECTURE IDEA / NOT ACTIVE
+
+Source:
+- https://tailscale.com/blog/codex-cloud-tailscale
+
+### Why this matters
+
+The previously identified Local Semantic Warehouse architecture had one unresolved gap:
+
+```
+Cloud AI
+   ↓
+???
+   ↓
+Local Agent
+   ↓
+EmbeddingGemma 2
+   ↓
+Local / External Information
+```
+
+Tailscale can potentially fill that network-transport gap for Codex Cloud by providing a private path into a local tailnet without exposing the local service directly to the public Internet.
+
+### Proposed combined architecture
+
+```
+Codex Cloud
+    ↓
+Tailscale
+    ↓
+Local Agent / Hermes
+    ↓
+EmbeddingGemma 2
+    ↓
+Local files / Obsidian / Git / selected external stores
+    ↓
+Relevant source locations or minimal extracted context
+    ↓
+Back through Local Agent
+    ↓
+Codex Cloud
+```
+
+### Role split
+
+```
+Tailscale
+= private transport / "secret road"
+
+Local Agent / Hermes
+= execution and handoff worker
+
+EmbeddingGemma 2
+= semantic warehouse keeper
+
+Codex Cloud
+= remote reasoning / coding brain
+```
+
+The local Agent does not need to be a powerful local LLM in the first phase.
+It may start as a lightweight service that:
+- receives a scoped retrieval request
+- queries the semantic index
+- reads only permitted originals
+- returns source locations or minimal context
+
+### Important security property
+
+Do not expose the local machine broadly to the Internet.
+
+Instead:
+- expose only a narrow local service on the tailnet
+- use least-privilege Tailscale grants / tags
+- keep storage credentials local when possible
+- apply Harness Access rules before returning content
+- return only the minimum necessary information
+- preserve Human approval for sensitive / destructive actions
+
+The model should not receive unrestricted desktop access merely because the network path exists.
+
+### Why this connects to the GPU-less local agent idea
+
+The local side can remain lightweight:
+
+```
+Local CPU machine
+ ├─ Local Agent / small API
+ ├─ EmbeddingGemma 2
+ ├─ local semantic index
+ └─ source adapters
+```
+
+Heavy generation / reasoning can remain in Codex Cloud.
+
+Therefore a GPU is not a prerequisite for the first version.
+
+Possible staged path:
+
+```
+Phase 1
+Codex Cloud
++ Tailscale
++ simple local retrieval API
++ EmbeddingGemma 2
++ Markdown / local-file search
+
+Phase 2
++ Airtable / Obsidian / Git adapters
++ Access policy
++ richer source handoff
+
+Phase 3
++ Hermes or another local agent
++ optional local LLM
++ richer local actions
+
+Phase 4
++ GPU only if local reasoning becomes necessary
+```
+
+### Architectural significance
+
+This forms a candidate answer to the broader problem:
+
+"How can a cloud AI use private local knowledge without giving it unrestricted direct access to the desktop?"
+
+Candidate pattern:
+
+```
+Remote AI
+   ↓
+Private transport
+   ↓
+Local policy boundary
+   ↓
+Local semantic broker
+   ↓
+Authoritative local sources
+```
+
+The local side decides what can leave the machine.
+
+This is safer and more modular than granting the remote AI broad direct filesystem or desktop access.
+
+### Scope limitation
+
+The Tailscale article specifically concerns Codex Cloud integration.
+
+Do not generalize this into:
+"Tailscale gives every ChatGPT conversation direct local-PC access."
+
+Other ChatGPT surfaces would still need an appropriate supported bridge / gateway / connector.
+
+### Relationship to existing Harness candidates
+
+Strongly related to:
+- Candidate D: Retrieval Layer / External Connectors
+- Candidate E: Externalized Memory / Model-Swappable
+- Candidate F: Transport / Handoff
+- Candidate B: Rule / Access Separation
+- Candidate T: Model-Neutral Core + Model-Specific Adapter
+- EmbeddingGemma 2 / Local Semantic Warehouse Candidate
+- Hermes Local Agent project
+
+### Current decision
+
+KEEP AS HIGH-VALUE ARCHITECTURE IDEA.
+
+Do not deploy yet.
+
+The key reusable structure is:
+
+```
+Cloud reasoning
+      ↓
+Private transport
+      ↓
+Local Agent
+      ↓
+Semantic warehouse keeper
+      ↓
+Local authoritative information
+```
+
+This may allow the local agent project to begin before GPU acquisition.
