@@ -202,3 +202,33 @@ Do not force them into one side during collection; normalize / deduplicate later
 Saturation rule:
 SATURATED_FOR_PILOT does not mean "nothing else exists".
 It means the major known Gateways and reverse-lookup routes have been checked and further passes are no longer yielding materially new SOURCE types at Pilot value.
+
+
+## 13. High-value Gateway registry update — 2026-10-08
+
+In addition to the Kurashiki 64-organization Enterprise Manabi Gakusha roster, use these major Gateway populations in parallel:
+
+1. Kurashiki educational-travel / industrial-tourism lists
+2. school-side independently invited / cooperating organization lists
+3. Okayama "Yumeiku Partners" registry
+   - current searchable population: 131 organizations
+   - contains school / school-external activity, target age, region, cost and activity-form fields
+   - prefecture-wide entries are candidate SOURCEs; local Kurashiki ACTIVITY requires local verification or a booking route that clearly includes Kurashiki
+4. industry / professional associations and their local branches
+   - current strong example: Okayama Automobile Maintenance Promotion Association -> Kurashiki / Mizushima / Kojima / Tamashima member populations
+5. Okayama "Kids Workplace Visit Day"
+   - access is employee-family / partner-oriented, not OPEN_PUBLIC
+   - useful for discovering child workplace-experience SOURCEs invisible to public event searches
+
+Gateway discipline:
+- a new roster is a population, not proof of a Kurashiki event
+- normalize the same organization discovered through multiple Gateways into one SOURCE
+- retain each Gateway / evidence edge
+- search-result snippets are not sufficient for event-year confirmation; open the official page and distinguish page update date from event date
+- when a roster contains government bodies or student-led programs, exclude them from raw "company count" while preserving them as SOURCEs
+
+Current next priority:
+- Yumeiku Partners Kurashiki filter
+- OASPA / Mizushima Car Festival 2026 detail
+- remaining 64-roster closure
+- Nakasho / Funao and OPEN_PUBLIC IT/AI / auto / insurance gaps
