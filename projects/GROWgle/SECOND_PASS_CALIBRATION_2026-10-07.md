@@ -2640,3 +2640,295 @@ Next:
 - 坂町
 
 を走査し、広島Second Pass全県締めへ。
+
+
+## 32. Hiroshima Second Pass — Hiroshima City / Aki District closeout
+
+Date: 2026-10-08
+
+Target:
+- 広島市
+- 府中町
+- 海田町
+- 熊野町
+- 坂町
+
+### A. 広島市 — LARGE-CITY YOUTH INFRASTRUCTURE
+
+#### 中高生フリースペース「放課後シャレオ」 — CURRENT 2026
+
+紙屋町シャレオに設置された中高生向けフリースペース。
+学校・学年を越えて過ごせる場所で、
+大学生等スタッフへの相談、交流、定期イベントを実施。
+
+2026年:
+- ボードゲーム大会
+- 宿題イベント
+- ビリヤード等
+を確認。
+
+Evidence:
+- https://www.city.hiroshima.lg.jp/living/kosodate/1021261/1042147/1050755.html
+
+Classification:
+- MIDDLE / HIGH
+- CONSTANT / YOUTH_PLACE
+- COMMUNITY / PEER_CONNECTION
+- CURRENT_2026
+
+#### 放課後子供教室 — CITY PLAN
+
+広島市こども・若者計画で、
+全小学生を対象に地域との連携・協働による
+学習支援、体験、交流活動を定期的・継続的に提供する方針を確認。
+
+Evidence:
+- https://www.city.hiroshima.lg.jp/uploaded/attachment/255798.pdf
+
+Assessment:
+大都市では個別イベントより、
+- 中高生専用拠点
+- 放課後SYSTEM
+- 科学館 / 児童館 / 職場体験網
+をSOURCE MASTERとして管理する。
+
+State: **VERY_HIGH_MATURITY / BIG_CITY_YOUTH_INFRASTRUCTURE**
+
+### B. 府中町 — SCHOOL-COMMUNITY SYSTEM CONFIRMED
+
+2026:
+- 地域と学校の連携・協働体制構築事業の目標設定
+- 放課後子供教室
+- 地域学校協働活動推進員
+- 学校・家庭・地域の連携
+をCURRENT確認。
+
+2026第3次教育振興基本計画も開始。
+
+Evidence:
+- https://www.town.fuchu.hiroshima.jp/life/1/11/index-2.html
+- https://www.town.fuchu.hiroshima.jp/site/finance/54538.html
+- https://www.town.fuchu.hiroshima.jp/site/education/54639.html
+
+2026の府中町放課後子供教室では、
+水分峡森林公園で「みくまり峡里山散策」を実施。
+大学生ボランティアチームも参加。
+
+Evidence:
+- https://www.pref.hiroshima.lg.jp/site/center/center-model-wakuwaku-wakuwaku-top.html
+
+Assessment:
+First Passのマツダ / 地域資産に、
+学校地域協働SYSTEMが追加。
+
+State: **HIGH_MATURITY / SCHOOL_COMMUNITY_NETWORK**
+
+### C. 海田町 — AFTERSCHOOL + YOUTH PARTICIPATION SIGNALS
+
+#### 放課後子供教室 — CURRENT 2026
+
+2026-10-01更新。
+生涯学習課が現行運用。
+
+Evidence:
+- https://www.town.kaita.lg.jp/soshiki/9-2.html
+- https://www.town.kaita.lg.jp/soshiki/27/
+
+#### 地域学校協働 — CURRENT
+
+2026-08-20、
+「地域と学校の連携・協働体制構築事業」の目標達成度評価を公開。
+
+2026〜2030教育大綱でも、
+地域学校協働活動による
+家庭教育 / 学習支援を重点化。
+
+Evidence:
+- https://www.town.kaita.lg.jp/soshiki/27/
+- https://www.town.kaita.lg.jp/img/koenokouhou/202603/06.html
+
+#### 中学生の地域参加 — CURRENT SIGNAL
+
+2026「二十歳のつどい」で、
+町内中学生が
+- 司会
+- 合唱
+- 抽選会運営
+等に参加。
+
+Evidence:
+- https://www.town.kaita.lg.jp/img/koenokouhou/202602/02.html
+
+#### 部活動地域展開 — CURRENT DISCUSSION
+
+2026に検討部会を継続。
+推進だよりも発行。
+
+Evidence:
+- https://www.town.kaita.lg.jp/soshiki/26/146859.html
+
+Assessment:
+小学生放課後SYSTEM
+→ 中学生地域参加
+→ 中学校地域活動移行検討
+という接続が見える。
+
+State: **HIGH_MATURITY / YOUTH_ACTION_EMERGING**
+
+### D. 熊野町 — CULTURE + AFTERSCHOOL SYSTEM
+
+#### 土曜くまのっ子教室 — CURRENT 2026
+
+2026-04-20更新。
+放課後 / 週末に、
+- 遊び
+- スポーツ
+- 体験活動
+- 異学年交流
+- 地域の大人との交流
+を実施。
+
+地域コーディネーター、協働活動支援員等を配置。
+
+Evidence:
+- https://www.town.kumano.lg.jp/3/2/7348.html
+
+#### 地域学校協働 / 文化教育
+
+教育要覧では、
+- 筆づくり体験
+- 書道
+- 子ども司書
+- 防災減災講座
+- 工作 / 料理 / 異文化交流
+等を地域教育として体系化。
+
+Evidence:
+- https://www.town.kumano.hiroshima.jp/www/contents/1686227945123/files/R6kyoikuyouran.pdf
+
+2026年には県の大学生ボランティア派遣事業で、
+熊野町民会館のミステリーナイトへ大学生が参加。
+
+Evidence:
+- https://www.pref.hiroshima.lg.jp/site/center/center-model-wakuwaku-wakuwaku-top.html
+
+Assessment:
+筆産業だけでなく、
+文化体験 + 放課後SYSTEM + 多世代 / 大学生接続がある。
+
+State: **HIGH_MATURITY / CULTURE_SYSTEM_CONNECTED**
+
+### E. 坂町 — SMALL-TOWN AFTERSCHOOL MODEL
+
+#### 放課後子ども教室 — CURRENT 2026
+
+2026年2月広報で、
+児童・ボランティア募集を確認。
+
+あわせて
+「友遊サタデー」3地区合同開催を確認。
+
+Evidence:
+- https://www.town.saka.lg.jp/2026/01/30/%E5%BA%83%E5%A0%B1%E3%81%95%E3%81%8B%EF%BC%9A-%E4%BB%A4%E5%92%8C8%E5%B9%B42%E6%9C%88%E5%8F%B7%EF%BC%88%E7%AC%AC834%E5%8F%B7%EF%BC%89/
+
+教育行政方針では、
+- 放課後子ども教室
+- 子どもチャレンジ講座
+- 留守家庭児童会
+を「放課後子どもプラン」として一体運用。
+
+Evidence:
+- https://www.town.saka.lg.jp/2023/03/20/kyoikugyoseihoushin/
+
+#### 部活動 — UNIQUE LOCAL MODEL
+
+2026時点、県内で唯一「休日部活動を地域クラブへ全面移行しない」方針。
+1995年度から外部指導員を導入し、
+学校部活動の中で地域人材が指導に参加。
+
+Evidence:
+- https://www.fnn.jp/articles/-/1076152
+
+Assessment:
+単純な「地域クラブ移行率」では評価できない。
+坂町は
+**学校内に地域人材を入れる独自モデル**
+として保持。
+
+State: **HIGH_MATURITY / LOCAL_MODEL_DISTINCT**
+
+## 33. Hiroshima Second Pass — Prefecture closeout
+
+広島県23市町すべてについて、
+First Passに加えSecond Passの成熟度 / 深度判断を付与可能な状態へ到達。
+
+### Very high / model examples
+- 福山市: CITY_WIDE_GROWTH_ROUTE
+- 三原市: CIVIC_GROWTH_ROUTE
+- 東広島市: MODEL_YOUTH_PARTICIPATION
+- 呉市: YOUTH_INFRASTRUCTURE_EXPANDING
+- 大崎上島町: EDUCATION_FIELD
+- 大竹市: GROWTH_ROUTE_CONNECTED
+- 安芸太田町: ACCESS_SUPPORT_MODEL
+- 三次市: SYSTEM_CONNECTED
+- 広島市: BIG_CITY_YOUTH_INFRASTRUCTURE
+
+### High maturity
+- 府中市
+- 尾道市
+- 世羅町
+- 江田島市
+- 廿日市市
+- 北広島町
+- 府中町
+- 海田町
+- 熊野町
+- 坂町
+
+### Still selective value
+- 安芸高田市
+- 庄原市
+- 神石高原町
+- 竹原市
+
+### Hiroshima-specific finding
+
+広島Second Passでは、
+First Pass時点からSYSTEM SOURCEが比較的よく取得できていた。
+
+Second Passの主な追加価値は:
+1. 年齢接続
+2. 子ども・若者が受益者から担い手へ変わる地点
+3. 地域クラブ / 放課後 / 若者拠点の接続
+4. 地域独自モデルの発見
+5. CURRENTな制度運用確認
+
+### Saturation judgment
+
+広島県全体を無差別に再検索する段階は終了。
+
+今後は:
+- selective value地域
+- 新しいCURRENT OPEN機会
+- 新制度
+- 新成長ルート
+- 新Gateway
+のみ差分更新。
+
+## 34. Next geographic action
+
+Next:
+**兵庫 Second Pass**
+
+岡山・広島で確立した基準:
+- SYSTEM SOURCE
+- YOUTH ACTION
+- GROWTH ROUTE
+- REGIONAL MODEL
+- SATURATION
+
+をそのまま適用。
+
+兵庫はFirst Passで41市町を一巡済みのため、
+全件再検索ではなく、
+CheckpointのSecond Pass重点地域から優先する。
