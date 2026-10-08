@@ -2208,3 +2208,435 @@ Next:
 - 呉 / 江田島
 - 広島市 / 安芸郡
 を同じ差分方式で走査。
+
+
+## 29. Hiroshima Second Pass — East block
+
+Date: 2026-10-08
+
+Target:
+- 福山市
+- 府中市
+- 尾道市
+- 三原市
+- 世羅町
+- 神石高原町
+
+### A. 福山市 — VERY HIGH MATURITY / CITY-WIDE SYSTEM + YOUTH ECOSYSTEM
+
+#### コミュニティ・スクール — CURRENT 2026 CITY-WIDE
+
+2026年度から、すべての市立小中高等学校でコミュニティ・スクールを導入。
+中学校区ごとに学校運営協議会を設置し、2026年度は33協議会。
+
+地域学校協働活動は、
+- 地域住民
+- 保護者
+- 学生
+- NPO
+- 民間企業
+- 団体 / 機関
+等が参加。
+
+Evidence:
+- https://www.city.fukuyama.hiroshima.jp/site/koho-202601/384821.html
+- https://www.city.fukuyama.hiroshima.jp/soshiki/gakuji/386659.html
+
+#### 放課後子ども教室 — CURRENT 2026
+
+2026-08-17更新。
+市内29学区で実施。
+小学生対象で、
+- 学習
+- 工作
+- スポーツ
+- 体験
+- 地域交流
+等。
+
+Evidence:
+- https://www.city.fukuyama.hiroshima.jp/site/kosodate/289869.html
+
+#### Existing youth ecosystem
+
+First Passの
+- スタイリィ
+- ミライゴト
+- Sta-sh
+を合わせると、
+小学生の地域体験
+→ 中高生の若者拠点
+→ 高校 / U24の創業・地域課題
+へ接続。
+
+State: **VERY_HIGH_MATURITY / CITY_WIDE_GROWTH_ROUTE**
+
+### B. 府中市 — INDUSTRY + COMMUNITY SCHOOL MODEL
+
+#### コミュニティ・スクール × 地域学校協働
+
+2026-05-20の市公式で、
+府中市内複数校の学校運営協議会が、
+コミュニティ・スクールと地域学校協働活動の一体的推進で文部科学大臣表彰実績を持つことを確認。
+
+Current education system:
+- CS連絡協議会
+- 地域コーディネーター育成
+- 地域住民 / 団体ネットワーク
+- 部活動の地域移行
+
+Evidence:
+- https://www.city.fuchu.hiroshima.jp/soshiki/kyoiku_iinkai/gakkoukyoikuka/hyosyokankei/860.html
+- https://www.city.fuchu.hiroshima.jp/material/files/group/23/kyoikusinkoukihonkeikaku.pdf
+
+#### Existing child-industry route
+
+First Pass:
+- 木育
+- ポムポム
+- 府中家具
+- 中学生職場体験
+- i-coreFUCHU
+
+Assessment:
+地域学校協働の基盤と地場産業学習が強く接続。
+
+State: **HIGH_MATURITY / INDUSTRY_EDUCATION_NETWORK**
+
+### C. 尾道市 — AFTERSCHOOL NETWORK ADDED
+
+#### 放課後子ども教室 — SYSTEM SOURCE
+
+現行市ページで11小学校区を確認。
+
+- 地域ボランティア
+- 学校 / 公民館
+- 週1〜3日または年数回
+- 昔遊び
+- スポーツ
+- 工作
+- 読み聞かせ
+- 英語
+- 生け花
+- 自然学習
+等。
+
+Evidence:
+- https://www.city.onomichi.hiroshima.jp/site/onohug/3065.html
+- https://www.city.onomichi.hiroshima.jp/soshiki/60/
+
+#### Existing growth routes
+
+First Pass:
+- 小中学生青少年体験講座
+- 美術館ネットワーク
+- 高校生データサイエンス
+- 尾道商業商品開発
+
+Assessment:
+放課後SYSTEMが加わり、
+小学生地域体験 → 中学生体験 → 高校専門 / 商品開発
+の接続が見えた。
+
+State: **HIGH_MATURITY / SELECTIVE_DEEPENING**
+
+### D. 三原市 — CHILD CIVIC PARTICIPATION CONFIRMED CURRENT
+
+#### みはら こどもまんなかかいぎ — CURRENT 2026
+
+2026年度も開催。
+市公式で7月27日・8月3日の開催を確認。
+
+制度として、
+子ども・若者の意見を市のこども計画や公共空間整備へ反映している。
+
+過年度:
+小学3年生〜22歳まで参加し、
+「将来のみはらのまち」を議論。
+
+Evidence:
+- https://www.city.mihara.hiroshima.jp/site/kosodate/list711-2592.html
+- https://www.city.mihara.hiroshima.jp/soshiki/17/
+- https://www.city.mihara.hiroshima.jp/site/kosodate/172647.html
+
+#### Existing strong route
+
+- こどもおしごとチャレンジ
+- 未来創造たまご塾
+- 中学生地域スポーツ / 文化
+- 高校生商品開発
+
+Assessment:
+「仕事を体験する」だけでなく
+「市政へ意見を反映する」ルートを持つ。
+
+State: **VERY_HIGH_MATURITY / CIVIC_GROWTH_ROUTE**
+
+### E. 世羅町 — SYSTEM LAYER CONFIRMED
+
+#### 放課後子供教室
+
+2026-08-06更新。
+町の社会教育課でCURRENT運用を確認。
+
+こども計画では:
+- 各小学校区で実施
+- 放課後児童クラブとの連携
+- 学校施設活用
+を方針化。
+
+Evidence:
+- https://www.town.sera.hiroshima.jp/soshiki/10/
+- https://www.town.sera.hiroshima.jp/uploaded/attachment/10268.pdf
+
+#### 地域クラブ — CURRENT TRANSITION
+
+2026-08-10指導者募集。
+2026-09-30には部活動地域展開の指導者研修を案内。
+
+Evidence:
+- https://www.town.sera.hiroshima.jp/soshiki/10/
+- https://www.town.sera.hiroshima.jp/soshiki/10/17647.html
+
+#### Existing route
+
+- 田んぼの学校
+- 農業体験
+- 里山 / 科学
+- スポーツ支援
+
+Assessment:
+農業体験だけでなく、
+放課後 → 中学生地域クラブへ制度接続。
+
+State: **HIGH_MATURITY / RURAL_SYSTEM_CONNECTED**
+
+### F. 神石高原町 — SYSTEM + FUTURE TRANSITION
+
+#### 放課後子ども教室
+
+各協働支援センターと地域住民を中心に実施。
+学校・家庭・地域の連携を目的とする。
+
+Evidence:
+- https://www.jinsekigun.jp/town/formation/mirai/04/p893/
+
+#### 中学校部活動地域展開 — CURRENT 2026
+
+2026-08-24:
+第1回協議会。
+地域団体、学校、PTA等が参加。
+2031年度までに全ての部活動で地域展開等を実現する目標。
+
+Evidence:
+- https://www.jinsekigun.jp/town/formation/kyouiku/01/u150/
+
+#### じんせきミライ会議 — CIVIC PARTICIPATION WATCH
+
+2026-07-07第1回。
+将来の町の地域資源 / 課題を住民が議論。
+
+50歳以下を中心とする未来世代ワークショップとして制度設計。
+ただし18歳未満の参加条件は今回の一次情報では明示されていないため、
+GROWgle CHILD/YOUTH CURRENTとしては未確定。
+
+Evidence:
+- https://www.jinsekigun.jp/town/formation/mirai/oshirase/y376/c133/
+- https://www.jinsekigun.jp/town/formation/mirai/oshirase/u121/
+
+Assessment:
+First Passの自然 / 探究に、
+放課後SYSTEMと中学生地域クラブ移行が追加。
+
+State: **MATURING / PUBLIC_YOUTH_ACTION_GAP**
+
+## 30. Hiroshima Second Pass — Central East / Kure-Etajima
+
+### A. 東広島市 — MODEL YOUTH PARTICIPATION REGION
+
+2026 HIGASHIHIROSHIMAゆーす:
+- 地域まるごと探求ラボ
+- イベント企画等挑戦講座
+- チームボランティア
+- 体験の場
+を統合。
+
+中高生が
+企画 → 運営 → 地域活動 → ボランティア
+へ進める。
+
+2026募集ではイベント企画等挑戦講座を通年15回程度予定。
+
+Evidence:
+- https://www.city.higashihiroshima.lg.jp/material/files/group/76/gesutotexi-tya-311.pdf
+
+Existing:
+- 発明クラブ
+- 広島大学STEM
+- 企業探検
+- 学生スタートアップ
+
+State: **MODEL_REGION / VERY_HIGH_MATURITY**
+
+### B. 竹原市 — ELEMENTARY STRONG, MIDDLE/HIGH PLACE EMERGING
+
+#### 竹原こども未来創造大学
+First Pass最重要SOURCE。
+小学生向け地域カリキュラムとして成熟。
+
+#### 中高生学習スペース — CURRENT 2026
+
+2026-09-12から実証開設。
+対象:
+市内在住または市内通学の中高生。
+平日15:00〜20:00。
+
+Evidence:
+- https://www.city.takehara.lg.jp/soshikikarasagasu/kikakuseisakuka/gyomuannai/koukyou/8451.html
+
+Assessment:
+小学生の地域体験は強い。
+中高生について「居場所」は新設されたが、
+YOUTH ACTION / PROJECT型はまだ薄い。
+
+State: **HIGH_ELEMENTARY_MATURITY / YOUTH_ACTION_GAP**
+
+### C. 大崎上島町 — ISLAND EDUCATION ECOSYSTEM
+
+First Pass:
+- 広島商船高専
+- まるごと島体験
+- 大崎上島学
+- 櫂伝馬
+- 海 / 造船 / 漁業 / 農業
+
+Second Pass current connection:
+中学校3年生が大崎海星高校オープンスクールで、
+高校生が日常的に取り組む「仕事図鑑」作成を体験。
+
+2026年度も高校魅力化スタッフを町が募集し、
+高校を地域教育拠点として支援。
+
+Evidence:
+- https://www.town.osakikamijima.hiroshima.jp/soshiki/kyoiku_iinkai/osakikamijima_jhs/
+- https://www.town.osakikamijima.hiroshima.jp/soshiki/kshogai/shakyoibento_1/8210.html
+
+Assessment:
+中学校 → 地域高校 → 商船高専 / 地域産業
+という島内成長ルートが成立。
+
+State: **MODEL_REGION / EDUCATION_FIELD**
+
+### D. 呉市 — NEW TEEN INFRASTRUCTURE
+
+#### 中高生世代交流施設 — NEW CURRENT DEVELOPMENT
+
+2027年度、呉駅前複合施設内に開設予定。
+2026-09に愛称募集と、
+施設に置く本のアンケートを実施。
+
+Evidence:
+- https://www.city.kure.lg.jp/soshiki/60/kureeki-tyuukousei-ibasyo-aisyoubosyuu.html
+
+Classification:
+- MIDDLE / HIGH
+- FUTURE_CONSTANT_FACILITY
+- COMMUNITY / YOUTH_PLACE
+- CIVIC_INPUT
+
+#### 子どもの居場所づくり助成
+
+2026年度も、
+子どもの居場所づくりに取り組む団体を公募し採択。
+
+Evidence:
+- https://www.city.kure.lg.jp/soshiki/60/
+
+#### 放課後児童会・子供教室校内交流型
+
+市は校内交流型事業を制度化し、
+放課後児童会と子供教室を連携。
+
+Evidence:
+- https://www.city.kure.lg.jp/soshiki/60/kounaikouryuugata.html
+
+Existing:
+- 呉高専
+- TADANO X BASE
+- 地域応援プロジェクト
+- 呉ポートピア
+
+Assessment:
+小学生の放課後 / 体験
+→ 中高生交流施設
+→ 高専 / 学生
+の新しい接続が見える。
+
+State: **VERY_HIGH_MATURITY / YOUTH_INFRASTRUCTURE_EXPANDING**
+
+### E. 江田島市 — EDUCATIONAL TRAVEL + REGIONAL CLUB
+
+#### 認定地域クラブ — NEW CURRENT 2026
+
+2026年度から認定地域クラブ活動補助制度。
+学校部活動を継承・発展させたスポーツ / 文化芸術活動を、
+- 財政支援
+- 学校施設優先利用
+で支援。
+
+Evidence:
+- https://etajima.edumap.jp/school/bukatsu
+
+#### 地域提案型活動支援補助金
+
+2026年度10事業採択。
+世代間交流、海、環境、地域づくり等を支援。
+
+Evidence:
+- https://www.city.etajima.hiroshima.jp/cms/s/articles/show/11123
+
+Existing:
+- 選択別体験プログラム
+- 海 / 農業 / 環境 / 工芸
+- 教育旅行
+
+Assessment:
+団体向け体験に加え、
+中学生の地域クラブと地域活動支援制度が接続。
+
+State: **HIGH_MATURITY / GROUP_AND_LOCAL_ROUTE**
+
+## 31. Hiroshima East-Central conclusion
+
+### Very high / model
+- 福山市
+- 三原市
+- 東広島市
+- 呉市
+- 大崎上島町
+
+### High maturity
+- 府中市
+- 尾道市
+- 世羅町
+- 江田島市
+
+### Still selective value
+- 神石高原町: 18歳未満の公開YOUTH ACTION
+- 竹原市: 中高生のPROJECT / YOUTH ACTION
+
+Key pattern:
+広島はFirst PassからSYSTEM SOURCEが強く、
+Second Passの価値は
+**年齢接続と子ども・若者が「参加者→担い手」へ変わる地点**
+を見つけることにある。
+
+Next:
+広島市・安芸郡
+- 広島市
+- 府中町
+- 海田町
+- 熊野町
+- 坂町
+
+を走査し、広島Second Pass全県締めへ。
