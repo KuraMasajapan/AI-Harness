@@ -1286,3 +1286,204 @@ Next priority:
 2. 南部は NOT_SATURATED 判定地域だけ、明確な新SOURCEがある時に差分更新
 3. Current参加可能情報は別レイヤーで更新
 4. 企業枝との重複は統合時にSOURCE relationshipとして保持
+
+
+## 22. Okayama North — Second Pass block 1
+
+Target:
+- 津山市
+- 勝央町
+- 奈義町
+- 美咲町
+- 鏡野町
+
+### A. 勝央町 — SYSTEM LAYER CONFIRMED
+
+#### 放課後子ども教室
+
+第3期子ども・子育て支援事業計画で2026年度も継続。
+- 小学生
+- 各小学校区に1クラブ、計2クラブ
+- 週1回
+- 地域住民の参画
+- 体験 / 交流 / 学習活動
+
+Evidence:
+- https://www.town.shoo.lg.jp/uploaded/attachment/2456.pdf
+
+#### わくわくスクール
+
+2026住民サービス事業一覧でCURRENT確認。
+- 勝央北小1〜6年
+- 毎週水曜日
+- 植月コミュニティセンター
+- 多様な体験メニュー
+- 異年齢集団
+- 毎年4月募集、5月開始予定
+
+Evidence:
+- https://www.town.shoo.lg.jp/uploaded/attachment/3177.pdf
+
+#### 地域学校協働本部
+
+2026も学校応援ボランティア / コーディネーターを募集。
+学校・家庭・地域が一体となって地域全体で子どもを育てる仕組みを運用。
+
+Evidence:
+- https://www.town.shoo.lg.jp/site/kyoiku/4774.html
+
+Assessment:
+こども起業塾だけでなく、
+放課後 / 学校協働という恒常的SYSTEM SOURCEが存在。
+
+State: **NETWORK_RICH / SELECTIVE_DEEPENING**
+
+### B. 美咲町 — TOWN-WIDE CHILD SUPPORT SYSTEM
+
+#### みさきスタイルこども応援事業 — TOP-TIER SYSTEM SOURCE
+
+2026-03-02更新。
+町内全地域で、
+- 地域学校協働活動
+- 放課後子ども教室
+- 土曜日教育支援
+- 家庭教育支援
+を組み合わせて実施。
+
+地域学校協働本部は町内すべての学校区に設置。
+
+Evidence:
+- https://www.town.okayama-misaki.lg.jp/kakuka/shogaigakushu/gyomu/6/2/262.html
+- https://www.town.okayama-misaki.lg.jp/kakuka/shogaigakushu/3647.html
+
+Classification:
+- SYSTEM_SOURCE
+- TOWN_WIDE
+- SCHOOL_DISTRICT
+- COMMUNITY / LEARNING / EXPERIENCE
+- RECURRING
+
+#### 子ども第三の居場所 みさキッズあさひ
+
+2026子育て支援プランに現行掲載。
+- 無料
+- 遊び / 学習
+- 高校生年代も相談利用可能
+- 日常型居場所
+
+Evidence:
+- https://www.town.okayama-misaki.lg.jp/kakuka/kodomoegao/gyomu/3691.html
+
+Assessment:
+Wacca. Projectの若者政策参加と、
+日常の地域教育 / 居場所が両方存在。
+美咲町はSYSTEM密度が高い。
+
+State: **HIGH_MATURITY / NETWORK_RICH**
+
+### C. 奈義町 — POLICY FOUNDATION STRONG, ACTIVITY LAYER STILL OPEN
+
+#### 奈義町こども基本条例 — SYSTEM POLICY SOURCE
+
+2026-04-01施行。
+
+条例は、
+- こどもの意見表明
+- まちづくりへの反映
+- 地域活動への参画
+- 自然 / 文化 / スポーツ等の体験
+- 挑戦できる環境
+- 多様な居場所
+を町・学校・地域・事業者の協働で整えることを明記。
+
+Evidence:
+- https://www.town.nagi.okayama.jp/reiki_int/reiki_honbun/m267RG00000995.html
+
+Classification:
+- POLICY_SYSTEM_SOURCE
+- CHILD_RIGHTS / CIVIC_PARTICIPATION / EXPERIENCE
+- GROWTH_ROUTE_POTENTIAL
+
+Assessment:
+制度基盤は非常に強いが、
+2026の具体的な「子ども社会参加プログラム」の公開導線はまだ薄い。
+アート・スポーツは既知。
+
+State: **NOT_SATURATED / POLICY_TO_ACTIVITY_GAP**
+
+Next only:
+条例を実装する具体的なこども意見反映 / 社会参加プログラムが見つかった時に昇格。
+
+### D. 鏡野町 — POLICY / COMMUNITY SYSTEM CONFIRMED
+
+#### 令和8年度教育基本目標
+
+2026年度重点:
+- おかやまこども応援事業
+- 家庭共育支援チーム
+- 地域学校協働活動
+- 公民館講座
+- 青年団等社会教育団体
+- 中学校部活動の地域移行
+を明記。
+
+Evidence:
+- https://www.town.kagamino.lg.jp/uploaded/attachment/16162.pdf
+
+#### 第3次総合計画
+
+2026年度開始。
+基本構想は小学生・中学生・高校生の意見を反映して策定。
+
+Evidence:
+- https://www.town.kagamino.lg.jp/soshiki/2/11635.html
+
+#### 高校生のための企業ガイダンス
+
+2026-11-04 / 11-18。
+県北高校1・2年生を対象に地域企業理解を促進。
+
+Evidence:
+- https://www.town.kagamino.lg.jp/soshiki/22/11993.html
+
+Assessment:
+政策参画 + 学校地域協働 + キャリアがつながる。
+一方で公開型YOUTH ACTIONはまだ弱い。
+
+State: **PARTIALLY_SATURATED / YOUTH_ACTION_GAP**
+
+### E. 津山市 — SECOND PASS STILL OPEN
+
+First Passで:
+- 津山高専公開講座
+- e-PROJECT
+- 津山商業地域研究
+- Homing
+を取得済み。
+
+今回のSYSTEM層検索では、
+他4地域ほど明確な新しい市域SYSTEM SOURCEを確定できていない。
+
+Judgment:
+- 強い高専 / 高校 / 起業コミュニティの存在は既確認
+- ただし市域の放課後 / 地域学校協働 / 若者参画SOURCEを追加確認する余地あり
+
+State: **NOT_SATURATED / NEXT_BLOCK_REQUIRED**
+
+## 23. North block 1 conclusion
+
+### High maturity
+- 美咲町
+- 勝央町
+
+### Selective / partial saturation
+- 鏡野町
+
+### Still valuable to deepen
+- 奈義町: 条例→具体活動の接続
+- 津山市: 市域SYSTEM層
+
+Next:
+- 津山市のSYSTEM層補完
+- 真庭 / 新庄 / 美作 / 西粟倉
+- 高梁 / 新見
