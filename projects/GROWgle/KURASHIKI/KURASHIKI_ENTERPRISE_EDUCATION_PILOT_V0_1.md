@@ -7068,3 +7068,190 @@ NEXT PRIORITY:
 3. Reverse-search OASPA Kurashiki / Mizushima / Tamashima / Kojima members only when the association or event evidence suggests education access.
 4. Continue Nakasho / Funao OPEN_PUBLIC gap scan.
 5. Finish remaining 64-roster entities with explicit closure states rather than infinite reverse search.
+
+
+## 123. Yumeiku filtering batch + Nakasho gap correction — 2026-10-08
+
+### Kawasaki Gakuen "Kawasaki Summer Children's Experience Classroom 2026" — HIGH-VALUE OPEN_PUBLIC MEDICAL SOURCE
+
+Official 2026:
+- event dates: 2026-08-18 and 2026-08-19
+- application period: 2026-06-08 11:00 to 2026-06-22 16:00
+- venue: Kawasaki Medical School Museum of Medical Science, Matsushima / Nakasho area
+- fee: free
+- capacity: 65 children per day, 130 total
+- morning: elementary grades 1–4
+- afternoon: elementary grades 5–6 + junior high
+- one adult companion required per child
+- lottery if oversubscribed
+
+2026 activity examples:
+- doctor helicopter observation
+- emergency treatment / CPR / simulated disaster medical activity
+- body structure / microscope / bones / blood
+- upper-grade / junior-high medical career experiences including surgeon experience
+
+Continuity:
+- started in 2009
+- 2026 is the 17th edition
+- 2020 cancelled; 2021–2022 web format; otherwise sustained as a recurring program
+
+Provider structure:
+- instructors include Kawasaki Medical School / hospital faculty
+- operations also involve faculty, staff and students
+
+Classification:
+OPEN_PUBLIC / RECURRING_CONFIRMED
+ELEMENTARY_LOW / ELEMENTARY_HIGH / JUNIOR_HIGH / FAMILY
+MEDICAL / LIFE_SCIENCE / EMERGENCY / CAREER / STEAM
+PARTICIPATE
+STUDENT_PROVIDER_EDGE = YES
+Region: 中庄・松島
+
+Evidence:
+https://k.kawasaki-m.ac.jp/data/summer2026/summer_dtl/
+https://k.kawasaki-m.ac.jp/data/summer/
+https://k.kawasaki-m.ac.jp/summer_natsuko/attent.html
+https://k.kawasaki-m.ac.jp/document/2026/20260528.pdf
+
+Gap correction:
+Previous dashboard state "NAKASHO_PRIVATE_ENTERPRISE_OPEN_PUBLIC = STILL_THIN" was too broad if interpreted as the whole Nakasho area.
+Correct to:
+- NAKASHO_MEDICAL_CHILD_OPEN_PUBLIC = STRONG
+- NAKASHO_NON_MEDICAL_PRIVATE_OPEN_PUBLIC = STILL_THIN
+
+GROWgle note:
+Keep this SOURCE in both regional and enterprise/institutional research. Deduplicate at integration time.
+
+## 124. Yumeiku high-value new SOURCE — NPO Science Wakuwaku Club
+
+Dream Partners current record (entered 2026-03-05):
+- about 50 science lectures / festival exhibits per year
+- science programs for elementary children
+- fields include biology, plants, electricity, magnets, astronomy, weather and programming
+- implemented at science facilities, community centers, after-school care and through outreach classes
+- school activities: science lectures / experiments
+- school-external activity: telescope observation
+- activity region: prefecture-wide
+- school program costs: free
+- targets: elementary / junior high / high school
+
+Classification:
+NPO_SOURCE / PREFECTURE_WIDE
+SCHOOL + SCHOOL_EXTERNAL
+ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL
+SCIENCE / STEAM / PROGRAMMING / ASTRONOMY
+RECURRING_HIGH_FREQUENCY
+Kurashiki local 2026 activity: NOT_YET_VERIFIED
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6108
+
+GROWgle note:
+This is a strong SOURCE even before a specific Kurashiki event is verified because it is an active recurring producer (~50/year), but do not count a Kurashiki ACTIVITY without local evidence.
+
+## 125. Yumeiku high-value new SOURCE — Kenshin / traditional carpentry
+
+### Kenshin
+Dream Partners:
+- school and school-external activity
+- hands-on exposure to the work of a miyadaiku (traditional shrine/temple carpenter)
+- children handle wood as part of the experience
+- facility visit / workplace experience / internship possible
+- targets range from preschool through high school and adults
+- cost / transport by consultation
+
+Classification:
+CRAFT / CONSTRUCTION_SOURCE
+SCHOOL + SCHOOL_EXTERNAL + WORKPLACE
+PRESCHOOL / ELEMENTARY / JUNIOR_HIGH / HIGH_SCHOOL
+WOOD / ARCHITECTURE / TRADITIONAL_CRAFT / CAREER
+Kurashiki local activity: UNVERIFIED
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=9758
+
+GROWgle value:
+New SOURCE type not well represented in the existing Kurashiki corporate roster: traditional building craft / miyadaiku.
+
+## 126. Yumeiku professional-association SOURCE — Okayama Architects Association Women's Division
+
+Current Dream Partners:
+- activity region: prefecture-wide
+- target: elementary school children
+- school + school-external
+- themes: earthquake resistance, hazard maps, disaster prevention, house design / building
+- generally free
+
+Classification:
+PROFESSIONAL_ASSOCIATION_GATEWAY
+ELEMENTARY
+ARCHITECTURE / HOUSING / DISASTER_PREVENTION / DESIGN
+SCHOOL + SCHOOL_EXTERNAL
+Kurashiki local 2026 activity: NOT_YET_VERIFIED
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6320
+
+GROWgle note:
+The association layer can connect construction / architecture topics to children without relying on a single company.
+
+## 127. Yumeiku candidate-source filtering rule refined
+
+The 131 Dream Partners are not to be imported wholesale into the Kurashiki Pilot.
+
+Keep a candidate when at least one is true:
+1. clearly offers prefecture-wide service and fills a known Kurashiki category gap
+2. has a distinctive hands-on experience type absent from current SOURCE graph
+3. operates at high recurring frequency
+4. acts as an association / network Gateway to multiple providers
+5. offers a meaningful PARTICIPATE -> CONTRIBUTE / career growth route
+
+Deprioritize:
+- duplicate category with no new access mode
+- generic lecture-only records when richer local SOURCEs already exist
+- entries geographically constrained away from Kurashiki unless uniquely valuable
+- records with no current accessibility evidence
+
+## 128. Mizushima Car Festival — current primary-source status
+
+OASPA official current site:
+- current news/search result confirms a 2026-09-28 announcement "Mizushima Car Festival"
+- OASPA archive confirms recurring festival announcements in 2023, 2024 and 2025; 2022 was the 15th edition
+- 2026 exact child-facing content could not be extracted from the currently cached primary event detail in this pass
+
+Therefore:
+SOURCE / EVENT CONTINUITY = RECURRING_CONFIRMED
+2026 EVENT ANNOUNCEMENT = PRIMARY_CONFIRMED
+2026 CHILD_ACTIVITY_DETAIL = PENDING
+Do not backfill 2026 activities from prior-year programs.
+
+Evidence:
+https://www.oaspa.or.jp/
+https://www.oaspa.or.jp/04_event_present_backnumber.php
+
+## 129. Maturity snapshot update
+
+NEW HIGH-VALUE SOURCE TYPES:
+- medical child open-public: Kawasaki Gakuen strengthened
+- recurring science NPO: Science Wakuwaku Club
+- traditional building craft: Kenshin
+- architecture / disaster professional association: Okayama Architects Association Women's Division
+
+GAP STATUS:
+- NAKASHO_MEDICAL_CHILD_OPEN_PUBLIC = STRONG
+- NAKASHO_NON_MEDICAL_PRIVATE_OPEN_PUBLIC = STILL_THIN
+- IT_AI_CHILD_FAMILY_OPEN_PUBLIC = STILL_THIN
+- FUNAO_CHILD_OPEN_PUBLIC = STILL_THIN
+- AUTOMOTIVE_CHILD_OPEN_PUBLIC = IMPROVED / 2026 DETAIL_PENDING
+
+SATURATION:
+- no new SATURATED_FOR_PILOT declaration in this batch
+- KOJIMA_TEXTILE remains SATURATED_FOR_PILOT
+
+NEXT:
+1. continue Dream Partners filtering for new SOURCE types and explicit Kurashiki implementation evidence
+2. search Nakasho non-medical / adjacent private sources rather than repeating medical
+3. search Funao child/family public access routes
+4. resolve 2026 automotive public-event child contents through primary detail when surfaced
+5. close remaining 64-roster records
