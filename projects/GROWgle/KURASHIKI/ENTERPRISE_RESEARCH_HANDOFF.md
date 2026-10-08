@@ -167,3 +167,38 @@ projects/GROWgle/KURASHIKI/KURASHIKI_ENTERPRISE_EDUCATION_PILOT_V0_1.md
 
 企業の従業員向け子育て支援・手当は現段階では後回し。
 GROWgleの核である「地域の子ども・学生がアクセスできる教育・体験機会」の収集に集中する。
+
+
+## 12. Dashboard / maturity reporting contract — 2026-10-08
+
+The integrated GROWgle dashboard tracks regional research and enterprise research together.
+Enterprise research policy itself does not change; only progress reporting becomes more explicit.
+
+Do not report progress only as "number of companies researched".
+Track exploration maturity through:
+- population discovery
+- individual SOURCE reverse lookup
+- participation-condition resolution
+- SOURCE / ACTIVITY normalization
+- deduplication
+- subarea / industry / age / access-mode gap scan
+- SATURATED_FOR_PILOT decision
+
+For each meaningful batch, record:
+1. new high-value SOURCE
+2. new Gateway
+3. still-thin regions / industries / access modes
+4. newly saturated areas
+5. current position and next priority
+
+Important:
+- Enterprise x regional event
+- enterprise x school
+- enterprise x university
+- enterprise x NPO / community
+may be retained in both research tracks.
+Do not force them into one side during collection; normalize / deduplicate later.
+
+Saturation rule:
+SATURATED_FOR_PILOT does not mean "nothing else exists".
+It means the major known Gateways and reverse-lookup routes have been checked and further passes are no longer yielding materially new SOURCE types at Pilot value.
