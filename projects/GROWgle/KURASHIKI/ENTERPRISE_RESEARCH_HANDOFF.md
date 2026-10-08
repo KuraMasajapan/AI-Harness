@@ -232,3 +232,21 @@ Current next priority:
 - OASPA / Mizushima Car Festival 2026 detail
 - remaining 64-roster closure
 - Nakasho / Funao and OPEN_PUBLIC IT/AI / auto / insurance gaps
+
+
+## 14. Dream Partners filtering discipline — 2026-10-08
+
+Do not import the 131 Dream Partners wholesale.
+
+Promote a Dream Partner into the Kurashiki Pilot candidate graph when it:
+- serves Kurashiki or all Okayama and fills a real gap
+- introduces a distinct hands-on SOURCE type
+- has high recurring activity frequency
+- functions as an association/network Gateway
+- offers a meaningful age/career growth route
+
+A prefecture-wide candidate is not a Kurashiki ACTIVITY until local implementation or a clearly available booking route is confirmed.
+
+Current subarea correction:
+- Nakasho medical child OPEN_PUBLIC layer is STRONG because Kawasaki Gakuen runs a long-running public child medical experience program.
+- The remaining Nakasho gap is non-medical private OPEN_PUBLIC, not the area as a whole.
