@@ -6508,3 +6508,241 @@ Priority next:
 2. OPEN_PUBLIC IT/AI / 金融 / 自動車
 3. 64社残りを「CURRENT school / public / student / no evidence」で閉じる
 4. 同じ企業・Gatewayに3回以上戻らない
+
+
+## 105. Dashboard-aligned enterprise research continuation — 2026-10-08
+
+Integrated dashboard operation begins to evaluate enterprise research by exploration maturity, not raw company count.
+
+### Maturity dimensions to report
+- POPULATION_DISCOVERY: public rosters / industry clusters / chambers / school-side partner lists
+- ENTITY_REVERSE_LOOKUP: each SOURCE checked beyond the original list
+- PARTICIPATION_RESOLVED: OPEN_PUBLIC / GROUP_BOOKING / SCHOOL_ONLY / STUDENT_ONLY / RESIDENT_ONLY / PARTNER_ONLY / WATCH
+- SOURCE_ACTIVITY_NORMALIZED: recurring SOURCE separated from individual ACTIVITY
+- DEDUPED: same SOURCE / same activity route not double counted across gateways
+- GAP_SCAN: subarea / industry / age / access-mode gaps explicitly checked
+- SATURATION_DECISION: SATURATED_FOR_PILOT only after major gateways and reverse-lookup routes stop yielding materially new SOURCE types
+
+Batch reports should explicitly show:
+1. new high-value SOURCE
+2. new Gateway
+3. still-thin regions / industries / access modes
+4. newly saturated areas
+5. current position and next priority
+
+Regional-research overlap is allowed. Enterprise x region / school / university items may be retained in both tracks and normalized later.
+
+## 106. Finance open-public gap — Water Mizushima Shinkin Bank upgraded
+
+### Mizushima Shinkin Bank — 17th Kids Money School
+Official current event:
+- announcement: 2026-06-29
+- event dates: 2026-08-04 and 2026-08-06
+- venue: Mizushima Shinkin Bank Head Office, 3F
+- target: elementary grades 4–6
+- capacity: 20 children per day, lottery
+- guardians may observe
+- content:
+  - money basics
+  - flow of money and role of financial institutions
+  - board-game learning
+  - tax learning
+  - banknote counting
+  - hands-on / surprise activity
+
+Classification:
+OPEN_PUBLIC / RECURRING_CONFIRMED
+ELEMENTARY_HIGH / FAMILY_OBSERVATION
+FINANCE / FINANCIAL_LITERACY / CAREER / LIFE_SKILLS
+hands_on: HIGH
+Region: 水島
+
+Evidence:
+https://www.shinkin.co.jp/mizushima/_news-5/contents/225.html
+
+GROWgle note:
+The event title itself is the 17th edition, so this is not a one-off.
+Together with Japan FP Association Okayama Branch, the child/family OPEN_PUBLIC finance layer is now materially stronger.
+Do not mark the whole finance category saturated yet because local bank / insurance branch public programs remain uneven.
+
+Saturation:
+FINANCE_OPEN_PUBLIC = IMPROVED_NOT_SATURATED
+
+## 107. New Gateway — school-side independent invitation lists
+
+2026-06-12 Kurashiki Kojoike High School's Enterprise Manabi Gakusha implementation included the official program participants plus organizations independently invited by the school:
+- MPM Lab.
+- Mizushima Children's Cafeteria Misora♪
+- Mizushima Foundation
+- Mizushima Shinkin Bank
+
+This is important because these organizations are not simply discovered from the fixed 64-organization official roster.
+
+Classification:
+GATEWAY = SCHOOL_SIDE_PARTNER_INVITATION
+Value:
+- discovers organizations outside the public roster
+- exposes organizations already trusted by a school
+- reveals local NPO / finance / community / environmental education SOURCEs
+- can be reverse-searched from each junior high / high school implementation record
+
+Evidence:
+https://kuratoco.com/article-178068/
+
+Research rule addition:
+For every school-side implementation found, extract all independently invited / cooperating organizations and reverse-lookup them as candidate SOURCEs.
+Do not limit population discovery to municipal or chamber rosters.
+
+## 108. Identity resolution — "Entrepreneurship Lab" is student-led, not a company SOURCE
+
+At the 2026-06-12 Kurashiki Kojoike High School implementation:
+- "Entrepreneurship Lab" was taught by Okayama University Entrepreneurship Club members
+- presenters were current university students who were also entrepreneurs
+- high school students learned the startup process and created business ideas in group work
+
+Therefore:
+Do not treat "Entrepreneurship Lab" as an ordinary enterprise in company-count metrics.
+
+Normalize as:
+SOURCE = Okayama University Entrepreneurship Club / student entrepreneurs
+PROGRAM = Entrepreneurship Lab
+ACTIVITY = 2026-06-12 high-school entrepreneurship workshop
+
+Classification:
+SCHOOL_ONLY / STUDENT_LED
+HIGH_SCHOOL
+ENTREPRENEURSHIP / BUSINESS_DESIGN / CAREER
+CONTRIBUTE / TEACH
+CURRENT_2026
+
+Evidence:
+https://kuratoco.com/article-178068/
+
+GROWgle note:
+This is a direct bridge between the enterprise track and the regional student-provider track:
+UNIVERSITY_STUDENT -> HIGH_SCHOOL_STUDENT.
+Keep in both tracks and deduplicate at integration time.
+
+## 109. ENEOS Mizushima Refinery — current local visit route resolved
+
+ENEOS official current local guidance confirms:
+- visits accepted in principle from nearby schools in Okayama Prefecture and government/public bodies
+- Tue / Wed / Thu
+- start 10:30 or 13:30
+- about 70 minutes
+- DVD + overview + on-site tour
+- 5–40 people
+- apply by phone about 3 months in advance
+
+Classification:
+SCHOOL_ONLY / PUBLIC_BODY_GROUP
+CONSTANT_SOURCE
+ENERGY / PETROLEUM / CHEMISTRY / INDUSTRIAL_INFRASTRUCTURE / ENVIRONMENT
+Region: 水島
+
+Evidence:
+https://www.eneos.co.jp/company/branch/mizushima/local/
+https://www.eneos.co.jp/company/branch/mizushima/
+
+GROWgle note:
+This closes the current-state detail gap for ENEOS as a local SOURCE.
+A historical ENEOS basketball clinic in Kurashiki exists, but no 2026 local clinic evidence was confirmed in this pass; do not count that as a current activity.
+
+## 110. Funao gap — winery / agriculture / university route identified
+
+### Funao Winery Ltd. — local-industry SOURCE
+Current tourism / municipal information:
+- located in Funao, one of Japan's major Muscat of Alexandria production areas
+- visitor hall can present the history of Muscat cultivation and the wine-making process
+- hall can be used for group guidance and events
+- municipal agriculture pages continue to list the winery as a current local agricultural / processing facility
+
+2025 student activity published by Kurashiki City in 2026:
+- Kurashiki Sakuyo University students visited Funao Winery
+- harvested Muscat of Alexandria
+- observed wine brewing
+- explored product / sweets development using local grape resources
+
+Normalize:
+SOURCE = Funao Winery Ltd.
+ACTIVITY_A = facility / local-industry interpretation route
+ACTIVITY_B = university-linked harvest + production observation + product development (2025 actual; published 2026)
+
+Classification:
+GROUP / PARTNER_ONLY / STUDENT
+AGRICULTURE / FOOD_PROCESSING / PRODUCT_DEVELOPMENT / LOCAL_IDENTITY
+Continuity: SOURCE_CURRENT / ACTIVITY_REPEAT_UNKNOWN
+Region: 船穂
+
+Evidence:
+https://www.kurashiki-tabi.jp/rm_experience/rm-experience15/
+https://www.city.kurashiki.okayama.jp/culture/tourism/1002026/1024892.html
+https://www.city.kurashiki.okayama.jp/business/agriculture/1012657/1005625/1005627/1005637.html
+
+Caution:
+Do not label the university collaboration as a 2026 event; the city page was updated in 2026, but the actual visit date was 2025-09-10.
+
+Gap status:
+FUNAO_PRIVATE_SOURCE = IMPROVED
+FUNAO_CHILD_OPEN_PUBLIC = STILL_WEAK
+
+## 111. Mizushima Children's Cafeteria Misora / Haru House — school-side reverse lookup confirms a recurring community SOURCE
+
+Current 2026:
+- Haru House describes Mizushima Children's Cafeteria Misora♪ as a monthly children's cafeteria
+- July 2026 schedule states it runs every third Saturday
+- food support / interaction continue as recurring activities
+
+School-side reverse evidence:
+- Mizushima Junior High reported in 2026 that students joined a summer "homework & meal gathering" as child volunteer staff
+- students helped with cooking and interacted with elementary-school children
+
+Classification:
+COMMUNITY_SOURCE / RECURRING
+CHILD / JUNIOR_HIGH_VOLUNTEER
+FOOD_SUPPORT / LEARNING_SUPPORT / COMMUNITY / VOLUNTEERING
+PARTICIPATE -> CONTRIBUTE growth route
+Region: 水島
+
+Evidence:
+https://haruhouse-official.com/
+https://haruhouse-official.com/2026/07/07/%EF%BC%97%E6%9C%88%E3%81%AE%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-2/
+https://www.kurashiki-oky.ed.jp/mizushima-j/koutyou.html
+
+GROWgle note:
+Although not a company, it entered the enterprise research graph through a school-side partner invitation.
+This validates the rule that Gateway discovery may legitimately cross enterprise / NPO / school boundaries.
+
+## 112. Current maturity snapshot — Kurashiki Enterprise Pilot
+
+### SATURATED_FOR_PILOT
+- KOJIMA_TEXTILE
+
+### STRONG / high coverage but not fully saturated
+- MIZUSHIMA_HEAVY_INDUSTRY
+- MEDICAL / HOSPITAL
+- WELFARE_CHILDCARE school-facing layer
+- INFRASTRUCTURE school/group layer
+
+### IMPROVED_NOT_SATURATED
+- FINANCE_OPEN_PUBLIC
+- MABI_OPEN_PUBLIC
+- FUNAO_LOCAL_ASSET_SOURCE
+
+### STILL_THIN
+- FUNAO_CHILD_OPEN_PUBLIC
+- NAKASHO_PRIVATE_ENTERPRISE_OPEN_PUBLIC
+- IT_AI_CHILD_FAMILY_OPEN_PUBLIC
+- AUTOMOTIVE_RETAIL_MAINTENANCE_OPEN_PUBLIC
+- LOCAL_BANK_INSURANCE_BRANCH_OPEN_PUBLIC
+
+### 64-roster status
+The 64-organization "Enterprise Manabi Gakusha" list is no longer the only population.
+It remains the main public roster, but school-side partner invitations, education-travel lists, industry clusters, chambers, municipal facilities, and recurring public-event programs are now parallel Gateway populations.
+
+### Next priority
+1. close remaining 64-roster entities as CURRENT_SCHOOL / PUBLIC / STUDENT / NO_ADDITIONAL_LOCAL_EVIDENCE
+2. reverse-lookup school-side independently invited organizations from 2026 implementations
+3. search Funao and Nakasho for local private / university / medical adjacent OPEN_PUBLIC routes
+4. continue OPEN_PUBLIC IT/AI and automotive gap search
+5. only declare additional SATURATED_FOR_PILOT areas after a gap scan across all major Gateways
