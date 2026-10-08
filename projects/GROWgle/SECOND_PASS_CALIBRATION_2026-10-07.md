@@ -845,3 +845,444 @@ Second Passで特に価値が高いのは、
 Next:
 - 岡山南部の残り自治体を同じSYSTEM / YOUTH_ACTION / GROWTH_ROUTE軸で差分走査
 - 新規SOURCE増加率が落ちた地域からSATURATED_FOR_SECOND_PASSへ移す
+
+
+## 18. Differential sweep — Okayama / Kurashiki / Soja / Kasaoka / Akaiwa / Setouchi / Bizen
+
+### A. 岡山市 — CITY-WIDE CHILD EXPERIENCE INFRASTRUCTURE
+
+#### 岡山市放課後子ども教室推進事業 — HIGH-VALUE SYSTEM SOURCE
+
+2026年度開設申請が現行で、事業継続を確認。
+
+Structure:
+- 小学校区単位
+- 地域住民主体の実行委員会
+- 年間最低25日
+- 放課後 / 学校休業日
+- 体験学習 / 交流 / 奉仕活動
+- 算数、昔遊び、囲碁将棋、料理、天体観測、スポーツ、読み聞かせ、川遊び、里山、和太鼓等
+
+Evidence:
+- https://www.city.okayama.jp/kurashi/0000012923.html
+
+Classification:
+- SYSTEM_SOURCE
+- RECURRING / SCHOOL_DISTRICT
+- CHILD
+- STEAM / NATURE / SPORTS / CULTURE / LIFE_SKILLS / COMMUNITY
+- LOCAL_NETWORK
+
+Assessment:
+First Passでサイピア等の大型SOURCEは十分取得済みだったが、
+市域の小学校区を基盤にした継続体験網は別レイヤーとして保持すべき。
+
+#### 地域と学校協働活動推進事業 — SYSTEM NETWORK
+
+2026-04-01時点:
+- 28団体
+- 中学校11校
+- 小学校42校
+- 義務教育学校1校
+- 幼稚園・認定こども園20園
+をカバー。
+
+地域の高齢者、保護者、PTA、NPO、民間企業、団体等が参画。
+
+Evidence:
+- https://www.city.okayama.jp/kurashi/0000003118.html
+- https://www.city.okayama.jp/kurashi/0000049325.html
+
+Judgment:
+個別ACTIVITYを全件回収するのではなく、
+学校区ネットワークをSOURCE MASTERとして保持する。
+
+State: **PARTIALLY SATURATED**
+大型施設 + 地域制度の両方が見えたため、
+今後は明確な新SYSTEM / YOUTH ACTIONのみ差分追加。
+
+### B. 倉敷市 — CITY-WIDE AFTERSCHOOL NETWORK
+
+#### 放課後子ども教室推進事業 — TOP-TIER SYSTEM SOURCE
+
+市内60小学校区すべてで実施。
+うち44小学校区は地域連携による学校支援事業と統合。
+
+Activities:
+- 読み聞かせ
+- 算数
+- サッカー / ニュースポーツ
+- 地域祭り
+- 昔遊び
+- 料理
+- 将棋
+- 花
+等。
+
+全小学生が参加可能（未就学児・中学生も可）。
+案内は学校経由。
+
+Evidence:
+- https://www.city.kurashiki.okayama.jp/kosodate/youth/1011760/1013007/1007585.html
+
+Classification:
+- SYSTEM_SOURCE
+- CITY_WIDE / SCHOOL_DISTRICT
+- SCHOOL_DISTRIBUTED
+- RECURRING
+- CROSS_CATEGORY
+
+#### 地域学校協働活動推進事業
+
+2026-08-17更新。
+地域住民の特技・経験を学校教育へ接続。
+学習支援、昔遊び、親子料理、囲碁将棋、工作、読み聞かせ、農業体験等。
+
+Evidence:
+- https://www.city.kurashiki.okayama.jp/kosodate/youth/1011760/1013007/1007584.html
+
+Assessment:
+企業枝で倉敷の企業SOURCEを深掘りしている一方、
+地域本線では「学校区×地域住民」の巨大SYSTEM SOURCEとして管理する。
+企業×学校接続の重複は後で統合。
+
+State: **PARTIALLY SATURATED / NETWORK-RICH**
+個別教室の全件収集はOVERDEEP。
+企業枝との接続が見えた時のみ追加価値が高い。
+
+### C. 総社市 — YOUTH ACTION SYSTEM CONFIRMED
+
+#### 市民提案型事業 ジュニア部門 — CURRENT / RECURRING YOUTH ACTION
+
+既存ログでSOURCE自体は確認済み。
+Second Passでは2026実績と2027募集を確認。
+
+2026採択:
+- Soja Youth Summit
+- 「多世代交流グラウンドゴルフDay」
+- 総社高校と総社南高校の交流
+- 高校生視点で地域活性化
+- 多世代交流
+
+2027年度募集:
+- 12〜17歳相当
+- 3人以上
+- 上限10万円
+- 補助率10/10
+- 2026-09-25〜11-25募集
+
+Evidence:
+- https://www.city.soja.okayama.jp/soshiki/14/19970.html
+- https://www.city.soja.okayama.jp/soshiki/14/23395.html
+
+Assessment:
+単なる制度存在ではなく、
+実際に高校生チームが地域事業を実行する成長ルートとして機能していることを確認。
+
+#### 学校自主防災コンソーシアムSoja — MULTI-AGE EDUCATION NETWORK
+
+2026採択事業として、
+市内の
+- 中学校
+- 義務教育学校
+- 高校
+- 大学
+が連携し、防災・減災活動を推進。
+
+Evidence:
+- https://www.city.soja.okayama.jp/soshiki/14/19970.html
+
+Classification:
+- SCHOOL_NETWORK
+- LIFE_SKILLS / COMMUNITY
+- JUNIOR_HIGH → HIGH_SCHOOL → UNIVERSITY
+- GROWTH_ROUTE
+
+State: **HIGH MATURITY / SECOND PASS VALUE CONFIRMED**
+今後はジュニア部門の新規案件と成長ルートだけWATCH。
+
+### D. 笠岡市 — YOUTH AS PROVIDER / COMMUNITY PARTICIPANT
+
+#### 中高生によるスマホお助け教室 — CURRENT RECURRING YOUTH ACTION
+
+2026年7月から:
+- 毎月第1・第3水曜日
+- 16:00〜18:00
+- 中央公民館
+- 地域の中高生が高齢者へマンツーマンでスマホ支援
+- 無料 / 予約不要
+
+Evidence:
+- https://www.city.kasaoka.okayama.jp/soshiki/40/72583.html
+
+Classification:
+- YOUTH_ACTION
+- RECURRING
+- DIGITAL / COMMUNITY / INTERGENERATIONAL
+- STUDENT_AS_PROVIDER
+
+Assessment:
+「子どもが体験を受ける側」ではなく、
+中高生が地域へ価値提供する成長段階。
+GROWgleの成長ルート設計で重要。
+
+#### 青少年海外交流事業
+
+2026:
+韓国固城郡の中学生16名を受入。
+相互派遣・ホームステイ・文化交流を継続。
+
+Evidence:
+- https://www.city.kasaoka.okayama.jp/soshiki/9/77142.html
+
+Classification:
+- GLOBAL / COMMUNICATION
+- JUNIOR_HIGH
+- RECURRING_CIVIC_EXCHANGE
+
+#### 市民活動未来づくり事業 — SUPPORTING SOURCE
+
+市民活動団体への補助制度。
+2025採択では
+- 離島の子どもサッカー
+- 不登校児童生徒向けプラモデル教室
+- 中学生中心の地域交流 / 防災キャンプ
+等の子ども向け事業を支援。
+
+2026制度も継続。
+
+Evidence:
+- https://www.city.kasaoka.okayama.jp/soshiki/9/63095.html
+- https://www.city.kasaoka.okayama.jp/soshiki/9/72171.html
+
+Judgment:
+制度自体は子ども専用ではないためSUPPORTING SOURCE。
+採択案件から子ども機会を逆引きする。
+
+State: **NOT FULLY SATURATED**
+特に公民館・市民活動採択案件から新しい若者主体SOURCEが出る可能性あり。
+
+### E. 赤磐市 — YOUTH REGIONAL REVITALIZATION PROGRAM
+
+#### 中高生の地域活性化事業 — HIGH-VALUE YOUTH ACTION SOURCE
+
+2026年7月にも
+「中高生の地域活性化事業ボランティア募集
+～赤磐市を若者の力で元気にしよう～」
+を市が告知。
+
+過年度の教育振興重点目標では、
+- 地域課題を調査
+- 市民と交流
+- 行政と「市の課題」「まちづくり」WS
+- 公民館まつり / 市イベント参加
+- SDGs
+- 防災学習
+等を通じ、
+中高生が地域で考え行動する設計が明記されている。
+
+2026年度教育振興重点目標も継続。
+
+Evidence:
+- https://www.city.akaiwa.lg.jp/annai/sougouseisaku/hishokikaku/shisei/kouhou/houdou/13446.html
+- https://www.city.akaiwa.lg.jp/material/files/group/25/jyutenmokuhyoR8.pdf
+
+Classification:
+- YOUTH_ACTION
+- JUNIOR_HIGH / HIGH_SCHOOL
+- COMMUNITY / CIVIC / SDGs / LIFE_SKILLS
+- RECURRING
+
+Assessment:
+First Passの「あかいわジオシティ」「中学生商品開発」だけではなく、
+若者を地域活性化の担い手にするSYSTEMが存在。
+
+State: **NOT SATURATED IN YOUTH-ACTION LAYER**
+
+### F. 瀬戸内市 — ALL-SCHOOL COMMUNITY NETWORK + REGIONAL CLUB
+
+#### 地域学校協働活動 — CITY-WIDE SYSTEM SOURCE
+
+瀬戸内市では2011年から一部学校で開始。
+現在は全小中学校に地域学校協働本部を設置。
+
+Activities:
+- 郷土学習
+- 地域課題解決
+- 地域行事への参画
+- 学校を核とした地域づくり
+
+Evidence:
+- https://www.city.setouchi.lg.jp/soshiki/38/2138.html
+
+Classification:
+- SYSTEM_SOURCE
+- ALL_ELEMENTARY_JUNIOR_HIGH
+- COMMUNITY / LOCAL_IDENTITY / CIVIC
+- SCHOOL_NETWORK
+
+#### 地域クラブ / 部活動地域展開
+
+2026現在、社会教育課が
+- 認定地域クラブ
+- 参加費助成
+- 地域展開基本方針
+- 専用サブサイト
+を運用。
+
+Evidence:
+- https://www.city.setouchi.lg.jp/soshiki/38/
+- https://www.city.setouchi.lg.jp/soshiki/38/index-2.html
+
+Classification:
+- JUNIOR_HIGH
+- RECURRING / SYSTEM_SOURCE
+- SPORTS / CULTURE
+- COMMUNITY_INSTRUCTOR_NETWORK
+- GROWTH_ROUTE
+
+#### SAMURAIアントレクラブ — EXISTING TOP YOUTH SOURCE
+
+既存ログでSランク。
+小5・6 → ENTRE入口。
+地域学校協働 / 地域クラブと組み合わせると、
+小学生から中学生への接続構造が見える。
+
+State: **NETWORK-RICH / SECOND PASS VALUE HIGH**
+個別学校活動を全件回収せず、全校ネットワークと代表活動を保持。
+
+### G. 備前市 — NPO-LED YOUTH INFRASTRUCTURE
+
+#### NPO法人 f.saloon — TOP-TIER SYSTEM SOURCE
+
+既存ログではSランクSOURCEとして取得済み。
+Second PassでSOURCE内部構造を確認。
+
+Current activity domains:
+- 体験学習
+- ユースセンター
+- 放課後児童クラブ
+- キャリア教育
+- まちづくり
+
+Evidence:
+- https://fsaloon.com/
+- https://fsaloon.com/events/
+
+#### ユースセンター網
+
+- 放課後スペースINBase
+- 校内ユースセンター
+  - 備前中学校
+  - 日生中学校
+  - 片上高校
+- 朝活サポート
+
+10代が安心して集まり、
+自分たちでプロジェクトを企画できる。
+
+Evidence:
+- https://fsaloon.com/youthcenter/
+
+#### INBase実行委員 — YOUTH ACTION
+
+中高生が自分たちの「やりたい」と地域ニーズの接点を探し、
+地域を巻き込みながらプロジェクトを実行。
+音楽祭、イルミネーション、謎解き等の実績。
+
+Evidence:
+- https://fsaloon.com/recruit/
+
+#### キャリア教育
+
+- 備前市だっぴ
+- 中高生と地域の大人の対話
+- 中高のインターン / 職業体験を地域・企業とコーディネート
+
+Evidence:
+- https://fsaloon.com/carrieredu/
+
+Assessment:
+備前では行政単独SOURCEより、
+NPOが
+「居場所 → 体験 → 地域活動 → キャリア → 企業」
+を束ねる中間支援インフラとして機能。
+
+State: **HIGH MATURITY / SOURCE MASTER CONFIRMED**
+今後はf.saloon内部の全イベントを追わず、
+CURRENT OPEN機会と新規パートナーのみ差分更新。
+
+## 19. Okayama South — Second Pass status
+
+Second Pass calibration / differential sweep completed for:
+- 岡山市
+- 倉敷市
+- 総社市
+- 玉野市
+- 早島町
+- 井原市
+- 矢掛町
+- 浅口市
+- 里庄町
+- 笠岡市
+- 赤磐市
+- 瀬戸内市
+- 備前市
+- 吉備中央町
+
+All 14 southern municipalities now have at least one Second Pass depth judgment.
+
+### Saturation / maturity view
+
+#### Near saturated / high maturity
+- 岡山市: PARTIALLY_SATURATED
+- 倉敷市: PARTIALLY_SATURATED / NETWORK_RICH
+- 総社市: HIGH_MATURITY
+- 早島町: NEAR_SATURATED
+- 矢掛町: PARTIALLY_SATURATED
+- 備前市: HIGH_MATURITY
+
+#### Still valuable to deepen selectively
+- 玉野市: NOT_SATURATED
+- 井原市: NOT_SATURATED
+- 浅口市: NOT_SATURATED_IN_GROWTH_ROUTE
+- 里庄町: NOT_SATURATED
+- 笠岡市: NOT_FULLY_SATURATED
+- 赤磐市: NOT_SATURATED_IN_YOUTH_ACTION
+- 瀬戸内市: NETWORK_RICH / selective deepening
+- 吉備中央町: system layer newly expanded / selective deepening
+
+## 20. Second Pass depth rule — now validated
+
+Across 14 municipalities, the rule is stable:
+
+1. First Pass finds visible regional assets and representative activities.
+2. Second Pass must check hidden SYSTEM sources:
+   - afterschool
+   - community-school collaboration
+   - youth centers
+   - civic grants
+   - public halls
+   - regional clubs
+   - educational administration plans
+3. If a strong SYSTEM SOURCE appears, reverse-link only one level.
+4. Capture representative CURRENT opportunities.
+5. Stop once searches mostly return known sources.
+
+The most valuable new findings were often not new events, but:
+- systems
+- networks
+- youth action infrastructure
+- cross-age growth routes
+
+This validates the calibrated depth as neither too shallow nor excessively deep.
+
+## 21. Next
+
+岡山南部は全面的な無差別深掘りを停止。
+
+Next priority:
+1. 岡山県北部を同じSecond Pass方式で校正
+2. 南部は NOT_SATURATED 判定地域だけ、明確な新SOURCEがある時に差分更新
+3. Current参加可能情報は別レイヤーで更新
+4. 企業枝との重複は統合時にSOURCE relationshipとして保持
