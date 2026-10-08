@@ -1487,3 +1487,382 @@ Next:
 - 津山市のSYSTEM層補完
 - 真庭 / 新庄 / 美作 / 西粟倉
 - 高梁 / 新見
+
+
+## 24. Okayama North — Second Pass block 2 / closeout
+
+Target:
+- 津山市
+- 真庭市
+- 新庄村
+- 美作市
+- 西粟倉村
+- 高梁市
+- 新見市
+
+### A. 津山市 — STRONG ECOSYSTEM, CURRENT SYSTEM VERIFICATION GAP
+
+First Passで既確認:
+- 津山高専公開講座
+- e-PROJECT
+- 津山商業高校 地域研究
+- Homing
+- 地域産業 / STEAM / ENTRE接続
+
+津山市の教育行政には、
+- 地域学校協働
+- コミュニティ・スクール
+- 放課後子ども教室
+- つやま子ども未来塾
+というSYSTEM系統の実績がある。
+
+ただし今回、2026年度のSYSTEM全体を一括確認できる一次情報を十分に確保できなかった。
+
+Historical official basis:
+- https://www.city.tsuyama.lg.jp/common/photo/free/files/5563/202206301718350638637.pdf
+
+Judgment:
+SYSTEMの存在自体は強いが、
+2026 CURRENTを確定せずに「全市で現行」とは断定しない。
+
+State: **HIGH_POTENTIAL / CURRENT_SYSTEM_VERIFY**
+Next only:
+2026教育行政重点施策または現行の放課後・地域学校協働ページが見つかった時に更新。
+
+### B. 真庭市 — DISTRIBUTED SCHOOL-COMMUNITY NETWORK + YOUTH ACTION
+
+#### 高校生チャレンジ支援 — EXISTING CURRENT TOP SOURCE
+2026-04-20更新。
+探究の深掘り、社会実装、商品開発、動画制作、情報発信等を支援。
+1チーム最大10万円。
+
+Evidence:
+- https://www.city.maniwa.lg.jp/soshiki/40/115867.html
+
+#### 地域学校協働 — CURRENT LOCAL NETWORK
+
+2026年の学校単位で、
+地域学校協働活動が実際の体験へ接続していることを確認。
+
+Example:
+- 木山小「木山わくわくランド」
+  - 2026-07-04
+  - 校内各教室・体育館・運動場で複数体験講座
+- 樫邑小
+  - 地域学校協働本部
+  - 紙すき等の地域体験
+  - 地域と連携した郷育 / キャリア教育
+
+Evidence:
+- https://www.city.maniwa.lg.jp/pressrelease/pressrelease118208.html
+- https://www.city.maniwa.lg.jp/site/kashimura-es/
+
+Assessment:
+真庭は市全体を一括したイベントSOURCEというより、
+学校・地域単位の分散NETWORKと、
+市の高校生チャレンジ支援を組み合わせた構造。
+
+State: **NETWORK_RICH / SELECTIVE_DEEPENING**
+
+Do not:
+全学校の行事を無限に回収する。
+代表的な地域学校協働 + 市制度をSOURCEとして保持。
+
+### C. 新庄村 — VILLAGE-WIDE EDUCATION POLICY, PUBLIC ROUTE STILL THIN
+
+#### ふるさと新庄学 — SYSTEM EDUCATION SOURCE
+
+2025–2029振興計画 / 教育振興基本計画で、
+全校で「ふるさと新庄学」に取り組む方針を確認。
+
+学習対象:
+- 地域
+- 歴史
+- 人物
+- 文化
+- 産業
+
+目的:
+- 主体的に社会と関わる
+- 他者と課題解決
+- 地域への誇り
+- 学習成果の情報発信
+
+加えて、
+地域・家庭・学校が目標を共有し、
+地域と一体となって子どもを育む学校への転換を明記。
+
+Evidence:
+- https://www.vill.shinjo.okayama.jp/assets/files/dai2kisinnkoukeikaku-sougousennryaku.pdf
+
+#### 新庄村こども計画
+
+自然環境を活かした体験活動と、
+世代を越えた地域活動の機会を増やす方向を確認。
+
+Evidence:
+- https://www.vill.shinjo.okayama.jp/assets/files/20250214-070146.pdf
+
+Assessment:
+地域全体を教材化するSYSTEM思想は強い。
+一方で、一般家庭が直接申し込めるCURRENT体験SOURCEはまだ薄い。
+
+State: **NOT_SATURATED / POLICY_TO_PUBLIC_ACTIVITY_GAP**
+
+### D. 美作市 — HIGH-MATURITY MULTI-LAYER SYSTEM
+
+#### 地域学校協働活動 — CURRENT SYSTEM SOURCE
+
+学校ごとに推進員を配置し、
+地域ボランティアが
+- 見守り
+- 読み聞かせ
+- 授業支援
+- 体験活動
+- 民話
+- 部活動支援
+等に参加。
+
+Evidence:
+- https://www.city.mimasaka.lg.jp/soshiki/kyouiku/shakaikyoiku/okayamakodomo/6188.html
+
+#### 放課後子ども教室 — CURRENT
+
+7教室。
+読み聞かせ、工作、歌舞伎、囲碁、将棋等。
+
+Evidence:
+- https://www.city.mimasaka.lg.jp/soshiki/kyouiku/shakaikyoiku/okayamakodomo/houkagokodomokyousitu.html
+
+#### 美作市地域クラブ — GROWTH ROUTE
+
+「地域の子どもたちは、学校を含めた地域で育てる」を理念に、
+中学校部活動を地域クラブへ展開。
+スポーツ・文化芸術を地域住民と行う。
+2025年度からモデル実施、2030年度までの段階移行を目指す。
+
+2026夏には中学生向けスポーツ教室も実施。
+
+Evidence:
+- https://www.city.mimasaka.lg.jp/soshiki/kyouiku/gakkoukyoiku/6947.html
+- https://www.city.mimasaka.lg.jp/boshu/8988.html
+
+#### ミライサク — POST-HIGH-SCHOOL ROUTE
+
+18〜39歳が中心でGROWgle小中高の直接対象外だが、
+地域での学び・活動・課題解決を支える若者エコシステムとして保持。
+
+2026に制度化・補助金運用。
+
+Evidence:
+- https://www.city.mimasaka.lg.jp/soshiki/seisaku/sogoseisaku/info/8995.html
+
+Assessment:
+子ども体験
+→ 中学生地域クラブ
+→ 高校探究
+→ 18歳以降の若者地域活動
+という長い成長ルートが見える。
+
+State: **HIGH_MATURITY / GROWTH_ROUTE_RICH**
+
+### E. 西粟倉村 — MODEL REGION / EDUCATION FIELD
+
+#### 百年の森林教育体験プログラム — CURRENT
+
+2026:
+- 親子で学校生活 / 放課後 / 村の暮らしを体験
+- 2026-11-01〜11-14枠は募集中
+- 子どものみの社会教育体験も実施
+
+Evidence:
+- https://www.vill.nishiawakura.okayama.jp/wp/%E7%99%BE%E5%B9%B4%E3%81%AE%E6%A3%AE%E6%9E%97%E6%95%99%E8%82%B2%E4%BD%93%E9%A8%93%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/
+
+#### 学校運営協議会 — CURRENT
+
+幼稚園・小学校・中学校合同で運営。
+2026年度は、生徒自身も一緒に話し合う場を設ける予定。
+
+Evidence:
+- https://www.vill.nishiawakura.okayama.jp/wp/%E8%A5%BF%E7%B2%9F%E5%80%89%E6%9D%91%E5%AD%A6%E6%A0%A1%E9%81%8B%E5%96%B6%E5%8D%94%E8%AD%B0%E4%BC%9A/
+
+#### あわくらたんけんクラブ — LONG-RUN PROGRAM
+
+2000年開始。
+小中学生が村の山・川・星空・キャンプ等を体験。
+
+Evidence:
+- https://www.vill.nishiawakura.okayama.jp/wp/%E3%81%82%E3%82%8F%E3%81%8F%E3%82%89%E3%81%9F%E3%82%93%E3%81%91%E3%82%93%E3%82%AF%E3%83%A9%E3%83%96/
+
+Assessment:
+西粟倉はSOURCEを個別施設に分解しすぎると実態を失う。
+村そのものを
+**EDUCATION_FIELD / REGIONAL_EDUCATION_ECOSYSTEM**
+として扱う価値がある。
+
+State: **MODEL_REGION / HIGH_MATURITY**
+
+### F. 高梁市 — CITY SYSTEM + NEW JUNIOR-HIGH ROUTE
+
+#### たかはし子ども応援事業 — TOP-TIER SYSTEM SOURCE
+
+2026-03-24更新。
+各小学校区に地域学校協働活動推進員を配置。
+
+- コミュニティ・スクール
+- 地域学校協働
+- 地域住民 / 企業 / 団体
+- 放課後子ども教室
+を一体運用。
+
+Evidence:
+- https://www.city.takahashi.lg.jp/soshiki/38/takahashi-okayamakodomo.html
+
+#### 第4次教育振興基本計画
+
+2026年3月策定。
+- 地域学校協働
+- 放課後子ども教室
+- わくわくワーク
+を全市的に広げる方針。
+
+Evidence:
+- https://www.city.takahashi.lg.jp/uploaded/attachment/34315.pdf
+
+#### ジュニハイ・ホリメ — NEW CURRENT 2026 GROWTH ROUTE
+
+2026年10月開始。
+中学校休日部活動に代わり、
+- スポーツ
+- 文化芸術
+- 地域活動
+から自分に合った活動を選ぶ。
+
+地域団体・地域クラブを登録 / 認定する制度も整備。
+
+Evidence:
+- https://www.city.takahashi.lg.jp/site/kyouikuiinkai/jyunihaihorime.html
+- https://www.city.takahashi.lg.jp/reiki_int/reiki_honbun/r052RG00001505.html
+
+Assessment:
+小学生:
+放課後 / わくわくワーク / 子どもの夢事業
+↓
+中学生:
+ジュニハイ・ホリメ
+↓
+高校生・学生:
+ミライイノベーション / 地域PBL
+という明確な年齢接続が成立。
+
+State: **VERY_HIGH_MATURITY / GROWTH_ROUTE_CONNECTED**
+
+### G. 新見市 — CITY-WIDE SCHOOL NETWORK
+
+#### 生涯学習課 2026主要事業
+
+2026 CURRENT:
+- 各公民館単位で放課後子ども教室
+- 市内全小中学校で地域学校協働活動本部事業
+- 公民館主催事業
+- 青少年育成センター
+- 出張おはなし会等
+
+Evidence:
+- https://www.city.niimi.okayama.jp/soshiki/soshiki_detail/index/46.html
+
+Classification:
+- CITY_WIDE_SYSTEM_SOURCE
+- ALL_ELEMENTARY_JUNIOR_HIGH
+- PUBLIC_HALL_NETWORK
+- RECURRING
+
+#### 中高生地域参加 — EMERGING YOUTH ACTION
+
+地域審議会では、
+「中高生が地域のイベント等に当事者として参加する取組」を議論。
+中高生自身によるイベント企画案等が検討されている。
+
+Evidence:
+- https://www.city.niimi.okayama.jp/gyosei/gyosei_detail/index/187.html
+
+Judgment:
+現時点では制度検討段階。
+CURRENT OPEN ACTIVITYとしては数えず、
+YOUTH_ACTION_WATCHとする。
+
+#### Existing routes
+- 新しい特産品開発プロジェクト
+- ミライイノベーション・プロジェクト
+- 自然体験
+等と接続。
+
+State: **HIGH_MATURITY / YOUTH_ACTION_EMERGING**
+
+## 25. Okayama North — Second Pass final view
+
+Second Pass depth judgment completed for all 11 northern municipalities.
+
+### Very high / model
+- 高梁市: VERY_HIGH_MATURITY / GROWTH_ROUTE_CONNECTED
+- 西粟倉村: MODEL_REGION / HIGH_MATURITY
+- 美作市: HIGH_MATURITY / GROWTH_ROUTE_RICH
+- 美咲町: HIGH_MATURITY / NETWORK_RICH
+
+### Mature / selective
+- 勝央町: NETWORK_RICH / SELECTIVE_DEEPENING
+- 真庭市: NETWORK_RICH / SELECTIVE_DEEPENING
+- 新見市: HIGH_MATURITY / YOUTH_ACTION_EMERGING
+- 鏡野町: PARTIALLY_SATURATED
+
+### Still open
+- 奈義町: POLICY_TO_ACTIVITY_GAP
+- 新庄村: POLICY_TO_PUBLIC_ACTIVITY_GAP
+- 津山市: CURRENT_SYSTEM_VERIFY
+
+## 26. Okayama Second Pass overall conclusion
+
+岡山県:
+- 南部14自治体
+- 北部11自治体
+合計25自治体についてSecond Pass深度判定を完了。
+
+### Main conclusion
+
+First Pass:
+**見えるイベント / 地域資産 / 代表SOURCEを地図化**
+
+Second Pass:
+**機会を生み続けるSYSTEM / NETWORK / YOUTH ACTION / GROWTH ROUTEを追加**
+
+この二層構造がGROWgle調査の標準として機能することを確認。
+
+### Saturation principle validated
+
+深掘り停止条件:
+- 異なる検索経路でも既知SOURCE中心
+- 新しいSYSTEM SOURCEが出ない
+- 新規情報が小イベント詳細だけになる
+
+再開条件:
+- 新制度
+- 新Gateway
+- 新しい年齢接続
+- 新しいCURRENT OPEN機会
+- 地域空白を埋める新SOURCE
+
+### Next geographic action
+
+岡山はSecond Passの校正地域として一旦閉じる。
+
+Next:
+**広島 Second Pass**
+
+Priority:
+1. First Pass backlog（庄原等）
+2. SYSTEM SOURCE / NETWORK層
+3. YOUTH ACTION
+4. GROWTH ROUTE
+5. Saturation判定
+
+岡山で確立した深度をそのまま適用する。
