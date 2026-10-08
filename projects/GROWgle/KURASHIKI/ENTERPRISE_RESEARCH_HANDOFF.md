@@ -250,3 +250,31 @@ A prefecture-wide candidate is not a Kurashiki ACTIVITY until local implementati
 Current subarea correction:
 - Nakasho medical child OPEN_PUBLIC layer is STRONG because Kawasaki Gakuen runs a long-running public child medical experience program.
 - The remaining Nakasho gap is non-medical private OPEN_PUBLIC, not the area as a whole.
+
+
+## 15. Local operating-site reverse lookup rule — 2026-10-08
+
+New proven route:
+PROVIDER REGISTRY / PARENT COMPANY
+-> KURASHIKI OPERATING SITE / STORE
+-> SITE-SPECIFIC CHILD PROGRAM
+-> CURRENT BOOKING / SERVICE FLAG
+
+Use this for chain / multi-site organizations.
+
+Current benchmark:
+Space M Co., Ltd. (Dream Partner)
+-> McDonald's Kurashiki Nakasho / Bypass etc.
+-> Mac Adventure
+-> current 2026 service and booking evidence.
+
+Do not infer chain-wide availability.
+Verify each local site separately.
+
+This route is particularly useful for:
+- franchise / retail
+- banks / insurance branches
+- automotive groups
+- food / hospitality chains
+- care / childcare operators
+- multi-site service companies.
