@@ -278,3 +278,26 @@ This route is particularly useful for:
 - food / hospitality chains
 - care / childcare operators
 - multi-site service companies.
+
+
+## 16. 64-roster milestone and queue transition — 2026-10-08
+
+The 2026 Enterprise Manabi Gakusha 64-entry roster has now been individually classified in the canonical Pilot file.
+
+Set:
+64_ROSTER_CLASSIFICATION = COMPLETE_FOR_PILOT
+
+Do not treat all 64 as "companies":
+- government bodies, associations, hospitals, welfare / childcare organizations and student-led programs retain their real organization type.
+
+Queue transition:
+Stop using "finish the 64" as the primary research objective.
+Future effort should focus on:
+- new Gateways
+- OPEN_PUBLIC gaps
+- subarea gaps
+- distinctive SOURCE types
+- recurrence / growth routes
+- domain-by-domain saturation.
+
+Revisit a roster SOURCE only when new evidence gives a reason.
