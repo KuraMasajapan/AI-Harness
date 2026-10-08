@@ -7255,3 +7255,252 @@ NEXT:
 3. search Funao child/family public access routes
 4. resolve 2026 automotive public-event child contents through primary detail when surfaced
 5. close remaining 64-roster records
+
+
+## 130. Dream-Partner -> local operating site -> OPEN_PUBLIC conversion route — 2026-10-08
+
+A new reverse-lookup pattern proved effective:
+
+DREAM_PARTNER / COMPANY
+-> local operating site / store in Kurashiki
+-> store-level child experience
+-> current booking evidence
+
+This is materially different from stopping at the company-level education offer.
+
+### Space M Co., Ltd. -> McDonald's Kurashiki stores -> Mac Adventure
+
+Dream Partners current record:
+- provider: Space M Co., Ltd.
+- school programs: food education, hygiene, recycling, supply-chain / food-origin learning, work systems, etc.
+- school-external: PBL, online workplace experience, workplace experience, employment support
+- target includes elementary / junior high / high school
+- activity region broadly available by consultation
+
+Current local operating-site evidence:
+- McDonald's Kurashiki Nakasho store employer = Space M Co., Ltd.
+- McDonald's Kurashiki Bypass store employer = Space M Co., Ltd.
+- both employer relationships confirmed on current 2026 official McDonald's recruiting pages
+
+Store-level public child experience:
+- Kurashiki Nakasho store currently lists "Mac Adventure" as an available service
+- Kurashiki Bypass store currently lists "Mac Adventure"
+- Kurashiki Miyamae and Kurashiki Tsurajima stores also currently list Mac Adventure
+- 2026-07-17 Kurashiki Bypass booking page showed actual bookable sessions
+- standard plan:
+  - uniform / changing
+  - handwashing
+  - kitchen tour
+  - hamburger making
+  - Happy Set included
+  - 1,480 yen on the confirmed 2026 booking page
+- McDonald's current national guidance gives a general age guide of 3–12, while exact age / time / capacity varies by store
+
+Normalize:
+SOURCE = Space M Co., Ltd. / local McDonald's operating network
+ACTIVITY_SOURCE = Mac Adventure
+LOCAL_SITE:
+- Kurashiki Nakasho
+- Kurashiki Bypass
+- Kurashiki Miyamae
+- Kurashiki Tsurajima
+(and additional local stores only after current service confirmation)
+
+Classification:
+OPEN_PUBLIC / RESERVATION
+CHILD / FAMILY
+FOOD / RETAIL / HYGIENE / WORK / CAREER
+CONSTANT_OR_RECURRING_STORE_PROGRAM
+hands_on: VERY_HIGH
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=12977
+https://map.mcdonalds.co.jp/map/33543
+https://map.mcdonalds.co.jp/map/33539
+https://map.mcdonalds.co.jp/map/33525
+https://map.mcdonalds.co.jp/map/33544
+https://sp.mdj.jp/Adventure/Event/s/?event_date=20260717&str_code=33539
+https://www.mcdonalds.co.jp/family/adventure/
+https://crewrecruiting.mcdonalds.co.jp/map/a33543
+https://crewrecruiting.mcdonalds.co.jp/map/a33539
+
+Maturity impact:
+NAKASHO_NON_MEDICAL_PRIVATE_OPEN_PUBLIC = IMPROVED
+FOOD_RETAIL_CHILD_WORK_EXPERIENCE = STRONG_NEW_LAYER
+
+Important:
+Do not assume every Space M / McDonald's store offers Mac Adventure.
+Confirm the current service flag or current booking page at each store.
+
+## 131. Funao public event layer strengthened, but child hands-on gap remains
+
+### Funao Winery "Wine and Grape Summer Festival" 2026
+Official Okayama Tourism:
+- event date: 2026-07-26
+- time: 10:00–19:00
+- venue: Funao Winery
+- admission: free (actual purchases / paid lecture separate)
+- co-hosts:
+  - Funao Young Farmers Club
+  - GRAPE SHIP
+  - Funao Winery
+- local asset theme:
+  - 140th anniversary of Muscat of Alexandria cultivation in Okayama
+- event includes:
+  - fresh grapes
+  - Alexandria grape juice
+  - winery / producer sales
+  - mascot photo sessions
+  - jazz
+  - wine-related lecture for adults
+
+Classification:
+OPEN_PUBLIC / RECURRING_EVENT_LAYER
+FAMILY_ACCESSIBLE / GENERAL
+AGRICULTURE / LOCAL_FOOD / LOCAL_IDENTITY
+CHILD_HANDS_ON_CORE = LOW / UNVERIFIED
+
+Evidence:
+https://www.okayama-kanko.jp/event/detail_16035.html
+https://www.okayama-kanko.jp/spot/detail_10261.html
+
+Interpretation:
+This improves Funao's OPEN_PUBLIC access layer, but it is not equivalent to a child-focused agricultural hands-on program.
+Therefore:
+FUNAO_FAMILY_OPEN_PUBLIC_EVENT = STRONGER
+FUNAO_CHILD_HANDS_ON_OPEN_PUBLIC = STILL_THIN
+
+### GRAPE SHIP -> local children
+Kurashiki City's local-feature page documents:
+- GRAPE SHIP seeks to pass Muscat culture to the next generation
+- local nursery-school children and nearby disability-facility participants have been invited to:
+  - Muscat harvest
+  - juice making
+
+Classification:
+SCHOOL/PARTNER_ONLY / REPEAT_LIKELY
+PRESCHOOL / COMMUNITY
+AGRICULTURE / FOOD / LOCAL_IDENTITY
+hands_on: VERY_HIGH
+
+Evidence:
+https://citysales.city.kurashiki.okayama.jp/special/vol53/
+
+GROWgle note:
+This is a strong local child activity, but it should not be misclassified as OPEN_PUBLIC.
+
+## 132. Funao university / industry network — current 2026 continuity strengthened
+
+Okayama University of Science current report:
+- 2026-07-24 first FY2026 coordination meeting held
+- parties:
+  - Kurashiki City
+  - Funao Winery
+  - Okayama University of Science
+  - Kurashiki City Funao Agricultural Corporation
+- FY2026 work continues on:
+  - Muscat of Alexandria
+  - wild grape crossbreeding
+  - newly developed Muscat Shiragai candidate
+  - cultivation-condition optimization
+  - trial brewing
+  - regional / tourism / product-development use
+
+Classification:
+COMPANY_X_UNIVERSITY_X_MUNICIPALITY_X_AGRICULTURE
+CURRENT_2026
+RESEARCH / AGRICULTURE / FOOD_PROCESSING / PRODUCT_DEVELOPMENT
+Region: 船穂
+
+Evidence:
+https://www.ous.ac.jp/topics/detail.php?id=6733
+
+GROWgle value:
+Funao's learning ecosystem is now clearly:
+LOCAL CROP
+-> FARMER / AGRICULTURAL CORPORATION
+-> WINERY / PRIVATE PRODUCER
+-> UNIVERSITY RESEARCH
+-> PRODUCT / TOURISM
+with child-facing access split between PARTNER_ONLY hands-on and public community events.
+
+## 133. Dream Partners filtering — selected additional candidate layers
+
+### Space M / McDonald's
+Promoted beyond candidate because a current Kurashiki OPEN_PUBLIC store-level activity was confirmed.
+See #130.
+
+### NPO Dappi
+Dream Partners current:
+- prefecture-wide
+- middle / high school dialogue-based career education
+- inquiry programs
+- workplace / internship possibilities
+- FY2024: 33 middle / high schools for dialogue program
+- FY2023: implementation at a Kurashiki junior high school confirmed in registry
+
+Classification:
+NPO_SOURCE / PREFECTURE_WIDE
+JUNIOR_HIGH / HIGH_SCHOOL
+CAREER / DIALOGUE / INQUIRY
+RECURRING_HIGH_FREQUENCY
+KURASHIKI_HISTORICAL_IMPLEMENTATION_CONFIRMED
+2026_KURASHIKI_ACTIVITY = NOT_YET_VERIFIED
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6567
+
+### Time Co., Ltd.
+Dream Partners:
+- home-center retail work experience
+- stocking / sales-floor creation / customer response
+- junior / senior high workplace-experience intake
+- pet-store division can provide animal-interaction opportunities
+
+Classification:
+COMPANY_CANDIDATE
+RETAIL / PET / CAREER
+SCHOOL / WORKPLACE_EXPERIENCE
+KURASHIKI_LOCAL_ACTIVITY = UNVERIFIED
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6118
+
+Decision:
+Keep as candidate only until a current Kurashiki site / local activity is confirmed.
+
+## 134. Maturity snapshot update
+
+STRONG / upgraded:
+- NAKASHO_MEDICAL_CHILD_OPEN_PUBLIC = STRONG
+- NAKASHO_NON_MEDICAL_PRIVATE_OPEN_PUBLIC = IMPROVED
+- FOOD_RETAIL_CHILD_WORK_EXPERIENCE = NEW_STRONG_LAYER
+- FUNAO_LOCAL_ASSET_NETWORK = STRONG
+
+STILL_THIN:
+- FUNAO_CHILD_HANDS_ON_OPEN_PUBLIC
+- IT_AI_CHILD_FAMILY_OPEN_PUBLIC
+- LOCAL_INSURANCE_OPEN_PUBLIC
+- AUTOMOTIVE_CHILD_OPEN_PUBLIC_2026_DETAIL
+
+NEW RESEARCH METHOD:
+PROVIDER_REGISTRY -> LOCAL_OPERATING_SITE -> STORE_LEVEL_ACTIVITY -> CURRENT_BOOKING
+
+This method is especially useful for:
+- franchise operators
+- retail chains
+- banks / insurance branches
+- automotive dealer groups
+- care / childcare multi-site operators
+- chain hospitality / food businesses
+
+SATURATION:
+No new SATURATED_FOR_PILOT declaration.
+KOJIMA_TEXTILE remains the only explicitly saturated subdomain.
+
+NEXT:
+1. apply local-operating-site reverse lookup to other Dream Partner / 64-roster multi-site providers
+2. search Funao for an actual public child harvest / farm-work route rather than generic festivals
+3. continue IT/AI child/family OPEN_PUBLIC gap
+4. continue insurance / automotive OPEN_PUBLIC local verification
+5. finish 64-roster closure states and prepare a Pilot maturity checkpoint
