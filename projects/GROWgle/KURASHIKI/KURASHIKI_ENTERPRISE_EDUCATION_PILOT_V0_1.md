@@ -7504,3 +7504,201 @@ NEXT:
 3. continue IT/AI child/family OPEN_PUBLIC gap
 4. continue insurance / automotive OPEN_PUBLIC local verification
 5. finish 64-roster closure states and prepare a Pilot maturity checkpoint
+
+
+## 135. IT / AI direct-access SOURCE — Digital Lab Kurashiki — 2026-10-08
+
+### Digital Lab Kurashiki
+Current site:
+- ongoing elementary-school programming class
+- starts with unplugged programming / tablet use / Scratch
+- progresses toward PC use and coding
+- 3D-CAD and 3D-printer making
+- current equipment / experience layer includes:
+  - robots
+  - VR goggles
+  - drones
+  - garment printer
+  - laser cutter
+  - high-performance PC
+  - AI use with ChatGPT / Copilot
+- representative is an active software developer and explicitly frames the activity as passing practical technology experience to the next generation
+
+Classification:
+PRIVATE_EDUCATION_SOURCE
+DIRECT_ACCESS / PAID_CLASS
+ELEMENTARY
+IT / PROGRAMMING / DIGITAL_FAB / AI / VR / DRONE / MAKING
+CONSTANT_SOURCE
+hands_on: VERY_HIGH
+Region: 倉敷
+
+Evidence:
+https://www.digilab-kurashiki.jp/
+https://www.digilab-kurashiki.jp/?page_id=13
+
+GROWgle note:
+This is a strong example of a source missed by event-only searching.
+It is not a one-day OPEN_PUBLIC event; it is a continuous family-accessible learning SOURCE.
+
+Gap update:
+IT_AI_CHILD_DIRECT_ACCESS = STRONGER
+IT_AI_FREE_OR_ONE_OFF_OPEN_PUBLIC = STILL_THIN
+
+## 136. Kurashiki-based child data-literacy SOURCE — Data Cradle
+
+### General Incorporated Association Data Cradle
+Current base:
+- headquarters: Kurashiki City, Achi 1-7-2
+- current business explicitly includes "children's data-utilization content"
+- develops / operates:
+  - DATAKIDS
+  - children's disaster maps
+  - data-literacy / civic-tech related content
+
+2026 continuity:
+- 2026-06-22 launched "Data Kids Award" as a special prize in Urban Data Challenge 2026
+- states that DATAKIDS activity has been continued to bring the value / fun of data to children
+- 2026-06-23 announced a summer statistical graph learning program for elementary pupils
+- actual 2026 summer class venue was in Okayama City, not Kurashiki
+
+Classification:
+KURASHIKI_BASED_SOURCE
+CHILD_DATA_LITERACY / CIVIC_TECH / STATISTICS / DISASTER / DIGITAL
+CURRENT_2026
+LOCAL_SOURCE = YES
+2026_KURASHIKI_CHILD_ACTIVITY = NOT_CONFIRMED_IN_THIS_PASS
+EXTERNAL_ACTIVITY_2026 = CONFIRMED
+
+Evidence:
+https://d-cradle.or.jp/
+https://d-cradle.or.jp/about/
+https://d-cradle.or.jp/news/news/401/
+https://d-cradle.or.jp/news/event/406/
+
+GROWgle note:
+Keep SOURCE location and ACTIVITY location separate.
+Do not count the 2026 Okayama City summer class as a Kurashiki ACTIVITY.
+
+## 137. Automotive child open-public evidence — Aeon Mall Kurashiki event
+
+Local media / event-aggregation evidence independently reports:
+- event: "Congratulations on enrollment! Shiny First Graders"
+- dates: 2026-04-04 and 2026-04-05
+- venue: Aeon Mall Kurashiki
+- organizer: Aeon Mall Kurashiki
+- free
+- child occupation / workshop zone included:
+  - NISSAN Kids Mechanic experience
+  - children wore mechanic uniforms and tried tire-changing work
+  - drone crane game
+  - electric experiment / flying-car quiz etc.
+
+Evidence quality:
+- local KCT media report: confirmed
+- event listing cites Aeon Mall Kurashiki as organizer
+- direct 2026 Aeon Mall event page was not recoverable in this pass
+
+Classification:
+OPEN_PUBLIC / SECONDARY_CONFIRMED
+CHILD / FAMILY
+AUTOMOTIVE / MAINTENANCE / CAREER / STEAM
+2026
+PRIMARY_EVENT_DETAIL = NOT_RECOVERED
+
+Evidence:
+https://town.kct.co.jp/local/011040.html
+https://tsukinuke.jp/33/p/4886
+
+GROWgle note:
+Useful evidence that public child automotive experience exists locally, but keep source-confidence flag below primary-confirmed items.
+
+Automotive maturity:
+- SCHOOL layer: strong (Mitsubishi / industry-association etc.)
+- OPEN_PUBLIC child layer: materially improved
+- exact recurring local dealer-level routes: still open
+
+## 138. 64-roster classification milestone — COMPLETE_FOR_PILOT
+
+Canonical-file audit on 2026-10-08:
+All 64 entries in the 2026 Enterprise Manabi Gakusha public roster now have at least one explicit individual classification / normalized treatment in this canonical file.
+
+Therefore:
+64_ROSTER_CLASSIFICATION = COMPLETE_FOR_PILOT
+
+Important:
+This does NOT mean:
+- every organization has been exhaustively searched forever
+- every possible OPEN_PUBLIC activity has been found
+- all 64 are actually companies
+
+Known normalization corrections:
+- Okayama Prefectural Police = GOVERNMENT_SOURCE
+- "Entrepreneurship Lab" = university-student-led PROGRAM / student-provider route, not ordinary company
+- hospitals / welfare / childcare / associations remain SOURCEs but should retain their real organization type
+
+From this point:
+- stop using "64 organizations remaining" as the main queue
+- revisit individual roster entries only when a new Gateway / new year / new local activity gives a reason
+- prioritize population expansion, public-access gaps, subarea gaps and SOURCE-type gaps
+
+Dashboard status:
+POPULATION_DISCOVERY = MULTI_GATEWAY / STRONG
+64_ROSTER_ENTITY_CLASSIFICATION = COMPLETE_FOR_PILOT
+PARTICIPATION_RESOLUTION = STRONG / ongoing for newly discovered SOURCEs
+SOURCE_ACTIVITY_NORMALIZATION = STRONG
+DEDUP = ACTIVE
+GAP_SCAN = ACTIVE
+SATURATION_DECISION = DOMAIN_BY_DOMAIN
+
+## 139. Current gap / maturity update
+
+### Strong / substantially covered
+- KOJIMA_TEXTILE = SATURATED_FOR_PILOT
+- NAKASHO_MEDICAL_CHILD_OPEN_PUBLIC = STRONG
+- MIZUSHIMA_HEAVY_INDUSTRY = STRONG
+- MEDICAL / HOSPITAL = STRONG
+- INFRASTRUCTURE SCHOOL/GROUP = STRONG
+- 64_ROSTER_CLASSIFICATION = COMPLETE_FOR_PILOT
+
+### Improved, not saturated
+- FINANCE_OPEN_PUBLIC
+- AUTOMOTIVE_CHILD_OPEN_PUBLIC
+- IT_AI_CHILD_DIRECT_ACCESS
+- FUNAO_FAMILY_OPEN_PUBLIC
+- MABI_OPEN_PUBLIC
+
+### Still thin / needs targeted search
+- IT_AI_FREE_OR_ONE_OFF_CHILD_OPEN_PUBLIC
+- LOCAL_INSURANCE_OPEN_PUBLIC
+- FUNAO_CHILD_HANDS_ON_OPEN_PUBLIC
+- NAKASHO_NON_MEDICAL_PRIVATE_OPEN_PUBLIC beyond current food/retail example
+- recurring dealer-level automotive child programs with primary 2026 local proof
+
+### WATCH
+- Kurashiki Disaster Prevention Fair 2026
+  - event confirmed for 2026-11-22 at Tamashima-no-Mori
+  - city states detailed content will be published around mid-October
+  - do not infer insurer / corporate booths until official 2026 detail is published
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/anzen/disaster/1012507/1002681.html
+
+## 140. Next phase after 64-roster completion
+
+Priority:
+1. Gateway expansion yields — Dream Partners / school invitations / industry associations / retail-site programs
+2. OPEN_PUBLIC gap closing — AI/IT, insurance, automotive, Funao child agriculture
+3. subarea balancing — Funao and non-medical Nakasho
+4. current-year recurring-event WATCH updates
+5. prepare Kurashiki Pilot maturity checkpoint once gap-search yield begins to flatten
+
+Research discipline:
+Do not return to already-strong companies without a concrete new edge.
+New work should either:
+- add a new SOURCE type
+- add a new access mode
+- resolve a real uncertainty
+- fill a geography / age / industry gap
+- establish a recurrence / growth route
+- or support a saturation decision
