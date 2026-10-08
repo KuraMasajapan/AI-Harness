@@ -1832,3 +1832,300 @@ Local authoritative information
 ```
 
 This may allow the local agent project to begin before GPU acquisition.
+
+
+---
+
+## Update 2026-10-08 — Local Agent Safety Stack / Cross-Reference Map
+
+Status:
+HIGH-VALUE ARCHITECTURE MAP / NOT ACTIVE
+
+Purpose:
+Link the recent Local Agent discoveries into one coherent, cross-referenced architecture instead of keeping them as isolated notes.
+
+Primary sources / signals:
+- Tailscale / Codex Cloud bridge: https://tailscale.com/blog/codex-cloud-tailscale
+- Microsoft Execution Containers article: https://forest.watch.impress.co.jp/docs/news/2146735.html
+- AECP paper: https://arxiv.org/abs/2610.06481
+- MCP tool-list cache behavior: OpenAI Agents SDK docs / repository
+- Evidence-before-write: Grok Inbox signal from 2026-10-08; treat as idea / anomaly until independently reproduced
+- EmbeddingGemma 2 / Local Semantic Warehouse: see the dedicated candidate in this file
+- Hermes Local Agent: see projects/Hermes_Local_Agent/
+
+### Combined architecture
+
+```
+Codex Cloud / Remote AI
+        ↓
+Tailscale
+Private Transport
+        ↓
+Hermes / Local Agent
+Local Worker / Handoff
+        ↓
+Microsoft Execution Containers (MXC)
+OS-enforced Execution Boundary
+        ↓
+EmbeddingGemma 2
+Local Semantic Warehouse Keeper
+        ↓
+Local authoritative sources
+Git / Obsidian / files / selected stores
+        ↓
+Evidence / source IDs
+        ↓
+AECP-style structured artifact
++ Evidence-before-write gate
+        ↓
+Tool schema freshness check
+        ↓
+Action
+        ↓
+Validation / Trace
+        ↓
+Human approval where required
+```
+
+### Role of each component
+
+#### Tailscale
+Role:
+Private transport between cloud execution and the local environment.
+
+Architectural meaning:
+The remote side should not require public exposure of the local service.
+
+Related Harness areas:
+- Transport / Handoff
+- Access
+- Model-neutral adapters
+
+#### Hermes / Local Agent
+Role:
+Local worker that receives scoped requests, retrieves or acts locally, and returns bounded results.
+
+Initial target:
+Do not require a large local LLM.
+A first version may be mostly deterministic orchestration plus retrieval.
+
+Related Harness areas:
+- Local execution
+- Handoff
+- Task Fork
+- Human boundary
+
+#### Microsoft Execution Containers (MXC)
+Role:
+OS-enforced containment for local agent execution.
+
+Architectural meaning:
+Do not rely only on prompt instructions such as "do not read this folder".
+Where practical, enforce filesystem / process / network boundaries below the model layer.
+
+Target principle:
+
+```
+Rule
+= define what must not happen
+
+Access
+= make forbidden actions technically unavailable
+
+Validation
+= verify what actually happened
+```
+
+Safety posture:
+- deny by default
+- least privilege
+- narrow mounted / visible resources
+- explicit network policy
+- Human approval remains for high-impact actions
+
+Re-verify current Microsoft documentation and platform constraints before implementation.
+
+#### EmbeddingGemma 2
+Role:
+Local semantic warehouse keeper.
+
+Architectural meaning:
+Find the best source locations from meaning, then hand back source IDs / paths rather than becoming the Source of Truth.
+
+Related Harness areas:
+- Retrieval Gateway
+- Externalized Memory
+- Evidence discovery
+- Model-neutral context
+
+#### Evidence-before-write
+Role:
+Require support for a write / mutation before considering it safe.
+
+Candidate pattern:
+
+```
+Retrieve evidence
+      ↓
+record source / evidence IDs
+      ↓
+pre-write predicate
+      ↓
+write
+      ↓
+post-write validation
+```
+
+Do not treat "the tool call succeeded" as sufficient evidence that the write was justified.
+
+Possible lightweight implementation:
+Require evidence IDs in mutation tool arguments or in the task artifact.
+Reject or escalate if missing.
+
+Caution:
+The current 2026-10-08 signal is a single report and is not independently reproduced.
+Preserve the principle; do not preserve benchmark claims as fact.
+
+#### AECP-style structured artifact
+Role:
+Replace fragile free-form inter-agent relay with structured, inspectable handoff artifacts where the commitment matters.
+
+Candidate use:
+- requested scope
+- allowed sources
+- required output
+- source / evidence IDs
+- assumptions
+- access class
+- result
+- validation status
+
+Harness should be able to fail closed when a required interface / contract is missing or inconsistent.
+
+Do not replace all conversational coordination with rigid schemas.
+Apply first to high-impact handoffs and durable commitments.
+
+#### MCP tool-schema freshness
+Role:
+Prevent agents from acting against stale tool definitions.
+
+Known OpenAI Agents SDK behavior:
+Tool lists may be cached with `cache_tools_list=True`; the SDK exposes `invalidate_tools_cache()` for refresh.
+
+Candidate Harness principle:
+A task must not treat an old tool contract as authoritative after the tool surface changes.
+
+Possible lightweight implementation:
+
+```
+session start
+   ↓
+tool schema hash
+   ↓
+before mutation
+   ↓
+schema unchanged?
+  YES → continue
+  NO  → refresh / revalidate / stop
+```
+
+This belongs primarily in implementation / Transport / Access checks, not as a new major subsystem.
+
+### Cross-link matrix
+
+```
+Tailscale
+  ↔ Hermes
+  private transport for local work
+
+Hermes
+  ↔ MXC
+  local worker constrained by OS boundary
+
+Hermes
+  ↔ EmbeddingGemma 2
+  worker asks warehouse keeper where relevant originals live
+
+EmbeddingGemma 2
+  ↔ Evidence-before-write
+  retrieval produces candidate evidence / source IDs
+
+Evidence-before-write
+  ↔ AECP artifact
+  evidence and scope travel in structured handoff
+
+AECP artifact
+  ↔ MCP schema freshness
+  action contract must match the current tool contract
+
+MXC
+  ↔ Access rules
+  policy should be backed by technical enforcement
+
+Validation / Human
+  ↔ all layers
+  final escalation remains available when confidence, authority, or reversibility is insufficient
+```
+
+### Why this matters to the GPU-less path
+
+The architecture deliberately separates:
+- heavy reasoning
+- private transport
+- local retrieval
+- local execution
+- safety boundaries
+
+Therefore the first useful version can target a CPU-only local machine:
+
+```
+Remote reasoning
+      ↓
+Tailscale
+      ↓
+Hermes / lightweight local service
+      ↓
+MXC
+      ↓
+EmbeddingGemma 2 + local index
+      ↓
+local sources
+```
+
+A GPU becomes an optional future upgrade for more local reasoning, not a prerequisite for the retrieval / handoff / containment architecture.
+
+### Current decision
+
+KEEP AS A LINKING ARCHITECTURE MAP.
+
+Do not activate all components at once.
+
+Preferred order for future experiments:
+1. Local semantic retrieval on text / Markdown.
+2. Narrow local retrieval API.
+3. Private transport.
+4. OS-level containment.
+5. Evidence-before-write on reversible mutations.
+6. Structured artifacts for high-impact handoffs.
+7. Tool-schema freshness checks.
+8. Add local reasoning only if it produces measurable value.
+
+The reusable principle is:
+
+```
+Remote intelligence
+   ↓
+private path
+   ↓
+local worker
+   ↓
+enforced local boundary
+   ↓
+semantic evidence retrieval
+   ↓
+structured, evidence-backed action
+   ↓
+validation
+   ↓
+Human when required
+```
