@@ -529,3 +529,319 @@ Do not:
 
 Goal:
 **First Passの地域資産地図に、Second Passで「機会を生み続ける制度・ネットワーク層」を足す。**
+
+
+## 15. Differential sweep — Tamano / Ibara / Yakage / Asakuchi
+
+### A. 玉野市 — REGION-WIDE SYSTEM SOURCE FOUND
+
+#### 玉野市地域子ども楽級 — HIGH-VALUE SYSTEM SOURCE
+
+2026 current official page confirms:
+- 対象: 市内小学生
+- 土日: 半日程度（月1〜2回）
+- 平日: 放課後〜17時
+- 場所: 各地区公民館、学校、地域施設
+- 内容: 体験活動・交流活動
+- 地域住民、青少年育成団体、コミュニティ、PTA、ボランティア団体等が協働
+- 市内全14小学校区で展開した実績あり
+
+市の「たまのっ子育成支援事業」の中核として、
+地域学校協働本部・家庭教育支援・放課後活動等と接続。
+
+Classification:
+- SYSTEM_SOURCE
+- ELEMENTARY
+- RECURRING / LOCAL_AREA_NETWORK
+- COMMUNITY / CULTURE / SPORTS / CREATIVE / NATURE / STEAM候補
+- LOCAL_PARTICIPATION
+- hands_on: HIGH
+
+Evidence:
+- https://www.city.tamano.lg.jp/soshiki/35/14619.html
+- https://www.city.tamano.lg.jp/soshiki/35/39421.html
+
+Assessment:
+First Passではキッズビジネスタウン・自然環境体験公園等の代表資産は取れていたが、
+市域全体で継続的な体験活動を発生させる仕組みは未構造化だった。
+Second Passで拾う価値が高い。
+
+#### 玉野市地域子ども楽級「おさらい会」
+
+2026 current:
+- 希望する小学3年生
+- 放課後
+- 算数学習支援
+- 地域ボランティアが支援
+- 学習だけでなく地域交流の場
+
+Evidence:
+- https://www.city.tamano.lg.jp/soshiki/35/17903.html
+
+Judgment:
+地域子ども楽級の別枝。
+独立SOURCEではなく PROGRAM_COMPONENT。
+
+#### たまのスチューデントガイドプログラム — CURRENT GROWTH ROUTE
+
+2026-11-08:
+- 中高生
+- 宇野港周辺・直島
+- 英語練習
+- 外国人観光客へのプレゼン / コミュニケーション
+- 国際理解 + 地域創生 + 主体性育成
+
+Classification:
+- STUDENT
+- CURRENT_2026
+- GLOBAL / COMMUNICATION / COMMUNITY / LOCAL_IDENTITY
+- OPEN/LOCAL_STUDENT program
+
+Evidence:
+- https://www.city.tamano.lg.jp/soshiki/35/58166.html
+
+Judgment:
+地域子ども楽級とは別の中高生向け成長ルート。
+玉野は「小学生地域体験 → 中高生地域発信」という年齢接続が見える。
+
+### B. 井原市 — YOUTH ACTION SYSTEM FOUND
+
+#### ふるさと井原“夢＆志”アクション助成 — HIGH-VALUE CURRENT SOURCE
+
+2026 current:
+- 市内在住・在学・在勤の中学生、高校生、大学生等の若者（原則20代まで）
+- 若者自身が発案し、主体的に企画・実践する活動を支援
+- 1組あたり最大10万円
+- 2026年度は10組程度想定
+- 7月〜1月の各月募集
+- 最終申請締切: 2027-01-22
+- R6: 4申請4助成
+- R7: 12申請10助成
+
+Classification:
+- OPEN_APPLICATION / LOCAL_YOUTH
+- CURRENT_2026
+- ENTRE / COMMUNITY / CIVIC / PROJECT_BASED_LEARNING
+- YOUTH_ACTION
+- hands_on: VERY_HIGH
+
+Evidence:
+- https://www.city.ibara.okayama.jp/soshiki/35/21104.html
+
+Assessment:
+これはイベントではなく、
+若者が自分で活動を「作る」ための基盤。
+GROWgleの成長ルートとして非常に価値が高い。
+
+#### ふるさと井原の未来を創るひとづくり事業 — SYSTEM NETWORK
+
+2026市長方針で拡充を確認:
+- “夢＆志”アクション助成
+- Team夢源
+- ユースセンターいばら
+- 若者のチャレンジ支援
+- 地域・企業との連携
+を多角的に展開。
+
+Evidence:
+- https://www.city.ibara.okayama.jp/site/mayor/19607.html
+- https://www.edu.city.ibara.okayama.jp/soshiki/22/
+
+Classification:
+- SYSTEM_SOURCE
+- YOUTH_NETWORK
+- ENTRE / COMMUNITY / CAREER / LOCAL_IDENTITY
+- GROWTH_ROUTE_CORE
+
+#### 地域学校協働 / ひとづくりネットワーク
+
+学校単位では、
+地域土曜学習「マナボー」、地域文化伝承、読み聞かせ、学習支援等を実施する実績を確認。
+
+Evidence:
+- https://www.edu.city.ibara.okayama.jp/site/ebarasho/tiiki.html
+
+Judgment:
+SYSTEMとしては有力だがSCHOOL_ONLY色が強いため、
+公開GROWgle表示より SOURCE NETWORKとして保持する。
+
+### C. 矢掛町 — EXISTING EVENTS ABOVE A LARGER CHILD-YOUTH SYSTEM
+
+#### 水曜日学習会 / 夏休み・土曜日学習会
+
+町子育て支援サイトで継続制度として確認。
+
+水曜日学習会:
+- 小3〜6（塾に通っていない児童） + 中学生
+- 毎週水曜
+- やかげ文化センター
+- 無料
+- 教員OBが支援
+
+夏休み / 土曜日学習会:
+- 町内小学生
+- 各地区公民館
+- 年5回程度
+- 地域での学習機会
+
+Evidence:
+- https://www.town.yakage.okayama.jp/kosodate/manabi/
+
+Classification:
+- LOCAL_CHILDREN
+- RECURRING
+- LEARNING_SUPPORT / COMMUNITY
+- SYSTEM_PROGRAM
+
+Judgment:
+学習支援中心なのでGROWgleの体験価値としては中程度。
+ただし地区公民館ネットワークへの入口として重要。
+
+#### 地区公民館 — HIDDEN DISTRIBUTED SOURCE
+
+2026の各地区公民館には、
+夏休み学習会に加えて、
+- 3B体操
+- 習字
+- 健康教室
+- 竹あかりづくり
+- 絵画教室
+- こども食堂
+等の実活動が確認できる。
+
+Evidence:
+- https://sites.google.com/yakage-kyouiku.info/kouminkan/yakage_kouminkan
+- https://sites.google.com/yakage-kyouiku.info/kouminkan/kawamo
+- https://kouminkan.yakage-kyouiku.info/nakagawa
+
+Judgment:
+イベントを全件回収するのはOVERDEEP。
+「地区公民館ネットワーク」をSOURCEとして保持し、
+代表ACTIVITYのみ残す。
+
+#### こどもみらい学校 — RECURRING FAMILY EXPERIENCE SOURCE
+
+2026年度も町の地域少子化対策事業として計画掲載を確認。
+過去実績では、
+竹を使った工作・遊び等を通じた親子交流を複数回実施。
+
+2025年度にも開催継続が確認されており、
+制度として継続性が高い。
+
+Evidence:
+- https://www.town.yakage.okayama.jp/life/info/plan.html
+- https://www.pref.okayama.jp/page/1033716.html
+
+Classification:
+- FAMILY / CHILD
+- RECURRING
+- NATURE / CREATIVE / COMMUNITY
+- LOCAL_PARENT_CHILD
+- WATCH_CURRENT_DETAILS
+
+Judgment:
+既存の伝統文化体験 / 防災アウトドアとは別のSOURCE線として価値あり。
+ただし2026の具体的な開催回・募集条件は別途CURRENT確認が必要。
+
+### D. 浅口市 — CHILD ACTIVITY TO REGIONAL CLUB TRANSITION
+
+#### 子ども体験活動教室 — EXISTING ACTIVITY, SYSTEM VALUE UPGRADED
+
+既存ログではACTIVITYとして回収済み。
+
+2026 official details:
+- 週末を利用した継続体験
+- 地域ボランティアが指導
+- コーラス、和太鼓、茶道等
+- 幼児〜中学生まで複数年齢
+
+Evidence:
+- https://www.city.asakuchi.lg.jp/page/10836.html
+
+Second Pass judgment:
+単発教室ではなく、
+「地域ボランティアが年間で複数の子ども体験を担うSYSTEM」として格上げ。
+
+#### 浅口市地域クラブ — NEW SYSTEM SOURCE / CURRENT 2026
+
+2026秋から、
+休日の中学校部活動を地域クラブへ展開。
+
+目的:
+- 子どもがスポーツ・文化芸術活動に継続して親しめる機会を確保
+- 地域とともに健全育成
+- 地域指導者が活動
+
+2026年5月には参加生徒募集を開始。
+
+Classification:
+- JUNIOR_HIGH
+- CURRENT_2026
+- RECURRING / SYSTEM_SOURCE
+- SPORTS / CULTURE / CREATIVE
+- COMMUNITY_INSTRUCTOR_NETWORK
+- GROWTH_ROUTE
+
+Evidence:
+- https://www.city.asakuchi.lg.jp/page/16736.html
+- https://www.city.asakuchi.lg.jp/page/20503.html
+- https://www.city.asakuchi.lg.jp/page/18975.html
+
+Assessment:
+「小学生〜中学生の子ども体験活動教室」
+→「中学生の地域クラブ」
+という年齢接続が見える。
+
+## 16. Depth judgment — 4 areas
+
+### 玉野
+State: **NOT SATURATED**
+Reason:
+地域子ども楽級という市域SYSTEM SOURCEを新規発見。
+中高生のスチューデントガイドまで成長接続あり。
+
+### 井原
+State: **NOT SATURATED**
+Reason:
+“夢＆志”アクション助成は高価値。
+若者が参加するイベントを探す段階から、
+若者が自分でプロジェクトを作る段階へ接続している。
+
+### 矢掛
+State: **PARTIALLY SATURATED**
+Reason:
+主要な地域資産・高校連携は既にかなり取得済み。
+新規は公民館・学習会・こどもみらい学校等の制度層。
+これ以上各公民館イベントを全件掘る必要はない。
+
+### 浅口
+State: **NOT SATURATED IN GROWTH-ROUTE LAYER**
+Reason:
+既知の天文・体験教室に加え、
+2026から地域クラブという中学生向け継続SYSTEMが立ち上がっている。
+
+## 17. Emerging conclusion
+
+Second Passで特に価値が高いのは、
+「イベントをさらに増やすこと」ではなく、
+以下の3タイプを見つけること。
+
+1. **SYSTEM SOURCE**
+   - 玉野市地域子ども楽級
+   - さとしょう未来塾
+   - 吉備中央町アフタースクール
+
+2. **YOUTH ACTION SOURCE**
+   - 井原 “夢＆志”アクション助成
+   - 若者が自分で企画・実践できる仕組み
+
+3. **GROWTH ROUTE**
+   - 小学生体験 → 中高生地域活動
+   - 子ども体験活動教室 → 地域クラブ
+   - 地域体験 → 若者主体プロジェクト
+
+この層が見つかった自治体はSecond Passの追加価値が高い。
+
+Next:
+- 岡山南部の残り自治体を同じSYSTEM / YOUTH_ACTION / GROWTH_ROUTE軸で差分走査
+- 新規SOURCE増加率が落ちた地域からSATURATED_FOR_SECOND_PASSへ移す
