@@ -6746,3 +6746,325 @@ It remains the main public roster, but school-side partner invitations, educatio
 3. search Funao and Nakasho for local private / university / medical adjacent OPEN_PUBLIC routes
 4. continue OPEN_PUBLIC IT/AI and automotive gap search
 5. only declare additional SATURATED_FOR_PILOT areas after a gap scan across all major Gateways
+
+
+## 113. New population Gateway — Okayama "Yumeiku Partners" — 2026-10-08
+
+Okayama Lifelong Learning Center's current "Yumeiku Partners" registry is a third major public population for education SOURCE discovery.
+
+Current state:
+- searchable registered organizations: 131
+- registrants include companies, NPOs, professional associations, public institutions and other organizations
+- individual records can contain:
+  - school activity
+  - school-external activity
+  - target ages
+  - activity type
+  - cost / transport cost
+  - activity region
+  - prior implementation examples
+- matching / contact is mediated by Okayama Lifelong Learning Center
+
+Gateway classification:
+PREFECTURE_EDUCATION_PARTNER_REGISTRY / POPULATION_DISCOVERY
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/topY.aspx
+https://www.pal.pref.okayama.jp/pal/search/searchlist.aspx?ht=1&knd=12&typ=2
+
+Kurashiki Pilot rule:
+- do not count all 131 as Kurashiki SOURCEs
+- first filter for "prefecture-wide", Kurashiki-specific, or consultation-based activity areas
+- then reverse-lookup local implementation or local accessibility
+- a prefecture-wide offer is a CANDIDATE_SOURCE; a Kurashiki ACTIVITY requires local evidence or a clearly available booking route that includes Kurashiki
+- preserve SCHOOL activity and SCHOOL-EXTERNAL activity separately
+
+GROWgle value:
+This registry is especially strong for SOURCE / ACTIVITY normalization because participation conditions are already partially structured.
+
+## 114. IT / AI gap — SynQ Creative added as prefecture-wide candidate SOURCE
+
+### SynQ Creative LLC
+Yumeiku Partners record:
+- entry date: 2026-03-13
+- activity region: all Okayama Prefecture
+- target: junior high / high school / adults
+- school and school-external programs
+- themes:
+  - inquiry thinking
+  - design / creative thinking
+  - how to engage with AI
+  - self-marketing / self-understanding
+- forms: lectures, experiences, online, workshops
+
+Implementation examples listed in the registry include:
+- Tamano High School inquiry-program coordination
+- corporate PBL
+- Canva communication / design programs
+- school / community coordination
+
+Classification:
+PREFECTURE_WIDE_CANDIDATE
+SCHOOL / SCHOOL_EXTERNAL
+JUNIOR_HIGH / HIGH_SCHOOL
+AI / IT / CREATIVE / DESIGN_THINKING / PBL
+CURRENT_2026
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/searchdtl.aspx?knd=12&stdycd=13596
+
+Caution:
+No Kurashiki-specific 2026 implementation was confirmed in this pass.
+Therefore:
+IT_AI_SCHOOL_LAYER = IMPROVED_CANDIDATE_COVERAGE
+IT_AI_CHILD_FAMILY_OPEN_PUBLIC = STILL_THIN
+
+## 115. Automotive Gateway — Okayama Automobile Maintenance Promotion Association
+
+### General Incorporated Association Okayama Automobile Maintenance Promotion Association
+Yumeiku Partners:
+- school activities: lectures on automotive environment, vehicle structure and maintenance
+- target: junior high / high school
+- free
+- school-external:
+  - use of association education center
+  - vehicle structure / maintenance lecture
+  - hands-on inspection and maintenance practice
+  - introduction to member businesses for workplace experience / internships
+- activity region: prefecture-wide by consultation
+
+Classification:
+INDUSTRY_ASSOCIATION_GATEWAY
+SCHOOL + STUDENT_EXPERIENCE
+JUNIOR_HIGH / HIGH_SCHOOL
+AUTOMOTIVE / MAINTENANCE / STEAM / CAREER
+CONSTANT_SOURCE
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6766
+https://www.oaspa.or.jp/
+
+### Branch / member population
+OASPA's current member directory separates the prefecture into branches including:
+- Kurashiki
+- Mizushima
+- Kojima
+- Tamashima
+and provides local certified maintenance-business populations.
+
+Examples:
+https://www.oaspa.or.jp/02_membersfactory_list.php?area_id=12
+https://www.oaspa.or.jp/02_membersfactory_list.php?area_id=13
+
+Research rule:
+Do not reverse-search arbitrary car dealers indefinitely.
+Use:
+ASSOCIATION -> LOCAL BRANCH -> MEMBER / EVENT -> CHILD OR STUDENT ACTIVITY.
+
+### Mizushima Car Festival
+OASPA official site currently lists a 2026-09-28 announcement for the Mizushima Car Festival.
+OASPA's archive confirms the festival was also announced in 2023, 2024 and 2025.
+The 2025 event was the 18th edition.
+A local youth organization schedule lists the 2026 festival for 2026-10-25 at the BIG parking lot; because this date is not yet extracted from the OASPA event detail itself in this pass, treat the exact 2026 date as SECONDARY_CONFIRMED / PRIMARY_DETAIL_PENDING.
+Prior-year evidence shows children participated as event staff, but the 2026 child-facing contents are not yet verified.
+
+Classification:
+OPEN_PUBLIC_EVENT_GATEWAY / RECURRING_CONFIRMED
+CURRENT_2026_EVENT_ANNOUNCEMENT
+AUTOMOTIVE / COMMUNITY / CAREER_CANDIDATE
+2026_CHILD_CONTENT = UNVERIFIED
+
+Evidence:
+https://www.oaspa.or.jp/
+https://www.oaspa.or.jp/04_event_present_backnumber.php
+https://sk-turajima.org/schedule.html
+
+Gap update:
+AUTOMOTIVE_INDUSTRY_GATEWAY = STRONG
+AUTOMOTIVE_CHILD_OPEN_PUBLIC = IMPROVED_BUT_DETAIL_PENDING
+
+## 116. Insurance education layer — Tokyo Marine Nichido Okayama Branch
+
+Yumeiku Partners record:
+- entry date: 2026-03-05
+- school program
+- "Green Class": mangrove planting / global warming
+- "Disaster Prevention Class": disaster preparedness
+- target: elementary school children, teachers and PTA
+- free
+- activity region: consultation
+
+Classification:
+SCHOOL_ONLY / CURRENT_SOURCE
+ELEMENTARY
+INSURANCE / RISK / DISASTER_PREVENTION / ENVIRONMENT
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6768
+
+Interpretation:
+This improves the insurance-sector SCHOOL layer, but no Kurashiki 2026 OPEN_PUBLIC child event was confirmed.
+LOCAL_INSURANCE_OPEN_PUBLIC = STILL_THIN
+
+## 117. Sumitomo Life — nationwide child-program SOURCE separated from local branch evidence
+
+2026 current corporate programs:
+- Sumisei After School Program
+- free programs for after-school clubs / after-school child classrooms
+- 13 program types
+- visit / online modes
+- 50 organizations recruited in 2026
+- application deadline: 2026-05-24
+- more than 550 locations and 18,200 children served through March 2026
+- 2026 is also the 49th children's painting contest
+
+Classification:
+NATIONAL_PROGRAM_SOURCE
+ELEMENTARY / AFTER_SCHOOL_ORGANIZATION
+GROUP_APPLICATION / PARTNER_SELECTION
+CHILD_SUPPORT / HEALTH / CULTURE
+
+Evidence:
+https://www.sumitomolife.co.jp/news/detail/20260403102231.html
+https://www.sumitomolife.co.jp/about/sustainability/important/stakeholder/community.html
+
+Kurashiki caution:
+The 2026 Enterprise Manabi Gakusha roster establishes Sumitomo Life Kurashiki Takumi Branch as a current SCHOOL SOURCE in Kurashiki.
+However, this pass did not confirm that a 2026 Sumisei After School implementation occurred specifically in Kurashiki.
+Do not localize the nationwide program without local evidence.
+
+64-roster closure status:
+SUMITOMO_LIFE_KURASHIKI_TAKUMI = CURRENT_SCHOOL_SOURCE / ADDITIONAL_LOCAL_PUBLIC_ACTIVITY_UNVERIFIED
+
+## 118. Hiroshima Bank Kurashiki Branch — roster closure
+
+Current local footprint is confirmed at Kurashiki Branch.
+The 2026 Enterprise Manabi Gakusha roster establishes it as a current school-facing SOURCE.
+
+This pass did not find a separate 2026 Kurashiki child/family OPEN_PUBLIC financial-education activity from the branch.
+
+Classification:
+CURRENT_SCHOOL_SOURCE
+FINANCE / CAREER
+LOCAL_OPEN_PUBLIC = NO_ADDITIONAL_LOCAL_EVIDENCE_IN_THIS_PASS
+
+Important wording:
+This means "not found in this pass", not "does not exist".
+
+Evidence:
+2026 Enterprise Manabi Gakusha official roster
+https://www.hirogin.co.jp/network/loancenter/kurashiki/
+
+## 119. Okayama Prefectural Police — normalize out of company count
+
+Yumeiku Partners current record:
+- entry date: 2026-03-05
+- activity region: whole prefecture
+- school activity includes crime-victim / human-rights / safety education
+- schedule and location are arranged by consultation
+
+Classification:
+GOVERNMENT_SOURCE
+SCHOOL / CAREER / SAFETY / HUMAN_RIGHTS
+CURRENT_2026
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6570
+
+Data-model correction:
+Okayama Prefectural Police appears in the 64-organization Enterprise Manabi Gakusha population but must not be counted as an "enterprise".
+Keep it as a SOURCE in the same education graph while separating:
+ORGANIZATION_TYPE = GOVERNMENT.
+
+## 120. "Okayama Kids Workplace Visit Day" — new access-condition Gateway
+
+The Okayama Board of Education continues the "Okayama Kids Workplace Visit Day" scheme in 2026.
+Purpose:
+- children visit the workplace of a parent / guardian during school holidays
+- see adults at work
+- may experience work-related activities
+- support children's views of work / careers and family dialogue
+
+Current 2026 status:
+- official program page updated 2026-08-26
+- 2026 recruitment notice published 2026-07-06
+- the current program page still surfaces prior-year participant-business lists rather than a verified complete 2026 company list
+
+Classification:
+GATEWAY = EMPLOYEE_FAMILY_WORKPLACE_VISIT
+PARTNER_ONLY / EMPLOYEE_FAMILY_ONLY
+CHILD / FAMILY
+CAREER / WORKPLACE_EXPOSURE
+CURRENT_PROGRAM_2026
+
+Evidence:
+https://www.pref.okayama.jp/site/16/561997.html
+https://www.pref.okayama.jp/site/255/984584.html
+
+Date-caution note:
+A search-result snippet previously appeared to label one implementation-schedule release as 2026, while opening that page showed it was actually the 2025 release.
+Do not use search-result year alone.
+The 2026 continuation is supported by the official 2026 recruitment page and the program page updated 2026-08-26.
+
+Research value:
+This Gateway can reveal enterprises that provide child workplace experiences but are invisible to OPEN_PUBLIC event searches.
+
+## 121. Dream-Partners cross-check — existing Kurashiki SOURCE strengthened
+
+### Mizushima Foundation
+The Dream Partners record independently confirms:
+- school and school-external environmental education
+- elementary through high school targets
+- facility / field / workshop / internship modes
+- direct historical implementations at Kurashiki schools including Mizushima Elementary, Fukuda-area elementary schools and Mizushima Junior High
+
+Evidence:
+https://www.pal.pref.okayama.jp/pal/search/yumedtl.aspx?stdycd=6770
+
+Interpretation:
+This does not create a duplicate SOURCE.
+It strengthens the already-known Mizushima environmental-learning network and demonstrates why multi-Gateway evidence should merge into one SOURCE record with multiple activity / evidence edges.
+
+## 122. Maturity update — 2026-10-08 batch
+
+NEW HIGH-VALUE GATEWAYS:
+- YUMEIKU_PARTNERS_131
+- OASPA_AUTOMOTIVE_ASSOCIATION
+- EMPLOYEE_FAMILY_WORKPLACE_VISIT_DAY
+
+NEW / IMPROVED SOURCE LAYERS:
+- SynQ Creative: AI / creative / inquiry, prefecture-wide candidate
+- OASPA: automotive lecture + practical training + member placement
+- Tokyo Marine Nichido Okayama Branch: elementary disaster / environment education
+- Sumitomo Life: nationwide after-school program separated from local branch evidence
+- Okayama Prefectural Police: government education SOURCE normalized
+
+64-ROSTER CLOSURE:
+- Hiroshima Bank Kurashiki Branch: CURRENT_SCHOOL / no additional local public evidence this pass
+- Sumitomo Life Kurashiki Takumi: CURRENT_SCHOOL / national child program exists / local implementation unverified
+- Okayama Prefectural Police: CURRENT_GOVERNMENT_SOURCE; exclude from company count
+- Entrepreneurship Lab: already normalized in #108 as university-student-led program, exclude from company count
+
+SATURATION:
+- KOJIMA_TEXTILE = SATURATED_FOR_PILOT (unchanged)
+- No new category declared SATURATED in this batch.
+
+IMPROVED_NOT_SATURATED:
+- FINANCE_OPEN_PUBLIC
+- AUTOMOTIVE_GATEWAY
+- INSURANCE_SCHOOL
+- IT_AI_SCHOOL_CANDIDATES
+
+STILL_THIN:
+- IT_AI_CHILD_FAMILY_OPEN_PUBLIC
+- AUTOMOTIVE_CHILD_OPEN_PUBLIC 2026 exact content
+- LOCAL_INSURANCE_OPEN_PUBLIC
+- FUNAO_CHILD_OPEN_PUBLIC
+- NAKASHO_PRIVATE_ENTERPRISE_OPEN_PUBLIC
+
+NEXT PRIORITY:
+1. Filter Yumeiku Partners for Kurashiki / prefecture-wide candidates, prioritizing genuinely new SOURCE types rather than known duplicates.
+2. Resolve the 2026 Mizushima Car Festival primary event detail and child-facing activities.
+3. Reverse-search OASPA Kurashiki / Mizushima / Tamashima / Kojima members only when the association or event evidence suggests education access.
+4. Continue Nakasho / Funao OPEN_PUBLIC gap scan.
+5. Finish remaining 64-roster entities with explicit closure states rather than infinite reverse search.
