@@ -1866,3 +1866,345 @@ Priority:
 5. Saturation判定
 
 岡山で確立した深度をそのまま適用する。
+
+
+## 27. Hiroshima Second Pass — West / North block
+
+Date: 2026-10-08
+
+Target:
+- 廿日市市
+- 大竹市
+- 安芸高田市
+- 北広島町
+- 安芸太田町
+- 三次市
+- 庄原市
+
+Method:
+岡山25自治体で確立した
+SYSTEM SOURCE / YOUTH ACTION / GROWTH ROUTE / SATURATION
+の差分探索を適用。
+
+### A. 廿日市市 — SYSTEM LAYER CONFIRMED
+
+First Passで既確認:
+- こども計画
+- 自然 / 農業 / スポーツ / こども商店街
+- 宮島 / 吉和等の地域資産
+
+Second Pass:
+コミュニティ・スクールと地域学校協働活動の一体運用をCURRENT確認。
+
+- 地域学校協働本部を複数校区で運用
+- 放課後子ども教室を校区ごとに実施
+- 学習支援、地域交流等
+- 2026年度も地域と学校の連携・協働体制構築事業の目標設定あり
+
+Evidence:
+- https://www.city.hatsukaichi.hiroshima.jp/soshiki/58/99258.html
+- https://www.city.hatsukaichi.hiroshima.jp/uploaded/attachment/78809.pdf
+
+Assessment:
+イベント列挙より、
+校区単位の地域学校協働本部をSYSTEM SOURCEとして保持する方が価値が高い。
+
+State: **HIGH_MATURITY / NETWORK_RICH**
+
+### B. 大竹市 — GROWTH ROUTE STRONG
+
+既存SOURCE:
+大竹市地域学校協働本部。
+
+2026 CURRENT:
+- 放課後子ども教室
+- らんらんカレッジ サマースクール / ウィンタースクール
+- ジュニアリーダーズクラブ
+
+ジュニアリーダー育成:
+- 小5〜高校生
+- 環境問題
+- 防災
+- 宿泊研修
+- イベント企画
+- グループワーク
+- リーダーシップ / コミュニケーション
+
+Evidence:
+- https://www.city.otake.hiroshima.jp/soshiki/kyoikuiinkai/shogai/chiikigakkou/9222.html
+- https://www.city.otake.hiroshima.jp/soshiki/somu/kikakuzaisei/gyomu/3/2/r8koho/8747.html
+
+Assessment:
+小学生の放課後体験
+→ 小5〜高校生のジュニアリーダー
+という明確な成長ルート。
+
+State: **VERY_HIGH_MATURITY / GROWTH_ROUTE_CONNECTED**
+
+### C. 安芸高田市 — CULTURAL YOUTH PIPELINE FOUND
+
+#### 親子で挑戦「神楽教室」2026 — NEW CURRENT OPEN SOURCE
+
+2026-10-06募集開始。
+- 小1〜中3推奨
+- 全6回
+- 現役神楽団員が少人数指導
+- 太鼓
+- 舞
+- 衣装
+- 手物制作
+- 最終回に実演
+- 無料
+- 定員10名程度
+
+主催:
+一般社団法人NEXTひろしま神楽プロジェクト
+後援:
+安芸高田市 / 教育委員会
+
+Evidence:
+- https://www.akitakata.jp/ja/shisei/section/syoukou/q497/
+
+#### 子ども神楽団ネットワーク
+
+2026第7回安芸高田こども神楽発表大会では、
+市内外の多数の子ども神楽団 / ジュニア団体が出演。
+
+Evidence:
+- https://www.akitakata.jp/ja/shisei/section/syoukou/e160/
+
+#### まちづくり助成金 — SUPPORTING SOURCE
+
+2026も前後期で募集。
+対象例として:
+- 高校生の放課後の学び場
+- 自然の中での子育て活動
+- 若者による地域課題解決
+- 地場産品 / 伝統芸能の新企画
+を市が明示。
+
+Evidence:
+- https://www.akitakata.jp/ja/shisei/section/kikaku/machizukuri/
+
+Assessment:
+First Passでは神楽を「文化資産」として保持していたが、
+Second Passで
+文化資産 → 継続学習 → 子ども団体 → 発表
+という成長経路が具体化。
+
+State: **NOT_SATURATED / CULTURE_GROWTH_ROUTE_HIGH**
+
+### D. 北広島町 — HIGH-SCHOOL COMMUNITY ACTION + REGIONAL CLUB
+
+#### 高校生の観光振興参画 — CURRENT YOUTH ACTION
+
+2026:
+町内高校生が
+- 神楽公演運営
+- 観光振興
+- 地域の自然 / 文化発信
+等へボランティア参加。
+
+町は若者の地域参画を、
+成長・地元愛・郷土への誇りにつなげると明示。
+
+Evidence:
+- https://www.town.kitahiroshima.lg.jp/soshiki/11/42863.html
+
+#### 高校生の町内企業見学 — CURRENT RECURRING
+
+2026-09-07:
+高校1年生が町内企業を訪問。
+町は「毎年企業見学を実施」と明記。
+
+Evidence:
+- https://www.town.kitahiroshima.lg.jp/soshiki/11/33241.html
+
+#### 地域スポーツクラブ活動体制整備
+
+中学生が地域スポーツ / 文化活動を継続できるよう、
+地域クラブ活動の助成制度を運用。
+
+Evidence:
+- https://www.town.kitahiroshima.lg.jp/soshiki/5/50960.html
+
+Assessment:
+教育民泊だけでなく、
+中学生地域クラブ
+→ 高校生企業理解 / 地域ボランティア
+という成長ルートが存在。
+
+State: **HIGH_MATURITY / YOUTH_ACTION_RICH**
+
+### E. 安芸太田町 — POLICY + ACCESS INFRASTRUCTURE
+
+既存最重要SOURCE:
+特色ある体験活動支援事業
+（町内小中学生が町内アクティビティを無料体験）。
+
+Second Pass:
+2026-09-30更新の教育委員会で、
+- 子どもの意見表明と尊重
+- 自然保育・教育
+- 地域と学校の連携・協働体制構築事業
+- 放課後子ども教室補助
+をCURRENTな教育政策系統として確認。
+
+Evidence:
+- https://www.akiota.jp/site/kyoiku/
+
+Assessment:
+「体験料を支援する制度」と
+「学校・地域を接続する制度」が両方ある。
+GROWgleではSUPPORTING_INFRASTRUCTURE代表地域として扱う。
+
+State: **VERY_HIGH_MATURITY / ACCESS_SUPPORT_MODEL**
+
+### F. 三次市 — DISTRIBUTED AFTERSCHOOL SYSTEM CONFIRMED
+
+#### 放課後子ども教室
+
+現行ページで9か所。
+- 小1〜6
+- 地域施設 / 学校
+- 地域住民参画
+- 学習
+- スポーツ
+- 文化活動
+- 地域交流
+- 住民自治組織等が運営
+
+2026年度放課後児童クラブ案内でも、
+No.23〜31が地域実施の放課後子ども教室と明記。
+
+Evidence:
+- https://www.city.miyoshi.hiroshima.jp/soshiki/49/31081.html
+- https://www.city.miyoshi.hiroshima.jp/site/kosodate/32359.html
+
+#### 部活動地域展開
+
+2026施政方針で、
+子どもが「やりたい / やってみたい」スポーツ・文化芸術活動を続ける環境として、
+休日部活動の地域展開を推進。
+
+Evidence:
+- https://www.city.miyoshi.hiroshima.jp/site/mayor/37316.html
+
+Assessment:
+First Passで確認した
+- スポーツ・文化補助
+- 学びの多様化学校
+に加え、
+小学生放課後 → 中学生地域活動
+の年齢接続を確認。
+
+State: **VERY_HIGH_MATURITY / SYSTEM_CONNECTED**
+
+### G. 庄原市 — BACKLOG PARTIALLY RESOLVED
+
+First Passでは:
+自然・農林畜産ポテンシャルは高いが、
+2026の公開子ども体験をFirst-partyで十分確定できず。
+
+Second Passで以下を確認。
+
+#### 県立広島大学 庄原キャンパス — MAJOR REGIONAL SOURCE
+
+2026公開講座:
+- 農業
+- 環境科学
+- 遺伝子解析
+等。
+
+庄原市教育委員会と大学の連携による市民公開講座も継続実績。
+2025年度には、
+小3〜6・中学生向けの大学実験室での理科実験講座を実施。
+
+Evidence:
+- https://www.pu-hiroshima.ac.jp/site/koukai-kouza/list93-2200.html
+- https://www.pu-hiroshima.ac.jp/site/koukai-kouza/s-kouza20250825.html
+
+Judgment:
+大学側をSOURCE MASTERとして監視する価値が高い。
+2026の公開講座すべてが子ども対象とは限らないため、
+対象年齢は個別に確認する。
+
+#### 保育園留学 — NEW 2026 RELATIONSHIP-Population SOURCE
+
+2026施政方針で新規事業化。
+市外の子どもが1〜2週間、
+市内保育所等へ通いながら家族で地域に滞在。
+
+目的:
+- 子ども主役の暮らし体験
+- 地域と利用家族の関係構築
+- 関係人口
+- 二地域居住
+
+Evidence:
+- https://www.city.shobara.hiroshima.jp/main/government/seisaku/cat01/post_1963.html
+- https://www.city.shobara.hiroshima.jp/main/2026/02/7ea1b3b141ecf1934518bddf4ba6bdf5_1.pdf
+
+Classification:
+- EARLY_CHILDHOOD / FAMILY
+- REGIONAL_LIFE_EXPERIENCE
+- CURRENT_NEW_2026
+- SUPPORTING_INFRASTRUCTURE
+
+#### 庄原ファンクラブ「え～農体験」 — CURRENT WORKS/NATURE SOURCE
+
+2026:
+- りんご摘果
+- 牧場散歩 / チーズ作り
+等の農体験を実施。
+
+会員限定だが、市外参加者と地域の農業 / 暮らしを接続するSOURCE。
+
+Evidence:
+- https://www.city.shobara.hiroshima.jp/event/2026/05/07/post_978.html
+- https://www.city.shobara.hiroshima.jp/event/2026/05/15/post_985.html
+
+Assessment:
+庄原は「子ども向けイベントがない」のではなく、
+大学 / 関係人口 / 農体験という複数の入口に情報が分散していた。
+
+State: **BACKLOG_REDUCED / NOT_SATURATED**
+
+Remaining:
+- 小中学生が直接申し込める2026大学公開講座
+- 教育委員会の青少年 / 放課後SYSTEM
+- 農林畜産のOPEN_PUBLIC体験
+のCURRENT確認。
+
+## 28. Hiroshima West / North block conclusion
+
+### Very high maturity
+- 大竹市
+- 安芸太田町
+- 三次市
+
+### High maturity
+- 廿日市市
+- 北広島町
+
+### Still valuable to deepen
+- 安芸高田市: 文化→子ども団体→若者活動
+- 庄原市: 大学 / 農林畜産 / 教育行政SYSTEM
+
+### Important calibration difference from Okayama
+
+広島西部・北部では、
+First Passの時点ですでにSYSTEM SOURCEをかなり拾えていた。
+
+Therefore Second Pass is shifting from:
+「隠れた制度の発見」
+to:
+「制度 → 年齢接続 → 若者主体化 → CURRENT活動」
+の確認へ。
+
+Next:
+- 広島東部
+- 中央東部
+- 呉 / 江田島
+- 広島市 / 安芸郡
+を同じ差分方式で走査。
