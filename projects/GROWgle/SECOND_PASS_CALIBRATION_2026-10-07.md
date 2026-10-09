@@ -2932,3 +2932,502 @@ Next:
 兵庫はFirst Passで41市町を一巡済みのため、
 全件再検索ではなく、
 CheckpointのSecond Pass重点地域から優先する。
+
+
+## 35. Hyogo Second Pass — Priority Harima / West Harima block 1
+
+Date: 2026-10-09
+
+Target:
+- 高砂市
+- 播磨町
+- 小野市
+- 西脇市
+- 多可町
+- 相生市
+- 赤穂市
+- 太子町
+- 市川町
+- 福崎町
+- 神河町
+
+Method:
+First Pass重点地域について、
+REGION_IDENTITY → SYSTEM SOURCE → YOUTH ACTION → GROWTH ROUTE → PUBLIC ACCESS
+の順に差分確認。
+
+### A. 高砂市 — VERY HIGH MATURITY / INDUSTRY + CIVIC YOUTH
+
+#### 企業体験 — CURRENT 2026
+
+高砂夏休み子ども教室（カネカ高砂工業所）:
+- 工場バスツアー
+- 製品学習
+- カネカロンを使ったものづくり
+- 企業社員が直接指導
+- 小学生向け
+
+Evidence:
+- https://www.city.takasago.lg.jp/gyoseisite/kosodate_kyoiku/kenzenikusei_seishonen/2/12203.html
+
+市の若者・青少年育成ページには、
+2026:
+- 三菱重工業での夏休み子ども教室
+- 中学生サイエンスキャンプ
+- 若者チャレンジ支援窓口
+- 中高生世代学習応援
+等も集約。
+
+Evidence:
+- https://www.city.takasago.lg.jp/gyoseisite/kosodate_kyoiku/kenzenikusei_seishonen/2/2/index.html
+
+#### こども・若者政策参加 — CURRENT
+
+2026-08-02:
+市内小中学生13名が
+「市長と話そう！高砂市がこんなまちになったらいいな」
+へ参加。
+
+子ども自身が
+- 市の現状
+- 将来
+- 自分たちにできること
+を考え、市長へ意見。
+
+Evidence:
+- https://www.city.takasago.lg.jp/soshikikarasagasu/kodomowakamonoseisakuka/seisaku_keikaku/1_1/14182.html
+
+#### 若者未来会議 / 子ども・子育て・若者会議
+
+高校生世代〜若者の居場所や政策を扱う若者部会を継続。
+2026年度も子ども・子育て・若者会議を開催。
+
+Evidence:
+- https://www.city.takasago.lg.jp/gyoseisite/kosodate_kyoiku/kosodateshien/12063.html
+
+Assessment:
+工業都市資産が
+小学生企業体験
+→ 中学生科学
+→ 高校生世代若者政策
+へ接続。
+
+State:
+**VERY_HIGH_MATURITY / INDUSTRY_CIVIC_GROWTH_ROUTE**
+
+### B. 播磨町 — ARCHAEOLOGY SYSTEM + AFTERSCHOOL
+
+#### 放課後子ども教室「みんなでアソビバ！」 — SYSTEM SOURCE
+
+2016年度から継続。
+地域と学校の連携・協働体制構築事業として運用。
+
+2026-07-28更新で現行制度として確認。
+
+Evidence:
+- https://www.town.harima.lg.jp/gakkokyoiku/haratakikata2025.html
+
+#### 郷土資料館 親子体験教室 — CURRENT 2026
+
+2026年度年間予定を公開。
+例:
+- 土器づくり
+- 埴輪づくり
+- 古代窯
+- 大中遺跡の絵
+- ミニ竪穴住居
+
+小学生から中高生・大人まで参加可能な回もある。
+
+Evidence:
+- https://www.town.harima.lg.jp/kyodoshiryokan/kanko/kyodoshiryokan/kyoshitsu/taikenn.html
+- https://www.town.harima.lg.jp/mobile/kyodoshiryokan/r8minitateanazyukyo.html
+
+#### 大中遺跡 — LIVE HERITAGE SOURCE
+
+2026年には実際の発掘調査現場も見学可能。
+大中遺跡は町内中学生が発見した歴史を持つ。
+
+Evidence:
+- https://www.town.harima.lg.jp/kyodoshiryokan/0521osirase.html
+
+Assessment:
+First Passの「考古体験」は、
+単発イベントではなく
+郷土資料館年間SOURCE + 放課後SYSTEM
+として構造化できる。
+
+工業 / 海の公開子ども体験はまだ弱い。
+
+State:
+**HIGH_MATURITY_IN_CULTURE / INDUSTRY_ACCESS_GAP**
+
+### C. 小野市 — ALL-SCHOOL COMMUNITY SYSTEM + LOCAL INDUSTRY EDUCATION
+
+#### コミュニティ・スクール — CITY-WIDE SYSTEM
+
+2025年度から
+市立小・中・特別支援学校全13校で導入。
+
+地域学校協働活動として:
+- 見守り
+- 環境整備
+- 部活動支援
+- 学習支援
+- 体験活動
+- 地域ゲストティーチャー
+- トライやる支援
+を位置付け。
+
+Evidence:
+- https://www.city.ono.hyogo.jp/kosodate_gakko/school/shochugakko/14129.html
+
+#### 播州そろばん — CURRENT MULTI-AGE INDUSTRY CULTURE
+
+2026-08-07、
+第52回小野市珠算競技大会。
+
+対象:
+- 小学4年以下
+- 小5・6
+- 中高生
+- シニア
+
+小野市 / 商工会議所 / 珠算振興会が共同開催。
+
+Evidence:
+- https://www.city.ono.hyogo.jp/soshikikarasagasu/chiikishinkobu_sangyosozoka/gyomuannai/4/6/10682.html
+
+Assessment:
+そろばん産業は「見学イベント」より、
+子どもが技能を継続して身につけ競技する文化として地域教育へ接続。
+
+刃物 / ものづくりのOPEN_PUBLIC導線は引き続き差分探索対象。
+
+State:
+**HIGH_MATURITY / LOCAL_SKILL_SYSTEM**
+
+### D. 西脇市 — Banshu-ori CONNECTION CONFIRMED
+
+#### みらフェス 2026 — INDUSTRY / SCHOOL / UNIVERSITY GATEWAY
+
+2026 current:
+- 西脇高校: 科学体験、播州織小物
+- 西脇工業高校: ものづくり
+- 西脇北高校: 播州織ワークショップ
+- 兵庫教育大学
+- 光洋機械産業
+- Panasonic
+- NPO
+等が子ども向け体験を提供。
+
+Evidence:
+- https://www.city.nishiwaki.lg.jp/miraie/ivent/reiwa_8/29951.html
+
+Existing SOURCE:
+Miraie / こどもプラザ（小1〜18歳）。
+
+Assessment:
+First Passで残っていた
+「播州織 → 子ども体験」
+の接続を2026 currentで確認。
+
+地域高校が
+地域産業を子どもへ翻訳する中間SOURCEになっている。
+
+State:
+**VERY_HIGH_MATURITY / TEXTILE_EDUCATION_GATEWAY**
+
+### E. 多可町 — SUGIHARA PAPER AS SCHOOL-WIDE CULTURAL ROUTE
+
+#### 杉原紙 — ALL-ELEMENTARY SCHOOL EXPERIENCE
+
+2026:
+多可町の全小学校で、
+6年生が杉原紙を自ら紙すきし、
+卒業証書を制作する取組を確認。
+
+Evidence:
+- https://www.town.taka.lg.jp/matsuies/topics/?pageID=2
+
+4年生親子活動でも、
+杉原紙を使ったうちわ制作。
+
+Evidence:
+- https://www.town.taka.lg.jp/matsuies/topics/?pageID=1
+
+#### 杉原紙展示・体験工房 — PERMANENT SOURCE
+
+町設置の展示・体験施設。
+杉原紙研究所が管理運営。
+
+Evidence:
+- https://www.town.taka.lg.jp/about_taka/mokuzou/detail/id%3D18275
+
+#### 那珂ふれあい館 — PUBLIC ACTIVITY SOURCE
+
+参加者の年齢を含むWeb申込を備えたイベントSOURCE。
+
+Evidence:
+- https://www.town.taka.lg.jp/nakafure_app/
+
+Assessment:
+杉原紙は
+学校教育
+→ 親子活動
+→ 常設体験施設
+という複数導線で継承。
+
+First Passの「学校内で濃いが公開導線不明」はかなり解消。
+
+播州織 / 森林については追加余地あり。
+
+State:
+**HIGH_MATURITY / CULTURE_TRANSFER_SYSTEM**
+
+### F. 相生市 — PERON AS CROSS-AGE REGIONAL CURRICULUM
+
+2026:
+- こどもの日ペーロン体験乗船
+- 小学校のペーロン体験
+- 相生産業高校1年生のペーロン体験
+を確認。
+
+Evidence:
+- https://www.city.aioi.lg.jp/uploaded/attachment/25231.pdf
+- https://www.city.aioi.lg.jp/soshiki/wakasanosho/2025gakkounoyousu.html
+
+相生ペーロン海館は
+体験乗船対応設備を備えた常設拠点。
+
+Evidence:
+- https://www.city.aioi.lg.jp/soshiki/chiikishinko/aioipe-ronkaikan.html
+
+Assessment:
+ペーロンは
+一般親子
+→ 小学生
+→ 高校生
+まで接続する地域文化教育資産。
+
+造船産業の子ども向け公開体験はまだ弱い。
+
+State:
+**HIGH_MATURITY_IN_MARITIME_CULTURE / SHIPBUILDING_ACCESS_GAP**
+
+### G. 赤穂市 — SALT / MARINE PERMANENT ACCESS
+
+#### 海洋科学館・塩の国 — CONSTANT OPEN SOURCE
+
+入館者は塩づくり体験が可能。
+小中学生も利用可能。
+常設施設として、
+赤穂の塩産業 / 海 / 科学を直接体験できる。
+
+Evidence:
+- https://www.city.ako.lg.jp/edu/shougai/shisetsu/bunka/shionokuni.html
+
+Assessment:
+First Passで不足していた
+「塩 → 公開子ども体験」の接続は、
+常設SOURCEで解消。
+
+Existing:
+赤穂こどもエコクラブ。
+
+Together:
+環境
++ 海
++ 塩産業
+の成長接続を保持。
+
+State:
+**HIGH_MATURITY / SALT_MARINE_IDENTITY_CONNECTED**
+
+### H. 太子町 — HISTORY × DIGITAL YOUTH CO-CREATION
+
+#### ぼうじぃ陣地とりゲーム — YOUTH CO-CREATION
+
+聖徳太子ゆかりの地域伝説をもとにしたゲーム。
+
+地域小学生を中心に実地版を体験。
+その後、
+- 町内小学生
+- 太子高校生
+を中心とするプログラミングクラブが
+デジタル版を制作。
+
+Evidence:
+- https://www.town.hyogo-taishi.lg.jp/soshikikarasagasu/bunkazaityousa/boujii/7860.html
+
+#### まちづくり出前講座 — MULTI-AGE LEARNING SOURCE
+
+2026の講座一覧に:
+- 太子の文化財
+- ふるさとの歴史 / ふるさと探検
+- 農業
+- 防災
+- ごみ / リサイクル
+等。
+
+小学生・中高生対象講座を複数確認。
+
+Evidence:
+- https://www.town.hyogo-taishi.lg.jp/material/files/group/2/kouhoutaishi_r804-2.pdf
+
+Assessment:
+First Passで薄かったが、
+歴史資産が
+「学ぶ」だけでなく
+子ども / 高校生によるデジタル制作へ変換されている。
+
+State:
+**NOT_SATURATED / HISTORY_DIGITAL_ROUTE_FOUND**
+
+### I. 市川町 — INDUSTRY ACCESS EXISTS, CHILD ACCESS REMAINS LIMITED
+
+#### Ichikawa GOLF Studio — CONSTANT LOCAL INDUSTRY EXPERIENCE
+
+町産ゴルフクラブ約30種を試打可能。
+3歳以上入館可能。
+
+Evidence:
+- https://www.town.ichikawa.lg.jp/info/1781
+
+#### 藤本技工「侍アイアン」クラフト体験
+
+兵庫県観光公式系で公開。
+- 12歳以上
+- 工場 / 技術見学
+- フィッティング
+- ネームプレート制作
+- 高額な本格商品体験
+
+Evidence:
+- https://www.hyogo-tourism.jp/experience/detail_5266.html
+
+Assessment:
+地域産業への一般公開導線は存在。
+ただしGROWgleの「子どもが気軽に参加できる機会」としては
+価格 / 目的の面でアクセス性が低い。
+
+Therefore:
+「ゴルフアイアン産業への接続なし」ではなく、
+**CHILD_ACCESS_GAP** と判定する方が正確。
+
+State:
+**INDUSTRY_SOURCE_CONFIRMED / CHILD_ACCESS_GAP**
+
+### J. 福崎町 — CULTURE IS STRONG, PUBLIC HANDS-ON GAP REMAINS
+
+2026-10-07:
+町内4小学校5・6年生が
+妖怪を題材にした芸術鑑賞
+「何かようかい～つながるあそび～」へ参加。
+
+妖怪文化を
+ダンス / ジャグリング / ダブルダッチ等へ変換。
+
+Evidence:
+- https://www.town.fukusaki.hyogo.jp/school/0000000897.html
+
+First Pass:
+- 農業
+- 茶道
+- 歴史遺産
+- こども議会
+等の学校地域体験を確認済み。
+
+Assessment:
+妖怪 / 柳田國男という地域色は学校教育へ強く入っている。
+しかし一般家庭が直接申し込める
+子ども向け妖怪 / 民俗 hands-on program は今回も強いCURRENT HITを確認できず。
+
+State:
+**SCHOOL_CULTURE_RICH / PUBLIC_ACCESS_GAP**
+
+### K. 神河町 — NATURE + COMMUNITY SUPPORT SYSTEM
+
+2026:
+- 小1・4「ふるさと冬の自然体験」@峰山高原
+- 大河内高原ハイキング
+- 姫路日ノ本短期大学 出張オープンカレッジ
+を確認。
+
+Evidence:
+- https://www.town.kamikawa.hyogo.jp/0000003819.html
+- https://www.town.kamikawa.hyogo.jp/0000003921.html
+
+Education system:
+- かみかわっこ育て隊（学校支援ボランティア）
+- 放課後子ども教室ボランティア
+- 2026 中学校部活動地域展開
+を教育課が運用。
+
+Evidence:
+- https://www.town.kamikawa.hyogo.jp/soshiki/2-22-0-0-0_7.html
+- https://www.town.kamikawa.hyogo.jp/soshiki/2-22-0-0-0_1.html
+
+伝統文化親子教室事業も2026募集を実施。
+
+Evidence:
+- https://www.town.kamikawa.hyogo.jp/0000001514.html
+
+Assessment:
+高原自然だけでなく、
+学校支援 / 放課後 / 地域クラブ / 伝統文化のSYSTEM層が存在。
+
+State:
+**HIGH_MATURITY / NATURE_COMMUNITY_SYSTEM**
+
+## 36. Hyogo priority block 1 conclusion
+
+### Very high
+- 高砂市
+- 西脇市
+
+### High maturity
+- 播磨町（文化・考古）
+- 小野市
+- 多可町
+- 相生市（ペーロン）
+- 赤穂市
+- 神河町
+
+### Still high-value selective gaps
+- 太子町: history/digital route newly found; more SYSTEM layer possible
+- 市川町: industry exists but CHILD_ACCESS gap
+- 福崎町: school culture rich but OPEN_PUBLIC hands-on gap
+
+### Important Hyogo pattern
+
+兵庫では、
+地域資産そのものは非常に強い。
+
+Second Passの主要課題は:
+**「地域資産があるか」ではなく、
+その資産に子どもがどの参加経路でアクセスできるか。**
+
+Need to distinguish:
+- SCHOOL_ONLY
+- FAMILY / OPEN_PUBLIC
+- PERMANENT_FACILITY
+- HIGH_COST_SPECIALTY
+- COMMUNITY_SYSTEM
+- YOUTH_CO_CREATION
+
+Next:
+兵庫Second Pass block 2:
+- 芦屋
+- 伊丹
+- 宝塚
+- 丹波篠山
+- 丹波
+- 豊岡
+- 香美
+- 新温泉
+- 南あわじ
+- 洲本
+
+with emphasis on
+arts / airport / sake / stage / manga / ceramics / dinosaurs / storks / bags / fisheries / geo / puppetry.
