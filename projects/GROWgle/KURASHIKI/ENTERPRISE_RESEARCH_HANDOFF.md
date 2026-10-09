@@ -331,3 +331,23 @@ Keep partner-only child harvest and family-accessible public festival as separat
 Insurance:
 Kurashiki disaster-cooperation lists and the recurring Disaster Prevention Fair form a strong Gateway.
 A specific 2026 insurer child/public booth remains WATCH until primary 2026 detail is confirmed.
+
+
+## 18. Global Public Listing Gate reference — 2026-10-09
+
+Enterprise research must also follow:
+`projects/GROWgle/RESEARCH_RULES.md`
+section:
+`Public Listing Gate — 公開掲載と調査保存を分離する`
+
+Operational rule:
+- research broadly; do not discard valuable SOURCE / ACTIVITY data because access is difficult
+- PUBLIC_LIST only when a child/family can realistically access the opportunity
+- SCHOOL_ONLY / PARTNER_ONLY / high-cost / group-only / individually negotiated access normally remain RESEARCH_ONLY
+- use WATCH_PUBLIC when general public access may emerge later
+- sponsored / advertising exposure must remain separate from normal listing and must not buy ranking or override child-safety / access-quality rules
+
+Therefore:
+Research Coverage > Public Listing Count.
+
+This global rule applies to classes / schools / continuous PROGRAMs found during enterprise research as well as event-like activities.
