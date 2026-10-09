@@ -301,3 +301,33 @@ Future effort should focus on:
 - domain-by-domain saturation.
 
 Revisit a roster SOURCE only when new evidence gives a reason.
+
+
+## 17. Research maturity refinements — 2026-10-09
+
+New Gateway:
+SCHOOL_X_COMMUNITY_DISASTER_PREVENTION
+Example:
+Tsurajima Kita Elementary School 2026
+-> community / PTA
+-> KAGOME Okayama Sales Office
+-> Takanashi Milk Products Okayama Factory
+-> sports / rescue / fire / disaster-prevention organizations.
+
+Use this Gateway to find company education participation that is invisible to career-education rosters.
+
+IT/AI gap correction:
+Do not label Kurashiki IT/AI broadly as thin.
+Current state:
+- child direct-access source = strong
+- free/open public current event layer = strongly improved
+- AI-specific recurring public layer = still limited
+
+Funao search discipline:
+After a targeted pass, no current 2026 directly bookable child/family grape-harvest public route was confirmed.
+Do not repeat the same query without a new Gateway / seasonal source.
+Keep partner-only child harvest and family-accessible public festival as separate access modes.
+
+Insurance:
+Kurashiki disaster-cooperation lists and the recurring Disaster Prevention Fair form a strong Gateway.
+A specific 2026 insurer child/public booth remains WATCH until primary 2026 detail is confirmed.
