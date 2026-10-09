@@ -7702,3 +7702,238 @@ New work should either:
 - fill a geography / age / industry gap
 - establish a recurrence / growth route
 - or support a saturation decision
+
+
+## 141. IT / AI / GAME open-public layer — Fortnite Kurashiki Bikan District Map — 2026-10-09
+
+### Fortnite "Kurashiki Bikan Historical Quarter Map" opening event
+Official current:
+- event date: 2026-10-25
+- time: 09:00–17:00
+- venue: Kurashiki City Hall Disaster Prevention and Crisis Management Center 1F
+- target: elementary school and older
+- elementary children require guardian
+- main-event capacity: 200 by lottery
+- fee: free
+- application period: 2026-09-01 to 2026-09-30
+- application is already closed; lottery results were announced 2026-10-08
+
+Program:
+- public explanation of the Fortnite Kurashiki Bikan Historical Quarter map
+- game-creator career lecture by tenshabi Inc.
+- professional esports career lecture by SETOUCHI SPARKS
+- pro-player demonstration / interaction match
+- game-creation workshop
+- workshop: 10 groups x 3 sessions = 30 groups total
+
+Technical / local-asset layer:
+- uses MLIT PLATEAU 3D city-model data
+- recreates Kurashiki Bikan Historical Quarter inside Fortnite
+- links local cultural / tourism asset to UEFN / game production / esports
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026 / FREE / LOTTERY
+ELEMENTARY+ / FAMILY / JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+GAME_DEV / IT / DIGITAL_TWIN / 3D / ESPORTS / CAREER / TOURISM_TECH
+hands_on: VERY_HIGH
+Region: Kurashiki central
+
+Provider graph:
+MUNICIPALITY
+-> tenshabi Inc. (game production)
+-> SETOUCHI SPARKS (professional esports)
+-> young participants
+-> local digital asset / tourism promotion
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/culture/tourism/1014722/1026827.html
+https://www.pal.pref.okayama.jp/pal/search/searchdtl.aspx?stdycd=14137
+https://apply.e-tumo.jp/city-kurashiki-okayama-u/offer/offerDetail_initDisplay?accessFrom=&tempSeq=60481
+
+Gap update:
+IT_AI_FREE_OR_ONE_OFF_CHILD_OPEN_PUBLIC = STRONGLY_IMPROVED
+
+## 142. SETOUCHI SPARKS — Kurashiki / Funao-based professional esports SOURCE
+
+Current official / corporate profile:
+- professional esports team
+- operator: Bigman Project Co., Ltd.
+- headquarters: Funao-cho Funao, Kurashiki
+- current activities extend beyond competition into:
+  - education
+  - production
+  - community events
+  - welfare
+- 2026 competition/activity record is current
+- participates in the 2026-10-25 Kurashiki Fortnite public event as provider
+
+Classification:
+LOCAL_PRIVATE_SOURCE
+OPEN_PUBLIC_EVENT_PROVIDER / CAREER_ROLE_MODEL / DIGITAL_CULTURE
+YOUTH / STUDENT / GENERAL
+ESPORTS / GAME / STREAMING / PRODUCTION / CAREER
+CURRENT_2026
+Region: 船穂 / Kurashiki-wide activity
+
+Evidence:
+https://setouchi-sparks.com/
+https://www.ryobi.co.jp/company/sports/esports
+https://www.city.kurashiki.okayama.jp/culture/tourism/1014722/1026827.html
+
+GROWgle note:
+This materially changes Funao's profile.
+Funao should not be represented only as grapes / winery / agriculture.
+It also contains a professional esports / digital-industry SOURCE with city-wide outreach.
+
+Funao local-meaning update:
+AGRICULTURE / GRAPE / WINE
++
+DIGITAL / ESPORTS / YOUTH CAREER
+
+## 143. New Gateway — school/community disaster-prevention collaboration
+
+Kurashiki City current "school-linked activity" page confirms a 2026 local disaster-prevention event centered on Tsurajima Kita Elementary School.
+
+### 2026 Tsurakita Disaster Prevention Festival
+Current official:
+- school + PTA + neighborhood + community organizations
+- more than 100 participants
+- local children / teachers / residents
+- company / organization providers included:
+  - KAGOME Okayama Sales Office
+  - Takanashi Milk Products Okayama Factory
+  - Renaissance Tamashima sports club
+  - Search & Rescue Dog Kibi.auf
+  - Mizushima Fire Department
+  - Kurashiki Disaster Prevention Specialists Association
+  - Kurashiki City disaster-prevention division
+
+Classification:
+SCHOOL_COMMUNITY_EVENT
+SCHOOL / COMMUNITY / PARTNER
+ELEMENTARY / FAMILY / LOCAL_RESIDENT
+DISASTER_PREVENTION / FOOD / HEALTH / COMMUNITY
+CURRENT_2026
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/anzen/disaster/1012505/1019539/1019542.html
+
+Gateway:
+SCHOOL_X_COMMUNITY_DISASTER_PREVENTION
+-> participating companies / local facilities
+-> reverse lookup as education SOURCE candidates
+
+Important:
+Do not infer each participating company's exact 2026 booth content unless separately confirmed.
+
+GROWgle note:
+This Gateway is distinct from:
+- Enterprise Manabi Gakusha
+- school independently invited career-education partners
+- Dream Partners
+- public fairs
+It captures companies that enter children's learning through community safety / disaster-prevention activity.
+
+## 144. Insurance / disaster Gateway strengthened, 2026 local open-public provider still unresolved
+
+Kurashiki City's current disaster-cooperation lists include:
+- Mitsui Sumitomo Insurance
+- Sompo Japan
+- Aioi Nissay Dowa Insurance
+alongside finance / transport / industry and other disaster-cooperation organizations.
+
+The 2026 Kurashiki Disaster Prevention Fair:
+- event date: 2026-11-22
+- venue: Tamashima-no-Mori
+- current official page updated 2026-10-08
+- is a recurring, hands-on disaster-prevention event
+- operates with corporate / organizational cooperation
+- detailed 2026 brochure is now published by the city
+
+2025 historical evidence:
+- General Insurance Association of Japan made its first Kurashiki Disaster Prevention Fair appearance in 2025
+- confirms that the non-life insurance sector has already entered Kurashiki's family/public disaster-learning layer
+
+However:
+- in this pass, a specific 2026 insurer booth / child activity could not be textually verified from primary content
+- do not promote a 2025 booth into a 2026 activity
+
+Classification:
+INSURANCE_DISASTER_GATEWAY = STRONG
+2026_LOCAL_INSURANCE_OPEN_PUBLIC_ACTIVITY = WATCH / PRIMARY_DETAIL_PENDING
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/anzen/disaster/1012507/1002681.html
+https://www.city.kurashiki.okayama.jp/anzen/disaster/1012507/1002628/1018652/1019493/1019505.html
+https://www.sonpo.or.jp/news/branch/chugoku-shikoku/2025/index.html
+
+## 145. Funao child hands-on open-public targeted pass — no strong current hit
+
+Targeted 2026 search rechecked:
+- Funao Winery summer festival
+- GRAPE SHIP
+- Funao Agricultural Corporation / agriculture routes
+- local schools / municipal pages
+- public tourism sources
+
+Confirmed:
+- family-accessible Funao Winery public events exist
+- local children have partner-only grape harvesting / juice-making routes through GRAPE SHIP
+- university students have harvest / product-development routes
+- Funao Agricultural Corporation runs grape-production volunteer support / "enno-tai" routes for adults / general volunteers
+
+Not confirmed in this pass:
+- a 2026 OPEN_PUBLIC child/family grape-harvest or hands-on farm program that anyone can directly book
+
+Therefore:
+FUNAO_CHILD_HANDS_ON_OPEN_PUBLIC = STILL_THIN / TARGETED_PASS_NEGATIVE
+FUNAO_CHILD_PARTNER_ONLY_HANDS_ON = STRONG
+FUNAO_FAMILY_PUBLIC_EVENT = STRONG
+FUNAO_AGRICULTURE_ADULT_GENERAL_PARTICIPATION = PRESENT
+
+Evidence:
+https://citysales.city.kurashiki.okayama.jp/special/vol53/
+https://www.okayama-kanko.jp/event/detail_16035.html
+https://www.city.kurashiki.okayama.jp/culture/tourism/1002026/1024892.html
+
+Research interpretation:
+Do not keep repeatedly searching the same "Funao grape harvest for families" query without a new Gateway.
+Revisit when:
+- next season's agriculture-association schedule appears
+- a local farm publishes booking
+- school / nursery partner activity opens to public
+- municipal tourism source adds a hands-on product.
+
+## 146. Discovery-yield / maturity update
+
+New high-value SOURCE:
+- SETOUCHI SPARKS
+- tenshabi Inc. as game-production event provider
+- KAGOME Okayama Sales Office / Takanashi Milk Products Okayama Factory as 2026 school-community provider candidates
+
+New Gateway:
+- SCHOOL_X_COMMUNITY_DISASTER_PREVENTION
+- DISASTER_COOPERATION_COMPANY_LIST
+
+Gap updates:
+- IT_AI_FREE_OR_ONE_OFF_CHILD_OPEN_PUBLIC = STRONGLY_IMPROVED
+- FUNAO_CHILD_HANDS_ON_OPEN_PUBLIC = STILL_THIN after targeted pass
+- INSURANCE_OPEN_PUBLIC = GATEWAY_STRONG / 2026_ACTIVITY_PENDING
+
+Saturation movement:
+- IT_AI should no longer be treated as a broad "thin" category.
+Split into:
+  - IT_AI_DIRECT_ACCESS = STRONG
+  - IT_AI_FREE_EVENT = STRONGER / MULTIPLE_CURRENT_ROUTES
+  - AI_SPECIFIC_RECURRING_PUBLIC = still limited
+
+Funao:
+- local SOURCE ecosystem = STRONG
+- child public hands-on access = thin
+- avoid repeated identical searches; wait for new Gateway / season
+
+Next:
+1. mine 2026 Kurashiki Disaster Prevention Fair brochure / participant evidence as it becomes text-accessible
+2. reverse-lookup KAGOME / Takanashi / Renaissance Tamashima only for local child-facing repeatability
+3. inspect current city event / education sources for other company-backed one-off events
+4. reassess whether broad Kurashiki Enterprise Pilot discovery yield is now flattening enough for a Pilot-level saturation checkpoint
