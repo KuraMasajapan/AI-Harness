@@ -84,3 +84,14 @@ Runtime is not considered an active blocking issue.
 ## Current development position
 v0.9.29 is no longer a candidate design. The Historical Employment Regime Replay is implemented.
 The next step is to run/inspect the v0.9.29 Historical Regime results on the user's local imported 119-event dataset and evaluate regime stability without modifying Forward OOS.
+
+## UI Hotfix — Employment Historical Regime Ratio
+Observed after v0.9.29 rollout:
+- Repeating browser error: ReferenceError: ratio is not defined
+- Cause: Employment Historical Regime table called ratio() from the wrong scope inside renderGlobalMacro.
+- Fix: use ratioOrDash() already defined in Global Macro renderer.
+- Impact: UI rendering only; no replay calculations, Forward OOS baseline, stored data, Research Champion, Paper or Live gates are changed.
+- Regression test added.
+- Validation: 221/221 tests PASS, compileall PASS, UI JavaScript syntax PASS.
+- Hotfix package: BBB_v0.9.29_EMPLOYMENT_REGIME_RATIO_UI_HOTFIX_FULL.zip
+- Hotfix SHA-256: 1af57d2fddb0cdc37f00f4805f99614fe89fe4daecffe7a9ea9bdccbdca3f07b
