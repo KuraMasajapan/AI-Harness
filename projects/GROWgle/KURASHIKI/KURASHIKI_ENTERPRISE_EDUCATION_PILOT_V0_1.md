@@ -7937,3 +7937,252 @@ Next:
 2. reverse-lookup KAGOME / Takanashi / Renaissance Tamashima only for local child-facing repeatability
 3. inspect current city event / education sources for other company-backed one-off events
 4. reassess whether broad Kurashiki Enterprise Pilot discovery yield is now flattening enough for a Pilot-level saturation checkpoint
+
+
+## 147. Japan Motorboat Racing Association Kojima Branch — child maritime experience SOURCE — 2026-10-09
+
+### Kojima Kids Festival 2026
+Current primary evidence:
+- event date: 2026-11-03
+- venue: Boat Race Kojima
+- target: elementary school children
+- capacity: 100 total, 50 morning / 50 afternoon
+- participation fee: free
+- advance application required
+- application deadline: 2026-10-18
+- program:
+  - about 30 minutes "sea classroom" using panels
+  - rescue-boat ride experience
+- provider / inquiry:
+  - Japan Motorboat Racing Association, Kojima Branch
+
+Independent recurrence evidence:
+- 2024 event report confirms the same event family:
+  - elementary children learned about sea / boats
+  - rescue-boat ride
+  - boat-racer uniform / boat-operation experience
+  - organizer: Japan Motorboat Racing Association Kojima Branch
+  - report explicitly stated intent to hold again the following year
+- 2026 current event is independently confirmed by both Kurashiki City and Boat Race Kojima official sites
+
+Classification:
+OPEN_PUBLIC / FREE / RESERVATION
+ELEMENTARY / FAMILY
+MARITIME / BOAT / WATER_SAFETY / CAREER / LOCAL_ASSET
+REPEAT_LIKELY / MULTI_YEAR_CONFIRMED
+PUBLIC_LIST
+Region: 児島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/culture/tourism/1013198/1018138/1018796.html
+https://www1.kojimaboat.jp/asp/kojima/00info/info.php?check=1
+https://tv.kct.jp/program/detail.php?id=36435
+
+GROWgle note:
+Kojima should not be represented only by textile / denim.
+A second local-asset learning axis is now explicit:
+SEA / BOAT / RESCUE / WATER SAFETY.
+Keep gambling activity itself separate; the child program is an education / maritime experience and is free.
+
+Public Listing Gate:
+PUBLIC_LIST = YES
+Reason:
+direct family application, free, child-specific, clear date / capacity / content / application path.
+
+## 148. Kurashiki Disaster Prevention Fair 2026 — current public-event detail update
+
+Current official page updated 2026-10-08 confirms:
+- event date: 2026-11-22
+- time: 10:00–15:00
+- venue: Tamashima-no-Mori
+- recurring annual event since FY2022
+- this is the fifth edition
+- described by the city as a large hands-on disaster-prevention event
+- corporate / organization cooperation is a structural part of the event
+- temporary parking includes Sumitomo Heavy Industries Okayama Works
+- Marukome Co., Ltd. supplies 1,000 freeze-dried miso products in connection with the city's emergency-alert-app booth
+
+Classification:
+OPEN_PUBLIC / RECURRING
+FAMILY / GENERAL
+DISASTER_PREVENTION / COMMUNITY / COMPANY_COLLABORATION
+PUBLIC_LIST
+Region: 玉島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/anzen/disaster/1012507/1002681.html
+
+Insurance status:
+2026 specific insurer child-facing booth remains unresolved in accessible primary text.
+Keep:
+INSURANCE_OPEN_PUBLIC_2026 = WATCH_PUBLIC / PROVIDER_DETAIL_PENDING
+
+Do not infer insurer activity from 2025.
+
+## 149. Kurashiki Environmental Fair 2026 — current public-event Gateway
+
+Official current:
+- event date: 2026-10-25
+- time: 10:00–15:00
+- venue: Mizushima Ryokuchi Fukuda Park
+- organizer: Kurashiki City
+- co-organizer: Okayama Bitchu Regional Office
+- hands-on / exhibit layer explicitly included
+- example current activity: make badges wrapped with fabric / material offcuts
+- Sports GOMI:
+  - parent / child, elementary / junior-high, high-school / university, senior
+  - teams of 3–5
+  - 30 teams
+  - free
+  - application deadline 2026-10-09
+
+Operational provider:
+- Office Dan Co., Ltd. selected as event planning / operation contractor
+- do not treat contractor status alone as an education SOURCE
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026
+ENVIRONMENT / RECYCLING / ACTION / COMMUNITY
+GATEWAY_EVENT
+PUBLIC_LIST
+Region: 水島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1011735/1003282/1003283/1003284/1022090.html
+https://www.pref.okayama.jp/site/12/1057736.html
+https://www.city.kurashiki.okayama.jp/kurashi/kankyo/1003645/1012545/1018054/1020612.html
+https://www.city.kurashiki.okayama.jp/business/contract/1013065/1014310/1016971.html
+
+Research use:
+Treat annual municipal fairs as Gateway events:
+EVENT -> exhibitor / cooperating organization -> reverse lookup.
+Do not count contractors / vendors as child education SOURCEs unless they actually provide educational content.
+
+## 150. University-linked public course Gateway — cross-track capture
+
+Kurashiki City's current winter university-linked course series contains multiple directly accessible child / youth learning events.
+
+Selected high-value current items:
+1. Child Disaster Academy hands-on day camp
+   - 2026-11-15
+   - Kurashiki University of Science and the Arts
+   - grades 4–6 + junior high
+   - tent setup, smoke, toilet issues, rope work, emergency meal / improvised tableware
+2. Smartphone vibe coding
+   - 2026-12-05
+   - Okayama Prefectural University
+   - junior high+
+   - free
+   - 50 participants
+   - application deadline 2026-11-25
+   - AI-assisted app development using smartphones
+3. Elementary winter making workshop
+   - 2026-12-19
+   - Kurashiki Sakuyo University
+   - elementary children
+   - university students join children in making activities
+   - free, 40 people
+   - application deadline 2026-12-09
+
+Classification:
+CROSS_TRACK_GATEWAY
+OPEN_PUBLIC / FREE / APPLICATION
+UNIVERSITY_X_MUNICIPALITY
+STEAM / AI / DISASTER / MAKING
+PUBLIC_LIST for individual eligible events
+Do not count out-of-city venue activities as Kurashiki-location activities merely because Kurashiki City recruits participants.
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kosodate/lifelong/1002190/1002192/1027162/index.html
+https://www.city.kurashiki.okayama.jp/kosodate/lifelong/1002190/1002192/1027162/1027163.html
+https://www.city.kurashiki.okayama.jp/kosodate/lifelong/1002190/1002192/1027162/1027165.html
+https://www.city.kurashiki.okayama.jp/kosodate/lifelong/1002190/1002192/1027162/1027167.html
+
+GROWgle note:
+This belongs primarily to the regional / education track, but retain the Gateway edge because enterprise research repeatedly intersects universities and municipal programs.
+
+## 151. Renaissance Tamashima — continuous child class SOURCE captured under Public Listing Gate
+
+Current local source:
+- Sports Club & Sauna Renaissance Tamashima 24
+- ongoing child programs include:
+  - junior swimming
+  - kids dance
+  - KIDS FIT
+  - Kawai physical education
+- current 2026/10–2027/03 swimming calendar exists
+- directly bookable trial programs exist
+- October 2026 special swimming trial sessions for ages 3–8 were offered at 550 yen / session on selected dates
+- regular course fees are materially higher and require continuing enrollment
+
+Classification:
+PRIVATE_CLASS_SOURCE
+DIRECT_ACCESS
+PRESCHOOL / ELEMENTARY / JUNIOR_HIGH
+SPORTS / SWIMMING / DANCE / PHYSICAL_LITERACY
+CONSTANT_SOURCE
+Region: 玉島
+
+Public Listing Gate:
+RESEARCH_ONLY / PUBLIC_LIST_CANDIDATE_FOR_LOW_BARRIER_TRIALS
+Reason:
+- source is valuable and direct-access
+- regular membership is a continuing paid commitment
+- individual short trial sessions can be low-barrier and may qualify separately as PUBLIC_LIST
+Do not automatically publish the full paid school merely because a low-cost trial exists.
+
+Evidence:
+https://www.s-re.jp/tamashima/school/jr/swimming/
+https://www.s-re.jp/tamashima/lp/tanki_swim/
+https://www.s-re.jp/tamashima/school/jr/kidsdance/
+https://www.s-re.jp/tamashima/school/jr/kidsfit/
+
+## 152. Tsurakita disaster-company reverse lookup result
+
+Targeted reverse lookup:
+- KAGOME Okayama Sales Office
+- Takanashi Milk Products Okayama Factory
+- Renaissance Tamashima
+
+Result:
+- Renaissance Tamashima has a clear current child direct-access learning / sports SOURCE (see #151)
+- no strong current primary evidence was found in this pass for a separate repeatable Kurashiki child program operated directly by KAGOME Okayama Sales Office
+- no strong current primary evidence was found in this pass for a separate repeatable child factory / public experience at Takanashi Milk Products Okayama Factory
+
+Therefore:
+KAGOME_OKAYAMA = 2026_SCHOOL_COMMUNITY_PROVIDER_CONFIRMED / REPEATABLE_LOCAL_PROGRAM_UNRESOLVED
+TAKANASHI_OKAYAMA_FACTORY = 2026_SCHOOL_COMMUNITY_PROVIDER_CONFIRMED / REPEATABLE_LOCAL_PROGRAM_UNRESOLVED
+RENAISSANCE_TAMASHIMA = CONTINUOUS_CHILD_SOURCE_CONFIRMED
+
+Research rule:
+A one-time appearance at a school/community event does not automatically promote a company to recurring child SOURCE.
+
+## 153. Pilot saturation checkpoint — NOT YET SATURATED overall
+
+This batch still produced materially new SOURCE / access types:
+- maritime / rescue child program from Japan Motorboat Racing Association Kojima Branch
+- municipal fair -> exhibitor reverse-lookup Gateway
+- continuing private sports-class SOURCE separated from low-barrier trial ACTIVITY
+- current university-linked AI / disaster / making public-event route
+
+Therefore:
+KURASHIKI_ENTERPRISE_PILOT = SATURATION_CANDIDATE / NOT_YET_SATURATED
+
+However, yield is changing:
+- fewer new large industrial / institutional categories
+- more discoveries now come from:
+  - access-mode resolution
+  - annual public fairs
+  - branch / store / facility-level activities
+  - cross-track municipal / university programs
+  - recurring event confirmation
+
+Interpretation:
+The Pilot is entering the "edge completion" stage, not the "population discovery" stage.
+
+Next priority:
+1. current public-event Gateways where exhibitor / provider lists expose new companies
+2. low-barrier child trial events from continuous classes, while applying Public Listing Gate strictly
+3. unresolved insurance 2026 public-detail
+4. one more broad gap scan across subarea x industry x age x access-mode
+5. if the next batches yield no materially new SOURCE type, prepare KURASHIKI_ENTERPRISE_PILOT = SATURATED_FOR_PILOT checkpoint
