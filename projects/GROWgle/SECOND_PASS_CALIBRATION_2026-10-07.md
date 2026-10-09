@@ -3431,3 +3431,566 @@ Next:
 
 with emphasis on
 arts / airport / sake / stage / manga / ceramics / dinosaurs / storks / bags / fisheries / geo / puppetry.
+
+
+## 37. Hyogo Second Pass — Priority block 2
+
+Date: 2026-10-09
+
+Target:
+- 芦屋市
+- 伊丹市
+- 宝塚市
+- 丹波篠山市
+- 丹波市
+- 豊岡市
+- 香美町
+- 新温泉町
+- 南あわじ市
+- 洲本市
+
+### A. 芦屋市 — CITY-WIDE AFTERSCHOOL SYSTEM / CULTURE HANDS-ON GAP
+
+#### あしやキッズスクエア — CURRENT 2026 SYSTEM SOURCE
+
+2026-09-15更新。
+市内在住の小学生なら参加可能。
+小学校の教室・校庭を利用し、
+- 遊び
+- 宿題
+- 体験プログラム
+を提供。
+
+市内8小学校区でスケジュールを持つ。
+
+Evidence:
+- https://www.city.ashiya.lg.jp/sports/kidssquare.html
+- https://www.city.ashiya.lg.jp/kyoiku/kyoiku/index.html
+
+#### 美術博物館 — CULTURE SOURCE
+
+2026年度も児童作品展示を継続。
+中学生以下は通常観覧無料。
+体験学習室を備える。
+
+Evidence:
+- https://www.city.ashiya.lg.jp/bijutsu/top.html
+
+Assessment:
+First Passでは自然体験が先行したが、
+Second Passで市域放課後SYSTEMを確認。
+
+ただし
+「芦屋の建築・美術・音楽」→「一般の子どもが手を動かす継続体験」
+のCURRENT公開導線は今回も弱い。
+
+State:
+**HIGH_SYSTEM_MATURITY / CULTURE_HANDS_ON_GAP**
+
+### B. 伊丹市 — AVIATION ACCESS CONFIRMED
+
+#### 大阪国際空港こども見学ツアー — CURRENT 2026
+
+2026年12月開催。
+JALコース:
+- グランドスタッフ体験
+- 格納庫見学
+- 空港施設見学
+等。
+
+Evidence:
+- https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/KUKOSEISAKU/event_1/48172.html
+
+#### 大阪国際空港体験フライト2026
+
+2026-10-02募集開始。
+- 乗務員による航空教室
+- 空港クイズ
+- J-AIR特別体験フライト
+
+Evidence:
+- https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/KUKOSEISAKU/event_1/50367.html
+
+#### 文化継承
+
+2026:
+- こども茶道教室
+- こどもいけばな体験
+を市文化施策として実施。
+
+Evidence:
+- https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/BUNKA/bunkadantaishoukai/itamishi_sadou_kyoukai/1579762199889.html
+- https://www.city.itami.lg.jp/bunka_sports/2/8/1/14224.html
+
+#### 酒文化
+
+「清酒発祥の地 伊丹」体験プログラムは2026も継続。
+ただし試飲を含む大人向け要素が強いため、
+子ども向け酒造SOURCEへ自動昇格させない。
+
+Evidence:
+- https://www.city.itami.lg.jp/SOSIKI/TOSHIKATSURYOKU/TOSID/46737.html
+
+Assessment:
+空港は地域資産→子ども職業体験への接続が明確。
+酒文化は「地域資産は強い / CHILD_ACCESS要個別確認」。
+
+State:
+**VERY_HIGH_MATURITY / AVIATION_GROWTH_SOURCE**
+
+### C. 宝塚市 — MANGA / ANIMATION PERMANENT HANDS-ON SOURCE
+
+#### 手塚治虫記念館 — CONSTANT CREATIVE SOURCE
+
+館内「アニメ工房」で、
+アニメ制作の初歩を体験できる。
+
+Evidence:
+- https://www.city.takarazuka.hyogo.jp/tezuka/4000014.html
+
+2026:
+- ゾートロープ制作
+- ソーマトロープ制作
+- アニメ工房
+等、親子・子ども向け体験を実施。
+
+Evidence:
+- https://www.city.takarazuka.hyogo.jp/tezuka/4000002/4000483.html
+- https://www.city.takarazuka.hyogo.jp/1060683/1060708/1028490/1043069/1063689.html
+
+#### 地域歩き × アニメ制作
+
+2026-10-17:
+手塚治虫ゆかりの地を巡り、
+記念館でアニメ制作に挑戦する親子参加歓迎コースを実施。
+
+Evidence:
+- https://www.city.takarazuka.hyogo.jp/1060683/1060708/1062145/1019710.html
+
+Assessment:
+First Passで残っていた
+「手塚治虫 / 漫画・アニメ → 子ども体験」
+の接続は解消。
+
+舞台芸術（宝塚歌劇）側の子どもhands-on導線は別途GAP。
+
+State:
+**VERY_HIGH_MATURITY / MANGA_ANIMATION_CONNECTED**
+
+### D. 丹波篠山市 — CRAFT SYSTEM + AFTERSCHOOL
+
+#### 放課後子ども教室 — CURRENT 2026
+
+2026-09-07更新。
+篠山・岡野・城東・多紀・西紀・味間の各小学校区で実施。
+
+- 学習
+- 遊び
+- スポーツ
+- 文化活動
+- 交流
+を地域住民と行う。
+
+Evidence:
+- https://www.city.tambasasayama.lg.jp/soshikikarasagasu/bunkazaika/syougaigakusyuukakari/5587.html
+
+#### 創造都市体験学習支援事業 — SYSTEM SOURCE
+
+2026:
+市内の学校・団体が、
+工芸家 / 芸術家から体験的に学ぶ際の講師謝金等を支援。
+
+Evidence:
+- https://www.city.tambasasayama.lg.jp/soshikikarasagasu/shokokankoka/senryaku/18955.html
+
+#### 丹波焼「陶の郷」 — PERMANENT OPEN SOURCE
+
+2026年4月、TAMBA GATEWAY CENTERをリニューアル。
+丹波焼を
+- 見る
+- つくる
+- 使う
+体験へ接続。
+
+入園料無料化。
+陶芸教室は子どもの造形学習にも対応し、
+家族・個人で利用可能。
+
+Evidence:
+- https://www.city.tambasasayama.lg.jp/gyoseijoho/shichonoheya/shichonikki/kako/2026/4/30586.html
+- https://tanbayaki.com/workshop/
+- https://tanbayaki.com/
+
+2026には小学生以上対象の
+「丹波焼マスターが語る 窯処語り」も継続。
+
+Evidence:
+- https://www.city.tambasasayama.lg.jp/kanko_bunka/30687.html
+
+#### 黒豆 / 農業
+
+2026黒豆スクールは現行だが、
+対象は農地所有 / 耕作者中心であり、
+GROWgle CHILD SOURCEには数えない。
+
+Evidence:
+- https://www.city.tambasasayama.lg.jp/soshikikarasagasu/nomiyakoseisakuka/oshirase/30605.html
+
+Assessment:
+丹波焼はCHILD ACCESSが非常に明確。
+一方、黒豆は地域資産の強さに対し
+一般子どもの継続hands-on導線がまだ薄い。
+
+State:
+**VERY_HIGH_CRAFT_MATURITY / AGRI_CHILD_ACCESS_GAP**
+
+### E. 丹波市 — DINOSAUR REGIONAL SOURCE UPGRADED
+
+#### たんば恐竜博物館 — PERMANENT STEAM SOURCE
+
+2025-07-12、
+旧「丹波竜化石工房ちーたんの館」から
+「たんば恐竜博物館」へリニューアル。
+
+Evidence:
+- https://www.city.tamba.lg.jp/soshiki/shokokanko/kanko/1-3/12597.html
+- https://www.city.tamba.lg.jp/soshiki/furusatotejusokushinka/gyomuannai/10/12/13414.html
+
+市は丹波竜関連を
+子育て・教育・文化施策の一部として投資。
+
+Evidence:
+- https://www.city.tamba.lg.jp/soshiki/shokokanko/1/1704.html
+
+博物館 / 美術館 / 図書館 / フィールドミュージアム等の
+ミュージアム・ライブラリー連携では、
+恐竜頭骨パズルや3D標本づくり等の体験型企画実績を確認。
+
+Evidence:
+- https://www.city.tamba.lg.jp/soshiki/shakaikyoikubunkazaika/gyomuannai/5/9788.html
+
+2026広報では特別展「丹波と福井の恐竜たち」を確認。
+
+Evidence:
+- https://www.city.tamba.lg.jp/soshiki/sogosesakuka/gyomuannai/5/3/2/8nen/13205.html
+
+Assessment:
+丹波竜は単なる観光資産ではなく、
+常設博物館 + 教育普及 + 体験企画を持つSTEAM SOURCE MASTER。
+
+State:
+**VERY_HIGH_MATURITY / DINOSAUR_STEAM_MODEL**
+
+### F. 豊岡市 — NATURE + THEATER EDUCATION MODEL
+
+#### 豊岡こうのとりプラン — CITY-WIDE EDUCATION SYSTEM
+
+2026教育行政:
+小3〜中3の「ふるさと教育」で
+- コウノトリ
+- ジオパーク
+- 産業・文化
+を共通課題とし、
+ゲストティーチャー / 現地体験を実施。
+
+Evidence:
+- https://www.city.toyooka.lg.jp/kurashi/kyoikugakko/1014250/index.html
+
+#### 演劇的手法によるコミュニケーション教育
+
+2026:
+小6・中1を中心に
+演劇的手法を取り入れたワークショップ型授業を継続。
+
+Evidence:
+- https://www.city.toyooka.lg.jp/kurashi/kyoikugakko/1014250/1035174.html
+- https://www.city.toyooka.lg.jp/kurashi/kyoikugakko/1014249/1001212/1037030.html
+
+#### コウノトリ自然活動支援 — CURRENT 2026
+
+地域生きもの調査への専門講師派遣を実施。
+コウノトリ / 生物多様性をテーマにした
+自然環境体験学習への助成も2026継続。
+
+Evidence:
+- https://www.city.toyooka.lg.jp/kurashi/gomikankyo/1019254/1017138.html
+- https://www.city.toyooka.lg.jp/kurashi/gomikankyo/1019254/1005015.html
+
+Assessment:
+豊岡では自然と芸術が別カテゴリではなく、
+「ふるさと教育 + 演劇的学び」として教育SYSTEMへ入っている。
+
+かばん産業の一般子どもhands-onは今回CURRENT強HITを確認できず。
+
+State:
+**MODEL_REGION / NATURE_THEATER_EDUCATION**
+
+### G. 香美町 — MARINE / GEO PUBLIC ACCESS CONFIRMED
+
+#### 山陰海岸ジオパーク体験クルージング — CURRENT 2026
+
+2026-08-01。
+対象:
+兵庫県在住、小4以上（小学生は保護者同伴）。
+
+内容:
+- 香住高校実習船「但州丸」
+- 香住海岸 / 鎧の袖 / 百層崖等を船上から観察
+- ちくわ作り体験（希望者）
+
+主催:
+- 兵庫県立香住高校
+- 兵庫県但馬県民局
+- 香美町立ジオパークと海の文化館
+- 山陰海岸ジオパーク推進協議会
+
+Evidence:
+- https://web.pref.hyogo.lg.jp/tjk04/press/20260601.html
+
+Assessment:
+First Passで不足していた
+海 / 漁業 / ジオ → CHILD OPEN PUBLIC
+の接続を明確に確認。
+
+高校実習船が子どもの学びへ転用されている点も重要。
+
+但馬牛については家族向け観光モデルは存在するが、
+CURRENTの低負担OPEN CHILD PROGRAMは追加確認余地あり。
+
+State:
+**HIGH_MATURITY / MARINE_GEO_CONNECTED**
+
+### H. 新温泉町 — REGIONAL ASSETS FULLY CONNECTED
+
+#### 但馬牧場公園 — PERMANENT NATURE / WORKS SOURCE
+
+入園・駐車無料。
+- 但馬牛
+- 羊
+- 山羊
+- ウサギ
+- 但馬牛ブラッシング
+- 飼育体験
+- 動物ふれあい
+- 食品加工
+- 年間50回以上のイベント
+
+Evidence:
+- https://www.tajimabokujyo.jp/?page_id=10
+- https://www.tajimabokujyo.jp/?page_id=77
+
+#### 山陰海岸ジオパークガイド養成講座 — CURRENT 2026
+
+2026:
+町外参加可。
+1講座のみ参加可。
+ジオパークについて学ぶ公開講座。
+年齢下限は今回取得した一次情報では明示されないため、
+CHILD OPENとしては自動判定しない。
+
+Evidence:
+- https://www.town.shinonsen.hyogo.jp/page/index.php?detail_mode=guide&mode=detail&page_id=aa6f506ef25a52466632d59aed1a9226
+
+#### マリンスポーツ体験 — PUBLIC/GROUP SOURCE
+
+夏季:
+- カヌー
+- SUP
+- バナナボート
+等。
+教育委員会生涯教育課が受付。
+
+Evidence:
+- https://www.town.shinonsen.hyogo.jp/page/?mode=detail&page_id=73efbb1a3da788cfaaf9536561a8dc82
+
+#### 浜坂漁業協同組合 — EDUCATIONAL FISHERY SOURCE
+
+自然学校 / 校外学習向けに:
+- 魚 / 海の講習
+- 魚を触る
+- 調理
+- 食べる
+をセット化。
+
+Evidence:
+- https://hamasaka.gr.jp/05event/01ryori.html
+- https://hamasaka.gr.jp/
+
+Assessment:
+First PassのBACKLOGだった
+- 但馬牛
+- 海
+- 漁業
+- ジオ
+が実際の体験SOURCEへ接続。
+
+State:
+**VERY_HIGH_MATURITY / REGIONAL_ASSET_CONNECTED**
+
+### I. 南あわじ市 — TRADITIONAL CULTURE + INDUSTRY HANDS-ON
+
+#### 淡路人形浄瑠璃 — CHILD CULTURE PIPELINE
+
+2026:
+子どもたちの淡路人形浄瑠璃絵画展。
+142名 / 143点応募。
+
+優秀作品は
+淡路人形浄瑠璃後継者団体交流発表会で表彰。
+
+Evidence:
+- https://www.city.minamiawaji.hyogo.jp/soshiki/jyoururi/tenji.html
+
+資料館では
+- 木偶づくり講座
+- 絵画サークル
+を運営。
+
+Evidence:
+- https://www.city.minamiawaji.hyogo.jp/soshiki/jyoururi/ningyo.html
+
+学校向けには、
+兵庫県内小学校が淡路人形座で鑑賞・体験するための
+バス費用補助制度も存在。
+
+Evidence:
+- https://www.city.minamiawaji.hyogo.jp/soshiki/taiiku/awaji-ningyo-experience1.html
+
+一般向けには、
+淡路人形座で
+太夫 / 三味線 / 人形遣いの三業体験付きプログラムあり。
+ただし追加料金が高いため、
+HIGH_COST_SPECIALTYとして分類。
+
+Evidence:
+- https://www.city.minamiawaji.hyogo.jp/soshiki/shoukou/hyogo-fieldpavilion.html
+
+#### 漁業体験 — OPEN REGIONAL INDUSTRY SOURCE
+
+市内のベテラン漁師と漁船に乗り、
+実際の水揚げ作業を体験する漁業体験プランを公開。
+
+Evidence:
+- https://www.city.minamiawaji.hyogo.jp/soshiki/suisan/taiken.html
+
+Existing:
+- 全15校区アフタースクール
+- 子ども映画祭
+- うずしお科学館
+- 農 / 酪農体験
+
+Assessment:
+農漁業・人形浄瑠璃・映像・地域教育が複数経路で子どもへ接続。
+
+State:
+**MODEL_REGION / CULTURE_INDUSTRY_EDUCATION**
+
+### J. 洲本市 — CAREER GATEWAY CURRENT / AGRICULTURE OPEN GAP
+
+#### すもとオープンファクトリープラス 2026 — CURRENT
+
+2026-11-15「いとなみマルシェ」。
+中高生を明確な主要対象に含む。
+
+- 農業
+- 建設
+- ガス
+- 情報通信
+- 金融
+- 飲食
+- 教育
+- 福祉
+- 公務
+等の地域産業を
+ワークショップ / 展示 / 物販で体験。
+
+Evidence:
+- https://www.city.sumoto.lg.jp/soshiki/7/38193.html
+
+「地域の若者に、将来淡路島へ帰る選択肢を届ける」
+ことを明記。
+
+#### トライやる・ウィーク — INDUSTRY NETWORK
+
+2026-05-18〜22。
+多数の地域事業所が中学生を受入。
+
+農林水産、動物、医療、ホテル、製造、行政等へ広く接続。
+
+Evidence:
+- https://www.city.sumoto.lg.jp/soshiki/33/15571.html
+
+Assessment:
+洲本の強みは
+「地域産業を中高生へ見せるGateway」。
+
+農業 / 海の一般家庭向けhands-onは、
+市公式CURRENT情報からはまだ強く抽出できていない。
+
+State:
+**VERY_HIGH_CAREER_MATURITY / FAMILY_INDUSTRY_ACCESS_GAP**
+
+## 38. Hyogo priority block 2 conclusion
+
+### Model / very high
+- 伊丹市: AVIATION_GROWTH_SOURCE
+- 宝塚市: MANGA_ANIMATION_CONNECTED
+- 丹波篠山市: CRAFT_SYSTEM
+- 丹波市: DINOSAUR_STEAM_MODEL
+- 豊岡市: NATURE_THEATER_EDUCATION
+- 新温泉町: REGIONAL_ASSET_CONNECTED
+- 南あわじ市: CULTURE_INDUSTRY_EDUCATION
+- 洲本市: CAREER_GATEWAY
+
+### High / selective
+- 芦屋市: SYSTEM成熟、文化hands-onはGAP
+- 香美町: 海・ジオ接続済み、但馬牛child accessは追加余地
+
+## 39. Hyogo Second Pass emerging rule
+
+兵庫のSecond Passでは、
+「地域資産の存在」だけでは評価不足。
+
+Need to preserve:
+1. CHILD_ACCESS
+2. ACCESS_MODE
+   - OPEN_PUBLIC
+   - SCHOOL_ONLY
+   - GROUP
+   - PERMANENT
+   - HIGH_COST_SPECIALTY
+3. LOCAL_ASSET_TO_EXPERIENCE
+4. YOUTH_AS_PROVIDER / CO_CREATOR
+5. CROSS_AGE_ROUTE
+
+Examples:
+- 丹波焼: PERMANENT + OPEN + SCHOOL
+- 人形浄瑠璃: SCHOOL_SUPPORT + OPEN_HIGH_COST + CHILD_CREATION
+- ペーロン: FAMILY + SCHOOL + HIGH
+- ゴルフアイアン: INDUSTRY source exists but CHILD_ACCESS low
+- 新温泉: multiple assets all connect to actual experience
+
+Next:
+兵庫First Passで重点指定されていないが
+県全体のSYSTEM比較上必要な
+- 神戸
+- 尼崎
+- 西宮
+- 川西
+- 三田
+- 猪名川
+- 加古川
+- 明石
+- 稲美
+- 三木
+- 加東
+- 加西
+- 上郡
+- 佐用
+- 宍粟
+- 淡路
+- 養父
+- 朝来
+等を
+「全件再探索」ではなく成熟度判定中心で補完し、
+兵庫県Second Pass closeoutへ進む。
