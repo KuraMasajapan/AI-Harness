@@ -213,3 +213,19 @@ GROWgleでは、**調査で発見した情報すべてを公開画面へ掲載�
 公開面は厳選する。
 
 Research Coverage > Public Listing Count
+
+
+## Publication Scoring Reference
+
+公開掲載判定は以下を参照する。
+
+- `projects/GROWgle/PUBLICATION_SCORING.md`
+
+運用順:
+1. Research Layerへ保存
+2. Access Gate
+3. Public Value Score
+4. PUBLIC_LIST / WATCH_PUBLIC / RESEARCH_ONLY
+5. Sponsoredは別レイヤー
+
+過去ログを一括再採点せず、Second Pass / CURRENT更新時に順次付与する。
