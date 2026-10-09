@@ -351,3 +351,28 @@ Therefore:
 Research Coverage > Public Listing Count.
 
 This global rule applies to classes / schools / continuous PROGRAMs found during enterprise research as well as event-like activities.
+
+
+## 19. Edge-completion stage — 2026-10-09
+
+Kurashiki Enterprise Pilot is now in an edge-completion stage.
+
+Current status:
+KURASHIKI_ENTERPRISE_PILOT = SATURATION_CANDIDATE / NOT_YET_SATURATED
+
+Reason:
+Recent batches still produced materially new SOURCE / access types, including:
+- child maritime / rescue experience
+- municipal fair -> exhibitor reverse lookup
+- local private continuous class -> low-barrier trial separation
+- university / municipal public-event overlap
+
+Research emphasis now:
+- do not expand population indefinitely
+- target remaining access / geography / age / industry gaps
+- use recurring public fairs as provider-discovery Gateways
+- separate continuous paid classes from low-barrier trial ACTIVITYs under Public Listing Gate
+- a company appearing once at a school/community event is not a recurring child SOURCE until repeatability is independently supported
+
+Saturation trigger:
+If subsequent targeted batches produce no materially new SOURCE type or access mode, prepare SATURATED_FOR_PILOT checkpoint while retaining WATCH items for annual updates.
