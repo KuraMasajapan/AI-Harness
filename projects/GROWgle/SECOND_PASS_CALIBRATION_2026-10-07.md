@@ -3994,3 +3994,23 @@ Next:
 等を
 「全件再探索」ではなく成熟度判定中心で補完し、
 兵庫県Second Pass closeoutへ進む。
+
+
+## 40. Hyogo Second Pass closeout
+
+Detailed checkpoint:
+- `projects/GROWgle/HYOGO/CHECKPOINT_HYOGO_SECOND_PASS_2026-10-09.md`
+
+State:
+**HYOGO_SECOND_PASS_COMPLETE_SELECTIVE**
+
+41市町についてFirst Pass後の重点Second Pass / 成熟度判定を完了。
+
+兵庫で確立した追加原則:
+**地域資産の存在ではなく、CHILD_ACCESSを評価する。**
+
+Publication Gateも代表候補へ試験適用し、
+SCHOOL_ONLY / HIGH_COST_SPECIALTY等をResearch Layerへ分離する運用が妥当と確認。
+
+Next:
+大阪Second Pass。
