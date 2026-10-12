@@ -844,22 +844,231 @@ Possible explicit policies:
 
 ---
 
+
+## 24. Executable Edge / Dynamic Fee Model
+
+### Source
+
+`https://note.com/like_hyssop8403/n/n844e66b033e6`
+
+External article describing a triangular-arbitrage bot operated in live markets.
+
+### Two-stage evaluation
+
+- **Stage 1 Rank:** A+
+- **Stage 2 Final Rank:** **A++**
+
+The detailed article was materially more valuable than the initial summary because it exposed several distinct sources of live execution error and quantified how small assumption errors accumulated over high turnover.
+
+### Source claims
+
+The author reported:
+
+- 81 days of operation
+- 35,997 orders
+- final PnL of approximately -156,844 JPY
+- notional turnover of approximately 236 million JPY
+- a configured fee assumption of 0.0225% during a period where the actual applicable fee was 0.0300%
+- the fee-underestimation interval contributing approximately -40,357 JPY, roughly 26% of the reported total loss
+- many trades that would not have passed the entry threshold under the correct fee
+- observed market-price discrepancy shrinking materially when executable order-book conditions were checked
+- some fee/campaign conditions being overestimated while others were underestimated
+- realized slippage not being the dominant loss source the author initially expected
+- historical profit attribution requiring reconstruction from exchange execution records
+
+These numbers are **author-reported field results**, not independently reproduced by BBB.
+
+### ChatGPT evaluation
+
+**Final importance: A++**
+
+The strongest lesson is not "fees matter."
+
+It is:
+
+> **Observed Edge != Executable Edge != Actual Filled Edge**
+
+A profitable-looking signal is not actionable until expected execution cost and actual market mechanics are included.
+
+Candidate chain:
+
+```text
+Observed Edge
+    ↓
+Executable Edge
+    ↓
+Actual Filled Edge
+```
+
+BBB should eventually distinguish these states explicitly.
+
+### BBB relevance — Dynamic Fee Model
+
+A fixed fee constant can become stale or incorrect because actual cost may depend on:
+
+- exchange
+- symbol
+- maker / taker status
+- current account fee tier
+- campaign / temporary discount
+- rebate conditions
+- account state
+- order type
+
+Candidate model:
+
+```text
+Expected Edge
+- current fee
+- spread
+- estimated slippage
+- rounding / precision effects
+- execution uncertainty
+= Executable Edge
+```
+
+If Executable Edge is not positive after conservative assumptions, **NO TRADE is a valid optimal result**.
+
+### BBB relevance — Fee-tier economics
+
+Lower fees are not automatically beneficial if obtaining or maintaining the lower tier requires additional turnover whose cost exceeds the fee saving.
+
+Candidate principle:
+
+> Evaluate the economic value of a fee tier net of the cost required to obtain or maintain it.
+
+Do not optimize for fee percentage in isolation.
+
+### BBB relevance — Order size / capital allocation
+
+Execution cost may change with order size, liquidity, and market depth.
+
+Therefore future Position Sizing should not assume:
+
+```text
+higher confidence
+→ proportionally larger order
+```
+
+without checking whether a larger order materially worsens executable price or slippage.
+
+This reinforces the separation between:
+
+```text
+Signal / Confidence
+      ↓
+Capital Allocation
+      ↓
+Position Sizing
+      ↓
+Execution Feasibility
+      ↓
+Order
+```
+
+### BBB relevance — Logging granularity
+
+Post-mortem diagnosis becomes difficult if only aggregate trade-level PnL is retained.
+
+Candidate execution record should preserve enough information to reconstruct:
+
+- decision timestamp
+- signal / expected edge
+- expected price
+- expected fee
+- expected spread / slippage
+- submitted order
+- order identity
+- fill(s)
+- actual fill price
+- actual fee
+- realized slippage
+- final reconciliation state
+- resulting PnL
+
+The aim is not maximum logging volume.
+
+The aim is to retain the minimum evidence needed to explain why Expected and Actual diverged.
+
+### BBB relevance — Hypothesis vs measured cause
+
+The author initially suspected other causes such as slippage or inventory effects, but later reconstruction pointed to fee assumptions and opportunity quality as more important contributors.
+
+Candidate principle:
+
+> Record the initial causal hypothesis, but attribute loss only after reconstructing the actual execution evidence.
+
+This helps prevent post-hoc storytelling.
+
+### BBB relevance — NO TRADE as a successful decision
+
+A bot that rejects a trade because executable edge is negative has not "failed to trade."
+
+It has potentially avoided a negative-expectation execution.
+
+This reinforces the need for explicit reason codes such as:
+
+- EDGE_BELOW_COST
+- FEE_TOO_HIGH
+- SPREAD_TOO_WIDE
+- LIQUIDITY_INSUFFICIENT
+- SLIPPAGE_RISK
+- EXECUTION_UNCERTAIN
+
+### Parts not to import directly
+
+Do not directly copy into BBB:
+
+- the author's fee percentages
+- the author's edge threshold
+- Binance-specific fee-tier assumptions
+- triangular-arbitrage-specific order sequencing
+- the author's reported slippage distribution
+- the author's turnover target
+- campaign-specific behavior
+- any claim that the same loss decomposition applies to bitbank
+
+bitbank-specific execution cost must be derived from current official documentation and BBB's own observations.
+
+### Evidence status
+
+**Detailed external field report reviewed.**
+
+- operational lessons: strong
+- reported numeric results: source claim only
+- BBB applicability: design-level inference
+- bitbank-specific applicability: requires separate verification
+
+### Candidate follow-up
+
+Before BBB live trading, evaluate whether the execution layer can provide:
+
+1. current applicable fee assumptions,
+2. expected vs actual execution cost,
+3. executable-edge calculation,
+4. per-order reconciliation,
+5. reason-coded NO TRADE decisions,
+6. sufficient evidence to reconstruct PnL differences after the fact.
+
+---
+
 # Current Priority
 
 Highest-value candidates from this first batch:
 
 1. **Production / Replay / Forward parity**
 2. **Execution Semantics Parity**
-3. **Shared Trading Constraints**
-4. **Execution Reality Gap**
-5. **Order / Fill / Balance / Ledger reconciliation**
-6. **Strategy Exit vs Emergency Hard Stop**
-7. **Capital / Position Authority**
-8. **Position sizing**
-9. **Capital Promotion / Demotion Gate**
-10. **Retrospective re-qualification when validation gates improve**
-11. **Independent deterministic cross-check**
-12. **NO TRADE reason logging**
+3. **Executable Edge / Dynamic Fee Model**
+4. **Shared Trading Constraints**
+5. **Execution Reality Gap**
+6. **Order / Fill / Balance / Ledger reconciliation**
+7. **Strategy Exit vs Emergency Hard Stop**
+8. **Capital / Position Authority**
+9. **Position sizing**
+10. **Capital Promotion / Demotion Gate**
+11. **Retrospective re-qualification when validation gates improve**
+12. **Independent deterministic cross-check**
+13. **NO TRADE reason logging**
 
 ---
 
