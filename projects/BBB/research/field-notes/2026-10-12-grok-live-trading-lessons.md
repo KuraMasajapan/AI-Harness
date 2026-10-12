@@ -1759,6 +1759,73 @@ These remain **research candidates**, not CURRENT_SPEC requirements.
 
 ---
 
+
+## 28. Reported Performance Strategies — Stage 2 Research Batch
+
+**Status:** Research only. These are external author-reported live or historical results, not BBB-verified profitability or approved trading logic. Ranks measure BBB research utility, not expected return.
+
+### 28.1 DXY + Funding regime-based position sizing
+
+Source: https://zenn.dev/koheikameyama/articles/e2ee191412e486
+
+- **Stage 1:** A+; **Stage 2:** **A+**
+- **Reported live period:** 2026-05-20 to 2026-07-28, approximately JPY 100,000 capital.
+- **Reported comparison:** BTC/JPY -15.0% vs strategy total assets -3.0% in a selected decline period; in a reported rising month, buy-and-hold +9.18% vs strategy +2.98%. The strategy sacrificed upside participation.
+- **Described logic:** DXY score weighted 0.6 and funding-rate score weighted 0.4 to choose continuous BTC allocation from 0 to 1, with daily 10:05 JST rebalancing; maker-first limit execution and a 300-second waiting policy.
+- **Reported execution measures:** maker fill 78.6%, effective fee +1.46 bps, mean slippage 1.3 bps; the author also disclosed a kill-switch false trigger.
+- **Evidence boundary:** author-reported results, not an independently audited track record. Selected periods do not establish general outperformance. The specific feature weights, funding source, rebalance schedule, and execution assumptions are not validated for BBB.
+- **BBB candidate:** separate signal confidence, portfolio allocation, target position, and execution feasibility. Compare drawdown, upside capture, turnover, fee drag, and sensitivity to feature weights. Treat DXY/Funding as candidate external features, not proven predictors.
+- **Do not import:** 0.6/0.4 weights, timing, 300-second wait, or reported execution statistics as bitbank defaults.
+
+### 28.2 GridForge — bitbank grid trading + HODL+
+
+Source: https://zenn.dev/soushu/articles/gridforge-update-live-trading
+
+- **Stage 1:** A+; **Stage 2:** **A+**
+- **Reported live pilot:** JPY 30,000 for seven days; 22 trades; **JPY 219 (+0.73%) realized grid profit**. The author subsequently described scaling to JPY 100,000 and a 100-level grid.
+- **Described logic:** buy/sell on grid levels within a price range; liquidate above upper boundary, retain assets below lower boundary (HODL+ without stop-loss), rebuild grids after sustained deviation, and periodically re-read capital limits / reinvest profits.
+- **Important distinction:** +0.73% is reported **realized grid profit**, not proof of +0.73% total portfolio return. Unrealized inventory loss, opportunity cost, and capital lockup may dominate.
+- **Evidence boundary:** short, author-reported live window; no demonstrated multi-regime profitability. bitbank venue overlap is valuable but does not validate strategy edge.
+- **BBB candidate:** benchmark grid realized PnL against mark-to-market total equity, buy-and-hold, fees, inventory exposure, drawdown, and time spent below range. Test range breaks and capital reservation in Replay.
+- **Do not import:** the author's grid count, spacing, no-stop HODL+ rule, or capital scaling as BBB defaults.
+
+### 28.3 Volatility breakout — transaction-cost falsification
+
+Source: https://zenn.dev/neetux/articles/3b5fb3cc7f66fd
+
+- **Stage 1:** A++; **Stage 2:** **A++**
+- **Described rule:** daily buy trigger = current day open + 0.5 × previous day's high-low range; exit at the following day's open.
+- **Reported validation:** bitbank BTC/JPY daily bars, approximately 2024-01 through 2026-09. The author reports about **-62%** with modeled trading costs versus **+35%** in a zero-cost scenario.
+- **Cost explanation:** roughly 0.07% gross per-trade average derived from zero-cost cumulative return divided by approximately 424 trades, versus modeled round-trip cost near 0.3%. **The 0.07% is an approximation, not an independently observed mean realized fill return.**
+- **Evidence boundary:** backtest, **not live performance**. Results depend on fee/slippage assumptions, OHLC intrabar ambiguity, execution timing, and compounding/accounting conventions.
+- **BBB candidate (highest replication priority):** independently reproduce the entry/exit conditions on bitbank BTC/JPY, record bar coverage and ambiguous candles, compare zero-cost, maker/taker, realistic fee/slippage, and spread/depth assumptions; validate execution-semantic parity.
+- **Do not import:** -62% as a universal result or assume the reported OHLC execution was executable at the assumed price.
+
+### 28.4 Pump-collapse short with filters
+
+Source: https://note.com/0xbot_jp/n/n253dcba6621f
+
+- **Stage 1:** B; **Stage 2:** **B**
+- **Reported live observation:** about 1.5 days, USD 78.22 profit on approximately USD 6,000 deployed (roughly 1.3%), with a claimed win rate above 75%.
+- **Described logic:** multiple filters to detect an abnormal price pump and short its collapse; risk-based dynamic sizing and emergency handling for funding risk.
+- **Evidence boundary:** extremely short author-reported record; no independently demonstrated edge, robust tail-risk analysis, or full-cycle reproducibility. Promotional framing and paid-bot funnel further limit evidentiary weight.
+- **BBB fit:** low. The described short/futures/funding mechanism does not belong in BBB's initial bitbank BTC/JPY spot-only scope.
+- **Possible research-only extraction:** study false-positive controls, liquidity checks, and risk-trigger monitoring independently of the short strategy.
+- **Do not import:** short execution, leverage, funding assumptions, win-rate claims, or capital-risk fractions.
+
+### 28.5 Cross-case assessment and next verification
+
+| Candidate | Stage 1 | Stage 2 | Evidence type | BBB next action |
+|---|---|---|---|---|
+| DXY + Funding allocation | A+ | A+ | Author-reported live pilot | Compare regime features and allocation sensitivity |
+| GridForge | A+ | A+ | Author-reported short bitbank live pilot | Mark-to-market inventory and range-break Replay |
+| Volatility breakout | A++ | A++ | Historical backtest, not live | Independent cost-aware BTC/JPY Replay first |
+| Pump-collapse short | B | B | Very short author-reported live log | Do not adopt; extract generic risk checks only |
+
+**Decision:** preserve all four as research evidence; prioritize independent reproduction of the cost-sensitive breakout result, then compare regime-based allocation and grid strategy under common total-equity / execution-cost metrics. No strategy adoption, trading-capital change, CURRENT_SPEC edit, or live deployment is authorized by this note.
+
+---
+
 # Current Priority
 
 Highest-value candidates across the reviewed batches:
