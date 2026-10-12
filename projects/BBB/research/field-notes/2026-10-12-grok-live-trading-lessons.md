@@ -1826,6 +1826,27 @@ Source: https://note.com/0xbot_jp/n/n253dcba6621f
 
 ---
 
+## 29. Risingtell Regime-Switching Code Audit (2026-10-12)
+
+Source: https://github.com/Risingtell/adaptive-regime-switch-pro
+Reviewed: public `backtest.js` and `lib.js` (static source inspection, not independent execution).
+
+**Revised performance-evidence grade: B (previous provisional A++).** Reported return, drawdown and Monte Carlo probability are author claims, not independently replicated real-money results. The architecture remains worth studying.
+
+- **Regime logic:** EMA200, ADX14, ATR14, 720-hour ATR-percentile; 3-bar persistence except immediate RISK_OFF. Trend uses prior-96h Donchian breakout; default RANGE behavior is no new trades because mean reversion is disabled. RISK_OFF prevents new risk but does not necessarily liquidate an existing trend position.
+- **Timing:** Donchian windows exclude the current bar, and decisions on closed bars target the next open. No obvious future-indexed signal feature in inspected functions; execution chronology still needs tests.
+- **Stop gap risk:** If the bar crosses a stop, the simulation exits at the stop price even when the bar opens beyond it, potentially overstating results.
+- **Costs:** fixed 0.06% per side as combined fee/slippage assumption, not independent spread, liquidity or variable execution modeling. Entry fee is deducted from sleeve cash, while recorded closed-trade PnL subtracts exit fee only; trade-level statistics and bootstrap do not fully reflect round-trip net fees.
+- **Walk-forward limitation:** the code runs one full backtest and splits its equity series 60/40 for summaries. It does not show rolling parameter refitting/selection on past-only training windows. Do not treat this as rigorous walk-forward optimization.
+- **Monte Carlo limitation:** independent resampling of historical trade PnLs does not preserve market regime sequences, volatility clustering or execution uncertainty.
+- **Transfer limitation:** Binance BTCUSDT/ETHUSDT futures/perpetual-style long/short and up-to-3x leverage differ from BBB's bitbank BTC/JPY spot-only, no-short/no-leverage boundary.
+
+**BBB research comparison:** On identical BTC/JPY spot candles and identical execution/cost assumptions, compare (A) current strategy, (B) current strategy plus regime-based NO TRADE for new entries, and (C) B plus volatility-adjusted sizing within existing risk limits. Track mark-to-market total equity return, maximum DD, trade count, exposure, turnover, fees/slippage and regime-specific results; use past-only parameter calibration and untouched chronological holdout. Test gaps and missing candles.
+
+**Boundary:** research note only; no strategy, CURRENT_SPEC, risk policy or live-trading change. Inspect existing BBB Replay/Strategy Lab before requesting a separate implementation approval.
+
+---
+
 # Current Priority
 
 Highest-value candidates across the reviewed batches:
