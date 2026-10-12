@@ -1428,25 +1428,363 @@ For BBB, later evaluate whether the execution / validation stack can expose:
 
 ---
 
+## 27. Batch II — Order State Truth / Recovery / Reconciliation
+
+This batch was selected from Grok-discovered live-operation incidents, then reviewed against the original public sources.
+
+Common theme:
+
+> **Events are evidence, not final truth. Reconstruct authoritative trading state before retrying, replacing, resuming, or escalating.**
+
+### 27.1 Hummingbot #7294 — Failure Event followed by actual fill
+
+Source: `https://github.com/hummingbot/hummingbot/issues/7294`
+
+- **Stage 1 Rank:** A++
+- **Stage 2 Final Rank:** **A++**
+
+Observed log sequence:
+
+- a market close order emitted `MarketOrderFailureEvent`,
+- the client tracker marked the same order `FAILED`,
+- milliseconds later the same client order ID received an actual fill,
+- the executor then retried and another close order also filled.
+
+The issue therefore provides strong direct evidence for:
+
+> **Failure Event != Confirmed Failure**
+
+Candidate order-state flow:
+
+```text
+SUBMITTED
+   ↓
+timeout / failure event / ambiguous response
+   ↓
+UNKNOWN
+   ↓
+exchange reconciliation
+   ↓
+FILLED / OPEN / CANCELED / REJECTED
+   ↓
+retry only if still required
+```
+
+This complements the existing rule that UNKNOWN must not silently become success:
+
+> **UNKNOWN must not silently become failure either.**
+
+Later issue investigation also exposed a second concern: strategy/controller semantics did not align cleanly with Hyperliquid's ONEWAY position mode. A later Hummingbot release note/comment suggested an ONEWAY close-order update may address the original issue, but the thread did not establish a clean reproduced closure of every failure path.
+
+Candidate BBB principle:
+
+```text
+Strategy Requirements
+        ↓
+Exchange Capability Contract
+        ↓
+Connector Implementation
+```
+
+Before live execution, semantics such as order type, close behavior, precision, partial-fill handling, and exchange capabilities should be explicitly compatible.
+
+Do not import Hyperliquid-specific ONEWAY handling or Hummingbot implementation code directly.
+
+---
+
+### 27.2 Hummingbot #7230 — Connection restored but trading state not recovered
+
+Source: `https://github.com/hummingbot/hummingbot/issues/7230`
+
+- **Stage 1 Rank:** A++
+- **Stage 2 Final Rank:** **A++**
+
+The issue reported that after a short network interruption:
+
+- the transport connection returned,
+- existing orders could be lost from local tracking and new orders could be submitted,
+- the controller later stopped executing,
+- `market_data_provider.ready` remained false,
+- investigation traced this through `user_stream_initialized=false` to a `ws_assistant` that failed to recover.
+
+The initial reporter believed the issue was Docker-only. Later maintainer investigation explicitly stated it was **not Docker-only**. The deeper root cause of why the user-stream assistant failed to recover was still under investigation in the thread.
+
+Candidate principle:
+
+> **Connection Restored != Trading State Recovered**
+
+Candidate recovery barrier:
+
+```text
+DISCONNECTED
+     ↓
+RECONNECTING
+     ↓
+RECOVERING_STATE
+     ↓
+RECONCILING
+     ↓
+TRADING_READY
+```
+
+New orders should remain blocked until the required state is reconciled.
+
+Candidate readiness dimensions:
+
+- NETWORK_READY
+- MARKET_DATA_READY
+- PRIVATE_STREAM_READY
+- ORDERS_RECONCILED
+- BALANCE_RECONCILED
+- POSITION_RECONCILED
+- TRADING_ALLOWED
+
+A single `ready=true/false` can hide both permanent freeze and premature resume.
+
+Also separate:
+
+```text
+Liveness
+= control loop is still progressing
+
+Safety
+= orders are allowed only from trustworthy state
+```
+
+Candidate watchdog signals include `last_market_data_at`, `last_private_event_at`, `last_control_loop_at`, and `last_reconcile_at` so a live process with a dead trading loop can be detected.
+
+Do not copy workaround code that simply bypasses readiness checks. Avoiding a freeze is not sufficient if state integrity is unknown.
+
+---
+
+### 27.3 Freqtrade #11461 — Position adjustment semantics and cancel/replace
+
+Source: `https://github.com/freqtrade/freqtrade/issues/11461`
+
+- **Stage 1 Rank:** A++
+- **Stage 2 Final Rank:** **A+**
+
+Grok initially framed this as a confirmed duplicate-order race-condition bug. Detailed review changed that interpretation.
+
+The exchange history showed both replacement-related orders fully filled, but the Freqtrade maintainer explained the behavior as consistent with the documented `adjust_trade_position()` semantics: if the callback returns a new adjustment while an order is open and its amount/price/direction differs, the framework may cancel the existing order and place a new one.
+
+The key lesson is therefore not simply "Freqtrade duplicated an order."
+
+It is the semantic difference between:
+
+```text
+Action command
+BUY +X
+
+vs
+
+Target state
+Desired position = Y
+```
+
+Repeated action callbacks can legitimately create repeated orders unless the strategy itself accounts for what has already filled or remains pending.
+
+Candidate accounting dimensions:
+
+- requested_qty
+- filled_qty
+- remaining_qty
+- pending_qty
+- target_position
+
+Important rule:
+
+> **requested_qty != remaining_qty**
+
+Also:
+
+> **Cancel requested != Canceled**
+
+Candidate cancel flow:
+
+```text
+CANCEL_REQUESTED
+       ↓
+exchange reconciliation
+       ↓
+CANCELED / PARTIALLY_FILLED / FILLED / UNKNOWN
+```
+
+The issue also followed a framework behavior change introduced in the 2025.1 line, reinforcing:
+
+> **Dependency updates can change execution semantics even when strategy code is unchanged.**
+
+Future BBB preflight should consider strategy version, execution-engine version, CCXT version, and exchange/API assumptions together.
+
+---
+
+### 27.4 Staking reward false positive — safety gate halted entries for about 10 days
+
+Source: `https://zenn.dev/codecraft/articles/staking-reward-false-positive-10day-halt`
+
+- **Stage 1 Rank:** A++
+- **Stage 2 Final Rank:** **A++**
+
+The external report described an internal ETH record of approximately `0.0054` versus an exchange balance of approximately `0.00540325`, a positive delta of `0.00000325 ETH` (about 1.2 JPY in the report). The mismatch was attributed to automatic staking rewards and caused the bot's reconciliation guard to block new entries for roughly 10 days while exits continued.
+
+The main lesson is not to relax reconciliation because the difference is small.
+
+It is to preserve both **direction** and **provenance** of the delta:
+
+```text
+Reconciliation Delta
+├─ NEGATIVE
+│   ├─ fee
+│   ├─ fill / ledger mismatch
+│   ├─ manual / external withdrawal
+│   └─ UNKNOWN
+└─ POSITIVE
+    ├─ reward
+    ├─ deposit / manual change
+    ├─ missing fill record
+    └─ UNKNOWN
+```
+
+Candidate principle:
+
+> **Known external mutation and unexplained delta are not the same state. UNKNOWN should remain visible even when the amount is tiny.**
+
+The incident also demonstrates that a safety mechanism has a false-positive cost:
+
+```text
+missed real danger
+→ loss risk
+
+false positive
+→ unnecessary halt / opportunity loss
+```
+
+The same article reported a separate data-coverage problem: an API provided deeper order-book data, while the bot retained only the top subset and then calculated a wider-depth liquidity metric from insufficient retained data. This supports:
+
+> **Data available != Data retained != Data required by the metric**
+
+Candidate Data Coverage Contract should make required depth, sampling interval, and observation coverage explicit.
+
+The report also described repeated warnings every short interval that failed to attract attention. Candidate alert rule:
+
+```text
+state transition → notify
+persistent state → update counter / dashboard
+recovery → notify
+reoccurrence → notify again
+```
+
+Do not import the article's specific tolerance rule as a universal safety threshold.
+
+---
+
+### 27.5 Gainium — partial fill during limit-order repositioning
+
+Source: `https://community.gainium.io/t/limit-order-bot-behaviour/5328`
+
+- **Stage 1 Rank:** A+
+- **Stage 2 Final Rank:** **A+**
+
+The report described a target entry of roughly 1000 LIT where a small partial fill occurred during dynamic limit-order repositioning. The bot treated the partial execution as if the entry had completed and failed to restore the remaining intended quantity. The provider identified the behavior and deployed a fix, though the thread still depended on later reproduction under the same timing condition.
+
+Candidate principle:
+
+> **PARTIALLY_FILLED must not be promoted to FILLED merely because the original order lifecycle ended.**
+
+Target quantity should survive order replacement:
+
+```text
+Target Qty
+   ↓
+Placed Qty
+   ↓
+Filled Qty
+   ↓
+Remaining Qty
+   ↓
+Cancel / Reposition / Replace
+   ↓
+Remaining target intent survives
+```
+
+This complements Freqtrade #11461 from the opposite direction:
+
+- Freqtrade case: repeated action intent can over-add.
+- Gainium case: target intent can be lost after a partial fill.
+
+Together they support target-state accounting rather than treating each order object as the trading intent itself.
+
+---
+
+### 27.6 Cross-case synthesis
+
+These five incidents converge on a common architecture candidate:
+
+```text
+Intent / Target State
+        ↓
+Order Request
+        ↓
+Exchange / Connector Events
+        ↓
+Authoritative Reconciliation
+        ↓
+Confirmed Trading State
+        ↓
+Retry / Replace / Resume decision
+```
+
+Candidate rules:
+
+1. **Event != Truth** — failure, cancel, reconnect, and completion events require state confirmation when ambiguous.
+2. **Order != Intent** — target position or target quantity should survive individual order replacement.
+3. **UNKNOWN is a first-class state** — do not silently coerce it to success or failure.
+4. **Retry must be reconciliation-aware** — blind retry can duplicate exposure.
+5. **Recovery needs a barrier** — reconnect is not sufficient to resume trading.
+6. **Readiness is multidimensional** — transport, market data, private stream, orders, balances, and positions may recover independently.
+7. **Safety and liveness are separate** — a running process can have a dead control loop; a live control loop can still be unsafe.
+8. **Execution semantics are versioned** — framework, connector, and exchange capability changes can alter behavior without strategy-code changes.
+9. **Reconciliation deltas need provenance** — positive/negative and known/unknown causes should remain distinguishable.
+10. **Data coverage is part of metric validity** — a correct formula over insufficient retained data is still wrong.
+
+### Batch evidence boundary
+
+- Hummingbot #7294: strong log evidence for failure-event/fill divergence; later ONEWAY interpretation adds a second semantic issue.
+- Hummingbot #7230: strong evidence for recovery/readiness failure; deepest root cause was not fully closed in the thread.
+- Freqtrade #11461: exchange fills confirmed; duplicate behavior should not be recorded as a proven Freqtrade bug because the maintainer described it as expected callback semantics.
+- Staking false-positive article: detailed external field report; article-specific exchange behavior and numbers remain external evidence.
+- Gainium report: provider acknowledged and fixed the behavior, but exact timing reproduction remained part of follow-up.
+
+These remain **research candidates**, not CURRENT_SPEC requirements.
+
+---
+
 # Current Priority
 
-Highest-value candidates from this first batch:
+Highest-value candidates across the reviewed batches:
 
-1. **Production / Replay / Forward parity**
-2. **Execution Semantics Parity**
-3. **Executable Edge / Dynamic Fee Model**
-4. **Shared Trading Constraints**
-5. **Execution Reality Gap**
-6. **Order / Fill / Balance / Ledger reconciliation**
-7. **Monitoring latency / enforcement location**
-8. **Validation-System Validation**
-9. **Strategy Exit vs Emergency Hard Stop**
-10. **Capital / Position Authority**
-11. **Position sizing**
-12. **Capital Promotion / Demotion Gate**
-13. **Retrospective re-qualification when validation gates improve**
-14. **Independent deterministic cross-check**
-15. **NO TRADE reason logging**
+1. **Order State Machine / UNKNOWN-state reconciliation**
+2. **Production / Replay / Forward parity**
+3. **Execution Semantics Parity**
+4. **Recovery / Reconciliation Barrier before trading resumes**
+5. **Executable Edge / Dynamic Fee Model**
+6. **Target-state accounting for partial fill / cancel / replace**
+7. **Shared Trading Constraints**
+8. **Execution Reality Gap**
+9. **Order / Fill / Fee / Balance / Ledger reconciliation**
+10. **Exchange Capability / Semantic Contract**
+11. **Multidimensional Readiness + Liveness / Safety monitoring**
+12. **Monitoring latency / enforcement location**
+13. **Validation-System Validation**
+14. **Reconciliation delta provenance + safety false-positive cost**
+15. **Data Coverage Contract / sampling coverage**
+16. **Strategy Exit vs Emergency Hard Stop**
+17. **Capital / Position Authority**
+18. **Position sizing**
+19. **Capital Promotion / Demotion Gate**
+20. **Retrospective re-qualification when validation gates improve**
+21. **Independent deterministic cross-check**
+22. **NO TRADE reason logging**
 
 ---
 
