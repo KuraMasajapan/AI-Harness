@@ -595,20 +595,271 @@ Do not let accidental profitable violations become "good" learning examples.
 
 ---
 
+
+## 17. Execution Semantics Parity
+
+### Source claim
+
+A field report described production evaluating exits from a short-interval live ticker while validation evaluated exits only from candle closes.
+
+The author reported that changing only the measurement semantics caused several deployed strategies to move from pass to fail, with trailing-stop strategies particularly affected.
+
+### BBB relevance
+
+A strategy name and parameter set are not sufficient to prove that Production and Replay are testing the same strategy.
+
+Candidate strategy identity should include:
+
+- entry rule
+- exit rule
+- observed price field
+- observation frequency
+- candle / ticker timing
+- intrabar handling
+- stop-loss semantics
+- take-profit semantics
+- trailing-stop update semantics
+- tie-breaking when exact event order is unknown
+
+Candidate principle:
+
+> Production and Replay should be considered semantically equivalent only when they observe and react to market state under equivalent execution semantics.
+
+### Evidence status
+
+**External field report / high relevance to Replay validity.**
+
+---
+
+## 18. When Simulation and Production disagree, either side may be wrong
+
+### Source claim
+
+In the same report, candle-close validation initially appeared to be the defective side because production checked prices more frequently.
+
+Further analysis reframed the result: the candle-close validator had measured a different but internally coherent strategy. The production implementation was then changed to behave like the better-performing validated semantics.
+
+### BBB relevance
+
+Do not automatically assume that validation must always be modified to imitate production.
+
+When Simulation and Production diverge, explicitly compare three possibilities:
+
+```text
+A. Change Simulation to match Production
+B. Change Production to match Simulation
+C. Treat them as separate strategies and compare both
+```
+
+### Candidate principle
+
+> A mismatch is evidence of semantic divergence, not proof of which side is correct.
+
+The choice should be driven by explicit objectives, risk, and reproducible validation rather than convenience.
+
+### Evidence status
+
+**External field report / strong methodological candidate.**
+
+---
+
+## 19. Strategy Exit vs Emergency Hard Stop
+
+### Source claim
+
+After moving normal TP/SL evaluation to candle-close timing, the external implementation retained a separate high-severity hard stop that continued to monitor more frequently.
+
+### BBB relevance
+
+This supports a layered exit model:
+
+```text
+Strategy Exit
+= part of the trading strategy's expected behavior
+
+Emergency Hard Stop
+= catastrophic-loss containment outside normal strategy semantics
+```
+
+The two controls should not be conflated.
+
+### Candidate direction
+
+Future BBB live-mode design should evaluate whether:
+
+- normal exits belong to strategy semantics,
+- emergency exits belong to risk containment,
+- each layer has different observation frequency and evidence requirements,
+- emergency actions are independently logged and explainable.
+
+### Boundary
+
+The external hard-stop percentage is not adopted.
+
+### Evidence status
+
+**External field report / reinforces Risk Reject vs Emergency Stop separation.**
+
+---
+
+## 20. New validation gates may need retrospective application
+
+### Source claim
+
+The external project had developed stronger validation methods over time, including random control comparisons, but previously deployed strategies had been accepted before those checks existed.
+
+When the newer controls were finally applied retrospectively, several live strategies failed.
+
+### BBB relevance
+
+A validation framework can become asymmetric:
+
+```text
+New strategy
+→ latest strict gates
+
+Existing strategy
+→ older weaker gates
+→ continues operating by historical privilege
+```
+
+Candidate principle:
+
+> When a materially stronger validation gate is introduced, explicitly decide whether existing strategies must be re-qualified under the new gate.
+
+### Candidate direction
+
+A future BBB strategy registry may need to record:
+
+- validation version
+- gates passed
+- date last re-qualified
+- unresolved legacy exemptions
+
+### Evidence status
+
+**External field report / strong lifecycle governance candidate.**
+
+---
+
+## 21. Control baseline should apply to adopted strategies, not only rejected ideas
+
+### Source claim
+
+The report found that random-control testing had been used mainly on rejected hypotheses, while already-adopted production strategies had never been subjected to the same control.
+
+After applying the control to surviving strategies, the author used those results as additional evidence.
+
+### BBB relevance
+
+A control group is most valuable where it can challenge a strategy that is actually being trusted.
+
+Potential comparison baselines:
+
+- random entry / exit baseline
+- buy-and-hold
+- simple fixed-allocation baseline
+- no-signal baseline
+- other deliberately simple benchmark appropriate to the strategy
+
+### Candidate principle
+
+> A validation method should not be considered operationally useful if it is applied only to candidates that are already unlikely to be adopted.
+
+### Evidence status
+
+**External field report / method candidate.**
+
+---
+
+## 22. Predeclare falsification / acceptance criteria
+
+### Source claim
+
+The external report described opposing subagents declaring in advance what result would cause them to concede their position before running the next test.
+
+### BBB relevance
+
+This reduces post-result reinterpretation.
+
+Possible use:
+
+```text
+Before test:
+- expected claim
+- pass condition
+- fail condition
+- decision if ambiguous
+
+Then run test.
+```
+
+### Candidate principle
+
+> For high-impact strategy changes, define the result that would falsify the proposal before observing the outcome.
+
+This is more useful than allowing an evaluator to move the threshold after seeing results.
+
+### Evidence status
+
+**Methodological candidate; not a trading-specific rule.**
+
+---
+
+## 23. Intrabar ordering uncertainty
+
+### Derived BBB concern
+
+If historical Replay has only OHLC candles, the exact order of events inside the candle may be unknown.
+
+Example:
+
+```text
+same candle:
+High reaches TP
+Low reaches SL
+```
+
+OHLC alone may not reveal which occurred first.
+
+### BBB relevance
+
+Replay must not silently invent an event order.
+
+Possible explicit policies:
+
+- pessimistic ordering
+- optimistic ordering
+- mark result unresolved
+- retrieve finer-grained data when available
+- exclude ambiguous events from selected evaluation metrics
+
+### Candidate principle
+
+> Unknown intrabar order should remain an explicit uncertainty unless finer-grained evidence resolves it.
+
+### Evidence status
+
+**BBB inference derived from the external timing-granularity failure; requires design review before adoption.**
+
+---
+
 # Current Priority
 
 Highest-value candidates from this first batch:
 
 1. **Production / Replay / Forward parity**
-2. **Shared Trading Constraints**
-3. **Execution Reality Gap**
-4. **Order / Fill / Balance / Ledger reconciliation**
-5. **Capital / Position Authority**
-6. **Position sizing**
-7. **Capital Promotion / Demotion Gate**
-8. **Risk Reject vs Emergency Stop**
-9. **Independent deterministic cross-check**
-10. **NO TRADE reason logging**
+2. **Execution Semantics Parity**
+3. **Shared Trading Constraints**
+4. **Execution Reality Gap**
+5. **Order / Fill / Balance / Ledger reconciliation**
+6. **Strategy Exit vs Emergency Hard Stop**
+7. **Capital / Position Authority**
+8. **Position sizing**
+9. **Capital Promotion / Demotion Gate**
+10. **Retrospective re-qualification when validation gates improve**
+11. **Independent deterministic cross-check**
+12. **NO TRADE reason logging**
 
 ---
 
