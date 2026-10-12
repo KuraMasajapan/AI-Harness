@@ -1215,6 +1215,219 @@ For BBB, later evaluate whether live-mode accounting can expose:
 
 ---
 
+## 26. Monitoring Latency / Execution Policy / Validation-System Risk
+
+### Source
+
+`https://zenn.dev/milkypeco/articles/3c813dd9d4648f`
+
+External field report describing a bot whose live results degraded relative to paper / validation expectations because of execution slippage, client-side monitoring latency, regime-detection lag, and weaknesses in the validation process itself.
+
+### Two-stage evaluation
+
+- **Stage 1 Rank:** B+
+- **Stage 2 Final Rank:** **A+**
+
+The detailed article was more valuable than the intake summary because it connected multiple live-production failure modes rather than only describing slippage.
+
+### Source claims
+
+The author reported:
+
+- live market-order slippage exceeding the backtest assumption during volatile periods,
+- thin altcoin entries becoming negative expectancy after real execution cost,
+- a client-side stop check running every 60 seconds and missing fast adverse moves,
+- shortening monitoring to 15 seconds as one mitigation,
+- switching from market orders to limit-oriented execution,
+- adding a minimum stop width tied to ATR,
+- a fixed walk-forward-analysis training window that may have overfit recent noise,
+- a long moving-average regime detector reacting too slowly to a fast market transition,
+- Forward validation being strengthened before further capital scaling.
+
+These are author-reported operational findings and should not be treated as independently proven causal attribution.
+
+### ChatGPT evaluation
+
+**Final importance: A+**
+
+The strongest lesson is broader than "slippage was too high."
+
+It is:
+
+> **Execution controls are defined not only by their threshold, but also by where and how quickly they are enforced.**
+
+A stop rule that exists in configuration can still be ineffective if the observation / enforcement path is too slow for the market behavior it is supposed to contain.
+
+### BBB relevance — Monitoring latency is part of the risk rule
+
+Candidate model:
+
+```text
+Risk rule
+    ↓
+Where is it enforced?
+    ↓
+Exchange-side order
+or
+Client-side monitoring
+    ↓
+What is the worst detection / reaction latency?
+```
+
+BBB should eventually describe risk controls with both:
+
+- threshold / trigger semantics, and
+- enforcement location + maximum expected reaction latency.
+
+A nominal stop percentage alone is not a complete safety specification.
+
+### BBB relevance — Exchange-side vs client-side protection
+
+When the exchange supports native stop / trigger order types, BBB should compare them against client-side polling rather than assuming all protection must be implemented in the local loop.
+
+Potential dimensions:
+
+- exchange-side survivability if BBB disconnects,
+- trigger semantics,
+- order-type availability,
+- partial-fill behavior,
+- cancellation / replacement behavior,
+- latency,
+- recoverability and reconciliation.
+
+This should be verified specifically against current bitbank primary documentation before any live implementation.
+
+### BBB relevance — Execution Policy, not Market-vs-Limit ideology
+
+The article moved away from market-style execution, but BBB should not generalize this as:
+
+```text
+Market = bad
+Limit  = good
+```
+
+Each shifts risk:
+
+```text
+Market
+→ slippage / price uncertainty
+
+Limit
+→ non-fill / partial-fill / opportunity-loss / adverse-selection risk
+```
+
+Candidate principle:
+
+> Choose order type through an explicit Execution Policy that measures the trade-off among fill certainty, latency, price quality, and missed opportunity.
+
+Relevant metrics may include:
+
+- fill ratio,
+- partial-fill ratio,
+- time-to-fill,
+- realized slippage,
+- cancellation count,
+- fallback count,
+- missed-opportunity estimate.
+
+### BBB relevance — Validation systems also require validation
+
+The article used WFA as an anti-overfitting control, but the WFA configuration itself became a source of questionable behavior.
+
+Candidate principle:
+
+> **A validation tool is not trustworthy merely because it is named WFA, Forward Test, Replay, or Risk Gate. Its own assumptions must be tested.**
+
+Candidate chain:
+
+```text
+Strategy
+  ↓
+Backtest / Replay
+  ↓
+WFA / Forward / Validation Gate
+  ↓
+Validate the validator assumptions
+```
+
+Potential validator assumptions to expose:
+
+- training-window length,
+- test-window length,
+- sample count,
+- regime diversity,
+- parameter-search breadth,
+- data leakage boundaries,
+- execution-cost assumptions,
+- minimum evidence before pass / fail.
+
+### BBB relevance — Regime detection has latency
+
+A regime classifier should not be evaluated only by whether its labels look reasonable in hindsight.
+
+Candidate additional metric:
+
+- **Detection Lag** — how long after a material market-state change the classifier changes state.
+
+This is relevant not only to technical regime detection, but potentially to future BBB fundamental / local-AI classification if such classifications ever influence live decisions.
+
+### BBB relevance — Forward evidence before capital promotion
+
+The article reinforces the idea that a change which improves historical validation should still gather forward evidence before capital is increased.
+
+Candidate progression:
+
+```text
+Historical validation
+      ↓
+Forward / dry_run
+      ↓
+Execution-quality observation
+      ↓
+Small live pilot
+      ↓
+Capital promotion decision
+```
+
+The exact number of required forward trades should not be copied from the article.
+
+### Parts not to import directly
+
+Do not directly import:
+
+- 15-second polling as a universal optimum,
+- the author's ATR stop-width parameter,
+- the author's WFA window lengths,
+- the author's minimum number of forward trades,
+- "market to limit" as a universal fix,
+- the author's macro explanation for a specific market transition,
+- any assumption that the same slippage profile applies to bitbank or BTC/JPY.
+
+### Evidence status
+
+**Detailed external field report reviewed.**
+
+- execution-latency lesson: strong
+- order-type trade-off: strong design relevance
+- WFA critique: useful, but author-specific implementation
+- regime-change causal narrative: partially inferential / retrospective
+- BBB applicability: design-level
+- bitbank-specific implementation: requires primary-source verification
+
+### Candidate follow-up
+
+For BBB, later evaluate whether the execution / validation stack can expose:
+
+1. enforcement location for each risk control,
+2. worst-case detection / reaction latency,
+3. exchange-side vs client-side protection choice,
+4. execution-policy metrics by order type,
+5. validator configuration and assumptions,
+6. regime detection lag,
+7. forward evidence required before capital promotion.
+
+---
+
 # Current Priority
 
 Highest-value candidates from this first batch:
@@ -1225,13 +1438,15 @@ Highest-value candidates from this first batch:
 4. **Shared Trading Constraints**
 5. **Execution Reality Gap**
 6. **Order / Fill / Balance / Ledger reconciliation**
-7. **Strategy Exit vs Emergency Hard Stop**
-8. **Capital / Position Authority**
-9. **Position sizing**
-10. **Capital Promotion / Demotion Gate**
-11. **Retrospective re-qualification when validation gates improve**
-12. **Independent deterministic cross-check**
-13. **NO TRADE reason logging**
+7. **Monitoring latency / enforcement location**
+8. **Validation-System Validation**
+9. **Strategy Exit vs Emergency Hard Stop**
+10. **Capital / Position Authority**
+11. **Position sizing**
+12. **Capital Promotion / Demotion Gate**
+13. **Retrospective re-qualification when validation gates improve**
+14. **Independent deterministic cross-check**
+15. **NO TRADE reason logging**
 
 ---
 
