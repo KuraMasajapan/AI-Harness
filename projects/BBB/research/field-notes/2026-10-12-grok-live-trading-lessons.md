@@ -1052,6 +1052,169 @@ Before BBB live trading, evaluate whether the execution layer can provide:
 
 ---
 
+## 25. Live Reconciliation / Rounding Gap
+
+### Source
+
+https://zenn.dev/codecraft/articles/live-trade-reconciliation-rounding-gap
+
+External field report describing a small live-trading pilot where the bot's internally recorded position cost differed from the actual cash decrease at the exchange.
+
+### Two-stage evaluation
+
+- **Stage 1 Rank:** A
+- **Stage 2 Final Rank:** **A**
+
+The detailed article reinforces BBB's reconciliation requirements, but does not justify promotion above A because part of the article's claimed "only discoverable in live trading" behavior is documented in official exchange materials and should be separated from genuinely undocumented execution behavior.
+
+### Source claims
+
+The author reported a small live pilot in which:
+
+- the bot recorded a position cost of approximately 3,952.904 JPY,
+- the actual cash decrease was approximately 3,956 JPY,
+- the difference was approximately 3.096 JPY,
+- order identity, quantity, price, and timestamp matched,
+- the remaining discrepancy was attributed to exchange-side fee and rounding behavior.
+
+The exact reported numbers are source claims and have not been reproduced by BBB.
+
+### ChatGPT evaluation
+
+**Final importance: A**
+
+The important lesson is not the size of the discrepancy.
+
+It is:
+
+> **Order success does not prove ledger correctness.**
+
+A trading system should reconcile the complete accounting path:
+
+```text
+Order
+  ↓
+Fill
+  ↓
+Fee
+  ↓
+Cash / Asset Balance
+  ↓
+Internal Position Ledger
+```
+
+If the final internal state differs from the exchange-observed state, the difference should remain visible until explained.
+
+### BBB relevance — Reconciliation Delta
+
+Candidate model:
+
+```text
+Expected Cash Delta
+vs
+Actual Cash Delta
+
+difference:
+├─ FEE
+├─ ROUNDING
+├─ SLIPPAGE
+├─ PARTIAL_FILL
+├─ EXTERNAL_BALANCE_CHANGE
+└─ UNKNOWN
+```
+
+The important rule is:
+
+> **UNKNOWN must not be silently absorbed as harmless rounding.**
+
+Small unexplained differences can accumulate or mask a more serious state-consistency failure.
+
+### BBB relevance — Source hierarchy
+
+The article also exposes a useful research discipline.
+
+Some exchange behaviors that may appear to be "live-only surprises" can already be described in official exchange documentation.
+
+Candidate principle:
+
+```text
+Official specification
+      ↓
+Expected exchange behavior
+      ↓
+Small live pilot
+      ↓
+Observed behavior
+      ↓
+Reconciliation
+```
+
+Use the small live pilot to confirm and calibrate real behavior, not as a substitute for reading primary documentation.
+
+### BBB relevance — Small Live Pilot as Execution Calibration
+
+A small-capital pilot should not primarily be judged by profitability.
+
+Its more valuable role can be:
+
+- confirm fee behavior,
+- confirm rounding / precision behavior,
+- observe fill-state transitions,
+- compare expected and actual balances,
+- validate reconciliation,
+- detect undocumented or misunderstood exchange behavior,
+- measure execution reality before scaling.
+
+Candidate progression:
+
+```text
+Paper / Replay
+      ↓
+Small Live Pilot
+      ↓
+Execution Calibration
+      ↓
+Reconciliation health
+      ↓
+Capital promotion decision
+```
+
+### Parts not to import directly
+
+Do not directly import:
+
+- GMO-specific rounding assumptions,
+- GMO-specific fee rules,
+- the article's exact JPY discrepancy,
+- any assumption that all exchange-side differences are harmless,
+- the claim that every observed behavior could only have been discovered with live funds.
+
+bitbank-specific behavior must be checked against bitbank primary documentation and BBB observations.
+
+### Evidence status
+
+**Detailed external field report reviewed.**
+
+- reconciliation lesson: strong
+- exact numeric discrepancy: source claim
+- GMO-specific mechanics: exchange-specific
+- BBB applicability: design-level
+- bitbank behavior: requires separate verification
+
+### Candidate follow-up
+
+For BBB, later evaluate whether live-mode accounting can expose:
+
+1. expected fee,
+2. actual fee,
+3. expected cash / asset delta,
+4. actual cash / asset delta,
+5. reconciliation delta,
+6. categorized cause,
+7. unresolved UNKNOWN state.
+
+---
+
 # Current Priority
 
 Highest-value candidates from this first batch:
