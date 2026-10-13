@@ -417,6 +417,15 @@ without yet changing Core.
 
 ---
 
+## Additional observation — Artifact handoff readability (2026-10-14)
+
+- External X post contrasted an organized project folder with one containing many mixed intermediate files. **Single anecdote, not a controlled model comparison**: folder count does not prove output quality or that files are unnecessary.
+- Human clarified that **AI-Harness operations have not produced a noticeable filing problem**. This is a prompt for reflection, **not an observed Harness defect**.
+- If a concrete need arises, consider **human-readable handoff** alongside resource hygiene: distinguish final deliverables, reproducibility/audit evidence, and clearly task-owned disposable intermediates. Preserve required evidence and never infer deletion safety from appearance alone.
+- **No new rule, implementation, cleanup automation, priority escalation, or proactive experiment** is justified by this observation alone.
+
+---
+
 ## Decision
 
 Preserve as a medium-priority review candidate.
