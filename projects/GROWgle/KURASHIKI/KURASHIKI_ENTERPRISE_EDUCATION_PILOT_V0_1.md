@@ -8186,3 +8186,189 @@ Next priority:
 3. unresolved insurance 2026 public-detail
 4. one more broad gap scan across subarea x industry x age x access-mode
 5. if the next batches yield no materially new SOURCE type, prepare KURASHIKI_ENTERPRISE_PILOT = SATURATED_FOR_PILOT checkpoint
+
+
+## 154. New population Gateway — Kurashiki Challenge Work 14 — 2026-10-14
+
+### Kurashiki Challenge Work 14
+Current official:
+- Kurashiki City junior-high second-year students
+- all 26 municipal junior high schools
+- approximately 3 days of workplace experience at local establishments
+- FY2026 is the 26th year
+- purpose: career education, occupational outlook, work values and reflection on future path
+- city currently publishes the FY2025 participating-establishment list
+
+Classification:
+SCHOOL_ONLY / CAREER_EDUCATION
+JUNIOR_HIGH
+WORKPLACE_EXPERIENCE
+RECURRING / LONG_RUNNING
+GATEWAY_POPULATION = VERY_HIGH_VALUE
+PUBLIC_LIST = NO
+RESEARCH_ONLY = YES
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kosodate/kyoiku/1013006/1011141.html
+
+Research significance:
+This is a materially different provider population from:
+- Enterprise Manabi Gakusha
+- Dream Partners
+- school-side invited lecture partners
+- public fairs
+- industry-association member routes
+
+It can expose local establishments that accept actual multi-day student workplace experience but do not appear in lecture / event lists.
+
+Current evidence also shows that individual providers publicly document participation, including examples such as construction, pharmacies, university libraries and public facilities.
+
+Operational rule:
+Do not import the entire historical provider list wholesale.
+Sample / normalize by:
+1. new industry type
+2. geographic gap
+3. provider not already in the SOURCE graph
+4. repeat participation / current acceptance
+5. distinctive hands-on experience
+
+Only promote a provider when current or repeatability evidence is sufficient.
+All Challenge Work activities remain SCHOOL_ONLY unless a separate public-access route is independently confirmed.
+
+## 155. Parent-child fishery experience 2026 — strong public local-industry event
+
+Current official:
+- event date: 2026-10-31
+- application deadline: 2026-10-15
+- target: elementary child + guardian, one adult / one child
+- eligible residents: Takahashi River Basin 7 cities / 3 towns
+- capacity: 15 pairs / 30 people, lottery if oversubscribed
+- fee: 5,000 yen per pair, lunch + seafood souvenir included
+- gathering / activity base: Kurosaki-Tsurajima Fisheries Cooperative, Tamashima Kurosaki
+- program:
+  - board a fishing vessel
+  - observe fixed-net fishing
+  - see fish being lifted / sorted
+  - fish-filleting lesson
+
+Classification:
+OPEN_PUBLIC_WITH_REGION_REQUIREMENT
+ELEMENTARY / FAMILY
+FISHERY / SEA / FOOD / LOCAL_INDUSTRY
+HANDS_ON / OBSERVATION
+CURRENT_2026
+PUBLIC_LIST = YES
+ACCESS_DIFFICULTY = MEDIUM
+Region: 玉島・黒崎
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/agriculture/1013001/1005645/1005656.html
+
+GROWgle value:
+This is exactly the kind of regional experience that is easy to miss without municipal-sector research.
+Keep separate from the Kojima motorboat / rescue experience:
+- Kojima = boat / maritime / rescue / water-safety
+- Tamashima Kurosaki = commercial fishery / fixed net / seafood handling
+
+Date note:
+As of 2026-10-14, the application deadline is the next day (2026-10-15).
+
+## 156. Mabi direct-access continuous agriculture SOURCE — Yata Experiential Farm
+
+Current official:
+- location: Mabi-cho Yata
+- FY2026 use period: 2026-04-01 to 2027-01-31
+- tools / rest house are provided
+- agricultural guidance available
+- approximately monthly harvest / meal interaction events
+- visitors / trial participation welcome
+- prior contact required for trial
+- regular fee: 3,000 yen / month per person
+- elementary-school-age children and younger: free
+- first-time users: one-month free trial
+- project主体: Mabi District Community Development Promotion Liaison Council
+
+Activities / crops:
+- spring/summer: tomatoes, eggplants, peppers, cucumbers, pumpkins, green beans, okra, edamame
+- autumn/winter: spinach, komatsuna, turnips, cabbage, broccoli, daikon, carrots
+- harvest / meal events approximately once a month
+
+Classification:
+COMMUNITY_SOURCE
+DIRECT_ACCESS / CONTINUOUS
+FAMILY / CHILD_ACCESSIBLE
+AGRICULTURE / FOOD / COMMUNITY
+CONSTANT_SOURCE
+Region: 真備
+
+Public Listing Gate:
+PUBLIC_LIST_CANDIDATE = YES
+ACCESS_DIFFICULTY = LOW_TO_MEDIUM
+Reason:
+- direct application
+- no school / partner affiliation needed
+- first-month free trial
+- elementary children free
+- equipment / guidance provided
+- ongoing rather than specialist-only
+Caution:
+The program is not exclusively designed for children, so present as family / community agriculture rather than a child-only class.
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/agriculture/1012651/1005613.html
+
+Maturity impact:
+MABI_DIRECT_ACCESS_AGRICULTURE = STRONG_NEW_LAYER
+
+## 157. Current direct public factory-tour confirmation — JFE Spring Vacation Tour 2026
+
+Kurashiki City local information board confirms:
+- 2026-03-30 and 03-31
+- JFE Steel West Japan Works (Kurashiki District)
+- four sessions across two days
+- in-principle elementary school age and older
+- elementary children require guardian
+- 70 participants per session
+- free
+- overview -> factory tour -> Q&A
+- direct telephone reservation
+
+Classification:
+OPEN_PUBLIC / FREE / RESERVATION
+ELEMENTARY+ / FAMILY
+STEEL / MANUFACTURING / INDUSTRIAL_INFRASTRUCTURE
+CURRENT_2026
+PUBLIC_LIST = YES
+Region: 水島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/cityinfo/publicity/1001929/1001937/1022190/1023619/1023622.html
+
+Interpretation:
+JFE was already a strong SOURCE.
+This does not create a new SOURCE; it resolves a useful access-mode edge:
+JFE = not only SCHOOL / GROUP, but also specific OPEN_PUBLIC family factory-tour windows.
+
+## 158. Saturation checkpoint changed by new Gateway
+
+Previous state:
+KURASHIKI_ENTERPRISE_PILOT = SATURATION_CANDIDATE / NOT_YET_SATURATED
+
+2026-10-14 final-gap scan still produced:
+- a new large provider-population Gateway: Challenge Work 14
+- a newly captured public fishery industry experience
+- a Mabi continuous direct-access agriculture SOURCE
+- an OPEN_PUBLIC access edge for an already-strong industrial SOURCE
+
+Therefore:
+KURASHIKI_ENTERPRISE_PILOT = NOT_YET_SATURATED
+SATURATION_CANDIDATE = MAINTAINED, BUT CHECKPOINT DEFERRED
+
+Reason:
+The remaining research is no longer broad discovery, but Challenge Work 14 is sufficiently distinct that at least one controlled sampling pass is justified before declaring overall Pilot saturation.
+
+Next:
+1. sample Challenge Work 14 only for genuinely new provider types / local gaps; do not ingest the whole historical list
+2. run one final provider-type delta check against existing SOURCE graph
+3. if Challenge Work sampling mostly duplicates known sectors / sources, declare SATURATED_FOR_PILOT
+4. preserve annual WATCH channels for public event updates even after saturation
