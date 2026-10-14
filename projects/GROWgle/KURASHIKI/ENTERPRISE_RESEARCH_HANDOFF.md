@@ -376,3 +376,30 @@ Research emphasis now:
 
 Saturation trigger:
 If subsequent targeted batches produce no materially new SOURCE type or access mode, prepare SATURATED_FOR_PILOT checkpoint while retaining WATCH items for annual updates.
+
+
+## 20. Challenge Work 14 Gateway before final saturation — 2026-10-14
+
+New population discovered:
+Kurashiki Challenge Work 14
+- all 26 municipal junior high schools
+- second-year students
+- ~3-day workplace experiences
+- FY2026 = 26th year
+- city publishes prior-year participating establishments
+
+This is SCHOOL_ONLY and must not be PUBLIC_LIST by itself.
+
+Use as a provider-discovery Gateway only:
+- sample for new industry / subarea / provider types
+- prioritize providers outside existing SOURCE graph
+- require current / repeatability evidence before promotion
+- do not bulk-import the historical establishment list
+
+Saturation effect:
+Overall Kurashiki Enterprise Pilot remains SATURATION_CANDIDATE but final SATURATED_FOR_PILOT declaration is deferred until one controlled Challenge Work sampling pass is complete.
+
+Also captured:
+- 2026 parent-child fishery experience (Tamashima Kurosaki) = PUBLIC_LIST
+- Yata Experiential Farm (Mabi) = continuous family-accessible agriculture SOURCE, PUBLIC_LIST_CANDIDATE
+- JFE 2026 spring public factory-tour window = OPEN_PUBLIC access edge on existing strong SOURCE.
