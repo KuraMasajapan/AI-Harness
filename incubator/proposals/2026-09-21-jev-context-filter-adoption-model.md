@@ -197,3 +197,19 @@ Only promote beyond experiment status if measured value is positive and the fall
 Do not build AI-Harness around Jev.
 
 Build a replaceable Context Filter boundary, and let Jev earn a place behind that boundary only when the ecosystem becomes large enough that the measured benefit exceeds the dependency cost.
+
+
+---
+
+## Research addendum — 2026-10-14: Ollama v0.40.4 local decision CLI
+
+- **Provenance:** 2026-10-14 Grok Observer entry in Airtable AI-Harness / Harness Inbox; verified against the [Ollama official v0.40.4 release](https://github.com/ollama/ollama/releases/tag/v0.40.4), published 2026-10-12 19:00 UTC (2026-10-13 JST).
+- **Initial research rank (Stage 1): A+**; **final research rank (Stage 2): A**. Rank measures research utility, not model accuracy or permission to deploy.
+- **Decision:** **ABSORB as reference / implementation HOLD**. No separate proposal, new process, Core change, or integration approved.
+- **Confirmed feature:** `ollama run MODEL --ask "..."` exposes bounded decision use from CLI (yes/no, text classification, rubric scoring). The same release adds locally installed Ollama models to the Codex model picker through `ollama launch codex`, and documents further runner/performance improvements.
+- **Novelty boundary:** this is an **incremental CLI/integration improvement**, *not* the introduction of the Decision Model concept or proof of task accuracy. Older Ollama decision APIs and Jev/other typed-decision candidates predate it.
+- **Relation to this existing proposal:** the replaceable Context Filter interface may eventually choose local bounded-decision models run via Ollama. Preserve deterministic rules and protected context as authoritative. Ollama is an optional execution mechanism, not a replacement for this proposal's constraints or the system of record.
+- **Alternative/overlap:** compare against existing deterministic routing, `sokudan-ja-310m` local classification candidate, and the original Jev candidate before adding a dependency. Do not add a new Ollama-specific agent or service merely because the CLI feature exists.
+- **Unverified:** task-specific KEEP/DROP false-negative rates, accuracy/confidence calibration, local CPU/RAM/latency on target hardware, integration friction in the current AI-Harness, privacy and operational savings.
+- **Revisit when:** local classification becomes an active bottleneck, current Ollama installation can run a suitable decision model cheaply, or a fair identical-input benchmark against current rules/Sokudan/Jev is ready.
+- **Human direction:** On 2026-10-14 Human asked to record today's three Grok report evaluations; this addendum is the durable GitHub reference for the Ollama item. The two remaining, lower-ranked reports retain their final judgments on their originating Airtable Inbox records, rather than spawning proposal files.
