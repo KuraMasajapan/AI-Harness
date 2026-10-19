@@ -84,3 +84,6 @@ trigger_topics:
 - Evidence **CONFIRMED** (files/structure) / **UNVERIFIED** (actual benefits).
 - Decision **CANDIDATE**, Implementation **HOLD**.
 - Recall when: UI redesign, frontend-agent, design drift, unreadable dashboards, visual polish, Markdown styling contract, reusable components, BBB/growgle/Harness interface creation.
+
+## Related practical reference (link only)
+- [吉村伸一「AIに同じダメ出しを何度もする人と『一度で終わる人』の違い」](https://note.com/shin_yoshimura/n/n9be1160b784f)（2026-10-19）— AI生成資料のレビュー指摘を「不足前提・意図をならす修正・編集可能性」の観点で整理し、指摘を次回の明示条件へ変換する実務例。既存の制約明文化・成果物確認の補強資料。**参照リンクのみ／新規ルール・採用判断なし**。
