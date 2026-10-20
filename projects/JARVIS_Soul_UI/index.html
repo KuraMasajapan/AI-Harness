@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local AI Soul — quiet visual prototype">
+  <title>NOVA / Local AI Soul</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>.soul-wrap{height:calc(100vh - 230px)}@media(max-width:600px){.soul-wrap{height:calc(100vh - 300px)}}</style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span>NOVA</span><small>Local AI Assistant</small><b><i></i> Demo / not connected</b></div>
+      <div class="window-controls" aria-hidden="true"><span>—</span><span>□</span><span>×</span></div>
+    </header>
+    <nav class="left-nav" aria-label="Primary">
+      <button class="nav-item is-active" type="button" aria-current="page"><span class="nav-icon">◌</span>Chat</button>
+      <button class="nav-item" type="button"><span class="nav-icon">∿</span>Voice</button>
+      <button class="nav-item" type="button"><span class="nav-icon">▱</span>Library</button>
+      <button class="nav-item" type="button"><span class="nav-icon">⁙</span>Tools</button>
+      <button class="nav-item" type="button"><span class="nav-icon">⚙</span>Settings</button>
+      <div class="nav-spacer"></div>
+      <div class="runtime-card"><span class="runtime-dot"></span><strong>Prototype mode</strong><small>Local UI only</small></div>
+    </nav>
+
+    <main class="main-stage">
+      <section class="stage-heading"><p>QUIET INTELLIGENCE</p><h1>A calm place to think.</h1></section>
+      <div class="soul-wrap">
+        <canvas id="soul-canvas" aria-label="Animated abstract soul visual"></canvas>
+        <div class="soul-caption"><span class="status-dot"></span><span id="state-label">Ready for a demo</span><small>Visual state only · no microphone access</small></div>
+      </div>
+      <aside class="status-panel" aria-live="polite">
+        <div class="eyebrow">DEMO STATE</div><h2 id="status-title">Ready</h2><p id="status-copy">A quiet visual baseline. Choose a state to preview the motion language.</p>
+        <div class="state-list" role="group" aria-label="Demo state">
+          <button type="button" class="state-button is-selected" data-state="idle" aria-pressed="true"><span></span>Ready</button>
+          <button type="button" class="state-button" data-state="listening" aria-pressed="false"><span></span>Listening <em>demo</em></button>
+          <button type="button" class="state-button" data-state="processing" aria-pressed="false"><span></span>Processing <em>demo</em></button>
+          <button type="button" class="state-button" data-state="speaking" aria-pressed="false"><span></span>Speaking <em>demo</em></button>
+          <button type="button" class="state-button" data-state="error" aria-pressed="false"><span></span>Attention</button>
+        </div>
+      </aside>
+      <div class="quick-actions" aria-label="Demo actions">
+        <button type="button"><b>＋</b><span><strong>New thought</strong><small>Visual placeholder</small></span></button>
+        <button type="button"><b>⌘</b><span><strong>Open a space</strong><small>Not connected</small></span></button>
+      </div>
+      <div class="voice-bar">
+        <button type="button" class="voice-tool" aria-label="Open visual settings">☷</button>
+        <div class="input-ghost">Talk to Nova… <span>Demo only</span></div>
+        <div class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <button type="button" class="mic-button" aria-label="Microphone is not connected">●</button>
+        <button type="button" class="voice-tool" aria-label="Choose visual state">⌁</button>
+      </div>
+    </main>
+    <div class="dev-overlay" id="dev-overlay">Balanced · 0 fps · render 0×0</div>
+  </div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
+
