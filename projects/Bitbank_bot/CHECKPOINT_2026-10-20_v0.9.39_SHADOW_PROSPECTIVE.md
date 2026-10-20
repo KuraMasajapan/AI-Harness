@@ -1,6 +1,6 @@
 # BBB Checkpoint — v0.9.39 Shadow Prospective Forward
 
-Date: 2026-10-20 (JST). Stage: ZIP packaged; Windows UI acceptance pending.
+Date: 2026-10-20 (JST). Stage: ZIP packaged, Windows Shadow Freeze UI operation observed and accepted; prospective results pending.
 
 ## Release
 - Full ZIP: `BBB_v0.9.39_SHADOW_PROSPECTIVE_FORWARD_FULL.zip`
@@ -33,3 +33,16 @@ New isolated Shadow Prospective Forward in Training Lab:
 
 ## Notes
 Study is model-only, not demonstrated profitable trading. Upstream research notes remain on development branch and are not automatically promoted to canonical strategy rules.
+
+## Windows human acceptance — 2026-10-20 20:33 JST
+
+User operated `Shadow候補を今からFreeze` once and shared a UI screenshot confirming:
+- `Shadow Freeze`: **2026/10/20 20:32:52** (JST, as displayed in local UI).
+- Candidate: **`entry_buffer_06`** (selected in historical Development).
+- Status: **WAITING**.
+- `NEW CANDLES`: **0**.
+- Baseline Net / Candidate Net / Difference / Stress Net: not yet scored (dash).
+- Historical Holdout: **EXPOSED**, not independent evidence.
+- Active change: none; Live LOCKED.
+
+This verifies the frozen research UI state, **not** future evaluation results or persistent-state recovery after restart (still to be checked). New complete candles accrued after Freeze must be evaluated without changing the original freeze. Daily operating procedure: run Active Forward update and Shadow Forward update once each as desired, after new public candles exist; repeat freezing is unnecessary. Future score comparisons must use identical post-freeze dates and modeled cost definitions. No keys, market dataset or local configuration included in this checkpoint.
