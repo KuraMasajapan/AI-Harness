@@ -1,7 +1,44 @@
 # BBB CURRENT SPEC
 
-Updated: 2026-10-01
-Status: CURRENT
+
+## 2026-10-20 — Current release & evidence boundaries (read first)
+
+**Verified deployed release: BBB v0.9.39** (Shadow Prospective Forward).
+The version-specific distribution is a Full ZIP in the user's ChatGPT conversation; **source files are NOT yet synchronized to this GitHub repository**. Do not infer GitHub has v0.9.39 code merely from this spec.
+
+The historical entries further down this file describe earlier releases and should not be read as today's runtime status.
+
+### Present architecture
+- Pair/venue: bitbank BTC/JPY **spot**, research and Paper operation; no leverage or shorts.
+- Deterministic initial strategy engine, optional local AI for sandbox information classification; AI does **not** directly place orders.
+- Frozen Active Mean Reversion: lookback 79, entry_z 2.0, exit_z 0.0, Active Forward freeze **2026-10-08 17:20 JST**.
+- **Active Forward**: independent chronological, post-freeze 5m candles. As of last observed 2026-10-20 19:30 JST: 3,482 candles, VALIDATING, legacy strategy return +1.37%, Buy & Hold -1.79%, PF 2.20, max DD 1.55%, closed trades 174. These are research simulations, not actual fills.
+- **Execution Parity Audit**: same-period next-open hypothetical cost scenarios, independent from Active score. Most recent public bitbank taker reference + assumed slippage showed **-0.99% modeled net**, status REVIEW. Actual account fees, order book, partial fills and real execution are not demonstrated.
+- **Evidence Readiness** (v0.9.38, accepted on Windows): Research OBSERVING, Economic NET NEGATIVE, Execution NOT IMPLEMENTED, overall **LIVE BLOCKED**. This is a descriptive read-only summary; not a live authorization path.
+- **Shadow Cost-Aware Buffer Lab** (v0.9.36): 5 fixed Mean Reversion entry/exit candidates; historical candidate `entry_buffer_06` reduced modeled historical Holdout loss from -2.78% to -0.72% but did not establish profitability. The historical Holdout has been viewed.
+- **Historical Holdout Evidence Audit** (v0.9.37): flags prior or potentially repeated Holdout exposure and records data/parameter fingerprints. Historical Holdout alone is not a clean prospective validation.
+- **Shadow Prospective Forward** (v0.9.39, Windows Freeze operation accepted): immutable Shadow freeze **2026-10-20 20:32:52 JST**, candidate `entry_buffer_06`; WAITING with 0 new post-freeze candles when observed. Independent post-freeze data comparison on new complete candles; standard/stress modeled fees. Freeze is not to be reset or retroactively moved.
+- **Shadow継続研究** normally OFF while these trials accumulate new data; use manual daily Forward refreshes.
+
+### Safety and evidence priorities
+1. Preserve Active Champion, both independent Freeze timestamps, historical audit reports, and Paper state. Never tune on an already exposed Holdout and claim new independent validation.
+2. Evaluate **net-of-cost** economic results, return/DD/PF/trade count and an execution model; positive legacy/gross score is not sufficient.
+3. Historical test, unseen historical Holdout, future Shadow Forward, and actual-execution evidence are distinct evidence levels.
+4. Current roadmap: data/source provenance and chronological evidence hygiene -> controlled cost-aware research -> practical order constraints and reconciliation -> human-approved small-value live test. No automatic Live promotion.
+5. Future Live prerequisites: verified private-order handling, fees and precision, duplicate-order prevention, UNKNOWN reconciliation, partial fill and balance recovery, risk limits / kill switch, independent tests, **explicit Human approval**.
+6. External public studies on Hoheto/Kronos stay as `development/projects/BBB/research/field-notes/` candidates. They do not become approved trade logic by appearing in the repository.
+7. No API credentials/secrets in documentation, checkpoints or shared logs.
+
+### Reproducibility / source-of-truth pointers
+- Release/checkpoint index: `main/projects/Bitbank_bot/CHECKPOINT_2026-10-20_v0.9.39_SHADOW_PROSPECTIVE.md`
+- Prior state: `main/projects/Bitbank_bot/CHECKPOINT_2026-10-16_v0.9.37_HOLDOUT_EVIDENCE_AUDIT.md`
+- External research: `development/projects/BBB/research/field-notes/`
+- Source code and test counts in versioned ZIP are separate from these GitHub records. Repo code must be reconciled deliberately, preserving data and security boundaries; do not assume a checkpoint commit includes runnable source.
+
+---
+
+Updated: 2026-10-20
+Status: CURRENT — legacy history retained below; current release addendum takes precedence
 
 ## 1. Project identity
 - Name: BITBANK-BOT
