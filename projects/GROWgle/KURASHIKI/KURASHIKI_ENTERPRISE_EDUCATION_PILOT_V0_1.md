@@ -8372,3 +8372,254 @@ Next:
 2. run one final provider-type delta check against existing SOURCE graph
 3. if Challenge Work sampling mostly duplicates known sectors / sources, declare SATURATED_FOR_PILOT
 4. preserve annual WATCH channels for public event updates even after saturation
+
+
+## 95. Breadth-restoration batch — welfare / IT / utilities / local industry — 2026-10-21
+
+Course-correction後、児島繊維の反復を止め、未探索・薄かった業種へ横展開。
+
+### 郁青会 / 福寿会 — CURRENT HIGH_VALUE / MEDICAL-WELFARE CAREER
+2026公式:
+- 2026-02-19「企業学び楽舎」に参加
+- 倉敷翠松高校で生活相談員が「他己紹介」を題材に、相手の良さを聞き出しプレゼンする技法を講義
+- 2026-02-28「お仕事体験ラボ」に藤戸クリニックの理学療法士が参加
+- 中学生・高校生へ理学療法士の仕事内容、やりがい、進学先、国家試験等を説明
+- 2025にも倉敷天城中「なるほどプロフェッショナル」で医師の仕事を講義
+- 2025イオンモール倉敷「中高生×医療×お仕事体験Lab」にも参加
+
+Classification:
+SCHOOL + OPEN_EVENT_CAREER / RECURRING
+JUNIOR_HIGH / HIGH_SCHOOL
+MEDICAL / WELFARE / CAREER / COMMUNICATION
+Region: 藤戸 / 倉敷
+hands_on: MEDIUM_TO_HIGH
+
+Evidence:
+https://www.fukujyu.or.jp/
+https://www.fukujyu.or.jp/news/category/fujito
+https://ikuseikai04.blog.fc2.com/blog-date-202602.html
+
+GROWgle note:
+64社リスト上の福祉法人を単なる施設見学候補ではなく、複数年の中高生キャリア教育SOURCEへ昇格。
+
+### 温故知新会 ひかりの里 — CURRENT PBL / WELFARE SOURCE
+2026高梁川流域未来人材育成事業:
+- 技術指導
+- 会社・施設見学
+の連携可能法人として公式掲載。
+
+2026 current:
+- 倉敷市玉島八島
+- 地域密着型高齢者福祉
+- 最新の介護補助設備・ICT導入
+- 地域との交流を重視
+- 施設見学を常時案内
+
+Classification:
+CURRENT_PBL_SOURCE + GROUP_VISIT_CANDIDATE
+HIGH_SCHOOL / UNIVERSITY
+WELFARE / CARE_TECH / COMMUNITY
+Region: 玉島
+hands_on: MEDIUM_CANDIDATE
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+https://onkochishinkai.or.jp/
+https://onkochishinkai.or.jp/recruit
+
+GROWgle note:
+一般の子どもイベントではないが、「介護技術×ICT×見学」の学習資源として強い。
+
+### しおかぜ — REGIONAL WELFARE + CHILDCARE NETWORK
+公式:
+- 倉敷市児島・下津井地区で介護・保育事業
+- 特養、デイ、訪問介護、介護研修、フィットネス
+- しおかぜ認定こども園
+- 地域支援事業
+- 施設見学・相談を受付
+- 2026年度事業計画を公開
+
+児島しごと博では複数年参加企業として確認済み。
+
+Classification:
+RECURRING_CANDIDATE / REGIONAL_WELFARE_SOURCE
+HIGH_SCHOOL + GENERAL_VISIT_CANDIDATE
+WELFARE / CHILDCARE / COMMUNITY
+Region: 児島・下津井
+
+Evidence:
+https://www.shiokaze-group.co.jp/about/document
+https://www.shiokaze-group.co.jp/helper-shiokaze
+
+GROWgle note:
+「福祉」「保育」「地域支援」が一法人内にあり、児島非製造業の重要SOURCE。
+
+### 中国電力 玉島発電所 — CONSTANT / OPEN GROUP FACTORY VISIT
+Current official:
+- 5〜40名程度
+- 平日
+- 90分程度
+- 発電所概要
+- 紹介ビデオ
+- タービン室
+- 中央制御室
+- 発電所構内
+- 3週間前までの申込
+
+倉敷観光WEB:
+- 小学生以上
+- 5〜30名程度
+- 無料
+
+Classification:
+GROUP_BOOKING / CONSTANT
+ELEMENTARY+ / SCHOOL / FAMILY_GROUP
+STEAM / ENERGY / INFRASTRUCTURE / LOCAL_INDUSTRY
+hands_on: OBSERVATION_HIGH
+Region: 玉島
+
+Evidence:
+https://www.energia.co.jp/area/okayama/entry/288.html
+https://www.kurashiki-tabi.jp/see/see-2333/
+https://www.energia.co.jp/corp/miraisouzou/visit.html
+
+GROWgle note:
+学校限定ではなく、条件を満たすグループが直接申込できる常設産業見学SOURCEとして再確定。
+
+### ピープルソフトウェア — CURRENT IT / STUDENT HANDS-ON SOURCE
+2026〜2027向け現行学生プログラム:
+- 倉敷駅前本社
+- 会社説明
+- オフィス見学
+- 社員交流
+- 仕事体験
+
+5日〜2週間未満のプログラム:
+- プログラマー / SE
+- Python / JavaScript等
+- 生成AIツール
+- UI/UX
+- グループワーク
+- 成果物へのフィードバック
+- 倉敷本社で開催
+
+2026倉敷芸術科学大学「働く本音ワークショップ」:
+- 学生15名
+- 倉敷市内企業6社
+- ピープルソフトウェア参加
+- 就職活動から切り離した対話型キャリア教育
+
+Classification:
+STUDENT_ONLY / CURRENT
+UNIVERSITY
+IT / AI / SOFTWARE / UIUX / CAREER
+hands_on: VERY_HIGH
+Region: 倉敷駅前
+
+Evidence:
+https://job.mynavi.jp/28/pc/corpinfo/displayInternship/index?corpId=92523&optNo=TNyEU
+https://job.mynavi.jp/28/pc/corpinfo/displayInternship/index?corpId=92523&optNo=qZwCt
+https://article.yahoo.co.jp/detail/f028a6dce6d0576818ad1496d6fb7539470392ea
+
+GROWgle note:
+これまで製造・医療が強かったが、倉敷中心部に「AI/ソフトウェア/UX」の実務体験SOURCEがあることを明確化。
+
+### 倉敷ケーブルテレビ — CURRENT SCHOOL MEDIA SOURCE reconfirmed
+Current official:
+- 小5社会科見学
+- 中2職場体験
+- ニュース制作
+- デスク / ディレクター / 記者 / アナウンサー
+- 編集室 / 副調 / スタジオ
+- 学校ニーズに応じたカリキュラム
+
+2026:
+- 多津美中の生徒が3日間のChallenge Workを実施
+
+Classification:
+SCHOOL_ONLY / CONSTANT
+ELEMENTARY_HIGH / JUNIOR_HIGH
+MEDIA / INFORMATION_LITERACY / CAREER
+hands_on: HIGH
+
+Evidence:
+https://www.kct.co.jp/introduction/tour.html
+https://tv.kct.jp/program/detail.php?id=39843
+
+### オートバックス笹沖 — CURRENT RETAIL SERVICE / EDUCATION ONLY VIA MANABIGAKUSYA
+Current retail site:
+- 倉敷市笹沖
+- 車検・整備・各種メンテナンス
+- キッズコーナーあり
+
+2026企業学び楽舎母集団:
+- ディー・エス笹沖（オートバックス）
+- 商品や簡単なメンテナンス等を題材にする体験型授業
+
+今回、店舗独自の2026一般子ども向けイベントは確認できず。
+
+Classification:
+SCHOOL_ONLY_VERIFIED / OPEN_PUBLIC_ACTIVITY_UNVERIFIED
+JUNIOR_HIGH / HIGH_SCHOOL
+AUTOMOTIVE_SERVICE / RETAIL / CAREER
+
+Evidence:
+https://shop.autobacs.com/ja/retail/shops/101093
+https://www.city.kurashiki.okayama.jp/business/employment/1005580/1005581.html
+
+### 保育・こども園群 — scope judgment
+企業学び楽舎64社の未深掘りだった:
+- 小谷かなりや認定こども園
+- 八幡認定こども園
+- めばえ保育園
+- ドルフィン・メイトこども園
+等を横断確認。
+
+Current public webで確認できた主なもの:
+- 入園前見学
+- 子育て相談
+- 園行事
+- 学生・採用向け園見学
+- 未就園児向け案内
+- 保育実習系導線
+
+ただし、地域の子ども・学生へ「仕事を体験する教育ACTIVITY」として独立して確認できる情報は、企業学び楽舎以外では限定的。
+
+Operational decision:
+- 企業学び楽舎参加はSOURCEとして保持
+- 入園見学・通常園行事・採用見学はGROWgle企業体験ACTIVITYに水増ししない
+- 明確な学生職業体験 / 一般親子ワークショップが出た時のみ昇格
+
+Evidence:
+https://hachiman-h.jp/hachiman/
+https://www.hik-okayama.jp/pr/detail.php?id=291
+https://www.kurashiki-minpokyo.or.jp/mebae.html
+https://www.kurashiki-minpokyo.or.jp/kanariya.html
+
+GROWgle note:
+未探索領域を埋める際も「数を増やすための誤採用」を避ける。
+
+## 96. Breadth findings
+
+今回の横展開で、倉敷Pilotの不足していた領域を補完:
+- WELFARE: 郁青会 / 温故知新会 / しおかぜ
+- IT: ピープルソフトウェア
+- MEDIA: KCT
+- ENERGY: 中国電力 玉島発電所
+- RETAIL_SERVICE: オートバックス
+- CHILDCARE: 複数法人を確認し、活動なし/限定情報も明示
+
+Important:
+「未深掘り企業を全部ACTIVEへする」のではなく、
+ACTIVE / CANDIDATE / UNVERIFIED を保ったままbreadthを取る。
+
+## 97. Next breadth pass
+
+児島繊維は引き続きSATURATED_FOR_PILOT。
+次は以下へ移る:
+1. 真備・船穂・庄・茶屋町の企業/団体
+2. 交通・物流（下津井電鉄以外）
+3. 地域金融（水島信金・銀行のcurrent教育実績）
+4. 小売・サービス・ホテル・観光
+5. 食品・農業・流通
+6. 企業学び楽舎64社でまだ独立確認できていない残り企業
