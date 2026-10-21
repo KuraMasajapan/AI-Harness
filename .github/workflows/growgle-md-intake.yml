@@ -1,0 +1,56 @@
+name: GROWgle MD 取り込みチェック
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/GROWgle/**'
+      - '.github/workflows/growgle-md-intake.yml'
+  workflow_dispatch:
+  schedule:
+    # Backup scan: Monday 19:35 JST (10:35 UTC)
+    - cron: '35 10 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  source-audit:
+    name: MD追加・更新と掲載未確認の検出
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify audit logic
+        run: python3 -m unittest discover -s projects/GROWgle/implementation_tracking/tests -v
+
+      - name: Analyze GROWgle MD inventory
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          python3 projects/GROWgle/implementation_tracking/check_sources.py \
+            --ref "$GITHUB_SHA" \
+            --json-out "$RUNNER_TEMP/growgle-md-audit.json" \
+            --markdown-out "$RUNNER_TEMP/growgle-md-audit.md"
+          cat "$RUNNER_TEMP/growgle-md-audit.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save review report
+        uses: actions/upload-artifact@v4
+        with:
+          name: growgle-md-audit
+          path: |
+            ${{ runner.temp }}/growgle-md-audit.json
+            ${{ runner.temp }}/growgle-md-audit.md
+          if-no-files-found: error
+          retention-days: 30
