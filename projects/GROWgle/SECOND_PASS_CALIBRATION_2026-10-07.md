@@ -4037,3 +4037,22 @@ Current status:
 `HAYASHIMA_SECOND_PASS = ACTIVE / STRONGLY_IMPROVED / NOT_SATURATED`
 
 Do not treat the town event-index alone as sufficient coverage.
+
+
+## Coverage-gap priority pivot — 2026-10-21
+
+Second Pass regional order is no longer primarily sequential.
+
+Current rollback / policy checkpoint:
+`projects/GROWgle/CHECKPOINT_COVERAGE_GAP_PRIORITY_2026-10-21.md`
+
+Priority:
+`ZERO -> THIN -> UNEVEN -> NEAR_SATURATED`
+
+Reason:
+Hayashima showed that apparent zero coverage can be caused by fragmented sources and unresolved WATCH candidates rather than actual absence of opportunities.
+
+This changes queue priority, not research depth or classification rules.
+
+Next:
+build a coverage-gap queue from the existing 12-prefecture corpus and recover the thinnest municipalities first.
