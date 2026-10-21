@@ -4014,3 +4014,26 @@ SCHOOL_ONLY / HIGH_COST_SPECIALTY等をResearch Layerへ分離する運用が妥
 
 Next:
 大阪Second Pass。
+
+
+## Hayashima recovery pass — 2026-10-21
+
+Dashboard / prior scan showed Hayashima with zero captured items.
+Targeted Second Pass confirmed this was a research-gap, not an activity-gap.
+
+Dedicated research:
+`projects/GROWgle/OKAYAMA/HAYASHIMA_SECOND_PASS_2026-10-21.md`
+
+Key correction:
+- `HAYASHIMA = ZERO_DATA_GAP_CORRECTED / NOT_EMPTY`
+- multiple current OPEN_PUBLIC activities
+- recurring child PROGRAM / SYSTEM sources
+- strong PARTICIPATE -> CONTRIBUTE youth growth route
+- local IGUSA / hanagoza heritage experience
+- current school-only digital / inclusion activity
+- comprehensive regional club / sports-transition system
+
+Current status:
+`HAYASHIMA_SECOND_PASS = ACTIVE / STRONGLY_IMPROVED / NOT_SATURATED`
+
+Do not treat the town event-index alone as sufficient coverage.
