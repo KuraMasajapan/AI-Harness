@@ -403,3 +403,20 @@ Also captured:
 - 2026 parent-child fishery experience (Tamashima Kurosaki) = PUBLIC_LIST
 - Yata Experiential Farm (Mabi) = continuous family-accessible agriculture SOURCE, PUBLIC_LIST_CANDIDATE
 - JFE 2026 spring public factory-tour window = OPEN_PUBLIC access edge on existing strong SOURCE.
+
+
+## 21. Latest checkpoint — 2026-10-14
+
+Current restart checkpoint:
+`projects/GROWgle/KURASHIKI/CHECKPOINT_ENTERPRISE_PILOT_2026-10-14.md`
+
+Current phase:
+`EDGE COMPLETION`
+
+Current status:
+`KURASHIKI_ENTERPRISE_PILOT = SATURATION_CANDIDATE / NOT_YET_SATURATED`
+
+Exact next task:
+controlled `Challenge Work 14` delta sampling.
+
+Read the checkpoint first when restarting in a new chat.
