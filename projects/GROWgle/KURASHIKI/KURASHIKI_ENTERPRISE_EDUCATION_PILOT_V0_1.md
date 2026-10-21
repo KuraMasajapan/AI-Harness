@@ -8623,3 +8623,297 @@ ACTIVE / CANDIDATE / UNVERIFIED を保ったままbreadthを取る。
 4. 小売・サービス・ホテル・観光
 5. 食品・農業・流通
 6. 企業学び楽舎64社でまだ独立確認できていない残り企業
+
+
+## 95. Breadth-first recovery batch — welfare / childcare / IT / energy / culture — 2026-10-21
+
+児島繊維の深掘りを一旦止め、未探索セクターへ横展開。
+
+### ますみ会 / ますみ荘 — VERY_HIGH_VALUE / CURRENT 2026
+2026-08公式:
+- 夏休み期間に「夏のボランティア体験」「インターンシップ」「施設見学」を実施
+- リハビリ、レクリエーション、簡単な介護業務を体験
+- 近隣5中学校＋4高校から計23名が参加予定
+- 高校生・大学生のインターン、施設見学も随時予定
+
+Classification:
+SCHOOL_OR_VOLUNTEER_PROGRAM / CURRENT_2026 / RECURRING
+JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+WELFARE / CARE / CAREER / COMMUNITY
+hands_on: VERY_HIGH
+Region: 倉敷中島
+
+Evidence:
+https://masumikai.or.jp/
+
+GROWgle note:
+福祉分野で「中学生→高校生→大学生」の年齢連続性が明確。
+企業学び楽舎以外の独自受入が強いSOURCE。
+
+### 社会福祉法人しおかぜ — REPEAT_LIKELY / MULTI-FIELD WELFARE SOURCE
+Current official:
+- 特養、養護老人ホーム、デイ、訪問介護、認定こども園等を児島・下津井中心に展開
+- 令和8年度事業計画を公開
+- 施設見学窓口を常設
+
+Education evidence:
+- 2024児島しごと博の参加企業
+- 福祉職場インターンシップ受入協力事業所として、特別養護老人ホームしおかぜが学生向け受入実績
+- 「介護の仕事の大切さ、楽しさ、やりがい」を体験してほしいと明記
+
+Classification:
+WELFARE_SOURCE / STUDENT_CAREER
+HIGH_SCHOOL_OR_STUDENT / REPEAT_LIKELY
+CARE / CHILDCARE / COMMUNITY
+Region: 児島・下津井
+CURRENT_2026_DIRECT_STUDENT_PROGRAM: NOT YET VERIFIED
+
+Evidence:
+https://www.shiokaze-group.co.jp/facilities
+https://www.shiokaze-group.co.jp/about/document
+https://jinzai.fukushiokayama.or.jp/wp/wp-content/uploads/2022/06/%E5%82%99%E4%B8%AD%E5%9C%B0%E5%9F%9F%E3%80%80R4-1.pdf
+
+GROWgle note:
+「高齢者福祉＋保育」を同一法人内に持つため、福祉職の多様性を学べるSOURCE候補。
+
+### 倉敷福徳会 — CURRENT YOUTH VOLUNTEER NETWORK
+2025倉敷市社会福祉協議会「夏のボランティア体験」公式資料:
+- 堀南かなりや認定こども園:
+  - 中学生 / 高校生 / 大学生
+  - 保育士の手伝い
+  - 子どもと遊ぶ
+  - 保育士の仕事を学ぶ
+- 小谷かなりやキッズ保育園:
+  - 中学生 / 高校生
+  - 乳幼児の着替え、給食等の世話
+  - 子どもと遊ぶ
+  - 保育士の仕事への理解を促す
+
+法人:
+- 小谷かなりや認定こども園等を運営
+- 企業学び楽舎にも参加
+
+Classification:
+CHILDCARE_SOURCE_NETWORK
+JUNIOR_HIGH / HIGH_SCHOOL / UNIVERSITY
+VOLUNTEER / WORKS / CHILDCARE
+RECURRING_CANDIDATE
+Region: 倉敷 / 真備
+
+Evidence:
+https://kurashikisyakyo.or.jp/master/wp-content/uploads/2025/07/2211ea627a285b77f3793c0543cfa847.pdf
+https://k-kanariya.or.jp/
+
+GROWgle note:
+保育分野は「企業学び楽舎」だけでなく、夏ボラGatewayから具体的なHands-on内容を回収できる。
+
+### よしゐ屋BASE — VERY_HIGH_VALUE / CONSTANT CULTURAL EXPERIENCE
+倉敷MICE公式に通年プログラム掲載。
+
+「切子ちょうちんづくりワークショップ」
+- 通年
+- 1〜36名
+- 出張は最大200名対応
+- 所要1.5〜2時間
+- 倉敷発祥のオリジナル体験
+- ベース組立
+- マスキングテープ・和紙で装飾
+- LEDを入れ、完成品を持ち帰り
+
+簡易版:
+- 約30分
+- 1〜36名
+- 同様に出張対応可
+
+Classification:
+GROUP_BOOKING / CONSTANT
+CHILD_OR_FAMILY_COMPATIBLE / GENERAL
+CREATIVE / CULTURAL_ASSET / TOURISM / MAKING
+hands_on: VERY_HIGH
+Region: 倉敷中心部 / 出張可
+
+Evidence:
+https://kurashiki-mice.jp/experience/70/
+https://kurashiki-mice.jp/experience/71/
+
+GROWgle note:
+企業学び楽舎の「観光・地域商社」枠から、具体的な常設Hands-on SOURCEへ昇格。
+
+### ピープルソフトウェア — CURRENT 2026 / IT × UNIVERSITY × PUBLIC
+2026-07-25 倉敷天領夏祭り:
+- 岡山大学
+- ノートルダム清心女子大学
+- 岡山理科大学
+- ピープルソフトウェア
+が連携
+- 来場者の動きをセンシングし、祭りの「盛り上がり」を可視化
+- 学生がシステム運用、来場者説明、アンケート等に参加
+- ピープルソフトウェアは会場調整、機材、設営、安全管理、広報、アンケート等を担当
+
+2026 current student career:
+- 倉敷本社でオフィス見学・仕事体験
+- AI / UI・UX / プログラミング系インターン
+
+Classification:
+COMPANY_X_UNIVERSITY_X_PUBLIC / CURRENT_2026
+UNIVERSITY / STUDENT
+IT / AI / SENSING / COMMUNITY / CREATIVE
+hands_on: VERY_HIGH
+Region: 倉敷中心部
+
+Evidence:
+https://www.okayama-u.ac.jp/tp/news/news_id15581.html
+https://pscsrv.co.jp/topics/
+https://job.mynavi.jp/28/pc/corpinfo/displayInternship/index?corpId=92523&optNo=qZwCt
+
+GROWgle note:
+倉敷のIT企業が「社内インターン」だけでなく、地域祭りを実証フィールドに変えている。
+製造・医療とは異なるデジタル地域学習SOURCE。
+
+### 中国電力ネットワーク / 中国電力 — CURRENT 2026 LOCAL CHILD ACTIVITY confirmed
+中国電力ネットワークの常設「わくわくEスクール」:
+- 小4以上
+- 45分
+- 電気・エネルギーを実験 / グループワークで学習
+- 電気を作る仕組み
+- 家庭に届くまで
+- SDGsとエネルギー
+- 放射線実験等
+
+倉敷ローカル実施:
+2026 倉敷北公民館「おもしろ電気実験！＆ペットボトルランタン作り」
+- 小4〜6
+- 16名
+- 無料
+- 中国電力ネットワークが講師
+- 保護者1名見学可
+
+Classification:
+OPEN_PUBLIC_LIMITED + SCHOOL_OUTREACH / CURRENT_2026
+ELEMENTARY_HIGH
+STEAM / ENERGY / ENVIRONMENT / INFRASTRUCTURE
+hands_on: VERY_HIGH
+Region: 中庄
+
+Evidence:
+https://www.kurashiki-oky.ed.jp/kurashiki-kita-ph/natukoza.html
+https://www.energia.co.jp/kids/demae/index.html
+
+### 中国電力 玉島発電所 / 水島発電所 — CONSTANT GROUP FACTORY TOUR
+玉島発電所:
+- 平日
+- 5〜40名程度
+- 約90分
+- 概要説明 / 映像 / タービン室 / 中央制御室 / 構内見学
+- 観光公式では小学生以上
+- 無料
+- 事前予約
+
+水島発電所:
+- 平日
+- 5〜80名程度
+- 約60分
+- 発電設備見学
+- 観光公式では小学校高学年以上の団体
+- 無料
+
+Classification:
+GROUP_BOOKING / CONSTANT
+ELEMENTARY_HIGH+
+STEAM / ENERGY / WORKS / INFRASTRUCTURE
+Region: 玉島 / 水島
+
+Evidence:
+https://www.energia.co.jp/area/okayama/entry/288.html
+https://www.energia.co.jp/area/okayama/entry/264.html
+https://www.kurashiki-tabi.jp/see/see-2333/
+https://www.kurashiki-tabi.jp/see/see-1315/
+
+GROWgle note:
+電力分野は「出前授業」「親子実験」「発電所見学」の3入口が揃う。
+
+### エムイーシーテクノ 中国事業所 — STUDENT HIGH-HANDS-ON / LOCAL FACILITY CONFIRMED
+Current:
+- 中国事業所 = 倉敷市潮通3-10（三菱ケミカル岡山事業所内）
+- 技術研修センターを倉敷中国事業所内に設置
+
+Group internship:
+- 高専 / 専門 / 大学 / 大学院
+- 1day / 5days
+- 三菱ケミカル工場見学
+- 工事管理、CAD、配管、フランジ締付、安全体感
+- 電気設備点検
+- 制御盤設計・組立
+- SCADA / プログラミング等
+
+Classification:
+STUDENT / GROUP_LEVEL_PROGRAM
+STEAM / PLANT / MECHANICAL / ELECTRICAL / IT
+hands_on: VERY_HIGH
+LOCAL_CHINA_SITE: CONFIRMED
+PROGRAM_SITE_PER_SESSION: VERIFY
+
+Evidence:
+https://www.mec-techno.co.jp/recruit/fresh/recruit-info/internship/
+https://www.mec-techno.co.jp/company/location/
+https://www.mec-techno.co.jp/company/meisters/handingdown/
+
+### 松永創作事務所 — SCHOOL CAREER SOURCE / CURRENT ORGANIZATION
+高梁川流域SDGsポータルで:
+- 測量・墨出し
+- 若手人材育成
+- 「倉敷市企業学び楽舎講座への参加」を提供可能事項として明記
+
+Classification:
+SCHOOL_ONLY / CAREER_EDUCATION_SOURCE
+JUNIOR_HIGH
+SURVEYING / CONSTRUCTION / STEAM
+Region: 倉敷
+REPEAT_LIKELY
+
+Evidence:
+https://www.goodcity.jp/kurashiki.takahashiriver/registration/4286
+
+### 株式会社西鉄 — identity resolved
+企業学び楽舎の「西鉄」は西日本鉄道ではなく、倉敷市児島味野の地元鉄骨企業。
+
+Current official:
+- 1975創業
+- 鉄骨加工・組立
+- 国土交通大臣認定Hグレード
+- 児島味野に本社・工場
+
+Education:
+- 児島しごと博2023 / 2024参加実績
+
+Classification:
+LOCAL_MANUFACTURING_SOURCE
+HIGH_SCHOOL_CAREER / REPEAT_LIKELY
+STEEL_STRUCTURE / WELDING / CAD / WORKS
+Region: 児島
+
+Evidence:
+https://www.nishitetsu-kk.co.jp/company.html
+https://kojima-shigotohaku.net/category/kigyo/
+
+GROWgle note:
+企業名の曖昧性を解消。今後は local entity「株式会社西鉄」として管理し、鉄道会社と混同しない。
+
+## 96. Breadth-first structural findings
+
+1. 福祉は独自の「夏ボラ / インターン」Gatewayが強く、企業学び楽舎だけでは不十分。
+2. 保育は社会福祉協議会の夏ボラ資料から、対象年齢・人数・作業内容まで具体的に拾える。
+3. ITでは、企業×大学×地域祭りの実証型学習が現行2026で確認できた。
+4. 電力では、出前授業・親子実験・常設発電所見学が連続した学習経路を形成。
+5. 文化・観光企業にも、よしゐ屋BASEのような通年Hands-on SOURCEが存在。
+6. 同一領域を深掘りするより、未探索セクターへ横移動した方が新規SOURCE密度が明確に高い。
+
+## 97. Next breadth priorities
+
+- 残る福祉系: 郁青会 / 温故知新会 / 富田ケア / 亀龍会の独自current activity
+- 保育系: 八幡 / めばえ / 中山 / ドルフィン・メイトの夏ボラ・学生実習
+- 自動車小売: ディー・エス笹沖 / ダブルツリーの学校体験内容
+- 金融: 広島銀行倉敷 / 住友生命倉敷匠のローカル実施確認
+- 交通物流: 下津井電鉄 / シモハナ物流 / 倉敷運輸の学生・学校プログラム
+- 水道・設備: 倉敷市管事業協会 / 大同設備 / 中央設備
+- OPEN_PUBLICを優先しつつ、学校・学生限定も継続収集
