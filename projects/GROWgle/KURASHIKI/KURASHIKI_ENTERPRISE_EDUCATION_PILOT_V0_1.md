@@ -8917,3 +8917,286 @@ GROWgle note:
 - 交通物流: 下津井電鉄 / シモハナ物流 / 倉敷運輸の学生・学校プログラム
 - 水道・設備: 倉敷市管事業協会 / 大同設備 / 中央設備
 - OPEN_PUBLICを優先しつつ、学校・学生限定も継続収集
+
+
+## 98. Breadth-first batch 2 — finance / mobility retail / logistics / care / medical network — 2026-10-21
+
+### 水島信用金庫 — VERY_HIGH_VALUE / OPEN_PUBLIC / LONG_RUNNING
+2026-06-29公式:
+- 「第17回みずしんこども金融スクール」
+- 2026-08-04 / 08-06
+- 小学4・5・6年生
+- 各日20名、抽選
+- 保護者見学可
+- 本店3階
+- 金融教育を通じ、正しい金融知識を身につけることが目的
+
+2025市公式でも第16回開催を確認。
+
+Classification:
+OPEN_PUBLIC / RECURRING_LONG_RUNNING
+ELEMENTARY_HIGH / FAMILY
+FINANCIAL_LITERACY / COMMUNITY
+hands_on: HIGH_CANDIDATE
+Region: 水島
+
+Evidence:
+https://www.shinkin.co.jp/mizushima/_news-5/contents/225.html
+https://www.city.kurashiki.okayama.jp/cityinfo/plan/1011783/1002200/1018174/1020002.html
+
+GROWgle note:
+玉島信用金庫に加え、水島信用金庫も独立した長期継続の子ども金融教育SOURCE。
+金融分野は「地域信金」が特に強い。
+
+### ディー・エス笹沖 / オートバックス — CURRENT CAREER SOURCE strengthened
+企業公式「地域貢献活動」:
+- 中学生向けキャリア支援として「企業学び楽舎」に積極参加
+- 企業・職業・製品・サービス紹介
+- 作業体験
+- 近隣小学校への教材等寄贈
+
+Current recruitment:
+- 接客インターンシップ
+- 店舗見学＋会社説明のオープンオフィス
+- 高卒採用あり
+
+Classification:
+SCHOOL_ONLY + STUDENT_CAREER
+JUNIOR_HIGH / HIGH_SCHOOL+
+AUTOMOTIVE / RETAIL / SERVICE / CAREER
+REPEAT_LIKELY
+Region: 笹沖 / 水島
+
+Evidence:
+https://dssasaoki.co.jp/activities
+https://recruit.dssasaoki.co.jp/recruitment
+
+GROWgle note:
+「カー用品・整備・接客」という製造業とは異なる自動車キャリアSOURCE。
+
+### ダブルツリー / くるまのハヤシ — CURRENT UNIVERSITY/STUDENT PBL
+2026採用サイト:
+- 営業インターン
+- 新規事業立案ワーク
+  「地域の課題をビジネスで解決！事業マッチング」
+- 倉敷本社を持ち、自動車販売・整備ほか複数事業を展開
+
+Classification:
+STUDENT_ONLY / CURRENT_2026
+UNIVERSITY_OR_NEW_GRAD
+AUTOMOTIVE / ENTRE / SALES / COMMUNITY
+hands_on: HIGH
+Region: 倉敷
+
+Evidence:
+https://d-tree.jp/recruit/
+
+Status:
+中学生・小学生向け独自プログラムは今回未確認。
+企業学び楽舎系とは分け、現時点は学生キャリアSOURCEとして保持。
+
+### 倉敷運輸 — historical hands-on source + entity status correction
+2023公式:
+- 倉敷市立新田中2年へ企業学び楽舎出前授業
+- 会社・物流業説明
+- フォークリフト搭乗体験
+- 同年度は新田中以外3校でも予定
+
+重要なCURRENT STATUS:
+- 2026-04-01付でJFE物流を存続会社とする吸収合併
+- 倉敷運輸株式会社は消滅会社
+
+Classification:
+HISTORICAL_SOURCE / SUCCESSOR=JFE_LOGISTICS
+JUNIOR_HIGH
+LOGISTICS / WORKS / HEAVY_EQUIPMENT
+hands_on: VERY_HIGH
+
+Evidence:
+https://kurashiki-unyu.co.jp/news/csr/799/
+https://kurashiki-unyu.co.jp/kunyu/wp-content/uploads/2026/01/denshikoukoku_kurashikiunyu.pdf
+
+GROWgle note:
+今後のcurrent activityは「倉敷運輸」ではなくJFE物流側で追う。
+企業再編によるSOURCE identity更新の重要例。
+
+### シモハナ物流 倉敷営業所 — LOCAL SITE confirmed / EDUCATION UNVERIFIED
+2026 current:
+- 倉敷市下庄に営業所
+- 求人上で職場見学可能
+- 10代スタッフも在籍
+
+ただし:
+- 小中高生向け職場体験・出前授業の倉敷ローカル公式実績は今回未確認
+
+Classification:
+LOGISTICS_SOURCE_CANDIDATE
+LOCAL_SITE_CURRENT
+CHILD/STUDENT_ACTIVITY: UNVERIFIED
+
+Evidence:
+https://shimohana-job.net/jobfind-pc/job/All/25377
+
+GROWgle note:
+「職場見学可」は採用候補向けとみなし、GROWgleの教育ACTIVITYへ自動昇格しない。
+
+### 富田ケアセンター — CURRENT STUDENT CAREER SOURCE strengthened
+Current official recruitment:
+- 毎月1回、倉敷わかものハローワークで会社説明会
+- 個別事業所見学は随時
+- 新卒者は応募前に就業体験可能
+- 1DAYインターン
+- 3〜5日短期インターン
+- 高卒採用区分あり
+
+Classification:
+STUDENT_CAREER / CONSTANT
+HIGH_SCHOOL_GRAD_CANDIDATE / COLLEGE / UNIVERSITY
+WELFARE / CHILDCARE / CARE
+hands_on: HIGH
+
+Evidence:
+https://www.tomicare.com/recruit/index.cgi?c=faq-1
+https://www.tomicare.com/recruit/flow/
+
+Status:
+企業学び楽舎参加とは別に、現在の採用・就業体験導線を確認。
+中学生向け独自公開活動は未確認。
+
+### 亀龍会 / 温故知新会 — CURRENT 2026 PBL eligibility reconfirmed
+倉敷市2026 Future Talent公式:
+- 亀龍会: 技術指導 / 会社・施設見学
+- 温故知新会: 技術指導 / 会社・施設見学
+
+Classification:
+CURRENT_2026 / SCHOOL_PBL
+HIGH_SCHOOL / UNIVERSITY_CANDIDATE
+WELFARE / CARE / CAREER
+hands_on: MEDIUM-HIGH
+Region: 倉敷 / 玉島
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+
+### 福寿会 / 郁青会 — NEW CURRENT MEDICAL CAREER SOURCE
+Current official:
+- 2026-02-28「中高生×医療×お仕事体験Lab」に藤戸クリニックの理学療法士が参加
+- 中高生に理学療法士の仕事内容、やりがい、進学先、国家試験等を説明
+- 2025-11には倉敷天城中「なるほどプロフェッショナル」で医師の仕事を講義
+
+Classification:
+MEDICAL_SOURCE / SCHOOL + OPEN_PUBLIC_NETWORK
+JUNIOR_HIGH / HIGH_SCHOOL
+MEDICAL / REHAB / CAREER
+REPEAT_LIKELY
+Region: 倉敷
+
+Evidence:
+https://www.fukujyu.or.jp/news/category/fujito
+
+GROWgle note:
+企業学び楽舎64組織の「郁青会」を、医療法人福寿会グループ側の教育接点からも確認。
+
+### 中高生×医療×お仕事体験Lab — MAJOR RECURRING MEDICAL_GATEWAY
+岡山県資料:
+- 主催「わが街健康プロジェクト。」
+- 事務局: 倉敷中央病院
+- 倉敷市内23医療機関が連携
+- 後援: 倉敷市 / 倉敷市教育委員会 / 倉敷商工会議所
+- 中高生を対象に医療専門職の職業体験・職業相談
+- 医師、薬剤師、看護師、保健師、医療事務、MSW、栄養士、PT、OT、ST、放射線、臨床検査、臨床工学等
+
+Continuity:
+- 2025-01 第1回
+- 2025-09 第2回
+- 2026-02-28 次回開催実績を藤戸クリニック・倉リハ広報で確認
+
+2025第1回:
+- イオンモール倉敷
+- 当日参加可
+- 中高生限定体験
+- 包帯、応急手当、AED、放射線防護衣等のHands-on
+
+Classification:
+OPEN_PUBLIC / RECURRING_CONFIRMED
+JUNIOR_HIGH / HIGH_SCHOOL
+MEDICAL / CAREER / STEAM
+hands_on: VERY_HIGH
+Region: 倉敷
+
+Evidence:
+https://www.pref.okayama.jp/uploaded/life/1020025_9852728_misc.pdf
+https://www.fukujyu.or.jp/news/category/fujito
+https://www.kurareha.com/wp-content/themes/child/image/contents/about/kurarehanet/dl/2026_spring_issue.pdf
+
+GROWgle note:
+個別病院を1件ずつ探すより、23医療機関を束ねる高密度Gateway。
+医療分野はこれ以上個社深掘りしすぎず、このGatewayを主要SOURCEとして使う。
+
+## 99. Infrastructure / utilities breadth findings
+
+### 中央設備 × 大同設備工業 — hands-on infrastructure career source
+2025企業学び楽舎:
+- 水道・ガス配管
+- 空調設備
+- 作業服
+- 安全ハーネス試着
+- 実際の工事現場装備を体験
+
+2026 Future Talent:
+- 中央設備は「会社・工場見学」連携可能企業
+
+Classification:
+SCHOOL_ONLY / CURRENT_NETWORK
+JUNIOR_HIGH / HIGH_SCHOOL_PBL
+INFRASTRUCTURE / PLUMBING / HVAC / SAFETY
+hands_on: HIGH
+
+Evidence:
+https://kuratoco.com/kigyomanabigakusya/
+https://www.city.kurashiki.okayama.jp/business/employment/1013051/1017009.html
+
+### 下水処理場親子探検隊 — OPEN_PUBLIC MUNICIPAL INFRASTRUCTURE
+2026-07-31:
+- 親子向け
+- 下水処理場見学
+- 下水の仕組み
+- 実験
+- 夏休み自由研究対応
+
+Classification:
+OPEN_PUBLIC / FAMILY / RECURRING_CANDIDATE
+INFRASTRUCTURE / WATER / STEAM / ENVIRONMENT
+Source type: MUNICIPAL_LEARNING_SOURCE
+
+Evidence:
+https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1003907.html
+
+GROWgle note:
+企業中心枝の補助SOURCE。ただし「生活インフラを体験する」地域学習として水道・設備企業との接続可能性が高い。
+
+## 100. Breadth-first result
+
+今回、児島繊維へ戻らずに横展開したことで新規・再評価SOURCE:
+- 水島信用金庫
+- ディー・エス笹沖
+- ダブルツリー
+- 倉敷運輸→JFE物流 identity correction
+- シモハナ物流 candidate
+- 富田ケアセンター
+- 福寿会 / 郁青会
+- 中高生×医療×お仕事体験Lab
+- 中央設備 / 大同設備
+- 下水処理場親子探検隊
+
+Finding:
+未探索セクターへの横移動は、同一Gateway再走査より明らかに新規SOURCE密度が高い。
+Breadth-first方針を継続する。
+
+## 101. Next breadth priorities
+
+- 保育: 八幡認定こども園 / めばえ / 中山 / ドルフィン・メイトの学生・中高生受入を社会福祉協議会等から確認
+- 交通: 下津井電鉄のcurrent学校・大学連携、バス/整備体験
+- 金融: 広島銀行倉敷支店 / 住友生命倉敷匠は「ローカル実施が確認できるまでWATCH」
+- 小売・サービス: 地元企業の中高生職業体験
+- 真備 / 船穂 / 中庄エリアの独自SOURCE
