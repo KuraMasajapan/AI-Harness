@@ -1763,3 +1763,309 @@ Next:
 - resolve Mimasaka tree-climbing age condition
 - search Bizen November/December current child activities from monthly child calendars
 - continue 1–2 card municipalities and promote recurring SOURCEs, not only event cards.
+
+
+# 15. Two-card municipality expansion — batch 5
+
+Goal:
+Move municipalities represented by only two Pilot activity cards toward 3–5 meaningful display elements using PUBLIC / COMMUNITY / SOURCE layers.
+
+---
+
+## A. 西粟倉村 — parent-child education-migration experience is CURRENT
+
+### 百森親子留学 2026
+
+Current official:
+- program period: 2026-11-01 to 2026-11-14
+- official page marks this period as "募集中"
+- family selects a 2-night / 3-day stay inside the implementation period
+- experience includes:
+  - Nishiawakura elementary / junior-high school life
+  - after-school activities
+  - village life
+- larger philosophy:
+  "百年の森林教育"
+  "生きるを楽しみ、百年の森林とともに未来をつくる"
+
+Classification:
+DIRECT_APPLICATION / CURRENT_RECRUITMENT
+CHILD / FAMILY
+EDUCATION / FOREST_COMMUNITY / LOCAL_LIFE / MIGRATION_EXPERIENCE
+HANDS_ON = VERY_HIGH
+ACCESS_GATE = CONDITIONAL
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE / SPECIAL_FEATURE
+
+Conditional:
+price / final detailed eligibility are not present in machine-readable official page.
+Do not publish cost claims without following the detailed linked application page.
+
+Evidence:
+https://www.vill.nishiawakura.okayama.jp/wp/%E7%99%BE%E5%B9%B4%E3%81%AE%E6%A3%AE%E6%9E%97%E6%95%99%E8%82%B2%E4%BD%93%E9%A8%93%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/
+
+### BASE101 strawberry-picking SOURCE
+
+Village official tourism guide:
+- usually January–May
+- advance reservation
+- multiple strawberry varieties
+- pick-your-own format after tasting varieties
+
+Classification:
+SEASONAL_PUBLIC_SOURCE
+FAMILY / CHILD_COMPATIBLE
+AGRICULTURE / FOOD / LOCAL_BUSINESS
+PUBLIC_STATUS = WATCH_PUBLIC_NEXT_SEASON
+
+Evidence:
+https://www.vill.nishiawakura.okayama.jp/wp/%E8%A6%B3%E5%85%89%E3%82%AC%E3%82%A4%E3%83%89/
+
+### Nishiawakura impact
+
+Existing two cards can be supplemented with:
+- education-migration special feature
+- seasonal agriculture SOURCE
+
+The village should show:
+FOREST EDUCATION + FAMILY LIFE EXPERIENCE + SEASONAL FARM EXPERIENCE,
+not only generic nature cards.
+
+---
+
+## B. 里庄町 — industry / culture + library activity network
+
+### 第69回里庄町産業文化祭
+
+Current official:
+- 2026-11-03
+- 10:00–14:00
+- around Satosho Town Hall
+- town explicitly promotes it to families / friends
+- local agriculture / commerce / industry / culture
+- many local companies / organizations / chamber-related exhibitors
+- product / specialty / local-industry presentation
+
+Classification:
+OPEN_PUBLIC / CURRENT_2026
+FAMILY / GENERAL
+WORKS / COMMUNITY / LOCAL_INDUSTRY / CULTURE
+PUBLIC_STATUS = PUBLIC_LIST
+
+Evidence:
+https://www.town.satosho.okayama.jp/soshiki/3/14482.html
+
+Display note:
+If child-specific hands-on booth detail is not machine-readable from the official page, do not label as "child occupation experience".
+Show as family-accessible regional industry/culture event.
+
+### 里庄町立図書館 — recurring public child SOURCE
+
+Current official library:
+- current child / family event stream
+- example:
+  "秋のおはなし会 ふしぎなまほうの世界"
+  - 2026-10-24
+  - 14:00–15:00
+  - anyone
+  - 30 capacity
+  - free
+  - reading / hand-play / photo spot
+- regular story sessions
+- children's exhibitions / free-research and craft exhibitions
+
+Classification:
+RECURRING_PUBLIC_SOURCE
+CHILD / FAMILY / GENERAL
+READING / IMAGINATION / CREATIVE
+PUBLIC_STATUS = SOURCE_FEATURE + INDIVIDUAL_CURRENT_CARD_WHEN_OPEN
+
+Evidence:
+https://www.slnet.town.satosho.okayama.jp/
+https://www.slnet.town.satosho.okayama.jp/event.html
+
+### 仁科会館 / science SOURCE
+
+Town circulation index continues to publish:
+- science-related lectures
+- computer courses
+- RIKEN-related seminars
+through Nishina Hall.
+
+Classification:
+SCIENCE / LEARNING SOURCE
+STEAM / DIGITAL / SCIENCE_HISTORY
+PUBLIC_STATUS = SOURCE_FEATURE
+Current child-targeted individual event needs separate filtering.
+
+Evidence:
+https://www.town.satosho.okayama.jp/site/kumiai/
+
+### Satosho impact
+
+Represent with:
+- science/making flagship
+- industry/culture public festival
+- library child source
+- Nishina science SOURCE
+
+This creates a more accurate local identity than two isolated cards.
+
+---
+
+## C. 真庭市 — everyday family system + civic / child-content layer
+
+### Public nursery / kindergarten open days
+
+Current official:
+- FY2026 through 2027-03-12
+- municipal nurseries / certified child centers
+- un-enrolled preschool child + guardian
+- free
+- child play / peer interaction
+- guardian information exchange / community interaction
+
+Classification:
+DIRECT_LOCAL_FAMILY_SOURCE
+PRESCHOOL / FAMILY
+PLAY / COMMUNITY / EARLY_CHILDHOOD
+RECURRING / SYSTEM
+PUBLIC_STATUS = SOURCE_FEATURE + LOCAL_PUBLIC_ACTIVITY
+
+Evidence:
+https://www.city.maniwa.lg.jp/calendar/
+
+### 家庭教育支援チーム「ふらっと」 — おしゃべり広場
+
+Current 2026 schedule includes:
+- 2026-11-30
+- 2026-12-07
+- 2027-01-25 etc.
+- open during 10:00–12:00
+- parenting conversation + event
+- parent-child / parent-parent connection
+
+Classification:
+RECURRING_FAMILY_SOURCE
+PARENT_CHILD / FAMILY
+COMMUNITY / PARENTING / PLAY
+PUBLIC_STATUS = SOURCE_FEATURE / CURRENT_SESSION_CARD_CANDIDATE
+
+Evidence:
+https://www.city.maniwa.lg.jp/soshiki/53/41592.html
+
+### Child photo contest
+
+Current:
+- application through 2026-11-30
+- photographs of children age 18 or younger in Maniwa
+- topics include outings, friends, school, clubs, regional activity
+- Instagram submission
+- 20 awardees receive book-card prize
+
+Classification:
+PUBLIC_PARTICIPATION
+CHILD / FAMILY / COMMUNITY
+CREATIVE / LOCAL_IDENTITY
+CURRENT_2026
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE
+
+Evidence:
+https://www.city.maniwa.lg.jp/calendar/
+
+### Maniwa impact
+
+Pilot should show both:
+- high-value one-off experiences
+- child/family system infrastructure
+
+Do not let the town appear as only event-based.
+
+---
+
+## D. 総社市 — parent-child system + cultural participation
+
+### Parent-child gathering network
+
+Current official child department updated 2026-10-01 lists:
+- ちびっこ広場
+- なかよし広場ぴよこっこ
+- なかよし広場こっこ
+- つどいの広場 ほのぼの
+- チュッピーひろば at Okayama Prefectural University
+- 出張ひろば ほのぼの
+- 親子ふれあいプラザ
+
+Classification:
+EARLY_CHILDHOOD_SOURCE_NETWORK
+PRESCHOOL / FAMILY
+COMMUNITY / PLAY / UNIVERSITY_LINK
+RECURRING / DISTRIBUTED
+PUBLIC_STATUS = SOURCE_FEATURE
+
+Evidence:
+https://www.city.soja.okayama.jp/soshiki/23/
+
+### Current / November culture stream
+
+Current civic-hall schedule includes:
+- 2026-11-01 Soja West JHS wind-ensemble concert — free
+- 2026-11-08 Japanese drum festival — free with admission ticket
+- other public cultural performances
+
+Classification:
+PUBLIC_GENERAL / COMMUNITY_RECORD
+YOUTH_PROVIDER_EDGE = YES for school performances
+CULTURE / MUSIC / LOCAL_IDENTITY
+PUBLIC_STATUS = COMMUNITY_RECORD / FAMILY_GENERAL
+
+Evidence:
+https://www.city.soja.okayama.jp/soshiki/20/2793.html
+
+### Snowy / local heritage routes
+
+Official tourism event guide retains recurring child-specific local heritage examples:
+- 力石総社 — young child through adult participation
+- 雪舟体験学習 — city elementary students; zazen / tea manners / foot-brush ink painting
+
+Classification:
+REGIONAL_HERITAGE_SOURCE
+CURRENT_DATE = WATCH
+PUBLIC_STATUS = SOURCE / GROWTH_ARCHIVE
+
+Evidence:
+https://www.city.soja.okayama.jp/site/kanko/3685.html
+
+### Soja impact
+
+Town content should not rely only on science / university cards.
+Add:
+- family child-support network
+- youth cultural provider records
+- local heritage child experiences
+
+---
+
+# 16. Batch-5 interpretation
+
+Pilot richness is now increasingly limited by STRUCTURING rather than discovery.
+
+Current recurring pattern:
+- municipality already has multiple programs
+- the Pilot has only 1–2 "activity cards"
+- SOURCE and COMMUNITY layers are underutilized
+
+Therefore target representation per municipality should not be:
+"3–5 event cards at all costs"
+
+Instead aim for:
+- 1–3 current/public participation cards
+- 1–2 recurring SOURCE features
+- 1–2 community/youth activity records
+when evidence exists.
+
+This can make a small municipality page feel rich without misleading users about current availability.
+
+Next:
+- continue remaining thin municipalities with same three-layer method
+- promote CURRENT candidates into an integration-ready queue
+- extract exact JSON-ready fields for high-confidence cards.
