@@ -958,3 +958,461 @@ Next:
 - continue one-card municipalities
 - continue Bizen current-event extraction
 - resolve Nagi / Tamano recurring current recruitment.
+
+
+# 11. One-card municipality expansion — batch 3
+
+Goal:
+upgrade municipalities with only one Pilot v0.7 activity card by finding CURRENT / direct-family public opportunities.
+
+## A. 笠岡市 — agriculture / livestock hands-on layer
+
+### 農フェス 2026
+
+Current official:
+- 2026-11-21
+- 09:00–15:00
+- 笠岡ふれあい青空市 / JA笠岡アグリセンター
+- purpose explicitly includes learning about local agriculture / livestock
+- activities:
+  - butter making (3 sessions, 20 groups each, same-day signup)
+  - simulated milking
+  - drawing on hay / feed rolls
+  - livestock disease-control clothing experience
+  - cow-horn accessory workshop
+  - large agricultural-machine display / riding
+  - quiz rally
+  - bus tour
+  - agriculture / livestock exhibitions
+
+Classification:
+OPEN_PUBLIC
+CHILD / FAMILY / GENERAL
+AGRICULTURE / LIVESTOCK / FOOD / WORKS / MAKING
+HANDS_ON = VERY_HIGH
+CURRENT_2026
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST_PRIORITY
+
+Evidence:
+https://www.city.kasaoka.okayama.jp/soshiki/29/62572.html
+https://www.city.kasaoka.okayama.jp/life/sub/5/index-2.html
+
+Date-verification note:
+An older cached rendering of the same URL may show the 2025 edition.
+The current city index and current search output identify a 2026-10-09 update and 2026-11-21 event.
+When publishing, recheck the live official page once more to avoid cache-version confusion.
+
+### Kasaoka impact
+Pilot v0.7 had one activity card.
+This adds a region-specific agriculture / livestock hands-on card with very high display value.
+
+---
+
+## B. 勝央町 — immediate free public sports + recurring play SOURCE
+
+### 令和8年度ニュースポーツ教室
+
+Current official:
+- 2026-11-21
+- 2026-11-28
+- child through adult
+- preschool requires guardian
+- free
+- Mollky etc.
+- family participation explicitly invited
+- electronic / paper application available
+
+Classification:
+OPEN_PUBLIC / FREE / APPLICATION
+CHILD / FAMILY / GENERAL
+SPORTS / COMMUNITY
+CURRENT_2026
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST_PRIORITY
+
+Evidence:
+https://www.town.shoo.lg.jp/site/kyoiku/7538.html
+
+### きのこの森プレーパーク
+
+Current 2026 program confirms:
+- outdoor play / self-discovery / challenge
+- elementary children + guardian
+- free
+- 2026 sessions include fire-making + rice cooking
+
+Current published session checked in this pass is already ended, but SOURCE recurrence is strong.
+
+Classification:
+RECURRING_SOURCE
+ELEMENTARY / FAMILY
+NATURE / LIFE_SKILLS / PLAY
+PUBLIC_STATUS = WATCH_PUBLIC_NEXT_SESSION
+
+Evidence:
+https://www.town.shoo.lg.jp/site/kyoiku/5254.html
+
+### 勝央町立保育園開放
+
+Current remaining 2026 dates include:
+- 2026-11-10
+- 2026-12-01
+- 2027-03-05
+- 10:00–11:00
+- prior application period
+- five town nursery schools
+
+Classification:
+LOCAL_PRESCHOOL_FAMILY
+DIRECT_APPLICATION
+EARLY_CHILDHOOD / COMMUNITY
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE
+
+Evidence:
+https://www.town.shoo.lg.jp/site/kosodate/5077.html
+
+### Shoo impact
+Existing Pilot card was focused on entrepreneurship.
+This adds SPORTS / NATURE / PRESCHOOL access diversity.
+
+---
+
+## C. 浅口市 — CURRENT high-value public sports card
+
+### 親子ウォーキングサッカー体験会
+
+Current official:
+- 2026-11-07
+- 14:30–16:00
+- ファジアーノ岡山スポーツパーク寄島
+- children from preschool age through adults
+- child-only participation: elementary+ with guardian
+- 60 participants
+- free
+- current application:
+  - city-resident priority: 10/18–10/27
+  - common application including nonresidents: 10/28–11/05 if capacity remains
+- Fagiano Okayama coaching staff
+- ball play / passing / walking-soccer match
+- equipment provided
+
+Classification:
+OPEN_PUBLIC / FREE / APPLICATION
+PRESCHOOL+ / FAMILY / GENERAL
+SPORTS / PARENT_CHILD / COMMUNITY
+HANDS_ON = HIGH
+CURRENT_2026
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST_PRIORITY
+
+Evidence:
+https://www.city.asakuchi.lg.jp/page/22937.html
+
+### Existing annual child-experience SYSTEM
+
+2026 child experience classes remain current:
+- chorus
+- science making
+- Japanese drums
+- tea ceremony
+- etc.
+- preschool / elementary / junior-high depending on class
+- very low annual fee for many classes
+
+Evidence:
+https://www.city.asakuchi.lg.jp/page/10836.html
+
+Public rule:
+Do not publish every annual class automatically.
+Use individual classes only after current vacancy / application status is resolved.
+
+### Asakuchi impact
+Pilot card count can immediately increase with walking soccer while the continuing class system supplies future cards.
+
+---
+
+## D. 新見市 — current family/community participatory festival
+
+### 源流の里 大佐ふるさとまつり 2026
+
+Current official:
+- 2026-11-01
+- 09:30–14:30
+- おおさ総合センター周辺
+- participation / experience layer:
+  - local elementary students' workshop
+  - dojo-sukui
+  - work-vehicle exhibition
+  - Hoyoku tricycle race
+  - local school performances
+  - local food / product village
+
+Classification:
+OPEN_PUBLIC
+CHILD / FAMILY / GENERAL
+COMMUNITY / LOCAL_CULTURE / WORKS / PLAY
+CURRENT_2026
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST
+
+Evidence:
+https://www.city.niimi.okayama.jp/kanko/event/event_detail/index/936
+https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/726
+
+### にいみde子育て体験事業2026
+
+Current remaining recruitment:
+- 2027-01-16 through 02-14 receiving period
+- application deadline: 2026-10-30
+- 1–2 families
+- for non-Niimi residents with children age 1–5
+- 1–2 week stay
+- child experiences local nursery / nature; family experiences local life
+- childcare: 1,800 yen/day per child
+- lodging: 2,000 yen/night
+
+Classification:
+DIRECT_APPLICATION / SELECTIVE
+PRESCHOOL / FAMILY
+REGIONAL_LIFE / NATURE / CHILDCARE / MIGRATION_EXPERIENCE
+ACCESS_GATE = CONDITIONAL
+PUBLIC_STATUS = WATCH_PUBLIC_OR_SPECIAL_FEATURE
+
+Reason:
+high experience depth but narrow target and longer stay commitment.
+
+Evidence:
+https://www.city.niimi.okayama.jp/gyosei/gyosei_detail/index/16736
+
+### Niimi impact
+Existing Pilot single card can be supplemented with an easy-access local festival, while the migration-experience program can be surfaced separately if long-stay opportunities are supported in UI.
+
+---
+
+## E. 矢掛町 — current family / local access layer
+
+### やかげエンジョイウォーキング
+
+Current official:
+- 2026-12-13
+- free
+- 1 km town-walk course still accepting when checked
+- other 3.5 km / 6.5 km courses already full
+- application deadline: 2026-11-25 or earlier if full
+- historic townscape + natural landscape
+- finish at Outdoor Village Yakage
+
+Classification:
+OPEN_PUBLIC / FREE / APPLICATION
+FAMILY / GENERAL
+SPORTS / LOCAL_CULTURE / NATURE
+CURRENT_2026
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST
+
+Evidence:
+https://www.town.yakage.okayama.jp/news/2026/10/1213.html
+
+### 子育て支援センター「あおぞらキッズ」
+
+Current 2026 future dates:
+- 2026-10-29
+- 2026-11-13
+- outdoor free-play / walking at town parks
+- parent-child program
+- free participation / no advance booking indicated in source description
+
+Classification:
+DIRECT_ACCESS_CANDIDATE
+PRESCHOOL / FAMILY
+OUTDOOR_PLAY / COMMUNITY
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE
+
+Evidence:
+https://www.town.yakage.okayama.jp/kosodate/odekake/kosodate-center.html
+
+### イングリッシュデイ
+
+2026 schedule includes:
+- 2026-10-24
+- 2026-12-19
+- 2027-02-06
+- elementary / junior-high separate sessions
+- ALT country introduction, English games, singing, conversation
+- application through school-parent distribution system
+
+Classification:
+LOCAL_STUDENT / DIRECT_BUT_SCHOOL_DISTRIBUTED
+GLOBAL / COMMUNICATION
+PUBLIC_STATUS = RESEARCH_ONLY_OR_LOCAL_CONDITIONAL
+
+Evidence:
+https://www.town.yakage.okayama.jp/kosodate/manabi/
+
+Do not treat as unrestricted OPEN_PUBLIC.
+
+### Yakage impact
+The town now has current family / sports cards beyond the existing cultural route.
+
+---
+
+## F. 吉備中央町 — public family event pipeline
+
+### ケロポンズファミリーコンサート
+
+Current official calendar:
+- 2026-10-31
+- 14:00 start
+- ロマン高原かよう総合会館
+- no advance application indicated in town calendar
+
+Classification:
+OPEN_PUBLIC_CANDIDATE
+CHILD / FAMILY
+MUSIC / PERFORMANCE / MOVEMENT
+CURRENT_2026
+ACCESS_GATE = CONDITIONAL pending fee / ticket-condition confirmation
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE
+
+Evidence:
+https://www.town.kibichuo.lg.jp/calendar/
+https://www.town.kibichuo.lg.jp/site/kanko/
+
+### 2026 秋の読書週間
+
+Current:
+- 2026-10-24 to 11-08
+- children through adults
+- library bingo / coloring-sugoroku / reading activities / message-card project
+- no special membership condition indicated
+- multiple library locations
+
+Classification:
+OPEN_PUBLIC
+CHILD / FAMILY / GENERAL
+READING / COMMUNITY / CREATIVE
+CURRENT_2026
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST
+
+Evidence:
+https://www.town.kibichuo.lg.jp/site/kibichuolibrary/20925.html
+
+### Parent-child interaction class
+
+Current:
+- recurring through FY2026
+- 2026-11-12
+- 2026-12-07
+- small-group parent-child play / making
+- reservation required
+
+Classification:
+LOCAL_PARENT_CHILD
+PRESCHOOL / FAMILY
+CREATIVE / DEVELOPMENT / COMMUNITY
+ACCESS_GATE = CONDITIONAL
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE only after target / resident conditions are resolved
+
+Evidence:
+https://www.town.kibichuo.lg.jp/soshiki/9/19719.html
+
+### Kibi-Chuo impact
+Existing one-card representation can be diversified with library / family / early-childhood content.
+
+---
+
+## G. 高梁市 — one SOURCE generates multiple future cards
+
+### たかはし広がる子どもの夢事業
+
+Current official FY2026 program:
+- multiple experiential child programs
+- future / upcoming items listed as of 2026-10-21:
+  - free climbing: around November
+  - winter stargazing: around December
+  - piano relay concert: 2026-12-19
+  - kids pastry-chef class: around February
+- earlier 2026 modules included:
+  - electronic music-box making
+  - manga / illustrator career experience
+
+Classification:
+RECURRING_PROGRAM_SOURCE
+CHILD / STUDENT
+STEAM / CREATIVE / SPORTS / CAREER / FOOD
+PUBLIC_STATUS = WATCH_PUBLIC / PROMOTE_EACH_ACTIVITY_WHEN_DETAIL_OPENS
+
+Evidence:
+https://www.city.takahashi.lg.jp/site/kyouikuiinkai/hirogarukodomonoyume2026.html
+
+Research interpretation:
+Instead of representing the town with only one generic card, this program can generate a rolling set of current cards as each recruitment page opens.
+
+### Takahashi impact
+The main issue is not lack of content but failure to explode a strong recurring SOURCE into time-specific public cards.
+
+---
+
+## H. 津山市 — strong SOURCE but current-card extraction still unresolved
+
+### 津山まなびの鉄道館
+
+Current:
+- standard public access
+- elementary / junior-high: 100 yen
+- preschool: free
+- recurring special child/family programming in 2026 included:
+  - parent-child summer special
+  - mini diorama workshop
+  - quiz-gacha
+  - Yokono-washi lighting workshop
+- current news stream active through October 2026
+
+Classification:
+CONSTANT_PUBLIC_SOURCE
+FAMILY / CHILD
+RAILWAY / INDUSTRIAL_HERITAGE / MAKING / LOCAL_CULTURE
+PUBLIC_STATUS = PUBLIC_LIST_SOURCE / CURRENT_ACTIVITY_DETAIL_PENDING
+
+Evidence:
+https://www.tsuyamakan.jp/manabi/eHUC_PPB
+
+Do not manufacture a November 2026 activity card from the older cached November-event page.
+Need next pass:
+resolve exact upcoming special event / workshop dates from the 2026 news feed.
+
+### Tsuyama impact
+Research is strong; current-event normalization is the remaining bottleneck.
+
+---
+
+# 12. Batch-3 immediate promotion list
+
+High-confidence / current:
+1. 笠岡市 — 農フェス 2026
+2. 勝央町 — ニュースポーツ教室
+3. 浅口市 — 親子ウォーキングサッカー
+4. 新見市 — 大佐ふるさとまつり
+5. 矢掛町 — やかげエンジョイウォーキング
+6. 吉備中央町 — 秋の読書週間
+
+Near-current / source-driven:
+7. 吉備中央町 — ケロポンズファミリーコンサート (fee/ticket final check)
+8. 高梁市 — 広がる子どもの夢 upcoming modules (activity detail pages)
+9. 津山市 — まなびの鉄道館 upcoming special-event detail
+10. 勝央町 — 保育園開放
+11. 矢掛町 — あおぞらキッズ
+
+Conclusion:
+The one-card municipalities are also not truly content-poor.
+The Pilot bottleneck remains:
+`PUBLIC_CARD_NORMALIZATION + CURRENT_STATE_RESOLUTION`
+more than raw discovery alone.
+
+Next:
+- resolve remaining 1-card / 2-card towns with CURRENT public yield
+- build a promotion-ready queue with exact fields required by Pilot JSON
+- prioritize 2026-10-21 onward dates
+- separately retain strong recurring SOURCEs for rolling refresh.
