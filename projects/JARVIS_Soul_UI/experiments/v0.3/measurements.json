@@ -1,0 +1,279 @@
+{
+  "protocol": "Final no-cache build; phase reset; 2s warmup + 10s sample; actual frame intervals; Chrome Windows Intel HD 530; CSS 1366x900; effective DPR 0.9",
+  "runs": [
+    {
+      "fps": 29.97,
+      "intervalMs": {
+        "samples": 299,
+        "mean": 33.367,
+        "sd": 0.127,
+        "p95": 33.6,
+        "max": 33.7
+      },
+      "jsSubmitMs": {
+        "samples": 300,
+        "mean": 0.393,
+        "sd": 0.179,
+        "p95": 0.6,
+        "max": 1.6
+      },
+      "gpuDrawMs": {
+        "samples": 300,
+        "mean": 0.585,
+        "sd": 0.149,
+        "p95": 0.741,
+        "max": 0.885
+      },
+      "method": "Three.js r180 / WebGL2",
+      "quality": "Balanced",
+      "dpr": 1,
+      "maxPixels": 600000,
+      "particles": 1200,
+      "filaments": 12,
+      "segments": 192,
+      "targetFps": 30,
+      "resolution": [
+        666,
+        557
+      ],
+      "veils": 5,
+      "innerFilaments": 4,
+      "bloom": false,
+      "bloomResolution": [
+        166,
+        139
+      ],
+      "target": "RGBA16F",
+      "drawCalls": 3,
+      "triangles": 8066,
+      "gpu": "ANGLE (Intel, Intel(R) HD Graphics 530 (0x00001912) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "gpuTimer": "EXT_disjoint_timer_query_webgl2",
+      "cpuGpuUtilization": "not measured",
+      "state": "ready",
+      "viewport": [
+        1366,
+        900
+      ],
+      "durationMs": 10010,
+      "errors": [],
+      "recordedAt": "2026-10-21T09:04:17.615Z"
+    },
+    {
+      "fps": 29.97,
+      "intervalMs": {
+        "samples": 299,
+        "mean": 33.367,
+        "sd": 0.156,
+        "p95": 33.6,
+        "max": 34.3
+      },
+      "jsSubmitMs": {
+        "samples": 300,
+        "mean": 0.383,
+        "sd": 0.12,
+        "p95": 0.6,
+        "max": 0.8
+      },
+      "gpuDrawMs": {
+        "samples": 300,
+        "mean": 0.723,
+        "sd": 0.205,
+        "p95": 0.967,
+        "max": 1.201
+      },
+      "method": "Three.js r180 / WebGL2",
+      "quality": "Balanced",
+      "dpr": 1,
+      "maxPixels": 600000,
+      "particles": 1200,
+      "filaments": 12,
+      "segments": 192,
+      "targetFps": 30,
+      "resolution": [
+        666,
+        557
+      ],
+      "veils": 5,
+      "innerFilaments": 4,
+      "bloom": true,
+      "bloomResolution": [
+        166,
+        139
+      ],
+      "target": "RGBA16F",
+      "drawCalls": 5,
+      "triangles": 8070,
+      "gpu": "ANGLE (Intel, Intel(R) HD Graphics 530 (0x00001912) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "gpuTimer": "EXT_disjoint_timer_query_webgl2",
+      "cpuGpuUtilization": "not measured",
+      "state": "ready",
+      "viewport": [
+        1366,
+        900
+      ],
+      "durationMs": 10010,
+      "errors": [],
+      "recordedAt": "2026-10-21T09:04:41.505Z"
+    },
+    {
+      "fps": 59.94,
+      "intervalMs": {
+        "samples": 599,
+        "mean": 16.683,
+        "sd": 0.078,
+        "p95": 16.8,
+        "max": 16.9
+      },
+      "jsSubmitMs": {
+        "samples": 600,
+        "mean": 0.444,
+        "sd": 0.295,
+        "p95": 0.8,
+        "max": 4.7
+      },
+      "gpuDrawMs": {
+        "samples": 600,
+        "mean": 0.887,
+        "sd": 0.624,
+        "p95": 2.086,
+        "max": 3.159
+      },
+      "method": "Three.js r180 / WebGL2",
+      "quality": "High",
+      "dpr": 1.35,
+      "maxPixels": 1000000,
+      "particles": 1800,
+      "filaments": 16,
+      "segments": 224,
+      "targetFps": 60,
+      "resolution": [
+        666,
+        557
+      ],
+      "veils": 5,
+      "innerFilaments": 4,
+      "bloom": false,
+      "bloomResolution": [
+        166,
+        139
+      ],
+      "target": "RGBA16F",
+      "drawCalls": 3,
+      "triangles": 11202,
+      "gpu": "ANGLE (Intel, Intel(R) HD Graphics 530 (0x00001912) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "gpuTimer": "EXT_disjoint_timer_query_webgl2",
+      "cpuGpuUtilization": "not measured",
+      "state": "ready",
+      "viewport": [
+        1366,
+        900
+      ],
+      "durationMs": 10010,
+      "errors": [],
+      "recordedAt": "2026-10-21T09:05:08.418Z"
+    },
+    {
+      "fps": 24,
+      "intervalMs": {
+        "samples": 239,
+        "mean": 41.674,
+        "sd": 8.341,
+        "p95": 50.2,
+        "max": 50.3
+      },
+      "jsSubmitMs": {
+        "samples": 240,
+        "mean": 0.159,
+        "sd": 0.082,
+        "p95": 0.3,
+        "max": 0.4
+      },
+      "gpuDrawMs": {
+        "samples": 240,
+        "mean": 0.447,
+        "sd": 0.109,
+        "p95": 0.64,
+        "max": 0.711
+      },
+      "method": "Three.js r180 / WebGL2",
+      "quality": "Eco",
+      "dpr": 0.75,
+      "maxPixels": 300000,
+      "particles": 600,
+      "filaments": 7,
+      "segments": 112,
+      "targetFps": 24,
+      "resolution": [
+        555,
+        465
+      ],
+      "veils": 5,
+      "innerFilaments": 4,
+      "bloom": false,
+      "bloomResolution": [
+        138,
+        116
+      ],
+      "target": "RGBA16F",
+      "drawCalls": 3,
+      "triangles": 3586,
+      "gpu": "ANGLE (Intel, Intel(R) HD Graphics 530 (0x00001912) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "gpuTimer": "EXT_disjoint_timer_query_webgl2",
+      "cpuGpuUtilization": "not measured",
+      "state": "ready",
+      "viewport": [
+        1366,
+        900
+      ],
+      "durationMs": 10010,
+      "errors": [],
+      "recordedAt": "2026-10-21T09:05:29.986Z"
+    },
+    {
+      "fps": 29.97,
+      "intervalMs": {
+        "samples": 299,
+        "mean": 33.366,
+        "sd": 0.174,
+        "p95": 33.5,
+        "max": 34.4
+      },
+      "jsSubmitMs": {
+        "samples": 300,
+        "mean": 0.352,
+        "sd": 0.168,
+        "p95": 0.6,
+        "max": 0.7
+      },
+      "gpuDrawMs": {
+        "samples": 0,
+        "mean": null,
+        "sd": null,
+        "p95": null,
+        "max": null
+      },
+      "method": "Canvas 2D",
+      "quality": "Balanced",
+      "scale": 0.58,
+      "particles": 150,
+      "filaments": 10,
+      "targetFps": 30,
+      "resolution": [
+        429,
+        359
+      ],
+      "bloom": false,
+      "gpu": "Canvas compositor; utilization unmeasured",
+      "gpuTimer": "unavailable",
+      "limitation": "Baseline geometry retained; only Listening differs from Ready.",
+      "state": "ready",
+      "viewport": [
+        1366,
+        900
+      ],
+      "durationMs": 10010,
+      "errors": [],
+      "recordedAt": "2026-10-21T09:05:58.312Z"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "jarvis-soul-v03-research",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"serve": "node scripts/serve.mjs", "vendor": "node scripts/vendor.mjs", "test": "node --test tests/*.test.mjs"},
+  "dependencies": {"three": "0.180.0"}
+}

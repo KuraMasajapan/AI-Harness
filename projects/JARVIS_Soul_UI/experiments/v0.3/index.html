@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Soul v0.3 — independent Canvas / WebGL research, not the formal UI">
+  <title>Soul v0.3 · A/B research</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="lab.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><div class="brand"><span>NOVA</span><small>Local AI Assistant</small><b><i></i> Demo / not connected</b></div><span class="research-badge">V0.3 · RESEARCH</span></header>
+    <section class="lab-bar" aria-label="Research controls">
+      <label>Renderer <select id="renderer"><option value="B">B · WebGL / Three.js</option><option value="A">A · Canvas 2D + clear</option></select></label>
+      <label>Quality <select id="quality"><option>Eco</option><option selected>Balanced</option><option>High</option></select></label>
+      <label><input type="checkbox" id="bloom"> Bloom</label>
+      <label><input type="checkbox" id="still"> Still · t=8s</label>
+      <button id="pause" type="button" aria-pressed="false">Pause</button>
+      <button id="benchmark" type="button">Measure 10s</button>
+      <span id="run-status" role="status">Independent prototype</span>
+    </section>
+    <nav class="left-nav" aria-label="Primary">
+      <button class="nav-item is-active" type="button" aria-current="page"><span class="nav-icon">◌</span>Chat</button>
+      <button class="nav-item" type="button"><span class="nav-icon">∿</span>Voice</button>
+      <button class="nav-item" type="button"><span class="nav-icon">▱</span>Library</button>
+      <button class="nav-item" type="button"><span class="nav-icon">⁙</span>Tools</button>
+      <button class="nav-item" type="button"><span class="nav-icon">⚙</span>Settings</button>
+      <div class="nav-spacer"></div><div class="runtime-card"><span class="runtime-dot"></span><strong>Prototype mode</strong><small>Local UI only</small></div>
+    </nav>
+    <main class="main-stage">
+      <section class="stage-heading"><p>QUIET INTELLIGENCE</p><h1>A calm place to think.</h1></section>
+      <div class="soul-wrap"><canvas id="soul-canvas" aria-label="Abstract soul — visual demo"></canvas>
+        <div class="soul-caption"><span class="status-dot"></span><span id="state-label">Ready for a demo</span><small>Visual state only · no microphone access</small></div>
+      </div>
+      <aside class="status-panel"><div class="eyebrow">DEMO STATE</div><h2 id="status-title">Ready</h2><p id="status-copy">A quiet, breathing current of light.</p>
+        <div class="state-list" role="group" aria-label="Demo state">
+          <button type="button" class="state-button is-selected" data-state="ready" aria-pressed="true"><span></span>Ready</button>
+          <button type="button" class="state-button" data-state="listening" aria-pressed="false"><span></span>Listening <em>demo</em></button>
+          <button type="button" class="state-button" data-state="processing" aria-pressed="false"><span></span>Processing <em>demo</em></button>
+          <button type="button" class="state-button" data-state="speaking" aria-pressed="false"><span></span>Speaking <em>demo</em></button>
+          <button type="button" class="state-button" data-state="attention" aria-pressed="false"><span></span>Attention</button>
+        </div>
+      </aside>
+      <div class="quick-actions" aria-label="Demo actions"><button type="button"><b>＋</b><span><strong>New thought</strong><small>Visual placeholder</small></span></button><button type="button"><b>⌘</b><span><strong>Open a space</strong><small>Not connected</small></span></button></div>
+      <div class="voice-bar"><button type="button" class="voice-tool" aria-label="Open visual settings">☷</button><div class="input-ghost">Talk to Nova… <span>Demo only</span></div><div class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><button type="button" class="mic-button" aria-label="Preview Listening (no microphone)">●</button><button type="button" class="voice-tool" aria-label="Choose visual state">⌁</button></div>
+    </main>
+    <div class="dev-overlay" id="dev-overlay">Initializing local renderer…</div>
+  </div>
+  <section class="research-results" aria-label="Research diagnostics">
+    <h2>Rendering lab <span>v0.2 remains unchanged</span></h2>
+    <p id="notice" role="status">B is an original shader prototype. A changes only per-frame clearing; its baseline shape and limited state language are deliberately retained.</p>
+    <p>Keys: 1–5 state · Space pause. Motion respects your system preference. No AI, audio or microphone is connected.</p>
+    <div class="lab-actions">
+      <label><input id="reduce" type="checkbox"> Reduce motion (test override)</label>
+      <label>Demo input level <input id="audio" type="range" min="0" max="1" step=".01" value="0"></label>
+      <button id="loss" type="button">Test context loss</button>
+      <button id="record" type="button">Record 6s</button>
+      <a href="accumulation.html">A · accumulation evidence</a>
+      <a href="../../index.html">Unchanged v0.2</a>
+    </div>
+    <p id="record-status" role="status"></p><div id="recordings"></div>
+    <h3>Measured, not target FPS</h3><pre id="metrics">No measurement yet. Choose Measure 10s (2s warm-up + 10s sample).</pre>
+    <h3>Renderer environment</h3><pre id="environment"></pre>
+    <h3>Errors</h3><pre id="errors" role="status">None observed</pre>
+  </section>
+  <script type="module" src="js/lab.js"></script>
+</body>
+</html>
