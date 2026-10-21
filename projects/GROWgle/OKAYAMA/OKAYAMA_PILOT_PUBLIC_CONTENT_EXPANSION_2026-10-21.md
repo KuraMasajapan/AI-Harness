@@ -1416,3 +1416,350 @@ Next:
 - build a promotion-ready queue with exact fields required by Pilot JSON
 - prioritize 2026-10-21 onward dates
 - separately retain strong recurring SOURCEs for rolling refresh.
+
+
+# 13. Deepening batch 4 — PUBLIC cards + COMMUNITY records + SOURCE visibility
+
+Purpose:
+Do not evaluate pilot richness only through OPEN_PUBLIC event cards.
+This batch explicitly captures:
+1. current public activity cards
+2. non-public / community activity records
+3. recurring SOURCEs that explain the regional learning ecosystem
+
+---
+
+## A. 備前市 — daily child-experience infrastructure is stronger than event count suggests
+
+### 備前プレーパーク！森の冒険ひみつ基地
+
+Current official:
+- field: natural satoyama in Kugui, with Seto Inland Sea / island views
+- opening:
+  - Tuesday–Saturday
+  - 10:00–15:00
+- weather cancellation only
+- city describes it as:
+  "森でいっぱい遊ぼう！野外の交流ひろば"
+
+Classification:
+CONSTANT_PUBLIC_SOURCE
+CHILD / FAMILY
+NATURE / FREE_PLAY / COMMUNITY / RISK_JUDGMENT
+ACCESS_GATE = PASS_OR_LOW_BARRIER
+PUBLIC_STATUS = PUBLIC_LIST_PRIORITY / SOURCE_FEATURE
+
+Evidence:
+https://www.city.bizen.okayama.jp/site/aka/746.html
+
+Research significance:
+This should not be modeled merely as an occasional event.
+It is close to a weekly permanent child-experience infrastructure.
+
+### Parent-child gathering network
+
+Official current:
+- わくわくるーむ
+- うみっこ丸
+- しずちゃん家
+- 子育て支援センター
+
+For preschool children + guardians:
+- direct drop-in / local use
+- recurring weekday opening
+- monthly activity calendar
+- parenting consultation / play / interaction
+
+Current hours include:
+- わくわくるーむ: 10:00–15:00 on weekday / alternate-Saturday pattern
+- うみっこ丸: weekdays 09:00–14:00
+- しずちゃん家: weekdays 09:00–14:00
+- 子育て支援センター: recurring week / weekend opening
+
+Classification:
+EARLY_CHILDHOOD_SOURCE_NETWORK
+PRESCHOOL / FAMILY
+COMMUNITY / PLAY / PARENT_SUPPORT
+CONSTANT
+
+Display:
+SOURCE layer + selected current activities
+Do not create a separate event card for every routine opening.
+
+Evidence:
+https://www.city.bizen.okayama.jp/site/aka/746.html
+https://www.city.bizen.okayama.jp/soshiki/17/745.html
+
+### 8-city smartphone walk rally — do NOT child-list
+
+Current:
+- 2026-10-01 through 11-30
+- includes Bizen / Okayama / Tsuyama / Setouchi / Hayashima / Kumenan / Misaki / Nagi
+- free
+- BUT official target is age 18+ residents / workers / students
+
+Classification:
+ADULT_PROGRAM
+PUBLIC_STATUS = EXCLUDE_FROM_CHILD_ACTIVITY
+Retain only if later used as regional-network metadata.
+
+Evidence:
+https://www.city.bizen.okayama.jp/soshiki/13/34288.html
+
+### Bizen correction
+
+Previous state:
+`BIZEN = SOURCE_STRONG / CURRENT_CARD_NEEDS_REFRESH`
+
+New state:
+`BIZEN = CHILD_INFRASTRUCTURE_STRONG / PUBLIC_EVENT_CARD_TIMING_THIN`
+
+Meaning:
+Even when the current event calendar is sparse, the town page should not look empty.
+Use:
+- constant play SOURCE
+- parent-child SOURCE network
+- cultural / making recurring SOURCEs
+- community records
+alongside current event cards.
+
+---
+
+## B. 奈義町 — contemporary-art hands-on card
+
+### AIRN vol.7 workshop "紙で高い塔を作ろう！"
+
+Current official:
+- 2026-11-01
+- 13:30
+- Nagi MOCA
+- paper + stapler construction challenge
+- create the tallest possible tower
+- capacity: 10
+- age: unrestricted
+- low elementary and younger require guardian
+- fee: free
+- reservation: phone / email
+
+Classification:
+OPEN_PUBLIC / FREE / APPLICATION
+CHILD / FAMILY / GENERAL
+CREATIVE / ART / ENGINEERING_THINKING / MAKING
+HANDS_ON = VERY_HIGH
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST_PRIORITY
+
+Evidence:
+https://www.town.nagi.okayama.jp/moca/news/20261010.html
+
+GROWgle note:
+Nagi's public content can now show multiple local axes:
+- industry / agriculture / science through Industry Festival
+- contemporary art / making through Nagi MOCA
+- local performing heritage through child Kabuki SOURCE
+
+Do not represent Nagi only as "arts tourism" or only as "sports".
+
+---
+
+## C. 美作市 — forest / body experience card
+
+### 第5回ツリークライミング体験会
+
+Current official:
+- 2026-11-15
+- 09:30–12:00
+- location: summit plaza of Mt. Koshobo
+- meet at Ohara Community Center at 08:00
+- approx. 1.6 km / 40-minute approach from trailhead
+- certified Tree Climbing Japan instructors
+- tree climbing with dedicated gear
+- slackline
+- fee: 1,000 yen
+
+Classification:
+OPEN_PUBLIC_CANDIDATE
+FAMILY / CHILD_COMPATIBLE / GENERAL
+NATURE / FOREST / PHYSICAL / CHALLENGE
+HANDS_ON = VERY_HIGH
+ACCESS_GATE = CONDITIONAL
+PUBLIC_STATUS = PUBLIC_LIST_CANDIDATE
+
+Conditional reason:
+official text accessed in this pass does not expose explicit age / minimum-age restriction in machine-readable text.
+Do not publish a child-age claim until flyer / application details are checked.
+
+Evidence:
+https://www.city.mimasaka.lg.jp/kanko/info/9137.html
+
+### Mimasaka growth in page content
+
+Current public card candidates now include:
+- puppet theater
+- tree climbing
+
+Research / community layer also includes:
+- Hayashino High School "みまさか学"
+- student regional inquiry / activities
+
+This gives the town page both:
+- public family participation
+- youth provider / regional learning record
+
+---
+
+## D. 美咲町 — town-wide event / parenting-source density
+
+### Current event density
+
+Current official LINE/event feed updated 2026-10-09 shows:
+- 2026-10-22 konnyaku-making class
+- 2026-10-24 fire / disaster-prevention festival in Asahi
+- 2026-10-26 pediatric outreach lecture
+- 2026-10-31 one-day forestry experience
+plus multiple child-support-center programs.
+
+Classification:
+TOWN_EVENT_SOURCE = STRONG
+PUBLIC / FAMILY / ADULT mix
+Need each activity's target / direct-application conditions normalized separately.
+
+Evidence:
+https://www.town.okayama-misaki.lg.jp/kakuka/misakikyoso/gyomu/6/1/3705.html
+
+### Child-support-center distributed network
+
+Current monthly schedule contains:
+- parent-child yoga
+- handprint art
+- sweet-potato digging
+- cooking
+- festival play
+- Halloween
+- story reading
+- nursery-yard opening
+- outreach childcare
+etc.
+
+Classification:
+EARLY_CHILDHOOD_SYSTEM_SOURCE
+PRESCHOOL / FAMILY
+RECURRING / DISTRIBUTED
+COMMUNITY / PLAY / CREATIVE / FOOD / PHYSICAL
+
+Evidence:
+https://www.town.okayama-misaki.lg.jp/calendar.html
+https://www.town.okayama-misaki.lg.jp/kakuka/kyoikusomu/gyomu/5/1/shien_event_2609/index.html
+
+GROWgle note:
+Do not make every support-center date a top-level event card.
+Town page should show:
+SOURCE = 美咲町子育て支援センター network
+ACTIVITY = selected current family programs
+
+This is a strong example of how a small municipality can look rich without inflating event-card count.
+
+---
+
+## E. 津山市 — current public event stream + strong permanent SOURCE
+
+### 津山まなびの鉄道館 — permanent child/family SOURCE
+
+Current:
+- opening 09:00–16:00
+- elementary / junior-high: 100 yen
+- preschool: free
+- current 2026 event history includes:
+  - parent-child summer special
+  - mini diorama workshop
+  - quiz-gacha
+  - washi-lighting workshop
+
+Classification:
+CONSTANT_PUBLIC_SOURCE
+CHILD / FAMILY
+RAILWAY / INDUSTRIAL_HERITAGE / STEAM / MAKING
+ACCESS_GATE = PASS
+PUBLIC_STATUS = PUBLIC_LIST_SOURCE
+
+Evidence:
+https://www.tsuyamakan.jp/manabi/eHUC_PPB
+
+### November current city event stream
+
+Current official tourism feed confirms:
+- 2026-11-01: 令和作州城東むかし町
+- 2026-11-01: かも谷まつり
+- 2026-11-14: 勝北ふるさと祭り
+- 2026-11-22: レトロリレーバス
+- additional long-running November cultural events
+
+Classification:
+COMMUNITY / CULTURE / REGIONAL_IDENTITY
+PUBLIC_GENERAL
+Not all should automatically become child activity cards.
+Use as:
+- town/region activity records
+- family/general event cards only when child hands-on content is confirmed
+
+Evidence:
+https://www.tsuyamakan.jp/
+https://www.tsuyamakan.jp/event
+
+### Tsuyama interpretation
+
+Current state:
+`TSUYAMA = SOURCE_RICH / CHILD_ACTIVITY_CARD_NORMALIZATION_LAG`
+
+This is not a research-poor municipality.
+The next useful action is to resolve which current city events have explicit child participation / hands-on content.
+
+---
+
+## F. Public-card vs wider GROWgle display rule reinforced
+
+For Pilot content expansion, use three display layers:
+
+### 1. PUBLIC ACTIVITY
+Direct-family participation / application possible.
+Fields:
+date / fee / age / application / current state.
+
+### 2. COMMUNITY RECORD
+School-only / youth project / company-school / completed activity / region-specific learning record.
+Clearly label:
+"currently not recruiting" / "school activity" / "activity record".
+
+### 3. SOURCE
+Recurring generator:
+- library
+- play park
+- museum
+- child-support network
+- annual program
+- high school / university / NPO
+- company / association
+
+Do not force SOURCE into event-card format.
+
+## 14. Immediate new promotion / display candidates from batch 4
+
+PUBLIC:
+- Nagi MOCA paper-tower workshop
+- Mimasaka tree climbing (after age restriction check)
+- Bizen Play Park as constant public experience
+- Bizen parent-child gathering SOURCE network
+- Misaki support-center network
+- Tsuyama Railway Museum SOURCE
+
+COMMUNITY / SOURCE visibility:
+- Misaki distributed parenting programs
+- Mimasaka school-youth regional inquiry
+- Nagi child Kabuki heritage SOURCE
+- Tsuyama November community-cultural stream
+
+Next:
+- continue CURRENT child-participation verification for Tsuyama November events
+- resolve Mimasaka tree-climbing age condition
+- search Bizen November/December current child activities from monthly child calendars
+- continue 1–2 card municipalities and promote recurring SOURCEs, not only event cards.
