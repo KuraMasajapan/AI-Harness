@@ -2002,3 +2002,49 @@ Secret LEDは優先設計項目から外し、SM16206S OUT15を利用した簡�
 - Priority: Low
 - Count: optional, separate from the confirmed 17 functional LEDs
 - Exact optical structure / location: layout-dependent
+
+---
+
+## Spline 3D Visualization Recall Trigger — 2026-10-22
+
+UIAP BASEの作業が**実物に近い外観モック、3D可視化、物理配置の説明、教材用インタラクティブ表示**へ入った場合は、Spline for ChatGPT / Codexを高優先度の候補として再確認する。
+
+関連研究メモ：
+
+- `incubator/proposals/2026-10-22-spline-chatgpt-codex-3d-workflow.md`
+
+### Trigger Conditions
+
+以下のいずれかが必要になった時点でこの候補を思い出す。
+
+- UIAP BASEのリアルな3Dモック / 外観イメージ
+- PCB上の部品配置を人間向けに見せる資料
+- case / tray / stand / mechanical interfaceの見た目確認
+- connector / socket / LED / buttonの位置を説明する教材
+- 子ども向けのクリック可能な3D教材
+- signal pathや動作を見せるアニメーション
+- Web上で回転・操作できる製品紹介
+- 3D sceneを起点とした説明動画制作
+
+### Use Boundary
+
+Splineは**製造用CAD / PCB設計のSource of Truthにはしない**。
+
+寸法、footprint、keepout、端子位置、部品型番、基板外形、電気仕様は本ファイルおよび実設計データを優先し、Splineにはそれらを反映して可視化する。
+
+位置・向き・サイズが未確定の要素は推測で確定表示せず、概念モックとして明示する。
+
+### Preferred Trial Order
+
+UIAP BASEで最初に試す場合は、いきなり教材全体を作らず、現在のPhysical Component Freezeを基準にした**編集可能な基板全体3Dモック1点**から始める。
+
+その結果を、静止画・KiCad等の既存3D表示と比較し、以下を確認する。
+
+- 寸法 / 配置の再現性
+- 部品の識別しやすさ
+- Humanによる修正のしやすさ
+- 子ども向け説明への発展性
+- 作業時間 / 費用 / 出力制限
+
+有効性が確認された場合のみ、インタラクション、教材化、HyperFrames / Remotion等による動画化へ拡張する。
+
