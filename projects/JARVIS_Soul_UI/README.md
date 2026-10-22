@@ -1,32 +1,54 @@
-# Local AI Soul UI v0.2
+# Local AI Soul UI
 
-静かな「魂」の存在感を中心にした独立ビジュアルプロトタイプです。添付画像の構図（左ナビ・中央ビジュアル・右ステータス・下部バー）を保ちつつ、発光、粒子、波形、HUD装飾を控えめにしています。
+This directory contains the visual research that led to the Local AI Soul V0.1 product direction.
 
-## 起動
+## Current implementation direction
+
+The implementation target is now defined in:
+
+- [V0.1 Product Specification](V0.1_SPEC.md)
+
+V0.1 uses an external OSS Orb component as the primary renderer and focuses on product integration, setup UX, text/voice interaction, Semantic Reflex, safety, and reliable fallback behavior rather than further development of the custom renderer.
+
+## Existing v0.2 prototype — retained research asset
+
+The previous Local AI Soul UI v0.2 is preserved as an independent visual prototype.
+
+It explored:
+
+- WebGL2 local glow + Canvas 2D flow lines and particles
+- Canvas 2D fallback
+- Eco / Balanced / High drawing modes
+- Ready / Listening / Processing / Speaking / Attention demo states
+- reduced-motion, responsive layout, and keyboard-accessible controls
+
+The prototype does **not** include live AI connection, microphone permission handling, STT/TTS, or real CPU/VRAM measurement.
+
+The existing source files and previews remain useful as research history and are not deleted by the V0.1 product decision.
+
+## v0.3 experiments
+
+The `experiments/v0.3/` work is also retained as renderer research.
+
+V0.1 does not promote that custom renderer into the product. The product direction instead adopts the external Orb implementation documented in `V0.1_SPEC.md`.
+
+## Historical prototype launch
+
+For the retained v0.2 prototype:
 
 ```powershell
 cd C:\Users\Owner\Documents\ChatGPT\UI_develop_lab\local-ai-soul-ui
 python -m http.server 8000
 ```
 
-`http://localhost:8000/` を開いてください。`file://` 直開きでは ES module 制約のため動作確認しません。
+Open `http://localhost:8000/`.
 
-## 実装範囲
+`file://` direct opening is not the intended verification path because of ES module constraints.
 
-- WebGL2 の局所グロー + Canvas 2D の流線・粒子表現
-- WebGL2 非対応時の Canvas 2D fallback
-- Eco / Balanced / High の描画目安（初期は Balanced）
-- Ready / Listening / Processing / Speaking / Attention のデモ切替
-- reduced-motion、レスポンシブ、キーボード操作可能なボタン
-- 実AI接続、マイク権限、STT/TTS、CPU/VRAM測定は未実装。画面上も Demo / not connected と明示
+## Preview records
 
-## 参照画像との差分
+[Preview images and results](docs/previews/README.md)
 
-レイアウトの大枠と青白い中心発光は継承しています。一方で、中心を単一の静かな塊にまとめ、外周の粒子、強い床反射、大きな同心円、常時動く波形、過剰なHUD装飾は削減しました。性能値はブラウザ上の簡易フレーム目安のみで、実機ベンチマーク結果ではありません。
+## Note on naming
 
-
-## v0.2 スマホ表示
-
-600px以下ではSoul・説明文・状態パネル・操作バーをGridで縦に配置します。小画面は縦スクロールできます。PCの外観とRendererは維持しています。
-
-[検証画像と結果](docs/previews/README.md)
+The directory name `JARVIS_Soul_UI` is retained as a legacy internal project path for continuity. It is not the default assistant name or final public product brand. In V0.1, the user chooses the assistant's display name during first-run setup.
