@@ -52,7 +52,7 @@ tags: [hermes, hermes-agent, ecosystem, community-oss, agents, skills, self-impr
 
 **概念上の関係（実装図ではない）:**
 
-\`\`\`text
+```text
 Human（最終判断、権限付与）
        │
        ▼
@@ -68,7 +68,7 @@ Nous Research Hermes Agent ── 基本ランタイム / Model / Tools / Memory
        
 Tailscale（オプション）= モバイルや遠隔端末との通信経路のみ
 AI-Harness = ルール・Access・Human承認・Source of Truth
-\`\`\`
+```
 
 Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、Gateway、Subagents等があるため、**周辺OSSは標準機能との差分があって初めて採用意義がある**。製品群の同時導入を前提にしない。
 
@@ -77,10 +77,10 @@ Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、G
 **一次資料:** https://github.com/Cranot/super-hermes （公式README、公開事例と研究へのリンク）。MIT。HermesのSkillとして動く想定だが、分析用「prism」自体は他のLLMのsystem promptにも利用できる設計。
 
 **READMEで確認できた機能・主張**
-- 目の前の問題に合う「cognitive prism（分析レンズ）」を生成する \`/prism-scan\`。
-- \`/prism-full\`（複数の分析観点で自己批判）、\`/prism-3way\`（WHERE/WHEN/WHY）、\`/prism-discover\`（分析範囲発見）、\`/prism-reflect\`（見落とした領域やトレードオフを出力）。
+- 目の前の問題に合う「cognitive prism（分析レンズ）」を生成する `/prism-scan`。
+- `/prism-full`（複数の分析観点で自己批判）、`/prism-3way`（WHERE/WHEN/WHY）、`/prism-discover`（分析範囲発見）、`/prism-reflect`（見落とした領域やトレードオフを出力）。
 - 7つの事前作成した分析用Prism、事例の分析結果と制約レポート。
-- \`.prism-history.md\` に過去の見落としを残し、後続の分析に参照する軽量フィードバック。**学習するのはモデルの重みではなく、プロンプトとプロジェクト内の分析履歴**。
+- `.prism-history.md` に過去の見落としを残し、後続の分析に参照する軽量フィードバック。**学習するのはモデルの重みではなく、プロンプトとプロジェクト内の分析履歴**。
 
 **限界と検証上の注意**
 - README自ら「単一ファイル中心」「モデル依存」「学習ループはappend-onlyで枝刈り・意味検索・改善確認なし」「外部標準ベンチマークなし」と記す。
@@ -88,25 +88,25 @@ Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、G
 - 長い出力や派手な「不可能性・保存則」の表現は、正確な証明や修正提案の正しさを保証しない。
 - ファイルに自動記録するSkillは、記録場所や権限、誤認の蓄積を管理しなければならない。
 
-**AI-Harnessとの関係:** \`core/WORKFLOW\` の証拠と不確実性の区別、Trinityの複数観点、反証検討、Lessonsと機能思想が重複。最小の分析レンズが今の作業に上乗せで有益かを将来比較できる。**A / REFERENCE / 実装HOLD**。
+**AI-Harnessとの関係:** `core/WORKFLOW` の証拠と不確実性の区別、Trinityの複数観点、反証検討、Lessonsと機能思想が重複。最小の分析レンズが今の作業に上乗せで有益かを将来比較できる。**A / REFERENCE / 実装HOLD**。
 
 ## 4. No.2 Hermes Dojo — 実行ログから弱点を探し、改善を試みる
 
-**一次資料:** https://github.com/Yonkoo11/hermes-dojo （README）、MIT、Python、Hermes Agentに依存。Self-evolution（GEPA）を含む一部処理では \`hermes-agent-self-evolution\` も必要。
+**一次資料:** https://github.com/Yonkoo11/hermes-dojo （README）、MIT、Python、Hermes Agentに依存。Self-evolution（GEPA）を含む一部処理では `hermes-agent-self-evolution` も必要。
 
 **READMEで確認できた流れ**
-1. Performance Monitor: \`state.db\` のセッション履歴を読み、ツールエラー、リトライ反復、ユーザー修正・不満、Skill別成績を集計。
+1. Performance Monitor: `state.db` のセッション履歴を読み、ツールエラー、リトライ反復、ユーザー修正・不満、Skill別成績を集計。
 2. Weakness Analyzer: 再発原因、足りないSkill、改善の優先度を候補化。
 3. Auto-Fixer: Skillの修正・新規生成やGEPA最適化を実行する設計。
 4. Reporter / Learning Curve: CLI、Telegram、JSON履歴で変化を示す。
-5. \`/dojo auto\`: Cronを使う夜間実行が案内されている。
+5. `/dojo auto`: Cronを使う夜間実行が案内されている。
 
 **「自己進化」の意味:** 失敗を測ってSkillのコード・指示・構成を変更する**ソフトウェアのフィードバックループ**であり、モデル重みの自動再学習を実証するものではない。
 
 **重要リスク**
 - 失敗と正解の自動分類が誤ると、誤った改善で成績が下がる。
 - 同じ自己採点器で改善案を採点するだけでは、指標への過適合を防げない。
-- \`state.db\` を解析すると個人的な会話・ツールログ・秘密情報へのアクセス可能性が増す。
+- `state.db` を解析すると個人的な会話・ツールログ・秘密情報へのアクセス可能性が増す。
 - Auto-Fixer、Cron、Telegram通知は外部送信や変更を伴い得る。**無人実行・自動Skill上書きは現段階で不適合**。
 - 公開READMEに流れの説明はあるが、実環境の統計的な継続改善、ロールバック耐性、権限強制の独立監査は未確認。
 
@@ -126,9 +126,9 @@ Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、G
 
 **先ほどのTailscale調査との接点**
 - WorkspaceのREADMEには **Remote host (Tailscale / VPN / LAN)** と **PWA + Tailscale** の項があり、ローカルPCのWeb作業台をスマホから操作する設計例がある。
-- これは既存 \`harness-server-mobile-control.md\` と今回の \`tailscale-private-network-agent-access-muse-case.md\` にある**目的を具体化する証拠**。
+- これは既存 `harness-server-mobile-control.md` と今回の `tailscale-private-network-agent-access-muse-case.md` にある**目的を具体化する証拠**。
 - Museを必須としない。**スマホブラウザ + Tailscale + 認証済みWorkspace**という構成を比較対象にできる。
-- ただしWorkspace READMEが挙げる \`API_SERVER_HOST=0.0.0.0\` やDockerのポート公開設定を**安全であると推奨しているわけではない**。bind全開、未設定のAPI鍵、 \`GATEWAY_ALLOW_ALL_USERS\` や広いtailnet許可は個人・家族PCへの不適切な到達を生む恐れがある。
+- ただしWorkspace READMEが挙げる `API_SERVER_HOST=0.0.0.0` やDockerのポート公開設定を**安全であると推奨しているわけではない**。bind全開、未設定のAPI鍵、 `GATEWAY_ALLOW_ALL_USERS` や広いtailnet許可は個人・家族PCへの不適切な到達を生む恐れがある。
 
 **重要リスク・採用判断**
 - File / Terminal / MCP / Skills編集は高権限。画面表示の認証とAI-HarnessのHuman操作承認は独立して強制が必要。
@@ -142,16 +142,16 @@ Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、G
 **一次資料:** https://github.com/42-evey/hermes-plugins （公式README）、MIT、Python等。READMEは23プラグインと共有ユーティリティを列挙。
 
 **公式READMEに記載されたカテゴリ・具体的なもの**
-- 自律判断・複数AI: \`evey-autonomy\`、\`evey-council\`、\`evey-delegate-model\`。
-- 観測・コスト: \`evey-telemetry\`（ツールのJSONログ）、\`evey-status\`、\`evey-mqtt\`、\`evey-cost-guard\`（Langfuse連携）。
-- 品質・安全: \`evey-reflect\`、\`evey-validate\`、\`evey-email-guard\`、\`evey-sandbox\`、\`evey-session-guard\`。
-- Memory/学習: \`evey-learner\`、\`evey-memory-adaptive\`、\`evey-memory-consolidate\`、\`evey-cache\`、\`evey-identity\`。
-- 連携・タスク: \`evey-bridge\`（Claude Code連携）、\`evey-goals\`、\`evey-telegram-ux\`、\`evey-research\`、\`evey-digest\`、\`evey-delegation-score\`。
+- 自律判断・複数AI: `evey-autonomy`、`evey-council`、`evey-delegate-model`。
+- 観測・コスト: `evey-telemetry`（ツールのJSONログ）、`evey-status`、`evey-mqtt`、`evey-cost-guard`（Langfuse連携）。
+- 品質・安全: `evey-reflect`、`evey-validate`、`evey-email-guard`、`evey-sandbox`、`evey-session-guard`。
+- Memory/学習: `evey-learner`、`evey-memory-adaptive`、`evey-memory-consolidate`、`evey-cache`、`evey-identity`。
+- 連携・タスク: `evey-bridge`（Claude Code連携）、`evey-goals`、`evey-telegram-ux`、`evey-research`、`evey-digest`、`evey-delegation-score`。
 
 **コスト上の留意点:** READMEには「無料モデルを利用」「$0/day operating cost」といった説明と、同じREADME中のハードウェア約$69/月への支援記述がある。**推論API費用がゼロになる場合でも、ホスティング・HW・通信・保守まで無料と同一視しない**。具体的な費用と上限はサービス・運用形態で変わる。
 
 **安全と重複**
-- \`evey-autonomy\`、Memoryの自動書き換え、外部モデル委譲、MQTT、MCP、Cron等は既存Access/Human承認・Private情報分離と衝突し得る。
+- `evey-autonomy`、Memoryの自動書き換え、外部モデル委譲、MQTT、MCP、Cron等は既存Access/Human承認・Private情報分離と衝突し得る。
 - Regex + LLMによる安全判定や“sandbox”という名前だけでは、OS分離・機密保護・プロンプトインジェクションへの完全耐性を示せない。
 - 依存サービス（Langfuse/Qdrant等）の運用コスト、ログ中の個人情報、APIキー、ネットワーク経路は要確認。
 - 単機能を今後比較する価値はあるが、セット全体を導入すると既存Harnessと機能重複が大きい。
@@ -162,7 +162,7 @@ Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、G
 **名称・所在に重要な訂正**
 - X投稿の旧リンク：https://github.com/titanwings/colleague-skill
 - 2026-10-24にGitHub APIで旧repoの移動（redirect）を確認。**現在の実体**：https://github.com/titanwings/distilly
-- 旧READMEは「colleague.skill」。現行repoの \`dot-skill\` ブランチREADMEでは **Distilly** と説明。MIT。
+- 旧READMEは「colleague.skill」。現行repoの `dot-skill` ブランチREADMEでは **Distilly** と説明。MIT。
 - したがって「Hermes専用の自己進化Plugin」ではなく、**複数エージェント環境で人の経験・判断傾向等を再利用するPerson Profile生成ツール**。
 
 **公式READMEで確認できたこと**
@@ -181,26 +181,26 @@ Hermes本体にもMemory、Skillsの生成・改善、Cron、モデル切替、G
 
 ## 8. 既存AI-Harness／Hermes研究との重複・補完
 
-現行リポジトリ（\`development\`）で確認した関係資料：
-- \`projects/Hermes_Local_Agent/research/2026-10-23-hermes-agent-current-reassessment.md\`
+現行リポジトリ（`development`）で確認した関係資料：
+- `projects/Hermes_Local_Agent/research/2026-10-23-hermes-agent-current-reassessment.md`
   - Hermes本体のMemory/Skills自動生成・自己改善・Gateway等をすでに公式確認。**本体の能力を知らずに周辺拡張を積まない**。
-- \`projects/Hermes_Local_Agent/research/2026-10-15-hermes-agent-reinforcement.md\`
+- `projects/Hermes_Local_Agent/research/2026-10-15-hermes-agent-reinforcement.md`
   - Phase 0、GPUなしから段階評価、ChatGPT Work/Codexとの二重投資回避。
-- \`incubator/proposals/2026-09-20-harness-server-mobile-control.md\`
+- `incubator/proposals/2026-09-20-harness-server-mobile-control.md`
   - スマホUI→PCのHarness Serverという目標。Workspaceが一案。
-- \`incubator/proposals/2026-10-24-tailscale-private-network-agent-access-muse-case.md\`
+- `incubator/proposals/2026-10-24-tailscale-private-network-agent-access-muse-case.md`
   - Tailscaleはプライベート通信経路。WorkspaceはUI、HermesはRuntime。**レイヤーの区別**が重要。
-- \`incubator/proposals/2026-10-09-pidurablekit-iphone-durable-runtime.md\`
+- `incubator/proposals/2026-10-09-pidurablekit-iphone-durable-runtime.md`
   - iPhone側を継続性の支点とする**別構成**。常時稼働PCを前提としないのでWorkspace構想と競合する可能性もある。
-- \`incubator/proposals/2026-10-16-grok-agent-permission-approval-hold.md\`
+- `incubator/proposals/2026-10-16-grok-agent-permission-approval-hold.md`
   - 自動変更・命令実行・外部通信を権限レイヤーとHumanで守る。
-- \`incubator/proposals/2026-10-16-harness-minimalism-counterhypothesis.md\`
+- `incubator/proposals/2026-10-16-harness-minimalism-counterhypothesis.md`
   - 重厚な拡張が常に性能向上を生むとは限らない。
-- \`incubator/proposals/2026-10-23-ecc-agent-harness-reference.md\`
+- `incubator/proposals/2026-10-23-ecc-agent-harness-reference.md`
   - 他Harnessから大量のRules/Skillsを取り込む際の衝突・冗長化リスク。
-- \`incubator/proposals/2026-10-02-trinity-persistence-enforcement-completion-evaluation.md\`
+- `incubator/proposals/2026-10-02-trinity-persistence-enforcement-completion-evaluation.md`
   - 何を実行・承認・評価するかの境界が中心。
-- \`core/ACCESS.md\`、\`core/RULES.md\`、\`core/WORKFLOW.md\`、\`HARNESS.md\`
+- `core/ACCESS.md`、`core/RULES.md`、`core/WORKFLOW.md`、`HARNESS.md`
   - Coreが定める最終的なアクセス・Human承認・検証ルール。
 
 **総合重複判定**
