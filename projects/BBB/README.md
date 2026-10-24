@@ -8,9 +8,10 @@ HumanがBBBチャットで**「ハーネスを確認して」**と指示した�
 2. **最優先**で `projects/BBB/CURRENT_SPEC.md` の最新の更新日時と「Current release」部分を読む。ここにある古いバージョン別説明やREADMEの「現在位置」より最新SPECを優先する。
 3. `projects/BBB/research/field-notes/README.md` で外部研究の評価・昇格ルールを確認。関連する研究候補は**採用済みとは見なさない**。
 4. 市場予測／金融LLM／Kronos／TradingAgents／REAの話題があれば、[2026-10-24 REA・Kronos・TradingAgents照合ノート](research/field-notes/2026-10-24-rea-kronos-tradingagents-bbb-crossreference.md) と [既存のKronos一次評価](research/field-notes/2026-10-20-kronos-candlestick-model-evaluation.md) を参照。**Kronosは既存研究と一致**、**TradingAgentsは新しい独立比較候補**、**REAはBBBの取引研究への直接性が低い**。
+   また、**Vibe-Trading / HKUDS / Alpha Zoo / 478因子 / 戦略の独立検証 / Monte Carlo / Bootstrap / Walk-Forward**の話題では、[2026-10-24 Vibe-Trading独立比較候補ノート](research/field-notes/2026-10-24-vibe-trading-independent-research-comparator.md)を参照する。BBBのStrategy Lab・Forward Gate・Execution Parityとの重複・相違点を確認し、**研究比較候補（A+ / CANDIDATE / 実装HOLD）**として扱う。
 5. その他の研究課題では `incubator/proposals/` とBBBのresearchを該当キーワードで照合し、CURRENT・HOLD・未検証・推測を区別して報告する。
 
-検索用キーワード：`ハーネスを確認して` / `ハーネス確認` / `BBB研究候補` / `Kronos` / `TradingAgents` / `REA` / `AI投資リサーチ` / `ローソク足予測` / `マルチエージェント`。
+検索用キーワード：`ハーネスを確認して` / `ハーネス確認` / `BBB研究候補` / `Kronos` / `TradingAgents` / `REA` / `AI投資リサーチ` / `ローソク足予測` / `マルチエージェント` / `Vibe-Trading` / `HKUDS` / `Alpha Zoo` / `独立比較` / `取引コスト`。
 
 **注意：これは読み直すための文書上の入口であり、自動監視・強制実行の機能ではない。** 別チャットからGitHubを読めない場合は参照を保証できない。研究ノートを読み込んでも、BBB本体、Paper、Freeze、Liveの処理は変更しない。GitHub文書と実際の配布済みZIPコードの同期状態も別途確認する。
 
