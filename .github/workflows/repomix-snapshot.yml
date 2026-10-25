@@ -1,0 +1,32 @@
+name: Repomix Pilot Snapshot
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Generate Repomix snapshot
+        uses: yamadashy/repomix/.github/actions/repomix@v1.18.1
+        with:
+          output: repomix-output.xml
+          style: xml
+          compress: false
+          repomix-version: 1.18.1
+
+      - name: Upload snapshot artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: repomix-snapshot-${{ github.ref_name }}-${{ github.run_number }}
+          path: repomix-output.xml
+          retention-days: 14
