@@ -1,7 +1,7 @@
 # BBB Checkpoint — v0.9.40 Local AI Recovery Catch-up
 
 Recorded: 2026-10-27 JST
-Status: **Full ZIP packaged and locally verified; Windows UI acceptance pending.**
+Status: **Full ZIP packaged, locally verified, and Windows runtime acceptance confirmed.**
 
 ## Why this release exists
 
@@ -108,3 +108,16 @@ SHA-256:
 10. Live remains locked.
 
 Windows runtime acceptance is not complete until the Human confirms Pending decreases on the target machine.
+
+## Windows runtime acceptance — 2026-10-27
+
+Human confirmed on the target Windows machine that:
+- Local AI remained **READY** after upgrading to v0.9.40.
+- Risk & System displayed the new `Pending AI / 分類待ち` and `Catch-up / 追いつき処理` fields.
+- Pending count was observed decreasing over time without manual classification commands.
+- Example observed count: **112** after previously recorded **117** backlog.
+- Human explicitly observed the number continuing to decrease, confirming the new background catch-up loop is active on the deployed machine.
+
+This completes Windows acceptance for the v0.9.40 recovery-catch-up feature. The classification backlog still needs time to drain fully, but no manual intervention is required while BBB remains running and Local AI stays READY.
+
+Safety boundaries remain unchanged: Local AI Sandbox only, Trade influence OFF, Live Gate locked, Active/Shadow Freeze timestamps unchanged.
