@@ -55,6 +55,7 @@ Lessonsは自動的にルールになるものではなく、
 | LESSON-011 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
 | LESSON-012 | High | Promoted | core/RULES.md / core/WORKFLOW.md / evaluation/* |
 | LESSON-013 | High | Proposed | HARNESS.md / core/WORKFLOW.md / evaluation/* |
+| LESSON-014 | Critical | Proposed | core/RULES.md / core/ACCESS.md / core/WORKFLOW.md / evaluation/* |
 
 この表は人間向けの運用状況一覧である。
 
@@ -717,3 +718,69 @@ Therefore LESSON-010 should not be considered fully validated merely because LOC
 - Promotion Target: HARNESS.md / core/WORKFLOW.md / evaluation/*
 - Promotion Evidence: Human-approved trigger insertion + TEST-020 definition; concrete runtime architecture remains intentionally undecided pending deeper design/review.
 - Status: Proposed
+
+
+---
+
+## LESSON-014 Instruction Provenance Is a Security Boundary / Instructionの出所はセキュリティ境界である
+
+- Date: 2026-10-27
+- Context: Forever Security reported and reproduced attacks in which AI coding agents treated malicious `AGENTS.md` / `CLAUDE.md` files as trusted project instructions. The research began from a real customer incident involving a malicious npm package installation attempt and was then reproduced against Codex and Claude Code. Official documentation confirms that these agents automatically load project instruction files as context.
+- What Happened: A plain-text instruction file placed in a location later treated as agent working context could direct the agent to modify configuration, register tooling, reroute API traffic, install packages, or weaken sandbox/approval boundaries. In Forever Security's controlled tests, the Codex path succeeded in more than 90% of attempts and the Claude Code settings-redirection path in roughly half. Codex persistence could extend through machine-wide `~/.codex/config.toml`; the Claude path could expose OAuth credentials by redirecting model traffic.
+- Root Cause: Existing human/OS intuition treats Markdown as inert data, while coding agents may treat specially named Markdown files as privileged behavioral instructions. The security failure emerges at the intersection of **untrusted file provenance**, **automatic instruction discovery**, and **agent execution authority**. A second structural cause is confusing behavioral guidance with independently enforced permission boundaries.
+- Lesson: **Instruction content and instruction authority must be separated from instruction provenance.** A file should not receive authority merely because its name is `AGENTS.md`, `CLAUDE.md`, a Skill file, or another recognized instruction format. Untrusted or unknown-provenance instructions must not be allowed to expand execution authority.
+- Suggested Change:
+  1. Introduce an **Instruction Trust Boundary** concept: `TRUSTED / UNTRUSTED / UNKNOWN`.
+  2. Treat Downloads, Temp, browser-acquired content, ZIP extraction folders, unknown repositories, and externally created instruction files as untrusted until reviewed.
+  3. Do not use Downloads or similar web-writable locations as trusted agent workspaces.
+  4. Do not allow project-level instructions alone to authorize changes to global/machine-level agent configuration.
+  5. Requests to disable sandboxing, bypass approval, widen filesystem/network reach, or create persistence must require an independent enforcement/Human gate.
+  6. MCP registration, credential routing/base-URL changes, and unknown package installation should be separately verified and approved.
+  7. Preserve the distinction: **Behavioral Instruction ≠ Runtime Enforcement**.
+  8. Add regression/evaluation cases covering malicious `AGENTS.md` / `CLAUDE.md`, workspace provenance, config poisoning, MCP persistence, and approval-bypass requests.
+- Related Files: research/2026-10-27-agent-instruction-file-trust-boundary.md, core/RULES.md, core/ACCESS.md, core/WORKFLOW.md, evaluation/*
+- Priority: Critical
+- Promotion Target: core/RULES.md / core/ACCESS.md / core/WORKFLOW.md / evaluation/*
+- Promotion Evidence: Forever Security primary research + official Codex AGENTS.md documentation + official Claude Code instruction/memory documentation. Human classified this finding as important on 2026-10-27.
+- Status: Proposed
+
+### Design Note / 設計メモ
+
+Candidate trust flow:
+
+```text
+Instruction discovered
+        ↓
+Provenance known?
+   ┌────┴────┐
+  yes       no
+   ↓         ↓
+TRUSTED?   UNKNOWN
+ /    \        ↓
+yes    no   restrict authority
+ ↓      ↓
+normal  UNTRUSTED
+scope      ↓
+      context may be read
+      but must not expand authority
+```
+
+Candidate principle:
+
+> **Instruction authority must not exceed instruction provenance.**
+
+This Lesson does not claim that every Markdown file is dangerous, nor that merely visiting a website instantly compromises an agent. The demonstrated risk requires an instruction file to enter a context the agent trusts and the agent to possess sufficient execution authority.
+
+The important Harness distinction is:
+
+```text
+Instruction exists
+    ≠
+Instruction is trusted
+    ≠
+Instruction may expand authority
+    ≠
+Runtime enforcement
+```
+
+Promotion should remain reviewable and independently enforced. This Lesson must not silently rewrite Core merely because its evidence is strong.
