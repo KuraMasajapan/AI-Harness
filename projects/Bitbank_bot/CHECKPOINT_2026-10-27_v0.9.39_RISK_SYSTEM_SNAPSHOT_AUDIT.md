@@ -90,3 +90,16 @@ Human ran `BBB_LOCAL_AI_TORCH_REPAIR_V3.bat`. Log confirms:
 - Final: `RESULT: SUCCESS - torch and Sokudan backend import OK.`
 
 This verifies the isolated Python package/runtime layer only. BBB-managed server startup, `/health`, inference, and queued-classification drain still require target-runtime confirmation after BBB restart.
+
+## Follow-up 6: Local AI READY restored on target Windows — 2026-10-27 23:09 JST
+
+User shared Risk & System screenshot after torch repair and BBB restart. UI evidence:
+- Operational Readiness `Local AI Fundamental Sentinel`: **pass / READY**.
+- Detail card state: **READY**.
+- Model: **GeneLab/sokudan-ja-310m**.
+- Sokudan package: **0.3.0**.
+- Device: **CPU**.
+- Last inference: **1861 ms** at **2026/10/27 23:09:27 JST**.
+- Sandbox / Trade influence OFF remains intact; Live Gate remains CLOSED/locked.
+
+This closes the immediate Local AI runtime recovery incident across package, torch import, server startup, health/readiness and at least one successful inference. Remaining follow-up is to verify the previously observed 117-item classification backlog drains normally and to fix the stale System metadata version (`0.9.38`) in the next release.
