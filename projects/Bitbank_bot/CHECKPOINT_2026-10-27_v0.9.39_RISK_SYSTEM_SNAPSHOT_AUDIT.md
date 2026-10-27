@@ -31,3 +31,13 @@ Do **not** run `BBB_LOCAL_AI_SETUP.bat` preemptively: it explicitly removes the 
 5. Do not auto-enable Live, alter risk limits, reset Active/Shadow Freeze timestamps, or promote strategy while this audit is being resolved.
 
 Snapshot-based analysis only; Python source inspection based on distributed `BBB_v0.9.39_SHADOW_PROSPECTIVE_FORWARD_FULL.zip`, not user device binaries.
+
+## Follow-up: Windows Local AI diagnostic, 2026-10-27 22:03 JST
+
+User executed `BBB_LOCAL_AI_DIAGNOSTIC.bat` and supplied the output. Confirmed:
+- BBB `.venv` **FOUND**, runtime Python **3.14.0**.
+- Dedicated `.venv_local_ai` **FOUND**, runtime Python **3.13.15**.
+- `importlib.util.find_spec('sokudan') is None` (**sokudan installed: False**); diagnostic version n/a.
+- Local HTTP `127.0.0.1:8766/health` **times out** at 1-second request timeout. This alone cannot distinguish stopped/unresponsive service, but it is consistent with local package absence.
+
+A minimal, non-destructive repair BAT `BBB_LOCAL_AI_REPAIR_INPLACE.bat` was produced as a ChatGPT attachment. It is NOT committed as a runnable tool to the repository and needs to be copied to the user's BBB root next to `BBB_START.bat`. It checks the local Python version and venv identity, then installs `sokudan[serve]>=0.3,<0.4` using ONLY `.venv_local_ai\\Scripts\\python.exe -m pip`, verifies `import sokudan`, and logs to `BBB_LOCAL_AI_REPAIR_INPLACE.log`. The existing `.venv_local_ai`, BBB `.venv`, data/config, Champion, and prospective freezes are not deleted, reset, or intentionally changed. Installation requires internet and could update dependencies inside the isolated venv; no execution on user's Windows device has yet been observed. **The user should close BBB before the repair and restart after.** If the package install fails or UI remains NOT_INSTALLED/LOADING, inspect the resulting log and local server health. Do not assume repair succeeded on target until verified.
