@@ -60,3 +60,22 @@ The Human ran `BBB_LOCAL_AI_REPAIR_INPLACE_V2.bat` and supplied `BBB_LOCAL_AI_RE
 - Final log: `RESULT: SUCCESS - pip available; Sokudan import succeeded`.
 - This confirms package installation, **not** BBB-managed local server startup, HTTP /health, model inference, or the 117 queued classifications. Those are pending Windows runtime verification after relaunch.
 - Next: launch BBB, inspect Risk & System Local AI state, then check health and pending classification backlog. Do not modify frozen research windows or Live gate.
+
+## Follow-up 4: Sokudan OFFLINE caused by PyTorch import failure — 2026-10-27 ~22:28 JST
+
+User screenshot after in-place repair shows package `sokudan 0.3.0` detected but `Local AI: OFFLINE` and no last inference. Original historical `data/local_ai/sokudan_server.log` (~11 MB) was shared. Inspected all 178,980 lines: prior 50 successful `sokudan serve: loaded` occurrences; the 2026-10-27 attempt has one traceback. Its last startup attempt was 2026-10-27T13:28:37.804080+00:00. After reading cached Hugging Face model files it failed at `from sokudan.backends.torch_backend import TorchBackend` -> `import torch` with:
+
+```
+ImportError: cannot import name 'amp' from partially initialized module 'torch'
+(most likely due to a circular import)
+```
+
+The log shows **previously healthy model loads** on 2026-09-30 through 2026-10-06, including local `GET /health` and inference `POST /v1/systemone` HTTP 200, so the present failure is a **runtime dependency regression**, not absence of model-cache downloads or a mistaken 127.0.0.1 endpoint. Whether the torch install is corrupt or a torch package regression is not proven yet.
+
+Harness historical launch/setup references checked:
+- `development/projects/BBB/DECISION_LOG.md` (v0.8.1 Python 3.11-3.13 isolated venv and v0.8.2 successful READY; v0.8.4 recovery of misleading NOT_INSTALLED).
+- `development/projects/BBB/checkpoints/BBB_V0.8_LOCAL_AI_SANDBOX_2026-09-30.md` (separate server on 127.0.0.1:8766, backend torch, CPU, model ID).
+- `development/projects/BBB/CURRENT_SPEC.md` (separate `.venv_local_ai`, failure fallback, dedicated setup BAT).
+- Shipped `BBB_LOCAL_AI_SETUP.bat` re-creates the venv, so do not invoke it without choosing to rebuild.
+
+A **conservative, same-venv torch repair** conversation attachment `BBB_LOCAL_AI_TORCH_REPAIR_V3.bat` has been created and statically inspected, but not run on user's Windows PC. When BBB is closed, it checks the dedicated Python, Sokudan/Torch metadata, tests importing `torch` and `torch.amp`, re-installs *only* `torch==2.14.1` from pip when import fails *and* installed metadata agrees with the previously observed 2.14.1, then verifies `torch`, `amp`, and Sokudan's TorchBackend imports. It logs to `BBB_LOCAL_AI_TORCH_REPAIR_V3.log`. It does not remove venvs, change Paper settings, or touch data or freezes. `--force-reinstall` does modify the isolated torch installation and may require a large network download; it is not guaranteed to repair a compatibility regression. If unexpected version or validation errors occur, script stops and asks for log. **Do not claim runtime repair succeeded until the Windows log and READY/inference evidence arrive.**
