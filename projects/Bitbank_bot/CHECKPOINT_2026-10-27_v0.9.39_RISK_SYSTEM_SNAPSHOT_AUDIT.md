@@ -103,3 +103,27 @@ User shared Risk & System screenshot after torch repair and BBB restart. UI evid
 - Sandbox / Trade influence OFF remains intact; Live Gate remains CLOSED/locked.
 
 This closes the immediate Local AI runtime recovery incident across package, torch import, server startup, health/readiness and at least one successful inference. Remaining follow-up is to verify the previously observed 117-item classification backlog drains normally and to fix the stale System metadata version (`0.9.38`) in the next release.
+
+## Follow-up 7: post-recovery audit snapshot — 2026-10-27 23:11 JST
+
+User exported a new audit snapshot after Local AI recovery and successful self-test.
+
+Confirmed from the snapshot:
+- Local AI: `installed=true`, package **0.3.0**, Python **3.13.15**, state **READY**, health **ok**, CPU, owned process, Sandbox only, Trade influence false.
+- Successful self-test at **2026-10-27 23:09:27 JST**, client elapsed **1861 ms**.
+- Fundamental Collector: enabled, auto-start, **running**, 15-minute poll.
+- BOJ News / BOJ Statistics / Fed Press sources: **OK**, no current source error.
+- Pending classifications remain **117**.
+- Collector last run: **2026-10-27 23:06:20 JST**, which occurred before Local AI reached READY. Its deferred retry therefore attempted 0 and classified 0.
+- Source inspection of v0.9.39 confirms `FundamentalCollector._retry_pending(limit=5)`: at most 5 pending events are reclassified per collector cycle. Full feed poll interval is 15 minutes. Thus a backlog of 117 can require up to 24 successful poll cycles (~6 hours of continuous runtime) if no newer mechanism intervenes.
+- This is not data loss: pending rows remain persisted in `data/fundamental/pending_classification.json`, and successful retries append classification-update audit rows.
+- Operational deficiency: recovery backlog catch-up is too slow and also waits for the next 15-minute feed cycle when Local AI becomes READY after the most recent collector pass.
+
+Next-release design target:
+1. Keep normal public feed polling at 15 minutes.
+2. Add a bounded background pending-classification catch-up path that activates only when Local AI is READY, serializes inference (concurrency 1), works in small batches, backs off on zero-success/error, and stops cleanly with BBB.
+3. Expose pending backlog / catch-up progress in Risk & System.
+4. Correct current-release metadata still showing `0.9.38` while v0.9.39 Shadow Prospective is deployed.
+5. Preserve Sandbox-only / Trade influence OFF / Live locked boundaries.
+
+No need to refreeze or alter Active/Shadow research state while this operational fix is prepared.
