@@ -79,3 +79,14 @@ Harness historical launch/setup references checked:
 - Shipped `BBB_LOCAL_AI_SETUP.bat` re-creates the venv, so do not invoke it without choosing to rebuild.
 
 A **conservative, same-venv torch repair** conversation attachment `BBB_LOCAL_AI_TORCH_REPAIR_V3.bat` has been created and statically inspected, but not run on user's Windows PC. When BBB is closed, it checks the dedicated Python, Sokudan/Torch metadata, tests importing `torch` and `torch.amp`, re-installs *only* `torch==2.14.1` from pip when import fails *and* installed metadata agrees with the previously observed 2.14.1, then verifies `torch`, `amp`, and Sokudan's TorchBackend imports. It logs to `BBB_LOCAL_AI_TORCH_REPAIR_V3.log`. It does not remove venvs, change Paper settings, or touch data or freezes. `--force-reinstall` does modify the isolated torch installation and may require a large network download; it is not guaranteed to repair a compatibility regression. If unexpected version or validation errors occur, script stops and asks for log. **Do not claim runtime repair succeeded until the Windows log and READY/inference evidence arrive.**
+
+## Follow-up 5: PyTorch in-place repair succeeded — 2026-10-27 22:41 JST
+
+Human ran `BBB_LOCAL_AI_TORCH_REPAIR_V3.bat`. Log confirms:
+- Python 3.13.15, Sokudan 0.3.0, Torch metadata 2.14.1.
+- Initial `import torch; from torch import amp` failed with the prior circular/partial-init error.
+- Version-locked reinstall of `torch==2.14.1` completed successfully.
+- Post-reinstall imports passed: `Torch: 2.14.1+cpu`, `Sokudan: 0.3.0`, `Torch + Sokudan backend imports PASS`.
+- Final: `RESULT: SUCCESS - torch and Sokudan backend import OK.`
+
+This verifies the isolated Python package/runtime layer only. BBB-managed server startup, `/health`, inference, and queued-classification drain still require target-runtime confirmation after BBB restart.
