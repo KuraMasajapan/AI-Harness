@@ -121,3 +121,17 @@ Human confirmed on the target Windows machine that:
 This completes Windows acceptance for the v0.9.40 recovery-catch-up feature. The classification backlog still needs time to drain fully, but no manual intervention is required while BBB remains running and Local AI stays READY.
 
 Safety boundaries remain unchanged: Local AI Sandbox only, Trade influence OFF, Live Gate locked, Active/Shadow Freeze timestamps unchanged.
+
+## Backlog fully drained — 2026-10-28
+
+Human later confirmed the target Windows UI reached **Pending AI = 0**.
+
+This confirms the complete recovery path in production-like local use:
+- previously observed backlog: 117 pending classifications;
+- v0.9.40 background catch-up activated automatically while Local AI stayed READY;
+- pending count decreased continuously without manual classification commands;
+- backlog ultimately reached **0**.
+
+The recovery-catch-up feature is therefore accepted not only for activation but for full backlog completion on the target machine.
+
+No change to safety boundaries: Sandbox only, Trade influence OFF, Live Gate locked, Active/Shadow freezes unchanged.
