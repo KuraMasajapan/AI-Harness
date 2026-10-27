@@ -3,7 +3,7 @@
 
 ## 2026-10-20 — Current release & evidence boundaries (read first)
 
-**Verified deployed release: BBB v0.9.39** (Shadow Prospective Forward).
+**Latest packaged release: BBB v0.9.40** (Local AI Recovery Catch-up). Windows deployment acceptance is pending. Previous user-observed deployed release was v0.9.39.
 The version-specific distribution is a Full ZIP in the user's ChatGPT conversation; **source files are NOT yet synchronized to this GitHub repository**. Do not infer GitHub has v0.9.39 code merely from this spec.
 
 The historical entries further down this file describe earlier releases and should not be read as today's runtime status.
@@ -18,6 +18,7 @@ The historical entries further down this file describe earlier releases and shou
 - **Shadow Cost-Aware Buffer Lab** (v0.9.36): 5 fixed Mean Reversion entry/exit candidates; historical candidate `entry_buffer_06` reduced modeled historical Holdout loss from -2.78% to -0.72% but did not establish profitability. The historical Holdout has been viewed.
 - **Historical Holdout Evidence Audit** (v0.9.37): flags prior or potentially repeated Holdout exposure and records data/parameter fingerprints. Historical Holdout alone is not a clean prospective validation.
 - **Shadow Prospective Forward** (v0.9.39, Windows Freeze operation accepted): immutable Shadow freeze **2026-10-20 20:32:52 JST**, candidate `entry_buffer_06`; WAITING with 0 new post-freeze candles when observed. Independent post-freeze data comparison on new complete candles; standard/stress modeled fees. Freeze is not to be reset or retroactively moved.
+- **Local AI Recovery Catch-up (v0.9.40)**: after Sokudan/PyTorch recovery, pending Fundamental classifications are drained in bounded background batches only while Local AI is READY. Default batch 3 / 10s interval / 30s error backoff; inference and retry paths are serialized. Risk & System shows pending/catch-up state. Sandbox only, Trade influence OFF, Live locked. App metadata is corrected to 0.9.40. Windows target acceptance still pending.
 - **Shadow継続研究** normally OFF while these trials accumulate new data; use manual daily Forward refreshes.
 
 ### Safety and evidence priorities
@@ -30,7 +31,7 @@ The historical entries further down this file describe earlier releases and shou
 7. No API credentials/secrets in documentation, checkpoints or shared logs.
 
 ### Reproducibility / source-of-truth pointers
-- Release/checkpoint index: `main/projects/Bitbank_bot/CHECKPOINT_2026-10-20_v0.9.39_SHADOW_PROSPECTIVE.md`
+- Release/checkpoint index: `main/projects/Bitbank_bot/CHECKPOINT_2026-10-27_v0.9.40_LOCAL_AI_RECOVERY_CATCHUP.md`
 - Prior state: `main/projects/Bitbank_bot/CHECKPOINT_2026-10-16_v0.9.37_HOLDOUT_EVIDENCE_AUDIT.md`
 - External research: `development/projects/BBB/research/field-notes/`
 - Source code and test counts in versioned ZIP are separate from these GitHub records. Repo code must be reconciled deliberately, preserving data and security boundaries; do not assume a checkpoint commit includes runnable source.
