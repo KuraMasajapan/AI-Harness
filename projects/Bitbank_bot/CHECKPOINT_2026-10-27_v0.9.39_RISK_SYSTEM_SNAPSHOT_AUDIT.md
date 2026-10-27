@@ -50,3 +50,13 @@ Human ran the in-place repair and supplied `BBB_LOCAL_AI_REPAIR_INPLACE.log`. Ou
 - A second one-click Windows script `BBB_LOCAL_AI_REPAIR_INPLACE_V2.bat` was generated for conversation delivery. It first validates the dedicated venv, tests pip, if missing invokes Python standard library `-m ensurepip --upgrade`, tests pip again, then uses *only* that venv's pip to install the same `sokudan[serve]>=0.3,<0.4` spec used by the shipped setup BAT. It verifies `import sokudan` and records `BBB_LOCAL_AI_REPAIR_INPLACE_V2.log`.
 - In-place repair does not remove or regenerate `.venv_local_ai`; it intentionally leaves trading data, config and frozen research untouched. Python package installation itself changes the dedicated venv and requires internet. Static checks passed in packaging; execution on Windows has **not** yet been observed.
 - Next: close BBB, copy V2 BAT next to `BBB_START.bat`, run it, review log result; only restart BBB and validate Local AI state if the installer reports success. On failure, upload new log; do not fall back to destructive generic setup without review.
+
+## Follow-up 3: in-place repair V2 succeeded — 2026-10-27 22:21 JST
+
+The Human ran `BBB_LOCAL_AI_REPAIR_INPLACE_V2.bat` and supplied `BBB_LOCAL_AI_REPAIR_INPLACE_V2.log`.
+- Local Python **3.13.15** and dedicated virtual environment were recognized.
+- `ensurepip --upgrade` successfully installed **pip 26.2.1** after `No module named pip`.
+- `sokudan[serve]` installation completed; **sokudan 0.3.0** and `import sokudan` verification both succeeded.
+- Final log: `RESULT: SUCCESS - pip available; Sokudan import succeeded`.
+- This confirms package installation, **not** BBB-managed local server startup, HTTP /health, model inference, or the 117 queued classifications. Those are pending Windows runtime verification after relaunch.
+- Next: launch BBB, inspect Risk & System Local AI state, then check health and pending classification backlog. Do not modify frozen research windows or Live gate.
