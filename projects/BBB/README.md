@@ -11,6 +11,10 @@ HumanがBBBチャットで**「ハーネスを確認して」**と指示した�
    また、**Vibe-Trading / HKUDS / Alpha Zoo / 478因子 / 戦略の独立検証 / Monte Carlo / Bootstrap / Walk-Forward**の話題では、[2026-10-24 Vibe-Trading独立比較候補ノート](research/field-notes/2026-10-24-vibe-trading-independent-research-comparator.md)を参照する。BBBのStrategy Lab・Forward Gate・Execution Parityとの重複・相違点を確認し、**研究比較候補（A+ / CANDIDATE / 実装HOLD）**として扱う。
 5. その他の研究課題では `incubator/proposals/` とBBBのresearchを該当キーワードで照合し、CURRENT・HOLD・未検証・推測を区別して報告する。
 
+6. **Branch横断を必須化**：2026-10-28時点で `main` と `development` は大きくdivergeしており、BBB研究も分散している。少なくとも両branchの `projects/BBB/research/field-notes/`、`incubator/proposals/`、`research/trading/`、`projects/Bitbank_bot/` を確認する。片方だけを見て「候補なし」と判断しない。
+   - main側の追加例: `2026-10-25-jev-trader-review.md`、`2026-10-25-trading-oss-review.md`、`2026-10-25-volume-footprint-orderflow-review.md`
+   - development側の追加例: TradingView API、Vibe-Trading、HFTbacktest/TradingAgents/NautilusTrader、Fincept、OPST
+
 検索用キーワード：`ハーネスを確認して` / `ハーネス確認` / `BBB研究候補` / `Kronos` / `TradingAgents` / `REA` / `AI投資リサーチ` / `ローソク足予測` / `マルチエージェント` / `Vibe-Trading` / `HKUDS` / `Alpha Zoo` / `独立比較` / `取引コスト`。
 
 **注意：これは読み直すための文書上の入口であり、自動監視・強制実行の機能ではない。** 別チャットからGitHubを読めない場合は参照を保証できない。研究ノートを読み込んでも、BBB本体、Paper、Freeze、Liveの処理は変更しない。GitHub文書と実際の配布済みZIPコードの同期状態も別途確認する。
