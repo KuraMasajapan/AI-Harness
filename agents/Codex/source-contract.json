@@ -1,0 +1,20 @@
+{
+  "repository":"https://github.com/KuraMasajapan/AI-Harness.git",
+  "branch":"codex/environment-upgrade-batch1",
+  "base_commit":"7ae57c2a089f82e5e232690d8ecb8c257f51ac51",
+  "sources":[
+    {"path":"HARNESS.md","authority":"ACTIVE"},
+    {"path":"core/RULES.md","authority":"ACTIVE"},
+    {"path":"core/WORKFLOW.md","authority":"ACTIVE"},
+    {"path":"core/ACCESS.md","authority":"ACTIVE"},
+    {"path":"incubator/proposals/2026-10-02-trinity-persistence-enforcement-completion-evaluation.md","authority":"PROPOSAL"},
+    {"path":"incubator/proposals/2026-10-28-hermit-harness-adapter-evolution.md","authority":"PROPOSAL"},
+    {"path":"incubator/proposals/2026-10-18-rtk-token-output-optimization.md","authority":"PROPOSAL"},
+    {"path":"research/2026-10-27-context-vault-startup-injection-reference.md","authority":"REFERENCE"},
+    {"path":"experiments/trinity/operations/receipt.schema.json","authority":"REFERENCE"},
+    {"path":"experiments/trinity/operations/receipt.template.json","authority":"REFERENCE"},
+    {"path":"experiments/trinity/operations/check_receipt.py","authority":"REFERENCE"},
+    {"path":"AGENTS.md","authority":"ACTIVE"},
+    {"path":"agents/Codex/README.md","authority":"REFERENCE"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "goal": "Codexの環境整備を主目的として、安定性・検証精度・速度・コンテキスト保持・実トークン使用量を改善する最初の3機能を隔離試行する",
+  "next_step": "source contractを有効化し、負例試験・既存receipt互換性・原文復元を検証する",
+  "critical": [
+    {"id":"main-objective","text":"メインの作業はCodexの環境整備。TRINITYは今回の開発に必要な部分だけ進める。","source":"2026-10-31 本チャットの最新ユーザー訂正"},
+    {"id":"quality","text":"現在の性能を落とさず、精度・重要コンテキスト・必須検証を犠牲にトークンを減らさない。","source":"本チャットのユーザー依頼"},
+    {"id":"development","text":"ハーネスdevelopment内の保存情報・提案を比較し、優先順位の高い3件ずつ進める。","source":"本チャットのユーザー依頼"},
+    {"id":"approval","text":"GitHubへのpush・公開、mainへの統合、本番運用への移行、既存証跡やデータを消す操作は内容を示して事前承認を得る。","source":"本チャットのユーザー指定"},
+    {"id":"preserve","text":"未commit変更と無関係なファイルを保護し、確認できた事実と推測を分ける。","source":"本チャットのユーザー指定"}
+  ],
+  "decisions": [
+    {"text":"TRINITY単体開発からCodex環境整備へ作業優先度を戻す","reason":"最新ユーザー訂正に従い、既存の検証成果は補助証拠として保つ","source":"本チャットの最新ユーザー訂正"},
+    {"text":"CoreやネイティブCodex runtimeを再実装せず、development由来の外付けadapterを試す","reason":"既存機能との重複を避け、適用範囲・証拠・rollbackを限定できる","source":"development-review/CODEX_UPGRADE_DESIGN.mdとdevelopment既存提案の比較"}
+  ],
+  "required_checks": ["unit","receipt-compatibility"],
+  "review_required": ["重要制約・目的の保持と実際の操作を確認","実token・総時間・一般作業品質の改善は未測定と明示","本番移行は別途Human判断"]
+}

@@ -1,0 +1,483 @@
+{
+  "record_type": "partial_artifact_observation",
+  "date": "2026-10-31",
+  "timezone": "Asia/Tokyo",
+  "scope": "User-confirmed eight questions in this artifact relay; one pooled reasoning-level bucket. Time is secondary.",
+  "period": {
+    "conditional_week_start": "2026-10-26T09:00:00+09:00",
+    "conditional_week_end_exclusive": "2026-11-02T09:00:00+09:00",
+    "basis": "User-confirmed Monday 09:00 JST reset, not independently verified"
+  },
+  "observations": {
+    "weekly_limit_reached": true,
+    "evidence": "USER_REPORTED",
+    "completed_review_stages": 7,
+    "submitted_request_documents": 8,
+    "pending_response_documents": 1,
+    "prepared_unsent_documents": 1,
+    "distinct_archived_response_files": 6,
+    "completed_response_in_chat_only": 1,
+    "reasoning_level_counts": {
+      "single_pooled_bucket": {
+        "questions": 8,
+        "answered": 7
+      }
+    },
+    "usage_start": null,
+    "usage_end": null,
+    "elapsed_seconds": null,
+    "service_tokens": null,
+    "question_count": 8,
+    "answered_questions": 7,
+    "question_count_basis": "User clarification + submitted request IDs01..08",
+    "reasoning_level_bucket_count": 1,
+    "elapsed_time_priority": "NOT_REQUIRED_FOR_CURRENT_BUDGET"
+  },
+  "totals": {
+    "submitted_request_file_bytes": 148531,
+    "completed_stage_request_file_bytes": 137510,
+    "submitted_request_unicode_characters": 116200,
+    "archived_response_bytes_partial": 108855,
+    "archived_response_unicode_characters_partial": 61115,
+    "all_completed_response_bytes": null
+  },
+  "ranges": {
+    "high": {
+      "description": "週十数〜数十回",
+      "numeric_min": null,
+      "numeric_max": null
+    },
+    "max": {
+      "description": "週数回〜十数回",
+      "numeric_min": null,
+      "numeric_max": null
+    },
+    "provenance": "USER_CONFIRMED_GUIDANCE; exact public text not independently retrieved",
+    "empirical_weekly_capacity_identifiable": false,
+    "empirical_high_capacity": null,
+    "empirical_max_capacity": null,
+    "guaranteed_weekly_service_queries": null,
+    "application": "Reference guidance only; current accounting pools all thought levels as one bucket per user instruction"
+  },
+  "budget": {
+    "status": "PROVISIONAL_SCARCE_SUPPLEMENTAL_REVIEW",
+    "hard_dependency": false,
+    "availability_at_observation": "EXHAUSTED_USER_REPORTED",
+    "remaining_units": null,
+    "reset_expected_conditional": "2026-11-02T09:00:00+09:00",
+    "reset_verified_in_account": false,
+    "namazu_available_after_limit": "USER_CONFIRMED_NOT_LOCALLY_TESTED",
+    "auto_switch_implemented": false,
+    "api_integration_implemented": false,
+    "accounting_model": "Effective input + visible output + hidden reasoning; user-specified provisional model, not verified provider metering",
+    "accounting_notes": [
+      "Do not add hidden reasoning twice if provider output already includes it.",
+      "New-document input differs from total input including history/system/internal orchestration.",
+      "No numerical weekly capacity inferred from exhaustion alone."
+    ],
+    "planning_reference_acceptance": {
+      "date": "2026-10-31",
+      "source": "Current user confirmation",
+      "status": "ACCEPTED_AS_APPROXIMATE_PLANNING_REFERENCE",
+      "scope": "Eight questions, seven answers, one reasoning bucket; character-based estimates and explicit reasoning/history scenarios",
+      "not_certified": [
+        "Actual service token usage",
+        "Weekly quota ceiling",
+        "Guaranteed capacity",
+        "Model switching or API integration"
+      ]
+    }
+  },
+  "public_sources": [
+    {
+      "url": "https://chat.sakana.ai/faq",
+      "accessed": "2026-10-31",
+      "verified_scope": "Free service and general request limits; not weekly/high/max specifics"
+    },
+    {
+      "url": "https://sakana.ai/chat-fugumax/",
+      "accessed": "2026-10-31",
+      "verified_scope": "Fugu Max offered to all Sakana Chat users; not numerical allowance"
+    }
+  ],
+  "rows": [
+    {
+      "request_id": "01",
+      "request_file": "agents/Codex/FUGU_REVIEW_REQUEST_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 9735,
+        "unicode_characters": 5053,
+        "sha256": "53614b7644e1372073d9f288ce50e4c9bf2bf2bddd94fba227e2eb7c1eafb7f3"
+      },
+      "response_artifact": {
+        "bytes": 17685,
+        "unicode_characters": 8958,
+        "sha256": "47b34dece490a193d69c07221b3f2a19728dd34713b0486b2669c7ba8ce2c7f7"
+      },
+      "response_evidence": "ARCHIVED_RESPONSE",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "02",
+      "request_file": "agents/Codex/FUGU_REVIEW_SUPPLEMENT_02_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 36717,
+        "unicode_characters": 33283,
+        "sha256": "4bba3a23efa0a613cda4a6aaf489b23f9de9f4e0a0a6e01397580feab548b2c0"
+      },
+      "response_artifact": {
+        "bytes": 20941,
+        "unicode_characters": 11977,
+        "sha256": "41a4a2968e7d3396c60a8aff538bef5d7a93777013016ef4b5182a1dd854c764"
+      },
+      "response_evidence": "ARCHIVED_RESPONSE",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "03",
+      "request_file": "agents/Codex/FUGU_REVIEW_REQUEST_03_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 16654,
+        "unicode_characters": 12130,
+        "sha256": "a8e39668e5dfe6489d928bdddaf7c29157868162d6ec4972bd39f4d78cf57290"
+      },
+      "response_artifact": {
+        "bytes": 24042,
+        "unicode_characters": 13968,
+        "sha256": "c8a1ebec89af1757a49a42de131cb395df528b800f46a7a5e1dece9b63850f5a"
+      },
+      "response_evidence": "ARCHIVED_RESPONSE",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "04",
+      "request_file": "agents/Codex/FUGU_REVIEW_ADDENDUM_04_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 13536,
+        "unicode_characters": 9468,
+        "sha256": "6883cedd8f185859f2f4d3f3b825b74ac3a4780e68679e9f7afe5904caa65b77"
+      },
+      "response_artifact": {
+        "bytes": 17482,
+        "unicode_characters": 9985,
+        "sha256": "9fbcafc8933872c46522ca96a12668efb78050da8e9d216c1dbe5e7ec8d079e7"
+      },
+      "response_evidence": "ARCHIVED_RESPONSE",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "05",
+      "request_file": "agents/Codex/FUGU_REVIEW_ADDENDUM_05_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 14371,
+        "unicode_characters": 10023,
+        "sha256": "740cc4b93865ecb67766a39ab9650c2a9b33e95a74e24008b1cf4bb2e46ce75d"
+      },
+      "response_artifact": null,
+      "response_evidence": "USER_CHAT_PASTE_ONLY",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "06",
+      "request_file": "agents/Codex/FUGU_IMPLEMENTATION_REVIEW_06_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 31540,
+        "unicode_characters": 27126,
+        "sha256": "acf06a9829438747bf8982a2438e4fb40cae1b58c85ff144944865086776269c"
+      },
+      "response_artifact": {
+        "bytes": 13339,
+        "unicode_characters": 7563,
+        "sha256": "2cb47e0b16ebb5ae9ef24228ebaeb051ab5800276a638c383e44845f549329c6"
+      },
+      "response_evidence": "ARCHIVED_RESPONSE",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "07",
+      "request_file": "agents/Codex/FUGU_IMPLEMENTATION_REVIEW_07_2026-10-31.md",
+      "status": "COMPLETED_REVIEW_STAGE",
+      "request_artifact": {
+        "bytes": 14957,
+        "unicode_characters": 11333,
+        "sha256": "1f7d9e53f2259468cf13e4528003e43ea34d17a9ab18fa3ced6d50f9517c4f7a"
+      },
+      "response_artifact": {
+        "bytes": 15366,
+        "unicode_characters": 8664,
+        "sha256": "42f13fb6565530be10b60e5f7488623569355ea846f9d081a0259f5f68e0c2d9"
+      },
+      "response_evidence": "ARCHIVED_RESPONSE",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    },
+    {
+      "request_id": "08",
+      "request_file": "agents/Codex/FUGU_IMPLEMENTATION_REVIEW_08_2026-10-31.md",
+      "status": "SENT_RESPONSE_UNRECEIVED",
+      "request_artifact": {
+        "bytes": 11021,
+        "unicode_characters": 7784,
+        "sha256": "da6d84b476a34248d7d37ef3c9703294c950ea2399d693fca151fcd0e52eb0dc"
+      },
+      "response_artifact": null,
+      "response_evidence": "NOT_RECEIVED",
+      "thought_level": "SINGLE_POOLED_BUCKET",
+      "request_started_at": null,
+      "response_received_at": null,
+      "elapsed_seconds": null,
+      "service_tokens": null,
+      "delivered_bytes_verified": false
+    }
+  ],
+  "limitations": [
+    "Eight questions in this relay are user-confirmed; accepted/billed count for unanswered08 is not independently observed.",
+    "Token estimates are character-composition scenarios, not tokenizer measurements or Sakana usage.",
+    "Response05 token contribution is separately imputed from six available responses; original bytes remain unconfirmed.",
+    "Input history/caching/compaction/internal model usage/hidden reasoning and weekly token ceiling are unknown.",
+    "Reasoning ratios1/3/5 are chosen sensitivities, not inferred bounds.",
+    "Browser history access denied; no workaround. Tokenizer execution not authorized; not performed."
+  ],
+  "analysis_script_sha256": "06dce365c84dd39fc135f8d7d8f6288e527da76be5d56608cbf8564303d5d6de",
+  "analysis_revision": 2,
+  "character_token_scenarios": {
+    "method": "Character-composition heuristic, no tokenizer execution or network",
+    "assumptions": {
+      "ascii_chars_per_token": [
+        5,
+        4,
+        2
+      ],
+      "non_ascii_tokens_per_char": [
+        0.5,
+        1,
+        2
+      ],
+      "interpretation": "Low/central/high scenario; not confidence interval or guaranteed tokenizer bounds"
+    },
+    "rows": [
+      {
+        "id": 1,
+        "input": {
+          "ascii_characters": 2712,
+          "non_ascii_characters": 2341,
+          "low": 1713,
+          "central": 3019,
+          "high": 6038
+        },
+        "output": {
+          "ascii_characters": 4591,
+          "non_ascii_characters": 4367,
+          "low": 3102,
+          "central": 5515,
+          "high": 11030
+        }
+      },
+      {
+        "id": 2,
+        "input": {
+          "ascii_characters": 31566,
+          "non_ascii_characters": 1717,
+          "low": 7172,
+          "central": 9609,
+          "high": 19217
+        },
+        "output": {
+          "ascii_characters": 7494,
+          "non_ascii_characters": 4483,
+          "low": 3741,
+          "central": 6357,
+          "high": 12713
+        }
+      },
+      {
+        "id": 3,
+        "input": {
+          "ascii_characters": 9868,
+          "non_ascii_characters": 2262,
+          "low": 3105,
+          "central": 4729,
+          "high": 9458
+        },
+        "output": {
+          "ascii_characters": 8929,
+          "non_ascii_characters": 5039,
+          "low": 4306,
+          "central": 7272,
+          "high": 14543
+        }
+      },
+      {
+        "id": 4,
+        "input": {
+          "ascii_characters": 7434,
+          "non_ascii_characters": 2034,
+          "low": 2504,
+          "central": 3893,
+          "high": 7785
+        },
+        "output": {
+          "ascii_characters": 6234,
+          "non_ascii_characters": 3751,
+          "low": 3123,
+          "central": 5310,
+          "high": 10619
+        }
+      },
+      {
+        "id": 5,
+        "input": {
+          "ascii_characters": 7849,
+          "non_ascii_characters": 2174,
+          "low": 2657,
+          "central": 4137,
+          "high": 8273
+        },
+        "output": null
+      },
+      {
+        "id": 6,
+        "input": {
+          "ascii_characters": 24919,
+          "non_ascii_characters": 2207,
+          "low": 6088,
+          "central": 8437,
+          "high": 16874
+        },
+        "output": {
+          "ascii_characters": 4675,
+          "non_ascii_characters": 2888,
+          "low": 2379,
+          "central": 4057,
+          "high": 8114
+        }
+      },
+      {
+        "id": 7,
+        "input": {
+          "ascii_characters": 9521,
+          "non_ascii_characters": 1812,
+          "low": 2811,
+          "central": 4193,
+          "high": 8385
+        },
+        "output": {
+          "ascii_characters": 5311,
+          "non_ascii_characters": 3353,
+          "low": 2739,
+          "central": 4681,
+          "high": 9362
+        }
+      },
+      {
+        "id": 8,
+        "input": {
+          "ascii_characters": 6164,
+          "non_ascii_characters": 1620,
+          "low": 2043,
+          "central": 3161,
+          "high": 6322
+        },
+        "output": null
+      }
+    ],
+    "response05_imputation_scenario": {
+      "low": 2379,
+      "central": 5412,
+      "high": 14543,
+      "basis": "Response05 missing: illustrative min/median/max of six archived answers, not a factual reconstruction"
+    },
+    "completed_7_input": {
+      "low": 26050,
+      "central": 38017,
+      "high": 76030
+    },
+    "submitted_8_input": {
+      "low": 28093,
+      "central": 41178,
+      "high": 82352
+    },
+    "known_6_visible_output": {
+      "low": 19390,
+      "central": 33192,
+      "high": 66381
+    },
+    "imputed_7_visible_output": {
+      "low": 21769,
+      "central": 38604,
+      "high": 80924
+    },
+    "completed_7_incremental_input_plus_visible_output": {
+      "low": 47819,
+      "central": 76621,
+      "high": 156954
+    },
+    "full_verbatim_same_thread_7_input_scenario": {
+      "low": 174569,
+      "central": 276256,
+      "high": 559924
+    },
+    "reasoning_sensitivity_central": [
+      {
+        "reasoning_to_visible_output_ratio": 1,
+        "reasoning_tokens": 38604,
+        "incremental_total": 115225,
+        "full_history_total": 353464
+      },
+      {
+        "reasoning_to_visible_output_ratio": 3,
+        "reasoning_tokens": 115812,
+        "incremental_total": 192433,
+        "full_history_total": 430672
+      },
+      {
+        "reasoning_to_visible_output_ratio": 5,
+        "reasoning_tokens": 193020,
+        "incremental_total": 269641,
+        "full_history_total": 507880
+      }
+    ],
+    "reasoning_observed": null,
+    "weekly_quota_identifiable": false
+  }
+}
