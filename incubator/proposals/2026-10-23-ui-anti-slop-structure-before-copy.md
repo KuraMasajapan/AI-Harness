@@ -250,3 +250,63 @@ Preserve now.
 This is considered a potentially high-leverage design principle because it may reduce AI-generated UI clutter with a very small instruction.
 
 No Core, Skill, AGENTS.md, project UI, or shipped product is modified by this record.
+
+---
+
+## 11. Follow-up — Unslop: a procedural anti-slop UI finishing skill (2026-11-01)
+
+### Intake and primary sources
+
+- Human-shared post (Codex 研究所, 2026-10-31 JST): https://x.com/codex_lab_/status/2116581624939004137
+- Original author (Damir Sokolovsky): https://x.com/heydamir/status/2115063463063998736
+- Official repository: https://github.com/heydamir/unslop
+- README: https://github.com/heydamir/unslop/blob/main/README.md
+- Actual skill definition: https://github.com/heydamir/unslop/blob/main/skills/unslop/SKILL.md
+- Verified in upstream repository at review time (2026-11-01): **CC BY 4.0**, attribution required when copying/adapting; a *Claude Code / Codex UI-refinement Skill*, **not** an autonomous desktop agent, backend controller, or orchestration system.
+- Status: **CANDIDATE / HOLD**. The post's claim that it turns any page "professional quality in one shot" is **unverified marketing**, not an independently reproduced result. No local run, visual A/B, security check, or quality benchmark was performed.
+
+### What is novel relative to the existing short principle?
+
+The original Anti-Slop Principle is **a small, high-leverage instruction**: let structure and hierarchy explain before adding copy. **Unslop** packages a *repeatable workflow* for an existing screen:
+
+1. Inspect real rendered UI and its source files (or an authorized copy of a publicly accessible page), identify concrete defects first.
+2. Determine whether the screen needs a heavy redesign, a limited polish pass, or **no changes**. Keep a good existing design.
+3. Set a product-specific direction: **Product / Character / World / Moments / Signature**. Unless the owner already delegated that choice, propose and obtain agreement **before editing**.
+4. Apply ordered passes: **spacing → color → icons → copy → typography → layout → details → visuals → motion**.
+5. Render and inspect the changed screen; report the edits, unresolved issues and any generated-asset prompts. Optional short transformation-story video is a separate output, not the core function.
+
+The skill discourages generic gradients, indiscriminate glow, filler icons, overlong labels, noisy cards and animations without meaning. It emphasizes plausible data, controlled accent colors, legible contrast, real product imagery and restrained motion. It says to preserve features, content and section order, but **its own instructions permit copy changes and visual/layout revisions**; verify behavior and labels rather than assuming zero regression.
+
+### Supported workflow and true tool boundaries
+
+- Upstream documents React, Next.js, Tailwind, Vue, Svelte and plain HTML/CSS. These are **codebases it can guide the agent to edit**, not dedicated independently tested integrations.
+- Claude Code invocation: `/unslop`. **Codex invocation: `$unslop`**, typically after an installation such as `$skill-installer install https://github.com/heydamir/unslop/tree/main/skills/unslop` or isolated project-level Skill placement. Do not repeat the social post's `/unslop` syntax as if it were the Codex invocation.
+- Optional snapshotting of a live URL uses Playwright/Chromium and writes a **local captured copy** for redesign; without authorization and deployment access, this does **not** modify the actual live website.
+- Optional story video requires Playwright and FFmpeg. Optional image generation may use external providers (fal / Replicate / OpenAI / etc.) and **can incur costs**; upstream guidance calls for showing the prompt and obtaining approval before paid generation.
+- A CC BY 4.0 Skill does not make third-party screenshots, fonts, images, websites, generated assets or dependencies automatically free of their own rights/terms.
+
+### AI-Harness relevance — the important conceptual distinction
+
+The Human reaction to the UI demo: a mature operator interface makes it **feel possible to get work done purely through the UI**. This is an **operator UX hypothesis** for the future AI-Harness control surface, not evidence that Unslop delivers task execution or agent coordination. Relevant examples: current job, delegated agent/owner, progress, evidence, Human-review-required status, quality/regression alerts, and Codex quota visibility. **Live metrics and action buttons must be grounded in actual backend state; a polished mock dashboard does not constitute a functioning orchestration system.**
+
+This complements but does **not** replace:
+- This existing **UI Anti-Slop Principle** (simple rules on visual structure over extra copy).
+- `incubator/proposals/2026-10-23-ui-ux-pro-max-skill-reassessment.md` (broader searchable design knowledge and design-system generation).
+- `incubator/proposals/2026-10-15-ui-design-skill-component-comparison-prep.md` (different design Skills/components, independent comparisons and acceptance rules).
+- `incubator/proposals/2026-09-20-harness-launcher-ui.md` (operator UI idea).
+- `incubator/proposals/2026-11-01-desktop-ai-capabilities-review.md` (Orkas commander and unified desktop operator workflows).
+- `projects/JARVIS_Soul_UI/V0.1_SPEC.md` (Local AI Soul **frozen** V0.1 design and child-friendly functionality; deliberate Orb glow/motion is product identity, not automatically "slop" to remove).
+
+### Testing proposal — only when separately approved
+
+Use a **real, non-frozen** candidate screen in its isolated branch or copy, with no credentials or private production data. Keep the same starting commit, model, brief and functionality requirements:
+
+- **A:** existing frontend workflow, no additional design Skill.
+- **B:** existing workflow + Unslop *alone*.
+- Optional later **C:** UI UX Pro Max *alone*; do not stack Skills in the first benchmark.
+- Compare before/after screenshots, keyboard/navigation semantics, screen-reader labels, contrast, responsive/mobile behavior, loading/performance, functional regression tests, Human visual preference, iteration time and Codex token/usage cost.
+- Guardrails: retain brand-specific aesthetics; preserve Human-approved screen states/alerts; require explanation before changing copy or introducing new controls; no paid image calls, unreviewed scripts, global Skill install or third-party MCP without approval.
+
+### Decision
+
+**A / CANDIDATE / IMPLEMENTATION HOLD** — Strong match as a *finishing/review* process for dashboards and operational interfaces, **not** evidence of a standalone UI-driven AI company or of immediate quality gains. Store in this existing anti-slop research file rather than opening a duplicate independent Proposal. **No Core, Skill, AGENTS.md, Soul, TRINITY, UI implementation or automated workflow changed.**
