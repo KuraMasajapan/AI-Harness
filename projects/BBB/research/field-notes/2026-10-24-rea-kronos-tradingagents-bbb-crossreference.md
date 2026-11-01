@@ -116,3 +116,10 @@ BBBチャットでユーザーから **「ハーネスを確認して」** と�
 ## 7. 保存の境界
 
 Humanが2026-10-24に「BBBに『ハーネスを確認して』と言えばわかるようにしておいて」と明示依頼。研究の入口と関連リンクの保存に限り、**現在の売買ロジック、Live Gate、Freeze時刻、BBBソースコード、各Agentの実行・権限を変更しない**。他のProposalやCoreを無断変更しない。
+
+
+## 8. 2026-11-02 — REA周辺ツール総合カタログとの関連
+
+- [Reverse Engineering Research Toolkit — 18 repositories + 2 workflows](../../../../incubator/proposals/2026-11-02-reverse-engineering-research-toolkit-package.md)
+- REA周辺のGhidra、JADX、ILSpy等は**ソフトウェア調査手段**であり、相場データ供給・価格予測・取引戦略・BBBバックテストの改善効果を示すものではない。
+- 本ノートの **REA = BBB収益予測には低関連／REFERENCE** の判断は変更しない。BBBの実装、Frozen Forward、Paper、Human Live Gateやソースコードには触れない。必要な調査が発生した場合のみ一般カタログから該当ツールを探し、別途安全性と権限を評価する。
