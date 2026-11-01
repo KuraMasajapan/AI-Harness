@@ -41,3 +41,14 @@ REAはAIエージェントからMCP等を通じてアプリケーション、Jav
 
 ## 判定と運用境界
 **A / CANDIDATE**。研究候補として保存するが、**導入・インストール・本番統合はHOLD**。Core、Trinity、sealed境界、Hermes Phase、BBBの運用・戦略は変更しない。追加のGitHub変更・実装は別途Human承認を得る。
+
+
+## 2026-11-02 — 関連ツールの総合研究パッケージへの索引
+
+Human承認により、REAの周辺ツール18リポジトリと「REA調査手順」「クリーンルームSPEC/Oracle検証手順」の2概念を、次の**単一研究パッケージ**へ統合保存した。
+
+- [Reverse Engineering Research Toolkit — 18 repositories + 2 workflows](2026-11-02-reverse-engineering-research-toolkit-package.md)
+
+本ファイルは引き続き**REA単体の評価と安全境界に関する正本**。追加パッケージはGhidra/GhidraMCP、JADX/Apktool、ILSpy/dnSpyEx、Frida、ImHex、mitmproxy等の機能比較と既存研究へのリンク集であり、REA自体を再評価・上書きしたものではない。「一括導入」「全ツール互換」「あらゆるアプリの再現」「外部評価済みだから安全」は認めない。
+
+**変更範囲は調査資料と相互リンクのみ。実装・MCP導入・本番対象への接続・Core/Trinity/Hermes/BBBへの適用はHOLDのまま。**
