@@ -26,3 +26,10 @@ Purpose: Hangfire開発の参考として、Assault Gearの公開情報からゲ
 - limited-use tactical modifiers
 
 これは元ゲーム再現仕様ではなく、Hangfire独自実装のための研究資料である。
+
+
+## Related AI-Harness research — 2026-11-02
+
+- [Reverse Engineering Research Toolkit — 18 repositories + 2 workflows](../../../incubator/proposals/2026-11-02-reverse-engineering-research-toolkit-package.md) は、**権限のあるソフトウェア解析／独立再実装の一般的な研究資料**としてのみ参照する。
+- Hangfire固有のクリーンルーム判断は引き続き `CLEAN_ROOM/HANGFIRE_MAPPING.md` と `CLEAN_ROOM/DO_NOT_COPY.md` が優先。今回のリンクはAssault Gear等の解析・ソース取得・固有要素の模倣を新たに許可するものではない。
+- ツール導入、元ゲームの調査対象・権限拡大、仕様変更、再実装は一切自動で行わない。
