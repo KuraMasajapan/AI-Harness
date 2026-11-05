@@ -137,3 +137,12 @@ snapshotは選択した入力の実体であり、OS全体やモデルの実効�
 今後用で、元の試行を再採点・再実行していない。追加モデル呼出しも行っていない。
 `run_m2.py prepare`は修正前不具合の再現を前提にした、このpilot専用の入口。
 修正後に同じケースを新規準備する場合は失敗する。次の比較では新しいケース計画を作る。
+
+## 11月6日 — 独立したoffline preflight
+
+`tools/preflight_contract.py`は8ケース/10変種の固定期待値を確認する、モデル呼出し0の補助。
+`python -B tools/preflight_contract.py`で実行できる。manifest未指定なら凍結確認済みとはしない。
+モデル向けrunnerではなく、model_trial_readyはfalse。最新版はengine/fixture v3で、旧版は保持。
+計画と限界は[evaluation/NEXT_EVALUATION_PLAN.md](evaluation/NEXT_EVALUATION_PLAN.md)、
+最新リレー状態は[RELAY_CHECKPOINT_2026-11-05.md](RELAY_CHECKPOINT_2026-11-05.md)の追記を参照する。
+外部レビューの手順は[EXTERNAL_REVIEW_PLAYBOOK.md](EXTERNAL_REVIEW_PLAYBOOK.md)を使う。

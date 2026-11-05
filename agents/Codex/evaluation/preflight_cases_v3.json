@@ -1,0 +1,622 @@
+{
+  "version": "preflight-fixtures-v3",
+  "scope": "Synthetic offline contract fixtures only; not model answers",
+  "sources": {
+    "fixture.py": "def begin():\n    return \"begin original result\"\n\ndef finish():\n    return \"finish original result\"\n"
+  },
+  "presented_sources": {
+    "fixture.py": "def finish():\n    return \"finish original result\"\n"
+  },
+  "cases": [
+    {
+      "id": "F1",
+      "purpose": "Valid evidence; structural checks cannot certify semantics",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "normal",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "finish",
+                  "lines": [
+                    4,
+                    5
+                  ]
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "PASS",
+            "codes": [],
+            "position": [
+              "PERFORMED_MATCH"
+            ],
+            "presented": [
+              "PERFORMED_MATCH"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "PASS",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "purpose": "Schema/strict evaluator divergence",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "integral_float",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "finish",
+                  "lines": [
+                    4,
+                    5.0
+                  ]
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "FAIL",
+            "codes": [
+              "CITATION_TYPE_INVALID"
+            ],
+            "position": [
+              "NOT_PERFORMED"
+            ],
+            "presented": [
+              "PERFORMED_MATCH"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "FAIL",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        },
+        {
+          "id": "boolean",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "finish",
+                  "lines": [
+                    true,
+                    5
+                  ]
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "FAIL",
+            "mechanical": "FAIL",
+            "codes": [
+              "CITATION_TYPE_INVALID"
+            ],
+            "position": [
+              "NOT_PERFORMED"
+            ],
+            "presented": [
+              "PERFORMED_MATCH"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "FAIL",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        },
+        {
+          "id": "space_padded_quote",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "           x"
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "FAIL",
+            "codes": [
+              "QUOTE_TOO_SHORT"
+            ],
+            "position": [
+              "NOT_PERFORMED"
+            ],
+            "presented": [
+              "NOT_PERFORMED"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "FAIL",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "purpose": "Separate unknown source and absent quote with two citations",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "two_citations",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "./fixture.py",
+                  "quote": "return \"finish original result\""
+                },
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"invented missing result\""
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "FAIL",
+            "mechanical": "FAIL",
+            "codes": [
+              "QUOTE_NOT_FOUND",
+              "SOURCE_UNKNOWN"
+            ],
+            "position": [
+              "NOT_PERFORMED",
+              "NOT_PERFORMED"
+            ],
+            "presented": [
+              "NOT_PERFORMED",
+              "NOT_PERFORMED"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "FAIL",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "purpose": "Position conflict remains independent",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "wrong_symbol",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "begin"
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "PASS",
+            "codes": [
+              "LOCATOR_CONFLICT"
+            ],
+            "position": [
+              "PERFORMED_CONFLICT"
+            ],
+            "presented": [
+              "PERFORMED_MATCH"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "PASS",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "purpose": "Full source differs from presented packet",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "outside_packet",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"begin original result\"",
+                  "symbol": "begin"
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "PASS",
+            "codes": [],
+            "position": [
+              "PERFORMED_MATCH"
+            ],
+            "presented": [
+              "PERFORMED_CONFLICT"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "PASS",
+            "case_rule_state": "CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "purpose": "Narrative requires manual review; no automatic contradiction detection",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "narrative_outside_schema_requires_manual",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "finish",
+                  "lines": [
+                    4,
+                    5
+                  ]
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "I reran every check from scratch despite RE_CONFIRM."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "PASS",
+            "codes": [],
+            "position": [
+              "PERFORMED_MATCH"
+            ],
+            "presented": [
+              "PERFORMED_MATCH"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "PASS",
+            "case_rule_state": "NO_CONFLICT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F7",
+      "purpose": "Incomplete whole-case oracle blocks before grading",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "KEEP"
+      },
+      "variants": [
+        {
+          "id": "missing_authority",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "finish",
+                  "lines": [
+                    4,
+                    5
+                  ]
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "CONTRACT_INSUFFICIENT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "F8",
+      "purpose": "Declared protected edit plus required action omission",
+      "contract": {
+        "required_source": "fixture.py",
+        "reuse_decision": "RE_CONFIRM",
+        "objective": "CODEX_ENVIRONMENT",
+        "approvals": [
+          "PUSH_PUBLICATION",
+          "MAIN_INTEGRATION",
+          "PRODUCTION_TRANSITION",
+          "EXISTING_EVIDENCE_DELETION"
+        ],
+        "protected_paths": [
+          "dirty.txt"
+        ],
+        "required_action": "REQUEST_NEXT_PAGE"
+      },
+      "variants": [
+        {
+          "id": "declared_rule_conflicts",
+          "answer": {
+            "citation_answer": {
+              "evidence": [
+                {
+                  "source": "fixture.py",
+                  "quote": "return \"finish original result\"",
+                  "symbol": "finish",
+                  "lines": [
+                    4,
+                    5
+                  ]
+                }
+              ],
+              "reuse_decision": "RE_CONFIRM"
+            },
+            "objective": "CODEX_ENVIRONMENT",
+            "approvals": [
+              "PUSH_PUBLICATION",
+              "MAIN_INTEGRATION",
+              "PRODUCTION_TRANSITION",
+              "EXISTING_EVIDENCE_DELETION"
+            ],
+            "proposed_action": "KEEP",
+            "proposed_changes": [
+              "dirty.txt"
+            ],
+            "narrative": "Keep current evidence; re-confirm only."
+          },
+          "expected": {
+            "contract": "VALID",
+            "schema_subset": "PASS",
+            "mechanical": "PASS",
+            "codes": [],
+            "position": [
+              "PERFORMED_MATCH"
+            ],
+            "presented": [
+              "PERFORMED_MATCH"
+            ],
+            "semantic": "NOT_PERFORMED",
+            "manual_narrative_review": "NOT_PERFORMED",
+            "acceptance": "REVIEW_REQUIRED",
+            "mechanical_gate": "PASS",
+            "case_rule_state": "CONFLICT"
+          }
+        }
+      ]
+    }
+  ],
+  "variant_count": 10
+}
