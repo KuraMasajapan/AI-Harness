@@ -1,5 +1,10 @@
 # Proposal Incubator
 
+## 注目の検証候補（研究記録・未導入）
+
+- **[hunch — CPU上で高頻度の意味判定を学習・高速化](proposals/2026-11-06-hunch-adaptive-cpu-semantic-decision-candidate.md)**（2026-11-06 / **CANDIDATE・実装HOLD**）：Agentの繰り返しログ分類を、教師モデルから学ぶ小型判定器へ段階的に移管する方式。Jev Context Filter、Hermes、TRINITY監視の比較候補。**Human承認、正式な監査、Core仕様は置き換えない。**
+
+
 ## Purpose
 
 The Proposal Incubator stores weak ideas, partial ideas, early hypotheses, and low-confidence improvement proposals before they are mature enough to become Lessons, Workflow changes, or Core rules.
