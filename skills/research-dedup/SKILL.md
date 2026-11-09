@@ -15,7 +15,7 @@ This is a reusable procedure, **not** an autonomous scheduler, a search index, o
 ## Governing sources and scope
 
 - Follow `HARNESS.md`, `core/RULES.md`, `core/WORKFLOW.md`, `core/ACCESS.md`, and `skills/README.md` on the current `development` branch as applicable.
-- Apply the existing **AI-Harness 外部情報調査・二段階評価・検証候補保存方針** (2026-10-13) as the research evaluation policy **when its text is available**. This Skill summarizes execution order; it does not replace that policy. If unavailable, disclose the limitation rather than claiming it was loaded.
+- Apply the existing **AI-Harness 外部情報調査・二段階評価・検証候補保存方針** (2026-10-13) as the research evaluation policy **when its text is available**. This Skill summarizes execution order; it does not replace that policy. If unavailable, disclose the limitation rather than claiming it was loaded. **Human's 2026-11-09 decision supersedes that policy only on research-record retention:** save a trace for all dispositions, with minimal retained evidence for explicit REJECT decisions.
 - Evaluate usefulness for AI-Harness as a whole (Core, Memory, Skills, Evaluation/Trinity, tools, local AI, and relevant Projects); apply BBB-specific checks only where relevant.
 - Prefer minimal context loading, existing tools, and read-only operations.
 
@@ -29,7 +29,7 @@ Extract the candidate's canonical name, repository or source URL, aliases, claim
 
 ### 0. Preflight deduplication (before treating a candidate as NEW)
 
-1. Search the accessible `development` repository for exact names, canonical URLs, aliases, related functions, and prior decisions. Inspect relevant `incubator/proposals/`, research notes, Skills, and project-specific notes as warranted.
+1. Search the accessible `development` repository for exact names, canonical URLs, aliases, related functions, and prior decisions. Inspect the approved shared decision ledger (if present), `incubator/proposals/`, research notes, Skills, and project-specific notes as warranted. Match both canonical identity and aliases to avoid creating duplicate records.
 2. Search available Airtable research intake and accessible prior drafts/notes where relevant. A GitHub search of the default branch alone is **not** a complete check of `development`; a commit-message search alone is not a content search.
 3. Record which sources were **actually searched**, which were inaccessible, and the matching path/URL/date/status. Do not claim exhaustive coverage of inaccessible or unsaved drafts.
 4. Assign a *dedup status*:
@@ -37,7 +37,7 @@ Extract the candidate's canonical name, repository or source URL, aliases, claim
    - `EXISTING`: prior research exists, with no material new evidence;
    - `UPDATED`: prior research exists and material new evidence or a changed claim warrants delta review;
    - `UNCONFIRMED`: source access, coverage, identity, or prior status remains uncertain.
-5. For `EXISTING`, reuse the previous evaluation and report it with a source pointer; do not repeat full research without a reason. For `UPDATED`, investigate the delta and preserve the old assessment. For `UNCONFIRMED`, explicitly avoid saying the record does not exist.
+5. For `EXISTING`, reuse the previous evaluation and report it with a source pointer; do not repeat full research or add a duplicate record without a reason. For `UPDATED`, investigate the delta and amend the existing decision trail while preserving the old assessment. For `UNCONFIRMED`, explicitly avoid saying the record does not exist.
 
 ### 1. Stage 1 — Intake / provisional evaluation
 
@@ -71,7 +71,17 @@ Report concisely:
 - Stage 2 final rank, evidence label, and `CANDIDATE / HOLD / REJECT`;
 - Overlap, actual delta, minimal validation, and recommended next action.
 
-The established research policy generally proposes `incubator/proposals/YYYY-MM-DD-<slug>.md` for individually approved candidates. Avoid duplicate files when the existing record suffices. **Read/search/evaluate are allowed; all GitHub writes require prior explicit Human approval of target and content.** A research note is not implementation permission, a Core promotion, or a sealed-boundary change.
+**Retention rule (Human decision, 2026-11-09):** Preserve a trace for **every evaluated technology**, including `REJECT`, so future research can detect overlap and reconsider prior decisions. This is a retention rule for **this Human's environment**, not a universal claim about a technology's worth.
+
+Choose the smallest durable record consistent with the outcome:
+- **CANDIDATE:** Propose the established detailed individual file `incubator/proposals/YYYY-MM-DD-<slug>.md`, with verified evidence, alternatives, validation, and decision. Do not treat saving as adoption.
+- **HOLD:** Keep a compact existing-record or shared-ledger entry with canonical name/URL, date, outcome, brief evidence for holding, and an explicit trigger for reevaluation. Do not create a long standalone report by default.
+- **REJECT:** Keep **only a minimal shared-ledger entry**, not a standalone detailed evaluation Markdown file. Record evaluation date, canonical technology name/URL, `REJECT`, and the **specific decisive evidence and reason** (e.g., overlap, permissions risk, or absent advantage in the current environment). Retain just enough context to identify the item and understand or revisit the result. Do not archive the full analysis.
+- **EXISTING / UPDATED:** Link to or update the existing canonical record rather than adding duplicates. Preserve a meaningful decision change and its date; avoid repeated entries for unchanged findings.
+
+Use an **approved existing shared research decision ledger** when available. If none exists, propose its specific target (for example `incubator/research/TECHNOLOGY_DECISION_LEDGER.md`) for Human approval; **do not silently create it**. A report in chat may be detailed even when the saved REJECT record is minimal.
+
+**Read/search/evaluate are allowed; all GitHub writes require prior explicit Human approval of the exact target and proposed content.** No blanket permission for external saving is implied by this retention rule. A research note is not implementation permission, a Core promotion, or a sealed-boundary change.
 
 ## Verification / pilot test
 
