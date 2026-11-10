@@ -124,6 +124,8 @@ Prefer the smallest set of Skills required to complete the task.
 
 作業を完了するために必要な最小限のSkillを優先する。
 
+保存済みの改善候補から、試す要素を選んで採否の根拠を残す場合は [harness-adoption-review](harness-adoption-review/SKILL.md) を使う。外部情報の調査や重複確認は [research-dedup](research-dedup/SKILL.md) を参照する。
+
 
 ## 7. Skill Evolution
 ## 7. Skillの進化
