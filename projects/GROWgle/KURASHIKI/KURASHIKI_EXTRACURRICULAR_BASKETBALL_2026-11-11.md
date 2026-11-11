@@ -464,3 +464,37 @@ Middle-school extracurricular sports require different fields from U12:
 - weekday / transport / end time
 
 Do not mix U12 minibasket with U15 club search.
+
+
+## CORRECTION — NEXUS U15 was missed in the middle-school shortlist
+
+Current 2026 verification:
+- NEXUS Basketball Club has operated in Kurashiki since 2017 as U12.
+- From April 2026, NEXUS U15 also started.
+- Current public profile explicitly states:
+  - U15 activity started in 2026-04
+  - JBA team registration is not used
+  - purpose is securing practice volume / providing a development environment
+- 2026-10 public posts state U15 trial participation is available.
+- Activity base remains Kurashiki.
+- Existing U12 locations include:
+  - 中庄小
+  - 菅生小
+  - 万寿東小
+  - 倉敷北中
+
+Classification:
+MIDDLE_SCHOOL_ELIGIBLE
+U15 / DEVELOPMENT / CONTINUOUS
+DIRECT_TRIAL_AVAILABLE
+JBA_TEAM_REGISTRATION = NO
+STATUS = CURRENT_2026
+
+Evidence:
+https://pikory.com/u/nexusbasketballclub/41864087884
+https://japan-mini-basketball.com/team_detail.php?id=3988
+https://k-sports.or.jp/topics/2021/03/34364/
+
+Correction:
+NEXUS should have been included in the practical middle-school shortlist.
+Previous middle-school rescan omission was an error.
