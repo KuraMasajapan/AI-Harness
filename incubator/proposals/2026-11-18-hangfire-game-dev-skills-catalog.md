@@ -46,7 +46,7 @@ Hangfireの正本は \`projects/Hangfire/CURRENT_SPEC.md\`、\`PROJECT.md\`、\`
 | 9 | \`threejs-game-ui-designer\` | [majidmanzarpour/threejs-game-skills/skills/threejs-game-ui-designer/SKILL.md](https://github.com/majidmanzarpour/threejs-game-skills/blob/main/skills/threejs-game-ui-designer/SKILL.md)。Three.js向け3D UI/HUD設計。GitHubリポジトリはMIT。 | **C** | HOLD。現行Hangfireは3D/Three.jsではない |
 | 10 | \`develop-web-game\` | 投稿先の[openai/skills](https://github.com/openai/skills)は**廃止予定（deprecated）**とREADMEが明記し、現行mainの \`skills/.curated/\` に**同名SKILL.mdなし**。後継研究先は [openai/plugins 内の \`game-studio\`](https://github.com/openai/plugins/blob/main/plugins/game-studio/skills/game-studio/SKILL.md)と [\`game-playtest\`](https://github.com/openai/plugins/blob/main/plugins/game-studio/skills/game-playtest/SKILL.md)。 | **B**（旧名） | HOLD（旧Skill）。公式後継の個別QA手順は別途 **A / CANDIDATE** |
 
-**pixelfx（既評価）**：[patch-gg/pixelfx](https://github.com/patch-gg/pixelfx)の224ではなく**244個／21分類**のエフェクト、透過PNGスプライトシート、CLIの \`SKILL.md\`、本体MITを確認済み。NOTICE内の一部フォントには別条件がある。**A+ / CANDIDATE、実装HOLD**。
+**pixelfx（既評価）**：[patch-gg/pixelfx](https://github.com/patch-gg/pixelfx)の**244個／21分類**のエフェクト、透過PNGスプライトシート、CLIの \`SKILL.md\`、本体MITを確認済み。NOTICE内の一部フォントには別条件がある。**A+ / CANDIDATE、実装HOLD**。
 
 ### 原典のリンク品質
 
@@ -81,6 +81,14 @@ Xの短縮URLは複数がGitHubの**組織トップや不完全パス**へ転送
 | \`hf-balance-review\` | バランスの論点整理 | MDA等の一般概念だけ／著作物を統合しない | 参考 |
 | \`hf-multiplayer-reference\` | 将来の通信方式比較 | Rivet Actors関連資料のみ（導入なし） | 保留 |
 | \`hf-3d-reference\` | 3D化を正式決定した場合のみ | threejs-game-ui-designer | 保留 |
+
+### 現時点で使える手動選択方法（新Skill設置なし）
+
+Codexに次の形で指示し、研究カタログの**選択キー**として運用できる（スキルのインストールや動作確認を済ませたという意味ではない）。
+
+> AI-Harnessのdevelopmentにある\`incubator/proposals/2026-11-18-hangfire-game-dev-skills-catalog.md\`を参照。今回の作業は\`hf-ui\`（または\`hf-fx\`、\`hf-test\`等）として扱い、対応する上流SKILL.mdは**読むだけ**にする。Hangfireの正式仕様を優先し、外部Skillのインストール・コード変更・依存追加・実行・公開は明示的な別承認があるまで行わない。選んだ原典・差分提案・必要な検証を報告して。
+
+ここで\`hf-*\`は**文書上の識別子**であり、CLIコマンドや自動認識済みSkill名ではない。毎回、選択キーと作業範囲を明示して指示する。将来の専用Skillルータを導入するかどうかは、まずこの手動方式で選択精度・トークン削減・保守負担を測って判断する。
 
 ### ルータの選択規則
 
