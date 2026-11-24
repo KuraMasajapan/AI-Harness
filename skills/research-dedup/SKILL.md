@@ -39,6 +39,14 @@ Extract the candidate's canonical name, repository or source URL, aliases, claim
    - `UNCONFIRMED`: source access, coverage, identity, or prior status remains uncertain.
 5. For `EXISTING`, reuse the previous evaluation and report it with a source pointer; do not repeat full research or add a duplicate record without a reason. For `UPDATED`, investigate the delta and amend the existing decision trail while preserving the old assessment. For `UNCONFIRMED`, explicitly avoid saying the record does not exist.
 
+### 0a. Recurring intake / Grok batch resume
+
+For recurring Airtable Grok reports, keep Airtable read-only; NEW/DONE/HOLD and Grok's own evidence labels are not authoritative ChatGPT evaluation status.
+1. Find the latest accessible Grok-specific batch evaluation in conversation history and development proposals/decision ledger. Distinguish evaluation date, intake date (normalize to JST), and commit date. Exclude unrelated direct submissions even if newer.
+2. Match the boundary records by Airtable record ID, canonical URL, title and claim; distinguish evaluated-in-chat from durably saved. Record the last observed evaluated item and the last fully covered contiguous intake interval separately. A recent isolated evaluation does not close earlier gaps.
+3. Start with records after the verified contiguous boundary and any known gaps or unsaved evaluations before it. Use date as a search shortcut, not proof of absence; apply Step 0 to each candidate, including same-day records and late arrivals. If history or coverage is incomplete, mark UNCONFIRMED rather than asserting unreviewed.
+4. Report the boundary evidence, covered interval, gaps, evaluated-but-unsaved items, and next batch. In approved research records retain intake IDs, source dates and coverage so the next run can resume without full rescanning. Never modify Airtable to track evaluation. Existing GitHub approval boundaries remain unchanged.
+
 ### 1. Stage 1 — Intake / provisional evaluation
 
 Based on the submitted post, summary, and immediately available context, classify claims as `FACT`, `IDEA`, or `ANOMALY` where helpful. Assign the policy's **provisional research priority** `A++ / A+ / A / B / C`, with a short rationale using relevance, novelty, potential value, specificity, verification feasibility, and investigation cost.
