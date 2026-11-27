@@ -1,0 +1,36 @@
+{
+  "coordinate_system": "glTF Y-up",
+  "units": "source model units (not calibrated meters)",
+  "room": {
+    "file": "kitchen-study.glb",
+    "position": [0, 0, 0],
+    "rotation_y_radians": 0,
+    "scale": 1
+  },
+  "avatar": {
+    "file": "musan-butler-detail-v12.glb",
+    "position": [0, 0.055, 0.65],
+    "rotation_y_radians": 0,
+    "scale": 1.15
+  },
+  "camera_hint": {
+    "type": "orthographic",
+    "position": [0, 7.8, 12.5],
+    "target": [0, 0.8, 0],
+    "vertical_span": 6.1,
+    "minimum_horizontal_span": 9.4,
+    "portrait_note": "Fit both spans: vertical span = max(6.1, 9.4 / viewport_aspect). Do not crop the side furniture."
+  },
+  "layout": {
+    "floor_width": 8.4,
+    "floor_depth": 4.6,
+    "clear_floor_bounds_xz": {"min": [-1.9, -1.1], "max": [1.9, 2.1]},
+    "clear_floor_note": "Furniture-free floor; avatar is intentionally inside. A reserved layout region, not a navmesh or collision system.",
+    "study": "Left wall: writing desk, chair and bookcase",
+    "bed": "Right wall, with bedside cabinet and corner tea table",
+    "kitchen": "Back-left wall; original kitchen assets retained"
+  },
+  "lighting": "Soft warm runtime lighting required; review PNGs are offline GLB renders, not baked lightmaps or Muse screenshots.",
+  "rigged": false,
+  "animations": []
+}
