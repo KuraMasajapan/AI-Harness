@@ -13,8 +13,15 @@
 4. PBRのbase color、roughness、metallic、normal mapを有効にします。
    ノーマル画像とmetallic/roughness画像は非カラー、base colorはsRGBです。
    金属には環境光の反射が必要です。白い環境光一灯だけでは素材が平坦に見えます。
-5. 暖色キー＋弱い寒色フィル、電球と机の局所照明を設定します。
-   同梱スクリプトの照明はオフラインレビュー用であり、GLBには焼き込んでいません。
+5. 部屋GLBには `KHR_lights_punctual` で**4灯**を同梱しています。
+   電球列を左右2灯で近似し、卓上灯1灯と丸窓からの夕日1灯を追加しています。
+   対応ビューアなら同梱照明を使用し、非対応なら `muse/lighting-evening.json` の
+   Y-up位置・色・GLBと同じcandela値で作ります。**両方を重ねて二重点灯しないでください。**
+6. 影は夕日の1灯だけを推奨し、遅い端末では全部切ります。影の有無はglTF標準に
+   含まれないため、ノードの `runtime_cast_shadow` と照明JSONで別途渡しています。
+   暗めの暖色環境光と金属用の弱い環境反射を残してください。
+   レビューはAgX・露出+0.45EVと補助面光源を使っています。面光源はglTF標準対象外で、
+   GLBに照明・影を焼き込んだものでもないため、Museで同じ見え方とは未確認です。
 
 ## 素材と形状
 
@@ -42,12 +49,14 @@
 木材は最大1024px、布・石・金属は512px。繰り返しUVと画像共有を利用し、
 視差マッピング、実行時の手続きノイズ、布シミュレーションは不要です。
 静止形状は素材・配置区画ごとにまとめ、細い床板や本が一つずつ描画されるのを避けています。
+照明は電球ごとの14灯ではなく4灯にまとめています。影の実行時設定はホスト側で行います。
 正確な容量・三角形数・画像展開後のRGBA概算容量は `verification-materials.json` に記録します。
 これはGLB内の画像だけの概算であり、GPU全体のメモリ消費量ではありません。
 
 GLB再取り込み、中央動線、v12のSHA-256、埋め込み画像の解像度、
 metallic/roughnessの実際の画像チャンネル、全manifestハッシュとZIP CRCを検証しています。
 比較画像は同じカメラ・同じ照明です。画像の変化には床・寝具の形状変更も含みます。
+`lighting-comparison.png` だけは同じGLBを異なる照明で比較しています。
 
 **未確認:** Museへの反映、iPhoneでの表示・読み込み・FPS・GPUメモリ。
 小型画像と静止形状に抑えていますが、実機で軽いと確認したものではありません。
@@ -63,6 +72,7 @@ python3.11 build_room.py
 python3.11 texture_room.py
 python3.11 render_review.py --view interior
 python3.11 render_review.py --materials
+python3.11 render_review.py --materials --view interior --neutral-lighting
 python3.11 verify_materials.py
 python3.11 compose_materials.py
 python3.11 package_materials.py

@@ -22,3 +22,5 @@ if __name__=="__main__":
     sheet(p/"materials-closeups.png",[(p/"wood-detail.png","OAK / BRASS / PAPER"),
                                        (p/"fabric-detail.png","LINEN / SOFT BEDDING"),
                                        (p/"kitchen-detail.png","STONE / STEEL / ENAMEL")],800)
+    sheet(p/"lighting-comparison.png",[(WORK/"preview-neutral/interior.png","SAME GLB - neutral review light"),
+                                       (p/"interior.png","SAME GLB - warm evening light")],1000)

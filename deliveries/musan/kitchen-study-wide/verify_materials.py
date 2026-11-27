@@ -46,6 +46,14 @@ def verify():
             assert channel.getextrema()[0]>=240,(name,channel.getextrema())
     assert len(mapped)>=10,mapped
     assert not doc.get("animations") and not doc.get("skins")
+    lights=doc.get("extensions",{}).get("KHR_lights_punctual",{}).get("lights",[])
+    assert len(lights)==4
+    preset=json.loads((WORK/"lighting-evening.json").read_text())
+    assert len(preset["lights"])==4
+    assert sum(item["cast_shadow"] for item in preset["lights"])==1
+    for light in lights:
+        item=next(item for item in preset["lights"] if item["name"]==light["name"])
+        assert item["intensity"]==light["intensity"] and item["color"]==light["color"]
     report=json.loads((WORK/"verification-materials.json").read_text())
     assert report["room_triangles"]<100000
     assert report["avatar_unchanged"] and not report["furniture_intrusions"]
@@ -53,6 +61,7 @@ def verify():
                    "decoded_rgba_texture_bytes":decoded,
                    "pbr_materials_with_color_roughness_normal":mapped,
                    "metallic_texture_channels_verified":True,
+                   "embedded_punctual_lights":4,"requested_shadow_casting_lights":1,
                    "room_sha256":hashlib.sha256(blob).hexdigest()})
     (WORK/"verification-materials.json").write_text(json.dumps(report,indent=2)+"\n")
     print(json.dumps(report,indent=2))

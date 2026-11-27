@@ -12,16 +12,20 @@ def package():
     files={"models/kitchen-study.glb":(WORK/"kitchen-study-materials.glb").read_bytes(),
            "models/musan-butler-detail-v12.glb":(WORK/"musan-butler-detail-v12.glb").read_bytes(),
            "muse/scene-placement.json":(ROOT/"scene-placement.json").read_bytes(),
+           "muse/lighting-evening.json":(WORK/"lighting-evening.json").read_bytes(),
            "README.md":(ROOT/"MATERIALS.md").read_bytes(),
            "verification-materials.json":(WORK/"verification-materials.json").read_bytes(),
            "material-assignments.json":(WORK/"material-assignments.json").read_bytes()}
-    for path in sorted((WORK/"preview-materials").glob("*.png")):
+    preview_names=["evening-interior","interior","wood-detail","fabric-detail",
+                   "kitchen-detail","materials-comparison","materials-closeups","lighting-comparison"]
+    for name in preview_names:
+        path=WORK/"preview-materials"/(name+".png")
         files["preview/"+path.name]=path.read_bytes()
-    assert len([p for p in files if p.startswith("preview/")])==9
+    assert len([p for p in files if p.startswith("preview/")])==8
     for path in sorted((WORK/"textures").glob("*.png")):
         files["textures/"+path.name]=path.read_bytes()
     for name in ["build_room.py","texture_room.py","render_review.py","verify_materials.py",
-                 "compose_materials.py","package_materials.py","requirements-build.txt",
+                 "compose_materials.py","package_materials.py","lighting.py","requirements-build.txt",
                  "README.md","MATERIALS.md","scene-placement.json"]:
         files["source/"+name]=(ROOT/name).read_bytes()
     sha=lambda data:hashlib.sha256(data).hexdigest()

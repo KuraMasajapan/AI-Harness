@@ -13,6 +13,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 from build_room import AVATAR_SHA256, WORK, box
 from mathutils import Vector
+from lighting import add_room_lights, write_preset
 
 TEXTURES = WORK / "textures"
 
@@ -120,9 +121,10 @@ def generate_maps():
     maps["brass"]=(save("brass",(1+brushed*.016)[...,None]*np.array([205,159,80])/255),*metal_maps)
     sky=np.zeros((512,512,3))
     t=np.linspace(0,1,512)[:,None,None]
-    sky[:]=(1-t)*np.array([109,147,171])[None,None,:]+t*np.array([247,208,148])[None,None,:]
+    sky[:]=(1-t)*np.array([122,130,157])[None,None,:]+t*np.array([255,185,108])[None,None,:]
     landscape=Image.fromarray(np.uint8(sky))
     draw=ImageDraw.Draw(landscape)
+    draw.ellipse((310,245,360,295),fill=(255,219,156))
     for base,amplitude,rgb in [(300,28,(128,144,145)),(355,35,(98,119,113)),
                                (412,24,(63,91,78)),(472,19,(43,68,52))]:
         ridge=[(x,base+amplitude*(math.sin(x*.012+base)+.3*math.sin(x*.037))) for x in range(512)]
@@ -226,7 +228,7 @@ def build():
     tex.image=bpy.data.images.load(str(TEXTURES/"window-dusk.png"))
     sky_mat.node_tree.links.new(tex.outputs["Color"],shader.inputs["Base Color"])
     sky_mat.node_tree.links.new(tex.outputs["Color"],shader.inputs["Emission Color"])
-    shader.inputs["Emission Strength"].default_value=.18
+    shader.inputs["Emission Strength"].default_value=.55
     shader.inputs["Specular IOR Level"].default_value=0
     disk=bpy.data.objects.get("Round dusk window")
     disk.data=disk.data.copy()
@@ -246,6 +248,17 @@ def build():
     bpy.context.collection.objects.link(obj)
     obj["layout_zone"]="decoration"
     mesh.materials.append(glazing)
+    shade=palette["ivory-linen"].copy()
+    shade.name="PBR glowing linen lampshade"
+    shader=shade.node_tree.nodes.get("Principled BSDF")
+    shader.inputs["Base Color"].default_value=(.85,.68,.39,1)
+    shader.inputs["Roughness"].default_value=.85
+    shader.inputs["Emission Color"].default_value=(1,.48,.15,1)
+    shader.inputs["Emission Strength"].default_value=.60
+    lamp=bpy.data.objects.get("Lamp shade")
+    lamp.data=lamp.data.copy()
+    lamp.data.materials.clear()
+    lamp.data.materials.append(shade)
     replacement = {"Warm timber walls":"wall-oak", "Honey oak trim":"honey-oak",
                    "Walnut furniture":"warm-walnut", "Honey ash":"honey-oak",
                    "Ivory woven linen":"ivory-linen", "Plum cushion":"plum-linen",
@@ -365,12 +378,14 @@ def build():
         obj=bpy.context.object
         obj.name=zone+" - "+matname
         obj["layout_zone"]=zone
+    add_room_lights()
     bpy.ops.object.select_all(action="SELECT")
     bpy.ops.export_scene.gltf(filepath=str(WORK/"kitchen-study-materials.glb"),
                               export_format="GLB", use_selection=True, export_apply=True,
-                              export_extras=True, export_cameras=False, export_lights=False,
+                              export_extras=True, export_cameras=False, export_lights=True,
                               export_animations=False)
     (WORK/"material-assignments.json").write_text(json.dumps(assignments, indent=2)+"\n")
+    write_preset()
     print(json.dumps(assignments, indent=2))
 
 
