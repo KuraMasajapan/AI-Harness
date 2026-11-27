@@ -46,6 +46,8 @@ def verify():
     receipt=json.loads((WORK/'fitted'/'render-receipt.json').read_text())
     assert receipt['glb_sha256']==build['musan-bare-shape.glb'],'Renders do not match model'
     assert all(hashlib.sha256((WORK/'fitted'/(view+'.png')).read_bytes()).hexdigest()==digest for view,digest in receipt['views'].items())
+    colours=json.loads((WORK/'color-measurements.json').read_text())
+    assert colours['render_receipt_sha256']==hashlib.sha256((WORK/'fitted'/'render-receipt.json').read_bytes()).hexdigest(),'Stale colour measurements'
     source,sbin=read_glb(WORK/'source-v12.glb')
     target,tbin=read_glb(WORK/'musan-bare-shape.glb')
     original={m['name']:material_payload(source,sbin,m) for m in source['materials']}

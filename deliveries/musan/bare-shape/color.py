@@ -12,7 +12,18 @@ ROOT=Path(__file__).resolve().parent
 WORK=ROOT/'work'
 PLUSH='Cream plush with brushed pile'
 SKIN='Unified cream skin and undercoat'
-PALETTE={PLUSH:[.58,.43,.26,1], 'Matte cream fibre':[.58,.43,.26,1]}
+# Linear glTF factors, calibrated against the supplied three-view under the
+# unchanged neutral review lighting (not by lifting exposure or changing roughness).
+PALETTE={PLUSH:[.96,.63,.24,1], 'Matte cream fibre':[.96,.63,.24,1]}
+SOURCE_SKIN=np.array([.79910296,.64447987,.41254270])
+FACE_SKIN=np.array([1,.78,.28])
+FACE_BLUSH=np.array([1,.30,.15])
+
+def face_colors(colors):
+    """Brighten the skin and reuse the original soft cheek-paint field."""
+    blush=np.clip((SOURCE_SKIN[1]-colors[:,1])/(SOURCE_SKIN[1]-.47932023),0,1)
+    blend=1-np.exp(-3*blush)
+    return FACE_SKIN*(1-blend[:,None])+FACE_BLUSH*blend[:,None]
 
 def material_positions(doc,binary,name):
     primitive=next(p for m in doc['meshes'] for p in m['primitives']
@@ -63,7 +74,7 @@ def certify(source,target):
         if name==SKIN:
             p=material_positions(before,sbin,SKIN)
             interior=(abs(p[:,0])<.14)&(p[:,1]>.67)&(p[:,1]<.84)&(p[:,2]>.12)
-            assert interior.any() and np.array_equal(colors[interior],old[interior]),'Face interior/blush changed'
+            assert interior.any() and np.any(colors[interior]!=old[interior]),'Face colour pass missing'
         else:assert np.all(colors==1),'Fur base is not uniform'
         changes[str(index)]={'material':name,'vertices':len(colors),
             'changed_vertices':int(np.any(colors!=old,axis=1).sum())}
@@ -71,7 +82,9 @@ def certify(source,target):
     assert bytes(restored)==sbin,'Geometry, UVs, normals, indices or image bytes changed'
     return {'source_glb_sha256':hashlib.sha256(Path(source).read_bytes()).hexdigest(),
             'output_glb_sha256':hashlib.sha256(Path(target).read_bytes()).hexdigest(),
-            'geometry_uv_normals_images_unchanged':True,'face_interior_and_blush_unchanged':True,
+            'geometry_uv_normals_images_unchanged':True,'face_interior_and_blush_unchanged':False,
+            'face_palette_linear_rgb':{'skin':FACE_SKIN.tolist(),'blush':FACE_BLUSH.tolist()},
+            'original_cheek_paint_field_reused':True,
             'non_color_binary_sha256':hashlib.sha256(scrubbed).hexdigest(),
             'palette_linear_rgba':PALETTE,'color_accessors':changes}
 
@@ -86,11 +99,11 @@ def recolor(source,target):
             # Reprojection had carried some face paint onto the fur rim.
             colors[:]=1
         else:
-            # Only neutral/white rim vertices; keep the existing face and blush.
+            # Keep the existing blush's location/soft edges, not its grey palette.
             weight=np.clip((colors[:,2]-.46)/.44,0,1)
             weight=weight*weight*(3-2*weight)
             weight=1-(1-weight)*(1-edge)
-            colors[:]=colors*(1-weight[:,None])+np.asarray(PALETTE[PLUSH][:3])*weight[:,None]
+            colors[:]=face_colors(colors)*(1-weight[:,None])+np.asarray(PALETTE[PLUSH][:3])*weight[:,None]
     payload=json.dumps(doc,separators=(',',':'),ensure_ascii=False).encode()
     payload+=b' '*((-len(payload))%4)
     raw=struct.pack('<4sII',b'glTF',2,12+8+len(payload)+8+len(binary))
