@@ -40,18 +40,15 @@ def area(name, position, power, size, color):
     aim(obj, (0, 0, .5))
 
 
-def review(view=None, check_only=False, refined=False):
+def review(view=None, check_only=False):
     bpy.ops.wm.read_factory_settings(use_empty=True)
     room_doc = glb_document(WORK / "kitchen-study.glb")
-    avatar_name = "musan-butler-refined-v13.glb" if refined else "musan-butler-detail-v12.glb"
-    avatar_sha = (json.loads((WORK / "avatar-verification.json").read_text())["avatar_sha256"]
-                  if refined else AVATAR_SHA256)
-    avatar_doc = glb_document(WORK / avatar_name)
-    assert hashlib.sha256((WORK / avatar_name).read_bytes()).hexdigest() == avatar_sha
+    avatar_doc = glb_document(WORK / "musan-butler-detail-v12.glb")
+    assert hashlib.sha256((WORK / "musan-butler-detail-v12.glb").read_bytes()).hexdigest() == AVATAR_SHA256
     assert not avatar_doc.get("animations")
     bpy.ops.import_scene.gltf(filepath=str(WORK / "kitchen-study.glb"), loglevel=40)
     bpy.context.view_layer.update()
-    placement = json.loads((ROOT / ("scene-placement-refined.json" if refined else "scene-placement.json")).read_text())
+    placement = json.loads((ROOT / "scene-placement.json").read_text())
     lane = placement["layout"]["clear_floor_bounds_xz"]
     intrusions = []
     counts = {}
@@ -77,8 +74,8 @@ def review(view=None, check_only=False, refined=False):
         "zone_mesh_counts": counts,
         "reserved_floor_xz": lane,
         "furniture_intrusions": intrusions,
-        "avatar_sha256": avatar_sha,
-        "avatar_unchanged": not refined,
+        "avatar_sha256": AVATAR_SHA256,
+        "avatar_unchanged": True,
         "external_asset_uris": 0,
         "runtime_test": "Not run in Muse or on iPhone",
     }
@@ -88,13 +85,13 @@ def review(view=None, check_only=False, refined=False):
             obj.data.calc_loop_triangles()
             triangles += len(obj.data.loop_triangles)
     report["room_triangles"] = triangles
-    (WORK / ("verification-refined.json" if refined else "verification.json")).write_text(json.dumps(report, indent=2) + "\n")
+    (WORK / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
     if check_only:
         print(json.dumps(report, indent=2))
         return
 
     previous = set(bpy.context.scene.objects)
-    bpy.ops.import_scene.gltf(filepath=str(WORK / avatar_name), loglevel=40)
+    bpy.ops.import_scene.gltf(filepath=str(WORK / "musan-butler-detail-v12.glb"), loglevel=40)
     avatar = placement["avatar"]
     x, y, z = avatar["position"]
     transform = (Matrix.Translation((x, -z, y))
@@ -130,7 +127,7 @@ def review(view=None, check_only=False, refined=False):
     scene.view_settings.view_transform = "AgX"
     scene.render.image_settings.file_format = "PNG"
     scene.render.resolution_percentage = 100
-    preview = WORK / ("preview-refined" if refined else "preview")
+    preview = WORK / "preview"
     preview.mkdir(exist_ok=True)
     views = [
         ("wide-room", (0, -12.5, 7.8), (0, 0, .8), 10.1, (1600, 1100)),
@@ -153,7 +150,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--view", choices=["wide-room", "floor-clearance", "study-detail"])
     parser.add_argument("--check-only", action="store_true")
-    parser.add_argument("--refined-avatar", action="store_true", help="Use the follow-up v13 avatar, not the unchanged v12 baseline")
     # Blender itself supplies unrelated arguments when run with --python.
     args, _ = parser.parse_known_args()
-    review(args.view, args.check_only, args.refined_avatar)
+    review(args.view, args.check_only)
