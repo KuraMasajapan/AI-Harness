@@ -164,9 +164,12 @@ def fit():
     sculpt['rear_contact_fairing_iterations']=80
     (WORK/'sculpt-preservation.json').write_text(json.dumps(sculpt,indent=2))
     export(WORK/'musan-bare-shape.glb')
+    from color import recolor
+    (WORK/'musan-bare-shape-uncolored.glb').write_bytes((WORK/'musan-bare-shape.glb').read_bytes())
+    recolor(WORK/'musan-bare-shape-uncolored.glb',WORK/'musan-bare-shape.glb')
     (WORK/'shape-preservation.json').write_text(json.dumps(checks,indent=2))
     (WORK/'deformation-fields.json').write_text(json.dumps({k:v.tolist() for k,v in fields.items()},indent=2))
-    names=['musan-bare-shape.glb','shape-preservation.json','sculpt-preservation.json','deformation-fields.json']
+    names=['musan-bare-shape.glb','shape-preservation.json','sculpt-preservation.json','deformation-fields.json','color-adjustment.json']
     (WORK/'build-manifest.json').write_text(json.dumps({name:hashlib.sha256((WORK/name).read_bytes()).hexdigest() for name in names},indent=2))
 
 if __name__=='__main__':

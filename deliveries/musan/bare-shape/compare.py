@@ -33,7 +33,7 @@ def compare(source):
     canvas=Image.new('RGB',(1800,1590),'white');draw=ImageDraw.Draw(canvas)
     title=ImageFont.truetype(FONT,30);label=ImageFont.truetype(FONT,22)
     draw.text((30,20),'REFERENCE / supplied front, side, back',font=title,fill='#29323b')
-    draw.text((30,810),'FITTED GLB / original v12 materials, neutral studio light',font=title,fill='#29323b')
+    draw.text((30,810),'FITTED GLB / beige colour pass, original v12 surface detail',font=title,fill='#29323b')
     overlay=Image.new('RGB',(1800,790),'white');od=ImageDraw.Draw(overlay)
     od.text((30,20),'SILHOUETTE / green: shared, cyan: reference only, orange: GLB only',font=label,fill='#29323b')
     scores={}

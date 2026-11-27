@@ -15,10 +15,10 @@ def package():
     for name in ['reference-comparison.png','silhouette-comparison.png']:
         files['review/'+name]=WORK/name
     for view in ['front','side','back']:files['review/'+view+'.png']=WORK/'fitted'/(view+'.png')
-    for name in ['verification.json','shape-preservation.json','sculpt-preservation.json','silhouette-measurements.json','deformation-fields.json','build-manifest.json']:
+    for name in ['verification.json','shape-preservation.json','sculpt-preservation.json','silhouette-measurements.json','deformation-fields.json','build-manifest.json','color-adjustment.json']:
         files['verification/'+name]=WORK/name
     files['verification/render-receipt.json']=WORK/'fitted'/'render-receipt.json'
-    for name in ['model.py','fit.py','retopo.py','reference.py','compare.py','verify.py','package.py','requirements-build.txt','shape-target.json']:
+    for name in ['model.py','fit.py','retopo.py','color.py','reference.py','compare.py','verify.py','package.py','requirements-build.txt','shape-target.json']:
         files['source/'+name]=ROOT/name
     payload={name:path.read_bytes() for name,path in files.items()}
     manifest={'model':'models/musan-bare-shape.glb','source_v12_sha256':report['source_v12_sha256'],

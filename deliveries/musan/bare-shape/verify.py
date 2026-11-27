@@ -50,7 +50,12 @@ def verify():
     target,tbin=read_glb(WORK/'musan-bare-shape.glb')
     original={m['name']:material_payload(source,sbin,m) for m in source['materials']}
     materials={m['name']:material_payload(target,tbin,m) for m in target['materials']}
+    from color import PALETTE,certify
+    for name,palette in PALETTE.items():
+        original[name]['pbrMetallicRoughness']['baseColorFactor']=palette
     assert all(value==original[name] for name,value in materials.items()),'Material or image changed'
+    color_report=certify(WORK/'musan-bare-shape-uncolored.glb',WORK/'musan-bare-shape.glb')
+    assert color_report==json.loads((WORK/'color-adjustment.json').read_text()),'Stale colour receipt'
     names={node['name'] for node in target['nodes']}
     assert len(names)==5 and any(name.startswith('tripo_node_') for name in names)
     assert {'Short plush silhouette fibres','Black button eye L','Black button eye R','Small smile'}<=names
@@ -68,7 +73,8 @@ def verify():
     edits=json.loads((WORK/'shape-preservation.json').read_text())
     repair=json.loads((WORK/'sculpt-preservation.json').read_text())
     assert all(v['preserved_uv_colors_topology'] for v in edits.values())
-    report={'glb_valid':True,'clothing_removed':True,'retained_materials_match_v12':True,
+    report={'glb_valid':True,'clothing_removed':True,'retained_materials_match_v12_except_palette':True,
+            'color_only_adjustment':color_report,
             'embedded_image_pixels_unchanged':True,'external_uris':0,'nodes':sorted(names),
             'materials':sorted(materials),'triangles':triangles,
             'bytes':(WORK/'musan-bare-shape.glb').stat().st_size,
