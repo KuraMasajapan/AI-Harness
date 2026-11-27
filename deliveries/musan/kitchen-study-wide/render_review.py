@@ -40,13 +40,14 @@ def area(name, position, power, size, color):
     aim(obj, (0, 0, .5))
 
 
-def review(view=None, check_only=False):
+def review(view=None, check_only=False, materials=False):
     bpy.ops.wm.read_factory_settings(use_empty=True)
-    room_doc = glb_document(WORK / "kitchen-study.glb")
+    room_path = WORK / ("kitchen-study-materials.glb" if materials else "kitchen-study.glb")
+    room_doc = glb_document(room_path)
     avatar_doc = glb_document(WORK / "musan-butler-detail-v12.glb")
     assert hashlib.sha256((WORK / "musan-butler-detail-v12.glb").read_bytes()).hexdigest() == AVATAR_SHA256
     assert not avatar_doc.get("animations")
-    bpy.ops.import_scene.gltf(filepath=str(WORK / "kitchen-study.glb"), loglevel=40)
+    bpy.ops.import_scene.gltf(filepath=str(room_path), loglevel=40)
     bpy.context.view_layer.update()
     placement = json.loads((ROOT / "scene-placement.json").read_text())
     lane = placement["layout"]["clear_floor_bounds_xz"]
@@ -68,7 +69,7 @@ def review(view=None, check_only=False):
             intrusions.append(obj.name)
     assert not intrusions, "Furniture enters reserved floor: " + repr(intrusions)
     report = {
-        "room_bytes": (WORK / "kitchen-study.glb").stat().st_size,
+        "room_bytes": room_path.stat().st_size,
         "room_meshes": len(room_doc["meshes"]),
         "room_triangles": 0,
         "zone_mesh_counts": counts,
@@ -85,7 +86,8 @@ def review(view=None, check_only=False):
             obj.data.calc_loop_triangles()
             triangles += len(obj.data.loop_triangles)
     report["room_triangles"] = triangles
-    (WORK / "verification.json").write_text(json.dumps(report, indent=2) + "\n")
+    report_name = "verification-materials.json" if materials else "verification.json"
+    (WORK / report_name).write_text(json.dumps(report, indent=2) + "\n")
     if check_only:
         print(json.dumps(report, indent=2))
         return
@@ -111,10 +113,25 @@ def review(view=None, check_only=False):
     scene.world = bpy.data.worlds.new("Review studio")
     scene.world.use_nodes = True
     scene.world.node_tree.nodes["Background"].inputs[0].default_value = (.55, .49, .40, 1)
-    scene.world.node_tree.nodes["Background"].inputs[1].default_value = .5
-    area("Large warm key", (-3, -4, 7), 1050, 6, (1, .84, .65))
-    area("Soft cool fill", (4, -1, 6), 750, 5, (.80, .88, 1))
-    area("Ceiling bounce", (0, 1, 6), 500, 4, (1, .88, .72))
+    scene.world.node_tree.nodes["Background"].inputs[1].default_value = .25
+    area("Large warm key", (-3, -4, 7), 800, 5, (1, .84, .65))
+    area("Soft cool fill", (4, -1, 6), 220, 4, (.80, .88, 1))
+    area("Ceiling bounce", (0, 1, 6), 300, 4, (1, .88, .72))
+    for i in range(14):
+        data=bpy.data.lights.new("Warm string pool", "POINT")
+        data.energy=5
+        data.color=(1,.67,.36)
+        data.shadow_soft_size=.07
+        obj=bpy.data.objects.new(data.name,data)
+        bpy.context.collection.objects.link(obj)
+        obj.location=(-3.95+i*.60,1.93,2.03)
+    data=bpy.data.lights.new("Desk lamp pool", "POINT")
+    data.energy=14
+    data.color=(1,.73,.43)
+    data.shadow_soft_size=.055
+    obj=bpy.data.objects.new(data.name,data)
+    bpy.context.collection.objects.link(obj)
+    obj.location=(-3.76,-.52,1.21)
     groundmat = bpy.data.materials.new("Studio sand")
     groundmat.diffuse_color = (.29, .26, .22, 1)
     bpy.ops.mesh.primitive_plane_add(size=200, location=(0, 0, -.335))
@@ -127,12 +144,16 @@ def review(view=None, check_only=False):
     scene.view_settings.view_transform = "AgX"
     scene.render.image_settings.file_format = "PNG"
     scene.render.resolution_percentage = 100
-    preview = WORK / "preview"
+    preview = WORK / ("preview-materials" if materials else "preview")
     preview.mkdir(exist_ok=True)
     views = [
         ("wide-room", (0, -12.5, 7.8), (0, 0, .8), 10.1, (1600, 1100)),
         ("floor-clearance", (0, -.01, 13), (0, 0, 0), 9.5, (1600, 1050)),
         ("study-detail", (0, -4.8, 3.9), (-3.10, -.05, .95), 4.4, (1200, 1100)),
+        ("wood-detail", (-1.6, -2.8, 2.6), (-3.5, -.95, .75), 1.9, (1400, 1100)),
+        ("fabric-detail", (1.6, -1.9, 2.5), (3.45, .53, .68), 2.25, (1400, 1100)),
+        ("kitchen-detail", (-1, -.7, 2.7), (-1.9, 1.6, .9), 2.9, (1400, 1100)),
+        ("interior", (0, -10.5, 3.7), (0, .15, .95), 8.8, (1800, 1100)),
     ]
     for name, position, target, span, resolution in views:
         if view and name != view:
@@ -140,6 +161,8 @@ def review(view=None, check_only=False):
         cam.location = position
         aim(cam, target)
         camera.ortho_scale = span
+        camera.type = "PERSP" if name == "interior" else "ORTHO"
+        camera.lens = 30
         scene.render.resolution_x, scene.render.resolution_y = resolution
         scene.render.filepath = str(preview / (name + ".png"))
         bpy.ops.render.render(write_still=True)
@@ -148,8 +171,10 @@ def review(view=None, check_only=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--view", choices=["wide-room", "floor-clearance", "study-detail"])
+    parser.add_argument("--view", choices=["wide-room", "floor-clearance", "study-detail",
+                                          "wood-detail", "fabric-detail", "kitchen-detail", "interior"])
     parser.add_argument("--check-only", action="store_true")
+    parser.add_argument("--materials", action="store_true")
     # Blender itself supplies unrelated arguments when run with --python.
     args, _ = parser.parse_known_args()
-    review(args.view, args.check_only)
+    review(args.view, args.check_only, args.materials)
