@@ -13,7 +13,10 @@ from feathers import BOTTOM, HEIGHT, ring, smooth
 
 WORK = HERE / "work"
 EYE_Z = 2.505
-EYE_RADIUS = .126
+EYE_RADIUS = .132
+MUSAN_HEIGHT = 1.00521434
+HEIGHT_RATIO = .48
+TSUKI_HEIGHT = MUSAN_HEIGHT * HEIGHT_RATIO
 ANIMATION = (
     (1, 0, 0, 0), (12, -22, 6, 0), (23, -43, -8, 0),
     (26, -47, -10, 1), (29, -47, -10, 1), (33, -46, -8, 0),
@@ -24,9 +27,19 @@ NECK = ("Body", "Neck_01", "Neck_02", "Neck_03", "Head")
 
 def eye_frame(sign):
     center = Vector((sign * .268, -.514, EYE_Z))
-    n = Vector((sign * .32, -.9474, 0)).normalized()
+    n = Vector((sign * .265, -.964, 0)).normalized()
     u = Vector((-n.y, n.x, 0))
     return center, n, u, Vector((0, 0, 1))
+
+
+def mesh_bounds(objects):
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    points = []
+    for obj in objects:
+        evaluated = obj.evaluated_get(depsgraph)
+        points.extend(tuple(evaluated.matrix_world @ v.co) for v in evaluated.data.vertices)
+    coords = np.asarray(points)
+    return coords.min(axis=0), coords.max(axis=0)
 
 
 def material(name, color, roughness, image=None):
@@ -203,14 +216,33 @@ def feet(rig, feather, horn):
             ], horn, rig, f"Toes.{suffix}", steps=12)
 
 
-def face(rig, amber, lid, dark, horn):
+def face(rig, amber, lid, dark, horn, cere, nostril):
     loft("Hooked beak", [
-        (0, -.644, 2.382, .044, .020), (0, -.694, 2.351, .060, .033),
-        (0, -.734, 2.308, .055, .043), (0, -.749, 2.261, .037, .024),
-        (0, -.740, 2.212, .023, .017), (0, -.719, 2.169, .003, .003),
-    ], horn, rig, "Head")
+        (0, -.651, 2.387, .031, .016), (0, -.686, 2.361, .045, .030),
+        (0, -.715, 2.336, .052, .036), (0, -.745, 2.301, .049, .037),
+        (0, -.757, 2.270, .040, .030), (0, -.757, 2.239, .028, .020),
+        (0, -.745, 2.213, .017, .013), (0, -.728, 2.192, .009, .008),
+        (0, -.711, 2.175, .002, .003),
+    ], horn, rig, "Head", steps=40)
+    loft("Feather-set cere", [
+        (0, -.656, 2.417, .026, .018), (0, -.686, 2.394, .045, .026),
+        (0, -.702, 2.373, .052, .033), (0, -.712, 2.354, .049, .031),
+        (0, -.716, 2.342, .038, .022), (0, -.719, 2.331, .026, .012),
+    ], cere, rig, "Head", steps=32)
 
     for sign, suffix in ((1, "L"), (-1, "R")):
+        loft("Naris."+suffix, [
+            (sign*.022, -.734, 2.370, .001, .001),
+            (sign*.029, -.737, 2.367, .004, .002),
+            (sign*.035, -.737, 2.362, .004, .002),
+            (sign*.042, -.731, 2.357, .001, .001),
+        ], nostril, rig, "Head", normal=(0, 0, 1), steps=16)
+        loft("Bill seam."+suffix, [
+            (sign*.050, -.743, 2.310, .0015, .001),
+            (sign*.045, -.757, 2.275, .0025, .0017),
+            (sign*.029, -.762, 2.233, .0021, .0014),
+            (sign*.013, -.743, 2.204, .0012, .0009),
+        ], nostril, rig, "Head", steps=12)
         p, n, u, up = eye_frame(sign)
         points, uvs = [], []
         for j in range(18):
@@ -222,18 +254,19 @@ def face(rig, amber, lid, dark, horn):
                 uvs.append((.5 + .5*sin(a)*cos(phi), .5 + .5*sin(a)*sin(phi)))
         mesh("Amber eye."+suffix, points, quads(18, 48) + caps(18, 48),
              amber, rig, "Head", uvs, flip=True)
-        for piece, vertical, rotation in (("Upper", 1, 49), ("Lower", -1, -46)):
+        for piece, vertical, rotation in (("Upper", 1, 42), ("Lower", -1, -42)):
             bone = f"Lid{piece}.{suffix}"
-            radius = .1278 if vertical == 1 else .1273
+            radius = EYE_RADIUS + (.0022 if vertical == 1 else .0017)
 
             def surface(rows, edge):
                 points = []
                 for j in range(rows):
                     for i in range(45):
                         horizontal = radians(-89.9 + i*179.8/44)
-                        start = rotation - 14*sin(horizontal)**2
+                        start = rotation - 18*sin(horizontal)**2
                         sweep = start + (vertical*177 - start)*j/(rows-1)
-                        angle = radians(start + vertical*(-.3+j*.54) if edge else sweep)
+                        thickness = 3.2 if vertical == 1 else 1.9
+                        angle = radians(start + vertical*(-.25 + j*thickness/(rows-1)) if edge else sweep)
                         shell = u*sin(horizontal) + (n*cos(angle) + up*sin(angle))*cos(horizontal)
                         points.append(tuple(p + (radius + (.00035 if edge else 0))*shell))
                 return points
@@ -257,7 +290,7 @@ def animate(rig):
                                         Quaternion(basis @ Vector((1, 0, 0)), radians(pitch*scale)))
             bone.keyframe_insert(data_path="rotation_quaternion", frame=frame, group=name)
         for suffix in ("L", "R"):
-            for name, turn in (("LidUpper", 50), ("LidLower", -47)):
+            for name, turn in (("LidUpper", 43.5), ("LidLower", -43.5)):
                 bone = rig.pose.bones[f"{name}.{suffix}"]
                 bone.rotation_mode = "QUATERNION"
                 bone.rotation_quaternion = Quaternion((0, 1, 0), radians(turn*blink))
@@ -275,9 +308,15 @@ def build():
     feet(rig, ivory, material("Ash horn claws", (.151, .12, .086), .55))
     face(rig, material("Amber iris", (.30, .135, .033), .19, "iris.png"),
          material("Ivory lids", (.79, .758, .697), .8),
-         material("Fine umber lid edges", (.071, .055, .041), .73),
-         material("Black keratin bill", (.021, .017, .015), .36))
+         material("Fine umber lid edges", (.043, .028, .020), .68),
+         material("Black keratin bill", (.014, .011, .009), .28),
+         material("Satin cere", (.022, .016, .011), .52),
+         material("Nostrils and bill seams", (.004, .003, .003), .55))
     animate(rig)
+    low, high = mesh_bounds(ob for ob in rig.children if ob.type == "MESH")
+    scale = TSUKI_HEIGHT / (high[2] - low[2])
+    rig.scale = (scale,) * 3
+    rig.location.z = -low[2] * scale
     output = WORK / "tsuki.glb"
     bpy.ops.export_scene.gltf(filepath=str(output), export_format="GLB", export_animations=True,
                              export_yup=True, export_all_influences=False)

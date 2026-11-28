@@ -35,6 +35,14 @@ def interpolate(xs, ys, sample):
             + (-2*t**3 + 3*t**2)*ys[i + 1] + (t**3 - t**2)*dx*slopes[i + 1])
 
 
+def facial_disc(x, z):
+    dx = abs(x) - .252
+    dz = z - 2.49 + .14 * dx
+    r = np.hypot(dx / .347, dz / .324)
+    angle = np.arctan2(dz / .324, dx / .347)
+    return r, angle
+
+
 def ring(theta, z):
     py = 889 - 220 * z
     width, back, front = (interpolate(PROFILE[:, 0], PROFILE[:, i], py) for i in (1, 2, 3))
@@ -49,6 +57,10 @@ def ring(theta, z):
               * smooth(.35, .82, c))
     powers = np.where(c > 0, .78 + .13 * smooth(1.8, 2.4, z), .85)
     y = (798 - center - depth * np.sign(c) * abs(c)**powers + 31 * socket) / 220
+    r, _ = facial_disc(x, z)
+    face = smooth(.44, .80, c)
+    y -= face * (.023 * np.exp(-((r - .90) / .16)**2)
+                 - .013 * np.exp(-((r - 1.085) / .10)**2))
     # Raised scapulars and the groove between the folded wings.
     mantle = smooth(.47, .9, z) * (1 - smooth(1.48, 1.99, z))
     y += .054 * mantle * smooth(.1, .55, abs(s)) * smooth(.15, .85, -c)
@@ -101,6 +113,13 @@ def bake():
     weight = smooth(.29, .78, abs(c) + irregular)[..., None]
     result = side * (1 - weight) + np.where((c > 0)[..., None], front, rear) * weight
     result -= 12 * (1 - smooth(78, 185, result))
+    r, a = facial_disc(x, z)
+    grain = np.sin(101*a + r*11) + .52*np.sin(173*a - r*14) + .30*np.sin(227*a + r*19)
+    below = (1 - np.sin(a)) / 2
+    outer = np.exp(-((r - 1.01 - .025*np.sin(5*a))/.105)**2)
+    edge = smooth(.48, .85, c) * smooth(.045, .22, abs(x))
+    feather = smooth(.40, .67, r) * (1 - smooth(.94, 1.22, r))
+    result += (edge * (-outer * (12 + 12*below) + grain*feather*3.25))[..., None] * [1, 1.04, 1.12]
     Image.fromarray(result.clip(0, 255).astype("uint8")).save(
         WORK / "plumage.jpg", quality=93, subsampling=0)
 
@@ -110,13 +129,15 @@ def bake():
     x, y = np.meshgrid(coord, coord)
     r, a = np.hypot(x, y), np.arctan2(y, x)
     spokes = np.sin(a * 83 + np.sin(r * 24) * 1.3) + .42 * np.sin(a * 131 + r * 31)
-    gold = (.92 + .16 * np.clip(y, -1, 1) + .12 * spokes
-            + .15 * np.sin(r * 17 + np.sin(a * 13)))[..., None]
-    iris = np.array([176, 115, 37]) * gold
-    rim = (1 - smooth(.73, .99, r))[..., None]
-    pupil = smooth(.48, .535, np.hypot(x + .018, y - .018))[..., None]
-    eye = (iris * rim + np.array([37, 24, 11]) * (1 - rim)) * pupil
-    eye += np.array([12, 9, 8]) * (1 - pupil)
+    gold = (.87 + .20 * np.clip(y, -1, 1) + .09 * spokes
+            + .12 * np.sin(r * 19 + np.sin(a * 13)))[..., None]
+    iris = np.array([168, 103, 35]) * gold
+    rim = (1 - smooth(.806, .977, r))[..., None]
+    pupil = smooth(.626, .655, np.hypot(x + .015, y + .045))[..., None]
+    eye = (iris * rim + np.array([24, 16, 12]) * (1 - rim)) * pupil
+    eye += np.array([9, 7, 6]) * (1 - pupil)
+    catchlight = (1 - smooth(.54, 1, np.hypot((x+.275)/.132, (y+.315)/.104)))[..., None] * .81
+    eye = eye * (1 - catchlight) + np.array([222, 220, 209]) * catchlight
     Image.fromarray(eye.clip(0, 255).astype("uint8")).save(WORK / "iris.png")
 
     y, x = np.mgrid[0:1:384j, -1:1:144j]

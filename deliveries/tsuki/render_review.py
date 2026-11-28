@@ -1,6 +1,8 @@
 """Re-import the delivered GLB, verify the skin and animation, and render evidence."""
+import hashlib
 import json
 import sys
+import zipfile
 from math import degrees
 from pathlib import Path
 
@@ -10,7 +12,11 @@ from mathutils import Vector
 HERE = Path(__file__).resolve().parent
 WORK = HERE / "work"
 sys.path.insert(0, str(HERE))
-from build_tsuki import NECK, eye_frame
+from build_tsuki import HEIGHT_RATIO, MUSAN_HEIGHT, NECK, TSUKI_HEIGHT, eye_frame, mesh_bounds
+
+MUSAN_MODEL = "models/musan-butler-detail-v12.glb"
+MUSAN_ARCHIVE = "Musan_Current_Summary_2026-11-27.zip"
+MUSAN_SHA256 = "a656295b226adb614281acfc2e6f61faeba9f1b66abe28dd6b9cdbd4dd11b84d"
 
 
 def assert_pose(rig, scene):
@@ -58,7 +64,7 @@ def light(name, location, energy, size, color):
     return obj
 
 
-def studio(scene):
+def studio(scene, units):
     scene.render.engine = "CYCLES"
     scene.cycles.samples = 14
     scene.cycles.use_denoising = True
@@ -73,7 +79,7 @@ def studio(scene):
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Medium High Contrast"
     scene.view_settings.exposure = .4
-    bpy.ops.mesh.primitive_plane_add(size=800, location=(0, 0, .007))
+    bpy.ops.mesh.primitive_plane_add(size=800, location=(0, 0, -.001))
     floor = bpy.data.materials.new("Warm gallery floor")
     floor.use_nodes = True
     bsdf = floor.node_tree.nodes.get("Principled BSDF")
@@ -82,13 +88,57 @@ def studio(scene):
     bpy.context.object.data.materials.append(floor)
     key = light("Key", (-3, -4, 6), 540, 3.7, (1, .91, .82))
     fill = light("Fill", (3.8, -2.6, 3.8), 235, 4.0, (.82, .90, 1))
-    light("Top softbox", (0, 2, 6), 320, 3.5, (1, .96, .91))
+    top = light("Top softbox", (0, 2, 6), 320, 3.5, (1, .96, .91))
+    for lamp in (key, fill, top):
+        lamp.location *= units
+        lamp.data.size *= units
+        lamp.data.energy *= units**2
     camera = bpy.data.cameras.new("Orthographic review")
     camera.type = "ORTHO"
     camera.clip_end = 650
     scene.camera = bpy.data.objects.new(camera.name, camera)
     bpy.context.collection.objects.link(scene.camera)
     return key, fill
+
+
+def import_musan():
+    archive = HERE.parent / "musan" / MUSAN_ARCHIVE
+    if "--musan-archive" in sys.argv:
+        archive = Path(sys.argv[sys.argv.index("--musan-archive") + 1]).resolve()
+    with zipfile.ZipFile(archive) as bundle:
+        data = bundle.read(MUSAN_MODEL)
+    assert hashlib.sha256(data).hexdigest() == MUSAN_SHA256
+    path = WORK / "musan.glb"
+    path.write_bytes(data)
+    old = set(bpy.context.scene.objects)
+    bpy.ops.import_scene.gltf(filepath=str(path), disable_bone_shape=True)
+    new = set(bpy.context.scene.objects) - old
+    low, high = mesh_bounds(ob for ob in new if ob.type == "MESH")
+    measured = float(high[2] - low[2])
+    assert abs(measured - MUSAN_HEIGHT) < .00002, measured
+    for obj in new:
+        if obj.parent not in new:
+            obj.location += Vector((-.30 - (low[0] + high[0])/2, 0, -low[2]))
+    return measured
+
+
+def render_scale(scene, rig, key, fill):
+    scene.frame_set(12)
+    measured = import_musan()
+    rig.location.x += .414
+    key.location = (-.58, -.95, 1.66)
+    fill.location = (.83, -.80, .99)
+    key.data.size, fill.data.size = .90, .90
+    key.data.energy, fill.data.energy = 42, 22
+    aim(key, (0, 0, .54))
+    aim(fill, (0, 0, .52))
+    scene.render.resolution_x, scene.render.resolution_y = 640, 590
+    scene.camera.location = (-.07, -3.3, .68)
+    scene.camera.data.ortho_scale = 1.41
+    aim(scene.camera, (-.07, 0, .53))
+    scene.render.filepath = str(WORK / "scale.png")
+    bpy.ops.render.render(write_still=True)
+    return measured
 
 
 def review():
@@ -110,19 +160,25 @@ def review():
     skins = [ob for ob in scene.objects if ob.type == "MESH"]
     assert all(any(m.type == "ARMATURE" and m.object == rig for m in ob.modifiers) for ob in skins)
     assert glb.stat().st_size <= 10_000_000
+    scene.frame_set(1)
+    low, high = mesh_bounds(skins)
+    height = float(high[2] - low[2])
+    assert abs(height - TSUKI_HEIGHT) < .00002 and abs(low[2]) < .00002, (low, high)
     statistics = {
         "bytes": glb.stat().st_size,
         "joint_count": len(names),
         "joint_names": names,
         "triangles": sum(len(face.vertices)-2 for ob in skins for face in ob.data.polygons),
+        "scale": {"tsuki_height_m": round(height, 6), "musan_height_m": round(MUSAN_HEIGHT, 6),
+                  "tsuki_to_musan_height_ratio": HEIGHT_RATIO},
         **assert_pose(rig, scene),
     }
-    (WORK / "verification.json").write_text(json.dumps(statistics, ensure_ascii=False, indent=2) + "\n")
     print("GLB verification:", json.dumps(statistics, ensure_ascii=False), flush=True)
     if "--check-only" in sys.argv:
         return
 
-    key, fill = studio(scene)
+    units = height / 3.01
+    key, fill = studio(scene, units)
     views = [
         ("front", 1, (0, -8, 1.87), (0, 0, 1.51), 3.58),
         ("side", 1, (-8, .25, 1.87), (0, .25, 1.51), 3.58),
@@ -138,13 +194,20 @@ def review():
             key.location, fill.location = (3, 4, 6), (-3.8, 2.6, 3.8)
         else:
             key.location, fill.location = (-3, -4, 6), (3.8, -2.6, 3.8)
-        aim(key, (0, 0, 1.44))
-        aim(fill, (0, 0, 1.44))
-        scene.camera.location = position
-        scene.camera.data.ortho_scale = scale
-        aim(scene.camera, target)
+        key.location *= units
+        fill.location *= units
+        aim(key, (0, 0, 1.44 * units))
+        aim(fill, (0, 0, 1.44 * units))
+        scene.camera.location = Vector(position) * units
+        scene.camera.data.ortho_scale = scale * units
+        aim(scene.camera, Vector(target) * units)
         scene.render.filepath = str(WORK / f"{name}.png")
         bpy.ops.render.render(write_still=True)
+    measured = render_scale(scene, rig, key, fill)
+    statistics["scale"]["musan_height_m"] = round(measured, 6)
+    assert abs(height/measured - HEIGHT_RATIO) < .00002
+    print(f"Measured height: Tsuki {height:.6f} m / Musan {measured:.6f} m = {height/measured:.4%}")
+    (WORK / "verification.json").write_text(json.dumps(statistics, ensure_ascii=False, indent=2) + "\n")
 
 
 if __name__ == "__main__":
