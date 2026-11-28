@@ -1,0 +1,81 @@
+{
+  "created": "2026-11-28",
+  "latest_model": "models/tsuki.glb",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2483,
+      "sha256": "781326852c7914c766e39d8f457d332a66f64108716612d09a608e756e95891b"
+    },
+    {
+      "path": "models/tsuki.glb",
+      "bytes": 2273296,
+      "sha256": "1054e47fc3888c8b93269b78d080fa703d6bc7e9a2cfc3425431512c028963e2"
+    },
+    {
+      "path": "preview/back-comparison.png",
+      "bytes": 672199,
+      "sha256": "a2120f26b2c2dc879dfa6d521b9287f679a69ede00d5af01aa3050998614dcd3"
+    },
+    {
+      "path": "preview/front-comparison.png",
+      "bytes": 634514,
+      "sha256": "5b5fa2db9f263296667d39397663345aeb72a8737a33e82c875a78ef0c3b04c0"
+    },
+    {
+      "path": "preview/head-turn-blink.png",
+      "bytes": 543477,
+      "sha256": "55601436ac2f31bf0a0d407c6ba05be21d7e4e63536c93c556e0c2b86691c13b"
+    },
+    {
+      "path": "preview/side-comparison.png",
+      "bytes": 640496,
+      "sha256": "1ba96075a206fe5fa406d3af5ebb93c9dfc20cd0934fabacdd6ff32711a242fa"
+    },
+    {
+      "path": "source/README.md",
+      "bytes": 2483,
+      "sha256": "781326852c7914c766e39d8f457d332a66f64108716612d09a608e756e95891b"
+    },
+    {
+      "path": "source/build_tsuki.py",
+      "bytes": 12966,
+      "sha256": "a58f214ce0d599c826fbe458b7fd568d6ac665c996c2ccf0887b6af1e43003c7"
+    },
+    {
+      "path": "source/feathers.py",
+      "bytes": 6000,
+      "sha256": "d0c398b9a156d69e021e4897f274d9371a782e0d7a3fd3c7ef635e63f21c179f"
+    },
+    {
+      "path": "source/package_delivery.py",
+      "bytes": 4244,
+      "sha256": "b25e9fe3cf812b1c922d75b53126bbd692014726bade0fb9eb1e6a407a6a1250"
+    },
+    {
+      "path": "source/references/rig-diagram.webp",
+      "bytes": 467708,
+      "sha256": "8b7bec30318dfd53c20c8e6e817dc4ea930fc41871e42fd77feeb1124e031224"
+    },
+    {
+      "path": "source/references/three-view.webp",
+      "bytes": 319766,
+      "sha256": "f248f635b44aadebefe1cbba015afd92f6290e5331a0be6165ac712c64d5e58d"
+    },
+    {
+      "path": "source/render_review.py",
+      "bytes": 6414,
+      "sha256": "f6e517bf978cffd8402445360179e4a23975a8f3cf3b8cf914426af66a41d49b"
+    },
+    {
+      "path": "source/requirements-build.txt",
+      "bytes": 29,
+      "sha256": "5c9e2a35c13823db2e6f73e49ae0a13eb889beac175c84d54e9e313296ecbf00"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 590,
+      "sha256": "e5f702dd1e28cd68e2324c205b4921bb77628bc6c609090e1d76c60b03fea0c6"
+    }
+  ]
+}
