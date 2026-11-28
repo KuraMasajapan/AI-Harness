@@ -31,68 +31,68 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 4323,
-      "sha256": "35fb9d8ff54872a460a8cb4ecf4b55da184f2d1971bba156b5e3f7dcecd27c9b"
+      "bytes": 4333,
+      "sha256": "c65de18e187d39892c95bb362ff295aecfc98246ccdbd83c033b849a03405309"
     },
     {
       "path": "models/tsuki.glb",
-      "bytes": 2595576,
-      "sha256": "98a075b9db14116b11b294f075fd16a6cd2e06be0213308b16dd88a9844efead"
+      "bytes": 2851680,
+      "sha256": "d8f265b783ab266cecdb007b7927593ab9e4765ca57ab693be972c239648c460"
     },
     {
       "path": "preview/back-comparison.png",
-      "bytes": 674683,
-      "sha256": "6047e62ad84f9e4ee4356f514e0712d313bd341d4cb5db2fb22b40e48aae0ac5"
+      "bytes": 674735,
+      "sha256": "b35202acf20a3ce306ba2e9c737641136c28ea6f235ee323e2d5373f878c6b52"
     },
     {
       "path": "preview/beak-comparison.png",
-      "bytes": 429697,
-      "sha256": "baa0fd70627ad3cac483611977aa2836286bb093e26273eae85213deb65ca48c"
+      "bytes": 428708,
+      "sha256": "f859f4c5efa92615767cf3c136b2501863a04908daf2ae60bfc61b7ec88da81d"
     },
     {
       "path": "preview/face-comparison.png",
-      "bytes": 557810,
-      "sha256": "653530c215bf3aa62930cbf5f84c128481e723bf52af2a59063d2fced649405e"
+      "bytes": 562282,
+      "sha256": "958e973f66405628a8e4b8ffa9067b3aa6b9124cb4fc5805072e0328ccfa5ac9"
     },
     {
       "path": "preview/face-photo-comparison.png",
-      "bytes": 545681,
-      "sha256": "d6503b00695a5d2cdadb5780cbba1a24d6013345e2b7cd494d56827e322fcfda"
+      "bytes": 550485,
+      "sha256": "c82d1702d910acf1c58f7f3f4ed2cff04df470549f2d28416f76a4ccbc928185"
     },
     {
       "path": "preview/front-comparison.png",
-      "bytes": 638896,
-      "sha256": "065131770fdbc9c621d91e8b766c6394fca2006c52e049bcbb30389adfea1a7a"
+      "bytes": 638908,
+      "sha256": "bb38c451d83f96b4c5ff876d8ec46575600fb393e58d100b61713dd787286430"
     },
     {
       "path": "preview/head-turn-blink.png",
-      "bytes": 538463,
-      "sha256": "569dfe1f501ffd7d7be3c54022ab2d34700074d464546b36a4172cd29b9a46e6"
+      "bytes": 542912,
+      "sha256": "6eefce8f86aec6970b48073b4dfd4e583d1495a168ff4e481cc7a245933cc685"
     },
     {
       "path": "preview/scale-comparison.png",
-      "bytes": 640942,
-      "sha256": "66e652bf3b519a5b4f0a4c4a20648908db9342aab5862f7d154660460936fadd"
+      "bytes": 641134,
+      "sha256": "a78b6c4f8335c76c77e08e960bdc10941bd7e59e6042be6c85ca2245779ef61a"
     },
     {
       "path": "preview/side-comparison.png",
-      "bytes": 642879,
-      "sha256": "1b26fa321cf6033c07cff4f883f599f2e00bce5c1ab0f7d0a7b9ae13c9ab155c"
+      "bytes": 642958,
+      "sha256": "7b8d0bab4cd805537e1c0a991d96dfd8daea18b75530b734a9ed8fed67c86282"
     },
     {
       "path": "source/README.md",
-      "bytes": 4323,
-      "sha256": "35fb9d8ff54872a460a8cb4ecf4b55da184f2d1971bba156b5e3f7dcecd27c9b"
+      "bytes": 4333,
+      "sha256": "c65de18e187d39892c95bb362ff295aecfc98246ccdbd83c033b849a03405309"
     },
     {
       "path": "source/build_tsuki.py",
-      "bytes": 17985,
-      "sha256": "2c78085152f0615d7a3c32ce798fd40cd73f30685edbd2cb1299d8a15d4753fb"
+      "bytes": 18230,
+      "sha256": "94ee9fc6d08586dd8a7479f386496c6f888b82715873e6d7404850bfd2a98e31"
     },
     {
       "path": "source/feathers.py",
-      "bytes": 9743,
-      "sha256": "5c6bc15c3e0e31108bbd54a4a3baaea1183760289546e2a55f66ce13d4f11861"
+      "bytes": 9933,
+      "sha256": "a92e5039a5ba31da9f1aacf8819939a8b9d16d0c47e3efd02ab48ae94dcdd037"
     },
     {
       "path": "source/package_delivery.py",
@@ -121,8 +121,8 @@
     },
     {
       "path": "source/render_review.py",
-      "bytes": 12729,
-      "sha256": "600c2118c724c5020058ed03a26fffc36c20d317eb9c18788704c654f38a7bca"
+      "bytes": 13119,
+      "sha256": "e86ef42d6f5973b39758cac35fcbacab6506e8d776b35b5ea558134fcb25d64c"
     },
     {
       "path": "source/requirements-build.txt",
@@ -131,8 +131,8 @@
     },
     {
       "path": "verification.json",
-      "bytes": 1550,
-      "sha256": "0e2ad58778a9b7a6c8989bea3727f8f30ab60447d238a497a54bd23a8aeee84a"
+      "bytes": 1614,
+      "sha256": "f7b0c379197f55777c94679e4026a5f7ac5a94f2a65f6c7827468f0727929be6"
     }
   ]
 }

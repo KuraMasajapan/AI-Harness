@@ -13,6 +13,7 @@ from feathers import BOTTOM, EYE_X, EYE_Z, HEIGHT, ring, smooth
 
 WORK = HERE / "work"
 EYE_RADIUS = .115
+LIDS = (("Upper", 59, 14, 75), ("Lower", -58, 7, -62))
 MUSAN_HEIGHT = 1.00521434
 HEIGHT_RATIO = .48
 TSUKI_HEIGHT = MUSAN_HEIGHT * HEIGHT_RATIO
@@ -133,11 +134,16 @@ def caps(rows, steps):
 def plumage(rig, mat):
     steps, rows = 124, 132
     theta = -pi + np.arange(steps) * 2 * pi / steps
+    near_face = (abs(theta) < .65) & (abs(theta) > .12)
+    theta = np.sort(np.concatenate((theta, theta[near_face] + pi/steps)))
     # Latitude spacing closes the ends of the sculpt without a pinched pole.
     z = BOTTOM + (HEIGHT - BOTTOM) * (1 - np.cos(np.linspace(0, pi, rows))) / 2
+    near_eyes = abs(z[:-1] - EYE_Z) < .145
+    z = np.sort(np.concatenate((z, ((z[:-1] + z[1:])/2)[near_eyes])))
+    steps, rows = len(theta), len(z)
     x, y = ring(theta[None, :], z[:, None])
     points = [(x[j, i], y[j, i], z[j]) for j in range(rows) for i in range(steps)]
-    uv = [(i / steps, (value - BOTTOM) / (HEIGHT - BOTTOM)) for value in z for i in range(steps)]
+    uv = [((angle + pi)/(2*pi), (value - BOTTOM)/(HEIGHT - BOTTOM)) for value in z for angle in theta]
 
     def weights(point):
         x, y, z = point
@@ -300,13 +306,14 @@ def face(rig, amber, lid, dark, horn, lower, gape, bristle_tones):
             a = .001 + j * (pi-.002)/17
             for i in range(48):
                 phi = 2*pi*i/48
-                offset = sin(a) * (u*cos(phi) + up*sin(phi)*.91)
+                offset = sin(a) * (u*cos(phi) + up*sin(phi))
                 inset = .011 * (1 - smooth(.18, .66, sin(a))) if a < pi/2 else 0
                 points.append(tuple(p + n * (EYE_RADIUS*cos(a) - inset) + EYE_RADIUS*offset))
                 uvs.append((.5 + .5*sin(a)*cos(phi), .5 + .5*sin(a)*sin(phi)))
         mesh("Amber eye."+suffix, points, quads(18, 48) + caps(18, 48),
              amber, rig, "Head", uvs, flip=True)
-        for piece, vertical, rotation in (("Upper", 1, 30), ("Lower", -1, -42)):
+        for piece, rotation, corner, _ in LIDS:
+            vertical = 1 if piece == "Upper" else -1
             bone = f"Lid{piece}.{suffix}"
             radius = EYE_RADIUS + (.0022 if vertical == 1 else .0017)
 
@@ -315,18 +322,18 @@ def face(rig, amber, lid, dark, horn, lower, gape, bristle_tones):
                 for j in range(rows):
                     for i in range(45):
                         horizontal = radians(-89.9 + i*179.8/44)
-                        start = rotation + (22 if vertical == 1 else 7)*sin(horizontal)**2
+                        start = rotation + corner*sin(horizontal)**2
                         sweep = start + (vertical*177 - start)*j/(rows-1)
-                        thickness = 5.4 if vertical == 1 else 3.2
-                        angle = radians(start + vertical*(-.25 + j*thickness/(rows-1)) if edge else sweep)
+                        angle = radians(start - .25 + j*3.1/(rows-1) if edge else sweep)
                         shell = u*sin(horizontal) + (n*cos(angle) + up*sin(angle))*cos(horizontal)
                         points.append(tuple(p + (radius + (.00035 if edge else 0))*shell))
                 return points
 
             mesh(f"{piece} lid.{suffix}", surface(22, False), quads(22, 45, wrap=False),
                  lid, rig, bone, flip=vertical == -1)
-            mesh(f"{piece} lid edge.{suffix}", surface(3, True), quads(3, 45, wrap=False),
-                 dark, rig, bone, flip=vertical == -1)
+            if vertical == 1:
+                mesh(f"{piece} lid edge.{suffix}", surface(3, True), quads(3, 45, wrap=False),
+                     dark, rig, bone)
 
 
 def animate(rig):
@@ -342,8 +349,8 @@ def animate(rig):
                                         Quaternion(basis @ Vector((1, 0, 0)), radians(pitch*scale)))
             bone.keyframe_insert(data_path="rotation_quaternion", frame=frame, group=name)
         for suffix in ("L", "R"):
-            for name, turn in (("LidUpper", 46), ("LidLower", -46)):
-                bone = rig.pose.bones[f"{name}.{suffix}"]
+            for piece, _, _, turn in LIDS:
+                bone = rig.pose.bones[f"Lid{piece}.{suffix}"]
                 bone.rotation_mode = "QUATERNION"
                 bone.rotation_quaternion = Quaternion((0, 1, 0), radians(turn*blink))
                 bone.keyframe_insert(data_path="rotation_quaternion", frame=frame, group=bone.name)
