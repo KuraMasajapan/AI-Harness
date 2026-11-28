@@ -1,0 +1,39 @@
+{
+  "id": "musan-butler-outfit",
+  "revision": "surface-fit-long-tailcoat",
+  "label": "執事服一式",
+  "asset": "models/musan-butler-outfit.glb",
+  "root": "ButlerOutfit",
+  "part_count": 1,
+  "slot": "full_outfit",
+  "towel_included": false,
+  "character_included": false,
+  "wearer": {
+    "file": "models/musan-bare-shape.glb",
+    "sha256": "22cf5278e1067365dee6438b08d37256ed64caab2585df1dacac6282bb72e2bb",
+    "included": true
+  },
+  "placement": {
+    "same_parent_as_wearer": true,
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "rotation_quaternion_xyzw": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "up": "+Y"
+  },
+  "rigged": false,
+  "animation_following": false,
+  "runtime_verified": false
+}

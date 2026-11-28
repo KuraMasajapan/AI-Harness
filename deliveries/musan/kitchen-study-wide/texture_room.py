@@ -205,7 +205,7 @@ def uv_project(obj):
                               co[axes[1]] * abs(obj.scale[axes[1]]) / scale[1] + offset*.7)
 
 
-def build():
+def build(scene_hook=None):
     assert hashlib.sha256((WORK/"musan-butler-detail-v12.glb").read_bytes()).hexdigest() == AVATAR_SHA256
     maps = generate_maps()
     bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -354,6 +354,8 @@ def build():
         # Preserve the source atlas UVs on untouched food/dishes.
         if any(m.name.startswith("PBR ") for m in obj.data.materials):
             uv_project(obj)
+    if scene_hook is not None:
+        scene_hook(palette)
     # Bake room-only modifiers before batching. Join by material AND zone so
     # the floor-clearance check remains meaningful and runtime draw calls fall.
     depsgraph=bpy.context.evaluated_depsgraph_get()

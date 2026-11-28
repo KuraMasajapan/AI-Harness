@@ -1,0 +1,122 @@
+{
+  "created": "2026-11-28",
+  "files": {
+    "models/musan-bare-shape.glb": {
+      "bytes": 5478364,
+      "sha256": "22cf5278e1067365dee6438b08d37256ed64caab2585df1dacac6282bb72e2bb",
+      "source_zip": "bare-shape/Musan_Bare_Shape_2026-11-28.zip",
+      "source_entry": "models/musan-bare-shape.glb"
+    },
+    "previews/bare-reference-comparison.png": {
+      "bytes": 1564264,
+      "sha256": "334c1cb0f024e8727ff0d2d72f89484f9ade31e2874d2fa2c9ccca2f210ae80e",
+      "source_zip": "bare-shape/Musan_Bare_Shape_2026-11-28.zip",
+      "source_entry": "review/reference-comparison.png"
+    },
+    "models/musan-butler-outfit.glb": {
+      "bytes": 3330380,
+      "sha256": "5230a1840c1df4f1d7f70b6ee5ec9f8ed582952b447062af945a70f932ffecc9",
+      "source_zip": "butler-outfit/Musan_Butler_Outfit_Refined_2026-11-28.zip",
+      "source_entry": "models/musan-butler-outfit.glb"
+    },
+    "previews/butler-reference-comparison.png": {
+      "bytes": 1395503,
+      "sha256": "ea865eeef5f786676ed679cdc51083e91962df32e7f7cc4202213d517fea2e14",
+      "source_zip": "butler-outfit/Musan_Butler_Outfit_Refined_2026-11-28.zip",
+      "source_entry": "previews/reference-comparison.png"
+    },
+    "previews/butler-wearing-review.png": {
+      "bytes": 843947,
+      "sha256": "e9d511089c66535e03f7debcb79d794bc8e018fea2d9e0e65c91a05fdbcb63c9",
+      "source_zip": "butler-outfit/Musan_Butler_Outfit_Refined_2026-11-28.zip",
+      "source_entry": "previews/wearing-review.png"
+    },
+    "wardrobe.json": {
+      "bytes": 772,
+      "sha256": "386fe38a02248dca30f0fe901b6f2376ad87298d8ee2383a311b3a1f46d0af29",
+      "source_zip": "butler-outfit/Musan_Butler_Outfit_Refined_2026-11-28.zip",
+      "source_entry": "wardrobe.json",
+      "source_sha256": "fea169715f838539d1f7940a273b88395cddd47f23703076242faaffa99fe6e1",
+      "adaptation": "Resolve model paths from latest/; wearer included in combined directory only."
+    },
+    "models/kitchen-study.glb": {
+      "bytes": 7365788,
+      "sha256": "f9d2ec80f048ff5655f01241d64be1600f9c24a9e86827ae88fbb719e05dcc88",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "models/kitchen-study.glb"
+    },
+    "scene-placement.json": {
+      "bytes": 1504,
+      "sha256": "7bc17963a5010dcbfdcc042a2ba266129522485adf2687b4bedbdbb3e355641d",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "muse/scene-placement.json",
+      "source_sha256": "28904eac1b41b6a3e20fc05dbff297e5657463e8a5ca74c05a1c33015c849567",
+      "adaptation": "Resolve model paths from latest/; wearer included in combined directory only."
+    },
+    "lighting-evening.json": {
+      "bytes": 3549,
+      "sha256": "81fdd0c7dc1081ee7accf918e6f7b1bfbda8675b4abe5f07367cb4420c5ca63b",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "muse/lighting-evening.json"
+    },
+    "previews/room-refinement-comparison.jpg": {
+      "bytes": 495733,
+      "sha256": "164db6b6983b21895391759e4e0462ed1db1d4ff1349675ee95f38f4c5d07b5a",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "preview/room-refinement-comparison.jpg"
+    },
+    "previews/room-wide.png": {
+      "bytes": 2016253,
+      "sha256": "250c97c7af4c06cc0f6cbf7dca20e0e8b5ec0cbfe24f9df02f1eedd5211a325f",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "preview/wide-room.png"
+    },
+    "previews/window-detail.png": {
+      "bytes": 2147200,
+      "sha256": "d72fb5715f6f7eaac39486cf171aea0cd9d2ec1135b7aec1f3baca87151090a7",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "preview/window-detail.png"
+    },
+    "previews/books-detail.png": {
+      "bytes": 2853607,
+      "sha256": "bdd9e45dd48a626aae1666d012baab7d2b135f09d3bb292ba3395e61f7cd1c31",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "preview/books-detail.png"
+    },
+    "previews/kitchen-detail.png": {
+      "bytes": 2077776,
+      "sha256": "4f8249bf4f88bc352feeaa20667320f3825a400a74799a7460419e3ff64ca8c5",
+      "source_zip": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "source_entry": "preview/kitchen-detail.png"
+    },
+    "models/musan-butler-detail-v12.glb": {
+      "bytes": 7948280,
+      "sha256": "a656295b226adb614281acfc2e6f61faeba9f1b66abe28dd6b9cdbd4dd11b84d",
+      "source_zip": "Musan_Current_Summary_2026-11-27.zip",
+      "source_entry": "models/musan-butler-detail-v12.glb"
+    }
+  },
+  "archives": [
+    {
+      "path": "bare-shape/Musan_Bare_Shape_2026-11-28.zip",
+      "bytes": 6504518,
+      "sha256": "73f469c2e4cf30656bd38377c1bfdb1aba0ecd8e44336d5b0820bc569fe24239",
+      "crc_verified": true
+    },
+    {
+      "path": "butler-outfit/Musan_Butler_Outfit_Refined_2026-11-28.zip",
+      "bytes": 14017351,
+      "sha256": "3f23653ae142e56d540a02d484f7302e86a27c8e7db7ae99007a301c31c4e6c0",
+      "crc_verified": true
+    },
+    {
+      "path": "kitchen-study-refined/Musan_Kitchen_Study_Refined_2026-11-28.zip",
+      "bytes": 37136180,
+      "sha256": "ae1cd6059634e22003a85f818b873cd743bf565fdaf0fb990410222e3eb6d641",
+      "crc_verified": true
+    }
+  ],
+  "extracted_models_match_delivered_archives": true,
+  "Muse_iPhone_runtime_verified": false,
+  "walking_rig_implemented": false
+}
