@@ -44,6 +44,11 @@ def comparisons():
     board(left, right, "TSUKI  /  TURN + BLINK", "02   ANIMATION CHECK FROM EXPORTED GLB  /  24 FPS",
           ("FRAME 23  /  turned, eyes open", "FRAME 27  /  turned, eyes closed")).save(
         preview / "head-turn-blink.png")
+    right = Image.open(WORK / "face-detail.png").convert("RGB")
+    left = source.crop((102, 204, 446, 468)).resize(right.size, Image.Resampling.LANCZOS)
+    board(left, right, "TSUKI  /  FACE DETAIL", "04   EYE PLACEMENT, BROW SHADOW AND IRIS",
+          ("REFERENCE  /  front-view crop", "MODEL  /  exported GLB close-up")).save(
+        preview / "face-comparison.png")
     scale = json.loads((WORK / "verification.json").read_text())["scale"]
     right = Image.open(WORK / "scale.png").convert("RGB")
     photo = Image.open(HERE / "references/musan-tsuki-scale.png").convert("RGB")
@@ -63,7 +68,7 @@ def package():
         "verification.json": (WORK / "verification.json").read_bytes(),
     }
     for name in ("front-comparison", "side-comparison", "back-comparison", "head-turn-blink",
-                 "scale-comparison"):
+                 "scale-comparison", "face-comparison"):
         path = f"preview/{name}.png"
         files[path] = (HERE / path).read_bytes()
     for name in ("build_tsuki.py", "render_review.py", "feathers.py", "package_delivery.py",

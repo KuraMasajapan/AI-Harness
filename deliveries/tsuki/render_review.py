@@ -7,12 +7,14 @@ from math import degrees
 from pathlib import Path
 
 import bpy
+import numpy as np
 from mathutils import Vector
 
 HERE = Path(__file__).resolve().parent
 WORK = HERE / "work"
 sys.path.insert(0, str(HERE))
 from build_tsuki import HEIGHT_RATIO, MUSAN_HEIGHT, NECK, TSUKI_HEIGHT, eye_frame, mesh_bounds
+from feathers import HEIGHT, ring
 
 MUSAN_MODEL = "models/musan-butler-detail-v12.glb"
 MUSAN_ARCHIVE = "Musan_Current_Summary_2026-11-27.zip"
@@ -48,6 +50,38 @@ def assert_pose(rig, scene):
     return {"rest_eye_center_hits": opened, "frame_27_eye_center_hits": closed,
             "frame_27_test_rays_without_visible_iris": len(exposed),
             "frame_27_head_rotation_degrees": round(turned, 2)}
+
+
+def front_proportions(scene, rig, skins):
+    # Read the exposed eye apertures from the imported mesh, not the eye sphere bounds.
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    eyes = []
+    for sign in (-1, 1):
+        hits = []
+        for x in sign * np.arange(.105, .431, .005):
+            for z in np.arange(2.350, 2.656, .005):
+                origin = rig.matrix_world @ Vector((x, -2, z))
+                hit, _, _, _, obj, _ = scene.ray_cast(depsgraph, origin, (0, 1, 0))
+                if hit and obj.name.startswith(("Amber eye", "Lower lid edge", "Upper lid edge")):
+                    hits.append((x, z))
+        assert hits, sign
+        coords = np.array(hits)
+        eyes.append((coords.min(axis=0), coords.max(axis=0)))
+    center = [(low + high)/2 for low, high in eyes]
+    aperture_width = sum(high[0]-low[0]+.005 for low, high in eyes)/2
+    head_width = float(2*ring(np.pi/2, (889-405)/220)[0])
+    foot_low, foot_high = mesh_bounds(ob for ob in skins if ob.name.startswith(("Toe ", "Claw ")))
+    body_low, body_high = mesh_bounds(skins)
+    ratios = {
+        "eye_height_percent_down_from_crown": (HEIGHT - (center[0][1] + center[1][1])/2)/(222/220),
+        "eye_spacing_percent_of_head_width": (center[1][0]-center[0][0])/head_width,
+        "eye_width_percent_of_head_width": aperture_width/head_width,
+        "foot_span_percent_of_body_width": (foot_high[0]-foot_low[0])/(body_high[0]-body_low[0]),
+    }
+    reference = [116/222, 117/306, 44/306, 267/397]
+    assert all(abs(value - target) < .045 for value, target in zip(ratios.values(), reference)), ratios
+    return {key: {"reference": round(target*100, 1), "model": round(value*100, 1)}
+            for (key, value), target in zip(ratios.items(), reference)}
 
 
 def aim(obj, target):
@@ -87,7 +121,7 @@ def studio(scene, units):
     bsdf.inputs["Roughness"].default_value = .9
     bpy.context.object.data.materials.append(floor)
     key = light("Key", (-3, -4, 6), 540, 3.7, (1, .91, .82))
-    fill = light("Fill", (3.8, -2.6, 3.8), 235, 4.0, (.82, .90, 1))
+    fill = light("Fill", (3.8, -2.6, 3.8), 185, 4.0, (.82, .90, 1))
     top = light("Top softbox", (0, 2, 6), 320, 3.5, (1, .96, .91))
     for lamp in (key, fill, top):
         lamp.location *= units
@@ -172,6 +206,7 @@ def review():
         "scale": {"tsuki_height_m": round(height, 6), "musan_height_m": round(MUSAN_HEIGHT, 6),
                   "tsuki_to_musan_height_ratio": HEIGHT_RATIO},
         **assert_pose(rig, scene),
+        "front_proportions": front_proportions(scene, rig, skins),
     }
     print("GLB verification:", json.dumps(statistics, ensure_ascii=False), flush=True)
     if "--check-only" in sys.argv:
@@ -185,9 +220,12 @@ def review():
         ("back", 1, (0, 8, 1.87), (0, 0, 1.51), 3.58),
         ("head-open", 23, (-.24, -8, 2.64), (-.24, 0, 2.49), 1.92),
         ("head-blink", 27, (-.24, -8, 2.64), (-.24, 0, 2.49), 1.92),
+        ("face-detail", 1, (0, -8, 2.54), (0, 0, 2.50), 1.567),
     ]
     for name, frame, position, target, scale in views:
         scene.frame_set(frame)
+        if name == "face-detail":
+            scene.render.resolution_x, scene.render.resolution_y = 620, 476
         if name == "side":
             key.location, fill.location = (-5, -3, 6), (-3, 4, 4)
         elif name == "back":

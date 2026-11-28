@@ -9,11 +9,10 @@ from mathutils import Quaternion, Vector
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from feathers import BOTTOM, HEIGHT, ring, smooth
+from feathers import BOTTOM, EYE_X, EYE_Z, HEIGHT, ring, smooth
 
 WORK = HERE / "work"
-EYE_Z = 2.505
-EYE_RADIUS = .132
+EYE_RADIUS = .115
 MUSAN_HEIGHT = 1.00521434
 HEIGHT_RATIO = .48
 TSUKI_HEIGHT = MUSAN_HEIGHT * HEIGHT_RATIO
@@ -26,8 +25,8 @@ NECK = ("Body", "Neck_01", "Neck_02", "Neck_03", "Head")
 
 
 def eye_frame(sign):
-    center = Vector((sign * .268, -.514, EYE_Z))
-    n = Vector((sign * .265, -.964, 0)).normalized()
+    center = Vector((sign * EYE_X, -.436, EYE_Z))
+    n = Vector((sign * .359, -.933, 0)).normalized()
     u = Vector((-n.y, n.x, 0))
     return center, n, u, Vector((0, 0, 1))
 
@@ -154,7 +153,8 @@ def plumage(rig, mat):
                 mat, rig, weights, uv)
 
 
-def loft(name, sections, mat, rig, weights, normal=(1, 0, 0), textured=False, steps=18):
+def loft(name, sections, mat, rig, weights, normal=(1, 0, 0), textured=False, steps=18,
+         feathered=False):
     centers = [Vector(section[:3]) for section in sections]
     points, uv = [], []
     for i, (_, _, _, width, depth) in enumerate(sections):
@@ -162,8 +162,11 @@ def loft(name, sections, mat, rig, weights, normal=(1, 0, 0), textured=False, st
         across = Vector(normal)
         across = (across - across.dot(direction) * direction).normalized()
         other = direction.cross(across)
-        points.extend(tuple(centers[i] + across * (width * cos(2*pi*k/steps))
-                            + other * (depth * sin(2*pi*k/steps))) for k in range(steps))
+        for k in range(steps):
+            angle = 2*pi*k/steps
+            puff = 1 + .075 * (sin(6*angle+i*.51) + .33*sin(11*angle-i*.72)) if feathered else 1
+            points.append(tuple(centers[i] + puff * (across * (width * cos(angle))
+                                + other * (depth * sin(angle)))))
         if textured:
             uv.extend((.5 + .48*cos(2*pi*k/steps), 1 - i/(len(sections)-1)) for k in range(steps))
     return mesh(name, points, quads(len(sections), steps) + caps(len(sections), steps), mat, rig,
@@ -193,26 +196,28 @@ def flight_feathers(rig, mat):
 
 def feet(rig, feather, horn):
     for sign, suffix in ((1, "L"), (-1, "R")):
-        x = sign * .327
+        x = sign * .339
         loft("Feathered shank."+suffix, [
-            (x*.82, .007, .35, .157, .136), (x*.91, -.009, .253, .131, .112),
-            (x, -.064, .142, .121, .097), (x, -.201, .082, .154, .069),
-            (x, -.276, .066, .102, .035), (x, -.298, .063, .018, .013),
+            (x*.82, .012, .37, .166, .139), (x*.91, -.012, .270, .154, .120),
+            (x, -.082, .168, .154, .126), (x, -.219, .097, .174, .092),
+            (x, -.290, .077, .122, .055), (x, -.332, .072, .022, .016),
         ], feather, rig, lambda p: {f"Leg.{suffix}": smooth(.15, .31, p[2]),
-                                    f"Ankle.{suffix}": 1-smooth(.15, .31, p[2])})
+                                    f"Ankle.{suffix}": 1-smooth(.15, .31, p[2])},
+             textured=True, feathered=True, steps=32)
         for i in range(-1, 2):
-            xd = x + sign * i * .154
-            y = -.435 + .045 * abs(i) + .012 * i
+            xd = x + sign * i * .178
+            y = -.473 + .049 * abs(i) + .015 * i
             loft(f"Toe {i+2}.{suffix}", [
-                (x + sign*i*.09, -.181, .094, .071, .064),
-                (x + sign*i*.123, -.286, .092, .087, .069),
-                (xd, y+.044, .072, .068, .053), (xd, y-.017, .055, .043, .038),
-                (xd, y-.027, .057, .015, .016),
-            ], feather, rig, f"Toes.{suffix}")
+                (x + sign*i*.095, -.177, .124, .088, .081),
+                (x + sign*i*.135, -.265, .119, .100, .092),
+                (xd, y+.071, .103, .089, .079), (xd, y+.032, .085, .083, .060),
+                (xd, y-.008, .065, .060, .046),
+                (xd, y-.035, .046, .035, .026), (xd, y-.048, .042, .010, .012),
+            ], feather, rig, f"Toes.{suffix}", textured=True, feathered=True, steps=32)
             loft(f"Claw {i+2}.{suffix}", [
-                (xd, y+.004, .065, .025, .023), (xd, y-.028, .061, .022, .02),
-                (xd + sign*.009, y-.055, .039, .013, .011),
-                (xd + sign*.012, y-.06, .017, .002, .002),
+                (xd, y-.013, .063, .023, .021), (xd, y-.041, .058, .023, .020),
+                (xd + sign*.006, y-.058, .039, .015, .012),
+                (xd + sign*.009, y-.066, .013, .002, .002),
             ], horn, rig, f"Toes.{suffix}", steps=12)
 
 
@@ -250,7 +255,8 @@ def face(rig, amber, lid, dark, horn, cere, nostril):
             for i in range(48):
                 phi = 2*pi*i/48
                 offset = sin(a) * (u*cos(phi) + up*sin(phi)*.91)
-                points.append(tuple(p + EYE_RADIUS * (n*cos(a) + offset)))
+                inset = .011 * (1 - smooth(.18, .66, sin(a))) if a < pi/2 else 0
+                points.append(tuple(p + n * (EYE_RADIUS*cos(a) - inset) + EYE_RADIUS*offset))
                 uvs.append((.5 + .5*sin(a)*cos(phi), .5 + .5*sin(a)*sin(phi)))
         mesh("Amber eye."+suffix, points, quads(18, 48) + caps(18, 48),
              amber, rig, "Head", uvs, flip=True)
@@ -304,9 +310,15 @@ def build():
     rig = skeleton()
     plumage(rig, material("Reference plumage", (.85, .82, .75), .84, "plumage.jpg"))
     flight_feathers(rig, material("Flight feather markings", (.85, .82, .75), .87, "tail.jpg"))
-    ivory = material("Soft ivory feathers", (.82, .795, .731), .8)
-    feet(rig, ivory, material("Ash horn claws", (.151, .12, .086), .55))
-    face(rig, material("Amber iris", (.30, .135, .033), .19, "iris.png"),
+    ivory = material("Soft ivory feathers", (.82, .795, .731), .9, "toe-feather.jpg")
+    feet(rig, ivory, material("Charcoal horn claws", (.052, .036, .026), .48))
+    amber = material("Amber iris, diffuse body and corneal sheen", (.30, .135, .033), .37, "iris.png")
+    eye_shader = amber.node_tree.nodes.get("Principled BSDF")
+    eye_shader.inputs["IOR"].default_value = 1.376
+    eye_shader.inputs["Specular IOR Level"].default_value = .16
+    eye_shader.inputs["Coat Weight"].default_value = .14
+    eye_shader.inputs["Coat Roughness"].default_value = .39
+    face(rig, amber,
          material("Ivory lids", (.79, .758, .697), .8),
          material("Fine umber lid edges", (.043, .028, .020), .68),
          material("Black keratin bill", (.014, .011, .009), .28),

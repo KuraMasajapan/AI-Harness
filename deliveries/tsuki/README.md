@@ -8,6 +8,7 @@ closed while the head is turned and tilted.
 
 - Three-view comparisons: [front](preview/front-comparison.png),
   [side](preview/side-comparison.png), [back](preview/back-comparison.png)
+- [Face close-up against the reference](preview/face-comparison.png)
 - Rig demo stills: [turned, open vs. closed](preview/head-turn-blink.png)
 - Scale: [ツキ next to むーさん, with the supplied portrait](preview/scale-comparison.png)
 - Integrity: [per-file manifest](manifest.json) · [ZIP checksum](SHA256SUMS)
@@ -19,8 +20,11 @@ silhouettes, with separate flight feathers, toes, talons, beak, eyes and lids.
 Feather markings and color were baked from the supplied three-view, keeping the
 face light and the wings and back more heavily spotted. No paid image-to-3D
 service was used. The layering and feather detail are simplified for real-time use.
-The revision adds a clearer feathered facial disc, larger dark pupils in glossy
-amber eyes, softly outlined lids, and a hooked bill with a cere and nostrils.
+The revision recesses the smaller eyes under a feathered brow and shades the
+sockets, facial disc and bill base. The amber iris uses a dark inner gradient,
+radial fibers, and a subdued catchlight beneath a glTF clearcoat. The toes
+are wider, fuller, and feathered with dark claws. The hooked bill, cere, and
+nostrils retain their previous size.
 
 The rig has 18 deform joints: `Body`, `Neck_01`, `Neck_02`, `Neck_03`, `Head`,
 `Tail`, and left/right pairs of `Wing`, `Leg`, `Ankle`, `Toes`, `LidUpper`
@@ -30,7 +34,9 @@ as a nineteenth joint. GLB playback uses sampled FK rotations; the leg chains
 do not ship with Blender IK controls. No changes were made to any Muse space.
 
 The review script renders the **re-imported GLB** and verifies the hierarchy and
-eye closure at the turned pose. The ZIP includes those measurements in
+eye closure at the turned pose. It measures the exposed eyes from the front
+and compares their placement and width, and the foot span, against landmarks
+on the supplied sheet. The ZIP includes those measurements in
 `verification.json`. Muse/player or mobile performance has not been tested.
 
 ## Scale next to むーさん

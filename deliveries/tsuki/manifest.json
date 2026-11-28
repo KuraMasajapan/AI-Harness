@@ -9,58 +9,63 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3544,
-      "sha256": "092353e665918a9118427b7a491b12dabc42872d79091cf1a8d0153cf3740ae9"
+      "bytes": 3944,
+      "sha256": "91b92eaee251c28a960abeb4eddfe7714fa2cad3ac67b856742563164ebfd3cc"
     },
     {
       "path": "models/tsuki.glb",
-      "bytes": 2298132,
-      "sha256": "032ab0a5410cc8376fc2d2ab213a74e70dc50f70c5b713e2878d00d3cd4ffef9"
+      "bytes": 2382684,
+      "sha256": "a224c9c76bbeb3c54d89ff3a718ad73f3e737f3313af540e23eaec6543ae8232"
     },
     {
       "path": "preview/back-comparison.png",
-      "bytes": 672055,
-      "sha256": "6ab099b670b163e86472d693d0a663989351d0583fd7f422d5a26f29542b14f8"
+      "bytes": 674800,
+      "sha256": "37365ff7f047f88b6703be48cf087e9b255a71e00763db2aa17ee90b016b3240"
+    },
+    {
+      "path": "preview/face-comparison.png",
+      "bytes": 554627,
+      "sha256": "6aec13c7cfc05aa603fc375e98ab7c9dd87610c3e6d036c34987542823f37011"
     },
     {
       "path": "preview/front-comparison.png",
-      "bytes": 635376,
-      "sha256": "e40e668a9de21606d1b161ee44e379fee2d4b49382ea2955ab67d57be0f1f500"
+      "bytes": 638882,
+      "sha256": "b9a0c89d8cb20b2fb770a662ac833c9133767ef684dd66e028056cbf660f634f"
     },
     {
       "path": "preview/head-turn-blink.png",
-      "bytes": 548234,
-      "sha256": "2f451cbc1513cc1269650e772e4e0ce609b69ba44a7d6d55de52b43d151ac793"
+      "bytes": 539524,
+      "sha256": "7c5c9291f75290e45eb7945792364abfb236ddbfd4743fd43a96c4009adc350a"
     },
     {
       "path": "preview/scale-comparison.png",
-      "bytes": 640614,
-      "sha256": "08ffbf2cd2b52e3c442b69804516348420c447f1880839e67d4c5a533f469196"
+      "bytes": 641020,
+      "sha256": "41f3e4f1aeba56256e15ae064d346c7189550f3f4a547919409476e760ee2bce"
     },
     {
       "path": "preview/side-comparison.png",
-      "bytes": 641602,
-      "sha256": "b6554879cbd7a8d01585212f0ab67023c0711aa3521834cf827cb1faf8d027db"
+      "bytes": 642936,
+      "sha256": "48d4c3eff8b68146771b1cae6ea0688505ba9f113ac4fcb2ab4f16712dfa4743"
     },
     {
       "path": "source/README.md",
-      "bytes": 3544,
-      "sha256": "092353e665918a9118427b7a491b12dabc42872d79091cf1a8d0153cf3740ae9"
+      "bytes": 3944,
+      "sha256": "91b92eaee251c28a960abeb4eddfe7714fa2cad3ac67b856742563164ebfd3cc"
     },
     {
       "path": "source/build_tsuki.py",
-      "bytes": 14818,
-      "sha256": "f746326b1754615679bb1901b5d5e221a861f6aae95b1c7da7c85ef9ad6e0e5e"
+      "bytes": 15634,
+      "sha256": "1763b6d0d5f4a4279e3f970aa98cc55de251d7b8a6160aeecc28a53b8db7f630"
     },
     {
       "path": "source/feathers.py",
-      "bytes": 6956,
-      "sha256": "c2c6cfc259a333b0975c42505f2f94241baa798f3dbeba1c7517b66cadf0649c"
+      "bytes": 8366,
+      "sha256": "367fa4a0f56809dc963a0831277f24dc248269fa3f0fcda1d376ffa2aafa0a36"
     },
     {
       "path": "source/package_delivery.py",
-      "bytes": 5049,
-      "sha256": "f07f09efd830018c047664caa6464c7a66bd7ecd6bfad77487f4d95a0e0b411d"
+      "bytes": 5441,
+      "sha256": "ea357e93c98f78868369ffe345f0f6936033fdbab3734944e2d7ed27ee60211f"
     },
     {
       "path": "source/references/musan-tsuki-scale.png",
@@ -79,8 +84,8 @@
     },
     {
       "path": "source/render_review.py",
-      "bytes": 9126,
-      "sha256": "db1e5e68e3a89e41f5c8233d2b47581acdf67e13a104fa7898780bb074feaa9e"
+      "bytes": 11183,
+      "sha256": "b0ff50d258c4e05208f8c419ee231f054d8e7417f6c35fa712c0ab875b0c8f1a"
     },
     {
       "path": "source/requirements-build.txt",
@@ -89,8 +94,8 @@
     },
     {
       "path": "verification.json",
-      "bytes": 722,
-      "sha256": "f28c443d9312b2129a734b0a5fdc25dfe3b155b7feef4d20495a39e1b0260dda"
+      "bytes": 1128,
+      "sha256": "afb2a0ec07411e6f8d8ec2c4a943a3104260741cbe20dd00952b7cd06d64598c"
     }
   ]
 }
