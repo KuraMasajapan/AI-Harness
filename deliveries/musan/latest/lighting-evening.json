@@ -1,0 +1,168 @@
+{
+  "coordinate_system": "glTF Y-up; source units, not calibrated meters",
+  "embedded_extension": "KHR_lights_punctual",
+  "intensity_unit": "candela, copied from the exported GLB",
+  "lights": [
+    {
+      "color": [
+        1,
+        0.4699999988079071,
+        0.1599999964237213
+      ],
+      "intensity": 2826.273479425877,
+      "type": "point",
+      "range": 4.199999809265137,
+      "name": "Golden string glow left",
+      "position_y_up": [
+        -2.65,
+        2.04,
+        -1.91
+      ],
+      "cast_shadow": false,
+      "soft_shadow_radius_source_units": 0.28
+    },
+    {
+      "color": [
+        1,
+        0.4699999988079071,
+        0.1599999964237213
+      ],
+      "intensity": 2826.273479425877,
+      "type": "point",
+      "range": 4.199999809265137,
+      "name": "Golden string glow right",
+      "position_y_up": [
+        2.65,
+        2.04,
+        -1.91
+      ],
+      "cast_shadow": false,
+      "soft_shadow_radius_source_units": 0.28
+    },
+    {
+      "color": [
+        1,
+        0.5199999809265137,
+        0.20000000298023224
+      ],
+      "intensity": 1304.4339135811742,
+      "type": "point",
+      "range": 2,
+      "name": "Amber desk lamp",
+      "position_y_up": [
+        -3.76,
+        1.21,
+        0.52
+      ],
+      "cast_shadow": false,
+      "soft_shadow_radius_source_units": 0.065
+    },
+    {
+      "color": [
+        1,
+        0.550000011920929,
+        0.25999999046325684
+      ],
+      "intensity": 9783.254351858806,
+      "spot": {
+        "innerConeAngle": 0.17453291567963802,
+        "outerConeAngle": 0.8726646304130554
+      },
+      "type": "spot",
+      "range": 8,
+      "name": "Round window sunset",
+      "position_y_up": [
+        1.1,
+        1.52,
+        -2.08
+      ],
+      "cast_shadow": true,
+      "soft_shadow_radius_source_units": 0.3,
+      "target_y_up": [
+        -0.65,
+        0.13,
+        1.55
+      ]
+    }
+  ],
+  "review_environment": {
+    "color_linear_rgb": [
+      0.14,
+      0.08,
+      0.035
+    ],
+    "strength": 0.16,
+    "tone_mapper": "AgX",
+    "exposure_ev": 0.45
+  },
+  "review_only_area_fill_blender_watts": [
+    {
+      "name": "Large golden key",
+      "position_y_up": [
+        -3,
+        7,
+        4
+      ],
+      "power_watts": 320,
+      "size": 5,
+      "color_linear_rgb": [
+        1,
+        0.72,
+        0.44
+      ],
+      "target_y_up": [
+        0,
+        0.5,
+        0
+      ]
+    },
+    {
+      "name": "Low dusk fill",
+      "position_y_up": [
+        4,
+        6,
+        1
+      ],
+      "power_watts": 100,
+      "size": 4,
+      "color_linear_rgb": [
+        0.65,
+        0.72,
+        0.85
+      ],
+      "target_y_up": [
+        0,
+        0.5,
+        0
+      ]
+    },
+    {
+      "name": "Warm ceiling bounce",
+      "position_y_up": [
+        0,
+        6,
+        -1
+      ],
+      "power_watts": 180,
+      "size": 4,
+      "color_linear_rgb": [
+        1,
+        0.74,
+        0.44
+      ],
+      "target_y_up": [
+        0,
+        0.5,
+        0
+      ]
+    }
+  ],
+  "host_setup": {
+    "avoid_duplicate_lights": "Import embedded lights OR create these, never both",
+    "shadows": "Prefer only the sunset shadow; disable all on slower phones",
+    "ambient": "Dim warm environment; avoid a bright grey/white default hemisphere",
+    "environment_reflections": "Keep a low-level environment reflection for the metal",
+    "tone_mapping": "Use a filmic tone mapper; avoid clipping amber highlights",
+    "review_lighting": "See render_review.py for additional non-exported area fill"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "lights": [
+    {
+      "color": [
+        1,
+        0.4699999988079071,
+        0.1599999964237213
+      ],
+      "intensity": 2826.273479425877,
+      "type": "point",
+      "range": 4.199999809265137,
+      "name": "Golden string glow left"
+    },
+    {
+      "color": [
+        1,
+        0.4699999988079071,
+        0.1599999964237213
+      ],
+      "intensity": 2826.273479425877,
+      "type": "point",
+      "range": 4.199999809265137,
+      "name": "Golden string glow right"
+    },
+    {
+      "color": [
+        1,
+        0.5199999809265137,
+        0.20000000298023224
+      ],
+      "intensity": 1304.4339135811742,
+      "type": "point",
+      "range": 2,
+      "name": "Amber desk lamp"
+    },
+    {
+      "color": [
+        1,
+        0.550000011920929,
+        0.25999999046325684
+      ],
+      "intensity": 9783.254351858806,
+      "spot": {
+        "innerConeAngle": 0.17453291567963802,
+        "outerConeAngle": 0.8726646304130554
+      },
+      "type": "spot",
+      "range": 8,
+      "name": "Round window sunset"
+    }
+  ]
+}
