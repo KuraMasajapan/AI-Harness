@@ -56,15 +56,23 @@ def front_proportions(scene, rig, skins):
     # Read the exposed eye apertures from the imported mesh, not the eye sphere bounds.
     depsgraph = bpy.context.evaluated_depsgraph_get()
     eyes = []
+    eye_roundness = []
     for sign in (-1, 1):
         hits = []
+        iris = []
         for x in sign * np.arange(.105, .431, .005):
             for z in np.arange(2.350, 2.656, .005):
                 origin = rig.matrix_world @ Vector((x, -2, z))
                 hit, _, _, _, obj, _ = scene.ray_cast(depsgraph, origin, (0, 1, 0))
-                if hit and obj.name.startswith(("Amber eye", "Lower lid edge", "Upper lid edge")):
+                if hit and obj.name.startswith(("Amber eye", "Upper lid edge")):
                     hits.append((x, z))
+                    if obj.name.startswith("Amber eye"):
+                        iris.append((x, z))
         assert hits, sign
+        assert iris, sign
+        width, height = np.ptp(iris, axis=0) + .005
+        assert .90 <= height/width <= 1.10, (sign, width, height)
+        eye_roundness.append(round(float(height/width), 3))
         coords = np.array(hits)
         eyes.append((coords.min(axis=0), coords.max(axis=0)))
     center = [(low + high)/2 for low, high in eyes]
@@ -80,8 +88,9 @@ def front_proportions(scene, rig, skins):
     }
     reference = [116/222, 117/306, 44/306, 267/397]
     assert all(abs(value - target) < .045 for value, target in zip(ratios.values(), reference)), ratios
-    return {key: {"reference": round(target*100, 1), "model": round(value*100, 1)}
-            for (key, value), target in zip(ratios.items(), reference)}
+    return {**{key: {"reference": round(target*100, 1), "model": round(value*100, 1)}
+               for (key, value), target in zip(ratios.items(), reference)},
+            "open_eye_height_to_width": eye_roundness}
 
 
 def bill_proportions(scene, rig):

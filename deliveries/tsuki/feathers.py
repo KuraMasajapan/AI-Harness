@@ -80,6 +80,9 @@ def ring(theta, z):
     y -= .036 * bristle_crest(x, z) * face
     y -= face * (.023 * np.exp(-((r - .90) / .16)**2)
                  - .013 * np.exp(-((r - 1.085) / .10)**2))
+    aperture = np.hypot(abs(x) - EYE_X, dz)
+    socket_floor = -.438 - .176*smooth(.091, .117, aperture)
+    y += np.maximum(0, socket_floor - y) * (1 - smooth(.117, .130, aperture)) * face
     # Raised scapulars and the groove between the folded wings.
     mantle = smooth(.47, .9, z) * (1 - smooth(1.48, 1.99, z))
     y += .054 * mantle * smooth(.1, .55, abs(s)) * smooth(.15, .85, -c)

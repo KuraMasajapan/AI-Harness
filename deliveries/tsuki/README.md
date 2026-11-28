@@ -27,7 +27,7 @@ sockets, facial disc and bill base. The amber iris uses a dark inner gradient,
 radial fibers, and a subdued catchlight beneath a glTF clearcoat. The toes
 are wider, fuller, and feathered with dark claws. The slate bill has a darker
 hooked tip below a raised V of facial bristle feathers that conceals its base.
-Flatter upper eyelids and dark rims frame the amber irises. The manifest compares visible
+Raised upper eyelids and thin dark rims frame the round amber irises. The manifest compares visible
 bill width and height relative to the head in the reference and exported GLB.
 
 The rig has 18 deform joints: `Body`, `Neck_01`, `Neck_02`, `Neck_03`, `Head`,
