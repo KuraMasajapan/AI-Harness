@@ -52,6 +52,12 @@ def socket_profile(x, z):
     return dx, dz, brow
 
 
+def bristle_crest(x, z):
+    branch = .017 + .44 * np.maximum(0, z - 2.345)
+    length = smooth(2.326, 2.398, z) * (1 - smooth(2.501, 2.610, z))
+    return np.exp(-((abs(x) - branch)/.045)**2) * length
+
+
 def ring(theta, z):
     py = 889 - 220 * z
     width, back, front = (interpolate(PROFILE[:, 0], PROFILE[:, i], py) for i in (1, 2, 3))
@@ -71,6 +77,7 @@ def ring(theta, z):
     y -= .041 * np.exp(-((abs(x)-.054)/.048)**2 - ((z-2.368)/.079)**2) * smooth(.71, .97, c)
     r, _ = facial_disc(x, z)
     face = smooth(.44, .80, c)
+    y -= .036 * bristle_crest(x, z) * face
     y -= face * (.023 * np.exp(-((r - .90) / .16)**2)
                  - .013 * np.exp(-((r - 1.085) / .10)**2))
     # Raised scapulars and the groove between the folded wings.
@@ -138,9 +145,14 @@ def bake():
     brow_shadow = 87 * np.exp(-((brow + .031)/.028)**2 - (dx/.129)**4)
     bill_root = 28 * np.exp(-(x/.085)**2 - ((z - 2.375)/.083)**2)
     fibers = np.abs(np.sin(336*x + np.sign(x)*34*(z-2.350) + .54*np.sin(217*z)))**7
-    bill_root += 96 * fibers * np.exp(-((abs(x)-.034)/.037)**2 - ((z-2.374)/.065)**2)
+    bill_root += 44 * fibers * np.exp(-((abs(x)-.034)/.037)**2 - ((z-2.374)/.065)**2)
     shading = smooth(.42, .89, c) * (orbit + brow_shadow + bill_root)
     result *= 1 - shading[..., None] / 305 * np.array([.91, 1, 1.14])
+    crest = bristle_crest(x, z) * smooth(.71, .96, c)
+    direction = abs(x) - .46*(z - 2.35)
+    barbs = np.sin(390*direction + .65*np.sin(130*z)) + .43*np.sin(707*direction - 61*z)
+    result = result * (1 - .61*crest[..., None]) + crest[..., None] * (
+        .61*np.array([237, 234, 227]) + 8*barbs[..., None])
     Image.fromarray(result.clip(0, 255).astype("uint8")).save(
         WORK / "plumage.jpg", quality=93, subsampling=0)
 
@@ -168,8 +180,9 @@ def bake():
     striae = np.sin(27*u + np.sin(v*8)*.42) + .4*np.sin(49*u - v*3)
     ridge = 15*np.maximum(0, np.sin(u))**22
     cutting_edge = 10*np.cos(u)**36 * smooth(.16, .55, v)
-    keratin = 37 + 15*smooth(.63, 1, v) + ridge + cutting_edge + 2.4*striae
-    Image.fromarray(np.stack((keratin + 2, keratin, keratin - 2), axis=-1)
+    keratin = 33 + 40*smooth(.04, .76, v) + ridge + cutting_edge + 2.4*striae
+    slate = smooth(0, .31, v)
+    Image.fromarray(np.stack((keratin - 6*slate, keratin + 3*slate, keratin + 13*slate), axis=-1)
                     .clip(0, 255).astype("uint8")).save(WORK / "bill-keratin.jpg", quality=93)
 
     v, u = np.mgrid[0:1:320j, -1:1:192j]

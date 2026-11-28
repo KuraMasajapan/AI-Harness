@@ -9,6 +9,7 @@ closed while the head is turned and tilted.
 - Three-view comparisons: [front](preview/front-comparison.png),
   [side](preview/side-comparison.png), [back](preview/back-comparison.png)
 - [Face close-up against the reference](preview/face-comparison.png)
+- [Face close-up against the supplied owl photo](preview/face-photo-comparison.png)
 - [Turned beak close-up against the reference profile](preview/beak-comparison.png)
 - Rig demo stills: [turned, open vs. closed](preview/head-turn-blink.png)
 - Scale: [ツキ next to むーさん, with the supplied portrait](preview/scale-comparison.png)
@@ -24,9 +25,9 @@ service was used. The layering and feather detail are simplified for real-time u
 The revision recesses the smaller eyes under a feathered brow and shades the
 sockets, facial disc and bill base. The amber iris uses a dark inner gradient,
 radial fibers, and a subdued catchlight beneath a glTF clearcoat. The toes
-are wider, fuller, and feathered with dark claws. The dark keratin bill has
-a ridged upper mandible that hooks over a smaller lower mandible, a narrow
-gape, and a cere tucked below facial bristles. The manifest compares visible
+are wider, fuller, and feathered with dark claws. The slate bill has a darker
+hooked tip below a raised V of facial bristle feathers that conceals its base.
+Flatter upper eyelids and dark rims frame the amber irises. The manifest compares visible
 bill width and height relative to the head in the reference and exported GLB.
 
 The rig has 18 deform joints: `Body`, `Neck_01`, `Neck_02`, `Neck_03`, `Head`,

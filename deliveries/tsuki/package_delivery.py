@@ -49,6 +49,11 @@ def comparisons():
     board(left, right, "TSUKI  /  FACE DETAIL", "04   EYE PLACEMENT, BROW SHADOW AND IRIS",
           ("REFERENCE  /  front-view crop", "MODEL  /  exported GLB close-up")).save(
         preview / "face-comparison.png")
+    photo = Image.open(HERE / "references/IMG_5234.jpeg").convert("RGB")
+    left = ImageOps.pad(photo, right.size, Image.Resampling.LANCZOS, color="#f0efed")
+    board(left, right, "TSUKI  /  FACE PHOTO STUDY", "06   BRISTLE RIDGE, SLATE BILL AND EYELID RIM",
+          ("REFERENCE  /  supplied IMG_5234", "MODEL  /  exported GLB close-up")).save(
+        preview / "face-photo-comparison.png")
     right = Image.open(WORK / "beak-detail.png").convert("RGB")
     left = source.crop((829, 339, 989, 462)).resize(right.size, Image.Resampling.LANCZOS)
     board(left, right, "TSUKI  /  BEAK DETAIL", "05   HOOK, CULMEN AND MANDIBLE SEAM",
@@ -73,12 +78,13 @@ def package():
         "verification.json": (WORK / "verification.json").read_bytes(),
     }
     for name in ("front-comparison", "side-comparison", "back-comparison", "head-turn-blink",
-                 "scale-comparison", "face-comparison", "beak-comparison"):
+                 "scale-comparison", "face-comparison", "beak-comparison", "face-photo-comparison"):
         path = f"preview/{name}.png"
         files[path] = (HERE / path).read_bytes()
     for name in ("build_tsuki.py", "render_review.py", "feathers.py", "package_delivery.py",
                  "requirements-build.txt", "README.md", "references/three-view.webp",
-                 "references/rig-diagram.webp", "references/musan-tsuki-scale.png"):
+                 "references/rig-diagram.webp", "references/musan-tsuki-scale.png",
+                 "references/IMG_5234.jpeg"):
         files["source/" + name] = (HERE / name).read_bytes()
     verification = json.loads(files["verification.json"])
     manifest = {

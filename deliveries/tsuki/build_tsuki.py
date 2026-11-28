@@ -221,19 +221,19 @@ def feet(rig, feather, horn):
             ], horn, rig, f"Toes.{suffix}", steps=12)
 
 
-def hooked_bill(rig, horn, lower, gape, feather):
+def hooked_bill(rig, horn, lower, gape):
     # (Half-width, side seam y/z, dorsal y/z, ventral depth), from root to hook.
     sections = (
         (.048, -.672, 2.338, -.699, 2.434, .009),
         (.067, -.720, 2.324, -.731, 2.413, .007),
-        (.071, -.735, 2.309, -.745, 2.389, .006),
-        (.077, -.742, 2.287, -.759, 2.350, .005),
-        (.053, -.746, 2.271, -.760, 2.316, .005),
+        (.058, -.735, 2.309, -.745, 2.389, .006),
+        (.057, -.742, 2.287, -.759, 2.350, .005),
+        (.042, -.746, 2.271, -.760, 2.316, .005),
         (.032, -.756, 2.250, -.782, 2.283, .004),
         (.021, -.755, 2.230, -.786, 2.255, .003),
         (.012, -.748, 2.211, -.772, 2.230, .003),
-        (.005, -.738, 2.196, -.752, 2.207, .002),
-        (.0008, -.727, 2.187, -.730, 2.191, .0007),
+        (.005, -.738, 2.193, -.752, 2.204, .002),
+        (.0008, -.727, 2.179, -.730, 2.183, .0007),
     )
     steps = 48
     points, uvs = [], []
@@ -268,19 +268,31 @@ def hooked_bill(rig, horn, lower, gape, feather):
             (sign*.028, -.720, 2.399, .004, .002),
             (sign*.031, -.725, 2.392, .002, .001),
         ], gape, rig, "Head", normal=(0, 0, 1), steps=12)
-        for i in range(5):
-            x = sign*(.016 + i*.011)
-            z = 2.390 - i*.007 + .005*sin(3*i + sign)
-            loft(f"Bill root bristle {i}.{side}", [
-                (x*1.26, -.728, z+.014, .0022, .0022),
-                (x*1.08, -.743, z+.001, .0019, .0019),
-                (x, -.749, z-.011, .0013, .0013),
-                (x*.85, -.754 + i*.001, z-.020, .0004, .0004),
-            ], feather, rig, "Head", steps=10)
 
 
-def face(rig, amber, lid, dark, horn, lower, gape):
-    hooked_bill(rig, horn, lower, gape, lid)
+def facial_bristles(rig, tones):
+    angles = np.linspace(-.45, .45, 125)
+    for sign, side in ((1, "L"), (-1, "R")):
+        for row in range(3):
+            for i in range(13):
+                x = sign*(.019 + .007*i + .012*row)
+                z = 2.418 + .62*abs(x) - .042*row + .006*sin(i*2.7 + row + sign)
+                width = .0021 + .0010*(1 + cos(i*2.1 + row))
+                length = .045 + .010*sin(i*1.67 + row) + .009*row
+                sections = []
+                for t, offset, taper in ((0, .006, .68), (.28, -.003, 1),
+                                         (.61, -.010, .76), (1, -.015, .13)):
+                    tx, tz = x*(1 - .47*t), z - t*length
+                    xs, ys = ring(angles, tz)
+                    y = float(np.interp(tx, xs, ys))
+                    sections.append((tx, y+offset, tz, width*taper, width*taper*.58))
+                loft(f"Facial bristle {row}-{i}.{side}", sections, tones[(i+row)%len(tones)],
+                     rig, "Head", steps=8)
+
+
+def face(rig, amber, lid, dark, horn, lower, gape, bristle_tones):
+    hooked_bill(rig, horn, lower, gape)
+    facial_bristles(rig, bristle_tones)
     for sign, suffix in ((1, "L"), (-1, "R")):
         p, n, u, up = eye_frame(sign)
         points, uvs = [], []
@@ -294,7 +306,7 @@ def face(rig, amber, lid, dark, horn, lower, gape):
                 uvs.append((.5 + .5*sin(a)*cos(phi), .5 + .5*sin(a)*sin(phi)))
         mesh("Amber eye."+suffix, points, quads(18, 48) + caps(18, 48),
              amber, rig, "Head", uvs, flip=True)
-        for piece, vertical, rotation in (("Upper", 1, 42), ("Lower", -1, -42)):
+        for piece, vertical, rotation in (("Upper", 1, 30), ("Lower", -1, -42)):
             bone = f"Lid{piece}.{suffix}"
             radius = EYE_RADIUS + (.0022 if vertical == 1 else .0017)
 
@@ -303,9 +315,9 @@ def face(rig, amber, lid, dark, horn, lower, gape):
                 for j in range(rows):
                     for i in range(45):
                         horizontal = radians(-89.9 + i*179.8/44)
-                        start = rotation - 18*sin(horizontal)**2
+                        start = rotation + (22 if vertical == 1 else 7)*sin(horizontal)**2
                         sweep = start + (vertical*177 - start)*j/(rows-1)
-                        thickness = 3.2 if vertical == 1 else 1.9
+                        thickness = 5.4 if vertical == 1 else 3.2
                         angle = radians(start + vertical*(-.25 + j*thickness/(rows-1)) if edge else sweep)
                         shell = u*sin(horizontal) + (n*cos(angle) + up*sin(angle))*cos(horizontal)
                         points.append(tuple(p + (radius + (.00035 if edge else 0))*shell))
@@ -330,7 +342,7 @@ def animate(rig):
                                         Quaternion(basis @ Vector((1, 0, 0)), radians(pitch*scale)))
             bone.keyframe_insert(data_path="rotation_quaternion", frame=frame, group=name)
         for suffix in ("L", "R"):
-            for name, turn in (("LidUpper", 43.5), ("LidLower", -43.5)):
+            for name, turn in (("LidUpper", 46), ("LidLower", -46)):
                 bone = rig.pose.bones[f"{name}.{suffix}"]
                 bone.rotation_mode = "QUATERNION"
                 bone.rotation_quaternion = Quaternion((0, 1, 0), radians(turn*blink))
@@ -354,10 +366,13 @@ def build():
     eye_shader.inputs["Coat Roughness"].default_value = .43
     face(rig, amber,
          material("Ivory lids", (.79, .758, .697), .8),
-         material("Fine umber lid edges", (.043, .028, .020), .68),
-         material("Ridged keratin bill", (.026, .024, .022), .50, "bill-keratin.jpg"),
-         material("Lower bill and cere", (.021, .019, .017), .45),
-         material("Gape and naris", (.003, .002, .002), .73))
+         material("Dark eyelid rims", (.011, .008, .007), .63),
+         material("Slate keratin bill", (.055, .067, .084), .46, "bill-keratin.jpg"),
+         material("Lower bill and cere", (.039, .049, .063), .51),
+         material("Gape and naris", (.003, .002, .002), .73),
+         (material("Pale bristle feather", (.78, .765, .723), .86),
+          material("Soft bristle feather", (.63, .615, .575), .89),
+          material("Ivory bristle feather", (.73, .71, .663), .86)))
     animate(rig)
     low, high = mesh_bounds(ob for ob in rig.children if ob.type == "MESH")
     scale = TSUKI_HEIGHT / (high[2] - low[2])
