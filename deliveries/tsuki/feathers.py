@@ -164,6 +164,12 @@ def bake():
     eye = eye * (1 - catchlight) + np.array([171, 174, 168]) * catchlight
     Image.fromarray(eye.clip(0, 255).astype("uint8")).save(WORK / "iris.png")
 
+    v, u = np.mgrid[0:1:160j, 0:2*np.pi:128j]
+    striae = np.sin(27*u + np.sin(v*8)*.42) + .4*np.sin(49*u - v*3)
+    keratin = 35 + 22*smooth(.58, 1, v) + 9*np.maximum(0, np.sin(u))**6 + 2.4*striae
+    Image.fromarray(np.stack((keratin + 2, keratin, keratin - 2), axis=-1)
+                    .clip(0, 255).astype("uint8")).save(WORK / "bill-keratin.jpg", quality=93)
+
     v, u = np.mgrid[0:1:320j, -1:1:192j]
     fibers = np.sin(175*u + 7*np.sin(v*6 + u*3)) + .64*np.sin(283*u - v*17)
     wisps = np.sin(69*u + 5*np.sin(v*11 + u*4))

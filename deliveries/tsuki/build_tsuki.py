@@ -221,28 +221,66 @@ def feet(rig, feather, horn):
             ], horn, rig, f"Toes.{suffix}", steps=12)
 
 
-def hooked_bill(rig, horn):
+def hooked_bill(rig, horn, lower, gape, feather):
+    # (Half-width, side seam y/z, dorsal y/z, ventral depth), from root to hook.
     sections = (
-        (2.151, -.706, .001, .004, .000), (2.169, -.716, .008, .012, .003),
-        (2.196, -.731, .016, .018, .005), (2.226, -.742, .025, .025, .008),
-        (2.258, -.744, .034, .029, .009), (2.289, -.733, .045, .039, .009),
-        (2.322, -.711, .049, .047, .010), (2.354, -.689, .039, .048, .011),
-        (2.383, -.671, .026, .043, .009), (2.412, -.660, .013, .028, .005),
-        (2.446, -.654, .004, .016, .003),
+        (.047, -.637, 2.318, -.633, 2.447, .014),
+        (.064, -.684, 2.305, -.669, 2.434, .009),
+        (.080, -.722, 2.295, -.715, 2.415, .008),
+        (.077, -.744, 2.286, -.756, 2.385, .008),
+        (.064, -.765, 2.275, -.780, 2.350, .007),
+        (.047, -.781, 2.258, -.799, 2.313, .007),
+        (.034, -.787, 2.233, -.805, 2.277, .006),
+        (.019, -.782, 2.204, -.799, 2.240, .004),
+        (.008, -.773, 2.176, -.786, 2.200, .003),
+        (.001, -.759, 2.151, -.765, 2.156, .001),
     )
     steps = 48
-    points = []
-    for z, y, width, depth, keel in sections:
+    points, uvs = [], []
+    for j, (width, y, z, top_y, top_z, depth) in enumerate(sections):
         for k in range(steps):
             theta = 2*pi*k/steps
-            c = cos(theta)
-            points.append((width*sin(theta), y - depth*c - keel*max(0, c)**12, z))
-    mesh("Hooked beak", points, quads(len(sections), steps) + caps(len(sections), steps),
-         horn, rig, "Head")
+            arc = sin(theta)
+            top = max(0, arc)**1.28
+            points.append((width*cos(theta), y + (top_y-y)*top,
+                           z + (top_z-z)*top + depth*min(0, arc)))
+            uvs.append((k/steps, 1 - j/(len(sections)-1)))
+    mesh("Upper mandible", points, quads(len(sections), steps) + caps(len(sections), steps),
+         horn, rig, "Head", uvs)
+    loft("Lower mandible", [
+        (0, -.644, 2.261, .047, .053), (0, -.690, 2.253, .060, .041),
+        (0, -.718, 2.251, .051, .032), (0, -.741, 2.241, .041, .027),
+        (0, -.760, 2.224, .024, .018), (0, -.776, 2.216, .010, .011),
+        (0, -.782, 2.215, .003, .004),
+    ], lower, rig, "Head", steps=36)
+    loft("Gape interior", [
+        (0, -.684, 2.288, .049, .019), (0, -.722, 2.280, .055, .018),
+        (0, -.743, 2.269, .045, .016), (0, -.764, 2.251, .032, .015),
+        (0, -.779, 2.228, .010, .009),
+    ], gape, rig, "Head", steps=24)
+    loft("Recessed cere", [
+        (0, -.653, 2.424, .033, .016), (0, -.699, 2.418, .040, .018),
+        (0, -.729, 2.397, .031, .016), (0, -.743, 2.379, .014, .009),
+    ], lower, rig, "Head", steps=28)
+    for sign, side in ((1, "L"), (-1, "R")):
+        loft(f"Naris.{side}", [
+            (sign*.023, -.719, 2.410, .001, .001),
+            (sign*.029, -.728, 2.404, .005, .002),
+            (sign*.034, -.731, 2.396, .002, .001),
+        ], gape, rig, "Head", normal=(0, 0, 1), steps=12)
+        for i in range(5):
+            x = sign*(.016 + i*.011)
+            z = 2.399 - i*.005 + .006*sin(3*i + sign)
+            loft(f"Bill root bristle {i}.{side}", [
+                (x*1.25, -.726, z+.015, .0026, .0026),
+                (x*1.10, -.743, z+.002, .0023, .0023),
+                (x, -.751, z-.011, .0016, .0016),
+                (x*.84, -.758 + i*.001, z-.020, .0005, .0005),
+            ], feather, rig, "Head", steps=10)
 
 
-def face(rig, amber, lid, dark, horn):
-    hooked_bill(rig, horn)
+def face(rig, amber, lid, dark, horn, lower, gape):
+    hooked_bill(rig, horn, lower, gape, lid)
     for sign, suffix in ((1, "L"), (-1, "R")):
         p, n, u, up = eye_frame(sign)
         points, uvs = [], []
@@ -317,7 +355,9 @@ def build():
     face(rig, amber,
          material("Ivory lids", (.79, .758, .697), .8),
          material("Fine umber lid edges", (.043, .028, .020), .68),
-         material("Black keratin bill", (.010, .009, .008), .44))
+         material("Ridged keratin bill", (.026, .024, .022), .35, "bill-keratin.jpg"),
+         material("Lower bill and cere", (.021, .019, .017), .45),
+         material("Gape and naris", (.003, .002, .002), .73))
     animate(rig)
     low, high = mesh_bounds(ob for ob in rig.children if ob.type == "MESH")
     scale = TSUKI_HEIGHT / (high[2] - low[2])

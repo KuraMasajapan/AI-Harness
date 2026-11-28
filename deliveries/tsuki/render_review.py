@@ -84,6 +84,34 @@ def front_proportions(scene, rig, skins):
             for (key, value), target in zip(ratios.items(), reference)}
 
 
+def bill_proportions(scene, rig):
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    bill_parts = ("Upper mandible", "Lower mandible", "Gape interior", "Recessed cere", "Naris.")
+    step = .004
+    measurements = {}
+    for view, start, end, direction, project, reference in (
+        ("front", -.11, .111, (0, 1, 0), lambda u, z: (u, -2, z), (33/306, 56/222)),
+        ("side", -.86, -.62, (1, 0, 0), lambda u, z: (-2, u, z), (18/295, 25/222)),
+    ):
+        hits = []
+        for z in np.arange(2.13, 2.46, step):
+            for u in np.arange(start, end, step):
+                origin = rig.matrix_world @ Vector(project(u, z))
+                hit, _, _, _, obj, _ = scene.ray_cast(depsgraph, origin, direction)
+                if hit and obj.name.startswith(bill_parts):
+                    hits.append((u, z))
+        assert hits, view
+        width, height = np.ptp(hits, axis=0) + step
+        head_width = (float(2*ring(np.pi/2, (889-405)/220)[0]) if view == "front"
+                      else float(ring(np.pi, 2.35)[1] - ring(0, 2.35)[1]))
+        measurements[view] = {
+            name: {"reference": round(target*100, 1), "model": round(value*100, 1)}
+            for name, target, value in zip(("percent_of_head_width", "percent_of_head_height"),
+                                           reference, (width/head_width, height/(222/220)))
+        }
+    return measurements
+
+
 def aim(obj, target):
     obj.rotation_euler = (Vector(target) - obj.location).to_track_quat("-Z", "Y").to_euler()
 
@@ -207,6 +235,7 @@ def review():
                   "tsuki_to_musan_height_ratio": HEIGHT_RATIO},
         **assert_pose(rig, scene),
         "front_proportions": front_proportions(scene, rig, skins),
+        "beak_proportions": bill_proportions(scene, rig),
     }
     print("GLB verification:", json.dumps(statistics, ensure_ascii=False), flush=True)
     if "--check-only" in sys.argv:
@@ -221,10 +250,11 @@ def review():
         ("head-open", 23, (-.24, -8, 2.64), (-.24, 0, 2.49), 1.92),
         ("head-blink", 27, (-.24, -8, 2.64), (-.24, 0, 2.49), 1.92),
         ("face-detail", 1, (0, -8, 2.54), (0, 0, 2.50), 1.567),
+        ("beak-detail", 27, (-.24, -8, 2.50), (-.60, -.10, 2.37), .80),
     ]
     for name, frame, position, target, scale in views:
         scene.frame_set(frame)
-        if name == "face-detail":
+        if name in ("face-detail", "beak-detail"):
             scene.render.resolution_x, scene.render.resolution_y = 620, 476
         if name == "side":
             key.location, fill.location = (-5, -3, 6), (-3, 4, 4)

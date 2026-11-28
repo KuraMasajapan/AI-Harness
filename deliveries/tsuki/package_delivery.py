@@ -49,6 +49,11 @@ def comparisons():
     board(left, right, "TSUKI  /  FACE DETAIL", "04   EYE PLACEMENT, BROW SHADOW AND IRIS",
           ("REFERENCE  /  front-view crop", "MODEL  /  exported GLB close-up")).save(
         preview / "face-comparison.png")
+    right = Image.open(WORK / "beak-detail.png").convert("RGB")
+    left = source.crop((829, 339, 989, 462)).resize(right.size, Image.Resampling.LANCZOS)
+    board(left, right, "TSUKI  /  BEAK DETAIL", "05   HOOK, CULMEN AND MANDIBLE SEAM",
+          ("REFERENCE  /  profile crop", "MODEL  /  turned, frame 27")).save(
+        preview / "beak-comparison.png")
     scale = json.loads((WORK / "verification.json").read_text())["scale"]
     right = Image.open(WORK / "scale.png").convert("RGB")
     photo = Image.open(HERE / "references/musan-tsuki-scale.png").convert("RGB")
@@ -68,17 +73,19 @@ def package():
         "verification.json": (WORK / "verification.json").read_bytes(),
     }
     for name in ("front-comparison", "side-comparison", "back-comparison", "head-turn-blink",
-                 "scale-comparison", "face-comparison"):
+                 "scale-comparison", "face-comparison", "beak-comparison"):
         path = f"preview/{name}.png"
         files[path] = (HERE / path).read_bytes()
     for name in ("build_tsuki.py", "render_review.py", "feathers.py", "package_delivery.py",
                  "requirements-build.txt", "README.md", "references/three-view.webp",
                  "references/rig-diagram.webp", "references/musan-tsuki-scale.png"):
         files["source/" + name] = (HERE / name).read_bytes()
+    verification = json.loads(files["verification.json"])
     manifest = {
         "created": "2026-11-28",
         "latest_model": "models/tsuki.glb",
-        "scale": json.loads(files["verification.json"])["scale"],
+        "scale": verification["scale"],
+        "beak_proportions": verification["beak_proportions"],
         "files": [{"path": path, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
                   for path, data in sorted(files.items())],
     }
