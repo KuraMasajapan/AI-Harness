@@ -10,21 +10,21 @@
     "front": {
       "percent_of_head_width": {
         "reference": 10.8,
-        "model": 11.4
+        "model": 10.9
       },
       "percent_of_head_height": {
         "reference": 25.2,
-        "model": 25.4
+        "model": 20.2
       }
     },
     "side": {
       "percent_of_head_width": {
         "reference": 6.1,
-        "model": 7.8
+        "model": 5.1
       },
       "percent_of_head_height": {
         "reference": 11.3,
-        "model": 22.2
+        "model": 12.7
       }
     }
   },
@@ -36,43 +36,43 @@
     },
     {
       "path": "models/tsuki.glb",
-      "bytes": 2449288,
-      "sha256": "9bc3e40f56fa4ff6c196fbbe428e896be7748df21a2ac826823ef53cc92af889"
+      "bytes": 2443992,
+      "sha256": "d06bd99b9850c897f443d0b7f87ba239c481e507e8e3782b768fd120d366b193"
     },
     {
       "path": "preview/back-comparison.png",
-      "bytes": 674696,
-      "sha256": "a7cee23ba9f37f23f5cc379295151628597a9e7143d783b7d0379509d8784c73"
+      "bytes": 674763,
+      "sha256": "f62118c9125398439e9edd5413f95fb88842f0003117cb7089e9bec9827ed18d"
     },
     {
       "path": "preview/beak-comparison.png",
-      "bytes": 425070,
-      "sha256": "d2c0fb0c3de145760c4bb0bd874c732935786684ffe1b2d51208964170c1b674"
+      "bytes": 424720,
+      "sha256": "5279f87c7af505576e3dfd8d88460568756b30819e15b6449dd6431b5c7e1b30"
     },
     {
       "path": "preview/face-comparison.png",
-      "bytes": 557279,
-      "sha256": "53846dd43a3b15acadca846a60515dd6f79299312f7407237f821fa513f4fa2e"
+      "bytes": 556398,
+      "sha256": "9c0812bdc6acc4957f42314771bbbb4f219aa1196796b297e31be184ec51fe9f"
     },
     {
       "path": "preview/front-comparison.png",
-      "bytes": 639160,
-      "sha256": "4a07a71db52576432ee671ef182d78e597314a1b2ff1521e4654cc1fe5fbbfe1"
+      "bytes": 639005,
+      "sha256": "2b0c4015225def8a478980172555d6a247f9808a05b75c511080304034c84705"
     },
     {
       "path": "preview/head-turn-blink.png",
-      "bytes": 542542,
-      "sha256": "b40db3e5a89fe0c1bffce56e0461bee4126638a2003886319e348c9b5f579d52"
+      "bytes": 539838,
+      "sha256": "597bd3c58ad53203f0a1232a352497d35af93f8b9709977aa2a4fd77ca2c3fc1"
     },
     {
       "path": "preview/scale-comparison.png",
-      "bytes": 641033,
-      "sha256": "2c73bac181f8f3a4e0b8f79dd729da647466b22ac68f37f793f0519be472dfb6"
+      "bytes": 641017,
+      "sha256": "2821347ceb77b16f2c0f4fdabef385083279ebb240777c4c368e28458ffe2e83"
     },
     {
       "path": "preview/side-comparison.png",
-      "bytes": 642924,
-      "sha256": "057168b0792ce9e9d24ceeff88f21b9d898eb66b060230c6c8df262e82e7fa34"
+      "bytes": 642863,
+      "sha256": "f743b967178862bf3f357ea09d24e1cf4f14978797814d660c14b761624dd986"
     },
     {
       "path": "source/README.md",
@@ -81,13 +81,13 @@
     },
     {
       "path": "source/build_tsuki.py",
-      "bytes": 17154,
-      "sha256": "f948beb942a4a8dc746f835172f08dbab20e9d2e3c3ccfc400696a55055500ba"
+      "bytes": 17159,
+      "sha256": "e3c9529448f0cda958338efdc3e2f02e4bed31dd14207a50bef63aee856f5249"
     },
     {
       "path": "source/feathers.py",
-      "bytes": 9033,
-      "sha256": "0244c41ba12d4fe9851b83afb645c75cae81c3bd816da9c1d00fa8906ab9c1cd"
+      "bytes": 9126,
+      "sha256": "bfdb87a040141fc041e50478361ef74758f4870c7279abf5574501f38f8971b9"
     },
     {
       "path": "source/package_delivery.py",
@@ -122,7 +122,7 @@
     {
       "path": "verification.json",
       "bytes": 1561,
-      "sha256": "129436f972c39104649bfe77b023c21500c24ce0f9c4701af54db0564755b2b5"
+      "sha256": "d03f3885fe4ff34cd8fcbea489a460fb167e2f0c0e9ca71f4ca064b7957732e5"
     }
   ]
 }

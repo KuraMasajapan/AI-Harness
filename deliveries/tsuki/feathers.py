@@ -166,7 +166,9 @@ def bake():
 
     v, u = np.mgrid[0:1:160j, 0:2*np.pi:128j]
     striae = np.sin(27*u + np.sin(v*8)*.42) + .4*np.sin(49*u - v*3)
-    keratin = 35 + 22*smooth(.58, 1, v) + 9*np.maximum(0, np.sin(u))**6 + 2.4*striae
+    ridge = 15*np.maximum(0, np.sin(u))**22
+    cutting_edge = 10*np.cos(u)**36 * smooth(.16, .55, v)
+    keratin = 37 + 15*smooth(.63, 1, v) + ridge + cutting_edge + 2.4*striae
     Image.fromarray(np.stack((keratin + 2, keratin, keratin - 2), axis=-1)
                     .clip(0, 255).astype("uint8")).save(WORK / "bill-keratin.jpg", quality=93)
 
