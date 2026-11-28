@@ -221,33 +221,29 @@ def feet(rig, feather, horn):
             ], horn, rig, f"Toes.{suffix}", steps=12)
 
 
-def face(rig, amber, lid, dark, horn, cere, nostril):
-    loft("Hooked beak", [
-        (0, -.651, 2.387, .031, .016), (0, -.686, 2.361, .045, .030),
-        (0, -.715, 2.336, .052, .036), (0, -.745, 2.301, .049, .037),
-        (0, -.757, 2.270, .040, .030), (0, -.757, 2.239, .028, .020),
-        (0, -.745, 2.213, .017, .013), (0, -.728, 2.192, .009, .008),
-        (0, -.711, 2.175, .002, .003),
-    ], horn, rig, "Head", steps=40)
-    loft("Feather-set cere", [
-        (0, -.656, 2.417, .026, .018), (0, -.686, 2.394, .045, .026),
-        (0, -.702, 2.373, .052, .033), (0, -.712, 2.354, .049, .031),
-        (0, -.716, 2.342, .038, .022), (0, -.719, 2.331, .026, .012),
-    ], cere, rig, "Head", steps=32)
+def hooked_bill(rig, horn):
+    sections = (
+        (2.151, -.706, .001, .004, .000), (2.169, -.716, .008, .012, .003),
+        (2.196, -.731, .016, .018, .005), (2.226, -.742, .025, .025, .008),
+        (2.258, -.744, .034, .029, .009), (2.289, -.733, .045, .039, .009),
+        (2.322, -.711, .049, .047, .010), (2.354, -.689, .039, .048, .011),
+        (2.383, -.671, .026, .043, .009), (2.412, -.660, .013, .028, .005),
+        (2.446, -.654, .004, .016, .003),
+    )
+    steps = 48
+    points = []
+    for z, y, width, depth, keel in sections:
+        for k in range(steps):
+            theta = 2*pi*k/steps
+            c = cos(theta)
+            points.append((width*sin(theta), y - depth*c - keel*max(0, c)**12, z))
+    mesh("Hooked beak", points, quads(len(sections), steps) + caps(len(sections), steps),
+         horn, rig, "Head")
 
+
+def face(rig, amber, lid, dark, horn):
+    hooked_bill(rig, horn)
     for sign, suffix in ((1, "L"), (-1, "R")):
-        loft("Naris."+suffix, [
-            (sign*.022, -.734, 2.370, .001, .001),
-            (sign*.029, -.737, 2.367, .004, .002),
-            (sign*.035, -.737, 2.362, .004, .002),
-            (sign*.042, -.731, 2.357, .001, .001),
-        ], nostril, rig, "Head", normal=(0, 0, 1), steps=16)
-        loft("Bill seam."+suffix, [
-            (sign*.050, -.743, 2.310, .0015, .001),
-            (sign*.045, -.757, 2.275, .0025, .0017),
-            (sign*.029, -.762, 2.233, .0021, .0014),
-            (sign*.013, -.743, 2.204, .0012, .0009),
-        ], nostril, rig, "Head", steps=12)
         p, n, u, up = eye_frame(sign)
         points, uvs = [], []
         for j in range(18):
@@ -315,15 +311,13 @@ def build():
     amber = material("Amber iris, diffuse body and corneal sheen", (.30, .135, .033), .37, "iris.png")
     eye_shader = amber.node_tree.nodes.get("Principled BSDF")
     eye_shader.inputs["IOR"].default_value = 1.376
-    eye_shader.inputs["Specular IOR Level"].default_value = .16
-    eye_shader.inputs["Coat Weight"].default_value = .14
-    eye_shader.inputs["Coat Roughness"].default_value = .39
+    eye_shader.inputs["Specular IOR Level"].default_value = .13
+    eye_shader.inputs["Coat Weight"].default_value = .11
+    eye_shader.inputs["Coat Roughness"].default_value = .43
     face(rig, amber,
          material("Ivory lids", (.79, .758, .697), .8),
          material("Fine umber lid edges", (.043, .028, .020), .68),
-         material("Black keratin bill", (.014, .011, .009), .28),
-         material("Satin cere", (.022, .016, .011), .52),
-         material("Nostrils and bill seams", (.004, .003, .003), .55))
+         material("Black keratin bill", (.010, .009, .008), .44))
     animate(rig)
     low, high = mesh_bounds(ob for ob in rig.children if ob.type == "MESH")
     scale = TSUKI_HEIGHT / (high[2] - low[2])

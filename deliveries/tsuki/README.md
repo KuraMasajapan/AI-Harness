@@ -23,8 +23,8 @@ service was used. The layering and feather detail are simplified for real-time u
 The revision recesses the smaller eyes under a feathered brow and shades the
 sockets, facial disc and bill base. The amber iris uses a dark inner gradient,
 radial fibers, and a subdued catchlight beneath a glTF clearcoat. The toes
-are wider, fuller, and feathered with dark claws. The hooked bill, cere, and
-nostrils retain their previous size.
+are wider, fuller, and feathered with dark claws. The black bill tapers to a
+downward hook, with a central ridge and its root partly covered by face feathers.
 
 The rig has 18 deform joints: `Body`, `Neck_01`, `Neck_02`, `Neck_03`, `Head`,
 `Tail`, and left/right pairs of `Wing`, `Leg`, `Ankle`, `Toes`, `LidUpper`

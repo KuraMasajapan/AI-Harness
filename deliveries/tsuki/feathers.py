@@ -66,8 +66,9 @@ def ring(theta, z):
     socket = np.exp(-(dx / .151)**2 - (dz / .112)**2) * smooth(.35, .80, c)
     powers = np.where(c > 0, .78 + .13 * smooth(1.8, 2.4, z), .85)
     y = (798 - center - depth * np.sign(c) * abs(c)**powers + 53 * socket) / 220
-    y -= .038 * np.exp(-(brow/.028)**2 - (dx/.146)**4) * smooth(.45, .85, c)
+    y -= .054 * np.exp(-(brow/.030)**2 - (dx/.146)**4) * smooth(.45, .85, c)
     y += .075 * np.exp(-((abs(x)-.457)/.104)**2 - (dz/.116)**2) * smooth(.42, .74, c)
+    y -= .041 * np.exp(-((abs(x)-.054)/.048)**2 - ((z-2.368)/.079)**2) * smooth(.71, .97, c)
     r, _ = facial_disc(x, z)
     face = smooth(.44, .80, c)
     y -= face * (.023 * np.exp(-((r - .90) / .16)**2)
@@ -133,9 +134,11 @@ def bake():
     result += (edge * (-outer * (12 + 12*below) + grain*feather*3.25))[..., None] * [1, 1.04, 1.12]
     dx, dz, brow = socket_profile(x, z)
     around = np.hypot(dx/.116, dz/.086)
-    orbit = 43 * np.exp(-((around - .94)/.49)**2)
-    brow_shadow = 50 * np.exp(-((brow + .028)/.025)**2 - (dx/.114)**4)
+    orbit = (36 + 20*smooth(-.026, .078, dz)) * np.exp(-((around - .94)/.47)**2)
+    brow_shadow = 87 * np.exp(-((brow + .031)/.028)**2 - (dx/.129)**4)
     bill_root = 28 * np.exp(-(x/.085)**2 - ((z - 2.375)/.083)**2)
+    fibers = np.abs(np.sin(336*x + np.sign(x)*34*(z-2.350) + .54*np.sin(217*z)))**7
+    bill_root += 96 * fibers * np.exp(-((abs(x)-.034)/.037)**2 - ((z-2.374)/.065)**2)
     shading = smooth(.42, .89, c) * (orbit + brow_shadow + bill_root)
     result *= 1 - shading[..., None] / 305 * np.array([.91, 1, 1.14])
     Image.fromarray(result.clip(0, 255).astype("uint8")).save(
@@ -149,10 +152,10 @@ def bake():
     spokes = np.sin(a * 83 + np.sin(r * 24) * 1.3) + .42 * np.sin(a * 131 + r * 31)
     gold = (.80 + .23 * np.clip(y, -1, 1) + .11 * spokes
             + .075 * np.sin(r * 23 + np.sin(a * 13)))[..., None]
-    inner = smooth(.48, .73, r)[..., None]
-    iris = (np.array([86, 46, 16]) * (1 - inner) + np.array([177, 113, 40]) * inner) * gold
+    inner = smooth(.375, .655, r)[..., None]
+    iris = (np.array([102, 60, 23]) * (1 - inner) + np.array([177, 113, 40]) * inner) * gold
     rim = (1 - smooth(.78, .965, r))[..., None]
-    pupil = smooth(.525, .569, np.hypot(x + .015, y + .027))[..., None]
+    pupil = smooth(.393, .423, np.hypot(x + .015, y + .027))[..., None]
     eye = (iris * rim + np.array([20, 13, 9]) * (1 - rim)) * pupil
     eye += np.array([8, 6, 5]) * (1 - pupil)
     eye *= (.52 + .48 * smooth(-.79, -.08, y))[..., None]
